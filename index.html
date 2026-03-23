@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Revista Panamericana de Pedagogía — RPP Interactivo</title>
+    <meta name="title" content="Revista Panamericana de Pedagogía — RPP Interactivo" />
+    <meta name="description" content="Revista científica de pedagogía con enfoque transmedia e interactivo. Artículos académicos sobre innovación educativa, pedagogía crítica y ciencia del aprendizaje." />
+    <meta name="keywords" content="revista pedagogía, pedagogía panamericana, educación, innovación educativa, ciencia educativa, transmedia, artículos académicos, UDG, Universidad de Guadalajara" />
+    <meta name="author" content="Universidad de Guadalajara - Science Transmedia" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rpp-interactivo.udg.mx" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rpp-interactivo.udg.mx" />
+    <meta property="og:title" content="Revista Panamericana de Pedagogía — RPP Interactivo" />
+    <meta property="og:description" content="Revista científica de pedagogía con enfoque transmedia e interactivo. Artículos académicos sobre innovación educativa." />
+    <meta property="og:image" content="https://rpp-interactivo.udg.mx/rpp_cover_42_1773790366603.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="RPP Interactivo" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://rpp-interactivo.udg.mx" />
+    <meta property="twitter:title" content="Revista Panamericana de Pedagogía — RPP Interactivo" />
+    <meta property="twitter:description" content="Revista científica de pedagogía con enfoque transmedia e interactivo. Artículos académicos sobre innovación educativa." />
+    <meta property="twitter:image" content="https://rpp-interactivo.udg.mx/rpp_cover_42_1773790366603.png" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="msapplication-TileColor" content="#1a1a1a" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Registrar Service Worker para PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('[PWA] SW registered:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('[PWA] SW registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPP - Revista Panamericana de Pedagogía</title>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: auto;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        @media (max-width: 768px) {
+            body { cursor: auto; }
+        }
+        
+        /* ========================================
+           CURSOR MARCAINO
+        ======================================== */
+        .cursor-m {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-m svg {
+            width: 65px;
+            height: 65px;
+            filter: drop-shadow(0 0 15px rgba(255, 191, 0, 0.6));
+            animation: hoverUFO 2s ease-in-out infinite;
+        }
+        
+        @keyframes hoverUFO {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        
+        @media (max-width: 768px) {
+            .cursor-m { display: none; }
+        }
+        
+        /* ========================================
+           NAVEGACIÓN
+        ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(255, 191, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1a1a1a;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+            background: #1a1a1a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+        
+        /* ========================================
+           HERO CON EFECTO PORTAL
+        ======================================== */
+        .hero-container {
+            position: relative;
+            height: 300vh;
+        }
+        
+        .hero-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffbf00 0%, #ffcc02 50%, #ff9500 100%);
+        }
+        
+        .portal-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lava-layer {
+            position: absolute;
+            border-radius: 50%;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .lava-1 {
+            width: 95vw;
+            height: 95vw;
+            background: radial-gradient(circle, #ff9500 0%, #ffbf00 50%, #ff9500 100%);
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+        
+        .lava-2 {
+            width: 85vw;
+            height: 85vw;
+            background: radial-gradient(circle, #ffbf00 0%, #ffd700 50%, #ffbf00 100%);
+            opacity: 0.4;
+            filter: blur(1px);
+        }
+        
+        .lava-3 {
+            width: 75vw;
+            height: 75vw;
+            background: radial-gradient(circle, #ffd700 0%, #ffec8b 50%, #ffd700 100%);
+            opacity: 0.5;
+        }
+        
+        .lava-4 {
+            width: 65vw;
+            height: 65vw;
+            background: radial-gradient(circle, #ffec8b 0%, #fff5d6 50%, #ffec8b 100%);
+            opacity: 0.6;
+        }
+        
+        .lava-5 {
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, #fff5d6 0%, #fffbe6 50%, #fff5d6 100%);
+            opacity: 0.7;
+        }
+        
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: circle(0% at 50% 50%);
+            z-index: 5;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,191,0,0.2), rgba(255,150,0,0.1), rgba(255,100,0,0.3));
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            mix-blend-mode: exclusion;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #ffbf00;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .hero-title .char {
+            display: inline-block;
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: #fff;
+            opacity: 0;
+            transform: translateY(30px);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            z-index: 20;
+        }
+        
+        .scroll-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffbf00;
+        }
+        
+        .scroll-icon {
+            width: 30px;
+            height: 50px;
+            border: 2px solid #ffbf00;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .scroll-icon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #ffbf00;
+            border-radius: 50%;
+            animation: scrollWheel 2s infinite;
+        }
+        
+        @keyframes scrollWheel {
+            0% { top: 8px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+        
+        .progress-ring {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+        }
+        
+        .progress-ring circle {
+            fill: none;
+            stroke-width: 3;
+        }
+        
+        .progress-ring .bg {
+            stroke: rgba(255, 191, 0, 0.2);
+        }
+        
+        .progress-ring .progress {
+            stroke: #ffbf00;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: center;
+            stroke-dasharray: 157;
+            stroke-dashoffset: 157;
+            transition: stroke-dashoffset 0.1s;
+        }
+        
+        /* ========================================
+           TEXTO QUE SE RELLENA AL SCROLL
+        ======================================== */
+        .text-reveal-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #1a0f00, #0a0a0a);
+            position: relative;
+        }
+        
+        .text-reveal {
+            font-size: clamp(2rem, 6vw, 5rem);
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.2;
+            max-width: 1000px;
+        }
+        
+        .text-reveal .word {
+            display: inline-block;
+            opacity: 0.15;
+            transform: scale(0.9);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin: 0 0.15em;
+            background: linear-gradient(135deg, #ffbf00, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-reveal .word.visible {
+            opacity: 1;
+            transform: scale(1);
+            text-shadow: 0 0 40px rgba(255, 191, 0, 0.6);
+        }
+        
+        /* ========================================
+           MARQUEES ANIMADOS
+        ======================================== */
+        .marquees-section {
+            padding: 4rem 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #0a0a0a, #1a0f00);
+        }
+        
+        .marquee {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+        
+        .marquee-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        
+        .marquee:nth-child(2) .marquee-content {
+            animation-direction: reverse;
+            animation-duration: 25s;
+        }
+        
+        .marquee:nth-child(3) .marquee-content {
+            animation-duration: 15s;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 2rem;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .marquee-icon {
+            width: 50px;
+            height: 50px;
+            background: #ffbf00;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            animation: rotateIcon 4s ease-in-out infinite;
+        }
+        
+        @keyframes rotateIcon {
+            0%, 100% { transform: rotate(-5deg) scale(0.9); }
+            50% { transform: rotate(5deg) scale(1); }
+        }
+        
+        .marquee-item.secondary {
+            color: #666;
+        }
+        
+        /* ========================================
+           MONTAÑAS DE CARAMELO - PARALLAX
+        ======================================== */
+        .mountains-container {
+            position: relative;
+            height: 400vh;
+            background: linear-gradient(to bottom, #1a0f00, #0a0a0a, #1a0f00);
+        }
+        
+        .mountains-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mountain-layer {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: auto;
+            will-change: transform;
+        }
+        
+        .mountain-layer svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .mountain-1 { z-index: 1; bottom: -10%; }
+        .mountain-1 path { fill: #2d1f00; }
+        
+        .mountain-2 { z-index: 2; bottom: -5%; }
+        .mountain-2 path { fill: #5a3d00; }
+        
+        .mountain-3 { z-index: 3; bottom: 0%; }
+        .mountain-3 path { fill: #8b5a00; }
+        
+        .mountain-4 { z-index: 4; bottom: 5%; }
+        .mountain-4 path { fill: #b8860b; }
+        
+        .mountain-5 { z-index: 5; bottom: 10%; }
+        .mountain-5 path { fill: #daa520; filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.5)); }
+        
+        .mountain-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 236, 139, 0.3) 0%, transparent 60%);
+            z-index: 6;
+            opacity: 0;
+        }
+        
+        .mountains-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            pointer-events: none;
+        }
+        
+        .mountains-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(180deg, #ffec8b 0%, #ffbf00 50%, #ff9500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        
+        .mountains-subtitle {
+            font-size: 1.5rem;
+            color: #ffbf00;
+            margin-top: 1rem;
+            opacity: 0;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+        }
+        
+        /* ========================================
+           SECCIÓN ARTÍCULOS
+        ======================================== */
+        .articulos {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #ffcc02, #ffbf00);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #ffbf00;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .article-card {
+            background: #fffbe6;
+            border: 4px solid #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 6px 6px 0px #1a1a1a;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .article-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .article-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px #1a1a1a;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #ff9500, #ff6b35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: #ffbf00;
+            color: #1a1a1a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .article-author {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .article-link {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #ffbf00;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .article-link:hover {
+            background: #ff4757;
+            color: white;
+        }
+        
+        /* ========================================
+           SECCIÓN SEMILLERO
+        ======================================== */
+        .semillero {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #ffbf00, #ff9500, #ffbf00);
+            position: relative;
+        }
+        
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .author-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 3px solid #1a1a1a;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .author-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff4757, #ff6b9d);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid #1a1a1a;
+        }
+        
+        .author-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+        
+        /* ========================================
+           SECCIÓN TRANSMEDIA
+        ======================================== */
+        .transmedia {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #ff9500, #fff5d6, #ffec8b);
+            position: relative;
+        }
+        
+        .transmedia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .media-card {
+            background: #fffbe6;
+            border: 4px solid #1a1a1a;
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 6px 6px 0px #1a1a1a;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: rotate(-3deg);
+        }
+        
+        .media-card.visible {
+            opacity: 1;
+            transform: rotate(0);
+        }
+        
+        .media-card:hover {
+            transform: translate(-4px, -4px) rotate(-1deg);
+            box-shadow: 10px 10px 0px #1a1a1a;
+        }
+        
+        .media-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff4757, #ff6b35);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 4px solid #1a1a1a;
+        }
+        
+        .media-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .media-desc {
+            color: #2d2d2d;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ========================================
+           SECCIÓN ACTUALIDAD
+        ======================================== */
+        .actualidad {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #ffec8b, #ffcc02, #ffbf00);
+            position: relative;
+        }
+        
+        .news-list {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+        
+        .news-item {
+            background: #fffbe6;
+            border: 3px solid #1a1a1a;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 4px 4px 0px #1a1a1a;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .news-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .news-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #1a1a1a;
+        }
+        
+        .news-content h3 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+        
+        .news-date {
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .news-category {
+            background: #ffbf00;
+            color: #1a1a1a;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(to bottom, #ff6b35, #ff4757, #ff6b9d);
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .footer-copy {
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursor Marciano -->
+    <div class="cursor-m">
+        <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="35" cy="45" rx="25" ry="8" fill="#c0c0c0"/>
+            <ellipse cx="35" cy="43" rx="20" ry="6" fill="#e0e0e0"/>
+            <circle cx="35" cy="35" r="12" fill="#87ceeb" fill-opacity="0.6" stroke="#c0c0c0" stroke-width="1"/>
+            <circle cx="35" cy="33" r="5" fill="#90EE90"/>
+            <ellipse cx="33" cy="32" rx="2.5" ry="3" fill="white"/>
+            <ellipse cx="37" cy="32" rx="2.5" ry="3" fill="white"/>
+            <circle cx="33" cy="32" r="1.5" fill="black"/>
+            <circle cx="37" cy="32" r="1.5" fill="black"/>
+            <circle cx="33.5" cy="31" r="0.5" fill="white"/>
+            <circle cx="37.5" cy="31" r="0.5" fill="white"/>
+            <line x1="35" y1="28" x2="32" y2="23" stroke="#90EE90" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35" y1="28" x2="38" y2="23" stroke="#90EE90" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="32" cy="23" r="2" fill="#90EE90"/>
+            <circle cx="38" cy="23" r="2" fill="#90EE90"/>
+            <circle cx="20" cy="45" r="2" fill="#ffbf00" fill-opacity="0.8"/>
+            <circle cx="28" cy="48" r="2" fill="#ffbf00" fill-opacity="0.8"/>
+            <circle cx="35" cy="49" r="2" fill="#ffbf00" fill-opacity="0.8"/>
+            <circle cx="42" cy="48" r="2" fill="#ffbf00" fill-opacity="0.8"/>
+            <circle cx="50" cy="45" r="2" fill="#ffbf00" fill-opacity="0.8"/>
+            <ellipse cx="35" cy="55" rx="15" ry="4" fill="#ffbf00" fill-opacity="0.3"/>
+            <ellipse cx="35" cy="57" rx="10" ry="3" fill="#ff9500" fill-opacity="0.2"/>
+        </svg>
+    </div>
+    
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-logo">RPP</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#articulos">Artículos</a></li>
+            <li><a href="#semillero">Semillero</a></li>
+            <li><a href="#transmedia">Transmedia</a></li>
+            <li><a href="#actualidad">Actualidad</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO CON EFECTO PORTAL -->
+    <section class="hero-container" id="inicio">
+        <div class="hero-sticky">
+            <div class="video-container" id="videoContainer">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-liquid-background-of-orange-and-yellow-colors-4806-large.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            
+            <div class="portal-layer">
+                <div class="lava-layer lava-1" data-lava></div>
+                <div class="lava-layer lava-2" data-lava></div>
+                <div class="lava-layer lava-3" data-lava></div>
+                <div class="lava-layer lava-4" data-lava></div>
+                <div class="lava-layer lava-5" data-lava></div>
+            </div>
+            
+            <div class="hero-content">
+                <span class="hero-badge">Revista Indexada</span>
+                <h1 class="hero-title" id="heroTitle">RPP</h1>
+                <p class="hero-subtitle">Revista Panamericana de Pedagogía</p>
+            </div>
+            
+            <div class="scroll-hint">
+                <span class="scroll-text">Scroll para entrar</span>
+                <div class="scroll-icon"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEXTO QUE SE RELLENA -->
+    <section class="text-reveal-section">
+        <p class="text-reveal" id="textReveal">
+            REVISTA PANAMERICANA DE PEDAGOGÍA INVESTIGACIÓN EDUCATIVA PARA IBEROAMÉRICA
+        </p>
+    </section>
+
+    <!-- MARQUEES ANIMADOS -->
+    <section class="marquees-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <span>Convocatoria Abierta</span>
+                    <div class="marquee-icon">★</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>Número 45 - Artículos Inéditos</span>
+                    <div class="marquee-icon">◆</div>
+                </div>
+                <div class="marquee-item">
+                    <span>Convocatoria Abierta</span>
+                    <div class="marquee-icon">★</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>Número 45 - Artículos Inéditos</span>
+                    <div class="marquee-icon">◆</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <span>Transmedia Educativa</span>
+                    <div class="marquee-icon">●</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>Podcasts · Videos · Infografías</span>
+                    <div class="marquee-icon">▲</div>
+                </div>
+                <div class="marquee-item">
+                    <span>Transmedia Educativa</span>
+                    <div class="marquee-icon">●</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>Podcasts · Videos · Infografías</span>
+                    <div class="marquee-icon">▲</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-item">
+                    <span>Más de 30 países</span>
+                    <div class="marquee-icon">■</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>+500 Artículos Publicados</span>
+                    <div class="marquee-icon">✦</div>
+                </div>
+                <div class="marquee-item">
+                    <span>Más de 30 países</span>
+                    <div class="marquee-icon">■</div>
+                </div>
+                <div class="marquee-item secondary">
+                    <span>+500 Artículos Publicados</span>
+                    <div class="marquee-icon">✦</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MONTAÑAS DE CARAMELO -->
+    <section class="mountains-container">
+        <div class="mountains-sticky">
+            <div class="mountain-layer mountain-1">
+                <svg viewBox="0 0 1920 600" preserveAspectRatio="none">
+                    <path d="M0,600 L0,400 Q200,200 400,350 Q600,500 800,300 Q1000,100 1200,280 Q1400,450 1600,250 Q1800,150 1920,350 L1920,600 Z"/>
+                </svg>
+            </div>
+            <div class="mountain-layer mountain-2">
+                <svg viewBox="0 0 1920 600" preserveAspectRatio="none">
+                    <path d="M0,600 L0,450 Q150,300 350,400 Q550,500 750,320 Q950,200 1150,380 Q1350,520 1550,300 Q1750,180 1920,400 L1920,600 Z"/>
+                </svg>
+            </div>
+            <div class="mountain-layer mountain-3">
+                <svg viewBox="0 0 1920 600" preserveAspectRatio="none">
+                    <path d="M0,600 L0,500 Q250,350 450,450 Q650,550 850,350 Q1050,250 1250,420 Q1450,500 1650,320 Q1850,220 1920,450 L1920,600 Z"/>
+                </svg>
+            </div>
+            <div class="mountain-layer mountain-4">
+                <svg viewBox="0 0 1920 600" preserveAspectRatio="none">
+                    <path d="M0,600 L0,550 Q100,400 350,500 Q600,600 850,400 Q1100,300 1350,480 Q1600,580 1750,380 Q1850,300 1920,500 L1920,600 Z"/>
+                </svg>
+            </div>
+            <div class="mountain-layer mountain-5">
+                <svg viewBox="0 0 1920 600" preserveAspectRatio="none">
+                    <path d="M0,600 L0,580 Q200,450 450,550 Q700,600 950,420 Q1200,350 1450,520 Q1700,580 1850,450 Q1900,420 1920,550 L1920,600 Z"/>
+                </svg>
+            </div>
+            
+            <div class="mountain-glow"></div>
+            
+            <div class="mountains-content">
+                <h2 class="mountains-title">TIERRAS DORADAS</h2>
+                <p class="mountains-subtitle">Sumérgete en el conocimiento</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTÍCULOS -->
+    <section class="articulos" id="articulos">
+        <div class="section-header">
+            <span class="section-tag">Número Actual</span>
+            <h2 class="section-title">ARTÍCULOS DESTACADOS</h2>
+        </div>
+        
+        <div class="articles-grid">
+            <div class="article-card" onclick="window.open('http://localhost:9002', '_blank')">
+                <div class="article-image">🤖</div>
+                <div class="article-content">
+                    <span class="article-tag">Inteligencia Artificial</span>
+                    <h3 class="article-title">Ética e Inteligencia Artificial en Educación Superior</h3>
+                    <p class="article-author">Dra. María González</p>
+                    <a href="http://localhost:9002" target="_blank" class="article-link">Interactuar →</a>
+                </div>
+            </div>
+            
+            <div class="article-card" onclick="window.open('http://localhost:8765', '_blank')">
+                <div class="article-image">🏫</div>
+                <div class="article-content">
+                    <span class="article-tag">Innovación</span>
+                    <h3 class="article-title">Disrupción Educativa: Nuevas Escuelas Mexicanas</h3>
+                    <p class="article-author">Dr. Carlos Quintero-Macías</p>
+                    <a href="http://localhost:8765" target="_blank" class="article-link">Interactuar →</a>
+                </div>
+            </div>
+            
+            <div class="article-card">
+                <div class="article-image">📱</div>
+                <div class="article-content">
+                    <span class="article-tag">Tecnología</span>
+                    <h3 class="article-title">Ciberacoso Universitario en la Era Digital</h3>
+                    <p class="article-author">Dra. Ana Martínez</p>
+                    <a href="#" class="article-link">Leer más →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEMILLERO -->
+    <section class="semillero" id="semillero">
+        <div class="section-header">
+            <span class="section-tag">Talento Emergente</span>
+            <h2 class="section-title">SEMILLERO DE AUTORES</h2>
+        </div>
+        
+        <div class="authors-grid">
+            <div class="author-card">
+                <div class="author-avatar">👩‍🎓</div>
+                <h3 class="author-name">Dra. Elena Vargas</h3>
+                <p>Universidad de Chile</p>
+            </div>
+            <div class="author-card">
+                <div class="author-avatar">👨‍🎓</div>
+                <h3 class="author-name">Dr. Miguel Torres</h3>
+                <p>UNAM, México</p>
+            </div>
+            <div class="author-card">
+                <div class="author-avatar">👩‍🎓</div>
+                <h3 class="author-name">Dra. Carmen Ruiz</h3>
+                <p>Universidad de Barcelona</p>
+            </div>
+            <div class="author-card">
+                <div class="author-avatar">👨‍🎓</div>
+                <h3 class="author-name">Dr. José Morales</h3>
+                <p>Universidad de Buenos Aires</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSMEDIA -->
+    <section class="transmedia" id="transmedia">
+        <div class="section-header">
+            <span class="section-tag">Experiencias Multimedia</span>
+            <h2 class="section-title">ECOSISTEMA TRANSMEDIA</h2>
+        </div>
+        
+        <div class="transmedia-grid">
+            <div class="media-card">
+                <div class="media-icon">🎧</div>
+                <h3 class="media-title">Podcasts</h3>
+                <p class="media-desc">Conversaciones con investigadores educativos</p>
+            </div>
+            <div class="media-card">
+                <div class="media-icon">🎬</div>
+                <h3 class="media-title">Videos</h3>
+                <p class="media-desc">Documentales sobre innovación educativa</p>
+            </div>
+            <div class="media-card">
+                <div class="media-icon">📊</div>
+                <h3 class="media-title">Infografías</h3>
+                <p class="media-desc">Visualizaciones de datos educativos</p>
+            </div>
+            <div class="media-card">
+                <div class="media-icon">🎮</div>
+                <h3 class="media-title">Interactividad</h3>
+                <p class="media-desc">Artículos con experiencias inmersivas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTUALIDAD -->
+    <section class="actualidad" id="actualidad">
+        <div class="section-header">
+            <span class="section-tag">Últimas Noticias</span>
+            <h2 class="section-title">ACTUALIDAD</h2>
+        </div>
+        
+        <div class="news-list">
+            <div class="news-item">
+                <div class="news-content">
+                    <h3>Convocatoria abierta para el número 45</h3>
+                    <span class="news-date">15 de marzo, 2026</span>
+                </div>
+                <span class="news-category">Convocatorias</span>
+            </div>
+            <div class="news-item">
+                <div class="news-content">
+                    <h3>Nuevo convenio con la Red Iberoamericana</h3>
+                    <span class="news-date">12 de marzo, 2026</span>
+                </div>
+                <span class="news-category">Institucional</span>
+            </div>
+            <div class="news-item">
+                <div class="news-content">
+                    <h3>Premio a la mejor investigación 2025</h3>
+                    <span class="news-date">8 de marzo, 2026</span>
+                </div>
+                <span class="news-category">Premios</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>CONTÁCTANOS</h2>
+            <p>¿Tienes una investigación que compartir?</p>
+            <div class="footer-links">
+                <a href="mailto:editor@rpp.edu.mx">editor@rpp.edu.mx</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 Revista Panamericana de Pedagogía
+            </div>
+        </div>
+    </footer>
+
+    <!-- Progress Ring -->
+    <svg class="progress-ring" viewBox="0 0 60 60">
+        <circle class="bg" cx="30" cy="30" r="25"/>
+        <circle class="progress" cx="30" cy="30" r="25"/>
+    </svg>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // ========================================
+        // CURSOR MARCAINO
+        // ========================================
+        const cursor = document.querySelector('.cursor-m');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let cursorX = mouseX;
+        let cursorY = mouseY;
+        let velocityX = 0;
+        let velocityY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            const springStrength = 0.08;
+            const friction = 0.85;
+            
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+            
+            velocityX += dx * springStrength;
+            velocityY += dy * springStrength;
+            
+            velocityX *= friction;
+            velocityY *= friction;
+            
+            cursorX += velocityX;
+            cursorY += velocityY;
+            
+            const rotation = velocityX * 2;
+            const scale = 1 - Math.min(Math.abs(velocityX) * 0.002, 0.3);
+            
+            cursor.style.left = cursorX - 32 + 'px';
+            cursor.style.top = cursorY - 32 + 'px';
+            cursor.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        
+        if (window.innerWidth > 768) {
+            animateCursor();
+        }
+        
+        // Hover effects
+        document.querySelectorAll('a, button, .article-card, .author-card, .media-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(cursor, { scale: 1.3, duration: 0.3 });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(cursor, { scale: 1, duration: 0.3 });
+            });
+        });
+        
+        // ========================================
+        // HERO - EFECTO PORTAL
+        // ========================================
+        const heroContainer = document.querySelector('.hero-container');
+        const videoContainer = document.getElementById('videoContainer');
+        const lavaLayers = document.querySelectorAll('[data-lava]');
+        const progressCircle = document.querySelector('.progress');
+        
+        gsap.to(videoContainer, {
+            scrollTrigger: {
+                trigger: heroContainer,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.5,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const offset = 157 - (157 * progress);
+                    progressCircle.style.strokeDashoffset = offset;
+                    const clipSize = progress * 150;
+                    videoContainer.style.clipPath = `circle(${clipSize}% at 50% 50%)`;
+                }
+            }
+        });
+        
+        lavaLayers.forEach((layer, index) => {
+            gsap.to(layer, {
+                scrollTrigger: {
+                    trigger: heroContainer,
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: true
+                },
+                scale: 3 + (index * 0.5),
+                opacity: 0,
+                rotation: index % 2 === 0 ? 45 : -45
+            });
+        });
+        
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: heroContainer,
+                start: 'top top',
+                end: '50% top',
+                scrub: true
+            },
+            opacity: 0,
+            y: -100,
+            scale: 0.8
+        });
+        
+        gsap.to('.scroll-hint', {
+            scrollTrigger: {
+                trigger: heroContainer,
+                start: 'top top',
+                end: '20% top',
+                scrub: true
+            },
+            opacity: 0
+        });
+        
+        // Hero title animation
+        const heroTitle = document.getElementById('heroTitle');
+        const text = heroTitle.textContent;
+        heroTitle.innerHTML = '';
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            heroTitle.appendChild(span);
+        });
+        
+        gsap.to('.hero-title .char', {
+            y: '0%',
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.05,
+            ease: 'elastic.out(1, 0.5)',
+            delay: 0.5
+        });
+        
+        gsap.to('.hero-subtitle', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+            delay: 1.5
+        });
+        
+        gsap.to('.scroll-hint', {
+            opacity: 1,
+            duration: 1,
+            delay: 2.5
+        });
+        
+        // Lava mouse follow
+        const heroSticky = document.querySelector('.hero-sticky');
+        heroSticky.addEventListener('mousemove', (e) => {
+            const rect = heroSticky.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+            const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+            
+            lavaLayers.forEach((layer, index) => {
+                const depth = (index + 1) * 15;
+                gsap.to(layer, {
+                    x: x * depth,
+                    y: y * depth,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+        });
+        
+        // ========================================
+        // TEXTO QUE SE RELLENA
+        // ========================================
+        const textReveal = document.getElementById('textReveal');
+        const words = textReveal.textContent.trim().split(' ');
+        textReveal.innerHTML = '';
+        words.forEach(word => {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = word;
+            textReveal.appendChild(span);
+            textReveal.appendChild(document.createTextNode(' '));
+        });
+        
+        document.querySelectorAll('.text-reveal .word').forEach((word) => {
+            ScrollTrigger.create({
+                trigger: word,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                onEnter: () => word.classList.add('visible'),
+                onLeave: () => word.classList.remove('visible'),
+                onEnterBack: () => word.classList.add('visible'),
+                onLeaveBack: () => word.classList.remove('visible')
+            });
+        });
+        
+        // ========================================
+        // MONTAÑAS PARALLAX
+        // ========================================
+        const mountainLayers = document.querySelectorAll('.mountain-layer');
+        const mountainsContainer = document.querySelector('.mountains-container');
+        const mountainGlow = document.querySelector('.mountain-glow');
+        const mountainsTitle = document.querySelector('.mountains-title');
+        const mountainsSubtitle = document.querySelector('.mountains-subtitle');
+        
+        mountainLayers.forEach((layer, index) => {
+            const scaleStart = 1 + (index * 0.1);
+            const scaleEnd = 1.5 + (index * 0.2);
+            const yStart = index * 50;
+            const yEnd = -100 - (index * 50);
+            
+            gsap.fromTo(layer, 
+                { y: yStart, scale: scaleStart, opacity: index === 0 ? 0.5 : 1 },
+                {
+                    y: yEnd,
+                    scale: scaleEnd,
+                    opacity: index === 4 ? 0.3 : 1,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: mountainsContainer,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                }
+            );
+        });
+        
+        gsap.to(mountainGlow, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: '30% bottom',
+                end: '50% center',
+                scrub: true
+            }
+        });
+        
+        gsap.to(mountainGlow, {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: '60% center',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+        
+        gsap.to(mountainsTitle, {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: 'top 80%',
+                end: '30% center',
+                scrub: true
+            }
+        });
+        
+        gsap.to(mountainsTitle, {
+            opacity: 0,
+            y: -100,
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: '60% center',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+        
+        gsap.to(mountainsSubtitle, {
+            opacity: 0.8,
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: '20% 80%',
+                end: '40% center',
+                scrub: true
+            }
+        });
+        
+        gsap.to(mountainsSubtitle, {
+            opacity: 0,
+            letterSpacing: '2em',
+            scrollTrigger: {
+                trigger: mountainsContainer,
+                start: '50% center',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+        
+        // ========================================
+        // ANIMACIONES SECCIONES
+        // ========================================
+        document.querySelectorAll('.article-card').forEach((card, i) => {
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 85%',
+                onEnter: () => card.classList.add('visible')
+            });
+        });
+        
+        document.querySelectorAll('.author-card').forEach((card, i) => {
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 85%',
+                onEnter: () => {
+                    setTimeout(() => card.classList.add('visible'), i * 100);
+                }
+            });
+        });
+        
+        document.querySelectorAll('.media-card').forEach((card, i) => {
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 85%',
+                onEnter: () => {
+                    setTimeout(() => card.classList.add('visible'), i * 150);
+                }
+            });
+        });
+        
+        document.querySelectorAll('.news-item').forEach((item, i) => {
+            ScrollTrigger.create({
+                trigger: item,
+                start: 'top 85%',
+                onEnter: () => {
+                    setTimeout(() => item.classList.add('visible'), i * 100);
+                }
+            });
+        });
+        
+        // Ocultar progress ring
+        ScrollTrigger.create({
+            trigger: heroContainer,
+            start: 'bottom bottom',
+            onLeave: () => {
+                gsap.to('.progress-ring', { opacity: 0, scale: 0.8, duration: 0.3 });
+            },
+            onEnterBack: () => {
+                gsap.to('.progress-ring', { opacity: 1, scale: 1, duration: 0.3 });
+            }
+        });
+    </script>
+</body>
+</html>

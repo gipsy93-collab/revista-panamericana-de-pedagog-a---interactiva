@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Ético: IA en Salud</title>
+    <link rel="icon" href="/etica-ia-salud/favicon.ico" type="image/x-icon" sizes="16x16"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            touch-action: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background: #020617;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #game-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            max-height: 900px;
+            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            padding: 20px;
+        }
+
+        .hud-panel {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.95);
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            font-size: 14px;
+        }
+
+        .hud-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #60a5fa;
+            margin-bottom: 5px;
+        }
+
+        .hud-subtext {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .modal-subtitle {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .win-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .win-desc {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .top-right {
+            top: 20px;
+            right: 20px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .big-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        }
+
+        .start-hint {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(245, 158, 11, 0.9);
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            pointer-events: none;
+            animation: pulse 2s infinite;
+            z-index: 50;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+        }
+
+        #info-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 3px solid #f59e0b;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 90%;
+            width: 500px;
+            color: white;
+            display: none;
+            pointer-events: auto;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.9);
+            z-index: 100;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fbbf24;
+            line-height: 1.2;
+        }
+
+        .modal-content {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: rgba(59, 130, 246, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #60a5fa;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .urgent {
+            color: #ef4444 !important;
+        }
+
+        .close-btn {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .win-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            display: none;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #10b981;
+        }
+
+        .win-screen.active {
+            display: block;
+        }
+
+        .trophy {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div id="game-wrapper">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="ui-layer">
+            <div class="hud-panel top-left">
+                <div class="hud-label">Objetivos</div>
+                <div class="big-number" id="targets-left">10</div>
+                <div class="hud-subtext">Dimensiones por impactar</div>
+            </div>
+
+            <div class="hud-panel top-right">
+                <div class="hud-label">Intentos</div>
+                <div class="big-number urgent" id="attempts-left">5</div>
+                <div class="hud-subtext">Municiones</div>
+            </div>
+        </div>
+
+        <div class="start-hint" id="start-hint">
+            👇 TOCA AQUÍ ABAJO Y JALA HACIA ARRIBA PARA DISPARAR
+        </div>
+
+        <div id="info-modal">
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon">📊</div>
+                <div>
+                    <div class="modal-title" id="modal-title">Dimensión</div>
+                    <div class="modal-subtitle">Hernández-Burrola &amp; Parra-Acosta (2026)</div>
+                </div>
+            </div>
+            <div class="modal-content" id="modal-content"></div>
+            <div class="stat-grid" id="modal-stats"></div>
+            <button class="close-btn" onclick="nextShot()">Continuar</button>
+        </div>
+
+        <div class="win-screen" id="win-screen">
+            <div class="trophy">🏆</div>
+            <h1 class="win-title">¡Validación Completa!</h1>
+            <p class="win-desc">
+                Impactaste todas las dimensiones del instrumento
+            </p>
+            <button class="close-btn" onclick="location.reload()">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        function resize() {
+            const wrapper = document.getElementById('game-wrapper');
+            width = wrapper.clientWidth;
+            height = wrapper.clientHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initPositions();
+        }
+        window.addEventListener('resize', resize);
+        
+        // Game State
+        let gameState = 'aiming'; // aiming, dragging, flying, modal, ended
+        let attempts = 5;
+        let currentTarget = null;
+        
+        // Slingshot (La Cauchera) - Posicionada abajo y muy visible
+        const slingshot = {
+            x: 0,
+            y: 0,
+            baseY: 0, // Será height - 100
+            radius: 40,
+            color: '#3b82f6',
+            bandColor: '#f59e0b'
+        };
+        
+        // Projectile
+        const projectile = {
+            x: 0,
+            y: 0,
+            vx: 0,
+            vy: 0,
+            radius: 15,
+            active: false,
+            trail: [],
+            ready: true
+        };
+
+        // Input
+        const input = {
+            isDragging: false,
+            startX: 0,
+            startY: 0,
+            currentX: 0,
+            currentY: 0,
+            maxPull: 200
+        };
+
+        // Las 10 Dimensiones del artículo
+        const dimensions = [
+            { id: 1, icon: '📱', title: 'Frecuencia y Acceso', items: 5, desc: 'Evalúa uso semanal de IA, dispositivos (PC/celular) e integración en métodos de estudio.', hit: false, x: 0, y: 0, vx: 2, vy: 1.5, radius: 35, color: '#3b82f6' },
+            { id: 2, icon: '🤖', title: 'Tipo de Herramientas', items: 5, desc: 'ChatGPT, Gemini, DeepSeek, generadores de texto y tutores virtuales.', hit: false, x: 0, y: 0, vx: -1.8, vy: 2.2, radius: 35, color: '#8b5cf6' },
+            { id: 3, icon: '📚', title: 'Aplicabilidad Académica', items: 6, desc: 'Resumir artículos, resolver ejercicios prácticos, traducir textos y buscar referencias.', hit: false, x: 0, y: 0, vx: 2.5, vy: -1.5, radius: 35, color: '#06b6d4' },
+            { id: 4, icon: '📈', title: 'Rendimiento Cuantitativo', items: 4, desc: 'Impacto percibido en calificaciones, aprobaciones y exámenes de opción múltiple.', hit: false, x: 0, y: 0, vx: -2, vy: -2, radius: 35, color: '#10b981' },
+            { id: 5, icon: '⏰', title: 'Cumplimiento y Responsabilidad', items: 5, desc: 'Puntualidad, asistencia, organización del tiempo y revisión de rúbricas.', hit: false, x: 0, y: 0, vx: 1.5, vy: 2.8, radius: 35, color: '#f59e0b' },
+            { id: 6, icon: '✨', title: 'Calidad del Trabajo', items: 5, desc: 'Originalidad, fundamentación, coherencia escrita y comprensión integral.', hit: false, x: 0, y: 0, vx: -2.8, vy: 1.2, radius: 35, color: '#ec4899' },
+            { id: 7, icon: '🛡️', title: 'Integridad Académica', items: 5, desc: 'Honestidad, autoría, declaración del uso de IA y conciencia sobre plagio.', hit: false, x: 0, y: 0, vx: 2.2, vy: -2.2, radius: 35, color: '#ef4444' },
+            { id: 8, icon: '🔒', title: 'Privacidad y Datos', items: 5, desc: 'Preocupación por términos de uso, datos personales y regulación universitaria.', hit: false, x: 0, y: 0, vx: -1.5, vy: -2.5, radius: 35, color: '#6366f1' },
+            { id: 9, icon: '⚖️', title: 'Sesgos y Equidad', items: 5, desc: 'Consciencia de sesgos algorítmicos, inexactitudes y brechas de acceso.', hit: false, x: 0, y: 0, vx: 2.8, vy: 0.8, radius: 35, color: '#14b8a6' },
+            { id: 10, icon: '🎓', title: 'Responsabilidad Profesional', items: 5, desc: 'Compromiso ético como futuro profesional de la salud. IA como herramienta, no reemplazo.', hit: false, x: 0, y: 0, vx: -2.2, vy: -1.8, radius: 35, color: '#f97316' }
+        ];
+
+        function initPositions() {
+            slingshot.x = width / 2;
+            slingshot.baseY = height - 120;
+            slingshot.y = slingshot.baseY;
+            
+            resetProjectile();
+            
+            // Posiciones iniciales de dimensiones distribuidas en el área superior/media
+            const cols = 5;
+            const rows = 2;
+            const cellWidth = width / cols;
+            const cellHeight = (height * 0.6) / rows;
+            
+            dimensions.forEach((dim, i) => {
+                if (!dim.hit) {
+                    const col = i % cols;
+                    const row = Math.floor(i / cols);
+                    dim.x = cellWidth * col + cellWidth/2 + (Math.random() * 40 - 20);
+                    dim.y = 150 + cellHeight * row + (Math.random() * 40 - 20);
+                }
+            });
+        }
+
+        function resetProjectile() {
+            projectile.x = slingshot.x;
+            projectile.y = slingshot.y;
+            projectile.vx = 0;
+            projectile.vy = 0;
+            projectile.active = false;
+            projectile.ready = true;
+            projectile.trail = [];
+            gameState = 'aiming';
+        }
+
+        // Input handling
+        function getPos(e) {
+            const rect = canvas.getBoundingClientRect();
+            if (e.touches && e.touches.length > 0) {
+                return { 
+                    x: e.touches[0].clientX - rect.left, 
+                    y: e.touches[0].clientY - rect.top 
+                };
+            }
+            return { 
+                x: e.clientX - rect.left, 
+                y: e.clientY - rect.top 
+            };
+        }
+
+        function onStart(e) {
+            if (gameState !== 'aiming' || !projectile.ready || attempts <= 0) return;
+            
+            const pos = getPos(e);
+            const dist = Math.hypot(pos.x - slingshot.x, pos.y - slingshot.y);
+            
+            // Zona de interacción más grande (100px radio)
+            if (dist < 100) {
+                input.isDragging = true;
+                input.startX = slingshot.x;
+                input.startY = slingshot.y;
+                input.currentX = pos.x;
+                input.currentY = pos.y;
+                gameState = 'dragging';
+                document.getElementById('start-hint').style.display = 'none';
+                e.preventDefault();
+            }
+        }
+
+        function onMove(e) {
+            if (!input.isDragging) return;
+            e.preventDefault();
+            
+            const pos = getPos(e);
+            input.currentX = pos.x;
+            input.currentY = pos.y;
+            
+            // Limitar el jalón
+            const dx = input.startX - input.currentX;
+            const dy = input.startY - input.currentY;
+            const pull = Math.hypot(dx, dy);
+            
+            if (pull > input.maxPull) {
+                const angle = Math.atan2(dy, dx);
+                input.currentX = input.startX - Math.cos(angle) * input.maxPull;
+                input.currentY = input.startY - Math.sin(angle) * input.maxPull;
+            }
+        }
+
+        function onEnd(e) {
+            if (!input.isDragging) return;
+            input.isDragging = false;
+            
+            const dx = input.startX - input.currentX;
+            const dy = input.startY - input.currentY;
+            const pull = Math.hypot(dx, dy);
+            
+            if (pull > 30) {
+                // Disparar!
+                const power = pull / 8; // Factor de potencia
+                const angle = Math.atan2(dy, dx);
+                
+                projectile.vx = Math.cos(angle) * power;
+                projectile.vy = Math.sin(angle) * power;
+                projectile.active = true;
+                projectile.ready = false;
+                gameState = 'flying';
+                attempts--;
+                document.getElementById('attempts-left').textContent = attempts;
+            } else {
+                // Cancelar si no jaló suficiente
+                gameState = 'aiming';
+            }
+        }
+
+        canvas.addEventListener('mousedown', onStart);
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('mouseup', onEnd);
+
+        canvas.addEventListener('touchstart', onStart, {passive: false});
+        window.addEventListener('touchmove', onMove, {passive: false});
+        window.addEventListener('touchend', onEnd);
+
+        function update() {
+            if (gameState === 'modal' || gameState === 'ended') return;
+
+            // Mover dimensiones (rebotan en bordes)
+            dimensions.forEach(dim => {
+                if (dim.hit) return;
+                
+                dim.x += dim.vx;
+                dim.y += dim.vy;
+                
+                if (dim.x < dim.radius || dim.x > width - dim.radius) {
+                    dim.vx *= -1;
+                    dim.x = Math.max(dim.radius, Math.min(width - dim.radius, dim.x));
+                }
+                if (dim.y < dim.radius || dim.y > height - 200) { // No bajan tanto
+                    dim.vy *= -1;
+                    dim.y = Math.max(dim.radius, Math.min(height - 200, dim.y));
+                }
+            });
+
+            // Actualizar proyectil
+            if (projectile.active) {
+                projectile.x += projectile.vx;
+                projectile.y += projectile.vy;
+                
+                // Trail
+                projectile.trail.push({x: projectile.x, y: projectile.y, life: 1});
+                projectile.trail.forEach(t => t.life -= 0.03);
+                projectile.trail = projectile.trail.filter(t => t.life > 0);
+                
+                // Colisiones
+                let hitSomething = false;
+                dimensions.forEach(dim => {
+                    if (dim.hit) return;
+                    
+                    const dist = Math.hypot(projectile.x - dim.x, projectile.y - dim.y);
+                    if (dist < projectile.radius + dim.radius) {
+                        dim.hit = true;
+                        hitSomething = true;
+                        currentTarget = dim;
+                        showModal(dim);
+                        gameState = 'modal';
+                        
+                        // Efecto de partículas (simplificado)
+                        createExplosion(dim.x, dim.y, dim.color);
+                    }
+                });
+                
+                // Si sale de pantalla o se detiene
+                if (!hitSomething && (
+                    projectile.x < -50 || projectile.x > width + 50 || 
+                    projectile.y < -50 || projectile.y > height + 50 ||
+                    (Math.abs(projectile.vx) < 0.1 && Math.abs(projectile.vy) < 0.1)
+                )) {
+                    setTimeout(() => {
+                        if (attempts > 0) {
+                            resetProjectile();
+                        } else {
+                            // Game over o recargar
+                            attempts = 5; // Recargar infinito para demo
+                            document.getElementById('attempts-left').textContent = attempts;
+                            resetProjectile();
+                        }
+                    }, 500);
+                }
+            }
+
+            // Contador
+            const remaining = dimensions.filter(d => !d.hit).length;
+            document.getElementById('targets-left').textContent = remaining;
+            
+            if (remaining === 0) {
+                gameState = 'ended';
+                setTimeout(() => {
+                    document.getElementById('win-screen').classList.add('active');
+                }, 1000);
+            }
+        }
+
+        function createExplosion(x, y, color) {
+            // Efecto visual simple
+            for (let i = 0; i < 10; i++) {
+                // Aquí podríamos agregar partículas
+            }
+        }
+
+        function showModal(dim) {
+            const modal = document.getElementById('info-modal');
+            document.getElementById('modal-icon').textContent = dim.icon;
+            document.getElementById('modal-title').textContent = dim.title;
+            document.getElementById('modal-content').textContent = dim.desc;
+            
+            const statsDiv = document.getElementById('modal-stats');
+            statsDiv.innerHTML = `
+                <div class="stat-box">
+                    <span class="stat-number">${dim.items}</span>
+                    <span class="stat-label">Ítems Likert</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">${dim.id}/10</span>
+                    <span class="stat-label">Dimensión</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">1-5</span>
+                    <span class="stat-label">Rango</span>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        window.nextShot = function() {
+            document.getElementById('info-modal').style.display = 'none';
+            resetProjectile();
+        };
+
+        function draw() {
+            ctx.fillStyle = '#020617';
+            ctx.fillRect(0, 0, width, height);
+
+            // Grid de fondo
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.1)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < width; x += 50) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < height; y += 50) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+
+            // Línea de "no pasar" para las dimensiones
+            ctx.strokeStyle = 'rgba(239, 68, 68, 0.3)';
+            ctx.setLineDash([10, 10]);
+            ctx.beginPath();
+            ctx.moveTo(0, height - 200);
+            ctx.lineTo(width, height - 200);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Dibujar trayectoria si está jalando
+            if (input.isDragging && gameState === 'dragging') {
+                const dx = input.startX - input.currentX;
+                const dy = input.startY - input.currentY;
+                const pull = Math.hypot(dx, dy);
+                const power = pull / 8;
+                const angle = Math.atan2(dy, dx);
+                
+                // Línea de puntería punteada
+                ctx.save();
+                ctx.setLineDash([15, 15]);
+                ctx.strokeStyle = 'rgba(251, 191, 36, 0.6)';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(slingshot.x, slingshot.y);
+                
+                let simX = slingshot.x;
+                let simY = slingshot.y;
+                let simVx = Math.cos(angle) * power;
+                let simVy = Math.sin(angle) * power;
+                
+                for (let i = 0; i < 20; i++) {
+                    simX += simVx;
+                    simY += simVy;
+                    ctx.lineTo(simX, simY);
+                }
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // Dibujar resortera (LA CAUCHERA)
+            const sx = slingshot.x;
+            const sy = slingshot.y;
+            
+            // Base de la resortera (triángulo o arco)
+            ctx.fillStyle = '#475569';
+            ctx.beginPath();
+            ctx.moveTo(sx - 30, sy + 40);
+            ctx.lineTo(sx + 30, sy + 40);
+            ctx.lineTo(sx, sy - 10);
+            ctx.fill();
+            
+            // Círculo central grande
+            ctx.fillStyle = '#1e293b';
+            ctx.strokeStyle = '#3b82f6';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.arc(sx, sy, slingshot.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            
+            // Indicador de "agarre"
+            ctx.fillStyle = input.isDragging ? '#f59e0b' : '#60a5fa';
+            ctx.beginPath();
+            ctx.arc(sx, sy, 20, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Anillo pulsante si está listo para disparar
+            if (gameState === 'aiming' && !input.isDragging && attempts > 0) {
+                const pulse = (Date.now() % 1000) / 1000;
+                const radius = slingshot.radius + 10 + pulse * 10;
+                ctx.strokeStyle = `rgba(59, 130, 246, ${1 - pulse})`;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.arc(sx, sy, radius, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Ligas de la resortera (líneas elásticas)
+            if (input.isDragging) {
+                ctx.strokeStyle = '#f59e0b';
+                ctx.lineWidth = 6;
+                ctx.lineCap = 'round';
+                
+                // Lado izquierdo
+                ctx.beginPath();
+                ctx.moveTo(sx - 25, sy);
+                ctx.lineTo(input.currentX, input.currentY);
+                ctx.stroke();
+                
+                // Lado derecho
+                ctx.beginPath();
+                ctx.moveTo(sx + 25, sy);
+                ctx.lineTo(input.currentX, input.currentY);
+                ctx.stroke();
+                
+                // La bola siendo jalada
+                ctx.fillStyle = '#fbbf24';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#fbbf24';
+                ctx.beginPath();
+                ctx.arc(input.currentX, input.currentY, projectile.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            } else {
+                // Ligas relajadas
+                ctx.strokeStyle = '#64748b';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(sx - 25, sy);
+                ctx.quadraticCurveTo(sx - 25, sy + 30, sx - 10, sy + 40);
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.moveTo(sx + 25, sy);
+                ctx.quadraticCurveTo(sx + 25, sy + 30, sx + 10, sy + 40);
+                ctx.stroke();
+                
+                // Bola en reposo
+                if (projectile.ready) {
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.beginPath();
+                    ctx.arc(sx, sy, projectile.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Dibujar proyectil volando
+            if (projectile.active) {
+                // Trail
+                projectile.trail.forEach((t, i) => {
+                    ctx.fillStyle = `rgba(251, 191, 36, ${t.life})`;
+                    ctx.beginPath();
+                    ctx.arc(t.x, t.y, projectile.radius * 0.8, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                
+                // Proyectil
+                ctx.fillStyle = '#fbbf24';
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#f59e0b';
+                ctx.beginPath();
+                ctx.arc(projectile.x, projectile.y, projectile.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            // Dibujar dimensiones (objetivos)
+            dimensions.forEach(dim => {
+                if (dim.hit) return;
+                
+                // Brillo exterior
+                const grad = ctx.createRadialGradient(dim.x, dim.y, 5, dim.x, dim.y, dim.radius * 1.5);
+                grad.addColorStop(0, dim.color);
+                grad.addColorStop(1, 'transparent');
+                ctx.fillStyle = grad;
+                ctx.fillRect(dim.x - 60, dim.y - 60, 120, 120);
+                
+                // Círculo principal
+                ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+                ctx.strokeStyle = dim.color;
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.arc(dim.x, dim.y, dim.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+                
+                // Icono
+                ctx.font = '28px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(dim.icon, dim.x, dim.y - 5);
+                
+                // Número pequeño debajo
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 12px Arial';
+                ctx.fillText(`#${dim.id}`, dim.x, dim.y + 20);
+            });
+        }
+
+        function loop() {
+            update();
+            draw();
+            requestAnimationFrame(loop);
+        }
+
+        resize();
+        loop();
+    </script>
+</body>
+</html>

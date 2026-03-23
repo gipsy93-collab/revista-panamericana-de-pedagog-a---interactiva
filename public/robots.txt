@@ -1,0 +1,23 @@
+# robots.txt para RPP Interactivo
+# Revista Panamericana de Pedagogía
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rpp-interactivo.udg.mx/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 10
+
+# Bloquear rutas de administración o privadas (si existieran)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Permitir assets estáticos
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.ico$

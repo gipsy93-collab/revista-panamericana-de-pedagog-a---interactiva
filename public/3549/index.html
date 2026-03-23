@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teorías Pedagógicas en la NEM | Reportaje Interactivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <!-- HEADER / HERO -->
+  <header class="hero section-dark">
+    <div class="pattern-bg p-dots"></div>
+    <div class="wrapper">
+      <div class="metadata-tags">
+        <span class="tag">#Revisión Documental</span>
+        <span class="tag">#Nueva Escuela Mexicana</span>
+        <span class="tag">#Arqueología Pedagógica</span>
+      </div>
+      <h1 class="hero-title">La disrupción con<br><span>250 años de antigüedad</span></h1>
+      <p class="hero-subtitle">Teorías pedagógicas en la Nueva Escuela Mexicana. Apuntes para la educación primaria.</p>
+      
+      <div class="authors">
+        <p>Un estudio de <strong>Carlos-Antonio Quintero-Macías</strong> y <strong>Carmen-Citlalli Bautista-Villalaz</strong></p>
+        <p class="journal">Universidad de Guadalajara | Revista Panamericana de Pedagogía, 2026</p>
+      </div>
+      
+      <div class="scroll-prompt">
+        <p>Descubre el hallazgo científico</p>
+        <div class="arrow glow">⬇</div>
+      </div>
+    </div>
+    <div class="wave wave-bottom"></div>
+  </header>
+
+  <!-- ACTO 1: CONTEXTO Y LA PROMESA -->
+  <section class="section-light" id="contexto">
+    <div class="wrapper grid-2">
+      <div class="text-col">
+        <h2 class="section-title">El Contexto: Una promesa a 23 años</h2>
+        <p class="lead-text">Desde 2019, México implementa la Nueva Escuela Mexicana (NEM), una política pública diseñada para transformar radicalmente la educación básica del país.</p>
+        <p>Los comunicados oficiales hablan de una "disrupción educativa". Nos prometen dejar atrás la fábrica de memorización para formar ciudadanos críticos mediante 7 principios fundamentales respaldados por la constitución.</p>
+      </div>
+      
+      <!-- Lúdica/Data Viz: Los 7 principios -->
+      <div class="data-viz-container">
+        <div class="principles-orb-system">
+          <div class="center-orb">La NEM<br>(2019)</div>
+          <!-- Orbiting principles will be handled in CSS/JS -->
+          <div class="satellite p1"><span>Responsabilidad<br>Ciudadana</span></div>
+          <div class="satellite p2"><span>Aprendizaje<br>Significativo</span></div>
+          <div class="satellite p3"><span>Transformación<br>Social</span></div>
+          <div class="satellite p4"><span>Enfoque<br>Holístico</span></div>
+          <div class="satellite p5"><span>Competencias</span></div>
+          <div class="satellite p6"><span>Inclusión</span></div>
+          <div class="satellite p7"><span>Humanismo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 2: EL HALLAZGO CENTRAL (DATA VIZ + LÚDICA) -->
+  <section class="section-earth" id="hallazgo">
+    <div class="wrapper">
+      <h2 class="section-title text-center">La Paradoja del Futuro en el Pasado</h2>
+      <p class="lead-text text-center intro-narrow">Los documentos oficiales presentan estas ideas como innovación para el siglo XXI. Pero la investigación de Quintero y Bautista revela un dato incómodo: <strong>se trata de arqueología pedagógica.</strong></p>
+      
+      <!-- Interactive Timeline Game -->
+      <div class="interactive-timeline">
+        <h3 class="instructions">Arrastra los conceptos de la "NEM" hacia el verdadero año y autor en que fueron propuestos:</h3>
+        
+        <div class="timeline-game-area">
+          <!-- Draggable Items (Conceptos Clave de la SEP) -->
+          <div class="draggables-container" id="draggables">
+            <div class="drag-item" draggable="true" data-author="rousseau">
+              <strong>El niño al centro y el juego</strong>
+              <p>Pausas activas y autonomía</p>
+            </div>
+            <div class="drag-item" draggable="true" data-author="pestalozzi">
+              <strong>Enfoque Holístico</strong>
+              <p>Pensamiento, emoción y habilidad</p>
+            </div>
+            <div class="drag-item" draggable="true" data-author="dewey">
+              <strong>Aprender Haciendo</strong>
+              <p>Proyectos Comunitarios</p>
+            </div>
+            <div class="drag-item" draggable="true" data-author="freire">
+              <strong>Evaluación Formativa</strong>
+              <p>Pedagogía problematizadora</p>
+            </div>
+          </div>
+
+          <!-- Drop Zones (The Timeline) -->
+          <div class="drop-zones-container">
+            <div class="timeline-line"></div>
+            
+            <div class="drop-zone" data-author="rousseau">
+              <div class="year">1762</div>
+              <div class="author-name">J.J. Rousseau</div>
+              <div class="drop-target">Soltar aquí</div>
+            </div>
+            
+            <div class="drop-zone" data-author="pestalozzi">
+              <div class="year">1801</div>
+              <div class="author-name">J.H. Pestalozzi</div>
+              <div class="drop-target">Soltar aquí</div>
+            </div>
+            
+            <div class="drop-zone" data-author="dewey">
+              <div class="year">1897</div>
+              <div class="author-name">John Dewey</div>
+              <div class="drop-target">Soltar aquí</div>
+            </div>
+            
+            <div class="drop-zone" data-author="freire">
+              <div class="year">1968</div>
+              <div class="author-name">Paulo Freire</div>
+              <div class="drop-target">Soltar aquí</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feedback Banner -->
+        <div id="timeline-feedback" class="feedback-banner hidden">
+          <p>¡Exacto! Las metodologías de hoy son resucitaciones teóricas. "Cabeza-corazón-mano" de Pestalozzi es el actual enfoque holístico.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="wave wave-bottom-dark"></div>
+  </section>
+
+  <!-- ACTO 3: LAS FRICCIONES PEDAGÓGICAS (EL CONFLICTO) -->
+  <section class="section-dark frictiones-section" id="fricciones">
+    <div class="wrapper">
+      <div class="grid-2 reverse">
+        <div class="text-col">
+          <h2 class="section-title highlight">Las Grietas del Systema</h2>
+          <p class="lead-text">Si las ideas son buenas, ¿cuál es el problema? El estudio revela cuatro fricciones sistémicas al traducir pedagogía humanista radical a burocracia estatal.</p>
+          
+          <div class="accordion" id="frictiones-accordion">
+            <!-- Accordion items handled in JS to match Fricciones_Pedagogicas.md -->
+          </div>
+        </div>
+        
+        <div class="visual-col">
+          <!-- Visual metaphor for friction -->
+          <div class="friction-graphic">
+            <div class="gear-theoretical">Freire / Dewey<br>(Local y Libre)</div>
+            <div class="clash">⚡</div>
+            <div class="gear-bureaucratic">SEP / PLANEA<br>(Estandarizado)</div>
+          </div>
+          <p class="caption">"Freire escribía desde la práctica con comunidades populares; la SEP escribe desde la burocracia federal."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 4: CONCLUSIÓN Y CIERRE -->
+  <section class="section-light" id="conclusion">
+    <div class="pattern-bg p-paper"></div>
+    <div class="wrapper center-content">
+      <h2 class="font-classic huge-text">No faltan ideas nuevas.</h2>
+      <h2 class="font-classic huge-text accent">Falta capacidad para implementarlas.</h2>
+      
+      <div class="conclusion-box">
+        <p>El estudio de Quintero-Macías y Bautista-Villalaz nos deja una reflexión vital: reetiquetar teorías de hace siglos como "innovación" ignora por qué la Escuela Activa fracasó en su momento. Integrar TICs o manuales federales no genera disrupción si el sistema sigue colonizado por lógicas de estandarización.</p>
+        <p>La pedagogía no necesita más recetas; necesita que <strong>comprendamos nuestros linajes teóricos</strong> para poder apropiarnos de ellos en el aula.</p>
+      </div>
+      
+      <div class="cta-container">
+        <a href="../01_PDF/articulo.pdf" target="_blank" rel="noopener noreferrer" class="btn primary">Descargar PDF del Artículo Original</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

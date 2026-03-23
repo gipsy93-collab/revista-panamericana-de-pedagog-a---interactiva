@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, X, ExternalLink, Activity, BookOpen, Quote, TrendingUp, Brain, GraduationCap, ChevronRight } from 'lucide-react';
-import { WavyDivider } from './Common';
 
 // Articles con formato POSTER/PORTADA DE REVISTA
 const ARTICLES_DATA = [
@@ -171,8 +170,6 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
           })}
         </div>
       </div>
-
-      <WavyDivider color="bg-zine-black" />
 
       {/* Modal simplificado */}
       <AnimatePresence>

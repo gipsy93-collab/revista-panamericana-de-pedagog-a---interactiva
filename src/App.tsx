@@ -12,6 +12,13 @@ import { Footer } from './components/Footer';
 import { RocketCursor } from './components/RocketCursor';
 import { StatusBar } from './components/StatusBar';
 import { PageLoader } from './components/PageLoader';
+import { 
+  HeroToArticulosWave, 
+  ArticulosToSemilleroWave, 
+  SemilleroToTransmediaWave,
+  TransmediaToBlogWave,
+  BlogToFooterWave
+} from './components/OrganicWaveDivider';
 
 // Components cargados lazy (code splitting por secciones)
 const ArticulosInteractivos = lazy(() => import('./components/ArticulosInteractivos'));
@@ -159,6 +166,8 @@ export default function App() {
               <Hero onExplore={() => scrollToSection(1)} />
             </div>
 
+            <HeroToArticulosWave />
+
             <div ref={sectionRefs[1]} id="articulos">
               <Suspense fallback={<PageLoader />}>
                 <ArticulosInteractivos 
@@ -169,11 +178,15 @@ export default function App() {
               </Suspense>
             </div>
 
+            <ArticulosToSemilleroWave />
+
             <div ref={sectionRefs[2]} id="semillero">
               <Suspense fallback={<PageLoader />}>
                 <SemilleroAutores />
               </Suspense>
             </div>
+
+            <SemilleroToTransmediaWave />
 
             <div ref={sectionRefs[4]} id="transmedia">
               <Suspense fallback={<PageLoader />}>
@@ -181,11 +194,15 @@ export default function App() {
               </Suspense>
             </div>
 
+            <TransmediaToBlogWave />
+
             <div ref={sectionRefs[5]} id="blog">
               <Suspense fallback={<PageLoader />}>
                 <BlogSection />
               </Suspense>
             </div>
+
+            <BlogToFooterWave />
           </main>
 
           <div ref={sectionRefs[6]} id="contacto">

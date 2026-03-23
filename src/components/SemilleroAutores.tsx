@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import gsap from 'gsap';
 import { Users, Stars, GraduationCap, School } from 'lucide-react';
 
@@ -14,26 +14,31 @@ const authors = [
 export default function SemilleroAutores() {
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   useEffect(() => {
     if (!orbitRef.current) return;
-    gsap.to(orbitRef.current, {
-      rotation: 360,
+    
+    // Animación continua con GSAP solamente
+    const tl = gsap.to(orbitRef.current, {
+      rotation: "+=360",
       duration: 60,
       repeat: -1,
       ease: "none"
     });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
     <section ref={containerRef} className="bg-[#e81e61] py-48 px-6 md:px-12 lg:px-24 overflow-hidden relative selection:bg-[#fccb06] selection:text-black">
+      <style>{`
+        @keyframes counterRotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(-360deg); }
+        }
+      `}</style>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#ff6b9d]/30 blur-[150px] rounded-full mix-blend-screen" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#fccb06]/20 blur-[150px] rounded-full mix-blend-screen" />
       
@@ -83,7 +88,6 @@ export default function SemilleroAutores() {
 
             <motion.div 
                ref={orbitRef}
-               style={{ rotate }}
                className="absolute w-[450px] h-[450px] md:w-[700px] md:h-[700px] rounded-full border border-white/20 flex items-center justify-center"
             >
                {authors.map((author, i) => {
@@ -91,11 +95,13 @@ export default function SemilleroAutores() {
                  const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 200 : 350;
                  const x = Math.cos(angle) * radius;
                  const y = Math.sin(angle) * radius;
-                 const counterRotate = useTransform(rotate, r => -r);
                  
                  return (
                    <motion.div key={author.name} className="absolute" style={{ x, y }}>
-                     <motion.div style={{ rotate: counterRotate }}>
+                     <motion.div style={{ 
+                       animation: 'counterRotate 60s linear infinite',
+                       transformOrigin: 'center center'
+                     }}>
                        <div className="group/item relative flex flex-col items-center">
                          <div className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white bg-black overflow-hidden shadow-[8px_8px_0_#fccb06] group-hover/item:shadow-[8px_8px_0_#fff] transition-all cursor-pointer">
                            <img 

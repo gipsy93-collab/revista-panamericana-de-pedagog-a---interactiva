@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { BookOpen, Clock, ArrowUpRight, Feather, Eye, MessageCircle, ChevronRight } from 'lucide-react';
-import { WavyDivider } from './Common';
 
 const BLOG_POSTS = [
   { 
@@ -159,9 +158,6 @@ export default function BlogSection() {
         </div>
       </div>
 
-      <div className="mt-48">
-        <WavyDivider color="bg-[#fccb06]" />
-      </div>
     </section>
   );
 }

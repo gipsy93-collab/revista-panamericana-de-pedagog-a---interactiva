@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Play, Mic, FileText, ChevronRight, Globe } from 'lucide-react';
-import { WavyDivider } from './Common';
 
 const TRANSMEDIA_PROJECTS = [
   {
@@ -160,9 +159,6 @@ export default function Transmedia() {
         </div>
       </div>
 
-      <div className="mt-48">
-        <WavyDivider color="bg-zine-black" />
-      </div>
     </section>
   );
 };

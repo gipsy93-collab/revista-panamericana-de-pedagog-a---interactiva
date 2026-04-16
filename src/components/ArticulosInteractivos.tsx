@@ -1,229 +1,253 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, X, ExternalLink, Activity, BookOpen, Quote, TrendingUp, Brain, GraduationCap, ChevronRight } from 'lucide-react';
+import { 
+  Sparkles, 
+  Search, 
+  ExternalLink, 
+  TrendingUp, 
+  ChevronRight, 
+  BookMarked,
+  X
+} from 'lucide-react';
+import { loadArticles, ICON_MAP, type ArticleData } from '../lib/contentLoader';
+import { useLanguage } from '../LanguageContext';
 
-// Articles con formato POSTER/PORTADA DE REVISTA
-const ARTICLES_DATA = [
-  {
-    id: 'etica-ia',
-    title: 'ÉTICA E IA',
-    subtitle: 'Inteligencia Artificial en Estudiantes de Salud',
-    author: 'O. Pérez-Duarte & C. Bautista-Villalaz',
-    date: 'Enero 2026',
-    tag: 'Salud & IA',
-    metric: 92,
-    volume: 'Vol. 42',
-    abstract: 'Investigación basada en el Principio de Pareto (80/20) para identificar los factores críticos que influyen en la percepción ética de la IA en estudiantes de medicina.',
-    doi: '10.21134/rpcp.v2026i1.3524',
-    interactUrl: '/etica-ia-salud/index.html',
-    icon: Brain,
-    color: 'bg-[#0f3896]',
-    text: 'text-white',
-    accent: '#fccb06'
-  },
-  {
-    id: '3549',
-    title: 'NEM',
-    subtitle: 'Teorías Pedagógicas en la Nueva Escuela Mexicana',
-    author: 'C.A. Quintero-Macías & C. Bautista-Villalaz',
-    date: 'Enero 2026',
-    tag: 'Arqueología Pedagógica',
-    metric: 88,
-    volume: 'Vol. 42',
-    abstract: 'Análisis crítico sobre cómo la NEM retoma principios pedagógicos de Rousseau, Pestalozzi, Dewey y Freire como innovación radical.',
-    doi: '10.21134/rpcp.v2026i1.3549',
-    interactUrl: '/3549/index.html',
-    icon: GraduationCap,
-    color: 'bg-[#e81e61]',
-    text: 'text-white',
-    accent: '#fccb06'
-  }
-];
+/**
+ * COMPONENTE: ARTÍCULOS INTERACTIVOS (SCROLL HORIZONTAL)
+ * Versión Robustecida v2.2 - Blindaje contra errores de datos
+ */
 
 export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle?: (id: string) => void }) {
-  const [selectedArticle, setSelectedArticle] = useState<typeof ARTICLES_DATA[0] | null>(null);
+  const [articles, setArticles] = useState<ArticleData[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedArticle, setSelectedArticle] = useState<ArticleData | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    loadArticles()
+      .then(data => {
+        if (data && Array.isArray(data)) {
+          setArticles(data);
+        }
+      })
+      .catch(err => console.error("Error loading articles:", err));
+  }, []);
+
+  // Protección contra traducciones faltantes
+  if (!t || !t.articulos) return <div className="p-20 text-center font-mono uppercase bg-[#fccb06]">Cargando Biblioteca...</div>;
+
+  const filteredArticles = (articles || []).filter(article => {
+    if (!article) return false;
+    const title = article.title || '';
+    const author = article.author || '';
+    const tag = article.tag || '';
+    return title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+           author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+           tag.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
+  const displayArticles = filteredArticles.length > 0 && searchQuery === '' 
+    ? [...filteredArticles, ...filteredArticles] 
+    : filteredArticles;
 
   return (
-    <section className="bg-[#fccb06] pt-32 pb-64 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Círculos gigantes con blur - Iluminación ambiental VISIBLE */}
-      <div className="absolute -top-20 right-0 w-[600px] h-[600px] bg-white/40 blur-[100px] rounded-full mix-blend-overlay animate-pulse" />
-      <div className="absolute bottom-0 -left-20 w-[500px] h-[500px] bg-[#0f3896]/30 blur-[120px] rounded-full mix-blend-multiply" />
-      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[#e81e61]/25 blur-[100px] rounded-full mix-blend-multiply" />
+    <section className="bg-[#fccb06] pt-32 pb-48 px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-[90vh]">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       
       <div className="container mx-auto relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32">
+        {/* Cabecera */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
           <div className="max-w-2xl">
             <motion.div 
-              initial={{ x: -100, opacity: 0 }}
+              initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-4 mb-6"
             >
-              <div className="w-12 h-12 bg-zine-black flex items-center justify-center text-[#fccb06]">
-                <Sparkles size={24} />
+              <div className="w-10 h-10 bg-black flex items-center justify-center text-[#fccb06] border-2 border-black shadow-[4px_4px_0_#fff]">
+                <Sparkles size={20} />
               </div>
-              <span className="font-accent font-black tracking-widest text-zine-black uppercase text-sm">Biblioteca Digital // 2026</span>
+              <span className="font-mono font-black tracking-widest text-black uppercase text-xs">
+                {t.articulos.tag || 'BIBLIOTECA'} // ARCHIVE_01
+              </span>
             </motion.div>
             
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase leading-[0.9] text-zine-black mb-8 selection:bg-zine-black selection:text-[#fccb06]">
-              ARTÍCULOS<br /><span className="text-white drop-shadow-[4px_4px_0_#000]">INTERACTIVOS</span>
+            <h2 className="text-6xl md:text-8xl font-display uppercase leading-tight text-black mb-6">
+              {t.articulos.title_top}<br />
+              <span className="text-white drop-shadow-[6px_6px_0_#000]" style={{ WebkitTextStroke: '2px black' }}>
+                {t.articulos.title_bottom}
+              </span>
             </h2>
-            
-            <p className="text-xl md:text-2xl font-sans text-zine-black/80 leading-relaxed max-w-xl">
-              Selecciona una portada para explorar la investigación interactiva.
-            </p>
           </div>
-          
-          <div className="flex flex-col items-end gap-6">
-             <div className="text-right">
-               <span className="block font-mono text-[10px] text-zine-black/60 uppercase tracking-widest mb-2">Colección</span>
-               <div className="flex items-center gap-4">
-                  <span className="font-display text-6xl text-zine-black">{ARTICLES_DATA.length}</span>
-                  <div className="p-3 bg-zine-black text-[#fccb06] font-mono text-xs border-2 border-black shadow-[4px_4px_0_#fff]">
-                    <TrendingUp size={20} className="mb-2" />
-                    NUEVOS
-                  </div>
-               </div>
-             </div>
+
+          <div className="relative group w-full md:w-96">
+            <div className="absolute inset-0 bg-black translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform" />
+            <div className="relative bg-white border-4 border-black p-4 flex items-center gap-4">
+              <Search className="text-black/30" />
+              <input 
+                type="text" 
+                placeholder="BUSCAR INVESTIGACIÓN..."
+                className="w-full bg-transparent border-none outline-none font-mono font-bold uppercase placeholder:text-black/20"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <div className="font-mono text-[10px] font-black bg-black text-white px-2 py-1">
+                {filteredArticles.length}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Grid de PORTADAS TIPO REVISTA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-          {ARTICLES_DATA.map((article, i) => {
-            const Icon = article.icon;
-            return (
-              <motion.article
-                key={article.id}
-                initial={{ rotate: i % 2 === 0 ? -5 : 5, y: 100, opacity: 0 }}
-                whileInView={{ rotate: i % 2 === 0 ? -2 : 2, y: 0, opacity: 1 }}
-                whileHover={{ rotate: 0, scale: 1.05, y: -20 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, type: 'spring' }}
-                className={`${article.color} ${article.text} aspect-[3/4] border-4 border-black shadow-[15px_15px_0_#000] flex flex-col relative group overflow-hidden cursor-pointer`}
-              >
-                 {/* Marco decorativo de revista */}
-                 <div className="absolute inset-3 border-2 border-white/30 pointer-events-none" />
-                 <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
-                   <span className="font-mono text-[10px] font-black uppercase tracking-widest bg-black/20 px-2 py-1">
-                     {article.volume}
-                   </span>
-                   <span className="font-mono text-[10px] font-black uppercase tracking-widest bg-white/20 px-2 py-1">
-                     {article.tag}
-                   </span>
-                 </div>
+        {/* Filtros rápidos (Chips) */}
+        <div className="flex gap-4 overflow-x-auto pb-4 mb-8 no-scrollbar" style={{ scrollbarWidth: 'none' }}>
+          {['TODOS', 'IA', 'SALUD', 'TEA', 'CIBERACOSO', 'ESCRITURA', 'INCLUSIÓN'].map(cat => (
+            <button 
+              key={cat}
+              onClick={() => setSearchQuery(cat === 'TODOS' ? '' : cat)}
+              className={`px-8 py-3 font-mono text-xs font-black uppercase rounded-full border-4 border-black transition-all whitespace-nowrap ${
+                (searchQuery.toLowerCase() === cat.toLowerCase() || (cat === 'TODOS' && !searchQuery))
+                  ? 'bg-black text-[#fccb06] shadow-[4px_4px_0_#000] translate-x-[-2px] translate-y-[-2px]' 
+                  : 'bg-white text-black hover:bg-black/5 hover:translate-y-1'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-                 {/* Zona superior - Icono grande */}
-                 <div className="flex-1 flex items-center justify-center relative">
-                    <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center border-4 border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
-                       <Icon size={64} strokeWidth={1.5} />
-                    </div>
-                    {/* Código de barras decorativo */}
-                    <div className="absolute bottom-4 left-6 flex gap-1">
-                      {[1,2,3,4,5,6,7,8].map(n => (
-                        <div key={n} className="w-1 h-8 bg-white/30" />
-                      ))}
-                    </div>
-                 </div>
+        {/* Galería Horizontal en 2 Filas */}
+        <div 
+          ref={scrollRef}
+          className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-16 pt-4 px-4 -mx-4 no-scrollbar hide-scrollbar cursor-grab active:cursor-grabbing snap-x"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {displayArticles.length > 0 ? (
+            displayArticles.map((article, i) => {
+              if (!article) return null;
+              const Icon = ICON_MAP[article.icon || ''] || BookMarked;
+              const colorClass = article.color || 'bg-white';
+              const textClass = article.text || 'text-black';
+              
+              return (
+                <motion.article
+                  key={`${article.id}-${i}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: (i % 5) * 0.05 }}
+                  viewport={{ once: true, margin: "50px" }}
+                  onClick={() => setSelectedArticle(article)}
+                  className={`${colorClass} ${textClass} w-[300px] md:w-[340px] aspect-square rounded-3xl border-4 border-black shadow-[8px_8px_0_#000] flex flex-col relative group overflow-hidden cursor-pointer transition-transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_#000] snap-center`}
+                >
+                   {/* Header de la tarjeta */}
+                   <div className="p-5 flex justify-between items-start relative z-10">
+                      <div className="flex gap-2">
+                        <span className="font-mono text-[9px] font-black uppercase tracking-widest bg-black text-white px-3 py-1 rounded-full">
+                          {article.volume || 'VOL. 41'}
+                        </span>
+                        <div className="w-2 h-2 rounded-full bg-white self-center border border-black animate-pulse" />
+                      </div>
+                   </div>
 
-                 {/* Zona media - Título principal */}
-                 <div className="px-6 py-8 text-center">
-                    <h3 className="text-6xl md:text-7xl font-display uppercase leading-[0.85] mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,0.3)]">
-                       {article.title}
-                    </h3>
-                    <div className="w-16 h-1 bg-white/50 mx-auto mb-4" />
-                    <p className="text-sm font-bold uppercase tracking-widest opacity-80 leading-relaxed">
-                       {article.subtitle}
-                    </p>
-                 </div>
+                   {/* Centro - Icono predominante similar a la referencia */}
+                   <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-6 text-center">
+                      <div className="w-20 h-20 rounded-full border-2 border-current flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-black/5">
+                         <Icon size={32} />
+                      </div>
+                      <h3 className="text-[22px] font-display uppercase leading-tight line-clamp-3">
+                         {article.author || 'ANÓNIMO'}
+                      </h3>
+                      <div className="w-8 h-1 bg-current opacity-30 mt-3 mx-auto" />
+                   </div>
 
-                 {/* Zona inferior - Meta info */}
-                 <div className="px-6 pb-6">
-                    <div className="border-t-2 border-white/20 pt-4">
-                       <p className="text-xs font-mono uppercase tracking-wider opacity-60 mb-2">Por</p>
-                       <p className="text-sm font-bold uppercase tracking-widest mb-4">{article.author}</p>
-                       
-                       <div className="flex items-center justify-between">
-                          <span className="font-mono text-[10px] opacity-50">{article.date}</span>
-                          <button 
-                            onClick={() => {
-                              if (article.id === '3549' && onOpenArticle) {
-                                onOpenArticle('3549');
-                              } else {
-                                window.location.href = article.interactUrl;
-                              }
-                            }}
-                            className="flex items-center gap-1 font-mono text-[10px] font-black uppercase bg-white/20 hover:bg-white hover:text-black px-3 py-2 transition-all"
-                          >
-                            ABRIR <ChevronRight size={14} />
-                          </button>
-                       </div>
-                    </div>
-                 </div>
-
-                 {/* Efecto de brillo en hover */}
-                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              </motion.article>
-            );
-          })}
+                   {/* Footer de la tarjeta con flecha */}
+                   <div className="p-5 flex items-start justify-between relative z-10 mt-auto border-t-2 border-black/10 gap-3">
+                      <span className="text-[10px] font-bold uppercase leading-tight line-clamp-3 max-w-[220px] opacity-90">{article.title || 'SIN TÍTULO'}</span>
+                      <div className="w-8 h-8 rounded-lg bg-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors shrink-0">
+                         <ExternalLink size={14} />
+                      </div>
+                   </div>
+                </motion.article>
+              );
+            })
+          ) : (
+            <div className="w-full text-center p-20 border-4 border-black border-dashed bg-white/10 font-mono uppercase font-black">
+               {searchQuery ? 'Sin Resultados...' : 'Cargando Investigaciones...'}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Modal simplificado */}
+      {/* Modal - Ficha Técnica */}
       <AnimatePresence>
         {selectedArticle && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-12 overflow-hidden"
+            className="fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-12"
           >
-            <div 
-              className="absolute inset-0 bg-zine-black/95 backdrop-blur-xl"
-              onClick={() => setSelectedArticle(null)}
-            />
+            <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setSelectedArticle(null)} />
             
             <motion.div
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="relative w-full max-w-4xl bg-white border-8 border-black shadow-[20px_20px_0_#000] p-8 md:p-16 max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-5xl bg-white border-8 border-black shadow-[24px_24px_0_#000] overflow-hidden flex flex-col"
             >
-               <button 
-                onClick={() => setSelectedArticle(null)}
-                className="absolute top-4 right-4 w-12 h-12 bg-zine-black text-white flex items-center justify-center hover:bg-zine-red transition-all"
-               >
-                 <X size={24} />
-               </button>
+               <div className="bg-black text-white p-4 flex justify-between items-center">
+                  <span className="font-mono text-[10px] font-black uppercase">MÉTRICAS DEL ARTÍCULO // ID {selectedArticle.id}</span>
+                  <button onClick={() => setSelectedArticle(null)} className="p-1 hover:rotate-90 transition-transform">
+                    <X size={24} />
+                  </button>
+               </div>
 
-               <div className="flex flex-col md:flex-row gap-8">
-                  <div className={`${selectedArticle.color} text-white w-full md:w-1/3 aspect-[3/4] flex flex-col items-center justify-center p-6 border-4 border-black`}>
-                     {(() => {
-                       const Icon = selectedArticle.icon;
-                       return <Icon size={80} />;
-                     })()}
-                     <h3 className="text-4xl font-display uppercase text-center mt-4">{selectedArticle.title}</h3>
+               <div className="flex flex-col md:flex-row overflow-y-auto">
+                  <div className={`${selectedArticle.color || 'bg-white'} ${selectedArticle.text || 'text-black'} w-full md:w-2/5 p-12 flex flex-col justify-between`}>
+                     <div className="w-16 h-16 bg-black/10 border-4 border-current flex items-center justify-center mb-12">
+                        {(() => {
+                           const Icon = ICON_MAP[selectedArticle.icon || ''] || BookMarked;
+                           return <Icon size={32} />;
+                        })()}
+                     </div>
+                     <h3 className="text-5xl font-display uppercase leading-none">{selectedArticle.title}</h3>
                   </div>
                   
-                  <div className="flex-1">
-                     <span className="font-mono text-[10px] text-zine-black/40 uppercase tracking-widest">{selectedArticle.tag}</span>
-                     <h2 className="text-4xl font-display uppercase mb-4">{selectedArticle.subtitle}</h2>
-                     <p className="text-zine-black/60 mb-6">{selectedArticle.abstract}</p>
-                     <p className="text-sm font-bold uppercase tracking-widest mb-8">{selectedArticle.author}</p>
+                  <div className="flex-1 p-8 md:p-12">
+                     <div className="flex flex-wrap gap-2 mb-8">
+                        {selectedArticle.keywords && Array.isArray(selectedArticle.keywords) ? 
+                          selectedArticle.keywords.map(k => (
+                            <span key={k} className="bg-[#fccb06] text-black border-2 border-black px-3 py-1 font-mono text-[9px] font-black uppercase">#{k}</span>
+                          )) : null
+                        }
+                     </div>
+
+                     <h2 className="text-2xl font-display uppercase mb-8 leading-tight">{selectedArticle.subtitle}</h2>
+                     
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 font-mono">
+                        <div className="border-l-4 border-black pl-4">
+                           <span className="block text-[9px] uppercase opacity-40 mb-1">DOI</span>
+                           <span className="text-xs font-black break-all">{selectedArticle.doi || 'N/A'}</span>
+                        </div>
+                        <div className="border-l-4 border-black pl-4">
+                           <span className="block text-[9px] uppercase opacity-40 mb-1">Autor</span>
+                           <span className="text-xs font-black">{selectedArticle.author || 'N/A'}</span>
+                        </div>
+                     </div>
+
+                     <p className="text-sm font-sans leading-relaxed text-black/60 mb-12 italic border-t-2 border-black/10 pt-8">
+                        {selectedArticle.abstract || 'Sin resumen disponible.'}
+                     </p>
                      
                      <button 
                        onClick={() => {
-                         if (selectedArticle.id === '3549' && onOpenArticle) {
-                           onOpenArticle('3549');
-                         } else {
-                           window.location.href = selectedArticle.interactUrl;
-                         }
+                         if (onOpenArticle) onOpenArticle(selectedArticle.id.toString());
+                         setSelectedArticle(null);
                        }}
-                       className="w-full bg-zine-black text-white font-display text-xl p-6 uppercase hover:bg-zine-red transition-all flex items-center justify-center gap-4"
+                       className="w-full bg-black text-white font-display text-2xl p-6 uppercase hover:bg-zinc-800 transition-colors flex items-center justify-center gap-4"
                      >
-                       EXPLORAR ARTÍCULO <ExternalLink size={20} />
+                       EXPLORAR INVESTIGACIÓN <ExternalLink size={24} />
                      </button>
                   </div>
                </div>

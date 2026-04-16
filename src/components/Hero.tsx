@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-
-
+import { useLanguage } from '../LanguageContext';
 
 // Círculo flotante que se mueve constantemente
 const FloatingOrb = ({ 
@@ -51,8 +50,9 @@ const FloatingOrb = ({
 export const Hero = ({ onExplore }: { onExplore: () => void }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const { t, language } = useLanguage();
   
-  const titleText = "INTERACTIVO";
+  const titleText = language === 'es' ? "INTERACTIVO" : "INTERACTIVE";
 
   return (
     <section 
@@ -95,7 +95,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
           transition={{ delay: 1.5, duration: 0.8, type: 'spring' }}
           className="bg-[#fccb06] text-black font-mono font-black text-[10px] px-6 py-2 border-2 border-black shadow-[4px_4px_0_#000] rotate-[-5deg] mb-12 sm:mb-24 md:absolute md:top-10 md:left-10 z-20 hover:scale-110 transition-transform cursor-pointer"
         >
-          DISRUPCIÓN_EDUCATIVA_v2.6
+          {t.hero.tag.toUpperCase()}
         </motion.div>
 
         <div className="w-full flex flex-col items-center text-center">
@@ -105,7 +105,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
             transition={{ delay: 0.3 }}
             className="text-[#fccb06] font-accent font-black tracking-[0.4em] uppercase mb-12 text-sm selection:bg-white selection:text-black"
           >
-            Revista Panamericana de Pedagogía
+            {t.hero.tag}
           </motion.p>
           
           {/* TÍTULO CON LETRAS ANIMADAS INDIVIDUALMENTE */}
@@ -163,8 +163,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
             className="flex flex-col items-center gap-12"
           >
             <p className="max-w-2xl text-white/60 font-sans text-xl font-light leading-relaxed selection:bg-white selection:text-black italic">
-              "Donde la ciencia se encuentra con la narrativa visual. 
-              Explora una nueva dimensión del conocimiento académico."
+              {t.hero.desc}
             </p>
             
             <motion.button 
@@ -173,7 +172,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
               whileTap={{ scale: 0.95 }}
               className="group relative px-12 py-6 bg-white text-[#0f172a] font-display text-3xl uppercase transition-all hover:bg-[#fccb06] hover:text-black overflow-hidden flex items-center gap-4"
             >
-              <span className="relative z-10">EXPLORAR EDICIÓN 2026</span>
+              <span className="relative z-10">{t.hero.btn_explore}</span>
               <ArrowRight size={32} className="relative z-10 group-hover:translate-x-2 transition-transform" />
               <div className="absolute inset-0 bg-[#e81e61] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </motion.button>

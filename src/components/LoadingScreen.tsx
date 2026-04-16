@@ -1,40 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 
-const BOOT_LOGS = [
-  "INITIALIZING_RPP_OS_v3.0...",
-  "LOADING_NEURAL_NETWORKS...",
-  "CONNECTING_TO_DATABASE_RPP-2026...",
-  "FETCHING_INTERACTIVE_ARTICLES...",
-  "CALIBRATING_TRANSMEDIA_ENGINE...",
-  "SYNCING_GAMIFICATION_MODULES...",
-  "OPTIMIZING_USER_INTERFACE...",
-  "INITIALIZING_POP_ART_SYSTEM...",
-  "LOADED_NEOBRUTALISM_ENGINE...",
-  "SYSTEM_READY_FOR_BOOT."
-];
-
 export const LoadingScreen = () => {
-  const [logs, setLogs] = useState<string[]>([]);
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < BOOT_LOGS.length) {
-        setLogs(prev => [...prev, BOOT_LOGS[i]]);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 150);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <motion.div
       exit={{ 
-        y: '-100vh', 
-        transition: { duration: 1, ease: [0.85, 0, 0.15, 1] } 
+        opacity: 0,
+        transition: { duration: 0.3, ease: 'easeOut' } 
       }}
       className="fixed inset-0 z-[200] bg-zine-black text-zine-red font-mono p-12 flex flex-col justify-between overflow-hidden"
     >
@@ -47,25 +19,20 @@ export const LoadingScreen = () => {
       </div>
 
       <div className="space-y-3 relative z-10 overflow-y-auto max-h-[60vh] custom-scrollbar pr-4">
-        {logs.map((log, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className={`flex items-center gap-6 overflow-hidden ${i === logs.length - 1 ? "text-white scale-105" : "text-zine-red opacity-60"}`}
-          >
-            <span className="opacity-40 text-xs shrink-0">[{new Date().toLocaleTimeString('es-ES')}]</span>
-            <span className={`text-sm truncate ${i === BOOT_LOGS.length - 1 ? "font-black" : ""}`}>
-              {i === BOOT_LOGS.length - 1 ? "> " : ""} {log}
-            </span>
-            {i === logs.length - 1 && <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} className="w-2 h-4 bg-white" />}
-          </motion.div>
-        ))}
-        {logs.length === BOOT_LOGS.length && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-8 text-white font-black text-4xl animate-pulse">
-            SISTEMA LISTO.
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="flex items-center gap-6 overflow-hidden text-white scale-105"
+        >
+          <span className="opacity-40 text-xs shrink-0">[{new Date().toLocaleTimeString('es-ES')}]</span>
+          <span className="text-sm truncate font-black">
+            &gt; SYSTEM_READY_FOR_BOOT.
+          </span>
+          <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} className="w-2 h-4 bg-white" />
+        </motion.div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-8 text-white font-black text-4xl animate-pulse">
+          SISTEMA LISTO.
+        </motion.div>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-end gap-8 relative z-10 border-t border-white/5 pt-12">
@@ -82,14 +49,14 @@ export const LoadingScreen = () => {
         
         <div className="text-right w-full md:w-80">
           <div className="text-[10px] opacity-40 mb-4 font-black flex justify-between uppercase">
-            <span>Progress: {Math.round((logs.length / BOOT_LOGS.length) * 100)}%</span>
-            <span>Est_time: 2.1s</span>
+            <span>Progress: 100%</span>
+            <span>Est_time: 0.8s</span>
           </div>
           <div className="w-full h-3 bg-white/10 rounded-full overflow-hidden border border-white/5 p-[2px]">
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: `${(logs.length / BOOT_LOGS.length) * 100}%` }}
-              transition={{ duration: 0.1 }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 0.5 }}
               className="h-full bg-gradient-to-r from-zine-red via-orange-500 to-amber-500 rounded-full shadow-[0_0_15px_rgba(179,77,77,0.5)]"
             />
           </div>

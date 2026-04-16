@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RPP - Tabla de Contenidos (Número Actual)</title>
+    <link>https://revistas.up.edu.mx/RPP/es/issue/current</link>
+    <atom:link href="https://rpp-interactivo.udg.mx/feed/toc.xml" rel="self" type="application/rss+xml"/>
+    <description>Índice del Número 41 (Enero - Junio 2026) de la Revista Panamericana de Pedagogía.</description>
+    <language>es-ES</language>
+    <lastBuildDate>2026-04-15T12:00:00Z</lastBuildDate>
+
+    <item>
+      <title>Editorial: Desafíos de la Pedagogía en la Era Digital</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/editorial-41</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/editorial-41</guid>
+      <pubDate>Mon, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Presentación temática del número 41 y reflexiones sobre el futuro de la educación.</description>
+      <category>Editorial</category>
+      <dc:creator>Sara Elvira Galbán Lozano</dc:creator>
+    </item>
+
+    <item>
+      <title>TOC Item 1: Teorías pedagógicas en la Nueva Escuela Mexicana</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3549</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3549</guid>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <category>Artículos de investigación</category>
+    </item>
+
+    <item>
+      <title>TOC Item 2: Docentes e inclusión educativa en la educación media superior</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3476</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3476</guid>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <category>Artículos de investigación</category>
+    </item>
+
+    <item>
+      <title>TOC Item 3: Legislación educativa en la era digital (Drogas Docentes)</title>
+      <link>https://rpp-interactivo.udg.mx/articulos/3453</link>
+      <guid isPermaLink="false">rpp-interactivo-3453</guid>
+      <pubDate>Sat, 12 Apr 2026 15:00:00 +0000</pubDate>
+      <description>Módulo interactivo sobre el marco legal y tensiones en la educación digital.</description>
+      <category>Contenido Interactivo</category>
+    </item>
+  </channel>
+</rss>

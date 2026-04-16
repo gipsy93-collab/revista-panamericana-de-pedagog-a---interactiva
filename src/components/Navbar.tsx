@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Menu, X, Sparkles, FileText, Users, Play, Newspaper, Award, Mail, 
-  Instagram, Twitter, Youtube, Rss 
+  Menu, X, Sparkles, FileText, Users, Play, Newspaper, Mail, 
+  Instagram, Twitter, Youtube, Rss, Globe 
 } from 'lucide-react';
 import { NavItem } from '../types';
+import { useLanguage } from '../LanguageContext';
 
 export const Navbar = ({ 
   scrollToSection, 
@@ -15,14 +16,15 @@ export const Navbar = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   const navItems: NavItem[] = [
-    { name: 'Inicio', index: 0, icon: Sparkles },
-    { name: 'Artículos', index: 1, icon: FileText },
-    { name: 'Semillero', index: 2, icon: Users },
-    { name: 'Transmedia', index: 3, icon: Play },
-    { name: 'Blog', index: 4, icon: Newspaper },
-    { name: 'Contacto', index: 5, icon: Mail }
+    { name: t.nav.inicio, index: 0, icon: Sparkles },
+    { name: t.nav.articulos, index: 1, icon: FileText },
+    { name: t.nav.semillero, index: 2, icon: Users },
+    { name: t.nav.transmedia, index: 3, icon: Play },
+    { name: t.nav.actualidad, index: 4, icon: Newspaper },
+    { name: t.nav.contacto, index: 5, icon: Mail }
   ];
 
   useEffect(() => {
@@ -47,8 +49,18 @@ export const Navbar = ({
         />
       </div>
 
-      {/* Main Navbar Trigger */}
-      <nav className={`fixed top-8 right-8 z-[110] transition-all duration-500 ${scrolled ? 'scale-90 -translate-y-2' : ''}`}>
+      {/* Main Navbar Trigger & Language Switcher */}
+      <nav className={`fixed top-8 right-8 z-[110] flex items-center gap-4 transition-all duration-500 ${scrolled ? 'scale-90 -translate-y-2' : ''}`}>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+          className="h-16 px-6 rounded-full bg-zine-black text-white border-2 border-black/10 backdrop-blur-md shadow-2xl flex items-center gap-3 font-mono text-sm font-black hover:bg-[#0f3896] transition-colors"
+        >
+          <Globe size={20} className={language === 'en' ? 'text-[#fccb06]' : 'text-white'} />
+          <span className="tracking-widest">{language.toUpperCase()}</span>
+        </motion.button>
+
         <motion.button
           whileHover={{ scale: 1.1, rotate: 90 }}
           whileTap={{ scale: 0.9 }}

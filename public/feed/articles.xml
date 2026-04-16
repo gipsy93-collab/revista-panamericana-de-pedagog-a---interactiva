@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Revista Panamericana de Pedagogía - Artículos Recientes</title>
+    <link>https://revistas.up.edu.mx/RPP/es</link>
+    <atom:link href="https://rpp-interactivo.udg.mx/feed/articles.xml" rel="self" type="application/rss+xml"/>
+    <description>Últimos artículos de investigación publicados en la Revista Panamericana de Pedagogía.</description>
+    <language>es-ES</language>
+    <lastBuildDate>2026-04-15T12:00:00Z</lastBuildDate>
+
+    <item>
+      <title>Teorías pedagógicas en la Nueva Escuela Mexicana. Apuntes para la educación primaria</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3549</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3549</guid>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <description>Reflexiones sobre la implementación de las teorías pedagógicas en el marco de la Nueva Escuela Mexicana para el nivel primaria.</description>
+      <category>Artículos de investigación</category>
+      <dc:creator>Revista Panamericana de Pedagogía</dc:creator>
+    </item>
+
+    <item>
+      <title>Docentes e inclusión educativa en la educación media superior: hallazgos de una revisión sistemática (2015-2025)</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3476</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3476</guid>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Estudio de revisión sistemática sobre las prácticas docentes y su impacto en la inclusión educativa en el bachillerato durante la última década.</description>
+      <category>Artículos de investigación</category>
+      <dc:creator>Revista Panamericana de Pedagogía</dc:creator>
+    </item>
+
+    <item>
+      <title>Integración del aula invertida en contextos escolares mexicanos. Un análisis de estudios previos (2021-2025)</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3491</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3491</guid>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <description>Examen de la efectividad del 'flipped classroom' en la educación básica y media en México.</description>
+      <category>Artículos de investigación</category>
+      <dc:creator>Revista Panamericana de Pedagogía</dc:creator>
+    </item>
+
+    <item>
+      <title>Cyberbullying among university students in the post-pandemic period: aggressive behaviors and prevention</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3467</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3467</guid>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <description>Analysis of aggressive behaviors on digital platforms among college students and strategies for psychological prevention in the post-COVID era.</description>
+      <category>Artículos de investigación</category>
+      <dc:creator>Revista Panamericana de Pedagogía</dc:creator>
+    </item>
+
+    <item>
+      <title>Legal education in the digital age: tensions, resistances and opportunities</title>
+      <link>https://revistas.up.edu.mx/RPP/es/article/view/3557</link>
+      <guid isPermaLink="true">https://revistas.up.edu.mx/RPP/es/article/view/3557</guid>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <description>Exploration of the digital transformation in legal training and the challenges faced by law schools today.</description>
+      <category>Artículos de investigación</category>
+      <dc:creator>Revista Panamericana de Pedagogía</dc:creator>
+    </item>
+  </channel>
+</rss>

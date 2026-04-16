@@ -1,4 +1,4 @@
-import React from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 export interface Article {
   id: string;
@@ -22,10 +22,11 @@ export interface RSSItem {
   pubDate: string;
   description: string;
   category: string;
+  thumbnail?: string | null;
 }
 
 export interface NavItem {
   name: string;
   index: number;
-  icon: React.ElementType;
+  icon: LucideIcon;
 }

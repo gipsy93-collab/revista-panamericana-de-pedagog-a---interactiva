@@ -46,7 +46,6 @@ export default function Transmedia() {
   return (
     <section className="bg-[#0f172a] py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden selection:bg-[#fccb06] selection:text-black">
       {/* Background: Azul noche con degradados */}
-      <div className="absolute top-0 left-0 w-full h-[15px] bg-[#fccb06] animate-pulse" />
       <div className="absolute top-20 right-20 w-[400px] h-[400px] bg-cyan-400/10 blur-[150px] rounded-full" />
       <div className="absolute bottom-20 left-20 w-[300px] h-[300px] bg-[#fccb06]/10 blur-[150px] rounded-full" />
       

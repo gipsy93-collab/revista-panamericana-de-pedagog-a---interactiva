@@ -44,10 +44,17 @@ export const OrganicWaveDivider = ({
       path2: `M0,60 C320,110 640,40 960,80 C1280,120 1600,50 1920,90 L1920,120 L0,120 Z`,
       path3: `M0,75 C320,50 640,100 960,55 C1280,20 1600,90 1920,50 L1920,120 L0,120 Z`,
       duration: 7
+    },
+    steps: {
+      // Onda con forma de "escalones" suavizados
+      path1: `M0,60 L320,60 L320,40 L640,40 L640,70 L960,70 L960,50 L1280,50 L1280,80 L1600,80 L1600,60 L1920,60 L1920,120 L0,120 Z`,
+      path2: `M0,65 L320,65 L320,45 L640,45 L640,75 L960,75 L960,55 L1280,55 L1280,85 L1600,85 L1600,65 L1920,65 L1920,120 L0,120 Z`,
+      path3: `M0,55 L320,55 L320,35 L640,35 L640,65 L960,65 L960,45 L1280,45 L1280,75 L1600,75 L1600,55 L1920,55 L1920,120 L0,120 Z`,
+      duration: 10
     }
   };
 
-  const config = waveConfigs[variant];
+  const config = waveConfigs[variant as keyof typeof waveConfigs] || waveConfigs.gentle;
 
   // Segunda onda - siempre suave y natural
   const secondWaveConfigs = {
@@ -65,6 +72,11 @@ export const OrganicWaveDivider = ({
       path1: `M0,100 C400,60 800,110 1200,80 C1600,50 1800,100 1920,85 L1920,120 L0,120 Z`,
       path2: `M0,85 C400,120 800,70 1200,100 C1600,130 1800,80 1920,105 L1920,120 L0,120 Z`,
       path3: `M0,95 C400,75 800,105 1200,70 C1600,45 1800,95 1920,70 L1920,120 L0,120 Z`,
+    },
+    steps: {
+      path1: `M0,80 L320,80 L320,60 L640,60 L640,90 L960,90 L960,70 L1280,70 L1280,100 L1600,100 L1600,80 L1920,80 L1920,120 L0,120 Z`,
+      path2: `M0,85 L320,85 L320,65 L640,65 L640,95 L960,95 L960,75 L1280,75 L1280,105 L1600,105 L1600,85 L1920,85 L1920,120 L0,120 Z`,
+      path3: `M0,75 L320,75 L320,55 L640,55 L640,85 L960,85 L960,65 L1280,65 L1280,95 L1600,95 L1600,75 L1920,75 L1920,120 L0,120 Z`,
     }
   };
 
@@ -81,11 +93,15 @@ export const OrganicWaveDivider = ({
     dramatic: {
       path1: `M0,110 C500,95 1000,115 1500,100 C1700,90 1850,110 1920,105 L1920,120 L0,120 Z`,
       path2: `M0,105 C500,120 1000,95 1500,110 C1700,118 1850,100 1920,115 L1920,120 L0,120 Z`,
+    },
+    steps: {
+      path1: `M0,100 L320,100 L320,80 L640,80 L640,110 L960,110 L960,90 L1280,90 L1280,120 L1600,120 L1600,100 L1920,100 L1920,120 L0,120 Z`,
+      path2: `M0,105 L320,105 L320,85 L640,85 L640,115 L960,115 L960,95 L1280,95 L1280,125 L1600,125 L1600,105 L1920,105 L1920,120 L0,120 Z`,
     }
   };
 
-  const secondConfig = secondWaveConfigs[variant];
-  const thirdConfig = thirdWaveConfigs[variant];
+  const secondConfig = secondWaveConfigs[variant as keyof typeof secondWaveConfigs] || secondWaveConfigs.gentle;
+  const thirdConfig = thirdWaveConfigs[variant as keyof typeof thirdWaveConfigs] || thirdWaveConfigs.gentle;
 
   return (
     <div 
@@ -187,41 +203,137 @@ export const HeroToArticulosWave = () => (
   />
 );
 
-export const ArticulosToSemilleroWave = () => (
-  <OrganicWaveDivider
-    topColor="#fccb06"
-    bottomColor="#e81e61"
-    variant="wavy"
-    height={160}
-  />
-);
+export const ArticulosToSemilleroWave = () => {
+  const fuchsiaColor = "#e81e61";
+  
+  return (
+    <div className="relative w-full z-10" style={{ height: '0px' }}>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '160px' }}>
+        {[
+          { opacity: 0.3, d: "M0,80 C480,40 640,120 960,80 C1280,40 1440,120 1920,80 V120 H0 Z", duration: 12, delay: 0 },
+          { opacity: 0.6, d: "M0,60 C480,100 640,20 960,60 C1280,100 1440,20 1920,60 V120 H0 Z", duration: 10, delay: 0.5 },
+          { opacity: 1, d: "M0,90 C480,70 640,110 960,90 C1280,70 1440,110 1920,90 V120 H0 Z", duration: 8, delay: 1 }
+        ].map((wave, i) => (
+          <svg key={i} viewBox="0 0 1920 120" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full" style={{ height: '100%', opacity: wave.opacity }}>
+            <motion.path
+              fill={fuchsiaColor}
+              initial={{ d: wave.d }}
+              animate={{ d: [wave.d, "M0,70 C480,110 640,-10 960,70 C1280,150 1440,30 1920,70 V120 H0 Z", wave.d] }}
+              transition={{ duration: wave.duration, repeat: Infinity, ease: "easeInOut", delay: wave.delay }}
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export const SemilleroToTransmediaWave = () => (
-  <OrganicWaveDivider
-    topColor="#e81e61"
-    bottomColor="#1a1a1a"
-    variant="dramatic"
-    height={140}
-  />
-);
+export const SemilleroToTransmediaWave = () => {
+  // El color de la sección de abajo (Transmedia) que se dibuja hacia arriba,
+  // "comiéndose" a la sección fucsia (Semilleros).
+  const bottomColor = "#0f172a"; 
+  
+  return (
+    <div className="relative w-full z-10" style={{ height: '0px' }}>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '160px' }}>
+        {[
+          { opacity: 0.3, d: "M0,70 C480,20 640,110 960,70 C1280,30 1440,110 1920,70 V120 H0 Z", duration: 12, delay: 0 },
+          { opacity: 0.6, d: "M0,50 C480,90 640,10 960,50 C1280,90 1440,10 1920,50 V120 H0 Z", duration: 10, delay: 0.5 },
+          { opacity: 1, d: "M0,80 C480,50 640,100 960,80 C1280,60 1440,100 1920,80 V120 H0 Z", duration: 8, delay: 1 }
+        ].map((wave, i) => (
+          <svg key={i} viewBox="0 0 1920 120" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full" style={{ height: '100%', opacity: wave.opacity }}>
+            <motion.path
+              fill={bottomColor}
+              initial={{ d: wave.d }}
+              animate={{ d: [wave.d, "M0,60 C480,100 640,-20 960,60 C1280,140 1440,20 1920,60 V120 H0 Z", wave.d] }}
+              transition={{ duration: wave.duration, repeat: Infinity, ease: "easeInOut", delay: wave.delay }}
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export const TransmediaToBlogWave = () => (
-  <OrganicWaveDivider
-    topColor="#1a1a1a"
-    bottomColor="#111111"
-    variant="wavy"
-    height={120}
-  />
-);
+export const TransmediaToActualidadWave = () => {
+  // El color de la sección Actualidad (Azul Pop) dibujándose
+  // sobre el azul marino de la sección Transmedia.
+  const bottomColor = "#0f3896";
+  
+  return (
+    <div className="relative w-full z-10" style={{ height: '0px' }}>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '140px' }}>
+        {[
+          { opacity: 0.3, d: "M0,80 C480,40 640,120 960,80 C1280,40 1440,120 1920,80 V120 H0 Z", duration: 12, delay: 0 },
+          { opacity: 0.6, d: "M0,60 C480,100 640,20 960,60 C1280,100 1440,20 1920,60 V120 H0 Z", duration: 10, delay: 0.5 },
+          { opacity: 1, d: "M0,90 C480,70 640,110 960,90 C1280,70 1440,110 1920,90 V120 H0 Z", duration: 8, delay: 1 }
+        ].map((wave, i) => (
+          <svg key={i} viewBox="0 0 1920 120" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full" style={{ height: '100%', opacity: wave.opacity }}>
+            <motion.path
+              fill={bottomColor}
+              initial={{ d: wave.d }}
+              animate={{ d: [wave.d, "M0,70 C480,110 640,-10 960,70 C1280,150 1440,30 1920,70 V120 H0 Z", wave.d] }}
+              transition={{ duration: wave.duration, repeat: Infinity, ease: "easeInOut", delay: wave.delay }}
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export const BlogToFooterWave = () => (
-  <OrganicWaveDivider
-    topColor="#111111"
-    bottomColor="#0f172a"
-    variant="dramatic"
-    height={140}
-    flip={true}
-  />
-);
+export const ActualidadToBlogWave = () => {
+  // El color de la sección Blog (Gris Oscuro) dibujándose
+  // sobre el azul pop de la sección Actualidad.
+  const bottomColor = "#1a1a1a";
+  
+  return (
+    <div className="relative w-full z-10" style={{ height: '0px' }}>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '140px' }}>
+        {[
+          { opacity: 0.3, d: "M0,80 C480,40 640,120 960,80 C1280,40 1440,120 1920,80 V120 H0 Z", duration: 12, delay: 0 },
+          { opacity: 0.6, d: "M0,60 C480,100 640,20 960,60 C1280,100 1440,20 1920,60 V120 H0 Z", duration: 10, delay: 0.5 },
+          { opacity: 1, d: "M0,90 C480,70 640,110 960,90 C1280,70 1440,110 1920,90 V120 H0 Z", duration: 8, delay: 1 }
+        ].map((wave, i) => (
+          <svg key={i} viewBox="0 0 1920 120" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full" style={{ height: '100%', opacity: wave.opacity }}>
+            <motion.path
+              fill={bottomColor}
+              initial={{ d: wave.d }}
+              animate={{ d: [wave.d, "M0,70 C480,110 640,-10 960,70 C1280,150 1440,30 1920,70 V120 H0 Z", wave.d] }}
+              transition={{ duration: wave.duration, repeat: Infinity, ease: "easeInOut", delay: wave.delay }}
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const BlogToFooterWave = () => {
+  // El color del footer (ahora Azul Noche como el Hero) dibujándose
+  // sobre el gris oscuro de la sección del Blog.
+  const bottomColor = "#0f172a";
+  
+  return (
+    <div className="relative w-full z-10" style={{ height: '0px' }}>
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '140px' }}>
+        {[
+          { opacity: 0.3, d: "M0,80 C480,40 640,120 960,80 C1280,40 1440,120 1920,80 V120 H0 Z", duration: 12, delay: 0 },
+          { opacity: 0.6, d: "M0,60 C480,100 640,20 960,60 C1280,100 1440,20 1920,60 V120 H0 Z", duration: 10, delay: 0.5 },
+          { opacity: 1, d: "M0,90 C480,70 640,110 960,90 C1280,70 1440,110 1920,90 V120 H0 Z", duration: 8, delay: 1 }
+        ].map((wave, i) => (
+          <svg key={i} viewBox="0 0 1920 120" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full" style={{ height: '100%', opacity: wave.opacity }}>
+            <motion.path
+              fill={bottomColor}
+              initial={{ d: wave.d }}
+              animate={{ d: [wave.d, "M0,70 C480,110 640,-10 960,70 C1280,150 1440,30 1920,70 V120 H0 Z", wave.d] }}
+              transition={{ duration: wave.duration, repeat: Infinity, ease: "easeInOut", delay: wave.delay }}
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default OrganicWaveDivider;

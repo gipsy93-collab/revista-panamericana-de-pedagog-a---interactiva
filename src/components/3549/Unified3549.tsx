@@ -1,118 +1,103 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef, useEffect } from 'react';
+import { ChevronLeft } from 'lucide-react';
 import SpaceMap from './SpaceMap';
 import Timeline from './Timeline';
 import ModelBuilder from './ModelBuilder';
 import Scenarios from './Scenarios';
 import Detector from './Detector';
-import { ArrowLeft, Quote, Sparkles } from 'lucide-react';
+import QuotesSection from './QuotesSection';
+import RolesComparison from './RolesComparison';
+import ConclusionsSection from './ConclusionsSection';
+import Limitaciones3549 from './Limitaciones3549';
+import Quiz3549 from './Quiz3549';
+import { FilmGrain } from '../FilmGrain';
+import { BrutalSticker } from '../BrutalistLib';
 
-export default function Unified3549({ onBack }: { onBack: () => void }) {
+interface Props {
+  onBack: () => void;
+}
+
+export default function Unified3549({ onBack }: Props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#f5ece0] text-black font-sans selection:bg-[#fccb06] selection:text-black">
-      
-      {/* Article Header (Floating Back Button) */}
-      <button 
-        onClick={onBack}
-        className="fixed top-8 left-8 z-[100] btn-brutal bg-white text-black p-4 flex items-center gap-2 hover:bg-[#e81e61] hover:text-white transition-colors"
-      >
-        <ArrowLeft size={24} /> VOLVER A RPP
-      </button>
+    <div className="relative min-h-screen bg-[#f5ece0] text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-amber-600 selection:text-white">
+      <FilmGrain />
 
-      {/* Hero Section 3549 */}
-      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#fccb06] border-b-[12px] border-black">
-         <motion.div 
-           initial={{ scale: 0.8, rotate: -20, opacity: 0 }}
-           animate={{ scale: 1, rotate: -5, opacity: 1 }}
-           className="blob-shape w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-white absolute z-0 opacity-20"
-         />
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <button
+            onClick={onBack}
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-amber-600 transition-colors shadow-[4px_4px_0_0_#d97706] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#d97706] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+            <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
+          </button>
+          
+          <div className="hidden md:flex items-center gap-4">
+             <div className="bg-amber-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 41</div>
+             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">REF_3549 // ARQUEOLOGÍA_PEDAGÓGICA</span>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section 3549 Mejorado */}
+      <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-amber-400 border-b-[20px] border-black py-40">
+         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
          
-         <div className="z-10 text-center px-6">
-            <motion.span 
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              className="bg-black text-white px-8 py-2 font-pop text-2xl uppercase border-4 border-white shadow-[8px_8px_0_#000]"
-            >
-              Arqueología Pedagógica
-            </motion.span>
+         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+            <BrutalSticker text="GENÉTICA PEDAGÓGICA // MÉXICO" color="bg-black" className="text-white mb-12 !rotate-0 px-8 py-3 text-2xl border-4 shadow-[8px_8px_0_0_#d97706]" />
             
-            <motion.h1 
-              initial={{ scale: 1.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, type: 'spring' }}
-              className="text-8xl md:text-[15rem] font-pop uppercase leading-[0.8] mt-12 mb-8 drop-shadow-[15px_15px_0_#0f3896]" 
-              style={{ WebkitTextStroke: '4px black' }}
-            >
-              3549
-            </motion.h1>
+            <h1 className="text-8xl md:text-[15rem] font-display uppercase leading-[0.7] text-white drop-shadow-[20px_20px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: '4px black' }}>
+              ADN_ <br/> 3549_
+            </h1>
             
-            <motion.p 
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="max-w-2xl mx-auto text-2xl md:text-4xl font-serif italic text-[#0f3896] leading-tight"
-            >
-              "Un linaje de 250 años que hoy se reempaqueta como innovación radical para la Nueva Escuela Mexicana."
-            </motion.p>
-         </div>
-
-         <div className="absolute bottom-12 flex flex-col items-center gap-4 text-black font-pop">
-            <span>SCROLL_TO_DISCOVER</span>
-            <div className="w-1 h-20 bg-black animate-bounce" />
-         </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="py-48 px-6 md:px-12 bg-white flex flex-col items-center justify-center border-b-[12px] border-black">
-         <div className="max-w-4xl space-y-16">
-            <div className="p-12 border-4 border-black border-dashed flex items-start gap-12 bg-[#f5ece0]">
-               <Quote size={64} className="text-[#e81e61] shrink-0" />
-               <p className="text-3xl md:text-5xl font-serif italic leading-relaxed text-[#0f3896]">
-                  ¿Cómo puede una propuesta del Siglo XVIII ser la vanguardia del Siglo XXI en México?
+            <div className="max-w-4xl mx-auto space-y-8 bg-zinc-900 text-white p-12 border-8 border-black shadow-[25px_25px_0_0_#d97706] rotate-1 mb-20 relative overflow-hidden">
+               <p className="text-3xl md:text-5xl font-serif italic leading-tight text-amber-100">
+                 "Un linaje de 250 años reempaquetado como innovación radical para la Nueva Escuela Mexicana."
                </p>
             </div>
-            
-            <p className="text-2xl md:text-3xl font-sans leading-relaxed text-zinc-700">
-               Este interactivo rastrea las <span className="text-[#e81e61] font-bold">coincidencias genéticas</span> entre los teóricos clásicos de la pedagogía y los nuevos Libros de Texto Gratuitos (2023). No es solo una crítica, es una radiografía del reciclaje teórico.
-            </p>
+         </div>
 
-            <div className="flex gap-4">
-               {[1,2,3,4].map(i => <div key={i} className="w-4 h-4 rounded-full bg-[#fccb06] border-2 border-black" />)}
-            </div>
+         <div className="absolute bottom-12 flex flex-col items-center gap-4 text-black font-black uppercase text-xs tracking-widest">
+            <span className="animate-pulse tracking-[0.5em]">Scroll_para_descubrir</span>
+            <div className="w-1 h-20 bg-black" />
          </div>
       </section>
 
-      {/* The Map */}
-      <SpaceMap />
+      {/* Contenido Original Integrado */}
+      <main className="relative z-0">
+        <QuotesSection />
+        <SpaceMap />
+        <Timeline />
+        <RolesComparison />
+        <Detector />
+        <ModelBuilder />
+        <Scenarios />
+        <ConclusionsSection />
+        <Limitaciones3549 />
+        <div className="py-24 bg-zinc-50 border-t-8 border-black">
+           <Quiz3549 />
+        </div>
+      </main>
 
-      {/* Timeline */}
-      <Timeline />
-
-      {/* Detector */}
-      <Detector />
-
-      {/* Builder */}
-      <ModelBuilder />
-
-      {/* Scenarios */}
-      <Scenarios />
-
-      {/* Article Closure */}
-      <section className="py-64 px-6 bg-[#5bc2a8] text-black border-t-[12px] border-black text-center flex flex-col items-center">
-         <Sparkles size={80} className="mb-12 animate-pulse text-[#0f3896]" />
-         <h2 className="text-6xl md:text-[10rem] font-pop uppercase leading-none mb-12" style={{ WebkitTextStroke: '3px black' }}>CODA FINAL</h2>
-         <p className="max-w-3xl text-3xl font-serif italic mb-24 text-[#0f3896]">
-            La deuda con los clásicos es inmensa. La innovación real no está en la palabra, sino en la capacidad de resistir la domesticación burocrática del aula.
-         </p>
-         
-         <button 
-           onClick={onBack}
-           className="btn-brutal bg-black text-white text-5xl px-20 py-10 rounded-full hover:bg-white hover:text-black transition-colors"
-         >
-            TERMINAR EXPERIENCIA
-         </button>
-      </section>
-
+      <footer className="bg-black py-32 px-6 border-t-[20px] border-zinc-900 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        <div className="max-w-4xl mx-auto relative z-10 text-white">
+          <h4 className="font-display text-4xl uppercase font-black mb-6 italic text-amber-500">Revista Panamericana de Pedagogía</h4>
+          <p className="font-serif text-xl italic text-slate-400 mb-12 leading-relaxed">
+            Investigación N-3549. <span className="text-white not-italic font-bold">Arqueología de la innovación pedagógica en México</span>. <span className="text-amber-500">Revista Panamericana de Pedagogía</span>, 41, e3549.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+             <div className="bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#d97706]">
+               DOI: 10.21155/rpp.3549
+             </div>
+             <p className="font-mono text-[10px] uppercase opacity-40">México // RPP N° 41</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-};
+}

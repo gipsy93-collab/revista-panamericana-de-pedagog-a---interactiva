@@ -20,6 +20,9 @@
   --color-pop-teal: #5bc2a8;
   --color-pop-pink: #e81e61;
   --color-pop-cream: #f5ece0;
+
+  /* Noise / Texture */
+  --noise-opacity: 0.03;
 }
 
 @layer base {
@@ -29,6 +32,13 @@
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Cursor personalizado - marcianito */
+  @media (min-width: 769px) {
+    * {
+      cursor: none !important;
+    }
   }
 }
 
@@ -138,6 +148,54 @@
 
 @keyframes dashAnim {
   to { stroke-dashoffset: -30; }
+}
+
+/* FILM GRAIN / NOISE EFFECT */
+.film-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: grain 8s steps(10) infinite;
+  opacity: var(--noise-opacity);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
+}
+
+/* ORGANIC WAVE UTILITIES */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  z-index: 5;
+}
+
+.wave-divider svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.wave-divider-top {
+  transform: rotate(180deg);
 }
 
 .perspective-1000 {

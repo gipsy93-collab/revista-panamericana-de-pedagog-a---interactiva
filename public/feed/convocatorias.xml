@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RPP - Convocatorias y Oportunidades Académicas</title>
+    <link>https://rpp-interactivo.udg.mx/</link>
+    <atom:link href="https://rpp-interactivo.udg.mx/feed/convocatorias.xml" rel="self" type="application/rss+xml"/>
+    <description>Convocatorias de investigación, becas y avisos de interés académico para la comunidad RPP.</description>
+    <language>es-ES</language>
+    <lastBuildDate>2026-04-15T12:00:00Z</lastBuildDate>
+
+    <item>
+      <title>Convocatoria Nacional de Investigación Científica y Humanística 2026</title>
+      <link>https://secihti.mx/sala-de-prensa/secihti-lanza-convocatoria-nacional-de-investigacion-cientifica-y-humanistica-2026/</link>
+      <guid isPermaLink="true">https://secihti.mx/sala-de-prensa/secihti-lanza-convocatoria-nacional-de-investigacion-cientifica-y-humanistica-2026/</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <description>SECIHTI invita a investigadores a participar en el financiamiento de proyectos científicos para el periodo 2026-2027.</description>
+      <category>Convocatorias</category>
+      <dc:creator>SECIHTI</dc:creator>
+    </item>
+
+    <item>
+      <title>Becas para estudios de posgrado y apoyos para reducir desigualdades</title>
+      <link>https://secihti.mx/sala-de-prensa/secihti-abre-convocatorias-de-becas-para-estudios-de-posgrado-y-apoyos-dirigidos-a-reducir-las-desigualdades/</link>
+      <guid isPermaLink="true">https://secihti.mx/sala-de-prensa/secihti-abre-convocatorias-de-becas-para-estudios-de-posgrado-y-apoyos-dirigidos-a-reducir-las-desigualdades/</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Programa de becas nacionales e internacionales para maestría y doctorado en ciencias y humanidades.</description>
+      <category>Becas</category>
+      <dc:creator>SECIHTI</dc:creator>
+    </item>
+
+    <item>
+      <title>Secihti informa resultados de Convocatoria ECOS Nord 2025: México y Francia</title>
+      <link>https://secihti.mx/sala-de-prensa/secihti-informa-resultados-de-convocatoria-ecos-nord-2025-mexico-y-francia-apoyan-proyectos-en-salud-electromovilidad-y-energia/</link>
+      <guid isPermaLink="true">https://secihti.mx/sala-de-prensa/secihti-informa-resultados-de-convocatoria-ecos-nord-2025-mexico-y-francia-apoyan-proyectos-en-salud-electromovilidad-y-energia/</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Fueron seleccionados proyectos estratégicos en salud y energía dentro de la cooperación binacional.</description>
+      <category>Internacional</category>
+      <dc:creator>SECIHTI</dc:creator>
+    </item>
+
+    <item>
+      <title>Fortalece SEP capacitación en inglés con certificación internacional para docentes del CONALEP</title>
+      <link>https://www.gob.mx/sep/prensa/boletin-131-fortalece-sep-capacitacion-en-ingles-con-certificacion-internacional-para-docentes-del-conalep-mario-delgado?idiom=es</link>
+      <guid isPermaLink="true">https://www.gob.mx/sep/prensa/boletin-131-fortalece-sep-capacitacion-en-ingles-con-certificacion-internacional-para-docentes-del-conalep-mario-delgado?idiom=es</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Iniciativa para certificar a maestros de educación técnica en el idioma inglés mediante estándares internacionales.</description>
+      <category>Formación Docente</category>
+      <dc:creator>SEP</dc:creator>
+    </item>
+
+    <item>
+      <title>Gobierno de México destinará un billón de pesos en becas educativas</title>
+      <link>https://www.gob.mx/sep/prensa/boletin-134-gobierno-de-mexico-destinara-un-billon-136-mil-692-millones-de-pesos-en-becas-casi-tres-veces-lo-invertido-en-18-anos-sep?idiom=es</link>
+      <guid isPermaLink="true">https://www.gob.mx/sep/prensa/boletin-134-gobierno-de-mexico-destinara-un-billon-136-mil-692-millones-de-pesos-en-becas-casi-tres-veces-lo-invertido-en-18-anos-sep?idiom=es</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <description>SEP anuncia incremento histórico en el presupuesto destinado a apoyos económicos para estudiantes de todos los niveles.</description>
+      <category>Becas</category>
+      <dc:creator>SEP</dc:creator>
+    </item>
+  </channel>
+</rss>

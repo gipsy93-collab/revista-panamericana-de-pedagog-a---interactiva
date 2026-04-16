@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-
-const sections = [
-  'INICIO',
-  'ARTICULOS',
-  'SEMILLERO',
-  'TRANSMEDIA',
-  'ACTUALIDAD',
-  '¿POR QUÉ RPP?',
-  'CONTACTO'
-];
+import { useLanguage } from '../LanguageContext';
 
 export const StatusBar = ({ currentSection }: { currentSection: number }) => {
+  const { t } = useLanguage();
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const { scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  const sectionsList = [
+    t.nav.inicio,
+    t.nav.articulos,
+    t.nav.semillero,
+    t.nav.transmedia,
+    t.nav.actualidad,
+    t.nav.por_que,
+    t.nav.contacto
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
@@ -35,7 +37,7 @@ export const StatusBar = ({ currentSection }: { currentSection: number }) => {
         </span>
         <span className="hidden lg:inline text-white/30">|</span>
         <span className="hidden md:inline font-mono tracking-tighter">
-          SECCIÓN: <span className="text-white font-bold">{sections[currentSection] || 'RPP'}</span>
+          {t.nav.inicio === 'Home' ? 'SECTION' : 'SECCIÓN'}: <span className="text-white font-bold">{sectionsList[currentSection] || 'RPP'}</span>
         </span>
       </div>
 

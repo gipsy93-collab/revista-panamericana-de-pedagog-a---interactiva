@@ -1,0 +1,81 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+site_url: /
+
+collections:
+  - name: articles
+    label: Artículos Interactivos
+    label_singular: Artículo
+    folder: src/content/articles
+    create: true
+    slug: "{{id}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "ID", name: "id", widget: "string", required: true, hint: "Identificador único. Si tiene experiencia interactiva interna, debe coincidir con el nombre del componente." }
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Subtítulo", name: "subtitle", widget: "string", required: true }
+      - { label: "Autor", name: "author", widget: "string", required: true }
+      - { label: "Fecha", name: "date", widget: "string", required: true }
+      - { label: "Tag / Etiqueta", name: "tag", widget: "string", required: true }
+      - { label: "Métrica", name: "metric", widget: "number", required: true }
+      - { label: "Volumen", name: "volume", widget: "string", required: true }
+      - { label: "DOI", name: "doi", widget: "string", required: true }
+      - { label: "URL Interactiva externa", name: "interactUrl", widget: "string", default: "#", required: false, hint: "Si no tiene experiencia interna, dónde redirigir." }
+      - { label: "Icono", name: "icon", widget: "select", options: ["Brain", "Activity", "BookOpen", "GraduationCap", "Heart", "Film", "Phone", "ShieldAlert", "Search", "Sparkles", "TrendingUp"], required: true }
+      - { label: "Color de fondo (clase Tailwind)", name: "color", widget: "string", required: true, default: "bg-[#0f3896]" }
+      - { label: "Color de texto", name: "text", widget: "select", options: ["text-white", "text-black"], required: true }
+      - { label: "Color de acento", name: "accent", widget: "string", required: true }
+      - { label: "Keywords", name: "keywords", widget: "list", allow_add: true, default: [] }
+      - { label: "Tiene experiencia interactiva interna", name: "hasInteractive", widget: "boolean", default: false, hint: "¿Existe un componente React custom para este artículo?" }
+      - { label: "Plantilla genérica", name: "template", widget: "select", options: ["", "generic"], required: false, hint: "Usar 'generic' solo si NO hay componente React custom y quieres generar uno automáticamente." }
+      - { label: "Preguntas de Quiz (solo plantilla genérica)", name: "quizQuestions", widget: "list", required: false, fields: [
+          { label: "Pregunta", name: "question", widget: "string" },
+          { label: "Opciones", name: "options", widget: "list", field: { label: "Opción", name: "option", widget: "string" } },
+          { label: "Índice correcto (0-based)", name: "correctIndex", widget: "number", value_type: "int", min: 0 }
+        ]}
+      - { label: "Abstract / Cuerpo", name: "body", widget: "markdown", required: true }
+
+  - name: transmedia
+    label: Transmedia
+    label_singular: Proyecto Transmedia
+    folder: src/content/transmedia
+    create: true
+    slug: "{{id}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "ID", name: "id", widget: "string", required: true }
+      - { label: "Tipo", name: "type", widget: "select", options: ["Podcast", "Video Documental", "Datos Interactivos", "Infografía", "Video"], required: true }
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Descripción", name: "desc", widget: "text", required: true }
+      - { label: "Link", name: "link", widget: "string", required: true }
+      - { label: "Imagen", name: "image", widget: "image", required: true }
+      - { label: "Color de fondo", name: "color", widget: "string", required: true, default: "bg-[#fccb06]" }
+      - { label: "Color de texto", name: "text", widget: "select", options: ["text-white", "text-black"], required: true }
+      - { label: "Icono", name: "icon", widget: "select", options: ["Mic", "Play", "FileText"], required: true }
+
+  - name: blog
+    label: Blog
+    label_singular: Entrada de Blog
+    folder: src/content/blog
+    create: true
+    slug: "{{id}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "ID", name: "id", widget: "string", required: true }
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Descripción", name: "desc", widget: "text", required: true }
+      - { label: "Fecha", name: "date", widget: "string", required: true }
+      - { label: "Tiempo de lectura", name: "readTime", widget: "string", required: true }
+      - { label: "Categoría", name: "category", widget: "string", required: true }
+      - { label: "Color de fondo", name: "color", widget: "string", required: true, default: "bg-[#0f3896]" }
+      - { label: "Color de texto", name: "text", widget: "select", options: ["text-white", "text-black"], required: true }
+      - { label: "Icono", name: "icon", widget: "select", options: ["BookOpen", "Feather", "Eye", "MessageCircle"], required: true }

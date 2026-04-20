@@ -50,14 +50,14 @@ export const Navbar = ({
       </div>
 
       {/* Main Navbar Trigger & Language Switcher */}
-      <nav className={`fixed top-8 right-8 z-[110] flex items-center gap-4 transition-all duration-500 ${scrolled ? 'scale-90 -translate-y-2' : ''}`}>
+      <nav className={`fixed top-4 right-4 md:top-8 md:right-8 z-[110] flex items-center gap-3 md:gap-4 transition-all duration-500 ${scrolled ? 'scale-90 -translate-y-2' : ''}`}>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-          className="h-16 px-6 rounded-full bg-zine-black text-white border-2 border-black/10 backdrop-blur-md shadow-2xl flex items-center gap-3 font-mono text-sm font-black hover:bg-[#0f3896] transition-colors"
+          className="h-12 md:h-16 px-4 md:px-6 rounded-full bg-zine-black text-white border-2 border-black/10 backdrop-blur-md shadow-2xl flex items-center gap-2 md:gap-3 font-mono text-xs md:text-sm font-black hover:bg-[#0f3896] transition-colors"
         >
-          <Globe size={20} className={language === 'en' ? 'text-[#fccb06]' : 'text-white'} />
+          <Globe size={18} className={language === 'en' ? 'text-[#fccb06]' : 'text-white'} />
           <span className="tracking-widest">{language.toUpperCase()}</span>
         </motion.button>
 
@@ -65,13 +65,13 @@ export const Navbar = ({
           whileHover={{ scale: 1.1, rotate: 90 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all border-2 border-black/10 backdrop-blur-md ${
+          className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all border-2 border-black/10 backdrop-blur-md ${
             isOpen 
               ? 'bg-white text-zine-red' 
               : 'bg-zine-black text-white hover:bg-[#e81e61]'
           }`}
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </motion.button>
       </nav>
 

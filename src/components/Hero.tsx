@@ -57,7 +57,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center p-12 overflow-hidden bg-[#0f172a]"
+      className="relative min-h-screen flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden bg-[#0f172a]"
     >
       {/* FONDO PEDAGÓGICO: Azul noche con orbes flotantes */}
       {/* Orbe 1: Cyan - Movimiento lento y constante */}

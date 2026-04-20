@@ -8,29 +8,66 @@
    2xl: 1536px
 */
 
-/* Typography Scale */
+/* Global Mobile Adjustments */
 @media (max-width: 768px) {
+  :root {
+    --brutal-stroke-width: 0.5px;
+  }
+
   .text-huge {
-    font-size: clamp(3rem, 12vw, 6rem);
+    font-size: clamp(2.5rem, 15vw, 4rem) !important;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
   }
   
   .zine-heading {
-    font-size: 2.5rem;
+    font-size: 2rem !important;
   }
   
   .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Force single column on grids that might be broken */
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  /* Adjust Hero specifically */
+  section.relative.min-h-screen {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Scaling down large decorative elements */
+  .blur-\[120px\] {
+    filter: blur(60px) !important;
+    opacity: 0.3 !important;
   }
 }
 
 /* Touch-friendly targets for mobile */
 @media (max-width: 768px) {
   button, a {
-    min-height: 44px;
+    min-height: 48px;
     min-width: 44px;
+  }
+  
+  /* Prevent horizontal scroll issues */
+  body, html {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* Specific component fixes */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

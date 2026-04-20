@@ -1,55 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, Clock, ArrowUpRight, Feather, Eye, MessageCircle, ChevronRight } from 'lucide-react';
+import { BookOpen, Clock, ArrowUpRight, Feather, Eye, MessageCircle, ChevronRight, Share2 } from 'lucide-react';
 
-const BLOG_POSTS = [
-  { 
-    id: 1, 
-    title: 'RIGOR ACADÉMICO', 
-    desc: 'Somos parte de la Universidad de Guadalajara. Cada artículo pasa por un sistema doble ciego de revisión por pares.',
-    icon: Feather,
-    color: 'bg-[#0f3896]',
-    text: 'text-white',
-    date: '15 MAR 2026',
-    readTime: '5 min',
-    category: 'Editorial'
-  },
-  { 
-    id: 2, 
-    title: 'NARRATIVA TRANSMEDIA', 
-    desc: 'Transformamos papers estáticos en experiencias inmersivas, videos y podcast para mayor alcance.',
-    icon: Eye,
-    color: 'bg-[#e81e61]',
-    text: 'text-white',
-    date: '12 MAR 2026',
-    readTime: '8 min',
-    category: 'Innovación'
-  },
-  { 
-    id: 3, 
-    title: 'AUDIENCIAS GLOBALES', 
-    desc: 'Conectamos investigadores con lectores a nivel internacional a través de plataformas digitales optimizadas.',
-    icon: MessageCircle,
-    color: 'bg-[#fccb06]',
-    text: 'text-black',
-    date: '08 MAR 2026',
-    readTime: '6 min',
-    category: 'Comunidad'
-  },
-  { 
-    id: 4, 
-    title: 'FUTURO PEDAGÓGICO', 
-    desc: 'Exploramos innovaciones como la IA y la NEM con una mirada crítica, reflexiva y profunda.',
-    icon: BookOpen,
-    color: 'bg-[#5bc2a8]',
-    text: 'text-black',
-    date: '05 MAR 2026',
-    readTime: '10 min',
-    category: 'Tendencias'
-  }
-];
+// URL de Substack de RPP (Ajustar cuando se tenga la definitiva)
+const SUBSTACK_RSS_URL = 'https://revpanamericanadepedagogia.substack.com/feed';
+const RSS_CONVERTER_API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_RSS_URL)}`;
+
+interface SubstackPost {
+  id: string;
+  title: string;
+  desc: string;
+  link: string;
+  date: string;
+  thumbnail: string;
+  category: string;
+}
 
 export default function BlogSection() {
+  const [posts, setPosts] = useState<SubstackPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(RSS_CONVERTER_API)
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'ok' && data.items) {
+          const mappedPosts = data.items.map((item: any, index: number) => ({
+            id: item.guid || index.toString(),
+            title: item.title,
+            desc: item.description.replace(/<[^>]*>?/gm, '').substring(0, 120) + '...',
+            link: item.link,
+            date: new Date(item.pubDate).toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }),
+            thumbnail: item.thumbnail || item.enclosure?.link,
+            category: item.categories?.[0] || 'Editorial'
+          }));
+          setPosts(mappedPosts.slice(0, 4)); // Tomamos los 4 más recientes
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching Substack RSS:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  const cardColors = ['bg-[#0f3896]', 'bg-[#e81e61]', 'bg-[#fccb06]', 'bg-[#5bc2a8]'];
+  const textColors = ['text-white', 'text-white', 'text-black', 'text-black'];
+
   return (
     <section className="bg-[#1a1a1a] py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden selection:bg-[#fccb06] selection:text-black">
       {/* Background elements */}
@@ -66,7 +63,7 @@ export default function BlogSection() {
               className="flex items-center gap-4 mb-8"
             >
               <div className="w-12 h-12 bg-[#fccb06] flex items-center justify-center text-black">
-                <Feather size={24} />
+                <RssIcon size={24} />
               </div>
               <span className="font-accent font-black tracking-widest text-[#fccb06] uppercase text-sm">Blog Editorial // RPP_Insights</span>
             </motion.div>
@@ -82,17 +79,27 @@ export default function BlogSection() {
 
           <div className="text-right space-y-4">
              <div className="flex items-center gap-4 justify-end text-sm font-black uppercase tracking-widest text-[#5bc2a8]">
-                <BookOpen size={24} /> Blog_Active
+                <Share2 size={24} /> Live_Updates
              </div>
-             <p className="text-xs font-mono text-white/40 uppercase tracking-widest">Últimas_Entradas // Marzo_2026</p>
+             <p className="text-xs font-mono text-white/40 uppercase tracking-widest">Feed_Sync // {new Date().getFullYear()}</p>
           </div>
         </div>
 
-        {/* Blog Posts Grid - Mismo diseño de tarjetas */}
+        {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {BLOG_POSTS.map((post, i) => {
-            const Icon = post.icon;
-            return (
+          {loading ? (
+            Array(4).fill(0).map((_, i) => (
+              <div key={i} className="bg-white/5 border-4 border-white/10 p-8 h-[450px] animate-pulse rounded-2xl flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="w-20 h-4 bg-white/20 rounded" />
+                  <div className="w-full h-8 bg-white/20 rounded" />
+                  <div className="w-full h-24 bg-white/10 rounded" />
+                </div>
+                <div className="w-full h-10 bg-white/20 rounded" />
+              </div>
+            ))
+          ) : posts.length > 0 ? (
+            posts.map((post, i) => (
               <motion.article
                 key={post.id}
                 initial={{ rotate: i % 2 === 0 ? -5 : 5, y: 100, opacity: 0 }}
@@ -100,29 +107,32 @@ export default function BlogSection() {
                 whileHover={{ rotate: 0, scale: 1.02 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, type: 'spring' }}
-                className={`${post.color} ${post.text} p-8 border-4 border-black shadow-[10px_10px_0_#000] flex flex-col justify-between min-h-[450px] relative group overflow-hidden cursor-pointer`}
+                onClick={() => window.open(post.link, '_blank')}
+                className={`${cardColors[i % 4]} ${textColors[i % 4]} p-8 border-4 border-black shadow-[10px_10px_0_#000] flex flex-col justify-between min-h-[450px] relative group overflow-hidden cursor-pointer`}
               >
-                 {/* Decorative elements */}
                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform" />
-                 <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-black/10 group-hover:rotate-45 transition-transform" />
-
+                 
                  <div className="relative z-10">
-                    {/* Meta info */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="font-mono text-[10px] font-black uppercase tracking-wider px-3 py-1 bg-black/10 rounded">
                         {post.category}
                       </span>
-                      <span className="font-mono text-[9px] opacity-60">{post.readTime}</span>
                     </div>
                     
-                    <div className="w-14 h-14 bg-white/20 flex items-center justify-center rounded-xl mb-8 border border-white/20 group-hover:bg-white group-hover:text-black transition-all">
-                       <Icon size={28} />
-                    </div>
+                    {post.thumbnail ? (
+                      <div className="w-full h-32 mb-8 border-2 border-black overflow-hidden bg-black/20">
+                        <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 bg-white/20 flex items-center justify-center rounded-xl mb-8 border border-white/20 group-hover:bg-white group-hover:text-black transition-all">
+                         <BookOpen size={28} />
+                      </div>
+                    )}
                     
-                    <h3 className="text-3xl md:text-4xl font-display uppercase leading-none mb-6">
+                    <h3 className="text-2xl md:text-3xl font-display uppercase leading-none mb-6">
                        {post.title}
                     </h3>
-                    <p className="text-sm font-bold opacity-70 uppercase tracking-widest leading-relaxed">
+                    <p className="text-xs font-bold opacity-70 uppercase tracking-widest leading-relaxed line-clamp-4">
                        {post.desc}
                     </p>
                  </div>
@@ -130,34 +140,43 @@ export default function BlogSection() {
                  <div className="relative z-10 pt-8 flex items-center justify-between border-t border-current/10">
                     <span className="font-mono text-[10px] opacity-60">{post.date}</span>
                     <div className="flex items-center gap-2 font-mono text-[10px] font-black uppercase group-hover:translate-x-1 transition-transform">
-                      Leer <ChevronRight size={14} />
+                      Leer en Substack <ChevronRight size={14} />
                     </div>
                  </div>
               </motion.article>
-            );
-          })}
+            ))
+          ) : (
+            <div className="col-span-full py-20 border-4 border-dashed border-white/20 text-white/40 text-center font-mono">
+               No se pudieron cargar las entradas de Substack.
+            </div>
+          )}
         </div>
 
         {/* Call to action section */}
         <div className="mt-32 p-12 md:p-24 bg-black text-white flex flex-col lg:flex-row items-center justify-between gap-12 border-4 border-white/10">
            <div className="max-w-2xl text-center lg:text-left">
-              <h4 className="text-5xl md:text-6xl font-display uppercase leading-tight mb-8">¿Quieres<br /><span className="text-[#fccb06]">contribuir?</span></h4>
+              <h4 className="text-5xl md:text-6xl font-display uppercase leading-tight mb-8">Suscríbete a<br /><span className="text-[#fccb06]">Substack RPP</span></h4>
               <p className="text-white/40 text-xl font-light leading-relaxed">
-                 Comparte tu perspectiva sobre pedagogía, innovación educativa y ciencia del aprendizamiento.
+                 Recibe nuestras investigaciones y reflexiones directamente en tu correo electrónico.
               </p>
            </div>
            
            <div className="flex flex-col sm:flex-row gap-6">
-              <button className="px-12 py-6 bg-[#fccb06] text-black font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4 shadow-[8px_8px_0_rgba(252,203,6,0.3)]">
-                <BookOpen size={24} /> Escribir <ArrowUpRight className="text-[10px]" />
-              </button>
-              <button className="px-12 py-6 border-4 border-white text-white font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4">
-                <Clock size={24} /> Archivo
+              <button 
+                onClick={() => window.open('https://revpanamericanadepedagogia.substack.com', '_blank')}
+                className="px-12 py-6 bg-[#fccb06] text-black font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4 shadow-[8px_8px_0_rgba(252,203,6,0.3)]"
+              >
+                <ArrowUpRight size={24} /> Suscribirse
               </button>
            </div>
         </div>
       </div>
-
     </section>
   );
 }
+
+// Icono decorativo para el RSS
+const RssIcon = ({ size }: { size: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+);
+

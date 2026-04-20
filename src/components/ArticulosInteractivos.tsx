@@ -195,7 +195,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="relative w-full max-w-5xl bg-white border-8 border-black shadow-[24px_24px_0_#000] overflow-hidden flex flex-col"
+              className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-white border-4 md:border-8 border-black shadow-[12px_12px_0_#000] md:shadow-[24px_24px_0_#000] overflow-hidden flex flex-col"
             >
                <div className="bg-black text-white p-4 flex justify-between items-center">
                   <span className="font-mono text-[10px] font-black uppercase">MÉTRICAS DEL ARTÍCULO // ID {selectedArticle.id}</span>
@@ -204,8 +204,8 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
                   </button>
                </div>
 
-               <div className="flex flex-col md:flex-row overflow-y-auto">
-                  <div className={`${selectedArticle.color || 'bg-white'} ${selectedArticle.text || 'text-black'} w-full md:w-2/5 p-12 flex flex-col justify-between`}>
+               <div className="flex flex-col md:flex-row overflow-y-auto custom-scrollbar">
+                  <div className={`${selectedArticle.color || 'bg-white'} ${selectedArticle.text || 'text-black'} w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-between`}>
                      <div className="w-16 h-16 bg-black/10 border-4 border-current flex items-center justify-center mb-12">
                         {(() => {
                            const Icon = ICON_MAP[selectedArticle.icon || ''] || BookMarked;
@@ -215,7 +215,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
                      <h3 className="text-5xl font-display uppercase leading-none">{selectedArticle.title}</h3>
                   </div>
                   
-                  <div className="flex-1 p-8 md:p-12">
+                  <div className="flex-1 p-6 md:p-12">
                      <div className="flex flex-wrap gap-2 mb-8">
                         {selectedArticle.keywords && Array.isArray(selectedArticle.keywords) ? 
                           selectedArticle.keywords.map(k => (
@@ -246,9 +246,9 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
                          if (onOpenArticle) onOpenArticle(selectedArticle.id.toString());
                          setSelectedArticle(null);
                        }}
-                       className="w-full bg-black text-white font-display text-2xl p-6 uppercase hover:bg-zinc-800 transition-colors flex items-center justify-center gap-4"
+                       className="w-full bg-black text-white font-display text-xl md:text-2xl p-5 md:p-6 uppercase hover:bg-zinc-800 transition-colors flex items-center justify-center gap-4 sticky bottom-0"
                      >
-                       EXPLORAR INVESTIGACIÓN <ExternalLink size={24} />
+                       EXPLORAR INVESTIGACIÓN <ExternalLink size={20} />
                      </button>
                   </div>
                </div>

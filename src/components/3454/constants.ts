@@ -1,80 +1,119 @@
 export const ARTICLE_META = {
   id: '3454',
-  title: 'Inclusión y cultura de paz en la universidad: contexto de violencia delictiva',
-  carouselTitle: 'CULTURA DE PAZ',
-  subtitle: 'La Academia Frente a la Delincuencia en Colima, México',
-  authors: 'Ramos-Ramírez & Márquez-Cabellos',
-  institution: 'Universidad de Colima (México)',
   doi: '10.21555/rpp.3454',
-  volume: 'Vol. 40',
-  date: '2025',
+  title: 'Inclusión y cultura de paz en la universidad: percepciones de estudiantes en contexto de violencia delictiva',
+  carouselTitle: 'CULTURA DE PAZ // COLIMA',
+  authors: 'Briseda-Noemí Ramos-Ramírez, Norma-Guadalupe Márquez-Cabellos',
+  institution: 'Universidad de Colima, México',
+  volume: '40',
+  date: '14-08-2025',
   n: 200,
-  context: 'Campus Colima, México (Ciudad más violenta del mundo 2022)',
+  abstract: 'Análisis de la percepción estudiantil en Colima, México —región con altos índices de criminalidad—. El estudio revela una brecha entre el discurso institucional y la práctica operativa, donde el 92.7% de los estudiantes demanda una integración real de la cultura de paz en el currículo universitario.'
 };
 
-export const LIMITATIONS = [
-  'Muestra limitada a áreas de humanidades y ciencias sociales.',
-  'Diseño de corte transversal (no mide evolución a lo largo del tiempo).',
-  'Sesgo potencial de autopercepción y reporte individual de la victimización.',
-  'No se desagregan cruces detallados entre violencia y perspectiva de género.',
-];
+export const METHODOLOGY = {
+  design: 'Cualitativo Exploratorio',
+  approach: 'Análisis Mixto (SPSS + Text Analytics)',
+  sample: '200 Estudiantes de 20 Licenciaturas (Universidad de Colima)',
+  instruments: 'Cuestionario Validado por Expertos (18 ítems)',
+  analysis: 'Análisis descriptivo y clasificación cualitativa en 7 categorías'
+};
 
 export const DIMENSIONS = [
   {
-    code: 'VIOL',
-    name: 'Exposición Criminal',
-    emoji: '🚨',
-    desc: 'Un alarmante 64.6% de los universitarios ha atestiguado directamente actos de violencia delictiva extrema en sus entornos cotidianos.',
+    code: 'VE',
+    name: 'Violencia en el Entorno',
+    emoji: '🏘️',
+    desc: 'Percepción de criminalidad y seguridad en espacios públicos y privados.',
+    highlight: '64.6% de los estudiantes han sido testigos directos de eventos de violencia criminal.'
   },
   {
-    code: 'CURR',
-    name: 'Brecha Curricular',
-    emoji: '📚',
-    desc: 'El 92.7% exige formación para la paz, pero apenas el 55.9% logra identificar alguna acción concreta dentro del currículo oficial de su carrera.',
+    code: 'AU',
+    name: 'Acciones Universitarias',
+    emoji: '🏛️',
+    desc: 'Efectividad de estrategias institucionales y presencia de paz en el currículo.',
+    highlight: 'Solo el 55.9% identifica acciones de cultura de paz en sus carreras.'
   },
   {
-    code: 'DOC',
-    name: 'Docentes como Escudos',
-    emoji: '🛡️',
-    desc: 'El 77.7% visualiza a sus profesores primarios como los auténticos agentes y promotores de la paz, más allá del marco político oficial.',
+    code: 'CE',
+    name: 'Contribución Estudiantil',
+    emoji: '🤝',
+    desc: 'Acciones propuestas por estudiantes para promover la inclusión y la paz.',
+    highlight: '70% de los estudiantes solicita más cursos y conferencias formativas.'
   },
   {
-    code: 'SAFE',
-    name: 'Espacios Seguros',
-    emoji: '🔒',
-    desc: 'Apenas el 4.5% percibe a la universidad como su zona primaria de refugio, prefiriendo sus hogares (92.7%) ante el clima urbano inseguro.',
+    code: 'JP',
+    name: 'Justicia Social',
+    emoji: '⚖️',
+    desc: 'Reconocimiento y redistribución como bases para una sociedad justa.',
+    highlight: '92.7% considera urgente promover la paz en actividades extracurriculares.'
+  }
+];
+
+export const DATA_HIGHLIGHTS = [
+  { label: 'Testigos de violencia', value: 64.6, unit: '%' },
+  { label: 'Perciben criminalidad alta', value: 74.9, unit: '%' },
+  { label: 'Seguros en la Universidad', value: 43.0, unit: '%' }
+];
+
+export const TESTIMONIALS = [
+  {
+    quote: 'El 92.7% de los estudiantes considera necesario promover una cultura de paz e inclusión tanto en las asignaturas como en las actividades extracurriculares.',
+    author: 'Página 12',
+    role: 'Evidencia Estadística'
   },
+  {
+    quote: 'La autonomía capacita a la persona para reafirmar su capacidad de actuar frente a la violencia, la indiferencia, la injusticia y la violación de derechos.',
+    author: 'Cerdas-Agüero (Citado)',
+    role: 'Marco Teórico'
+  },
+  {
+    quote: 'Existe una brecha entre el discurso institucional y la implementación práctica en las aulas.',
+    author: 'Ramos & Márquez',
+    role: 'Conclusión Central'
+  }
 ];
 
 export const QUIZ_QUESTIONS = [
   {
-    question: 'Según los datos recopilados, ¿A qué espacio vital la abrumadora mayoría de los estudiantes (92.7%) relega su sensación real de "seguridad"?',
-    options: ['Al campus universitario', 'A los centros comerciales', 'A su hogar / domicilio', 'A ningún espacio, viven en alerta constante'],
+    question: '¿Qué porcentaje de estudiantes considera necesario promover la cultura de paz en el currículo?',
+    options: ['55.9%', '78.2%', '92.7%', '43%'],
     correct: 2,
-    explanation: 'El 92.7% se siente a salvo únicamente y primordialmente en sus propios hogares, exponiendo la vulnerabilidad del trayecto público y los espacios abiertos de la academia.',
+    explanation: 'Un abrumador 92.7% de los encuestados demanda la inclusión de cultura de paz en sus asignaturas.'
   },
   {
-    question: '¿Qué porcentaje de estudiantes declara haber atestiguado de primera mano actos de violencia o delincuencia?',
-    options: ['12.4%', '45.3%', '64.6%', '85.8%'],
-    correct: 2,
-    explanation: 'Un crítico 64.6% confesó ser testigo activo de la violencia criminal. Esto implica que la violencia no es una anécdota mediática, sino un trauma colectivo real e integrado en su psique académica.',
-  },
-  {
-    question: 'Frente al discurso institucional de pacificación social, ¿quiénes son vistos por el 77.7% del alumnado como los VERDADEROS operarios o promotores de esta cultura?',
-    options: ['Los policías asignados', 'Los docentes y profesores de aula', 'Las autoridades gubernamentales', 'Los líderes estudiantiles y sindicatos'],
+    question: '¿Cómo ha sido clasificado el contexto social de Colima en el estudio?',
+    options: [
+      'De violencia moderada',
+      'Como una de las ciudades más violentas del mundo',
+      'Sin impacto significativo en la universidad',
+      'Como zona de paz prioritaria'
+    ],
     correct: 1,
-    explanation: 'El docente de a pie es la primera línea de defensa. Casi el 80% del padrón reconoce a su profesor/a como el agente moral y protector tangible ante la zozobra y la violencia del macroentorno.',
+    explanation: 'Colima fue clasificada como la ciudad más violenta del mundo en 2022, con una tasa de 181.94 homicidios por cada 100k habitantes.'
   },
   {
-    question: 'A pesar de ser una universidad pública... ¿Cuál es la mayor petición formativa de los encuestados para contrarrestar este clima de miedo?',
-    options: ['Que se contrate seguridad privada fuertemente armada', 'Que se muden los campus a zonas rurales aisladas', '70% pide más cursos, conferencias e información sobre paz', 'Suspender las materias humanísticas para priorizar autodefensa'],
+    question: '¿Qué porcentaje de estudiantes reconoce el rol del docente como promotor de paz?',
+    options: ['20%', '55.9%', '77.7%', '90%'],
     correct: 2,
-    explanation: 'El 70% pide más herramientas dialógicas e informativas (cursos, cultura, conferencias). Los alumnos creen en la educación como escudo sociológico, no en la militarización del campus.',
+    explanation: 'El 77.7% de los estudiantes reconoce y valora las acciones de sus docentes para promover la paz.'
   },
   {
-    question: 'La investigación evidenció una brecha o disonancia cognitiva profunda. ¿Cuál es?',
-    options: ['Los alumnos piden paz comunitaria, pero fomentan acoso dentro de las aulas', 'Los alumnos demandan más tareas, pero los docentes no imparten clases', 'El 92.7% considera necesario enseñar la paz, pero apenas un 55.9% logra encontrar esto en sus planes de estudio', 'Ninguna; las autoridades escolares tienen una alineación curricular perfecta.'],
-    correct: 2,
-    explanation: 'La brecha entre expectativa y realidad. Casi todos consideran URGENTE la materia de la paz transversal, pero apenas la mitad la detecta formalizada dentro de su pensum. La academia se ha quedado corta institucionalmente.',
-  },
+    question: '¿Cuál es la principal demanda estudiantil para promover la paz?',
+    options: [
+      'Más guardias de seguridad',
+      'Más cursos, conferencias y pláticas',
+      'Cierre de los campus nocturnos',
+      'Menos tareas académicas'
+    ],
+    correct: 1,
+    explanation: 'El 70% de las propuestas estudiantiles se enfocan en la necesidad de más formación y conferencias sobre cultura de paz.'
+  }
+];
+
+export const LIMITATIONS = [
+  'Muestra limitada a dos campus de una sola universidad.',
+  'Falta de desglose por género en un contexto de violencia diferenciada.',
+  'Diseño transversal que no captura cambios temporales.',
+  'Sesgo potencial de auto-reporte en percepciones de seguridad.'
 ];

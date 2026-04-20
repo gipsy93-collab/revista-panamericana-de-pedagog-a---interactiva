@@ -1,79 +1,137 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Play, Sparkles, Binary, Gamepad2, Trophy } from 'lucide-react';
-import { BrutalSticker, PremiumTitle, CinematicCard } from '../BrutalistLib';
+import { Sparkles, MessageSquare, Compass, GraduationCap, Map, Layout, Zap } from 'lucide-react';
+import { BrutalSticker, CinematicCard } from '../BrutalistLib';
+import { ARTICLE_META } from './constants';
 
 export const Hero3378 = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-white px-4 py-32 border-b-[20px] border-black">
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-20 right-20 w-[600px] h-[600px] rounded-full bg-indigo-600 blur-[150px]" />
-        <div className="absolute bottom-20 left-20 w-[500px] h-[500px] rounded-full bg-pink-400 blur-[120px]" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-30" />
+    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-white px-4 py-32">
+      {/* Dynamic Background with "Bubbles" Metaphor */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute top-20 right-[15%] w-[400px] h-[400px] rounded-full bg-pink-400 blur-[80px]" 
+        />
+        <motion.div 
+          animate={{ scale: [1.2, 1, 1.2], x: [0, -40, 0], y: [0, 60, 0] }}
+          transition={{ duration: 18, repeat: Infinity }}
+          className="absolute bottom-40 left-[10%] w-[500px] h-[500px] rounded-full bg-indigo-500 blur-[100px]" 
+        />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dust.png')] opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, type: 'spring' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          <BrutalSticker text="GAMIFICACIÓN // COSTA RICA" color="bg-black" className="text-white mb-12 !rotate-0 px-8 py-3 text-2xl border-4 shadow-[8px_8px_0_0_#4f46e5]" />
+          {/* Header Sticker */}
+          <BrutalSticker 
+            text="PAISAJES DE APRENDIZAJE // COSTA RICA" 
+            color="bg-pink-600" 
+            className="text-white mb-10 shadow-[8px_8px_0_0_#000] !rotate-0 px-6" 
+          />
           
-          <div className="relative inline-block mb-12">
-            <motion.div 
-              initial={{ rotate: -20 }}
-              animate={{ rotate: 20 }}
-              transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
-              className="absolute -top-16 -left-16 w-32 h-32 bg-indigo-600 border-8 border-black rounded-full flex items-center justify-center text-white z-20 shadow-[8px_8px_0_0_#000]"
+          <div className="max-w-6xl mx-auto mb-16 text-left">
+            {/* Mascot Icon Label using Bubbles */}
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              className="flex items-center gap-4 mb-8"
             >
-              <Gamepad2 size={48} />
+              <div className="w-14 h-14 bg-pink-100 border-4 border-black rounded-full flex items-center justify-center text-pink-600 shadow-[4px_4px_0_0_#000]">
+                <MessageSquare size={28} />
+              </div>
+              <span className="font-mono text-xs font-black tracking-[0.2em] uppercase bg-white px-4 py-2 border-2 border-dashed border-black">
+                {ARTICLE_META.carouselTitle}
+              </span>
             </motion.div>
-            
-            <div className="text-[10rem] md:text-[15rem] font-display uppercase leading-[0.7] text-indigo-600 drop-shadow-[20px_20px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: '4px black' }}>
-              Play_
+
+            {/* Academic Title - Dialogue Patterned */}
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-display font-black leading-[1.05] text-black tracking-tighter uppercase mb-12 max-w-6xl drop-shadow-[5px_5px_0_rgba(219,39,119,0.2)]">
+              {ARTICLE_META.title.split(' ').map((word, k) => (
+                <span key={k} className="inline-block mr-4">
+                  <span className={k % 4 === 0 ? 'text-pink-600 italic underline decoration-black decoration-8' : 'text-black'}>
+                    {word}
+                  </span>
+                </span>
+              ))}
+            </h1>
+          </div>
+
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-start text-left mb-24">
+            {/* Technical Box for Abstract and Authors */}
+            <div className="flex-1 bg-white text-black p-12 border-8 border-black shadow-[20px_20px_0_0_#db2777] relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-4 font-mono text-[9px] opacity-40 uppercase font-black tracking-widest">REF-3378 // LEARNING LANDSCAPES</div>
+               
+               <p className="text-2xl md:text-3xl font-serif italic leading-relaxed text-zinc-700 mb-10 border-l-[12px] border-pink-500 pl-8">
+                "{ARTICLE_META.abstract}"
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-10 border-t-4 border-black uppercase">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-pink-600 tracking-[0.2em] font-black">AUTORES</span>
+                  <p className="font-display text-sm font-bold leading-tight decoration-pink-500/30 underline">{ARTICLE_META.authors}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-pink-600 tracking-[0.2em] font-black">LUGAR / FECHA</span>
+                  <p className="font-display text-sm font-bold uppercase">{ARTICLE_META.context} · {ARTICLE_META.date}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-pink-600 tracking-[0.2em] font-black">DOI ACADÉMICO</span>
+                  <a href={`https://doi.org/${ARTICLE_META.doi}`} target="_blank" rel="noreferrer" className="font-mono text-xs font-bold bg-pink-50 px-2 py-1 border border-pink-200 inline-block hover:text-pink-600 hover:underline transition-colors">{ARTICLE_META.doi}</a>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono text-pink-600 tracking-[0.2em] font-black">METODOLOGÍA</span>
+                  <p className="font-display text-sm font-bold italic">{ARTICLE_META.methodology}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Stats Sidebar */}
+            <div className="w-full lg:w-80 space-y-8">
+              <div className="bg-black p-8 border-4 border-black shadow-[10px_10px_0_0_#db2777] text-white rotate-2">
+                <span className="block text-[11px] font-mono uppercase mb-3 text-pink-400">PARTICIPACIÓN FOROS</span>
+                <div className="text-5xl font-display font-black italic">+24%</div>
+                <p className="text-[10px] font-mono uppercase opacity-70 mt-3 border-t border-white/20 pt-3">Incremento Cualitativo</p>
+              </div>
+              <div className="bg-pink-50 p-8 border-4 border-black shadow-[10px_10px_0_0_#000] -rotate-1">
+                <span className="block text-[11px] font-mono uppercase mb-3 text-black">NOVEDAD MÉTODO</span>
+                <div className="text-4xl font-display font-black text-pink-600">100%</div>
+                <p className="text-[10px] font-mono uppercase font-black opacity-50 mt-3">Experiencia por Primera Vez</p>
+              </div>
             </div>
           </div>
 
-          <PremiumTitle subtitle="ESTRATEGIAS DE MOTIVACIÓN" className="items-center max-w-5xl mx-auto mb-12 leading-tight">
-            El Juego como Motor de Cambio
-          </PremiumTitle>
-
-          <div className="max-w-4xl mx-auto space-y-8 bg-zinc-900 text-white p-12 border-8 border-black shadow-[25px_25px_0_0_#4f46e5] rotate-1 mb-20 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-4 font-mono text-[10px] opacity-20 uppercase font-black">REF_3378 // GAMIFICATION_STUDY</div>
-            <p className="text-3xl font-serif italic leading-relaxed text-indigo-100">
-              "Investigando cómo elementos del juego transforman la participación y el rendimiento en escuelas de Costa Rica."
-            </p>
-            <div className="h-2 w-48 bg-indigo-600 mx-auto" />
-            <p className="font-display uppercase text-xl font-black tracking-widest text-[#F8FAFC]">
-              Saborío-Taylor <span className="text-indigo-600">//</span> CIENCIA TRANSMEDIA
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left mb-24 max-w-6xl mx-auto">
-            <CinematicCard color="bg-white" title="METODOLOGÍA" icon={Binary} className="shadow-[12px_12px_0_0_#4f46e5]">
-              <div className="text-5xl font-display font-black text-indigo-600 mb-2 uppercase italic leading-none text-center">CUASI_EXP</div>
-              <p className="text-sm font-mono font-black border-t-2 border-black pt-2 uppercase">Diseño de Campo Controlado_</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mb-28 max-w-6xl mx-auto">
+            <CinematicCard color="bg-white" title="METÁFORA" icon={Map} className="shadow-[15px_15px_0_0_#db2777] border-pink-200">
+              <div className="text-4xl font-display font-black text-black mb-2 italic uppercase">Burbujas</div>
+              <p className="text-sm font-mono font-black border-t-2 border-black pt-2 uppercase">Reflexión Dialógica</p>
             </CinematicCard>
-            <CinematicCard color="bg-white" title="UBICACIÓN" icon={Sparkles} className="shadow-[12px_12px_0_0_#000] lg:translate-y-8">
-              <div className="text-4xl font-display font-black text-black mb-2 uppercase leading-none italic">Costa Rica</div>
-              <p className="text-sm font-mono font-black border-t-2 border-black pt-2 uppercase">Educación Secundaria_</p>
+            <CinematicCard color="bg-zinc-900" className="text-white shadow-[15px_15px_0_0_#000] lg:translate-y-10" title="RESULTADO" icon={Zap}>
+              <div className="text-5xl font-display font-black text-pink-400 mb-2 uppercase leading-none italic">85% ÚTIL</div>
+              <p className="text-sm font-mono font-black border-t-2 border-white/20 pt-2 uppercase">Valoración de Recursos</p>
             </CinematicCard>
-            <CinematicCard color="bg-black" className="text-white shadow-[12px_12px_0_0_#fde047]" title="FOCO">
-              <div className="text-xl font-display font-black text-indigo-400 mb-2 italic uppercase">MOTIVACIÓN</div>
-              <p className="text-sm font-mono font-black border-t-2 border-white/20 pt-2 uppercase">Vínculo con el Logro_</p>
+            <CinematicCard color="bg-white" title="TIEMPO" icon={Layout} className="shadow-[15px_15px_0_0_#db2777]">
+              <div className="text-3xl font-display font-black text-indigo-600 mb-2 italic uppercase">12 Semanas</div>
+              <p className="text-sm font-mono font-black border-t-2 border-black pt-2 uppercase">12 Micro-paisajes</p>
             </CinematicCard>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="flex flex-col items-center"
           >
-             <p className="font-display uppercase text-xs font-black tracking-[0.5em] mb-8 text-indigo-600 animate-pulse">Press start to explore_</p>
-             <Trophy className="mx-auto w-12 h-12 text-yellow-400 animate-bounce" />
+             <p className="font-display uppercase text-xs font-black tracking-[0.4em] mb-10 text-pink-600">Explorar los Paisajes de Aprendizaje</p>
+             <div className="w-12 h-12 rounded-full border-4 border-black flex items-center justify-center animate-bounce shadow-[4px_4px_0_0_#db2777] bg-white">
+                <Compass className="text-black" />
+             </div>
           </motion.div>
         </motion.div>
       </div>

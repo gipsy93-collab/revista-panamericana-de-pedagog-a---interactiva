@@ -43,7 +43,7 @@ export const Fricciones3455: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-20 text-center">
           <BrutalSticker text="Lectura Crítica" color="bg-black" className="text-white mb-6" />
-          <h2 className="text-7xl md:text-8xl font-pop uppercase text-black leading-none" style={{ WebkitTextStroke: '2px black' }}>
+          <h2 className="text-7xl md:text-8xl font-pop uppercase text-black leading-none" style={{ WebkitTextStroke: 'var(--brutal-stroke-width) black' }}>
             Fricciones<br />Pedagógicas
           </h2>
           <p className="mt-8 text-xl font-serif italic text-black/60 max-w-2xl mx-auto">

@@ -1,45 +1,21 @@
 export interface QuizQuestion {
+  id: string;
   question: string;
   options: string[];
-  correct: number;
+  correctAnswer: number;
+  feedback: string;
 }
 
-export interface Profile {
-  key: string;
-  name: string;
-  age: number;
-  semester: string;
-  location: string;
-  tags: string[];
-  story: string;
-  quote?: string;
-  color: string;
-}
-
-export interface DataStat {
-  value: string;
-  label: string;
-  context: string;
-}
-
-export interface AgeBar {
-  label: string;
-  count: number;
-  widthPercent: number;
-}
-
-export interface TheoryTab {
-  key: string;
-  title: string;
-  content: React.ReactNode;
-}
-
-export interface Testimonial {
+export interface Testimony {
   text: string;
   author: string;
 }
 
-export interface Solution {
+export interface Dimension {
   id: string;
-  label: string;
+  title: string;
+  content: string;
+  highlight: string;
+  icon: string;
+  testimonies: Testimony[];
 }

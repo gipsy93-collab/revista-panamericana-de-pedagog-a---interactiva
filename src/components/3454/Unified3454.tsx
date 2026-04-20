@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { ChevronLeft } from 'lucide-react';
-import { Hero3454 } from './Hero3454';
-import { Content3454 } from './Content3454';
+import Hero3454 from './Hero3454';
+import Content3454 from './Content3454';
 import { Quiz3454 } from './Quiz3454';
 import { FilmGrain } from '../FilmGrain';
 

@@ -1,15 +1,19 @@
 export const ARTICLE_META = {
   id: '3214',
-  title: 'La innovación pedagógica en la formación de bachilleres técnicos agropecuarios para prácticas sostenibles',
-  carouselTitle: 'AGRO INNOVACIÓN',
-  subtitle: 'Bachilleres Técnicos y Transformación Rural en Ecuador',
-  authors: 'Dueñas Basurto & Zambrano Vera',
+  title: 'La innovación pedagógica y su aporte en la formación de bachilleres técnicos agropecuarios para implementar prácticas sostenibles',
+  carouselTitle: 'AGRO INNOVACIÓN // MANABÍ',
+  subtitle: 'TECNOLOGÍA Y SOSTENIBILIDAD EN EL AGRO RURAL',
+  abstract: 'Investigación cuasiexperimental cuantitativa y cualitativa desarrollada en Manabí, Ecuador, sobre la efectividad de la innovación pedagógica en la formación técnica agropecuaria. El estudio demuestra cómo el aprendizaje experiencial y el uso de aplicaciones móviles incrementan en un 20% la motivación y comprensión del desarrollo sostenible en bachilleres rurales.',
+  authors: 'Celso Gustavo Dueñas Basurto & Eura María Zambrano Vera',
   institution: 'Universidad Laica "Eloy Alfaro" de Manabí (Ecuador)',
   doi: '10.21555/rpp.3214',
   volume: 'Vol. 39',
-  date: '2025',
-  n: 60,
-  context: 'UEF San Isidro, cantón Sucre, Manabí, Ecuador',
+  date: 'Febrero 2025',
+  n: 119,
+  ageRange: 'Estudiantes, Padres y Docentes',
+  context: 'UEF San Isidro, Manabí, Ecuador',
+  methodology: 'Cuasiexperimental, mixto, exploratorio y descriptivo',
+  phases: ['Pre-test (1 sem)', 'Intervención (12 sem)', 'Post-test (1 sem)']
 };
 
 export const LIMITATIONS = [
@@ -25,24 +29,44 @@ export const DIMENSIONS = [
     name: 'Apps Agrícolas',
     emoji: '🌾',
     desc: 'Crecimiento del +20% en el uso de aplicaciones móviles especializadas tras la intervención, superando barreras de conectividad rural.',
+    highlights: [
+      'Alza del 20% al 40% en apps agro-técnicas.',
+      'Sustitución de RRSS por utilidades productivas.',
+      'Facilidad de uso en zonas con baja conectividad.'
+    ]
   },
   {
     code: 'SOST',
     name: 'Compromiso Ecológico',
     emoji: '🌱',
     desc: 'La motivación por implementar prácticas sostenibles experimentó un salto cuantitativo (+20% categorizado como "Mucho").',
+    highlights: [
+      'Valores y actitudes responsables fortalecidas.',
+      'Mayor disposición hacia proyectos de post-grado.',
+      'Comprensión holística: Economía, Social y Ambiental.'
+    ]
   },
   {
     code: 'EXP',
     name: 'Aprendizaje Experiencial',
     emoji: '🚜',
     desc: 'Las salidas de campo y laboratorios vivos lideraron como la estrategia pedagógica de mayor preferencia global (45%).',
+    highlights: [
+      'Preferencia mayoritaria: 45%.',
+      'Conexión profunda entre teoría y práctica en fincas.',
+      'Fomento de la reflexión crítica en territorio.'
+    ]
   },
   {
     code: 'BRECHA',
     name: 'Retos Estructurales',
     emoji: '⚠️',
     desc: 'El 70% de docentes reportan escasez crítica de recursos e infraestructura para sostener estos marcos de innovación.',
+    highlights: [
+      '70%: Falta de recursos y tiempo.',
+      '60%: Necesidad de mayor capacitación docente.',
+      '40%: Resistencia al cambio institucional.'
+    ]
   },
 ];
 

@@ -1,51 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, RotateCcw } from 'lucide-react';
-import { BrutalCard, BrutalSticker } from '../BrutalistLib';
-
-const QUESTIONS = [
-  {
-    question: '¿Cuántos docentes en formación participaron en el estudio de Chan-Chi & Poot-May?',
-    options: ['28', '35', '57', '61'],
-    correct: 2,
-    explanation: 'La muestra estuvo conformada por 57 docentes en formación (35 mujeres y 22 hombres).',
-  },
-  {
-    question: '¿Cuál es el valor predominante identificado en los futuros docentes?',
-    options: ['Respeto', 'Responsabilidad', 'Compromiso', 'Amabilidad'],
-    correct: 1,
-    explanation: 'Responsabilidad fue el valor más mencionado con un 52.6%, seguido de Respeto (49.1%) y Compromiso (38.6%).',
-  },
-  {
-    question: 'Según el marco teórico, ¿cuál es la dimensión que da sentido a las demás?',
-    options: ['Física', 'Psíquica', 'Social', 'Personal'],
-    correct: 3,
-    explanation: 'La Dimensión Personal es el "centro" que da sentido a las demás dimensiones del ser.',
-  },
-  {
-    question: '¿Qué porcentaje de participantes admite desafíos en la gestión emocional y falta de confianza?',
-    options: ['38.6%', '49.1%', '52.6%', '61%'],
-    correct: 3,
-    explanation: 'El 61% de los participantes admite que el mayor desafío es la falta de confianza y la gestión de sus propias emociones.',
-  },
-  {
-    question: '¿Cuál es la propuesta central del estudio para la formación docente?',
-    options: [
-      'Priorizar el enfoque cognitivo',
-      'Incluir espacios curriculares para el desarrollo humano y emocional',
-      'Aumentar las horas de práctica docente',
-      'Eliminar la teoría pedagógica de la malla'
-    ],
-    correct: 1,
-    explanation: 'Los autores proponen que las mallas curriculares incluyan espacios específicos dedicados al desarrollo humano y emocional.',
-  },
-];
+import { CheckCircle, XCircle, RotateCcw, Award, Heart } from 'lucide-react';
+import { QUIZ_QUESTIONS } from './constants';
+import { BrutalCard, PremiumTitle, BrutalSticker } from '../BrutalistLib';
 
 export default function Quiz3455() {
-  const [answers, setAnswers] = useState<number[]>(Array(QUESTIONS.length).fill(-1));
+  const [answers, setAnswers] = useState<number[]>(Array(QUIZ_QUESTIONS.length).fill(-1));
   const [submitted, setSubmitted] = useState(false);
 
-  const score = answers.reduce((acc, a, i) => acc + (a === QUESTIONS[i].correct ? 1 : 0), 0);
+  const score = answers.reduce((acc, a, i) => acc + (a === QUIZ_QUESTIONS[i].correct ? 1 : 0), 0);
 
   const handleSelect = (qIndex: number, optionIndex: number) => {
     if (submitted) return;
@@ -55,112 +18,121 @@ export default function Quiz3455() {
   };
 
   const reset = () => {
-    setAnswers(Array(QUESTIONS.length).fill(-1));
+    setAnswers(Array(QUIZ_QUESTIONS.length).fill(-1));
     setSubmitted(false);
   };
 
   return (
-    <section className="bg-[#f5ece0] text-black py-24 px-6 border-b-[12px] border-black">
+    <section className="bg-[#F8F7FF] py-48 px-6 border-t-[12px] border-black">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <BrutalSticker text="[ EVALUACIÓN ]" color="bg-[#2D6A4F]" className="text-white mb-6" />
-          <h2 className="text-4xl md:text-6xl font-pop uppercase mb-4">Comprueba tu comprensión</h2>
-          <p className="text-black/60 text-lg">5 preguntas sobre la dimensión personal para la cultura de paz.</p>
-        </motion.div>
+        <div className="text-center mb-32">
+          <BrutalSticker text="AUDITORÍA DE FORMACIÓN" color="bg-[#7C3AED]" className="text-white mb-8 !rotate-0 shadow-[8px_8px_0_0_#000]" />
+          <PremiumTitle className="items-center" subtitle="ESTUDIO CHAN-CHI & POOT-MAY">Desafío de Autenticidad</PremiumTitle>
+          <p className="mt-10 font-mono text-[11px] uppercase font-black text-[#7C3AED] tracking-[0.5em] italic">Validación conceptual sobre la dimensión personal_</p>
+        </div>
 
-        <div className="space-y-6">
-          {QUESTIONS.map((q, qi) => (
-            <motion.div
+        <div className="space-y-16">
+          {QUIZ_QUESTIONS.map((q, qi) => (
+            <BrutalCard
               key={qi}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: qi * 0.05 }}
+              color="bg-white"
+              className={`border-[6px] transition-all duration-400 ${submitted && answers[qi] === q.correct ? 'shadow-[15px_15px_0_0_#10b981]' : submitted ? 'shadow-[15px_15px_0_0_#ef4444]' : 'shadow-[20px_20px_0_0_#000]'}`}
             >
-              <BrutalCard color="bg-white" className="p-6 md:p-8">
-                <p className="font-bold text-xl mb-6">
-                  <span className="inline-block bg-black text-white px-3 py-1 font-pop mr-3">0{qi + 1}</span>
+              <div className="flex gap-10 mb-12 items-start">
+                <div className="w-20 h-20 bg-black text-white shrink-0 flex items-center justify-center font-display text-5xl font-black rotate-3">
+                   {qi + 1}
+                </div>
+                <p className="text-3xl md:text-4xl font-display uppercase font-black leading-none tracking-tighter pt-4">
                   {q.question}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {q.options.map((opt, oi) => {
-                    const isSelected = answers[qi] === oi;
-                    const isCorrect = oi === q.correct;
-                    const showCorrect = submitted && isCorrect;
-                    const showWrong = submitted && isSelected && !isCorrect;
-                    return (
-                      <button
-                        key={oi}
-                        onClick={() => handleSelect(qi, oi)}
-                        className={`text-left px-4 py-3 border-4 font-medium transition-all ${
-                          showCorrect
-                            ? 'bg-[#B7E4C7] border-[#2D6A4F] text-black'
-                            : showWrong
-                            ? 'bg-[#e81e61]/20 border-[#e81e61] text-black'
-                            : isSelected
-                            ? 'bg-[#2D6A4F] border-black text-white shadow-[4px_4px_0_#000]'
-                            : 'bg-white border-black hover:bg-black hover:text-white'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    );
-                  })}
-                </div>
+              </div>
 
-                <AnimatePresence>
-                  {submitted && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-4 text-sm"
+              <div className="grid grid-cols-1 gap-6">
+                {q.options.map((opt, oi) => {
+                  const isSelected = answers[qi] === oi;
+                  const isCorrect = oi === q.correct;
+                  const showCorrect = submitted && isCorrect;
+                  const showWrong = submitted && isSelected && !isCorrect;
+                  
+                  return (
+                    <button
+                      key={oi}
+                      onClick={() => handleSelect(qi, oi)}
+                      className={`text-left px-10 py-8 border-4 transition-all font-display uppercase font-black text-lg relative overflow-hidden group ${
+                        showCorrect
+                          ? 'bg-emerald-500 border-black text-white translate-x-[6px] translate-y-[6px] shadow-none'
+                          : showWrong
+                          ? 'bg-rose-500 border-black text-white'
+                          : isSelected
+                          ? 'bg-[#7C3AED] border-black text-white shadow-none translate-x-[4px] translate-y-[4px]'
+                          : 'bg-white border-black text-black hover:bg-[#7C3AED]/10 shadow-[8px_8px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px]'
+                      }`}
                     >
-                      {answers[qi] === q.correct ? (
-                        <span className="flex items-center gap-2 text-[#2D6A4F] font-bold">
-                          <CheckCircle size={18} /> Correcto
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2 text-[#e81e61] font-bold">
-                          <XCircle size={18} /> Incorrecto
-                        </span>
-                      )}
-                      <p className="mt-1 text-black/70">{q.explanation}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </BrutalCard>
-            </motion.div>
+                      <span className="relative z-10">{opt}</span>
+                      {showCorrect && <CheckCircle className="absolute right-10 top-1/2 -translate-y-1/2" size={32} />}
+                      {showWrong && <XCircle className="absolute right-10 top-1/2 -translate-y-1/2" size={32} />}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <AnimatePresence>
+                {submitted && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mt-12 p-12 bg-zinc-50 border-4 border-black border-dashed relative overflow-hidden"
+                  >
+                    <Heart className="absolute -top-6 -right-6 w-32 h-32 opacity-10 text-[#7C3AED] rotate-12" />
+                    <span className="block font-mono text-[10px] uppercase font-black mb-6 text-[#7C3AED] tracking-[0.4em] italic font-bold">Feedback Académico //</span>
+                    <p className="text-2xl font-serif italic text-black leading-relaxed border-l-[10px] border-[#7C3AED] pl-10 font-medium">
+                      {q.explanation}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </BrutalCard>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="mt-40 flex flex-col items-center gap-16">
           {!submitted ? (
             <button
               onClick={() => setSubmitted(true)}
               disabled={answers.some((a) => a === -1)}
-              className="bg-[#2D6A4F] hover:bg-[#1B4332] disabled:opacity-50 disabled:cursor-not-allowed text-white font-pop font-bold px-10 py-4 border-4 border-black shadow-[8px_8px_0_#000] transition-all uppercase text-xl"
+              className="group relative bg-[#7C3AED] text-white px-24 py-10 border-6 border-black font-display text-5xl uppercase font-black shadow-[20px_20px_0_0_#000] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[30px_30px_0_0_#000] transition-all disabled:opacity-40 disabled:translate-y-0"
             >
-              Calificar
+              Auditar Perfil_
             </button>
           ) : (
-            <>
-              <BrutalCard color="bg-black" className="text-white px-10 py-6 text-center">
-                <div className="text-5xl font-pop">{score}/{QUESTIONS.length}</div>
-                <div className="text-sm uppercase tracking-widest text-[#B7E4C7] mt-2">Puntuación</div>
-              </BrutalCard>
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="flex flex-col items-center gap-20 w-full"
+            >
+              <div className="bg-white border-[16px] border-black p-24 shadow-[50px_50px_0_0_#7C3AED] text-center w-full max-w-5xl relative rotate-1">
+                <Award className="absolute -top-20 -right-20 w-40 h-40 text-black bg-yellow-400 border-[6px] border-black p-6 rounded-full shadow-[12px_12px_0_0_#000] animate-bounce" />
+                <span className="block font-mono text-sm uppercase font-black mb-10 tracking-[0.8em] opacity-40">CALIFICACIÓN DE HUMANIDAD ACADÉMICA</span>
+                <div className="text-[18rem] font-display font-black leading-none mb-8 italic text-black drop-shadow-[20px_20px_0_#7C3AED] tracking-tighter">
+                  {score}/{QUIZ_QUESTIONS.length}
+                </div>
+                <p className="text-5xl font-display uppercase font-black tracking-tighter italic text-[#7C3AED]">
+                  {score === QUIZ_QUESTIONS.length ? 'Identidad Docente Íntegra' : 'Perfil en Desarrollo Emocional'}
+                </p>
+                <div className="mt-16 flex justify-center gap-8">
+                   {[...Array(QUIZ_QUESTIONS.length)].map((_, i) => (
+                      <div key={i} className={`h-8 w-24 border-6 border-black ${i < score ? 'bg-[#7C3AED]' : 'bg-zinc-100 shadow-inner'}`} />
+                   ))}
+                </div>
+              </div>
+              
               <button
                 onClick={reset}
-                className="flex items-center gap-2 bg-[#e81e61] hover:bg-[#c4184e] text-white font-pop font-bold px-10 py-4 border-4 border-black shadow-[8px_8px_0_#000] transition-all uppercase text-xl"
+                className="flex items-center gap-8 bg-black text-white border-4 border-black px-16 py-8 font-display text-3xl uppercase font-black shadow-[12px_12px_0_0_#7C3AED] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#7C3AED] transition-all active:translate-x-0 cursor-pointer"
               >
-                <RotateCcw size={20} /> Reintentar
+                <RotateCcw size={40} /> Reiniciar Validación
               </button>
-            </>
+            </motion.div>
           )}
         </div>
       </div>

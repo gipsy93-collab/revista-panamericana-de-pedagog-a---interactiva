@@ -1,173 +1,166 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { EyeOff, UserX, AlertTriangle, BookMarked, Map, Sparkles, Activity, MessageCircle, ShieldAlert } from 'lucide-react';
-import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote } from '../BrutalistLib';
-import { DIMENSIONS } from './constants';
+import { motion } from 'motion/react';
+import { Microscope, Users, ClipboardList, Database, ShieldAlert, Heart, MessageSquare, Scale } from 'lucide-react';
+import { DIMENSIONS, METHODOLOGY, DATA_HIGHLIGHTS, TESTIMONIALS, LIMITATIONS } from './constants';
+import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote, BrutalCard } from '../BrutalistLib';
+import SafetyExplorer3454 from './SafetyExplorer3454';
 
-export const Content3454 = () => {
-  const [activeDimension, setActiveDimension] = useState(0);
-
+export default function Content3454() {
   return (
-    <div className="bg-white">
-      {/* SECCIÓN 1: PROBLEMA Y CONTEXTO SOCIAL */}
-      <WaveSection topColor="#ffffff" bottomColor="#fff1f2" variant="wavy">
+    <div className="bg-[#F3F4F6]">
+      {/* SECCIÓN 1: ESPECIFICACIONES TÉCNICAS */}
+      <WaveSection topColor="#F3F4F6" bottomColor="#ffffff" variant="steps">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-12 mb-12">
-               <BrutalSticker text="I. IMPACTO CENTRAL" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#e11d48]" />
-               <PremiumTitle subtitle="REALIDAD ESTUDIANTIL"> Fractura Social </PremiumTitle>
-            </div>
-            
-            <div className="lg:col-span-8">
-              <div className="bg-zinc-900 p-12 md:p-24 border-[16px] border-black shadow-[30px_30px_0_0_#e11d48] rotate-1 relative group mb-12">
-                 <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
-                 <p className="text-3xl md:text-5xl font-serif italic text-white/90 leading-tight relative z-10">
-                   "Colima fue listada hace escasos años como una de las geografías más peligrosas del mundo. ¿Puede la universidad operar herméticamente ante este choque social?"
-                 </p>
-              </div>
-              
-              <div className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] -rotate-1">
-                 <h4 className="font-display text-2xl uppercase font-black mb-6 flex items-center gap-3">
-                    <ShieldAlert className="text-rose-600" /> El Diagnóstico_
-                 </h4>
-                 <p className="text-3xl font-display uppercase font-black tracking-tighter leading-none italic">
-                    Percepción de 200 estudiantes ante la delincuencia y la cultura de paz_
-                 </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 space-y-8">
-              <CinematicCard color="bg-zinc-50" title="TRAUMA_COLECTIVO" icon={AlertTriangle} className="shadow-[10px_10px_0_0_#e11d48]">
-                 <p className="text-lg font-bold leading-snug">Vacíos de comprensión entre el discurso teórico del estado y alumnos viviendo violencia real cotidiana.</p>
-              </CinematicCard>
-              
-              <div className="bg-rose-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden">
-                 <div className="absolute -bottom-4 -right-4 bg-white/10 w-32 h-32 rounded-full group-hover:scale-150 transition-transform" />
-                 <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">IMPACTO_DOCENTE</h4>
-                 <p className="text-sm font-bold border-l-4 border-white pl-4 italic leading-relaxed">
-                   77.7% de validación: El docente muta de transmisor científico a gestor socioemocional.
-                 </p>
-              </div>
-            </div>
+          <div className="mb-20 text-center lg:text-left">
+            <BrutalSticker text="I. AUDITORÍA METODOLÓGICA" color="bg-black" className="text-white mb-8 !rotate-0 shadow-[6px_6px_0_0_#059669]" />
+            <PremiumTitle subtitle="PARADIGMA DE INVESTIGACIÓN">
+              Ficha Técnica del Estudio
+            </PremiumTitle>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <CinematicCard color="bg-white" title="DISEÑO" icon={Microscope} className="border-4 shadow-[8px_8px_0_0_#000]">
+              <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.design}</p>
+              <p className="text-[10px] mt-4 font-mono opacity-50 uppercase font-black italic">{METHODOLOGY.approach}</p>
+            </CinematicCard>
+            <CinematicCard color="bg-white" title="MUESTRA" icon={Users} className="border-4 shadow-[8px_8px_0_0_#000]">
+              <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.sample}</p>
+              <p className="text-[10px] mt-4 font-mono opacity-50 uppercase font-black italic">Aleatorio Simple</p>
+            </CinematicCard>
+            <CinematicCard color="bg-white" title="INSTRUMENTO" icon={ClipboardList} className="border-4 shadow-[8px_8px_0_0_#000]">
+              <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.instruments}</p>
+            </CinematicCard>
+            <CinematicCard color="bg-white" title="TÉCNICA" icon={Database} className="border-4 shadow-[8px_8px_0_0_#000]">
+              <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.analysis}</p>
+            </CinematicCard>
           </div>
         </div>
       </WaveSection>
 
-      {/* SECCIÓN 2: DIMENSIONES DE UN CAMPUS FRACTURADO */}
-      <WaveSection topColor="#fff1f2" bottomColor="#ffffff" variant="steps">
+      {/* SECCIÓN 2: MAPEO DE SEGURIDAD INTERACTIVO */}
+      <WaveSection topColor="#ffffff" bottomColor="#F3F4F6" variant="wavy">
+        <div className="max-w-6xl mx-auto">
+          <SafetyExplorer3454 />
+        </div>
+      </WaveSection>
+
+      {/* SECCIÓN 3: EXPLORADOR DIMENSIONAL */}
+      <WaveSection topColor="#F3F4F6" bottomColor="#ffffff" variant="steps">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <BrutalSticker text="II. RADIOGRAFÍA" color="bg-black" className="text-white mb-8 !rotate-0" />
-            <PremiumTitle className="items-center" subtitle="MÉTRICAS DEL MIEDO">Campus_Fracturado_</PremiumTitle>
+            <BrutalSticker text="III. DIMENSIONES" color="bg-white" className="text-black mb-6 !rotate-0 border-4 shadow-[4px_4px_0_0_#059669]" />
+            <PremiumTitle className="items-center" subtitle="CATEGORÍAS DE ANÁLISIS">
+              Estructura de la Cultura de Paz
+            </PremiumTitle>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-4 flex flex-col gap-6">
-              {DIMENSIONS.map((dim, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveDimension(idx)}
-                  className={`group relative text-left p-8 border-4 border-black transition-all ${
-                    activeDimension === idx 
-                      ? 'bg-rose-600 text-white shadow-[8px_8px_0_0_#000] -translate-y-1' 
-                      : 'bg-white hover:bg-zinc-50 shadow-[4px_4px_0_0_#000]'
-                  }`}
-                >
-                  <div className="flex items-center gap-6">
-                    <span className="text-4xl">{dim.emoji}</span>
-                    <span className="font-display text-2xl uppercase font-black tracking-tighter italic">{dim.name}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            <div className="lg:col-span-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeDimension}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="bg-white border-[12px] border-black p-12 md:p-20 shadow-[25px_25px_0_0_#e11d48] rotate-1 relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 p-8 font-display text-9xl font-black text-black/5 leading-none italic">{DIMENSIONS[activeDimension].emoji}</div>
-                  
-                  <h3 className="font-display text-5xl uppercase font-black mb-8 italic text-rose-600 underline decoration-black decoration-8 underline-offset-8">
-                    {DIMENSIONS[activeDimension].name}_
-                  </h3>
-                  
-                  <p className="text-3xl font-serif italic text-black/80 font-medium leading-relaxed mb-12">
-                    "{DIMENSIONS[activeDimension].desc}"
-                  </p>
-
-                  <div className="bg-zinc-900 text-white p-10 border-4 border-black rotate-[-1deg]">
-                    <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest text-rose-400">HALLAZGO_CRÍTICO</h4>
-                    {activeDimension === 0 && <p className="font-display text-sm uppercase font-black italic tracking-tighter">64.6% no lee noticias: viven la criminalidad empíricamente. La exposición física altera la cognición.</p>}
-                    {activeDimension === 1 && <p className="font-display text-sm uppercase font-black italic tracking-tighter">92.7% exige mediación de conflictos. Desconexión metodológica: solo el 50% ve políticas eficientes en el aula.</p>}
-                    {activeDimension === 2 && <p className="font-display text-sm uppercase font-black italic tracking-tighter">Ante la ausencia estatal, el docente (77.7%) se vuelve el único refugio moral y socioemocional tangible.</p>}
-                    {activeDimension === 3 && <p className="font-display text-sm uppercase font-black italic tracking-tighter">Solo el 4.5% siente seguridad en el ecosistema universitario. El 92% elige residencial privado para sentirse a salvo.</p>}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {DIMENSIONS.map((d) => (
+              <BrutalCard key={d.code} color="bg-white" className="border-4" title={`${d.code}: ${d.name}`}>
+                 <div className="flex gap-8 items-start">
+                   <div className="text-7xl bg-zinc-50 p-6 border-4 border-black shadow-[6px_6px_0_0_#059669] rotate-[-2deg]">
+                     {d.emoji}
+                   </div>
+                   <div className="space-y-6">
+                     <p className="text-2xl font-serif italic text-black/70 leading-relaxed font-medium">"{d.desc}"</p>
+                     <div className="bg-[#059669]/5 border-l-8 border-[#059669] p-6 shadow-[8px_8px_0_0_#000]">
+                        <span className="block font-mono text-[10px] uppercase font-black text-[#059669] mb-2 tracking-widest">Métrica Clave //</span>
+                        <p className="text-lg font-black uppercase text-black italic leading-none tracking-tighter">{d.highlight}</p>
+                     </div>
+                   </div>
+                 </div>
+              </BrutalCard>
+            ))}
           </div>
         </div>
       </WaveSection>
 
-      {/* SECCIÓN 3: PENSAMIENTO CRÍTICO E IMPLICACIONES */}
-      <WaveSection topColor="#ffffff" bottomColor="#f8fafc" variant="dramatic">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-24">
-            <BrutalSticker text="III. ACCIÓN" color="bg-rose-600" className="text-white mb-8 !rotate-0" />
-            <PremiumTitle className="items-center" subtitle="EL CORAZÓN DEL ASUNTO">Inplicaciones Sociales</PremiumTitle>
-          </div>
-
-          <BrutalQuote className="text-4xl font-serif italic mb-32 shadow-[30px_30px_0_0_#000] rotate-1">
-             "El 92.7% considera necesario promover una cultura de paz. No es una opción académica, es una necesidad de supervivencia humana."
-          </BrutalQuote>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-             {[
-               { icon: BookMarked, color: 'bg-rose-600', text: 'Rediseño Curricular Transversal' },
-               { icon: UserX, color: 'bg-zinc-900', text: 'Salud Mental Obligatoria' },
-               { icon: Map, color: 'bg-blue-600', text: 'Contextualización Regional' }
-             ].map((it, i) => (
-               <div key={i} className="group flex flex-col items-center bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer">
-                  <div className={`${it.color} text-white p-6 border-4 border-black mb-6 group-hover:rotate-12 transition-transform`}>
-                    <it.icon size={48} />
-                  </div>
-                  <p className="font-display text-2xl uppercase font-black text-center italic tracking-tighter">{it.text}</p>
-               </div>
-             ))}
-          </div>
+      {/* SECCIÓN 4: VOCES Y CITAS */}
+      <WaveSection topColor="#ffffff" bottomColor="#F3F4F6" variant="dramatic">
+        <div className="max-w-6xl mx-auto">
+           <div className="grid lg:grid-cols-12 gap-16 items-start">
+              <div className="lg:col-span-5">
+                <BrutalSticker text="IV. INSIGHTS" color="bg-black" className="text-white mb-10 !rotate-0" />
+                <PremiumTitle subtitle="RESULTADOS CUALITATIVOS">Lo que dicen los estudiantes</PremiumTitle>
+                <div className="mt-12 space-y-8">
+                  <BrutalCard color="bg-[#059669]" title="ACCIÓN PROPUESTA" className="text-white border-4 rotate-1 shadow-[10px_10px_0_0_#000]">
+                    <div className="text-6xl font-display font-black mb-4 leading-none italic">70%</div>
+                    <p className="text-xl font-display uppercase font-black">Demanda de cursos, conferencias y pláticas formativas.</p>
+                  </BrutalCard>
+                  <BrutalCard color="bg-white" title="VALOR COMÚN" className="border-4 -rotate-1 shadow-[10px_10px_0_0_#059669]">
+                    <div className="text-6xl font-display font-black text-[#059669] mb-4 leading-none italic">20%</div>
+                    <p className="text-xl font-display uppercase font-black">Priorización del respeto en espacios educativos.</p>
+                  </BrutalCard>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-7 space-y-12 pt-20 lg:pt-0 text-left">
+                {TESTIMONIALS.map((t, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="relative group"
+                  >
+                    <BrutalQuote author={t.author} className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] group-hover:shadow-[20px_20px_0_0_#059669] transition-all">
+                       <p className="text-3xl md:text-4xl font-display uppercase font-black italic leading-[1.1] tracking-tighter">
+                         "{t.quote}"
+                       </p>
+                    </BrutalQuote>
+                    <div className="absolute -bottom-6 right-10 bg-black text-white px-8 py-3 font-mono text-xs uppercase font-black border-4 border-black rotate-[-2deg]">
+                      {t.role}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+           </div>
         </div>
       </WaveSection>
 
-      {/* SECCIÓN FINAL */}
-      <WaveSection topColor="#f8fafc" bottomColor="#ffffff" variant="wavy">
-        <div className="max-w-6xl mx-auto text-center pb-40">
-           <div className="inline-block relative mb-20">
-              <div className="absolute inset-0 bg-black translate-x-4 translate-y-4" />
-              <div className="relative bg-rose-600 text-white p-20 md:p-32 border-8 border-black">
-                 <h2 className="text-7xl md:text-[10rem] font-display uppercase font-black leading-none drop-shadow-[5px_5px_0_#000] italic">
-                   Ética_ <br/> Ciudadana_
+      {/* SECCIÓN 5: DISCUSIÓN Y FUTURO */}
+      <section className="bg-zinc-950 text-white py-40 border-t-[20px] border-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')]" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+           <div className="flex flex-col md:flex-row gap-20 items-center">
+              <div className="md:w-1/2">
+                 <BrutalSticker text="V. CONCLUSIONES" color="bg-white" className="text-black mb-10 !rotate-0" />
+                 <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none mb-12 tracking-tighter">
+                   Universidad como <span className="text-[#059669] italic underline decoration-white decoration-8">Refugio_</span>
                  </h2>
-                 <div className="w-32 h-6 bg-yellow-400 mx-auto mt-12 mb-16" />
-                 <p className="text-2xl font-mono text-rose-100 uppercase font-black tracking-widest italic animate-pulse">
-                   HACIA UNA CULTURA DE PAZ REAL
+                 <p className="text-2xl font-serif italic text-zinc-400 leading-relaxed border-l-8 border-[#059669] pl-10">
+                   "Fortalecer una cultura institucional basada en la inclusión y la paz posiciona a la universidad como agente transformador de sociedades justas."
                  </p>
+              </div>
+
+              <div className="md:w-1/2 grid grid-cols-1 gap-8">
+                 <BrutalCard color="bg-zinc-900 shadow-[10px_10px_0_0_#059669]" title="ROL DOCENTE" className="border-zinc-800">
+                    <p className="text-lg font-serif italic text-zinc-400">Los profesores no solo brindan conocimiento, actúan como muros de contención ética frente a la violencia circundante.</p>
+                 </BrutalCard>
+                 <BrutalCard color="bg-zinc-900 shadow-[10px_10px_0_0_#059669]" title="CURRÍCULO" className="border-zinc-800">
+                    <p className="text-lg font-serif italic text-zinc-400">La paz debe ser un eje transversal, no una charla aislada. Es una competencia ciudadana fundamental.</p>
+                 </BrutalCard>
               </div>
            </div>
 
-           <div className="bg-zinc-950 text-white p-20 border-[12px] border-black text-center relative overflow-hidden shadow-[25px_25px_0_0_#fde047] rotate-1 mt-20">
-              <div className="absolute top-0 left-0 p-8 font-mono text-[10px] opacity-20 uppercase tracking-widest font-black">SOCIAL_ETHICS_REPORT_3454</div>
-              <p className="text-4xl md:text-7xl font-display uppercase font-black leading-none mb-12 italic">
-                La paz <span className="text-rose-500">no es ausencia</span> de conflicto, <span className="text-blue-600">es presencia</span> de justicia_
-              </p>
-              <div className="w-64 h-4 bg-rose-600 mx-auto" />
+           {/* LIMITACIONES LIST */}
+           <div className="mt-40 bg-white text-black p-12 md:p-24 border-[15px] border-black shadow-[40px_40px_0_0_#059669] rotate-1">
+              <div className="text-center mb-16 underline decoration-[#059669] decoration-8 underline-offset-8">
+                <h3 className="font-display text-5xl uppercase font-black">Limitaciones Académicas</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {LIMITATIONS.map((limit, i) => (
+                  <div key={i} className="flex gap-6 items-start">
+                    <span className="w-12 h-12 bg-black text-white shrink-0 flex items-center justify-center font-display text-2xl font-black">
+                      {i + 1}
+                    </span>
+                    <p className="text-xl font-serif italic text-zinc-600 leading-tight">
+                      "{limit}"
+                    </p>
+                  </div>
+                ))}
+              </div>
            </div>
         </div>
-      </WaveSection>
+      </section>
     </div>
   );
-};
+}

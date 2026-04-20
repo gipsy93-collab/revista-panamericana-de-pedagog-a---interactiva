@@ -38,10 +38,22 @@ const TRANSMEDIA_PROJECTS = [
   }
 ];
 
-export default function Transmedia() {
+interface Props {
+  onOpenSubPage?: (id: string) => void;
+}
+
+export default function Transmedia({ onOpenSubPage }: Props) {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleProjectClick = (id: string, link: string) => {
+    if (id === 'podcast') {
+      onOpenSubPage?.('podcast_laboratory');
+    } else {
+      window.location.href = link;
+    }
+  };
 
   return (
     <section className="bg-[#0f172a] py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden selection:bg-[#fccb06] selection:text-black">
@@ -65,7 +77,7 @@ export default function Transmedia() {
             </motion.div>
             
             <h2 className="text-6xl md:text-8xl font-display uppercase leading-[0.85] text-white">
-              <span className="text-[#fccb06]">TRANSMEDIA</span>
+               <span className="text-[#fccb06]">TRANSMEDIA</span>
             </h2>
             
             <p className="text-xl md:text-2xl font-sans text-white/60 leading-relaxed font-light max-w-xl">
@@ -88,70 +100,49 @@ export default function Transmedia() {
           </div>
         </div>
 
-        {/* Transmedia Projects - Refined Horizontal Layout (Stacking) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {TRANSMEDIA_PROJECTS.map((project, i) => {
+        {/* Transmedia Projects - Full Width Distribution */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          {TRANSMEDIA_PROJECTS.filter(p => p.id === 'podcast' || p.id === 'infografias').map((project, i) => {
             const Icon = project.icon;
+            const isPodcast = project.id === 'podcast';
+            
             return (
               <motion.div
                 key={project.id}
-                initial={{ rotate: i % 2 === 0 ? -5 : 5, y: 100, opacity: 0 }}
-                whileInView={{ rotate: i % 2 === 0 ? -1 : 1, y: 0, opacity: 1 }}
+                initial={{ rotate: i % 2 === 0 ? -1 : 1, y: 100, opacity: 0 }}
+                whileInView={{ rotate: 0, y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, type: 'spring' }}
+                transition={{ delay: i * 0.1, type: 'spring', damping: 20 }}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className={`group relative ${project.color} ${project.text} p-12 overflow-hidden border-4 border-black shadow-[12px_12px_0_#000] hover:shadow-[20px_20px_0_#000] hover:-translate-y-4 hover:rotate-0 transition-all cursor-pointer min-h-[500px] flex flex-col justify-between`}
+                onClick={() => handleProjectClick(project.id, project.link)}
+                className={`group relative ${project.color} ${project.text} p-12 md:p-16 rounded-[3rem] border-4 border-black shadow-[16px_16px_0_#000] hover:shadow-[24px_24px_0_#000] hover:-translate-y-6 transition-all cursor-pointer min-h-[500px] flex flex-col justify-between`}
               >
-                 {/* Video background on hover */}
-                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <div className="absolute inset-0 bg-black/60 z-10" />
-                    {('videoPreview' in project) && project.videoPreview ? (
-                      <video 
-                        src={project.videoPreview as string} 
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
-                        className="w-full h-full object-cover grayscale brightness-50"
-                      />
-                    ) : (
-                      <img 
-                        src={(project as any).image} 
-                        className="w-full h-full object-cover grayscale brightness-50" 
-                      />
-                    )}
+                 {/* Background visual element */}
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none">
+                    <Icon size={400} className="w-full h-full text-current blur-3xl opacity-30" />
                  </div>
 
                  <div className="relative z-10 flex flex-col justify-between h-full">
                     <div className="flex items-center justify-between">
-                       <span className="font-mono text-[10px] font-black uppercase tracking-widest opacity-60 px-4 py-1 border border-current rounded-full">
-                         {project.type}
+                       <span className="font-mono text-xs font-black uppercase tracking-[0.3em] px-6 py-2 border-2 border-current rounded-full">
+                         {isPodcast ? 'AUDIO SERIES' : 'INTERACTIVE'}
                        </span>
-                       <Icon size={48} className="rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+                       <Icon size={48} className="group-hover:scale-125 transition-transform duration-500" />
                     </div>
 
-                    <div className="space-y-6">
-                       <h3 className="text-4xl md:text-5xl font-display uppercase leading-[0.9] group-hover:text-white transition-colors">
-                         {project.title}
+                    <div className="mt-auto">
+                       <h3 className="text-6xl sm:text-7xl lg:text-8xl font-display uppercase leading-[0.9] mb-12 group-hover:translate-x-4 transition-transform duration-500">
+                         {isPodcast ? 'Podcast' : 'Mapas\nConceptuales'}
                        </h3>
-                       <p className="text-sm font-bold opacity-60 uppercase tracking-widest leading-relaxed group-hover:text-white transition-colors">
-                         {project.desc}
-                       </p>
-                    </div>
-
-                    <div className="pt-12">
-                       <a 
-                         href={project.link}
-                         className={`inline-flex items-center gap-4 text-sm font-black uppercase group-hover:text-white transition-colors`}
+                       
+                       <div 
+                         className="inline-flex items-center gap-4 text-sm font-black uppercase tracking-[0.2em] group-hover:text-white transition-colors pt-6 border-t-2 border-black/10 group-hover:border-white/30"
                        >
-                         Explorar Proyecto <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                       </a>
+                         Explorar Proyecto <ChevronRight size={24} className="group-hover:translate-x-4 transition-transform" />
+                       </div>
                     </div>
                  </div>
-
-                 {/* Urban design element (sticker) */}
-                 <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-white/10 group-hover:rotate-45 transition-transform" />
               </motion.div>
             );
           })}

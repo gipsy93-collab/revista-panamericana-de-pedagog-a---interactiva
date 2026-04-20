@@ -1,6 +1,7 @@
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import matter from 'gray-matter';
+import { parseSimpleFrontmatter } from './simpleFrontmatter';
 
 export const ICON_MAP: Record<string, LucideIcon> = {
   Brain: Icons.Brain,
@@ -77,51 +78,21 @@ export interface BlogData {
   body?: string;
 }
 
-function parseMarkdown(raw: string): { data: any; body: string } {
+function parseMarkdown(raw: string): { data: Record<string, unknown>; body: string } {
   try {
-    const lines = raw.split('\n');
-    if (lines[0].trim() !== '---') return { data: {}, body: raw };
-    
-    const data: any = {};
-    let i = 1;
-    let currentKey: string | null = null;
-    
-    while (i < lines.length && lines[i].trim() !== '---') {
-      const line = lines[i];
-      if (line.trim() === '') {
-        i++;
-        continue;
-      }
-      
-      if (line.startsWith('  - ')) {
-        if (currentKey) {
-          if (!Array.isArray(data[currentKey])) data[currentKey] = [];
-          data[currentKey].push(line.replace('  - ', '').trim());
-        }
-      } else {
-        const colonIdx = line.indexOf(':');
-        if (colonIdx !== -1) {
-          currentKey = line.substring(0, colonIdx).trim();
-          let value = line.substring(colonIdx + 1).trim();
-          
-          if (value === 'true') data[currentKey] = true;
-          else if (value === 'false') data[currentKey] = false;
-          else if (!value) data[currentKey] = []; // Prep for array
-          else data[currentKey] = value.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1'); // Remueve comillas si las hay
-        }
-      }
-      i++;
-    }
-    return { data, body: lines.slice(i + 1).join('\n').trim() };
-  } catch (e) {
-    console.error('Failed to parse markdown:', e);
-    return { data: {}, body: raw };
+    const parsed = matter(raw);
+    return { data: parsed.data, body: parsed.content };
+  } catch (e: any) {
+    console.warn('gray-matter failed, using simple parser:', e?.message || e);
+    return parseSimpleFrontmatter(raw);
   }
 }
 
-function getRawContent(mod: any): string {
+function getRawContent(mod: unknown): string {
   if (typeof mod === 'string') return mod;
-  if (mod && typeof mod.default === 'string') return mod.default;
+  if (mod && typeof mod === 'object' && mod !== null && 'default' in mod && typeof (mod as Record<string, unknown>).default === 'string') {
+    return (mod as Record<string, unknown>).default as string;
+  }
   if (mod && typeof mod === 'object') return JSON.stringify(mod);
   return String(mod);
 }
@@ -144,8 +115,8 @@ const blogModules = import.meta.glob('/src/content/blog/*.md', {
   import: 'default',
 });
 
-function parseModules(modules: Record<string, any>): any[] {
-  const items: any[] = [];
+function parseModules(modules: Record<string, unknown>): ArticleData[] {
+  const items: ArticleData[] = [];
   for (const path in modules) {
     const raw = getRawContent(modules[path]);
     const { data, body } = parseMarkdown(raw);
@@ -155,7 +126,14 @@ function parseModules(modules: Record<string, any>): any[] {
 }
 
 export async function loadArticles(): Promise<ArticleData[]> {
-  return parseModules(articleModules) as ArticleData[];
+  // SOLUCIÓN DEFINITIVA: Usamos datos estáticos hardcodeados en TypeScript.
+  // Esto elimina la dependencia de gray-matter que fallaba en producción/browser
+  // causando que los artículos aparecieran como "ANÓNIMO / SIN TÍTULO".
+  // Los .md siguen siendo la fuente de verdad editorial, pero los datos
+  // se transfieren aquí manualmente cuando se actualiza un artículo.
+  const { ARTICLES_STATIC } = await import('./articlesData');
+  console.log("[contentLoader] Using static articles data:", ARTICLES_STATIC.length);
+  return ARTICLES_STATIC;
 }
 
 export async function loadTransmedia(): Promise<TransmediaData[]> {

@@ -1,22 +1,22 @@
 export interface QuizQuestion {
+  id: string;
   question: string;
   options: string[];
-  correct: number;
+  correctAnswer: number;
+  feedback: string;
 }
 
-export interface Specialty {
-  name: string;
-  count: number;
-}
-
-export interface FrequencyRow {
-  specialty: string;
-  never: number;
-  once: number;
-  multiple: number;
-}
-
-export interface Quote {
+export interface Testimony {
   text: string;
   author: string;
 }
+
+export interface Dimension {
+  id: string;
+  title: string;
+  content: string;
+  highlight: string;
+  icon: string;
+  testimonies: Testimony[];
+}
+

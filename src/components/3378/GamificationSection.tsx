@@ -226,17 +226,12 @@ export default function GamificationSection() {
   // ── RENDER MENU ──────────────────────────────────────────
   if (activeGame === 'menu') {
     return (
-      <section className="py-32 px-6 bg-[#fccb06] border-t-[12px] border-black">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-32 px-6 bg-[#f5f5f5] border-t-[12px] border-black min-h-screen relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-8xl font-pop uppercase text-black leading-none mb-6" style={{ WebkitTextStroke: '2px black' }}>
-              Zona de <span className="text-[#6C63FF]">Práctica</span>
-            </h2>
-            <p className="text-2xl font-serif italic text-black/70 max-w-2xl mx-auto">
-              Pon a prueba tu comprensión sobre paisajes de aprendizaje con estas actividades interactivas
-            </p>
+            <h2 className="text-6xl font-pop uppercase mb-4 text-black">Laboratorio de Aprendizaje</h2>
+            <p className="text-xl font-bold opacity-60 uppercase tracking-widest text-black/60">// Selecciona una actividad interactiva</p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             {/* Quiz Card */}
             <motion.button
@@ -248,8 +243,8 @@ export default function GamificationSection() {
               <div className="w-20 h-20 bg-[#6C63FF] flex items-center justify-center mb-6 border-4 border-black">
                 <Target size={40} className="text-white" />
               </div>
-              <h3 className="text-3xl font-pop uppercase mb-4">Quiz de Comprensión</h3>
-              <p className="text-black/70 mb-4">5 preguntas para evaluar tu comprensión del estudio</p>
+              <h3 className="text-3xl font-pop uppercase mb-4 text-black">Quiz de Comprensión</h3>
+              <p className="text-black/70 mb-4 font-bold">5 preguntas para evaluar tu comprensión del estudio</p>
               <div className="flex items-center gap-2 text-[#6C63FF] font-bold">
                 <ArrowRight size={20} />
                 Comenzar
@@ -266,8 +261,8 @@ export default function GamificationSection() {
               <div className="w-20 h-20 bg-black flex items-center justify-center mb-6 border-4 border-white">
                 <Layers size={40} className="text-white" />
               </div>
-              <h3 className="text-3xl font-pop uppercase mb-4">Flashcards</h3>
-              <p className="text-black/70 mb-4">6 conceptos clave del artículo para memorizar</p>
+              <h3 className="text-3xl font-pop uppercase mb-4 text-black">Flashcards</h3>
+              <p className="text-black/70 mb-4 font-bold">6 conceptos clave del artículo para memorizar</p>
               <div className="flex items-center gap-2 text-black font-bold">
                 <ArrowRight size={20} />
                 Explorar
@@ -284,8 +279,8 @@ export default function GamificationSection() {
               <div className="w-20 h-20 bg-[#fccb06] flex items-center justify-center mb-6 border-4 border-white">
                 <Sparkles size={40} className="text-black" />
               </div>
-              <h3 className="text-3xl font-pop uppercase mb-4">Juego de Memoria</h3>
-              <p className="text-white/70 mb-4">Conecta los datos del estudio con sus conceptos</p>
+              <h3 className="text-3xl font-pop uppercase mb-4 text-white">Juego de Memoria</h3>
+              <p className="text-white/70 mb-4 font-bold">Conecta los datos del estudio con sus conceptos</p>
               <div className="flex items-center gap-2 text-[#fccb06] font-bold">
                 <ArrowRight size={20} />
                 Jugar

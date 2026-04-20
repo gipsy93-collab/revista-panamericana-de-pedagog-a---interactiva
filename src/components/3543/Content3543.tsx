@@ -1,278 +1,148 @@
-import { motion } from 'motion/react';
-import {
-  FileText,
-  PenTool,
-  BarChart3,
-  ClipboardList,
-  MessageSquare,
-  AlertTriangle,
-  CheckCircle2,
-  Quote,
-  Activity,
-  Zap,
-  BookOpen,
-  Target,
-  Users,
-  Sparkles
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { 
+  Users, ClipboardList, Microscope, Award, Sparkles, Database, BookOpen, Layers, 
+  Target, Search, School, GraduationCap, ClipboardCheck, BrainCircuit, Activity,
+  Quote, CheckCircle2, AlertCircle, SearchCode, FileText, Globe, Filter, ShieldCheck,
+  TrendingUp, BarChart3, HelpCircle, PenTool, LayoutTemplate, MessageSquareQuote
 } from 'lucide-react';
-import { ARTICLE_DATA } from './constants';
-import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote } from '../BrutalistLib';
+import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote, BrutalCard } from '../BrutalistLib';
+import { DataLab3543 } from './DataLab3543';
 
 export default function Content3543() {
   return (
     <div className="bg-white">
-      {/* SECCIÓN 1: INTRODUCCIÓN Y OBJETIVOS */}
-      <WaveSection topColor="#ffffff" bottomColor="#fef3c7" variant="wavy">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-12 mb-12">
-               <BrutalSticker text="I. IMPACTO CENTRAL" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#9a3412]" />
-               <PremiumTitle subtitle="DESAFÍOS PEDAGÓGICOS">El Gran Hallazgo</PremiumTitle>
+      {/* 2.3 OBJETIVOS */}
+      <section className="bg-indigo-950 text-white p-16 md:p-32 border-b-[12px] border-black relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-white/[0.03] leading-none pointer-events-none select-none">
+          OBJ_3543
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <BrutalSticker text="2.3 OBJETIVOS" color="bg-indigo-600" className="text-white mb-10 !rotate-0 shadow-[6px_6px_0_0_#f59e0b]" />
+          <div className="grid lg:grid-cols-2 gap-24 items-start">
+            <div>
+               <h3 className="font-display text-5xl uppercase font-black italic mb-8 leading-none text-indigo-400">Objetivo General_</h3>
+               <p className="text-3xl md:text-5xl font-serif italic border-l-8 border-indigo-600 pl-8 leading-tight">
+                 "Describir las prácticas docentes dirigidas al desarrollo de la escritura académica."
+               </p>
             </div>
-            
-            <div className="lg:col-span-8">
-              <div className="bg-zinc-900 p-12 md:p-24 border-[16px] border-black shadow-[30px_30px_0_0_#ea580c] rotate-1 relative group mb-12">
-                 <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-                 <p className="text-3xl md:text-5xl font-serif italic text-white/90 leading-[1.1] relative z-10">
-                   "{ARTICLE_DATA.centralFinding}"
-                 </p>
-              </div>
-              
-              <div className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] -rotate-1">
-                 <h4 className="font-display text-2xl uppercase font-black mb-6 flex items-center gap-3">
-                    <Target className="text-orange-600" /> Objetivo_
-                 </h4>
-                 <p className="text-3xl font-display uppercase font-black tracking-tighter leading-none italic">
-                    {ARTICLE_DATA.introduction.objectives[0]}
-                 </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 space-y-8">
-              <CinematicCard color="bg-zinc-50" title="PROBLEMATICA" icon={AlertTriangle} className="shadow-[10px_10px_0_0_#ea580c]">
-                 <p className="text-lg font-bold leading-snug">"{ARTICLE_DATA.introduction.problem}"</p>
-              </CinematicCard>
-              
-              <div className="bg-orange-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2">
-                 <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">CONTEXTO_ACADÉMICO</h4>
-                 <p className="text-sm font-bold border-l-4 border-white pl-4 italic leading-relaxed">
-                   {ARTICLE_DATA.introduction.context}
-                 </p>
-              </div>
+            <div>
+               <h3 className="font-display text-2xl uppercase font-black italic mb-8 border-b-2 border-white/20 pb-4">Objetivos Específicos</h3>
+               <ul className="space-y-4 font-display text-lg uppercase font-black">
+                  {[
+                    "Conceptualización de la escritura académica.",
+                    "Frecuencia de las actividades asignadas.",
+                    "Tipos de trabajos de escritura académica.",
+                    "Evaluación y acompañamiento brindado.",
+                    "Relación entre asignación e importancia."
+                  ].map((obj, i) => (
+                    <li key={i} className="flex gap-4 items-center">
+                       <span className="w-8 h-8 bg-indigo-600 text-white flex items-center justify-center font-black rotate-3">{i+1}</span>
+                       {obj}
+                    </li>
+                  ))}
+               </ul>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* 3. METODOLOGÍA */}
+      <WaveSection topColor="#0f172a" bottomColor="#ffffff" variant="steps">
+        <div className="max-w-7xl mx-auto py-12">
+          <BrutalSticker text="3. METODOLOGÍA" color="bg-black" className="text-white mb-16 !rotate-0" />
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000]">
+                <h4 className="font-display text-2xl font-black uppercase italic mb-4 flex items-center gap-3"><PenTool size={28} /> 3.1 Tipo</h4>
+                <p className="font-sans font-bold uppercase text-xs leading-relaxed text-black/60">Enfoque Cualitativo, estudio de caso descriptivo de profundidad y transeccional.</p>
+             </div>
+             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#4f46e5]">
+                <h4 className="font-display text-2xl font-black uppercase italic mb-4 flex items-center gap-3"><LayoutTemplate size={28} /> 3.3 Instrumentos</h4>
+                <p className="font-sans font-bold uppercase text-xs leading-relaxed text-black/60">Entrevista semiestructurada (11 preguntas) y revisión de planeaciones de clase.</p>
+             </div>
+             <div className="bg-zinc-950 text-white border-4 border-black p-8 shadow-[8px_8px_0_0_#f59e0b]">
+                <h4 className="font-display text-2xl font-black uppercase italic mb-4 flex items-center gap-3 text-amber-500"><SearchCode size={28} /> 3.5 Análisis</h4>
+                <p className="font-sans font-bold uppercase text-xs leading-relaxed text-white/70">Categorización emergente en torno a conceptualización, evaluación, retroalimentación e importancia.</p>
+             </div>
+          </div>
+          
+          <DataLab3543 />
+        </div>
       </WaveSection>
 
-      {/* SECCIÓN 2: METODOLOGÍA */}
-      <WaveSection topColor="#fef3c7" bottomColor="#ffffff" variant="steps">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-24">
-            <BrutalSticker text="II. METODOLOGÍA" color="bg-black" className="text-white mb-8 !rotate-0" />
-            <PremiumTitle className="items-center" subtitle="DISEÑO DE INVESTIGACIÓN">Rigor de Transición</PremiumTitle>
-          </div>
+      {/* 4.1 HALLAZGO PRINCIPAL */}
+      <section className="py-24 bg-white px-6">
+        <div className="max-w-5xl mx-auto">
+          <BrutalSticker text="4.1 HALLAZGO PRINCIPAL" color="bg-rose-600" className="text-white mb-10 !rotate-0 shadow-[6px_6px_0_0_#000]" />
+          <BrutalQuote author="Ríos-Higuera & Sotomayor-Andrade (2026)" className="bg-zinc-50 border-[10px] border-black text-4xl font-serif italic shadow-[25px_25px_0_0_#f59e0b]">
+             "Aunque 13 de 14 docentes consideran importante la escritura académica, hay quienes la trabajan con poca frecuencia o no la trabajan. No existe acompañamiento durante el proceso ni uniformidad en criterios de evaluación."
+          </BrutalQuote>
+        </div>
+      </section>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-stretch">
+      {/* 5.1 INTERPRETACIÓN DE LOS HALLAZGOS */}
+      <WaveSection topColor="#ffffff" bottomColor="#f8fafc" variant="wavy">
+        <div className="max-w-7xl mx-auto py-24">
+          <BrutalSticker text="5.1 INTERPRETACIÓN" color="bg-black" className="text-white mb-12 !rotate-0" />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
              <div className="space-y-12">
-                <div className="bg-white border-8 border-black p-12 shadow-[20px_20px_0_0_#ea580c] relative">
-                   <div className="absolute top-0 right-0 p-4 font-mono text-[10px] opacity-20 uppercase font-black">METHOD_SPEC</div>
-                   <h3 className="font-display text-4xl uppercase font-black mb-10 italic underline decoration-orange-600 decoration-8">Tipo_Estudio_</h3>
-                   <p className="text-4xl font-display uppercase font-black tracking-tighter text-black/80">{ARTICLE_DATA.methodology.type}</p>
-                   <div className="mt-10 pt-8 border-t-4 border-zinc-100">
-                      <h4 className="font-mono text-[10px] uppercase font-black mb-4 opacity-40">INSTRUMENTOS_APLICADOS</h4>
-                      <div className="flex flex-wrap gap-4">
-                        {ARTICLE_DATA.methodology.instruments.map((ins, i) => (
-                          <span key={i} className="bg-black text-white px-4 py-2 font-display text-[10px] font-black uppercase tracking-widest italic">{ins}</span>
-                        ))}
-                      </div>
-                   </div>
-                </div>
-                
-                <CinematicCard color="bg-zinc-50" title="MUESTRA_DETALLE" icon={Users} className="shadow-[15px_15px_0_0_#000]">
-                   <p className="text-xl font-serif italic font-medium leading-relaxed">
-                     "{ARTICLE_DATA.methodology.sample.total} docentes distribuidos en 4 especialidades críticas del área de formación docente."
-                   </p>
-                </CinematicCard>
+                <h3 className="font-display text-6xl uppercase font-black italic text-black leading-none">La Brecha del <br/> <span className="text-indigo-600 underline decoration-8 decoration-indigo-200 uppercase">Acompañamiento_</span></h3>
+                <p className="text-2xl font-serif italic leading-relaxed text-black/80 font-medium border-l-8 border-indigo-600 pl-8">
+                  Los docentes muestran conciencia de la complejidad de la escritura como proceso cognitivo e instrumento epistémico, coincidiendo con el marco de Carlino (2008). Sin embargo, esta conciencia no se traduce necesariamente en práctica docente.
+                </p>
              </div>
-
-             <div className="bg-zinc-900 border-[12px] border-black p-12 md:p-20 shadow-[30px_30px_0_0_#ea580c] rotate-1">
-                <h3 className="text-orange-500 font-display text-5xl font-black italic uppercase mb-12 leading-none">Especialidades_</h3>
-                <div className="grid grid-cols-2 gap-10">
-                   {ARTICLE_DATA.methodology.sample.specialties.map((s, i) => (
-                     <div key={i} className="flex flex-col group">
-                        <div className="text-7xl font-display font-black text-white group-hover:text-orange-600 transition-colors leading-none mb-2">{s.count}</div>
-                        <span className="font-mono text-[10px] uppercase font-black text-slate-500 tracking-widest">{s.name}</span>
-                     </div>
-                   ))}
-                </div>
-                <div className="mt-16 bg-white text-black p-8 border-4 border-black relative group overflow-hidden">
-                   <Sparkles className="absolute -bottom-4 -right-4 w-20 h-20 opacity-10 group-hover:scale-150 transition-transform" />
-                   <p className="text-2xl font-display font-black uppercase leading-none italic mb-4">N=14</p>
-                   <p className="font-mono text-[9px] uppercase font-black opacity-40">Total Participantes Únicos_</p>
-                </div>
+             <div className="bg-white border-[12px] border-black p-12 shadow-[30px_30px_0_0_#4f46e5] space-y-8">
+                <p className="font-sans font-bold uppercase text-black/60 leading-relaxed text-sm">
+                   COINCIDENCIA CON CASTELLÓ Y MATEOS (2015): LOS DOCENTES VALORAN LA ESCRITURA PERO REALIZAN POCAS PRÁCTICAS PARA APOYAR A LOS ESTUDIANTES REALMENTE.
+                </p>
+                <div className="h-px bg-black opacity-10" />
+                <p className="font-sans font-bold uppercase text-black/60 leading-relaxed text-sm">
+                   COINCIDENCIA CON ORTIZ-CASALLAS (2015): DOCENTES ASUMEN QUE OTROS (ÁREA DE LENGUA) DEBEN ENSEÑAR ESCRITURA.
+                </p>
              </div>
           </div>
         </div>
       </WaveSection>
 
-      {/* SECCIÓN 3: FRECUENCIA Y CONCEPTUALIZACIÓN */}
-      <WaveSection topColor="#ffffff" bottomColor="#f0f9ff" variant="wavy">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-20">
-             <div className="lg:col-span-12">
-                <BrutalSticker text="III. DINÁMICAS" color="bg-orange-600" className="text-white mb-8 !rotate-0 shadow-[6px_6px_0_0_#000]" />
-                <PremiumTitle subtitle="CULTURA DE ESCRITURA">Conceptualización & Frecuencias</PremiumTitle>
-             </div>
-
-             <div className="lg:col-span-7 space-y-12">
-                <div className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-[-1deg]">
-                   <h3 className="font-display text-3xl uppercase font-black mb-10 italic">Frecuencia_Asignación</h3>
-                   <div className="space-y-8">
-                     {ARTICLE_DATA.frequencyData.map((row, i) => (
-                       <div key={i} className="group">
-                          <div className="flex justify-between items-end mb-2">
-                             <span className="font-display text-xl font-black italic">{row.specialty}</span>
-                             <span className="font-mono text-[10px] font-black italic opacity-40">M={row.multiple} VECES</span>
-                          </div>
-                          <div className="h-10 bg-zinc-100 border-4 border-black p-1 flex">
-                             <div className="h-full bg-orange-600 border-r-4 border-black transition-all group-hover:bg-black" style={{ width: `${(row.multiple/3)*100}%` }} />
-                          </div>
-                       </div>
-                     ))}
-                   </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                   <div className="bg-zinc-950 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#ea580c] rotate-1">
-                      <h4 className="font-display text-xl uppercase font-black mb-6 text-teal-400 italic">Textos_Cortos</h4>
-                      <ul className="space-y-3">
-                        {ARTICLE_DATA.shortTexts.map((t, i) => (
-                          <li key={i} className="font-mono text-[9px] uppercase font-black italic border-b border-zinc-800 pb-2 flex gap-4">
-                             <span className="text-teal-400">▶</span> {t}
-                          </li>
-                        ))}
-                      </ul>
-                   </div>
-                   <div className="bg-white text-black p-8 border-4 border-black shadow-[10px_10px_0_0_#000] -rotate-1">
-                      <h4 className="font-display text-xl uppercase font-black mb-6 text-blue-600 italic">Extensión_Larga</h4>
-                      <ul className="space-y-3">
-                        {ARTICLE_DATA.longTexts.map((t, i) => (
-                          <li key={i} className="font-mono text-[9px] uppercase font-black italic border-b border-zinc-100 pb-2 flex gap-4">
-                             <span className="text-blue-600">▶</span> {t}
-                          </li>
-                        ))}
-                      </ul>
-                   </div>
-                </div>
-             </div>
-
-             <div className="lg:col-span-5 space-y-10">
-                <h3 className="font-display text-3xl uppercase font-black italic border-b-8 border-black pb-4 mb-2">Definiendo_Escritura_</h3>
-                {ARTICLE_DATA.conceptualization.slice(0, 4).map((c, i) => (
-                  <div key={i} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] rotate-1 hover:-rotate-1 transition-transform cursor-pointer group">
-                     <div className="w-10 h-10 bg-black text-white flex items-center justify-center font-display text-xl mb-4 group-hover:bg-orange-600 transition-colors">{i+1}</div>
-                     <p className="text-2xl font-serif italic text-black/80 font-medium">"{c}"</p>
-                  </div>
-                ))}
-             </div>
+      {/* 6.2 CONCLUSIONES ESPECÍFICAS */}
+      <section className="py-32 bg-indigo-900 border-y-[12px] border-black px-6 overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
+        <div className="max-w-7xl mx-auto relative z-10 text-white">
+          <BrutalSticker text="6.2 CONCLUSIONES ESPECÍFICAS" color="bg-amber-500" className="text-black mb-16 !rotate-0 shadow-[6px_6px_0_0_#fff]" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { t: "Conceptualización", c: "Los docentes ven la escritura como un proceso complejo que beneficia cognitivamente al estudiante." },
+              { t: "Liderazgo de Inglés", c: "La especialidad con mayor práctica activa, influenciada por formación bilingüe específica." },
+              { t: "El Ensayo", c: "Es el tipo de texto más solicitado transversalmente en todas las especialidades." },
+              { t: "Falta de Uniformidad", c: "No hay criterios de evaluación compartidos ni estandarizados entre el profesorado." },
+              { t: "Vacío de Acompañamiento", c: "No existe acompañamiento sistemático durante el proceso interno de escritura." },
+              { t: "Brecha Valor-Acción", c: "No existe una relación directa entre la importancia declarada y la práctica docente real." }
+            ].map((item, i) => (
+              <div key={i} className="bg-white text-black border-4 border-black p-10 shadow-[10px_10px_0_0_#000] rotate-1 hover:rotate-0 transition-transform flex flex-col h-full">
+                 <h4 className="font-display text-2xl font-black uppercase italic mb-4 border-b-4 border-indigo-600 pb-2 inline-block">{item.t}</h4>
+                 <p className="font-sans font-bold uppercase text-[10px] opacity-60 leading-relaxed italic flex-1">"{item.c}"</p>
+              </div>
+            ))}
           </div>
         </div>
-      </WaveSection>
+      </section>
 
-      {/* SECCIÓN 4: EVALUACIÓN Y BRECHA */}
-      <WaveSection topColor="#f0f9ff" bottomColor="#ffffff" variant="steps">
-        <div className="max-w-6xl mx-auto">
-           <div className="text-center mb-24">
-              <BrutalSticker text="IV. PARADOJAS" color="bg-rose-600" className="text-white mb-8 !rotate-0" />
-              <PremiumTitle className="items-center" subtitle="IMPORTANCIA VS PRÁCTICA">La Brecha del Acompañamiento</PremiumTitle>
-           </div>
-
-           <div className="grid lg:grid-cols-2 gap-20 items-center">
-              <div className="bg-zinc-900 text-white p-12 md:p-24 border-[12px] border-black shadow-[40px_40px_0_0_#ea580c] rotate-1 relative group overflow-hidden">
-                 <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
-                 <div className="text-[12rem] font-display font-black leading-none italic text-orange-600 drop-shadow-[5px_5px_0_#fff]">2/14</div>
-                 <div className="h-4 w-48 bg-white my-10" />
-                 <p className="text-4xl font-display uppercase font-black tracking-tighter leading-tight italic">
-                   Solo 2 de 14 docentes acompañan sistemáticamente el proceso de escritura.
-                 </p>
-              </div>
-
-              <div className="space-y-12">
-                 <CinematicCard color="bg-white" title="CRITERIOS_AVANZADOS" icon={CheckCircle2} className="shadow-[15px_15px_0_0_#000]">
-                    <p className="font-serif italic text-2xl text-black/70 mb-8 font-medium">
-                      "Coherencia, concisión, claridad y argumentación: El lenguaje de la retroalimentación técnica."
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                       {ARTICLE_DATA.evaluation.advancedCriteria.map((c, i) => (
-                         <span key={i} className="bg-orange-100 text-orange-900 border-2 border-black px-4 py-2 font-display text-xs font-black uppercase italic">{c}</span>
-                       ))}
-                    </div>
-                 </CinematicCard>
-
-                 <div className="bg-zinc-50 border-8 border-black p-10 shadow-[20px_20px_0_0_#2563eb] -rotate-1">
-                    <h4 className="font-display text-2xl uppercase font-black mb-6 italic">Barreras_Identificadas_</h4>
-                    <ul className="space-y-6">
-                       {ARTICLE_DATA.gapData.reasons.map((r, i) => (
-                         <li key={i} className="flex items-center gap-6 font-display uppercase font-black text-xs italic tracking-tighter">
-                            <AlertTriangle className="text-rose-600 shrink-0" size={24} /> {r}
-                         </li>
-                       ))}
-                    </ul>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </WaveSection>
-
-      {/* SECCIÓN 5: VOCES DEL AULA */}
-      <WaveSection topColor="#ffffff" bottomColor="#ffffff" variant="wavy">
-        <div className="max-w-6xl mx-auto">
-           <div className="text-center mb-24">
-              <BrutalSticker text="V. NARRATIVAS" color="bg-black" className="text-white mb-8 !rotate-0 shadow-[6px_6px_0_0_#ea580c]" />
-              <PremiumTitle className="items-center" subtitle="TESTIMONIOS DIRECTOS">Voces del Aula</PremiumTitle>
-           </div>
-
-           <div className="grid md:grid-cols-3 gap-12 mb-32">
-              {ARTICLE_DATA.quotes.map((q, i) => (
-                <BrutalQuote key={i} className={`text-xl shadow-[15px_15px_0_0_#000] rotate-${i % 2 === 0 ? '1' : '-1'}`}>
-                   "{q.text}"
-                   <div className="mt-8 text-right font-display uppercase font-black text-[10px] text-orange-600">_ {q.author}</div>
-                </BrutalQuote>
-              ))}
-           </div>
-
-           <div className="grid lg:grid-cols-2 gap-20 items-start">
-              <div>
-                 <BrutalSticker text="VI. CONCLUSIONES" color="bg-black" className="text-white mb-8 !rotate-0" />
-                 <div className="space-y-8">
-                    {ARTICLE_DATA.conclusions.map((c, i) => (
-                      <div key={i} className="flex gap-8 group">
-                         <div className="w-12 h-12 bg-white border-4 border-black text-black shrink-0 flex items-center justify-center font-display text-3xl font-black group-hover:bg-orange-600 group-hover:text-white transition-all italic">{i+1}</div>
-                         <p className="text-2xl font-serif italic text-black/80 font-medium leading-tight">"{c}"</p>
-                      </div>
-                    ))}
-                 </div>
-              </div>
-
-              <div className="bg-zinc-950 text-white p-12 md:p-20 border-[12px] border-black shadow-[30px_30px_0_0_#ea580c] rotate-1 relative group overflow-hidden">
-                 <div className="absolute top-0 right-0 p-8 font-mono text-[10px] opacity-20 uppercase tracking-widest font-black italic">LIMITACIONES_REPORT_3543</div>
-                 <h3 className="font-display text-4xl uppercase font-black text-rose-600 italic mb-12">Áreas_Ciegas_</h3>
-                 <ul className="space-y-6">
-                    {ARTICLE_DATA.limitations.map((l, i) => (
-                      <li key={i} className="font-mono text-[10px] uppercase font-black text-slate-400 tracking-widest italic flex gap-4 leading-relaxed">
-                         <span className="text-orange-600">⚠</span> {l}
-                      </li>
-                    ))}
-                 </ul>
-                 <div className="mt-16 pt-10 border-t-4 border-zinc-800">
-                    <p className="text-6xl md:text-8xl font-display uppercase font-black tracking-tighter leading-none italic italic">
-                      Transición_ <span className="text-teal-400">Incompleta_</span>
-                    </p>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </WaveSection>
+      {/* SECCIÓN FINAL */}
+      <section className="py-48 bg-white border-t-[12px] border-black relative overflow-hidden text-center">
+         <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-8xl md:text-[14rem] font-display uppercase font-black italic tracking-tighter leading-[0.8] mb-16">
+              Escritura<br/> <span className="text-indigo-600 italic">Transversal_</span>
+            </h2>
+            <div className="relative z-10">
+               <div className="inline-block bg-zinc-950 text-white p-12 border-8 border-black shadow-[25px_25px_0_0_#f59e0b] -rotate-1">
+                  <p className="text-4xl md:text-5xl font-display font-black uppercase italic tracking-tighter mb-8 max-w-4xl mx-auto leading-none">
+                    "La escritura académica es una responsabilidad institucional compartida."
+                  </p>
+                  <p className="font-mono text-xs font-black uppercase opacity-40 italic tracking-widest leading-none">Ríos-Higuera & Sotomayor-Andrade // RPP N. 41 // 2026</p>
+               </div>
+            </div>
+         </div>
+      </section>
     </div>
   );
 }

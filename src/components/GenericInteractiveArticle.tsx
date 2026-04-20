@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, CheckCircle2, XCircle, TrendingUp } from 'lucide-react';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 import { loadArticles, ICON_MAP, type ArticleData, type QuizQuestion } from '../lib/contentLoader';
 
 interface Props {
@@ -116,7 +117,7 @@ export default function GenericInteractiveArticle({ id, onBack }: Props) {
       <main className="container mx-auto max-w-4xl px-6 md:px-12 lg:px-24 pt-16">
         <div
           className="prose prose-invert prose-lg max-w-none font-sans leading-relaxed text-white/90"
-          dangerouslySetInnerHTML={{ __html: marked.parse(article.body || article.abstract || '') as string }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(article.body || article.abstract || '') as string) }}
         />
 
         {/* Quiz Section */}

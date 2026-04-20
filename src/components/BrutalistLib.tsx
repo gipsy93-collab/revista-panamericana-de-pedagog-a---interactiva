@@ -1,5 +1,7 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { OrganicWaveDivider } from './OrganicWaveDivider';
+export { OrganicWaveDivider };
 
 /**
  * LABORATORIO DE COMPONENTES BRUTALISTAS PREMIUM
@@ -8,13 +10,13 @@ import { OrganicWaveDivider } from './OrganicWaveDivider';
  */
 
 // 1. EL TÍTULO DE IMPACTO (Estilo Portada de Revista)
-export const BrutalTitle = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
+export const BrutalTitle = ({ children, className = "", stroke }: { children: React.ReactNode, className?: string, stroke?: string }) => (
   <motion.h1 
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     className={`font-display uppercase leading-tight text-white drop-shadow-[8px_8px_0_#000] ${className}`}
-    style={{ WebkitTextStroke: '2px black' }}>
+    style={{ WebkitTextStroke: stroke || 'var(--brutal-stroke-width) black' }}>
     {children}
   </motion.h1>
 );
@@ -62,7 +64,7 @@ export const BrutalCard = ({
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
-    className={`${color} border-[4px] border-black p-8 ${rotate} shadow-[12px_12px_0px_0px_${shadowColor}] transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_${shadowColor}] ${className} overflow-hidden relative group`}
+    className={`${color} border-[4px] border-black p-8 ${rotate} shadow-[12px_12px_0px_0px_${shadowColor}] transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_${shadowColor}] ${className} relative group`}
   >
     {/* Textura sutil interna por carta */}
     <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] group-hover:opacity-[0.05] transition-opacity" />
@@ -172,7 +174,14 @@ export const ArticleFicha = ({
     
     <div className="border-b-2 border-black/10 pb-2">
       <span className="block font-mono text-[9px] uppercase font-black opacity-30">DIGITAL OBJECT ID</span>
-      <span className="text-xs font-black break-all selection:bg-black selection:text-white uppercase">{doi}</span>
+      <a
+        href={`https://doi.org/${doi}`}
+        target="_blank"
+        rel="noreferrer"
+        className="text-xs font-black break-all selection:bg-black selection:text-white uppercase hover:text-blue-600 transition-colors"
+      >
+        {doi}
+      </a>
     </div>
 
     <div className="border-b-2 border-black/10 pb-2">

@@ -130,7 +130,8 @@ export const OrganicWaveDivider = ({
           fill={bottomColor}
           initial={{ d: config.path1 }}
           animate={animated ? {
-            d: [config.path1, config.path2, config.path3, config.path1]
+            d: [config.path1, config.path2, config.path3, config.path1],
+            x: variant === 'steps' ? [0, -40, 0] : 0
           } : undefined}
           transition={{
             duration: config.duration,

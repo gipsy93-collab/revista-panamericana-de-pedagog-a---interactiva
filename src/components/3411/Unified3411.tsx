@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Hero3411 from './Hero3411';
+import { DataLab3411 } from './DataLab3411';
 import Content3411 from './Content3411';
 import Quiz3411 from './Quiz3411';
 import { ARTICLE_META } from './constants';
@@ -33,6 +34,7 @@ export default function Unified3411({ onBack }: { onBack: () => void }) {
 
       <main>
         <Hero3411 />
+        <DataLab3411 />
         <Content3411 />
         <Quiz3411 />
       </main>

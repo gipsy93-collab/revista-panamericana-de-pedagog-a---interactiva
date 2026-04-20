@@ -114,7 +114,7 @@ export const Navbar = ({
                         : 'text-white/40 hover:text-white'
                     }`}
                   >
-                    <span className="hidden md:inline font-mono text-xs opacity-40 absolute -left-4 top-1/2 -translate-y-1/2 tracking-tighter">0{i+1}_</span>
+                    <span className="hidden md:inline font-mono text-xs opacity-40 absolute -left-4 top-1/2 -translate-y-1/2 tracking-tighter">0{i+1}</span>
                     <Icon size={isActive ? 32 : 24} className={`transition-all ${isActive ? 'scale-125' : 'group-hover:scale-110 group-hover:text-zine-red'}`} />
                     <span className="relative">
                        {item.name}

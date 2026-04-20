@@ -29,6 +29,9 @@ export class ErrorBoundary extends React.Component<Props, State> {
         <div className="min-h-screen bg-zine-black flex items-center justify-center p-6">
           <div className="max-w-lg text-center">
             <h1 className="text-4xl text-white mb-4">⚠️ Algo salió mal</h1>
+            <p className="text-red-400 text-sm mb-4 font-mono break-all">
+              {this.state.error?.message || 'Error desconocido'}
+            </p>
             <button 
               onClick={() => window.location.reload()}
               className="px-6 py-3 bg-zine-red text-white rounded"

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, RotateCcw } from 'lucide-react';
+import { CheckCircle, XCircle, RotateCcw, Award } from 'lucide-react';
 import { QUIZ_QUESTIONS } from './constants';
+import { BrutalCard, PremiumTitle, BrutalSticker } from '../BrutalistLib';
 
 export default function Quiz3412() {
   const [answers, setAnswers] = useState<number[]>(Array(QUIZ_QUESTIONS.length).fill(-1));
@@ -22,52 +23,54 @@ export default function Quiz3412() {
   };
 
   return (
-    <section className="bg-[#F7FAFC] text-slate-900 py-20 px-6">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-10"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-2">Comprueba tu comprensión</h2>
-          <p className="text-slate-600">5 preguntas sobre el inventario de competencias blandas y sus hallazgos.</p>
-        </motion.div>
+    <section className="bg-[#F0F0F0] py-40 px-6 border-t-[10px] border-black">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-20">
+          <BrutalSticker text="AUTO-EVALUACIÓN" color="bg-[#4F46E5]" className="text-white mb-6 !rotate-0" />
+          <PremiumTitle className="items-center" subtitle="VALIDACIÓN DE CONOCIMIENTO">Examen de Terreno Académico</PremiumTitle>
+          <p className="mt-6 font-mono text-[10px] uppercase font-black opacity-60">Basado en el rigor del estudio empírico de la UCA</p>
+        </div>
 
-        <div className="space-y-6">
+        <div className="space-y-10">
           {QUIZ_QUESTIONS.map((q, qi) => (
-            <motion.div
+            <BrutalCard
               key={qi}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: qi * 0.05 }}
-              className="bg-white rounded-xl shadow-md p-6"
+              color="bg-white"
+              className={`border-4 transition-all ${submitted && answers[qi] === q.correct ? 'shadow-[8px_8px_0_0_#10b981]' : submitted ? 'shadow-[8px_8px_0_0_#ef4444]' : 'shadow-[12px_12px_0_0_#000]'}`}
             >
-              <p className="font-semibold mb-4">
-                {qi + 1}. {q.question}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="flex gap-6 mb-8">
+                <span className="w-12 h-12 bg-black text-white shrink-0 flex items-center justify-center font-display text-2xl font-black">
+                  {qi + 1}
+                </span>
+                <p className="text-2xl font-display uppercase font-black leading-tight tracking-tighter">
+                  {q.question}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {q.options.map((opt, oi) => {
                   const isSelected = answers[qi] === oi;
                   const isCorrect = oi === q.correct;
                   const showCorrect = submitted && isCorrect;
                   const showWrong = submitted && isSelected && !isCorrect;
+                  
                   return (
                     <button
                       key={oi}
                       onClick={() => handleSelect(qi, oi)}
-                      className={`text-left px-4 py-3 rounded-lg border text-sm font-medium transition-all ${
+                      className={`text-left px-6 py-4 border-4 transition-all font-display uppercase font-black text-sm relative overflow-hidden ${
                         showCorrect
-                          ? 'bg-emerald-50 border-emerald-500 text-emerald-700'
+                          ? 'bg-emerald-500 border-black text-white'
                           : showWrong
-                          ? 'bg-rose-50 border-rose-500 text-rose-700'
+                          ? 'bg-rose-500 border-black text-white'
                           : isSelected
-                          ? 'bg-blue-50 border-blue-500 text-blue-700'
-                          : 'bg-white border-slate-200 text-slate-700 hover:border-slate-400'
+                          ? 'bg-[#4F46E5] border-black text-white'
+                          : 'bg-white border-black text-black hover:bg-zinc-100'
                       }`}
                     >
                       {opt}
+                      {showCorrect && <CheckCircle className="absolute right-4 top-1/2 -translate-y-1/2" size={20} />}
+                      {showWrong && <XCircle className="absolute right-4 top-1/2 -translate-y-1/2" size={20} />}
                     </button>
                   );
                 })}
@@ -78,47 +81,50 @@ export default function Quiz3412() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 text-sm"
+                    className="mt-8 p-6 bg-zinc-100 border-2 border-black border-dashed"
                   >
-                    {answers[qi] === q.correct ? (
-                      <span className="flex items-center gap-2 text-emerald-600">
-                        <CheckCircle size={16} /> Correcto
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2 text-rose-600">
-                        <XCircle size={16} /> Incorrecto
-                      </span>
-                    )}
-                    <p className="mt-1 text-slate-600">{q.explanation}</p>
+                    <span className="block font-mono text-[9px] uppercase font-black mb-2 opacity-60 italic">Retroalimentación Teórica:</span>
+                    <p className="text-lg font-serif italic text-black/80">{q.explanation}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </BrutalCard>
           ))}
         </div>
 
-        <div className="mt-8 flex items-center gap-4">
+        <div className="mt-20 flex flex-col items-center gap-8">
           {!submitted ? (
             <button
               onClick={() => setSubmitted(true)}
               disabled={answers.some((a) => a === -1)}
-              className="bg-[#1E3A5F] hover:bg-[#2C5282] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-full transition-all"
+              className="group relative bg-[#4F46E5] text-white px-12 py-6 border-4 border-black font-display text-3xl uppercase font-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#000] transition-all disabled:opacity-50 disabled:translate-0 disabled:shadow-[4px_4px_0_0_#000]"
             >
-              Calificar
+              Calificar Examen_
             </button>
           ) : (
-            <>
-              <div className="text-xl font-bold text-[#1E3A5F]">
-                Puntuación: {score}/{QUIZ_QUESTIONS.length}
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="flex flex-col items-center gap-10 w-full"
+            >
+              <div className="bg-black text-white border-8 border-black p-12 shadow-[20px_20px_0_0_#4F46E5] text-center w-full max-w-2xl relative rotate-1">
+                <Award className="absolute -top-10 -left-10 w-24 h-24 text-[#FDE047]" />
+                <span className="block font-mono text-xs uppercase font-black mb-4 opacity-60">Resultado de la Validación:</span>
+                <div className="text-[10rem] font-display font-black leading-none mb-4 italic">
+                  {score}/{QUIZ_QUESTIONS.length}
+                </div>
+                <p className="text-2xl font-display uppercase font-black">
+                  {score === QUIZ_QUESTIONS.length ? 'Dominio Académico Total' : 'Revisión Sugerida'}
+                </p>
               </div>
+              
               <button
                 onClick={reset}
-                className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-bold px-6 py-3 rounded-full transition-all"
+                className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 font-display uppercase font-black shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] transition-all"
               >
-                <RotateCcw size={18} /> Reintentar
+                <RotateCcw size={24} /> Volver a Intentar
               </button>
-            </>
+            </motion.div>
           )}
         </div>
       </div>

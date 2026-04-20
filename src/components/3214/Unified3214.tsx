@@ -3,6 +3,7 @@ import { ChevronLeft } from 'lucide-react';
 import { Hero3214 } from './Hero3214';
 import { Content3214 } from './Content3214';
 import { Quiz3214 } from './Quiz3214';
+import { OrganicWaveDivider } from '../BrutalistLib';
 import { FilmGrain } from '../FilmGrain';
 
 interface Props {
@@ -18,7 +19,7 @@ export default function Unified3214({ onBack }: Props) {
     <div className="relative min-h-screen bg-white text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-emerald-600 selection:text-white">
       <FilmGrain />
 
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-2 border-black/10 backdrop-blur-md bg-white/90">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
@@ -29,8 +30,8 @@ export default function Unified3214({ onBack }: Props) {
           </button>
           
           <div className="hidden md:flex items-center gap-4">
-             <div className="bg-emerald-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 41</div>
-             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">REF_3214 // REFORMAS_DOCENTES</span>
+             <div className="bg-emerald-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 39</div>
+             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">REF 3214 // AGRO INNOVACIÓN</span>
           </div>
         </div>
       </header>
@@ -38,6 +39,7 @@ export default function Unified3214({ onBack }: Props) {
       <main className="relative z-0">
         <Hero3214 />
         <Content3214 />
+        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f8fafc" variant="steps" />
         <Quiz3214 onComplete={(res) => console.log('Quiz 3214 completado', res)} />
       </main>
 
@@ -45,14 +47,14 @@ export default function Unified3214({ onBack }: Props) {
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         <div className="max-w-4xl mx-auto relative z-10 text-white">
           <h4 className="font-display text-4xl uppercase font-black mb-6 italic text-emerald-500">Revista Panamericana de Pedagogía</h4>
-          <p className="font-serif text-xl italic text-slate-400 mb-12 leading-relaxed">
-            Intriago, J. et al. (2026). <span className="text-white not-italic font-bold">Resistencia y adaptación: Docentes frente a las reformas educativas</span>. <span className="text-emerald-500">Revista Panamericana de Pedagogía</span>, 41, e3214.
+          <p className="font-serif text-xl italic text-slate-400 mb-12 leading-relaxed text-center">
+            Dueñas Basurto, C. G. & Zambrano Vera, E. M. (2025). <span className="text-white not-italic font-bold">La innovación pedagógica y su aporte en la formación de bachilleres técnicos agropecuarios para implementar prácticas sostenibles</span>. <span className="text-emerald-500">Revista Panamericana de Pedagogía</span>, 39, e3214.
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-10">
              <div className="bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#065f46]">
                DOI: 10.21555/rpp.3214
              </div>
-             <p className="font-mono text-[10px] uppercase opacity-40">Ecuador // RPP N° 41</p>
+             <p className="font-mono text-[10px] uppercase opacity-40">Ecuador // RPP N° 39</p>
           </div>
         </div>
       </footer>

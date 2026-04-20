@@ -6,23 +6,164 @@ import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote } 
 
 interface Props {
   onBack: () => void;
+  onEnviarArticulo?: () => void;
 }
 
 const authors = [
-  { name: 'Antonio Quintero', role: 'Investigador Principal', description: 'Especialista en Arqueología Pedagógica y Crítica Educativa.' },
-  { name: 'Citlalli Bautista', role: 'Co-Autora & Revisora', description: 'Experta en Metodologías de Investigación y Calidad Editorial.' },
-  { name: 'Oswaldo Pérez', role: 'Investigador Salud & IA', description: 'Líder de Proyectos de Intersección entre Ética y Tecnología.' },
-  { name: 'Carmen Villalaz', role: 'Co-Autora Salud', description: 'Especialista en Humanización de la Medicina y Bioética.' },
-  { name: 'Equipo Editorial', role: 'Revisión RPP', description: 'Colectivo responsable del rigor y la excelencia científica.' }
+  { 
+    name: 'Dra. Elena Valenzuela', 
+    institution: 'Universidad Panamericana', 
+    formation: 'Ph.D. Investigación Pedagógica', 
+    workTitle: 'El arte de aprender: Transmedia en el aula y narratividades emergentes.',
+    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#3b82f6', // Bright Blue
+    vol: 'VOL. 42'
+  },
+  { 
+    name: 'Mtro. Roberto G. Mendoza', 
+    institution: 'Univ. de los Andes', 
+    formation: 'Maestría en Tecnología Educativa', 
+    workTitle: 'Algoritmos Éticos: El futuro de la IA en la evaluación docente contemporánea.',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#22c55e', // Green
+    vol: 'VOL. 40'
+  },
+  { 
+    name: 'Dra. Lucía S. Ferreri', 
+    institution: 'Univ. de Buenos Aires', 
+    formation: 'Doctorado en Ciencias Sociales', 
+    workTitle: 'Narrativas de Resistencia: El Docente como Autor en entornos digitales.',
+    imageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#8b5cf6', // Purple
+    vol: 'VOL. 41'
+  },
+  { 
+    name: 'Mtra. Sofía J. Villalobos', 
+    institution: 'TEC de Monterrey', 
+    formation: 'Especialidad en Innovación', 
+    workTitle: 'Visualizando el Pensamiento: Estrategias Meta-cognitivas mediante Mapas 3D.',
+    imageUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#0ea5e9', // Sky Blue
+    vol: 'VOL. 39'
+  },
+  { 
+    name: 'Dr. Carlos H. Silvera', 
+    institution: 'Universidad de Chile', 
+    formation: 'Ph.D. en Humanidades', 
+    workTitle: 'Eco-Sistemas de Aprendizaje: La biodiversidad cultural en la escuela.',
+    imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#f43f5e', // Rose
+    vol: 'VOL. 43'
+  },
+  { 
+    name: 'Dra. Carmen M. Villalaz', 
+    institution: 'UNAM México', 
+    formation: 'Especialista en Bioética', 
+    workTitle: 'Humanizando la Medicina: Una perspectiva pedagógica del cuidado intensivo.',
+    imageUrl: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#fbbf24', // Amber
+    vol: 'VOL. 38'
+  },
+  { 
+    name: 'Gallardo-Herrerías, C.', 
+    institution: 'Univ. de Almería, España', 
+    formation: 'Dra. en Inclusión Educativa', 
+    workTitle: 'Las actitudes docentes frente a la inclusión educativa del TEA: Un estudio comparado.',
+    imageUrl: 'https://images.unsplash.com/photo-1548179532-a50d4816e992?auto=format&fit=crop&q=80&w=200&h=200',
+    color: '#0d9488', // Teal
+    vol: 'VOL. 41'
+  }
 ];
 
-export default function UnifiedAutores({ onBack }: Props) {
+const AuthorCover = ({ author, index }: { author: typeof authors[0], index: number }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 50, rotate: index % 2 === 0 ? -2 : 2 }}
+      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -15, rotate: index % 2 === 0 ? 1 : -1, scale: 1.02 }}
+      className="relative aspect-[3/4.2] rounded-[3rem] border-8 border-black shadow-[15px_15px_0_0_#000] overflow-hidden group cursor-pointer transition-shadow hover:shadow-[25px_25px_0_0_#000]"
+      style={{ backgroundColor: author.color }}
+    >
+      {/* Texture Layer */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
+
+      {/* Top Bar Labels */}
+      <div className="absolute top-10 left-10 right-10 flex justify-between items-center z-10">
+        <div className="bg-black text-white px-5 py-1.5 rounded-full font-mono text-[11px] uppercase font-black tracking-[0.2em] border-2 border-black">
+          {author.vol}
+        </div>
+        <div className="w-11 h-11 bg-white/20 backdrop-blur-xl rounded-full border-4 border-white/50 flex items-center justify-center">
+          <div className="w-5 h-5 border-4 border-white rounded-full opacity-60 animate-pulse" />
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center">
+        {/* Photo with Circular Mask and Brutal Border */}
+        <div className="relative mb-10 pt-10">
+           <div className="w-36 h-36 rounded-full border-8 border-black overflow-hidden shadow-[8px_8px_0_0_#000] bg-white group-hover:scale-110 transition-transform duration-500">
+              <img 
+                src={author.imageUrl} 
+                alt={author.name} 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 delay-75" 
+              />
+           </div>
+           
+           {/* Floating Icons Style stickers */}
+           <motion.div 
+             animate={{ y: [0, -10, 0] }}
+             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+             className="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 border-4 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0_0_#000] -rotate-12"
+           >
+              <Zap size={20} className="text-black fill-current" />
+           </motion.div>
+        </div>
+
+        {/* Text Container */}
+        <div className="space-y-6">
+          <h3 className="font-display text-4xl uppercase leading-[0.85] text-white drop-shadow-[4px_4px_0_#000] tracking-tighter">
+            {author.name}
+          </h3>
+          
+          <div className="space-y-2">
+             <div className="inline-block bg-black text-white px-3 py-1 font-accent text-[10px] uppercase font-black tracking-widest border-2 border-black rotate-1">
+                {author.institution}
+             </div>
+             <p className="font-mono text-[10px] uppercase font-black text-black block tracking-tighter opacity-80">
+                {author.formation}
+             </p>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="w-16 h-2 bg-black my-8 rounded-full opacity-20" />
+
+        {/* Work Title */}
+        <div className="relative">
+           <p className="font-serif italic text-white text-lg leading-tight px-2 line-clamp-3 font-semibold drop-shadow-sm">
+              "{author.workTitle}"
+           </p>
+        </div>
+      </div>
+
+      {/* Bottom Interface Icon */}
+      <div className="absolute bottom-10 right-10">
+         <div className="w-14 h-14 bg-black text-white rounded-2xl border-4 border-black shadow-[6px_6px_0_0_rgba(255,255,255,0.2)] flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all group-hover:-translate-x-1 group-hover:-translate-y-1">
+            <Rocket size={24} />
+         </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-white text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-rose-600 selection:text-white">
+    <div className="relative min-h-screen bg-[#f5ece0] text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-rose-600 selection:text-white">
       <FilmGrain />
 
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
@@ -43,49 +184,59 @@ export default function UnifiedAutores({ onBack }: Props) {
       </header>
 
       {/* HERO SEMILLERO */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-rose-600 text-white border-b-[20px] border-black overflow-hidden py-32">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-rose-600 text-white border-b-[20px] border-black overflow-hidden py-32">
          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
          
          <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
-            <BrutalSticker text="RED DE INVESTIGACIÓN ACTIVA" color="bg-black" className="text-white mb-12 !rotate-0 px-8 py-3 text-2xl border-4 shadow-[8px_8px_0_0_#000]" />
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <BrutalSticker text="RED DE INVESTIGACIÓN ACTIVA" color="bg-black" className="text-white mb-12 !rotate-1 px-8 py-3 text-3xl border-4 shadow-[12px_12px_0_0_#000]" />
+            </motion.div>
             
-            <h1 className="text-6xl md:text-[10rem] font-display uppercase leading-none text-white drop-shadow-[20px_20px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: '4px black' }}>
+            <h1 className="text-[5rem] md:text-[14rem] font-display uppercase leading-[0.8] text-white drop-shadow-[25px_25px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: 'calc(var(--brutal-stroke-width) * 2) black' }}>
               Semillero <br /> Autores
             </h1>
             
-            <div className="max-w-4xl mx-auto space-y-8 bg-zinc-900 text-white p-12 border-8 border-black shadow-[25px_25px_0_0_#000] rotate-1 mb-20 relative overflow-hidden">
-               <p className="text-3xl font-serif italic leading-tight text-rose-100">
-                 "Investigadores activos orbitando alrededor del rigor científico."
+            <div className="max-w-4xl mx-auto space-y-8 bg-zinc-900 text-white p-12 border-8 border-black shadow-[30px_30px_0_0_#000] -rotate-1 mb-20 relative overflow-hidden">
+               <p className="text-4xl font-serif italic leading-tight text-rose-100">
+                 "Investigadores activos orbitando alrededor del rigor científico y la narrativa expandida."
                </p>
             </div>
          </div>
       </section>
 
       {/* SECCIÓN 1: MISIÓN */}
-      <WaveSection topColor="#e11d48" bottomColor="#ffffff" variant="wavy">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
+      <WaveSection topColor="#e11d48" bottomColor="#f5ece0" variant="wavy">
+        <div className="max-w-6xl mx-auto py-20 px-6">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-8">
               <PremiumTitle subtitle="PROPÓSITO CIENTÍFICO"> Cultivar la Excelencia </PremiumTitle>
-              <div className="mt-12 space-y-8 text-2xl font-serif italic text-zinc-700 leading-relaxed">
-                <p>El Semillero de Autores RPP es un espacio donde la investigación se encuentra con la narrativa transmedia.</p>
-                <div className="bg-rose-50 border-l-[12px] border-rose-600 p-12 shadow-[15px_15px_0_0_#000] -rotate-1">
-                   <p className="text-black font-black uppercase text-3xl font-display mb-4 italic tracking-tighter">No solo publicamos</p>
-                   <p className="not-italic text-xl">Construimos puentes entre los datos y la comprensión pedagógica profunda.</p>
+              <div className="mt-12 space-y-8 text-3xl font-serif italic text-zinc-700 leading-relaxed">
+                <p>El Semillero de Autores RPP no es solo una lista; es un nodo de conocimiento vivo.</p>
+                <div className="bg-white border-l-[20px] border-rose-600 p-12 shadow-[20px_20px_0_0_#000] rotate-1">
+                   <p className="text-black font-black uppercase text-4xl font-display mb-4 italic tracking-tighter">Impacto Real</p>
+                   <p className="not-italic text-2xl font-accent font-bold text-zinc-600">Transformamos datos en historias que cambian la educación.</p>
                 </div>
               </div>
             </div>
             
             <div className="lg:col-span-4 space-y-8">
-              <CinematicCard color="bg-rose-600" title="NETWORK" icon={Globe} className="text-white shadow-[10px_10px_0_0_#000]">
-                 <div className="space-y-4 pt-4">
-                    <div className="flex justify-between items-end border-b-2 border-white/20">
-                       <span className="font-mono text-[10px]">AUTHORS 2026</span>
-                       <span className="font-display text-4xl">42</span>
+              <CinematicCard color="bg-[#fccb06]" title="ESTADÍSTICAS" icon={Globe} className="text-black shadow-[12px_12px_0_0_#000]">
+                 <div className="space-y-6 pt-6">
+                    <div className="flex justify-between items-end border-b-4 border-black/10">
+                       <span className="font-mono text-xs font-black">AUTORES</span>
+                       <span className="font-display text-6xl">42</span>
                     </div>
-                    <div className="flex justify-between items-end border-b-2 border-white/20">
-                       <span className="font-mono text-[10px]">REGIONS</span>
-                       <span className="font-display text-4xl">12</span>
+                    <div className="flex justify-between items-end border-b-4 border-black/10">
+                       <span className="font-mono text-xs font-black">REGIONES</span>
+                       <span className="font-display text-6xl">15</span>
+                    </div>
+                    <div className="flex justify-between items-end border-b-4 border-black/10">
+                       <span className="font-mono text-xs font-black">CITAS</span>
+                       <span className="font-display text-6xl">+1.2k</span>
                     </div>
                  </div>
               </CinematicCard>
@@ -94,31 +245,50 @@ export default function UnifiedAutores({ onBack }: Props) {
         </div>
       </WaveSection>
 
-      <WaveSection topColor="#ffffff" bottomColor="#fff1f2" variant="steps">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      {/* GALERÍA DE AUTORES */}
+      <section className="bg-white py-32 border-y-[20px] border-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+             <span className="font-mono text-sm uppercase font-black bg-rose-600 text-white px-4 py-1 border-2 border-black mb-6 inline-block">PORTAFOLIO DE TALENTO</span>
+             <h2 className="text-6xl md:text-9xl font-display uppercase italic tracking-tighter">AUTORES PUBLICADOS</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {authors.map((author, i) => (
-              <div key={i} className="group bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform relative overflow-hidden">
-                <div className="w-16 h-16 bg-rose-600 text-white flex items-center justify-center mb-8 border-4 border-black group-hover:rotate-12 transition-transform">
-                  <Users size={32} />
-                </div>
-                <h3 className="font-display text-3xl uppercase font-black mb-2 italic tracking-tighter">{author.name}</h3>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-rose-600 mb-6 font-black">{author.role}</p>
-                <p className="font-serif italic text-zinc-600 text-lg">"{author.description}"</p>
-              </div>
+              <AuthorCover key={i} author={author} index={i} />
             ))}
           </div>
         </div>
-      </WaveSection>
+      </section>
 
+      {/* CTA FINAL */}
       <footer className="bg-black py-40 px-6 border-t-[20px] border-zinc-900 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+        
         <div className="max-w-4xl mx-auto relative z-10 text-white text-center">
-          <h4 className="font-display text-5xl uppercase font-black mb-8 italic text-rose-500">Únete al Semillero</h4>
-          <p className="font-serif text-2xl italic text-slate-400 mb-16 leading-relaxed">
-            Buscamos investigadores con visión de futuro educativo.
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="mb-12"
+          >
+            <div className="w-24 h-24 bg-rose-600 rounded-full flex items-center justify-center mx-auto border-8 border-white mb-8 animate-bounce">
+               <GraduationCap size={48} className="text-white" />
+            </div>
+            <h4 className="font-display text-6xl md:text-8xl uppercase font-black mb-8 italic text-rose-500 drop-shadow-[4px_4px_0_#fff]">
+              ¿Tienes un <br /> Manuscrito?
+            </h4>
+          </motion.div>
+          
+          <p className="font-serif text-3xl italic text-slate-400 mb-20 leading-relaxed max-w-2xl mx-auto">
+            Buscamos investigadores audaces dispuestos a romper el molde de la publicación tradicional.
           </p>
-          <button className="bg-white text-black px-12 py-6 border-8 border-black font-display text-3xl uppercase shadow-[10px_10px_0_0_#e11d48] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
-            ENVIAR MANUSCRITO
+          
+          <button 
+            onClick={onEnviarArticulo}
+            className="group relative bg-[#fccb06] text-black px-16 py-8 border-8 border-black font-display text-4xl uppercase shadow-[12px_12px_0_0_#e11d48] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[18px_18px_0_0_#e11d48] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            <span className="relative z-10">ENVIAR AHORA</span>
+            <div className="absolute inset-0 bg-white translate-x-3 translate-y-3 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform" />
           </button>
         </div>
       </footer>

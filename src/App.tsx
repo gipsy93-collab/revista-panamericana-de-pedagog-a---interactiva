@@ -9,9 +9,10 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
 import { AlienCursor } from './components/AlienCursor';
-import { StatusBar } from './components/StatusBar';
 import { PageLoader } from './components/PageLoader';
 import { FilmGrain } from './components/FilmGrain';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { ArticleError } from './components/ArticleError';
 import { 
   HeroToArticulosWave, 
   ArticulosToSemilleroWave, 
@@ -56,6 +57,8 @@ const Unified3606 = lazy(() => import('./components/3606/Unified3606'));
 // Semilleros
 const UnifiedAutores = lazy(() => import('./components/Semilleros/UnifiedAutores'));
 const UnifiedRevisores = lazy(() => import('./components/Semilleros/UnifiedRevisores'));
+const EnviarArticulo = lazy(() => import('./components/Semilleros/EnviarArticulo'));
+const PodcastLaboratory = lazy(() => import('./components/Transmedia/PodcastLaboratory'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,88 +66,86 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const [activeSubPage, setActiveSubPage] = useState<string | null>(null);
-  
-  const sectionRefs = [
-    useRef<HTMLDivElement>(null), // Inicio
-    useRef<HTMLDivElement>(null), // Artículos
-    useRef<HTMLDivElement>(null), // Semillero
-    useRef<HTMLDivElement>(null), // Transmedia
-    useRef<HTMLDivElement>(null), // Actualidad
-    useRef<HTMLDivElement>(null), // Blog
-    useRef<HTMLDivElement>(null)  // Contacto (Footer)
-  ];
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>(Array(7).fill(null));
 
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.0,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.8,
-      infinite: false,
-    });
+    let lenis: any = null;
+    let observer: IntersectionObserver | null = null;
+    let timer: ReturnType<typeof setTimeout>;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-    
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).lenis = lenis;
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2800);
-
-    const observerOptions = {
-      root: null,
-      threshold: 0.25,
-      rootMargin: "0px"
-    };
-
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = sectionRefs.findIndex(ref => ref.current === entry.target);
-          if (index !== -1) {
-            setCurrentSection(index);
-          }
-        }
+    try {
+      lenis = new Lenis({
+        duration: 1.0,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.8,
+        infinite: false,
       });
-    };
 
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    sectionRefs.forEach(ref => {
-      if (ref.current) observer.observe(ref.current);
-    });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        if (lenis) lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+      
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).lenis = lenis;
+
+      timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2800);
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.25,
+        rootMargin: "0px"
+      };
+
+      const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.findIndex(ref => ref === entry.target);
+            if (index !== -1) {
+              setCurrentSection(index);
+            }
+          }
+        });
+      };
+
+      observer = new IntersectionObserver(handleIntersect, observerOptions);
+      sectionRefs.current.forEach(ref => {
+        if (ref) observer!.observe(ref);
+      });
+    } catch (err) {
+       console.error("Lenis/Observer init failed:", err);
+       setIsLoading(false);
+    }
 
     return () => {
       clearTimeout(timer);
-      observer.disconnect();
-      lenis.destroy();
-      delete window.lenis;
+      if (observer) observer.disconnect();
+      if (lenis) lenis.destroy();
+      delete (window as any).lenis;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Pausar Lenis cuando se abre un artículo y permitir scroll nativo
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const lenisInstance = (window as any).lenis;
-    if (lenisInstance) {
-      if (activeSubPage) {
-        lenisInstance.stop();
-      } else {
-        lenisInstance.start();
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const lenisInstance = (window as any).lenis;
+      if (lenisInstance) {
+        if (activeSubPage) {
+          lenisInstance.stop();
+        } else {
+          lenisInstance.start();
+        }
       }
+    } catch(e) {
+      console.warn("Could not pause lenis", e);
     }
   }, [activeSubPage]);
 
@@ -152,9 +153,9 @@ export default function App() {
     let targetIndex = index;
     if (index === 5) targetIndex = 6;
 
-    const targetRef = sectionRefs[targetIndex];
-    if (targetRef?.current) {
-      const offsetTop = targetRef.current.offsetTop;
+    const targetRef = sectionRefs.current[targetIndex];
+    if (targetRef) {
+      const offsetTop = targetRef.offsetTop;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const lenisInstance = (window as any).lenis;
       if (lenisInstance) {
@@ -186,28 +187,28 @@ export default function App() {
             data-lenis-prevent="true"
           >
             <Suspense fallback={<PageLoader />}>
-              {activeSubPage === '3153' && <Unified3153 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3198' && <Unified3198 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3214' && <Unified3214 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3290' && <Unified3290 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3378' && <Unified3378 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3411' && <Unified3411 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3412' && <Unified3412 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3453' && <Unified3453 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3454' && <Unified3454 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3455' && <Unified3455 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3467' && <Unified3467 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3476' && <Unified3476 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3497' && <Unified3497 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3508' && <Unified3508 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3543' && <Unified3543 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3549' && <Unified3549 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3557' && <Unified3557 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3562' && <Unified3562 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3570' && <Unified3570 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3588' && <Unified3588 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3604' && <Unified3604 onBack={() => setActiveSubPage(null)} />}
-              {activeSubPage === '3606' && <Unified3606 onBack={() => setActiveSubPage(null)} />}
+              {activeSubPage === '3153' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3153 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3198' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3198 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3214' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3214 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3290' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3290 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3378' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3378 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3411' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3411 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3412' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3412 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3453' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3453 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3454' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3454 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3455' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3455 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3467' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3467 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3476' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3476 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3497' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3497 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3508' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3508 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3543' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3543 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3549' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3549 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3557' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3557 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3562' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3562 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3570' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3570 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3588' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3588 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3604' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3604 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
+              {activeSubPage === '3606' && <ErrorBoundary fallback={<ArticleError onBack={() => setActiveSubPage(null)} />}><Unified3606 onBack={() => setActiveSubPage(null)} /></ErrorBoundary>}
             </Suspense>
           </motion.div>
         )}
@@ -221,7 +222,24 @@ export default function App() {
             data-lenis-prevent="true"
           >
             <Suspense fallback={<PageLoader />}>
-              <UnifiedAutores onBack={() => setActiveSubPage(null)} />
+              <UnifiedAutores 
+                onBack={() => setActiveSubPage(null)} 
+                onEnviarArticulo={() => setActiveSubPage('enviar_articulo')}
+              />
+            </Suspense>
+          </motion.div>
+        )}
+
+        {activeSubPage === 'enviar_articulo' && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-white overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <EnviarArticulo onBack={() => setActiveSubPage('semillero_autores')} />
             </Suspense>
           </motion.div>
         )}
@@ -240,10 +258,26 @@ export default function App() {
           </motion.div>
         )}
 
+        {activeSubPage === 'podcast_laboratory' && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-[#0f172a] overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <PodcastLaboratory onBack={() => setActiveSubPage(null)} />
+            </Suspense>
+          </motion.div>
+        )}
+
         {activeSubPage && 
           !hardcodedArticleIds.includes(activeSubPage) && 
           activeSubPage !== 'semillero_autores' && 
-          activeSubPage !== 'semillero_revisores' && (
+          activeSubPage !== 'semillero_editores' && 
+          activeSubPage !== 'enviar_articulo' && 
+          activeSubPage !== 'podcast_laboratory' && (
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -258,10 +292,9 @@ export default function App() {
         )}
       </AnimatePresence>
 
+      <AlienCursor />
       {!activeSubPage && (
         <>
-          <AlienCursor />
-          <StatusBar currentSection={currentSection} />
           
           <Navbar 
             scrollToSection={scrollToSection} 
@@ -269,13 +302,13 @@ export default function App() {
           />
 
           <main>
-            <div ref={sectionRefs[0]} id="inicio">
+            <div ref={(el) => { sectionRefs.current[0] = el; }} id="inicio">
               <Hero onExplore={() => scrollToSection(1)} />
             </div>
 
             <HeroToArticulosWave />
 
-            <div ref={sectionRefs[1]} id="articulos">
+            <div ref={(el) => { sectionRefs.current[1] = el; }} id="articulos">
               <Suspense fallback={<PageLoader />}>
                 <ArticulosInteractivos onOpenArticle={(id) => setActiveSubPage(id)} />
               </Suspense>
@@ -283,7 +316,7 @@ export default function App() {
 
             <ArticulosToSemilleroWave />
 
-            <div ref={sectionRefs[2]} id="semillero">
+            <div ref={(el) => { sectionRefs.current[2] = el; }} id="semillero">
               <Suspense fallback={<PageLoader />}>
                 <SemilleroAutores onOpenSubPage={(id) => setActiveSubPage(id)} />
               </Suspense>
@@ -291,15 +324,15 @@ export default function App() {
 
             <SemilleroToTransmediaWave />
 
-            <div ref={sectionRefs[3]} id="transmedia">
+            <div ref={(el) => { sectionRefs.current[3] = el; }} id="transmedia">
               <Suspense fallback={<PageLoader />}>
-                <Transmedia />
+                <Transmedia onOpenSubPage={(id) => setActiveSubPage(id)} />
               </Suspense>
             </div>
 
             <TransmediaToActualidadWave />
 
-            <div ref={sectionRefs[4]} id="actualidad">
+            <div ref={(el) => { sectionRefs.current[4] = el; }} id="actualidad">
               <Suspense fallback={<PageLoader />}>
                 <BlogAndActualidad />
               </Suspense>
@@ -307,7 +340,7 @@ export default function App() {
 
             <ActualidadToBlogWave />
 
-            <div ref={sectionRefs[5]} id="blog">
+            <div ref={(el) => { sectionRefs.current[5] = el; }} id="blog">
               <Suspense fallback={<PageLoader />}>
                 <BlogSection />
               </Suspense>
@@ -316,7 +349,7 @@ export default function App() {
             <BlogToFooterWave />
           </main>
 
-          <div ref={sectionRefs[6]} id="contacto">
+          <div ref={(el) => { sectionRefs.current[6] = el; }} id="contacto">
             <Footer onBackToTop={() => scrollToSection(0)} />
           </div>
         </>

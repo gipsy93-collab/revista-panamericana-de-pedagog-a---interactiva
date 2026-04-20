@@ -1,126 +1,164 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ARTICLE_DATA } from './constants';
-import { Brain, ChevronRight, RotateCcw } from 'lucide-react';
+import { Target, Trophy, XCircle, CheckCircle2, RefreshCcw, Search } from 'lucide-react';
+import { QUIZ_QUESTIONS } from './constants';
+import { QuizResult } from './types';
+import { BrutalCard, BrutalSticker } from '../BrutalistLib';
 
-export default function Quiz3570() {
-  const [quizStep, setQuizStep] = useState(0);
+export const Quiz3570 = ({ onComplete }: { onComplete: (result: QuizResult) => void }) => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
-  const [showResult, setShowResult] = useState(false);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [answered, setAnswered] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   const handleAnswer = (index: number) => {
-    if (answered) return;
-    setSelected(index);
-    setAnswered(true);
-    if (index === ARTICLE_DATA.quiz[quizStep].correct) {
-      setScore(s => s + 1);
+    if (selectedAnswer !== null) return;
+    
+    setSelectedAnswer(index);
+    setShowExplanation(true);
+    
+    if (index === QUIZ_QUESTIONS[currentQuestion].correct) {
+      setScore(prev => prev + 1);
     }
   };
 
-  const next = () => {
-    if (quizStep < ARTICLE_DATA.quiz.length - 1) {
-      setQuizStep(s => s + 1);
-      setSelected(null);
-      setAnswered(false);
+  const nextQuestion = () => {
+    if (currentQuestion < QUIZ_QUESTIONS.length - 1) {
+      setCurrentQuestion(prev => prev + 1);
+      setSelectedAnswer(null);
+      setShowExplanation(false);
     } else {
-      setShowResult(true);
+      setIsFinished(true);
+      onComplete({
+        score,
+        maxScore: QUIZ_QUESTIONS.length,
+        passed: score >= Math.ceil(QUIZ_QUESTIONS.length / 2),
+        xp: score * 100
+      });
     }
   };
 
-  const reset = () => {
-    setQuizStep(0);
-    setScore(0);
-    setShowResult(false);
-    setSelected(null);
-    setAnswered(false);
-  };
+  if (isFinished) {
+    const passed = score >= Math.ceil(QUIZ_QUESTIONS.length / 2);
+    
+    return (
+      <div className="py-24 px-6 bg-orange-50 min-h-[60vh] flex items-center justify-center">
+        <BrutalCard color={passed ? "bg-black" : "bg-zinc-900"} className="max-w-2xl w-full text-center p-12 !border-orange-600">
+          <Search size={80} className={`mx-auto mb-6 ${passed ? 'text-orange-500' : 'text-zinc-500'}`} />
+          <h2 className="text-5xl font-display uppercase mb-4 text-white italic">
+            {passed ? 'Revisión Validada' : 'Filtro Incompleto'}
+          </h2>
+          <p className="text-2xl font-serif text-white/90 mb-8 font-bold">
+            Puntuación de Análisis: {score} / {QUIZ_QUESTIONS.length}
+          </p>
+          
+          <div className="inline-block p-4 border-4 border-white bg-orange-600 text-white shadow-[6px_6px_0_#000] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg]">
+            +{score * 100} XP CRÍTICO
+          </div>
 
-  const current = ARTICLE_DATA.quiz[quizStep];
+          <p className="font-sans text-lg text-white mb-8 text-center">
+            {passed 
+              ? 'Has demostrado el rigor necesario para comprender las dimensiones PRISMA y la naturaleza transformadora del pensamiento crítico.' 
+              : 'Parece que el filtro sistemático ha fallado. Revisa el sesgo geográfico del 86% y la definición política de la crítica escolar.'}
+          </p>
+
+          {!passed && (
+            <button 
+              onClick={() => {
+                setCurrentQuestion(0);
+                setSelectedAnswer(null);
+                setShowExplanation(false);
+                setScore(0);
+                setIsFinished(false);
+              }}
+              className="px-8 py-4 bg-white text-black font-display text-2xl uppercase hover:scale-105 transition-transform shadow-[6px_6px_0_#ea580c] flex items-center gap-3 mx-auto border-4 border-black font-black"
+            >
+              <RefreshCcw /> Reiniciar Revisión
+            </button>
+          )}
+        </BrutalCard>
+      </div>
+    );
+  }
+
+  const question = QUIZ_QUESTIONS[currentQuestion];
 
   return (
-    <section className="py-24 px-6 bg-gray-950">
-      <div className="max-w-3xl mx-auto">
-        <AnimatePresence mode="wait">
-          {!showResult ? (
-            <motion.div
-              key="quiz"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl"
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <Brain className="text-blue-400" size={32} />
-                <h2 className="text-2xl md:text-3xl font-bold text-white">Gamify the Article</h2>
-              </div>
+    <div className="py-24 px-6 md:px-12 bg-white min-h-[80vh]">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center justify-between mb-12">
+          <BrutalSticker text="SESIÓN DE CRIBADO" color="bg-black" className="text-white" />
+          <div className="font-mono text-xl font-black bg-orange-600 text-white px-6 py-2 shadow-[4px_4px_0_#000] rotate-1">
+            {currentQuestion + 1} / {QUIZ_QUESTIONS.length}
+          </div>
+        </div>
 
-              <div className="mb-6 flex justify-between items-center text-sm text-gray-400">
-                <span>Pregunta {quizStep + 1} de {ARTICLE_DATA.quiz.length}</span>
-                <span>Puntuación: {score}</span>
-              </div>
+        <BrutalCard className="mb-12 border-b-[12px] border-orange-600">
+          <h3 className="text-3xl md:text-5xl font-display uppercase leading-tight italic">
+            {question.question}
+          </h3>
+        </BrutalCard>
 
-              <h3 className="text-xl md:text-2xl text-gray-100 mb-8 font-medium">
-                {current.question}
-              </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {question.options.map((option, idx) => {
+            const isSelected = selectedAnswer === idx;
+            const isCorrect = idx === question.correct;
+            const showStatus = showExplanation && (isSelected || isCorrect);
+            
+            let bgConfig = "bg-white hover:bg-orange-50 border-zinc-200";
+            if (showExplanation) {
+              if (isCorrect) bgConfig = "bg-orange-600 text-white border-black";
+              else if (isSelected) bgConfig = "bg-zinc-800 text-white border-black";
+              else bgConfig = "bg-zinc-100 opacity-50 border-black/20";
+            }
 
-              <div className="grid gap-4">
-                {current.options.map((option, index) => {
-                  const isCorrect = index === current.correct;
-                  const isSelected = index === selected;
-                  let btnClass = "p-5 rounded-xl text-left text-lg border border-gray-700 bg-gray-800 text-gray-200 hover:bg-gray-700 transition-colors";
-                  if (answered) {
-                    if (isCorrect) btnClass = "p-5 rounded-xl text-left text-lg border border-emerald-500 bg-emerald-500/20 text-emerald-100";
-                    else if (isSelected) btnClass = "p-5 rounded-xl text-left text-lg border border-red-500 bg-red-500/20 text-red-100";
-                    else btnClass = "p-5 rounded-xl text-left text-lg border border-gray-700 bg-gray-800 text-gray-400 opacity-60";
-                  }
-                  return (
-                    <button
-                      key={index}
-                      disabled={answered}
-                      onClick={() => handleAnswer(index)}
-                      className={btnClass}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {answered && (
-                <motion.button
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  onClick={next}
-                  className="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold flex items-center gap-2 transition-colors"
-                >
-                  {quizStep === ARTICLE_DATA.quiz.length - 1 ? 'Ver resultado' : 'Siguiente'} <ChevronRight size={18} />
-                </motion.button>
-              )}
-            </motion.div>
-          ) : (
-            <motion.div
-              key="result"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-gray-900 p-12 rounded-3xl border border-gray-800 shadow-2xl text-center"
-            >
-              <div className="text-6xl mb-6">🏆</div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">¡Completado!</h3>
-              <p className="text-gray-300 text-lg mb-8">
-                Has respondido correctamente <span className="text-emerald-400 font-bold">{score}</span> de <span className="text-white font-bold">{ARTICLE_DATA.quiz.length}</span> preguntas.
-              </p>
+            return (
               <button
-                onClick={reset}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl font-bold flex items-center gap-2 mx-auto hover:shadow-lg transition-shadow"
+                key={idx}
+                onClick={() => handleAnswer(idx)}
+                disabled={showExplanation}
+                className={`p-8 border-4 border-black text-left font-display uppercase font-black italic text-xl transition-all shadow-[8px_8px_0_#000] relative overflow-hidden ${bgConfig}`}
               >
-                <RotateCcw size={18} /> Reintentar
+                <div className="flex justify-between items-center gap-4">
+                  <span className="flex-1 tracking-tighter leading-[0.85]">{option}</span>
+                  {showStatus && (
+                    <span className="shrink-0 bg-white rounded-full p-1 text-black">
+                      {isCorrect ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
+                    </span>
+                  )}
+                </div>
               </button>
+            );
+          })}
+        </div>
+
+        <AnimatePresence>
+          {showExplanation && (
+            <motion.div
+              initial={{ height: 0, opacity: 0, marginTop: 0 }}
+              animate={{ height: 'auto', opacity: 1, marginTop: 60 }}
+              exit={{ height: 0, opacity: 0, marginTop: 0 }}
+              className="overflow-hidden"
+            >
+              <div className="p-10 border-8 border-black bg-orange-50 shadow-[12px_12px_0_#000] rotate-[-1deg]">
+                <h4 className="font-display text-3xl uppercase mb-4 flex items-center gap-3 italic text-orange-600">
+                  <Target size={32} /> Nota Crítica
+                </h4>
+                <p className="font-serif text-2xl leading-relaxed italic text-black/80 font-bold">
+                  {question.explanation}
+                </p>
+                <button
+                  onClick={nextQuestion}
+                  className="mt-10 px-12 py-4 bg-black text-white font-display text-3xl uppercase hover:bg-zinc-800 transition-colors w-full md:w-auto shadow-[6px_6px_0_#ea580c] font-black"
+                >
+                  {currentQuestion < QUIZ_QUESTIONS.length - 1 ? 'Siguiente Fase →' : 'Finalizar Análisis'}
+                </button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
-}
+};

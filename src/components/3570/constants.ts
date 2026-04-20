@@ -1,111 +1,108 @@
-import { QuizQuestion, RegionalData, Perspective, Strategy, TypeResult } from './types';
+export const ARTICLE_META = {
+  id: '3570',
+  title: 'Análisis de la formación docente para el desarrollo del pensamiento crítico',
+  carouselTitle: 'CRÍTICO // YUCATÁN',
+  subtitle: 'REVISIÓN SISTEMÁTICA EN EDUCACIÓN PREESCOLAR',
+  abstract: 'Revisión sistemática de literatura (PRISMA 2020) sobre la formación de docentes para fomentar el pensamiento crítico en preescolar. El estudio analiza 15 investigaciones globales (2015-2025) concluyendo que el pensamiento crítico no es solo una técnica cognitiva, sino una práctica ética y política que debe integrarse desde la formación inicial para transformar la realidad social.',
+  authors: 'García-Martínez, L. & Reyes-Cabrera, W. R.',
+  institution: 'Universidad Autónoma de Yucatán (UADY), México',
+  doi: '10.21155/rpp.3570',
+  volume: 'Vol. 41',
+  date: 'Noviembre 2025',
+  n: 15,
+  context: 'Estudio de revisión global (PRISMA)',
+  methodology: 'Revisión Sistemática de Literatura (PRISMA 2020)',
+  phases: ['Identificación (51 papers)', 'Cribado (49)', 'Elegibilidad (15)', 'Inclusión Final']
+};
 
-export const ARTICLE_DATA = {
-  title: "Análisis de la formación docente para el desarrollo del pensamiento crítico",
-  authors: "Laura García Martínez & William René Reyes Cabrera",
-  doi: "10.21555/rpp.3570",
-  volume: "N° 41 (2026)",
-  centralFinding: "El pensamiento crítico en la formación docente no debe entenderse únicamente como una competencia técnica, sino como una práctica transformadora que articula lo cognitivo, lo ético y lo político desde la primera infancia.",
-  introduction: {
-    problematic: "Las brechas formativas entre docentes de educación preescolar en distintas regiones del mundo han generado desigualdades significativas en el desarrollo de habilidades cognitivas complejas como el pensamiento crítico en la primera infancia. Existe una falta de estándares internacionales claros sobre el desarrollo de competencias críticas, y los programas de formación docente a menudo mantienen enfoques tradicionales orientados hacia instrucciones mecánicas, especialmente en países de bajos recursos económicos.",
-    researchQuestion: "¿Qué procesos formativos tienen los futuros docentes para el desarrollo del pensamiento crítico en estudiantes de educación preescolar?",
-    objective: "Determinar los procesos formativos que tienen los docentes en formación para el desarrollo del pensamiento crítico en estudiantes de educación preescolar."
-  },
-  methodology: {
-    approach: "Revisión sistemática utilizando la metodología PRISMA.",
-    searchStrategy: "Estrategia PEO (Population, Exposure, Outcome) en Web of Science, ERIC, Academic Search Ultimate y Education Source.",
-    prismaResults: {
-      initial: 51,
-      duplicatesRemoved: 2,
-      topicFiltered: 24,
-      included: 15
-    }
-  },
-  results: {
-    geographicalDistribution: [
-      { region: "Europa", n: 7, percentage: 46.6, countries: "España (4), Finlandia, Reino Unido" },
-      { region: "Asia", n: 6, percentage: 40.0, countries: "Corea del Sur, China, Turquía, Emiratos Árabes, Singapur" },
-      { region: "Sudamérica", n: 1, percentage: 6.7, countries: "Costa Rica" },
-      { region: "Norteamérica", n: 1, percentage: 6.7, countries: "Israel" }
-    ] as RegionalData[],
-    perspectives: [
-      { focus: "Reflexión sobre la práctica", authors: "ElSayary y Mohebi (2025); Lim (2023); Niemi et al. (2024); Sabariego-Puit et al. (2020); Yigit-Gencten et al. (2024)", characteristics: "Autorreflexión, autoeficacia, toma de decisiones pedagógicas" },
-      { focus: "Razonamiento en entornos STEM", authors: "Çiftçi y Topçu (2023); Evagorou (2024); Nong et al. (2022)", characteristics: "Argumentación, formulación de hipótesis, evaluación de evidencias" },
-      { focus: "Formación ética y ciudadana", authors: "Birkeland (2015); Lee et al. (2018)", characteristics: "Contextualización, cuestionamiento de supuestos socioculturales" },
-      { focus: "Educación política y transformadora", authors: "Díez-Ros et al. (2024); Gatti y Torrego-Egido (2024); Ziv (2015)", characteristics: "Derechos humanos, democracia, justicia social, compromiso ético" },
-      { focus: "Creatividad y pensamiento divergente", authors: "Ramírez-Abrahams et al. (2024); Soto-González et al. (2023)", characteristics: "Resolución crítica de problemas, conexión emociones-crítica social" }
-    ] as Perspective[],
-    strategies: [
-      { strategy: "Activas y experienciales", description: "Aprendizaje basado en proyectos, Aprendizaje-Servicio", authors: "Lee et al. (2018); Ramírez-Abrahams et al. (2024)" },
-      { strategy: "Artísticas y creativas", description: "Danza, pintura, teatro, expresiones artísticas", authors: "Soto-González et al. (2023)" },
-      { strategy: "Basadas en lenguaje y argumentación", description: "Análisis crítico del discurso, lectura en voz alta con preguntas", authors: "Birkeland (2015); Yigit-Gencten et al. (2024)" },
-      { strategy: "Críticas y reflexivas", description: "Reflexión sobre identidad docente, pedagogía feminista", authors: "Díez-Ros et al. (2024); Ziv (2015)" },
-      { strategy: "Investigación formativa", description: "Codiseño, resolución de problemas reales", authors: "Sabariego-Puit et al. (2020); Niemi et al. (2024)" },
-      { strategy: "Tecnológicas y STEM", description: "Pensamiento computacional, alfabetización digital", authors: "Çiftçi y Topçu (2023); Lim (2023); Evagorou (2024)" }
-    ] as Strategy[],
-    types: [
-      { type: "Reflexivo", description: "Cuestionamiento de prácticas educativas, autoconocimiento", studies: "ElSayary y Mohebi (2025); Birkeland (2015); Lee et al. (2018)" },
-      { type: "Analítico", description: "Razonamiento lógico, evaluación de información, STEM", studies: "Çiftçi y Topçu (2023); Evagorou (2024); Lim (2023)" },
-      { type: "Argumentativo", description: "Justificación de ideas, consideración de alternativas", studies: "Yigit-Gencten et al. (2024); Ziv (2015)" },
-      { type: "Creativo-crítico", description: "Pensamiento abstracto, resolución de problemas complejos", studies: "Soto-González et al. (2023); Díez-Ros et al. (2024)" }
-    ] as TypeResult[],
-    difficulties: [
-      "Preconcepciones naturalizadas que dificultan la apertura a perspectivas críticas o interculturales",
-      "Falta de espacios en el sistema educativo para confrontar ideas y dialogar desde la diferencia",
-      "Limitaciones del entorno educativo, institucional, cultural y socioeconómico",
-      "Rigidez de los planteles de estudios y sobrecarga de contenidos",
-      "Escasa formación de los formadores en pensamiento crítico",
-      "Contextos escolares marcados por la estandarización y la idea de rendimiento"
-    ],
-    tensionQuotes: [
-      "Decimos 'pensamiento crítico es político' pero estudiamos países donde la política educativa funciona.",
-      "Formamos críticos de teoría, no pedagogos de práctica.",
-      "Queremos pensamiento crítico transformador en sistemas diseñados para la estandarización.",
-      "Investigamos pensamiento crítico infantil sin preguntar a los niños."
+export const LIMITATIONS = [
+  'Escasez de estudios en Latinoamérica y África (86% concentrado en Europa y Asia).',
+  'Falta de estándares internacionales unificados sobre competencias critical.',
+  'Ausencia de la voz infantil: los estudios no consultan directamente a los niños.',
+  'Rigidez de planes de estudio que priorizan el rendimiento sobre la crítica.',
+];
+
+export const DIMENSIONS = [
+  {
+    code: 'PRISMA',
+    name: 'Filtro de Evidencia',
+    emoji: '🔍',
+    desc: 'De 51 investigaciones iniciales, solo 15 cumplieron con el rigor metodológico para ser incluidas.',
+    highlights: [
+      'Declaración PRISMA 2020 como estándar.',
+      'Búsqueda en WoS, ERIC y EBSCOhost.',
+      'Rango temporal: 2015-2025.'
     ]
   },
-  limitations: [
-    "El 86.6% de los estudios revisados provienen de Europa y Asia —contextos con infraestructura y tradiciones democráticas consolidadas.",
-    "Solo 15 estudios revisados; ninguno consulta a los niños de preescolar.",
-    "Falta de estándares internacionales claros sobre el desarrollo de estas competencias.",
-    "La producción académica sobre pensamiento crítico en educación es escasa en Latinoamérica y África."
-  ],
-  regionalData: [
-    { name: "Europa", value: 46.6, n: 7, countries: "España (4), Finlandia, Reino Unido" },
-    { name: "Asia", value: 40.0, n: 6, countries: "Corea del Sur, China, Turquía, EAU, Singapur" },
-    { name: "Sudamérica", value: 6.7, n: 1, countries: "Costa Rica" },
-    { name: "Norteamérica", value: 6.7, n: 1, countries: "Israel" },
-  ] as RegionalData[],
-  quiz: [
-    {
-      question: "¿Cuál es el hallazgo central del artículo respecto al pensamiento crítico en la formación docente?",
-      options: [
-        "Es una competencia técnica que se adquiere mediante instrucción mecánica.",
-        "Es una práctica transformadora que articula lo cognitivo, ético y político.",
-        "Es un concepto que solo aplica a la educación superior, no a la preescolar.",
-        "Es un proceso que depende exclusivamente de la tecnología educativa."
-      ],
-      correct: 1
-    },
-    {
-      question: "¿Qué metodología utilizaron los autores para realizar este estudio?",
-      options: [
-        "Estudio de caso cualitativo.",
-        "Encuesta experimental.",
-        "Revisión sistemática (PRISMA).",
-        "Análisis estadístico de datos secundarios."
-      ],
-      correct: 2
-    },
-    {
-      question: "¿Qué factor dificulta principalmente el desarrollo del pensamiento crítico según el estudio?",
-      options: [
-        "La falta de interés de los estudiantes.",
-        "La excesiva formación en filosofía.",
-        "La rigidez de los planes de estudio y la estandarización.",
-        "La falta de acceso a internet."
-      ],
-      correct: 2
-    }
-  ] as QuizQuestion[]
-};
+  {
+    code: 'GEOG',
+    name: 'Sesgo Geográfico',
+    emoji: '🌍',
+    desc: 'Concentración masiva en Europa (46%) y Asia (40%), evidenciando un vacío de investigación en el sur global.',
+    highlights: [
+      'España lidera la producción (4 papers).',
+      'Sudamérica representada solo por Costa Rica (1).',
+      'Desafío de descolonizar el pensamiento crítico.'
+    ]
+  },
+  {
+    code: 'PERSPEC',
+    name: 'Perspectivas',
+    emoji: '💡',
+    desc: 'El pensamiento crítico se articula en dimensiones: Reflexiva, STEM, Ética y Transformadora.',
+    highlights: [
+      'Cognitivo: Argumentación y lógica.',
+      'Ético: Contextualización social.',
+      'Político: Compromiso con la justicia social.'
+    ]
+  },
+  {
+    code: 'ESTRAT',
+    name: 'Estrategias',
+    emoji: '🛠️',
+    desc: 'Metodologías activas (Aprendizaje-Servicio) y artísticas emergen como las más efectivas.',
+    highlights: [
+      'Uso de Danza, Pintura y Teatro.',
+      'Pensamiento Computacional en STEM.',
+      'Análisis Crítico del Discurso.'
+    ]
+  },
+];
+
+export const QUIZ_QUESTIONS = [
+  {
+    question: '¿Cuál es el hallazgo central sobre la naturaleza del pensamiento crítico en este estudio?',
+    options: [
+      'Es una competencia meramente técnica.',
+      'Es una práctica transformadora cognitiva, ética y política.',
+      'Es un proceso que depende solo de la genética.',
+      'No es aplicable en educación preescolar.'
+    ],
+    correct: 1,
+    explanation: 'El estudio concluye que el pensamiento crítico trasciende lo cognitivo para convertirse en una herramienta de transformación social y ética.',
+  },
+  {
+    question: '¿Qué porcentaje de los estudios revisados provienen de Europa y Asia?',
+    options: ['25%', '50%', '86%', '100%'],
+    correct: 2,
+    explanation: 'El 46.6% provienen de Europa y el 40% de Asia, sumando un 86.6%, lo que revela un sesgo geográfico significativo.',
+  },
+  {
+    question: '¿Qué metodología de revisión se utilizó para garantizar la transparencia del estudio?',
+    options: ['Revisión Narrativa', 'Meta-análisis Estadístico', 'Declaración PRISMA 2020', 'Entrevista a profundidad'],
+    correct: 2,
+    explanation: 'Se utilizó PRISMA 2020 para asegurar un proceso de identificación, cribado y selección sistemático y reproducible.',
+  },
+  {
+    question: '¿Qué tipo de estrategia pedagógica integra el uso de la danza y el teatro?',
+    options: ['Estrategias STEM', 'Estrategias Artísticas y Creativas', 'Análisis del Discurso', 'Instrucción Directa'],
+    correct: 1,
+    explanation: 'Las expresiones artísticas como pintura y teatro son citadas como medios para fomentar la reflexión crítica desde la creatividad.',
+  },
+  {
+    question: '¿Cuál es el principal obstáculo para el desarrollo del pensamiento crítico según la revisión?',
+    options: ['Falta de tecnología', 'Bajo presupuesto escolar', 'Rigidez de planes de estudio y estandarización', 'Desinterés de los padres'],
+    correct: 2,
+    explanation: 'La rigidez curricular y la cultura del rendimiento estandarizado son las mayores barreras para el pensamiento divergente.',
+  },
+];

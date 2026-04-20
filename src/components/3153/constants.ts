@@ -1,15 +1,17 @@
 export const ARTICLE_META = {
   id: '3153',
-  title: 'Experiencias de discriminación basada en apariencia física en estudiantes',
-  carouselTitle: 'LA ESTÉTICA DEL PREJUICIO',
-  subtitle: 'Universidad Privada, Monterrey, México',
+  title: 'Experiencias de discriminación basada en la apariencia física de estudiantes universitarios',
+  carouselTitle: 'ESTÉTICA DEL PREJUICIO',
+  subtitle: 'La Academia frente a la Discriminación',
   authors: 'Ramos-Solís, Sáenz-González, Burnes-Garza & Elizondo-García',
   institution: 'Universidad de Monterrey (UDEM)',
   doi: '10.21555/rpp.v38.3153',
+  country: 'México',
   volume: 'Vol. 38',
-  date: '2024',
+  date: 'Mayo 2024',
   n: 12,
   context: 'Entorno de élite académica',
+  abstract: 'Estudio fenomenológico sobre cómo el color de piel, tatuajes y masa corporal operan como mecanismos de exclusión académica en una universidad privada de élite mexicana.',
 };
 
 export const LIMITATIONS = [

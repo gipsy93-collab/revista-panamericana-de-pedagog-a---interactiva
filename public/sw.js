@@ -1,9 +1,10 @@
 /**
  * Service Worker para RPP Interactivo
- * Estrategia: Cache First, luego Network
+ * Estrategia: Network-First para HTML, Stale-While-Revalidate para assets
  */
 
-const CACHE_NAME = 'rpp-interactivo-v1';
+const CACHE_NAME = 'rpp-interactivo-v2'; // Incrementamos versión para forzar actualización inicial
+
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -13,12 +14,11 @@ const STATIC_ASSETS = [
 
 // Instalación: Precachear assets estáticos
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing...');
+  console.log('[SW] Installing v2...');
   
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('[SW] Caching static assets');
         return cache.addAll(STATIC_ASSETS);
       })
       .catch((err) => {
@@ -26,13 +26,13 @@ self.addEventListener('install', (event) => {
       })
   );
   
-  // Activar inmediatamente
+  // Activar inmediatamente para reemplazar al SW viejo
   self.skipWaiting();
 });
 
 // Activación: Limpiar caches antiguas
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating...');
+  console.log('[SW] Activating v2...');
   
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -50,22 +50,32 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: Estrategia Cache First
+// Fetch: Manejar requests
 self.addEventListener('fetch', (event) => {
   const { request } = event;
+  const url = new URL(request.url);
   
-  // Solo manejar GET requests
   if (request.method !== 'GET') return;
-  
-  // Estrategia diferente según el tipo de request
-  if (isStaticAsset(request)) {
-    // Cache First para assets estáticos
-    event.respondWith(cacheFirst(request));
-  } else if (isAPIRequest(request)) {
-    // Network First para APIs
+
+  // 1. HTML y Navegación -> Siempre NETWORK FIRST
+  // Esto garantiza que el navegador cargue el index.html nuevo con los nombres de .js y .css correctos (hash)
+  if (request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html') {
     event.respondWith(networkFirst(request));
+    return;
   }
-  // Dejar pasar otros requests normalmente
+  
+  // 2. Assets estáticos (JS, CSS, Imágenes) -> STALE-WHILE-REVALIDATE
+  // Carga rápido desde la caché, pero actualiza la caché silenciosamente en segundo plano
+  if (isStaticAsset(request)) {
+    event.respondWith(staleWhileRevalidate(request));
+    return;
+  } 
+  
+  // 3. APIs -> Network First
+  if (isAPIRequest(request)) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
 });
 
 // Helpers
@@ -82,29 +92,6 @@ function isAPIRequest(request) {
          url.hostname.includes('feed');
 }
 
-async function cacheFirst(request) {
-  const cached = await caches.match(request);
-  
-  if (cached) {
-    return cached;
-  }
-  
-  try {
-    const response = await fetch(request);
-    
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
-    }
-    
-    return response;
-  } catch (error) {
-    console.error('[SW] Fetch failed:', error);
-    // Aquí podríamos retornar una página offline
-    throw error;
-  }
-}
-
 async function networkFirst(request) {
   try {
     const networkResponse = await fetch(request);
@@ -117,13 +104,28 @@ async function networkFirst(request) {
     return networkResponse;
   } catch (error) {
     const cached = await caches.match(request);
-    
     if (cached) {
       return cached;
     }
-    
     throw error;
   }
+}
+
+async function staleWhileRevalidate(request) {
+  const cached = await caches.match(request);
+  
+  const fetchPromise = fetch(request).then(async (networkResponse) => {
+    if (networkResponse.ok) {
+      const cache = await caches.open(CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  }).catch((err) => {
+    console.error('[SW] Fetch failed in staleWhileRevalidate:', err);
+  });
+  
+  // Devuelve el cache si existe, o si no, espera la red
+  return cached || fetchPromise;
 }
 
 // Evento de mensaje para comunicación con la app

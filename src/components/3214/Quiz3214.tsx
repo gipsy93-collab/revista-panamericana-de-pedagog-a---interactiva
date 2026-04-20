@@ -43,7 +43,7 @@ export const Quiz3214 = ({ onComplete }: { onComplete: (result: QuizResult) => v
     const passed = score >= Math.ceil(QUIZ_QUESTIONS.length / 2);
     
     return (
-      <div className="py-24 px-6 bg-[#16a34a]/10 min-h-[60vh] flex items-center justify-center border-t-8 border-black">
+      <div className="py-24 px-6 bg-[#16a34a]/10 min-h-[60vh] flex items-center justify-center">
         <BrutalCard color={passed ? "bg-black" : "bg-[#ef4444]"} className="max-w-2xl w-full text-center p-12">
           <Trophy size={80} className={`mx-auto mb-6 ${passed ? 'text-[#facc15]' : 'text-white'}`} />
           <h2 className="text-5xl font-display uppercase mb-4 text-white">
@@ -85,7 +85,7 @@ export const Quiz3214 = ({ onComplete }: { onComplete: (result: QuizResult) => v
   const question = QUIZ_QUESTIONS[currentQuestion];
 
   return (
-    <div className="py-24 px-6 md:px-12 bg-zinc-50 min-h-[80vh] border-t-8 border-black">
+    <div className="py-24 px-6 md:px-12 bg-zinc-50 min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-12">
           <BrutalSticker text="COMPROBACIÓN DE TERRENO" color="bg-[#facc15]" />

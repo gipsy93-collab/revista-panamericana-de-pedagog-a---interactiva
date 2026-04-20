@@ -1,85 +1,70 @@
-import { useState, useEffect } from 'react';
-import { ArrowLeft, BookOpen, FileQuestion } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import Hero3606 from './Hero3606';
-import Content3606 from './Content3606';
-import Quiz3606 from './Quiz3606';
+import React, { useEffect } from 'react';
+import { ChevronLeft } from 'lucide-react';
+import { Hero3606 } from './Hero3606';
+import { Content3606 } from './Content3606';
+import { DataLab3606 } from './DataLab3606';
+import { Quiz3606 } from './Quiz3606';
+import { OrganicWaveDivider } from '../BrutalistLib';
 import { FilmGrain } from '../FilmGrain';
 
 interface Props {
   onBack: () => void;
 }
 
-type Tab = 'content' | 'quiz';
-
 export default function Unified3606({ onBack }: Props) {
-  const [started, setStarted] = useState(false);
-  const [tab, setTab] = useState<Tab>('content');
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 relative selection:bg-teal-600 selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-white text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-emerald-600 selection:text-white">
       <FilmGrain />
-      
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-8 border-black">
+
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-2 border-black/10 backdrop-blur-md bg-white/90">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-teal-600 transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-emerald-600 transition-colors shadow-[4px_4px_0_0_#10b981] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#10b981] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           >
-            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
           </button>
-
-          {started && (
-            <nav className="flex items-center gap-4">
-              <button
-                onClick={() => setTab('content')}
-                className={`flex items-center gap-2 px-6 py-3 border-4 border-black font-display uppercase text-xs font-black transition-all shadow-[4px_4px_0_0_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] ${
-                  tab === 'content'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-black hover:bg-teal-100'
-                }`}
-              >
-                <BookOpen className="w-4 h-4" />
-                Contenido
-              </button>
-              <button
-                onClick={() => setTab('quiz')}
-                className={`flex items-center gap-2 px-6 py-3 border-4 border-black font-display uppercase text-xs font-black transition-all shadow-[4px_4px_0_0_#000] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] ${
-                  tab === 'quiz'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-black hover:bg-teal-100'
-                }`}
-              >
-                <FileQuestion className="w-4 h-4" />
-                Quiz
-              </button>
-            </nav>
-          )}
+          
+          <div className="hidden md:flex items-center gap-4">
+             <div className="bg-emerald-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 41</div>
+             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40 italic">REF 3606 // INCLUSIÓN SUPERIOR</span>
+          </div>
         </div>
       </header>
 
-      <main className="pt-20">
-        {!started ? (
-          <Hero3606 onStart={() => setStarted(true)} />
-        ) : (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={tab}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: "circOut" }}
-            >
-              {tab === 'content' ? <Content3606 /> : <Quiz3606 />}
-            </motion.div>
-          </AnimatePresence>
-        )}
+      <main className="relative z-0">
+        <Hero3606 />
+        
+        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f0fdf4" variant="wavy" />
+        <Content3606 />
+        
+        <OrganicWaveDivider topColor="#f9fafb" bottomColor="#f0fdf4" variant="steps" />
+        <DataLab3606 />
+
+        <OrganicWaveDivider topColor="#f0fdf4" bottomColor="#ffffff" variant="dramatic" />
+        <Quiz3606 onComplete={(res) => console.log('Quiz 3606 completado', res)} />
       </main>
+
+      <footer className="bg-black py-32 px-6 border-t-[20px] border-zinc-900 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]" />
+        <div className="max-w-4xl mx-auto relative z-10 text-white">
+          <h4 className="font-display text-4xl uppercase font-black mb-6 italic text-emerald-500">Revista Panamericana de Pedagogía</h4>
+          <p className="font-serif text-xl italic text-slate-400 mb-12 leading-relaxed text-center">
+            Macías-Rosado, A.-G., Ramos-Ramírez, B.-N., & Márquez-Cabellos, N.-G. (2025). <span className="text-white not-italic font-bold">Ajustes razonables y prácticas docentes inclusivas para estudiantes con discapacidad y trastorno del espectro autista en educación superior</span>. <span className="text-emerald-500">Revista Panamericana de Pedagogía</span>, 41, e3606.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+             <div className="bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#10b981]">
+               DOI: 10.21555/rpp.3606
+             </div>
+             <p className="font-mono text-[10px] uppercase opacity-40">Colima, México // RPP N° 41</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

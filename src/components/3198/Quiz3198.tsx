@@ -43,7 +43,7 @@ export const Quiz3198 = ({ onComplete }: { onComplete: (result: QuizResult) => v
     const passed = score >= Math.ceil(QUIZ_QUESTIONS.length / 2);
     
     return (
-      <div className="py-24 px-6 bg-white min-h-[60vh] flex items-center justify-center border-t-8 border-black">
+      <div className="py-24 px-6 bg-[#f43f5e]/10 min-h-[60vh] flex items-center justify-center">
         <BrutalCard color={passed ? "bg-pop-teal" : "bg-pop-pink"} className="max-w-2xl w-full text-center p-12">
           <Trophy size={80} className={`mx-auto mb-6 ${passed ? 'text-pop-yellow' : 'text-white'}`} />
           <h2 className="text-5xl font-display uppercase mb-4 text-white">
@@ -85,7 +85,7 @@ export const Quiz3198 = ({ onComplete }: { onComplete: (result: QuizResult) => v
   const question = QUIZ_QUESTIONS[currentQuestion];
 
   return (
-    <div className="py-24 px-6 md:px-12 bg-white min-h-[80vh] border-t-8 border-black">
+    <div className="py-24 px-6 md:px-12 bg-white min-h-[80vh]">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-12">
           <BrutalSticker text="EVALUACIÓN DE COMPRENSIÓN" color="bg-pop-yellow" />

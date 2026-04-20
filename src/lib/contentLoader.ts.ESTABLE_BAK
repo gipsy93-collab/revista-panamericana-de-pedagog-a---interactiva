@@ -1,0 +1,13 @@
+import { ARTICLES_STATIC } from './articlesData';
+
+export async function loadArticles() {
+  return ARTICLES_STATIC;
+}
+
+export async function loadTransmedia() {
+  // Logic for transmedia
+}
+
+export async function loadBlogPosts() {
+  // Logic for blog
+}

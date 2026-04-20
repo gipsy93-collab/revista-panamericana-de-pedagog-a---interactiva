@@ -5,43 +5,75 @@ export const LIMITATIONS = [
   'Muestreo no probabilístico por conveniencia.',
   'No se realizó estudio psicométrico profundo de validación factorial.',
 ];
+
 export const ARTICLE_META = {
   id: '3412',
-  title: 'Descubriendo competencias blandas en estudiantes secundarios: exploración y reflexiones',
+  title: 'Descubriendo competencias blandas en estudiantes de secundaria: exploración y reflexiones',
   carouselTitle: 'TECNOLOGÍA',
-  authors: 'Hernández-Silvera, Ghilardelli, Giulianelli & Correia',
+  authors: 'Dides-Iliana Hernández-Silvera; María-Alejandra Ghilardelli; María Julia Giulianelli; Vanesa-Elena Correia',
   institution: 'Pontificia Universidad Católica Argentina (UCA)',
   doi: '10.21555/rpp.3412',
-  volume: 'Vol. 41',
-  date: 'Septiembre 2025',
+  volume: 'n. 41 (2026)',
+  date: '20-09-2025',
   n: 228,
-  context: '15 escuelas del AMBA, Argentina',
+  duration: 'Ciclo lectivo 2025',
+  abstract: 'El estudio explora la validez y confiabilidad de un inventario piloto de habilidades blandas en adolescentes, analizando su relación con variables sociodemográficas y proyectos áulicos en 15 escuelas del AMBA.',
 };
+
+export const METHODOLOGY = {
+  design: 'Descriptivo-comparativo de corte transversal',
+  approach: 'Cuantitativo',
+  sample: '228 estudiantes (13-20 años)',
+  instruments: 'Inventario piloto de 32 ítems (4 dimensiones), Validación por Juicio de expertos (Kappa = 0.95)',
+  analysis: 'SPSS 25, U de Mann-Whitney, Kruskal-Wallis',
+};
+
+export const TESTIMONIALS = [
+  {
+    quote: "Las habilidades blandas influyen en el desempeño académico, en la capacidad de autorregulación y en el bienestar integral de los adolescentes.",
+    author: "Perspectiva Académica",
+    role: "Hallazgo Central"
+  },
+  {
+    quote: "Las desigualdades socioeconómicas también se expresan en el desarrollo de las habilidades blandas, lo que representa un desafío para la formación académica.",
+    author: "Análisis de Contexto",
+    role: "Observación Crítica"
+  },
+  {
+    quote: "Los estudiantes expuestos a metodologías activas y proyectos áulicos presentan un mayor desarrollo de habilidades blandas.",
+    author: "Impacto Pedagógico",
+    role: "Correlación Significativa"
+  }
+];
 
 export const DIMENSIONS = [
   {
     code: 'HI',
     name: 'Habilidades Interpersonales',
     emoji: '🤝',
-    desc: 'Empatía, comunicación efectiva, capacidad de establecer relaciones, trabajo en equipo.',
+    desc: 'Empatía, comunicación efectiva y capacidad de establecer relaciones.',
+    highlight: 'Brecha de 46.63 pts entre niveles socioeconómicos (p < .001).'
   },
   {
     code: 'HINT',
     name: 'Habilidades Intelectuales',
     emoji: '🧠',
-    desc: 'Pensamiento crítico, resolución de problemas, creatividad, toma de decisiones.',
+    desc: 'Pensamiento crítico, resolución de problemas y toma de decisiones.',
+    highlight: 'Mujeres puntuaron significativamente más alto (M=122.91 vs 104.36).'
   },
   {
     code: 'HS',
     name: 'Habilidades Sociales',
     emoji: '👋',
-    desc: 'Asertividad, cooperación, manejo de conflictos, adaptabilidad social.',
+    desc: 'Asertividad, cooperación y manejo de conflictos.',
+    highlight: 'ABP obtuvo 138.50 pts, superando a metodologías tradicionales.'
   },
   {
     code: 'HPRE',
     name: 'Habilidades de Precisión',
     emoji: '✏️',
-    desc: 'Exactitud, control motor fino, atención al detalle, meticulosidad.',
+    desc: 'Exactitud, atención al detalle y meticulosidad.',
+    highlight: 'No mostró diferencias significativas por nivel socioeconómico.'
   },
 ];
 
@@ -62,36 +94,28 @@ export const MET_MULTIPLIER: Record<string, number> = {
 
 export const QUIZ_QUESTIONS = [
   {
-    question: '¿Cuántos ítems tiene el inventario piloto de competencias blandas?',
-    options: ['16', '24', '32', '40'],
+    question: '¿Qué nivel de confiabilidad (Alfa de Cronbach) arrojó el inventario piloto?',
+    options: ['0.75 (Aceptable)', '0.82 (Bueno)', '0.93 (Muy alto)', '0.60 (Bajo)'],
     correct: 2,
-    explanation: 'El inventario piloto consta de 32 ítems distribuidos en 4 dimensiones de 8 ítems cada una.',
+    explanation: 'El instrumento mostró una consistencia interna de 0.933, lo que garantiza un alto rigor en la medición académica.'
   },
   {
-    question: '¿Cuál dimensión mostró la mayor brecha entre clase media y media-baja?',
-    options: ['HINT', 'HI', 'HS', 'HPRE'],
-    correct: 1,
-    explanation:
-      'Habilidades Interpersonales (HI) presentó una diferencia de 46.63 puntos (p < .001), la mayor brecha observada.',
-  },
-  {
-    question: '¿Qué metodología obtuvo la puntuación más alta en Habilidades Interpersonales?',
-    options: ['ABR', 'Proyecto Disciplina', 'Sin proyecto', 'ABP'],
-    correct: 3,
-    explanation:
-      'El Aprendizaje Basado en Proyectos (ABP) alcanzó 144.97 pts en HI, superando ampliamente a las demás metodologías.',
-  },
-  {
-    question: '¿Cuál es el valor del Alfa de Cronbach del inventario?',
-    options: ['0.79', '0.85', '0.93', '0.95'],
+    question: '¿Cuál fue la brecha de puntuación más contundente detectada según el nivel socioeconómico?',
+    options: ['10.5 puntos', '25.3 puntos', '46.6 puntos', '5.2 puntos'],
     correct: 2,
-    explanation: 'El inventario mostró una alta consistencia interna con α = 0.933.',
+    explanation: 'Se observó una brecha de 46.63 puntos en Habilidades Interpersonales entre estudiantes de clase media y media-baja.'
   },
   {
-    question: 'Según el estudio, ¿quiénes puntúan más alto en HI y HINT?',
-    options: ['Varones', 'Mujeres', 'No hay diferencias', 'Depende de la edad'],
-    correct: 1,
-    explanation:
-      'Las mujeres alcanzaron puntuaciones significativamente más altas tanto en Habilidades Interpersonales como Intelectuales.',
+    question: 'De acuerdo con el estudio, ¿qué metodología pedagógica se asocia con el mayor desarrollo de competencias blandas?',
+    options: ['Aprendizaje Basado en Retos (ABR)', 'Proyecto de Disciplina Tradicional', 'Aprendizaje Basado en Proyectos (ABP)', 'Clase Magistral'],
+    correct: 2,
+    explanation: 'El ABP obtuvo las puntuaciones más altas (144.97) en las dimensiones clave, confirmando su eficacia para el desarrollo de soft skills.'
   },
+  {
+    question: '¿Qué tendencia se observó respecto al género en las habilidades interpersonales e intelectuales?',
+    options: ['Los varones puntuaron más alto', 'Las mujeres puntuaron significativamente más alto', 'No hubo diferencias de género', 'Solo hubo diferencias en habilidades de precisión'],
+    correct: 1,
+    explanation: 'Las mujeres alcanzaron medias superiores (M=122.67 en HI) en comparación con los varones (M=104.61).'
+  }
 ];
+

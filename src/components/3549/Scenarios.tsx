@@ -45,7 +45,7 @@ export default function Scenarios() {
   return (
     <section className="py-48 px-6 bg-[#e81e61] text-black relative z-30">
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-6xl md:text-8xl font-pop mb-16 text-white drop-shadow-[8px_8px_0_#000]" style={{WebkitTextStroke: '2px black'}}>ESCENARIOS DE FRICCIÓN</h2>
+        <h2 className="text-6xl md:text-8xl font-pop mb-16 text-white drop-shadow-[8px_8px_0_#000]" style={{WebkitTextStroke: 'var(--brutal-stroke-width) black'}}>ESCENARIOS DE FRICCIÓN</h2>
         
         <AnimatePresence mode="wait">
           {!feedback ? (

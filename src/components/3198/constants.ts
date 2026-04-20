@@ -1,15 +1,19 @@
 export const ARTICLE_META = {
   id: '3198',
-  title: 'Aprendizaje de las Tecnologías de la Información y la Comunicación en el envejecimiento activo',
-  carouselTitle: 'ENVEJECIMIENTO ACTIVO',
-  subtitle: 'Un estudio cualitativo en Buenos Aires',
+  title: 'Aprendizaje de las Tecnologías de la Información y la Comunicación en el envejecimiento activo: un estudio cualitativo en Buenos Aires',
+  carouselTitle: 'SILVER SURFERS // ENVEJECIMIENTO ACTIVO',
+  subtitle: 'PREVENCIÓN DEL AISLAMIENTO SOCIAL MEDIANTE APRENDIZAJE MÓVIL',
+  abstract: 'Estudio cualitativo (Grounded Theory) en Buenos Aires sobre cómo el aprendizaje móvil previene el aislamiento social mediante la Teoría TRIC. La investigación analiza cómo 27 adultos mayores integran el smartphone en su vida cotidiana para fortalecer la autonomía y los vínculos familiares.',
   authors: 'Hernández-Silvera, Pécora & Núñez',
   institution: 'Universidad Católica Argentina (UCA)',
   doi: '10.21555/rpp.3198',
   volume: 'Vol. 39',
-  date: '2025',
+  date: 'Noviembre 2024',
   n: 27,
-  context: 'AMBA, Buenos Aires, Argentina',
+  ageRange: '60-95 años',
+  context: 'AMBA (Avellaneda, Lugano, Barracas), Buenos Aires',
+  methodology: 'Grounded Theory (Teoría Fundamentada)',
+  stages: ['Codificación Abierta', 'Codificación Axial', 'Codificación Selectiva']
 };
 
 export const LIMITATIONS = [
@@ -22,28 +26,48 @@ export const LIMITATIONS = [
 
 export const DIMENSIONS = [
   {
-    code: 'COM',
-    name: 'Comunicación Familiar',
+    code: 'ACT',
+    name: 'Espacios de Encuentro',
+    emoji: '🧘',
+    desc: 'Participación en talleres de memoria, yoga, teatro y gimnasia como motores de socialización y reserva cognitiva.',
+    highlights: [
+      'Talleres de memoria para estimulación cognitiva.',
+      'Yoga y teatro para expresión artística.',
+      'Almuerzos compartidos como red de apoyo mutuo.'
+    ]
+  },
+  {
+    code: 'DIG',
+    name: 'Ecosistema Digital',
     emoji: '📱',
-    desc: 'Contacto frecuente con hijos y nietos, reducción del aislamiento social.',
+    desc: 'Uso estratégico de dispositivos: WhatsApp para vínculos, Google para información y YouTube para entretenimiento (K-pop).',
+    highlights: [
+      'WhatsApp: Cordón umbilical con hijos y nietos.',
+      'YouTube: Descubrimiento de música coreana y tutoriales.',
+      'Homebanking: Búsqueda de independencia financiera.'
+    ]
+  },
+  {
+    code: 'BAR',
+    name: 'Barreras & Temores',
+    emoji: '🛡️',
+    desc: 'El miedo al fraude bancario y la complejidad técnica generan una dependencia inicial de familiares y amigos.',
+    highlights: [
+      'Temor al robo de información personal.',
+      'Preocupación por la falta de paciencia familiar.',
+      'Sensación de complejidad ante fallas técnicas.'
+    ]
   },
   {
     code: 'AUT',
-    name: 'Autonomía',
-    emoji: '🗝️',
-    desc: 'Realización de trámites bancarios y gestión de salud sin dependencia tecnológica.',
-  },
-  {
-    code: 'SEG',
-    name: 'Seguridad',
-    emoji: '🛡️',
-    desc: 'Temor al robo de información personal, estafas y necesidad de confianza.',
-  },
-  {
-    code: 'APO',
-    name: 'Apoyo Social',
-    emoji: '🤝',
-    desc: 'Importancia de familiares, amigos y pares en el proceso de enseñanza.',
+    name: 'Giro de Autonomía',
+    emoji: '🔓',
+    desc: 'La superación del estigma "demasiado viejo para aprender" devuelve la dignidad y el sentimiento de pertenencia social.',
+    highlights: [
+      'Sentimiento de logro al resolver problemas solos.',
+      'Reducción drástica de la soledad percibida.',
+      'Identificación como "usuarios regulares" de internet.'
+    ]
   },
 ];
 

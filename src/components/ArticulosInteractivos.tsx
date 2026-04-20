@@ -27,6 +27,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
   useEffect(() => {
     loadArticles()
       .then(data => {
+        console.log("[ArticulosInteractivos] Loaded articles:", data.length, data);
         if (data && Array.isArray(data)) {
           setArticles(data);
         }
@@ -52,13 +53,13 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
     : filteredArticles;
 
   return (
-    <section className="bg-[#fccb06] pt-32 pb-48 px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-[90vh]">
+    <section className="bg-[#fccb06] pt-32 pb-48 px-0 relative overflow-hidden min-h-[90vh]">
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       
-      <div className="container mx-auto relative z-10">
+      <div className="w-full relative z-10">
         
         {/* Cabecera */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20 px-6 md:px-12">
           <div className="max-w-2xl">
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
@@ -76,7 +77,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
             
             <h2 className="text-6xl md:text-8xl font-display uppercase leading-tight text-black mb-6">
               {t.articulos.title_top}<br />
-              <span className="text-white drop-shadow-[6px_6px_0_#000]" style={{ WebkitTextStroke: '2px black' }}>
+              <span className="text-white drop-shadow-[6px_6px_0_#000]" style={{ WebkitTextStroke: 'var(--brutal-stroke-width) black' }}>
                 {t.articulos.title_bottom}
               </span>
             </h2>
@@ -101,7 +102,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
         </div>
 
         {/* Filtros rápidos (Chips) */}
-        <div className="flex gap-4 overflow-x-auto pb-4 mb-8 no-scrollbar" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex gap-4 overflow-x-auto pb-4 mb-8 no-scrollbar px-6 md:px-12" style={{ scrollbarWidth: 'none' }}>
           {['TODOS', 'IA', 'SALUD', 'TEA', 'CIBERACOSO', 'ESCRITURA', 'INCLUSIÓN'].map(cat => (
             <button 
               key={cat}
@@ -120,7 +121,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
         {/* Galería Horizontal en 2 Filas */}
         <div 
           ref={scrollRef}
-          className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-16 pt-4 px-4 -mx-4 no-scrollbar hide-scrollbar cursor-grab active:cursor-grabbing snap-x"
+          className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-16 pt-4 px-12 md:px-24 no-scrollbar hide-scrollbar cursor-grab active:cursor-grabbing snap-x"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {displayArticles.length > 0 ? (

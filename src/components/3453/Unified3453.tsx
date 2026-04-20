@@ -1,105 +1,104 @@
-import { useEffect, useRef, useState, lazy, Suspense } from 'react';
-import { ChevronLeft, ExternalLink } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
+import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
+import Hero3453 from './Hero3453';
+import Content3453 from './Content3453';
+import { DataLab3453 } from './DataLab3453';
+import Quiz3453 from './Quiz3453';
+import { ARTICLE_META } from './constants';
 import { FilmGrain } from '../FilmGrain';
+import { OrganicWaveDivider } from '../OrganicWaveDivider';
 
-// Lazy load actual content components
-const Hero = lazy(() => import('./Hero'));
-const IntroductionSection = lazy(() => import('./IntroductionSection'));
-const MethodologyLab = lazy(() => import('./MethodologyLab'));
-const ResultsSection = lazy(() => import('./ResultsSection'));
-const DiscussionSection = lazy(() => import('./DiscussionSection'));
-const InteractiveSurvey = lazy(() => import('./InteractiveSurvey'));
-const Limitaciones3453 = lazy(() => import('./Limitaciones3453'));
-
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Unified3453({ onBack }: { onBack?: () => void }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
+export default function Unified3453({ onBack }: { onBack: () => void }) {
   useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
     window.scrollTo(0, 0);
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#F0F0F0] selection:bg-black selection:text-white font-pop relative">
+    <div className="min-h-screen bg-[#FAF9F6] text-black relative selection:bg-[#E11D48] selection:text-white overflow-x-hidden pt-20">
       <FilmGrain />
       
-      {/* Background patterns - subtle grid instead of orbs */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-
-      {/* Persistent Navigation & Progress - Neobrutalist style */}
-      <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center pointer-events-none">
-        <button 
-          onClick={onBack}
-          className="pointer-events-auto flex items-center gap-2 px-6 py-3 bg-white border-4 border-black shadow-[4px_4px_0_#000] text-black hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all group"
-        >
-          <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-          <span className="text-sm font-black uppercase tracking-tight">Galería</span>
-        </button>
-
-        <a 
-          href="https://doi.org/10.21555/rpp.3453"
-          target="_blank"
-          rel="noreferrer"
-          className="pointer-events-auto flex items-center gap-2 px-6 py-3 bg-[#06b6d4] border-4 border-black shadow-[4px_4px_0_#000] text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
-        >
-          <span className="text-sm font-black uppercase tracking-tight">PDF Original</span>
-          <ExternalLink size={16} />
-        </a>
-
-        {/* Global progress indicator - top bar */}
-        <div className="fixed top-0 left-0 w-full h-3 bg-white border-b-4 border-black z-[60]">
-          <div 
-            className="h-full bg-[#ff6b9d] transition-all duration-300"
-            style={{ width: `${scrollProgress}%` }}
-          />
-        </div>
-      </nav>
-
-      {/* Main Experience Layout */}
-      <main className="relative z-10 overflow-hidden">
-        <Suspense fallback={
-          <div className="h-screen w-full flex items-center justify-center bg-[#F0F0F0]">
-            <div className="w-12 h-12 border-4 border-black border-t-transparent rounded-full animate-spin" />
+      {/* Premium Header */}
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_20px_rgba(0,0,0,0.15)] h-24">
+        <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <button
+              onClick={onBack}
+              className="group flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black hover:bg-[#E11D48] transition-all shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            >
+              <ArrowLeft className="w-7 h-7 group-hover:-translate-x-1 transition-transform" />
+              <span className="font-display uppercase text-lg tracking-tighter font-black">Cerrar Artículo</span>
+            </button>
+            <div className="hidden lg:flex items-center gap-4 border-l-4 border-black pl-6">
+               <FileText className="text-[#E11D48]" size={24} />
+               <span className="font-mono text-[10px] uppercase font-black tracking-[0.2em] opacity-40">
+                 REF: RPP.V40.E3453 // CONSUMO_DROGAS
+               </span>
+            </div>
           </div>
-        }>
-          <Hero />
           
-          <div className="space-y-32 pb-32">
-            <IntroductionSection />
-            <MethodologyLab />
-            <ResultsSection />
-            <DiscussionSection />
-            <InteractiveSurvey />
-            <Limitaciones3453 />
+          <div className="hidden md:flex items-center gap-4 bg-zinc-100 border-4 border-black px-4 py-2 rotate-1">
+            <BookOpen size={20} />
+            <span className="font-display uppercase text-xs font-black">Lectura Estimada: 8 min</span>
           </div>
-        </Suspense>
+        </div>
+      </header>
+
+      <main>
+        <Hero3453 />
+        <OrganicWaveDivider topColor="#FAF9F6" bottomColor="#ffffff" variant="wavy" />
+        <Content3453 />
+        <OrganicWaveDivider topColor="#FAF9F6" bottomColor="#ffffff" variant="steps" />
+        <DataLab3453 />
+        <Quiz3453 />
       </main>
 
-      {/* Global Footer - Neobrutalist */}
-      <footer className="relative z-10 py-20 border-t-[10px] border-black bg-white">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 text-black font-black uppercase">
-          <div className="flex flex-col gap-2 items-center md:items-start">
-            <span className="text-2xl font-black tracking-tighter">Revista Panamericana de Pedagogía</span>
-            <span className="text-sm px-2 bg-black text-white self-start">Contribución científica transmedia N° 40 (2025)</span>
+      <footer className="bg-black py-40 px-6 border-t-[20px] border-black text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/microfabrics.png')]" />
+        
+        <div className="max-w-5xl mx-auto relative z-10 text-white">
+          <div className="mb-16 flex justify-center">
+            <div className="bg-[#E11D48] border-4 border-black px-10 py-3 font-display text-xl uppercase font-black shadow-[8px_8px_0_0_#fff] -rotate-2">
+              REFERENCIA APA
+            </div>
           </div>
-          <div className="flex gap-8 text-black/50 text-sm">
-             <span>© 2025 UP</span>
-             <span>Inostroza-Fuentes et al.</span>
+
+          <p className="font-serif text-3xl md:text-5xl italic text-slate-300 mb-16 leading-[1.2] max-w-4xl mx-auto">
+            {ARTICLE_META.authors} ({ARTICLE_META.date.split('-')[2]}).{' '}
+            <span className="text-white not-italic font-black border-b-4 border-[#E11D48] leading-tight">
+              {ARTICLE_META.title}
+            </span>.{' '}
+            <span className="text-[#E11D48] italic">Revista Panamericana de Pedagogía</span>, {ARTICLE_META.volume}, e{ARTICLE_META.id}.
+          </p>
+          
+          <div className="space-y-12">
+            <div className="flex flex-col items-center gap-4">
+               <p className="font-mono text-xs uppercase font-black tracking-[0.4em] text-zinc-500">PROVENIENCIA ACADÉMICA:</p>
+               <p className="font-display text-2xl uppercase font-black tracking-tighter">{ARTICLE_META.institution}</p>
+            </div>
+
+            <div className="flex justify-center flex-wrap gap-8">
+              <a
+                href={`https://doi.org/${ARTICLE_META.doi}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block bg-white text-black px-12 py-6 border-4 border-black font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#E11D48] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#E11D48] transition-all"
+              >
+                Acceder vía DOI
+              </a>
+               <a
+                href="#"
+                className="inline-block bg-zinc-800 text-white px-12 py-6 border-4 border-white font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#4a4a4a] hover:-translate-y-1 transition-all"
+              >
+                Descargar PDF
+              </a>
+            </div>
           </div>
+        </div>
+
+        {/* Footer Bottom Label */}
+        <div className="mt-40 pt-20 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-8 px-10 opacity-30">
+           <span className="font-mono text-[10px] font-black uppercase tracking-[0.8em]">UP // RPP IP-INTERACTIVA</span>
+           <span className="font-mono text-[10px] font-black uppercase tracking-[0.8em]">© 2026 TRANSMEDIA LAB</span>
         </div>
       </footer>
     </div>

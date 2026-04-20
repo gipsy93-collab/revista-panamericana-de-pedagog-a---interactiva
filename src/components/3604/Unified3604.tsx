@@ -49,7 +49,7 @@ export default function Unified3604({ onBack }: Props) {
         <div className="space-y-0">
            <Content3604 />
            
-           <OrganicWaveDivider topColor="#ffffff" bottomColor="#fff1f2" variant="steps" />
+           <OrganicWaveDivider topColor="#ffffff" bottomColor="#fff1f2" variant="dramatic" />
            <DataLab3604 />
            <OrganicWaveDivider topColor="#fff1f2" bottomColor="#ffffff" variant="wavy" />
 
@@ -61,7 +61,7 @@ export default function Unified3604({ onBack }: Props) {
            
            <MemoryGame3604 />
            
-           <OrganicWaveDivider topColor="#ffffff" bottomColor="#f9fafb" variant="smooth" />
+           <OrganicWaveDivider topColor="#ffffff" bottomColor="#f9fafb" variant="gentle" />
            <div className="py-24 bg-zinc-50 border-y-2 border-black/5">
               <QuizGame3604 />
            </div>

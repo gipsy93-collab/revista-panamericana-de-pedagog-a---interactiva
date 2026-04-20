@@ -50,6 +50,8 @@ export default function Transmedia({ onOpenSubPage }: Props) {
   const handleProjectClick = (id: string, link: string) => {
     if (id === 'podcast') {
       onOpenSubPage?.('podcast_laboratory');
+    } else if (id === 'infografias') {
+      onOpenSubPage?.('mapas_conceptuales');
     } else {
       window.location.href = link;
     }

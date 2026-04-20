@@ -6,7 +6,8 @@ import {
   Users, 
   Layout, 
   Lightbulb,
-  Heart
+  Heart,
+  Sparkles
 } from 'lucide-react';
 import { ARTICLE_META, DIMENSIONS } from './constants';
 import { WaveSection, PremiumTitle, BrutalCard, CinematicCard, BrutalSticker, BrutalQuote } from '../BrutalistLib';

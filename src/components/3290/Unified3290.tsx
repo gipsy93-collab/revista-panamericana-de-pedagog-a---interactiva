@@ -39,7 +39,7 @@ export default function Unified3290({ onBack }: Props) {
       <main className="relative z-0">
         <Hero3290 />
         <Content3290 />
-        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f8fafc" variant="steps" />
+        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f8fafc" variant="dramatic" />
         <Quiz3290 onComplete={(res) => console.log('Quiz 3290 completado', res)} />
       </main>
 

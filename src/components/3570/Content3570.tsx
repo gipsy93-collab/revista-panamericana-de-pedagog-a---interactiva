@@ -4,7 +4,8 @@ import {
   Users, ClipboardList, Microscope, Award, Sparkles, Database, BookOpen, Layers, 
   Target, Search, School, GraduationCap, ClipboardCheck, BrainCircuit, Activity,
   Quote, CheckCircle2, AlertCircle, SearchCode, FileText, Globe, Filter, ShieldCheck,
-  TrendingUp, BarChart3, HelpCircle, Lightbulb, Scale, Ghost, Zap, Flame, MoveRight
+  TrendingUp, BarChart3, HelpCircle, Lightbulb, Scale, Ghost, Zap, Flame, MoveRight,
+  AlertTriangle
 } from 'lucide-react';
 import { PremiumTitle, CinematicCard, WaveSection, BrutalSticker, BrutalQuote, BrutalCard } from '../BrutalistLib';
 import { DataLab3570 } from './DataLab3570';

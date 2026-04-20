@@ -116,7 +116,7 @@ export const ARTICLES_STATIC: ArticleData[] = [
   {
     id: '3411',
     title: 'Mantenerse en la escuela: desafiliación en un bachillerato tecnológico',
-    subtitle: 'Mantenerse en la Escuela: Desafiliación en Bachillerato Tecnológico',
+    subtitle: 'Predictores de permanencia en el CETis 74',
     author: 'Jiménez-Moreno & Feria-Juárez',
     date: 'Agosto 2025',
     tag: 'Deserción Escolar',

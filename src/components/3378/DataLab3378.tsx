@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { BarChart3, PieChart, Users, TrendingUp, Activity, BookOpen, GraduationCap, Layout, MousePointer2, CheckSquare, AlertTriangle } from 'lucide-react';
+import { BarChart3, PieChart, Users, TrendingUp, Activity, BookOpen, GraduationCap, Layout, MousePointer2, CheckSquare, AlertTriangle, Target } from 'lucide-react';
 import { BrutalCard, BrutalSticker } from '../BrutalistLib';
 
 export const DataLab3378 = () => {

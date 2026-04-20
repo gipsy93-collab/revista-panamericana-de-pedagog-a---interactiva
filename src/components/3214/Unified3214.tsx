@@ -39,7 +39,7 @@ export default function Unified3214({ onBack }: Props) {
       <main className="relative z-0">
         <Hero3214 />
         <Content3214 />
-        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f8fafc" variant="steps" />
+        <OrganicWaveDivider topColor="#ffffff" bottomColor="#f8fafc" variant="dramatic" />
         <Quiz3214 onComplete={(res) => console.log('Quiz 3214 completado', res)} />
       </main>
 

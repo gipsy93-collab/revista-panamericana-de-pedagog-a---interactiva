@@ -59,6 +59,8 @@ const UnifiedAutores = lazy(() => import('./components/Semilleros/UnifiedAutores
 const UnifiedRevisores = lazy(() => import('./components/Semilleros/UnifiedRevisores'));
 const EnviarArticulo = lazy(() => import('./components/Semilleros/EnviarArticulo'));
 const PodcastLaboratory = lazy(() => import('./components/Transmedia/PodcastLaboratory'));
+const MapasConceptuales = lazy(() => import('./components/Transmedia/MapasConceptuales'));
+const MapaConceptual3497 = lazy(() => import('./components/Transmedia/MapaConceptual3497'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -272,12 +274,45 @@ export default function App() {
           </motion.div>
         )}
 
+        {activeSubPage === 'mapas_conceptuales' && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-[#0a1628] overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <MapasConceptuales 
+                onBack={() => setActiveSubPage(null)}
+                onOpenMapa={(id) => setActiveSubPage(id)}
+              />
+            </Suspense>
+          </motion.div>
+        )}
+
+        {activeSubPage === 'mapa_3497' && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-[#f0f9ff] overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <MapaConceptual3497 onBack={() => setActiveSubPage('mapas_conceptuales')} />
+            </Suspense>
+          </motion.div>
+        )}
+
         {activeSubPage && 
           !hardcodedArticleIds.includes(activeSubPage) && 
           activeSubPage !== 'semillero_autores' && 
           activeSubPage !== 'semillero_editores' && 
           activeSubPage !== 'enviar_articulo' && 
-          activeSubPage !== 'podcast_laboratory' && (
+          activeSubPage !== 'podcast_laboratory' && 
+          activeSubPage !== 'mapas_conceptuales' && 
+          activeSubPage !== 'mapa_3497' && (
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 

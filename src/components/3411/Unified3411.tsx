@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Hero3411 from './Hero3411';
-import { DataLab3411 } from './DataLab3411';
+// import { DataLab3411 } from './DataLab3411'; // Suspect component
 import Content3411 from './Content3411';
 import Quiz3411 from './Quiz3411';
 import { ARTICLE_META } from './constants';
@@ -34,7 +34,7 @@ export default function Unified3411({ onBack }: { onBack: () => void }) {
 
       <main>
         <Hero3411 />
-        <DataLab3411 />
+        {/* <DataLab3411 /> */}
         <Content3411 />
         <Quiz3411 />
       </main>
@@ -43,17 +43,17 @@ export default function Unified3411({ onBack }: { onBack: () => void }) {
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="font-serif text-xl italic text-slate-400 mb-8 leading-relaxed">
-            Fuente: Jiménez-Moreno, J. A., & Feria-Juárez, Z. ({ARTICLE_META.date.split(' ')[1]}).{' '}
+            Fuente: Jiménez-Moreno, J. A., & Feria-Juárez, Z. ({ARTICLE_META?.date?.split(' ')[1] || '2026'}).{' '}
             <span className="text-white not-italic font-bold">Mantenerse en la escuela: desafiliación en un bachillerato tecnológico</span>.{' '}
             <span className="text-rose-600">Revista Panamericana de Pedagogía</span>, 41, e3411.
           </p>
           <a
-            href={`https://doi.org/${ARTICLE_META.doi}`}
+            href={`https://doi.org/${ARTICLE_META?.doi || '10.21555/rpp.3411'}`}
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#3b82f6] hover:-translate-y-1 transition-transform"
           >
-            DOI: {ARTICLE_META.doi}
+            DOI: {ARTICLE_META?.doi || '10.21555/rpp.3411'}
           </a>
         </div>
       </footer>

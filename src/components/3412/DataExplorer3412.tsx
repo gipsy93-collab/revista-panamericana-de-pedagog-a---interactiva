@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { Users, Target, Info, Zap, Layout, Settings, Binary, BookOpen } from 'lucide-react';
 import { BrutalCard } from '../BrutalistLib';
 

@@ -43,7 +43,7 @@ export default function Unified3606({ onBack }: Props) {
         <OrganicWaveDivider topColor="#ffffff" bottomColor="#f0fdf4" variant="wavy" />
         <Content3606 />
         
-        <OrganicWaveDivider topColor="#f9fafb" bottomColor="#f0fdf4" variant="steps" />
+        <OrganicWaveDivider topColor="#f9fafb" bottomColor="#f0fdf4" variant="dramatic" />
         <DataLab3606 />
 
         <OrganicWaveDivider topColor="#f0fdf4" bottomColor="#ffffff" variant="dramatic" />

@@ -44,7 +44,7 @@ export default function Unified3455({ onBack }: { onBack: () => void }) {
         <Hero3455 />
         <OrganicWaveDivider topColor="#F8F7FF" bottomColor="#ffffff" variant="wavy" />
         <Content3455 />
-        <OrganicWaveDivider topColor="#F8F7FF" bottomColor="#ffffff" variant="steps" />
+        <OrganicWaveDivider topColor="#F8F7FF" bottomColor="#ffffff" variant="dramatic" />
         <Quiz3455 />
       </main>
 

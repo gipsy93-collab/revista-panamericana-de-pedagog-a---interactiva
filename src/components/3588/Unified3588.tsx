@@ -43,7 +43,7 @@ export default function Unified3588({ onBack }: Props) {
         <OrganicWaveDivider topColor="#ffffff" bottomColor="#eef2ff" variant="wavy" />
         <Content3588 />
         
-        <OrganicWaveDivider topColor="#f9fafb" bottomColor="#eef2ff" variant="steps" />
+        <OrganicWaveDivider topColor="#f9fafb" bottomColor="#eef2ff" variant="dramatic" />
         <DataLab3588 />
 
         <OrganicWaveDivider topColor="#eef2ff" bottomColor="#ffffff" variant="dramatic" />

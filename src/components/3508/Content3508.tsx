@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Search, Compass, BarChart3, Quote, Handshake } from 'lucide-react';
+import { Search, Compass, BarChart3, Quote, Users } from 'lucide-react';
 import { WaveSection, BrutalCard, BrutalQuote, BrutalSticker, PremiumTitle } from '../BrutalistLib';
 import { DIMENSIONS } from './constants';
 
@@ -383,7 +383,7 @@ export const Content3508 = () => {
                 <BrutalCard color="bg-white" className="h-full flex flex-col !p-0 overflow-hidden border-8 border-black shadow-[15px_15px_0_0_#8b5cf6]">
                   <div className="bg-violet-600 p-8 text-white border-b-8 border-black relative overflow-hidden">
                      <div className="absolute bottom-0 right-0 opacity-10">
-                        <Handshake size={120} className="-rotate-12 translate-x-8 translate-y-8" />
+                        <Users size={120} className="-rotate-12 translate-x-8 translate-y-8" />
                      </div>
                      <div className="flex justify-between items-center mb-6">
                         <span className="bg-black text-white w-10 h-10 flex items-center justify-center font-display text-2xl">0{idx + 1}</span>

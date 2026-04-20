@@ -183,8 +183,29 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
         </div>
       </header>
 
-      {/* HERO SEMILLERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-rose-600 text-white border-b-[20px] border-black overflow-hidden py-32">
+      {/* HERO SEMILLERO - Estilo Cinemático Hero Principal */}
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#0f172a] text-white border-b-[15px] border-black overflow-hidden py-32">
+         {/* Orbes flotantes idénticos al Hero */}
+         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <motion.div
+              animate={{
+                x: ['-20%', '20%', '-20%'],
+                y: ['-10%', '20%', '-10%'],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+              className="absolute top-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 blur-[150px] rounded-full"
+            />
+            <motion.div
+              animate={{
+                x: ['20%', '-20%', '20%'],
+                y: ['20%', '-10%', '20%'],
+                scale: [1.2, 1, 1.2]
+              }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-emerald-500/10 blur-[150px] rounded-full"
+            />
+         </div>
          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
          
          <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
@@ -200,50 +221,21 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
               Semillero <br /> Autores
             </h1>
             
-            <div className="max-w-4xl mx-auto space-y-8 bg-zinc-900 text-white p-12 border-8 border-black shadow-[30px_30px_0_0_#000] -rotate-1 mb-20 relative overflow-hidden">
-               <p className="text-4xl font-serif italic leading-tight text-rose-100">
-                 "Investigadores activos orbitando alrededor del rigor científico y la narrativa expandida."
+            <div className="max-w-4xl mx-auto space-y-6 bg-black/40 backdrop-blur-md text-white p-10 md:p-14 border-2 border-white/20 shadow-[20px_20px_60px_rgba(0,0,0,0.5)] -rotate-1 mb-20 relative overflow-hidden rounded-3xl text-left">
+               <p className="text-xl md:text-2xl font-serif italic leading-relaxed text-cyan-100">
+                 Espacio formativo de la Revista Panamericana de Pedagogía para publicar ensayos y trabajos académicos destacados desarrollados a lo largo de la formación universitaria.
+               </p>
+               <p className="text-lg md:text-xl font-accent font-bold text-slate-300 uppercase tracking-widest leading-snug border-l-4 border-cyan-400 pl-6">
+                 Funciona con moderación técnica, sin arbitraje académico ni jerarquías entre autorías.
+               </p>
+               <p className="text-base md:text-lg font-mono text-cyan-200/70 uppercase tracking-tighter">
+                 Cada contribución se preserva con DOI y se integra al ecosistema interactivo de ciencia abierta de RPP.
                </p>
             </div>
          </div>
       </section>
 
-      {/* SECCIÓN 1: MISIÓN */}
-      <WaveSection topColor="#e11d48" bottomColor="#f5ece0" variant="wavy">
-        <div className="max-w-6xl mx-auto py-20 px-6">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-8">
-              <PremiumTitle subtitle="PROPÓSITO CIENTÍFICO"> Cultivar la Excelencia </PremiumTitle>
-              <div className="mt-12 space-y-8 text-3xl font-serif italic text-zinc-700 leading-relaxed">
-                <p>El Semillero de Autores RPP no es solo una lista; es un nodo de conocimiento vivo.</p>
-                <div className="bg-white border-l-[20px] border-rose-600 p-12 shadow-[20px_20px_0_0_#000] rotate-1">
-                   <p className="text-black font-black uppercase text-4xl font-display mb-4 italic tracking-tighter">Impacto Real</p>
-                   <p className="not-italic text-2xl font-accent font-bold text-zinc-600">Transformamos datos en historias que cambian la educación.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="lg:col-span-4 space-y-8">
-              <CinematicCard color="bg-[#fccb06]" title="ESTADÍSTICAS" icon={Globe} className="text-black shadow-[12px_12px_0_0_#000]">
-                 <div className="space-y-6 pt-6">
-                    <div className="flex justify-between items-end border-b-4 border-black/10">
-                       <span className="font-mono text-xs font-black">AUTORES</span>
-                       <span className="font-display text-6xl">42</span>
-                    </div>
-                    <div className="flex justify-between items-end border-b-4 border-black/10">
-                       <span className="font-mono text-xs font-black">REGIONES</span>
-                       <span className="font-display text-6xl">15</span>
-                    </div>
-                    <div className="flex justify-between items-end border-b-4 border-black/10">
-                       <span className="font-mono text-xs font-black">CITAS</span>
-                       <span className="font-display text-6xl">+1.2k</span>
-                    </div>
-                 </div>
-              </CinematicCard>
-            </div>
-          </div>
-        </div>
-      </WaveSection>
+
 
       {/* GALERÍA DE AUTORES */}
       <section className="bg-white py-32 border-y-[20px] border-black">

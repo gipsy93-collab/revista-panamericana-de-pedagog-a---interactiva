@@ -139,26 +139,48 @@ export default function UnifiedRevisores({ onBack }: Props) {
   return (
     <div className="relative min-h-screen bg-[#eebcd1] text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-indigo-600 selection:text-white">
       <FilmGrain />
-
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-indigo-600 transition-colors shadow-[4px_4px_0_0_#312e81] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#312e81] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#e81e61] transition-colors shadow-[4px_4px_0_0_#880e4f] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#880e4f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
           </button>
           
           <div className="hidden md:flex items-center gap-4">
-             <div className="bg-indigo-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">EDITORES</div>
+             <div className="bg-[#e81e61] text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">EDITORES</div>
              <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">QUALITY // RPP_2026</span>
           </div>
         </div>
       </header>
 
-      {/* HERO SEMILLERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-indigo-700 text-white border-b-[20px] border-black overflow-hidden py-32">
+      {/* HERO SEMILLERO - Estilo Fucsia Cinemático */}
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#880e4f] text-white border-b-[15px] border-black overflow-hidden py-32">
+         {/* Orbes flotantes en tonos fucsia/púrpura */}
+         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <motion.div
+              animate={{
+                x: ['-20%', '20%', '-20%'],
+                y: ['-10%', '20%', '-10%'],
+                scale: [1, 1.4, 1]
+              }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+              className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#e81e61]/20 blur-[150px] rounded-full"
+            />
+            <motion.div
+              animate={{
+                x: ['20%', '-20%', '20%'],
+                y: ['20%', '-10%', '20%'],
+                scale: [1.4, 1, 1.4]
+              }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/20 blur-[150px] rounded-full"
+            />
+         </div>
+         {/* Gradiente para profundidad */}
+         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
          
          <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
@@ -168,43 +190,21 @@ export default function UnifiedRevisores({ onBack }: Props) {
               Semillero <br /> Editores
             </h1>
             
-            <div className="max-w-4xl mx-auto space-y-8 bg-zinc-950 text-white p-12 border-8 border-black shadow-[30px_30px_0_0_#312e81] rotate-1 mb-20 relative overflow-hidden">
-               <p className="text-4xl font-serif italic leading-tight text-indigo-100">
-                 "Certificamos el rigor científico mediante credenciales digitales verificables de última generación."
+            <div className="max-w-4xl mx-auto space-y-6 bg-black/40 backdrop-blur-md text-white p-10 md:p-14 border-2 border-white/20 shadow-[20px_20px_60px_rgba(0,0,0,0.5)] rotate-1 mb-20 relative overflow-hidden rounded-3xl text-left">
+               <p className="text-xl md:text-2xl font-serif italic leading-relaxed text-indigo-100">
+                 Programa de formación editorial vinculado a la Revista Panamericana de Pedagogía.
+               </p>
+               <p className="text-lg md:text-xl font-accent font-bold text-slate-300 uppercase tracking-widest leading-snug border-l-4 border-indigo-400 pl-6">
+                 El equipo editor realiza curaduría, moderación técnica y armonización textual de manera invisible para las autorías.
+               </p>
+               <p className="text-base md:text-lg font-mono text-indigo-200/70 uppercase tracking-tighter">
+                 Promueve estándares de ciencia abierta y desarrolla competencias profesionales en edición académica dentro del ecosistema RPP Interactivo.
                </p>
             </div>
          </div>
       </section>
 
-      {/* SECCIÓN 1: OPEN BADGES */}
-      <WaveSection topColor="#4338ca" bottomColor="#eebcd1" variant="wavy">
-        <div className="max-w-6xl mx-auto py-20 px-6">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-8">
-              <PremiumTitle subtitle="CERTIFICACIÓN DIGITAL"> Open Badges 3.0 </PremiumTitle>
-              <div className="mt-12 space-y-8 text-3xl font-serif italic text-zinc-700 leading-relaxed text-left">
-                <p>Nuestros editores y revisores no solo validan contenido; obtienen reconocimiento global mediante **Verifiable Credentials** (VC).</p>
-                <div className="bg-white border-l-[12px] border-indigo-600 p-12 shadow-[15px_15px_0_0_#000] rotate-1">
-                   <p className="text-black font-black uppercase text-3xl font-display mb-4 italic tracking-tighter">Estándar W3C</p>
-                   <p className="not-italic text-xl">Integridad inmutable que garantiza la idoneidad técnica en cada dictamen editorial.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="lg:col-span-4 space-y-8">
-              <CinematicCard color="bg-indigo-600" title="CONFIANZA" icon={ShieldCheck} className="text-white shadow-[10px_10px_0_0_#312e81]">
-                 <div className="space-y-6 pt-4 text-left">
-                    <p className="font-mono text-[9px] uppercase tracking-widest leading-relaxed">Cada acción editorial genera una prueba criptográfica transparente.</p>
-                    <div className="flex items-center gap-4 border-t border-white/20 pt-4">
-                       <Award className="text-[#fccb06]" size={24} />
-                       <span className="font-mono text-[10px] uppercase tracking-widest font-bold">W3C Credential Ready</span>
-                    </div>
-                 </div>
-              </CinematicCard>
-            </div>
-          </div>
-        </div>
-      </WaveSection>
+
 
       <section className="bg-white py-32 border-y-[20px] border-black">
         <div className="max-w-7xl mx-auto px-6">

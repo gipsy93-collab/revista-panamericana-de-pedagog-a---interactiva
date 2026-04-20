@@ -1,6 +1,5 @@
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import matter from 'gray-matter';
 import { parseSimpleFrontmatter } from './simpleFrontmatter';
 
 export const ICON_MAP: Record<string, LucideIcon> = {
@@ -79,13 +78,7 @@ export interface BlogData {
 }
 
 function parseMarkdown(raw: string): { data: Record<string, unknown>; body: string } {
-  try {
-    const parsed = matter(raw);
-    return { data: parsed.data, body: parsed.content };
-  } catch (e: any) {
-    console.warn('gray-matter failed, using simple parser:', e?.message || e);
-    return parseSimpleFrontmatter(raw);
-  }
+  return parseSimpleFrontmatter(raw);
 }
 
 function getRawContent(mod: unknown): string {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BookOpen, AlertTriangle, CheckCircle2, Zap, GraduationCap, School, Layers, Filter, MessageSquare, PieChart, BarChart } from 'lucide-react';
+import { BookOpen, AlertTriangle, CheckCircle2, Zap, GraduationCap, School, Layers, Filter, MessageSquareQuote, PieChart, BarChart } from 'lucide-react';
 import { BrutalCard, BrutalSticker } from '../BrutalistLib';
 
 const DATA_SET = {
@@ -113,7 +113,7 @@ export const DataLab3543 = () => {
 
                            <div className="bg-zinc-950 text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rotate-1">
                               <div className="flex items-center gap-4 mb-4">
-                                 <MessageSquare size={32} className="text-indigo-400" />
+                                 <MessageSquareQuote size={32} className="text-indigo-400" />
                                  <span className="font-mono text-[10px] uppercase font-black tracking-widest italic opacity-40">Interpretación 4.2</span>
                               </div>
                               <p className="font-serif italic text-2xl leading-snug">"{stats.hallazgo}"</p>

@@ -1,0 +1,28 @@
+[33m962d6eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to ORIG_HEAD
+[33m2ea58fd[m HEAD@{1}: reset: moving to ORIG_HEAD
+[33m962d6eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{2}: reset: moving to HEAD~1
+[33m2ea58fd[m HEAD@{3}: reset: moving to HEAD~1
+[33me8cfffd[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{4}: commit: fix: corregir codificación UTF-8 en App.tsx para despliegue en Vercel
+[33m2ea58fd[m HEAD@{5}: commit: feat: implementar modo visual novel cinemático en todos los mapas y corregir errores de carga
+[33m962d6eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{6}: commit: Fix: Add react-is dependency required by recharts for Vite 8/Rolldown
+[33m9fe7370[m HEAD@{7}: commit: Fix: Pin lucide-react to 0.546.0 to ensure all icons are available on Vercel
+[33m913c821[m HEAD@{8}: commit: Fix: Remove Node.js dependencies (gray-matter, buffer) that break Vercel production build
+[33m3092789[m HEAD@{9}: commit: Fix: Resolve ReferenceErrors for missing icons and motion in Articles 3412, 3378, 3549, and 3570
+[33m14a1167[m HEAD@{10}: commit: Fix: Resolve ReferenceErrors for missing icons and motion in Articles 3412, 3378, 3549, and 3570
+[33me7789bd[m HEAD@{11}: commit: Fix: Resolve ReferenceErrors for missing icons and motion in Articles 3412, 3378, 3549, and 3570
+[33m43f6442[m HEAD@{12}: commit: Design: Unificación de Semilleros con identidades cromáticas Azul y Fucsia
+[33m96ff59b[m HEAD@{13}: commit: Conectar Substack de RPP
+[33m73c01e3[m HEAD@{14}: commit: Fix: accesibilidad del botón Explorar en ficha técnica móvil
+[33m6780ad4[m HEAD@{15}: commit: Mejoras de diseño responsivo y adaptabilidad móvil
+[33m9fa7f57[m HEAD@{16}: commit: Fix final: eliminando rollup estricto
+[33m5e1dfb1[m HEAD@{17}: commit: Fix: mover rollup-win32 a optionalDependencies para Vercel/Linux
+[33m88062e8[m HEAD@{18}: commit: Corrigiendo compatibilidad Windows/Linux
+[33m4aff6c8[m HEAD@{19}: commit (amend): Despliegue automático
+[33m88472fe[m HEAD@{20}: commit: Despliegue automático
+[33mcdf8f13[m HEAD@{21}: commit (amend): Actualización de textos: vínculo con RPP y ciencia abierta
+[33mba2e043[m HEAD@{22}: commit: Actualización de textos: vínculo con RPP y ciencia abierta
+[33m8d29ee5[m HEAD@{23}: commit: Guardado de control: portadas con títulos completos y layout invertido (autores arriba, títulos abajo)
+[33m3fe8ed5[m HEAD@{24}: commit: Backup antes de temática marciana: cursor ovni, cartas abanico, naves orbitales
+[33mccbcd63[m HEAD@{25}: reset: moving to ccbcd63
+[33md4e4108[m HEAD@{26}: commit: Agrega efectos visuales de RPP-CARAMELO: Portal lava en Hero, Marquees y Montañas entre secciones
+[33mccbcd63[m HEAD@{27}: commit (initial): Estado estable antes de aplicar efectos visuales de RPP-CARAMELO

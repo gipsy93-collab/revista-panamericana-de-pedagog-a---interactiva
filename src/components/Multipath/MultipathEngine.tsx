@@ -321,7 +321,15 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
         lastAccess: Date.now(),
       };
     });
-    window.scrollTo(0, 0);
+    
+    // Evitar conflicto con Lenis que causa la vibración (timbre)
+    // @ts-ignore
+    if (window.lenis) {
+      // @ts-ignore
+      window.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [graph]);
 
   const canAccessExit = useCallback((exit: PathExit): boolean => {
@@ -395,10 +403,10 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
           <motion.div 
             className="absolute inset-0 w-[110%] h-[110%] -left-[5%] -top-[5%]"
             animate={{ 
-              x: direction * 15,
-              scale: [1, 1.02, 1],
+              x: direction * 10,
+              y: direction * 5,
             }}
-            transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
             style={{
               backgroundColor: '#0a0a0c',
               backgroundImage: `url('/archivos/imágenes/bg_${graph.id}.png')`,

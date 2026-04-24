@@ -35,7 +35,7 @@ export default function Unified3549({ onBack }: { onBack?: () => void }) {
               rel="noopener noreferrer"
               className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-[#4f46e5] hover:text-white transition-colors shadow-[4px_4px_0_0_#999]"
             >
-              <span className="font-display uppercase text-xs tracking-widest font-black">Revista AcadÈmica</span>
+              <span className="font-display uppercase text-xs tracking-widest font-black">Revista AcadÔøΩmica</span>
             </a>
             <div className="bg-black text-white px-4 py-2 font-mono text-[10px] uppercase font-black italic">
               REF_{ARTICLE_META.id} // NEM_GENEALOG√çA

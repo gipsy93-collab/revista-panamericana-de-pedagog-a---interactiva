@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, Map, Zap, Leaf, BookOpen, ArrowRight } from 'lucide-react';
+import { ChevronLeft, Map, Zap, Leaf, BookOpen, ArrowRight, GitBranch } from 'lucide-react';
 import { FilmGrain } from '../FilmGrain';
 
 const MAPAS = [
   {
-    id: 'mapa_3497',
+    id: 'mapa_3214',
     numero: '01',
     titulo: 'Innovación Pedagógica en Bachillerato Técnico Agropecuario',
     autores: 'Dueñas Basurto & Zambrano Vera',
@@ -16,11 +16,54 @@ const MAPAS = [
     colorAlt: '#f97316',
     bg: 'from-sky-900 to-cyan-950',
     disponible: true,
+    tipo: 'multicamino',
+  },
+  {
+    id: 'mapa_multicamino_3453',
+    numero: '02',
+    titulo: 'Experiencias Docentes ante el Consumo de Drogas',
+    autores: 'Inostroza-Fuentes et al.',
+    año: '2025',
+    revista: 'Revista Panamericana de Pedagogía, n. 40',
+    tema: 'Multicamino · Fenomenológico · Chile',
+    color: '#ff6b9d',
+    colorAlt: '#c0392b',
+    bg: 'from-rose-950 to-pink-950',
+    disponible: true,
+    tipo: 'multicamino',
+  },
+  {
+    id: 'mapa_multicamino_3588',
+    numero: '03',
+    titulo: 'Análisis Psicométrico de la Escala Bäulke',
+    autores: 'Euan-Catzín & Canto-Herrera',
+    año: '2026',
+    revista: 'Revista Panamericana de Pedagogía, n. 41',
+    tema: 'Multicamino · Psicometría · México',
+    color: '#3498db',
+    colorAlt: '#9b59b6',
+    bg: 'from-slate-900 to-blue-950',
+    disponible: true,
+    tipo: 'multicamino',
+  },
+  {
+    id: 'mapa_3557',
+    numero: '04',
+    titulo: 'Educación Jurídica en la Era Digital',
+    autores: 'Prince Tritto et al.',
+    año: '2026',
+    revista: 'Revista Panamericana de Pedagogía, n. 41',
+    tema: 'Educación Jurídica · IA · Digitalización',
+    color: '#00FFA3',
+    colorAlt: '#FF007A',
+    bg: 'from-emerald-950 to-green-950',
+    disponible: true,
+    tipo: 'multicamino',
   },
   // Placeholder para futuros mapas
   {
     id: 'mapa_proximamente_1',
-    numero: '02',
+    numero: '05',
     titulo: 'Próximamente',
     autores: '—',
     año: '2025',
@@ -30,19 +73,7 @@ const MAPAS = [
     colorAlt: '#94a3b8',
     bg: 'from-gray-800 to-slate-900',
     disponible: false,
-  },
-  {
-    id: 'mapa_proximamente_2',
-    numero: '03',
-    titulo: 'Próximamente',
-    autores: '—',
-    año: '2025',
-    revista: 'Revista Panamericana de Pedagogía',
-    tema: 'En preparación',
-    color: '#64748b',
-    colorAlt: '#94a3b8',
-    bg: 'from-gray-800 to-slate-900',
-    disponible: false,
+    tipo: 'mapa',
   },
 ];
 
@@ -181,7 +212,11 @@ export default function MapasConceptuales({ onBack, onOpenMapa }: Props) {
                         className="inline-flex items-center gap-3 font-black uppercase tracking-[0.2em] text-sm border-t-2 border-white/10 group-hover:border-white/30 pt-4 transition-colors"
                         style={{ color: mapa.color }}
                       >
-                        Explorar mapa <ArrowRight size={20} className="group-hover:translate-x-3 transition-transform" />
+                        {mapa.tipo === 'multicamino' ? (
+                          <>Explorar multicamino <GitBranch size={20} className="group-hover:translate-x-3 transition-transform" /></>
+                        ) : (
+                          <>Explorar mapa <ArrowRight size={20} className="group-hover:translate-x-3 transition-transform" /></>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -29,6 +29,14 @@ export default function Unified3562({ onBack }: { onBack?: () => void }) {
               <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-display uppercase text-xs tracking-widest font-black">Volver</span>
             </button>
+            <a
+              href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-[#4f46e5] hover:text-white transition-colors shadow-[4px_4px_0_0_#999]"
+            >
+              <span className="font-display uppercase text-xs tracking-widest font-black">Revista Académica</span>
+            </a>
             <div className="bg-black text-white px-4 py-2 font-mono text-[10px] uppercase font-black italic">
               REF_{ARTICLE_META.id} // CARE_UNI_TRANSITION
             </div>

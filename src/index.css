@@ -256,3 +256,50 @@
   background-color: #fccb06;
   color: #1a1a1a;
 }
+
+/* Mind Map / Conceptual Lab Utilities */
+.mindmap-bg {
+  background-color: #FDFD96;
+  background-image: 
+    radial-gradient(#000 0.8px, transparent 0.8px),
+    radial-gradient(#000 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.halftone {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.halftone-md {
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.halftone-lg {
+  background-image: radial-gradient(circle, currentColor 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+.comic-burst {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.popup-overlay {
+  background: rgba(245, 236, 224, 0.85);
+}
+

@@ -27,6 +27,14 @@ export default function Unified3454({ onBack }: Props) {
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
           </button>
+          <a
+            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Académica</span>
+          </a>
           
           <div className="hidden md:flex items-center gap-4">
              <div className="bg-rose-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">NÂ° 41</div>

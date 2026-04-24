@@ -25,8 +25,16 @@ export default function Unified3455({ onBack }: { onBack: () => void }) {
               className="group flex items-center gap-4 bg-black text-white px-10 py-5 border-4 border-black hover:bg-[#7C3AED] transition-all shadow-[10px_10px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
             >
               <ArrowLeft className="w-8 h-8 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-display uppercase text-xl tracking-tighter font-black italic">Dashboard</span>
+              <span className="font-display uppercase text-xl tracking-tighter font-black italic">Volver</span>
             </button>
+          <a
+            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
+          </a>
             <div className="hidden xl:flex flex-col border-l-[6px] border-[#7C3AED] pl-10">
                <span className="font-mono text-[10px] uppercase font-black tracking-[0.4em] opacity-30 leading-none mb-2 text-black">CASE_FILE // RPP.3455</span>
                <span className="font-display uppercase text-lg font-black text-black">Dimensión Personal // Yucatán_</span>

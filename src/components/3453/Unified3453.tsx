@@ -26,8 +26,16 @@ export default function Unified3453({ onBack }: { onBack: () => void }) {
               className="group flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black hover:bg-[#E11D48] transition-all shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
             >
               <ArrowLeft className="w-7 h-7 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-display uppercase text-lg tracking-tighter font-black">Cerrar ArtÃ­culo</span>
+              <span className="font-display uppercase text-lg tracking-tighter font-black">Volver</span>
             </button>
+          <a
+            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+          >
+            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Académica</span>
+          </a>
             <div className="hidden lg:flex items-center gap-4 border-l-4 border-black pl-6">
                <FileText className="text-[#E11D48]" size={24} />
                <span className="font-mono text-[10px] uppercase font-black tracking-[0.2em] opacity-40">

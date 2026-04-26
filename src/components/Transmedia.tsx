@@ -118,7 +118,7 @@ export default function Transmedia({ onOpenSubPage }: Props) {
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
                 onClick={() => handleProjectClick(project.id, project.link)}
-                className={`group relative ${project.color} ${project.text} p-12 md:p-16 rounded-[3rem] border-4 border-black shadow-[16px_16px_0_#000] hover:shadow-[24px_24px_0_#000] hover:-translate-y-6 transition-all cursor-pointer min-h-[500px] flex flex-col justify-between`}
+                className={`group relative ${project.color} ${project.text} p-8 sm:p-12 md:p-8 lg:p-12 xl:p-16 rounded-[3rem] border-4 border-black shadow-[16px_16px_0_#000] hover:shadow-[24px_24px_0_#000] hover:-translate-y-6 transition-all cursor-pointer min-h-[500px] flex flex-col justify-between overflow-hidden`}
               >
                  {/* Background visual element */}
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none">
@@ -134,14 +134,14 @@ export default function Transmedia({ onOpenSubPage }: Props) {
                     </div>
 
                     <div className="mt-auto">
-                       <h3 className="text-6xl sm:text-7xl lg:text-8xl font-display uppercase leading-[0.9] mb-12 group-hover:translate-x-4 transition-transform duration-500">
+                       <h3 className="text-5xl sm:text-6xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-display uppercase leading-[0.9] mb-12 group-hover:translate-x-2 transition-transform duration-500 break-words whitespace-pre-line">
                          {isPodcast ? 'Podcast' : 'Mapas\nConceptuales'}
                        </h3>
                        
                        <div 
                          className="inline-flex items-center gap-4 text-sm font-black uppercase tracking-[0.2em] group-hover:text-white transition-colors pt-6 border-t-2 border-black/10 group-hover:border-white/30"
                        >
-                         Explorar Proyecto <ChevronRight size={24} className="group-hover:translate-x-4 transition-transform" />
+                         Explorar Proyecto <ChevronRight size={24} className="group-hover:translate-x-2 transition-transform" />
                        </div>
                     </div>
                  </div>

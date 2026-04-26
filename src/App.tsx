@@ -62,6 +62,7 @@ const PodcastLaboratory = lazy(() => import('./components/Transmedia/PodcastLabo
 const MapasConceptuales = lazy(() => import('./components/Transmedia/MapasConceptuales'));
 const MapaConceptual3214 = lazy(() => import('./components/Multipath/Multipath3214'));
 const MapaConceptual3557 = lazy(() => import('./components/Multipath/Multipath3557'));
+const MapaConceptual3198 = lazy(() => import('./components/MapasConceptuales/3198/MapaConceptual3198'));
 const Multipath3453 = lazy(() => import('./components/Multipath/Multipath3453'));
 const Multipath3588 = lazy(() => import('./components/Multipath/Multipath3588'));
 
@@ -322,6 +323,20 @@ export default function App() {
           </motion.div>
         )}
 
+        {activeSubPage === 'mapa_3198' && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-[#F0F0F0] overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <MapaConceptual3198 onBack={() => setActiveSubPage('mapas_conceptuales')} />
+            </Suspense>
+          </motion.div>
+        )}
+
         {activeSubPage === 'mapa_multicamino_3453' && (
           <motion.div 
             initial={{ opacity: 0 }} 
@@ -360,6 +375,7 @@ export default function App() {
           activeSubPage !== 'mapa_3214' &&
           activeSubPage !== 'mapa_3497' &&
           activeSubPage !== 'mapa_3557' &&
+          activeSubPage !== 'mapa_3198' &&
           activeSubPage !== 'mapa_multicamino_3453' &&
           activeSubPage !== 'mapa_multicamino_3588' && (
           <motion.div 

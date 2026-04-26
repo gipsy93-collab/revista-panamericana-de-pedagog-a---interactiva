@@ -1,0 +1,98 @@
+/* Custom CSS for Map 3198 (Scoped to avoid affecting global styles) */
+
+/* Node glow animation - VIBRANT DARK */
+@keyframes node-glow {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.4), 0 0 70px rgba(249, 115, 22, 0.2);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(249, 115, 22, 0.6), 0 0 120px rgba(249, 115, 22, 0.3);
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.animate-node-glow {
+  animation: node-glow 4s ease-in-out infinite;
+}
+
+/* Edge draw animation */
+@keyframes edge-draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-edge-draw {
+  stroke-dasharray: 1000;
+  animation: edge-draw 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Ambient floating for nodes */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) translate(-50%, -50%);
+  }
+  50% {
+    transform: translateY(-6px) translate(-50%, -50%);
+  }
+}
+
+.animate-float {
+  /* Note: node overrides transform, so we handle it inline inside Node.tsx or rely on standard scale. 
+     Wait, Node.tsx uses inline transform, which overrides this. So animate-float only works if we wrap the button in a div.
+     Since Node.tsx is already written, we can leave this class as a marker, or adjust Node.tsx to use a wrapper.
+     For now, we define the keyframes but they might be overridden by inline styles. 
+     Actually, let's keep it here just in case. */
+}
+
+/* Poster slide in */
+@keyframes poster-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar scoped */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(199, 91, 42, 0.3);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(199, 91, 42, 0.5);
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.neobrutal-box {
+  background: #FAFAFA;
+  border: 3px solid #000000;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  color: #000000;
+  border-radius: 8px;
+}
+
+.neobrutal-box-dark {
+  background: #0F172A;
+  border: 3px solid #000000;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  color: #FFFFFF;
+  border-radius: 8px;
+}

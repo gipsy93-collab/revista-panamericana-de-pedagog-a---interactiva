@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { X } from 'lucide-react';
 import type { NodeData, PosterSection } from './types';
 
@@ -9,6 +9,13 @@ interface PosterProps {
 
 const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
   const panelRef = useRef<HTMLDivElement>(null);
+
+  // Stable close handler to prevent event leaks
+  const handleClose = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    onClose();
+  }, [onClose]);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -21,6 +28,14 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
   useEffect(() => {
     if (node && panelRef.current) {
       panelRef.current.scrollTop = 0;
+    }
+  }, [node]);
+
+  // Lock body scroll on mobile when poster is open
+  useEffect(() => {
+    if (node) {
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = ''; };
     }
   }, [node]);
 
@@ -39,13 +54,13 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
             className="mb-6"
             style={{
               borderLeft: '3px solid #C75B2A',
-              paddingLeft: '20px',
+              paddingLeft: '16px',
             }}
           >
             <p
               className="font-body"
               style={{
-                fontSize: '17px',
+                fontSize: 'clamp(14px, 3.5vw, 17px)',
                 lineHeight: 1.7,
                 color: textColor,
                 fontStyle: 'italic',
@@ -64,7 +79,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
                 key={i}
                 className="font-body mb-3"
                 style={{
-                  fontSize: '16px',
+                  fontSize: 'clamp(13px, 3.5vw, 16px)',
                   lineHeight: 1.7,
                   color: textColor,
                 }}
@@ -82,13 +97,13 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
             className="my-6"
             style={{
               borderLeft: '3px solid #C75B2A',
-              paddingLeft: '20px',
+              paddingLeft: '16px',
             }}
           >
             <p
               className="font-body-italic"
               style={{
-                fontSize: '18px',
+                fontSize: 'clamp(14px, 3.8vw, 18px)',
                 lineHeight: 1.8,
                 color: textColor,
               }}
@@ -118,7 +133,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
                 key={i}
                 className="font-body flex items-start gap-2"
                 style={{
-                  fontSize: '15px',
+                  fontSize: 'clamp(13px, 3.2vw, 15px)',
                   lineHeight: 1.6,
                   color: textColor,
                 }}
@@ -147,7 +162,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
                 key={i}
                 className="font-ui-bold"
                 style={{
-                  fontSize: '12px',
+                  fontSize: 'clamp(10px, 2.5vw, 12px)',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
                   color: '#000',
@@ -173,7 +188,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
                 key={i}
                 className="font-ui-bold"
                 style={{
-                  fontSize: '12px',
+                  fontSize: 'clamp(10px, 2.5vw, 12px)',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
                   color: '#000000',
@@ -201,7 +216,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
                 width: '100%',
                 borderRadius: '0px',
                 border: '3px solid #000',
-                boxShadow: '6px 6px 0px rgba(0,0,0,1)',
+                boxShadow: '4px 4px 0px rgba(0,0,0,1)',
                 objectFit: 'cover',
               }}
             />
@@ -215,42 +230,69 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
 
   return (
     <>
-      {/* Backdrop for mobile/desktop */}
+      {/* BACKDROP — opaque on mobile to block canvas interaction */}
       <div
-        className={`fixed inset-0 z-[9998] transition-opacity duration-700 ${node ? 'opacity-100' : 'opacity-0'}`}
+        className="fixed inset-0 z-[9998]"
         style={{
-          backgroundColor: 'transparent', // No backdrop
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          WebkitTapHighlightColor: 'transparent',
         }}
-        onClick={onClose}
+        onClick={handleClose}
+        onTouchEnd={handleClose}
       />
 
-      {/* Panel */}
+      {/* PANEL — full-screen on mobile, sidebar on desktop */}
       <div
         ref={panelRef}
-        className={`fixed z-[9999] overflow-y-auto transition-all duration-700 ease-out ${isDark ? 'neobrutal-box-dark' : 'neobrutal-box'}`}
+        className={`fixed z-[9999] overflow-y-auto overscroll-contain ${isDark ? 'neobrutal-box-dark' : 'neobrutal-box'}`}
         style={{
-          top: '1rem',
-          right: '1rem',
-          bottom: '1rem',
-          width: 'min(520px, 92vw)',
+          /* Mobile-first: full screen */
+          top: '0',
+          right: '0',
+          bottom: '0',
+          left: '0',
+          width: '100%',
           borderRadius: '0px',
-          animation: 'poster-slide-in 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          animation: 'poster-slide-in 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          border: 'none',
+          boxShadow: 'none',
+          WebkitOverflowScrolling: 'touch',
         }}
+        /* Prevent touch events from leaking through to canvas */
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+        onTouchEnd={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose();
+        {/* STICKY CLOSE BUTTON — always visible, never scrolls away */}
+        <div
+          className="sticky top-0 z-[10001] flex justify-end p-3 sm:p-4"
+          style={{
+            background: isDark
+              ? 'linear-gradient(to bottom, #0F172A 60%, transparent)'
+              : 'linear-gradient(to bottom, #FAFAFA 60%, transparent)',
+            pointerEvents: 'none',
           }}
-          className="absolute top-4 right-4 z-[10000] w-10 h-10 flex items-center justify-center transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none bg-[#FFCC00] hover:bg-[#F97316] border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] group"
-          aria-label="Cerrar"
         >
-          <X size={24} className="transition-colors group-hover:text-black" color="#000" />
-        </button>
+          <button
+            onClick={handleClose}
+            onTouchEnd={handleClose}
+            className="pointer-events-auto w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-300 bg-[#FFCC00] hover:bg-[#F97316] active:bg-[#F97316] border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+            aria-label="Cerrar"
+            style={{
+              /* Large touch target for mobile — minimum 48x48px */
+              minWidth: '48px',
+              minHeight: '48px',
+              touchAction: 'manipulation',
+              WebkitTapHighlightColor: 'transparent',
+            }}
+          >
+            <X size={24} color="#000" strokeWidth={3} />
+          </button>
+        </div>
 
         {/* Content */}
-        <div style={{ padding: '48px 40px 64px' }}>
+        <div className="px-5 sm:px-10 pb-16 pt-0">
           {/* Breadcrumb */}
           <div
             className="font-ui-semibold mb-4 flex items-center gap-2"
@@ -267,9 +309,9 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
 
           {/* Title */}
           <h2
-            className="font-heading mb-8"
+            className="font-heading mb-6 sm:mb-8"
             style={{
-              fontSize: 'clamp(28px, 5vw, 42px)',
+              fontSize: 'clamp(22px, 5vw, 42px)',
               fontWeight: 500,
               color: textColor,
               lineHeight: 1.1,
@@ -281,11 +323,12 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
 
           {/* Hero Image */}
           {node.content.image && (
-            <div className="mb-10 group overflow-hidden border-3 border-black shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+            <div className="mb-8 sm:mb-10 overflow-hidden border-3 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_rgba(0,0,0,1)]">
               <img
                 src={node.content.image}
                 alt={node.content.imageAlt || ''}
-                className="w-full h-64 object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="w-full h-40 sm:h-64 object-cover"
+                loading="lazy"
                 style={{
                   border: '3px solid #000'
                 }}
@@ -294,17 +337,32 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
           )}
 
           {/* Sections */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {node.content.sections.map((section, index) => (
-              <div key={index} className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: `${index * 100}ms` }}>
+              <div key={index}>
                 {renderSection(section, index)}
               </div>
             ))}
           </div>
         </div>
       </div>
-    </>
 
+      {/* DESKTOP OVERRIDE — on screens >= 768px, use sidebar layout */}
+      <style>{`
+        @media (min-width: 768px) {
+          [class*="z-[9999]"] {
+            left: auto !important;
+            width: min(520px, 50vw) !important;
+            top: 1rem !important;
+            right: 1rem !important;
+            bottom: 1rem !important;
+            border: 3px solid #000 !important;
+            box-shadow: 8px 8px 0px rgba(0,0,0,1) !important;
+            border-radius: 0px !important;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 

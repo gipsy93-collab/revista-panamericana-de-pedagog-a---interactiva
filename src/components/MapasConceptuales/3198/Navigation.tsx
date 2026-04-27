@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, Maximize2, Minimize2, Play, Search, List, ChevronRight } from 'lucide-react';
+import { Plus, Maximize2, Minimize2, Play, Search, List, ChevronRight, X } from 'lucide-react';
 import type { NodeData } from './types';
 
 interface NavigationProps {
@@ -39,30 +39,36 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
     ).slice(0, 5);
   }, [nodes, searchQuery]);
 
+  // Don't render navigation when poster is open on mobile — prevents z-index fights
+  if (posterOpen) return null;
+
   return (
     <>
-      {/* Top Bar */}
+      {/* ===== TOP BAR ===== */}
       <nav
-        className="fixed top-0 left-0 right-0 z-[100] pointer-events-none px-8 py-6"
+        className="fixed top-0 left-0 right-0 z-[100] pointer-events-none"
+        style={{ padding: 'max(env(safe-area-inset-top, 0px), 12px) 12px 0' }}
       >
-        <div className="flex items-start justify-between">
-          {/* Search & Index Area */}
-          <div className="pointer-events-auto flex flex-col gap-3 w-80">
+        <div className="flex items-start justify-between gap-2 sm:gap-4 px-2 sm:px-6">
+
+          {/* === LEFT: Search & Index (hidden on very small screens, compact on medium) === */}
+          <div className="pointer-events-auto flex flex-col gap-2 w-full max-w-[200px] sm:max-w-[280px] md:max-w-[320px]">
             {/* Search Bar */}
             <div className="relative group">
-              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                <Search size={16} className="text-accent-sienna opacity-60 group-focus-within:opacity-100 transition-opacity" />
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                <Search size={14} className="text-accent-sienna opacity-60 group-focus-within:opacity-100 transition-opacity" />
               </div>
               <input
                 type="text"
-                placeholder="Buscar concepto..."
+                placeholder="Buscar..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-12 pl-12 pr-4 neobrutal-box rounded-none font-ui-bold text-sm focus:outline-none focus:translate-x-[-2px] focus:translate-y-[-2px] focus:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all placeholder:text-gray-500"
+                className="w-full h-9 sm:h-11 pl-9 sm:pl-11 pr-3 neobrutal-box rounded-none font-ui-bold text-xs sm:text-sm focus:outline-none transition-all placeholder:text-gray-500"
+                style={{ fontSize: 'clamp(11px, 2.5vw, 14px)' }}
               />
               
               {filteredNodes.length > 0 && (
-                <div className="absolute top-14 left-0 right-0 neobrutal-box bg-white rounded-none border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300">
+                <div className="absolute top-10 sm:top-13 left-0 right-0 neobrutal-box bg-white rounded-none border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] overflow-hidden">
                   {filteredNodes.map(node => (
                     <button
                       key={node.id}
@@ -70,13 +76,14 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
                         onNodeClick(node);
                         setSearchQuery('');
                       }}
-                      className="w-full px-5 py-3 flex items-center justify-between hover:bg-[#FFCC00] transition-colors group/item border-b border-black last:border-0 text-black"
+                      className="w-full px-3 sm:px-5 py-2 sm:py-3 flex items-center justify-between hover:bg-[#FFCC00] active:bg-[#FFCC00] transition-colors border-b border-black last:border-0 text-black"
+                      style={{ minHeight: '44px' }}
                     >
                       <div className="text-left">
-                        <div className="text-xs font-ui-semibold text-black">{node.label}</div>
-                        <div className="text-[10px] text-gray-700 font-ui uppercase tracking-wider">{node.category}</div>
+                        <div className="text-[11px] sm:text-xs font-ui-semibold text-black truncate">{node.label}</div>
+                        <div className="text-[9px] sm:text-[10px] text-gray-700 font-ui uppercase tracking-wider">{node.category}</div>
                       </div>
-                      <ChevronRight size={14} className="text-black group-hover/item:scale-125 transition-transform" />
+                      <ChevronRight size={12} className="text-black flex-shrink-0 ml-1" />
                     </button>
                   ))}
                 </div>
@@ -86,18 +93,21 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
             {/* Index Toggle */}
             <button
               onClick={() => setIsIndexOpen(!isIndexOpen)}
-              className={`flex items-center gap-3 px-4 py-2.5 rounded-none transition-all duration-300 group border-2 border-black hover:translate-x-[-2px] hover:translate-y-[-2px] ${isIndexOpen ? 'bg-accent-olive text-black shadow-[4px_4px_0px_rgba(0,0,0,1)]' : 'bg-white text-black shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)]'}`}
+              className={`flex items-center gap-2 px-3 py-2 rounded-none transition-all duration-300 border-2 border-black ${isIndexOpen ? 'bg-accent-olive text-black shadow-[3px_3px_0px_rgba(0,0,0,1)]' : 'bg-white text-black shadow-[2px_2px_0px_rgba(0,0,0,1)]'}`}
+              style={{ minHeight: '40px' }}
             >
-              <List size={16} className="text-black" />
-              <span className="font-ui-bold text-[11px] uppercase tracking-wider">
-                Índice del Mapa
+              {isIndexOpen ? <X size={14} className="text-black" /> : <List size={14} className="text-black" />}
+              <span className="font-ui-bold text-[10px] sm:text-[11px] uppercase tracking-wider">
+                {isIndexOpen ? 'Cerrar' : 'Índice'}
               </span>
             </button>
 
             {/* Full Index Overlay */}
             {isIndexOpen && (
-              <div className="neobrutal-box bg-white rounded-none border-2 border-black max-h-[60vh] overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-500 custom-scrollbar">
-                <div className="p-2 space-y-1">
+              <div className="neobrutal-box bg-white rounded-none border-2 border-black max-h-[50vh] sm:max-h-[60vh] overflow-y-auto custom-scrollbar"
+                style={{ WebkitOverflowScrolling: 'touch' }}
+              >
+                <div className="p-1 sm:p-2 space-y-0">
                   {nodes.filter(n => n.level <= 2).map(node => (
                     <button
                       key={node.id}
@@ -105,15 +115,16 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
                         onNodeClick(node);
                         setIsIndexOpen(false);
                       }}
-                      className="w-full px-4 py-3 rounded-none flex items-center gap-3 hover:bg-[#FFCC00] transition-all group/item text-left border-b border-black last:border-0 text-black"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-none flex items-center gap-2 sm:gap-3 hover:bg-[#FFCC00] active:bg-[#FFCC00] transition-all text-left border-b border-black/20 last:border-0 text-black"
+                      style={{ minHeight: '44px' }}
                     >
                       <div 
                         className="w-3 h-3 border-2 border-black flex-shrink-0" 
                         style={{ backgroundColor: node.color }} 
                       />
-                      <div>
-                        <div className="text-[13px] font-ui-bold text-black">{node.label}</div>
-                        <div className="text-[9px] text-gray-700 font-ui-semibold uppercase tracking-widest">{node.category}</div>
+                      <div className="min-w-0">
+                        <div className="text-[12px] sm:text-[13px] font-ui-bold text-black truncate">{node.label}</div>
+                        <div className="text-[8px] sm:text-[9px] text-gray-700 font-ui-semibold uppercase tracking-widest truncate">{node.category}</div>
                       </div>
                     </button>
                   ))}
@@ -122,23 +133,25 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
             )}
           </div>
 
-          <div className={`flex flex-col items-end gap-3 transition-opacity duration-500 ${posterOpen ? 'opacity-0' : 'opacity-100'}`}>
-            {/* Tour Button */}
+          {/* === RIGHT: Tour button + Counter === */}
+          <div className="flex flex-col items-end gap-2 pointer-events-auto flex-shrink-0">
+            {/* Tour Button — compact on mobile */}
             <button
               onClick={onTour}
-              className={`pointer-events-auto flex items-center gap-3 px-6 py-3 rounded-none transition-all duration-300 group border-3 border-black ${isTouring ? 'bg-accent-sienna text-white shadow-none translate-x-[4px] translate-y-[4px]' : 'bg-[#FFCC00] text-black shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]'}`}
+              className={`flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-none transition-all duration-300 border-2 sm:border-3 border-black ${isTouring ? 'bg-accent-sienna text-white shadow-none translate-x-[2px] translate-y-[2px]' : 'bg-[#FFCC00] text-black shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_rgba(0,0,0,1)]'}`}
+              style={{ minHeight: '40px' }}
             >
-              <Play size={18} className={`${isTouring ? 'animate-pulse text-white' : 'group-hover:scale-125 transition-transform text-black'}`} fill={isTouring ? "currentColor" : "none"} />
-              <span className="font-ui-bold text-xs uppercase tracking-widest">
-                {isTouring ? 'Pausar Recorrido' : 'Iniciar Recorrido'}
+              <Play size={14} className={`flex-shrink-0 ${isTouring ? 'animate-pulse text-white' : 'text-black'}`} fill={isTouring ? "currentColor" : "none"} />
+              <span className="font-ui-bold text-[10px] sm:text-xs uppercase tracking-wider whitespace-nowrap">
+                {isTouring ? 'Pausar' : 'Recorrido'}
               </span>
             </button>
 
             {/* Counter */}
             <div
-              className="font-ui-bold pointer-events-auto neobrutal-box bg-white text-black px-4 py-2 rounded-none border-2 border-black"
+              className="font-ui-bold neobrutal-box bg-white text-black px-2 sm:px-4 py-1.5 sm:py-2 rounded-none border-2 border-black whitespace-nowrap"
               style={{
-                fontSize: '11px',
+                fontSize: 'clamp(9px, 2vw, 11px)',
                 letterSpacing: '0.05em',
               }}
             >
@@ -149,37 +162,46 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
       </nav>
 
 
-      {/* Floating Controls - MOVED TO LEFT to avoid overlap with Poster */}
+      {/* ===== FLOATING ZOOM CONTROLS (bottom-left) ===== */}
       <div
-        className={`fixed bottom-24 left-8 z-[100] flex flex-col gap-3 transition-opacity duration-500 ${posterOpen ? 'opacity-0' : 'opacity-100'}`}
+        className="fixed z-[100] flex flex-col gap-2 sm:gap-3 pointer-events-auto"
+        style={{
+          bottom: 'max(env(safe-area-inset-bottom, 0px), 80px)',
+          left: 'max(env(safe-area-inset-left, 0px), 12px)',
+        }}
       >
         <button
           onClick={onZoomIn}
-          className="font-ui w-12 h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none group"
+          className="font-ui w-10 h-10 sm:w-12 sm:h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] active:bg-[#FFCC00] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           aria-label="Acercar"
+          style={{ minWidth: '44px', minHeight: '44px', touchAction: 'manipulation' }}
         >
-          <Plus size={20} className="text-black transition-colors" />
+          <Plus size={18} className="text-black" />
         </button>
         <button
           onClick={onZoomOut}
-          className="font-ui w-12 h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none group"
+          className="font-ui w-10 h-10 sm:w-12 sm:h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] active:bg-[#FFCC00] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           aria-label="Alejar"
+          style={{ minWidth: '44px', minHeight: '44px', touchAction: 'manipulation' }}
         >
-          <Minimize2 size={20} className="text-black transition-colors" />
+          <Minimize2 size={18} className="text-black" />
         </button>
         <button
           onClick={onReset}
-          className="font-ui w-12 h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none group"
+          className="font-ui w-10 h-10 sm:w-12 sm:h-12 rounded-none flex items-center justify-center transition-all duration-300 bg-white border-2 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] active:bg-[#FFCC00] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           aria-label="Vista completa"
+          style={{ minWidth: '44px', minHeight: '44px', touchAction: 'manipulation' }}
         >
-          <Maximize2 size={20} className="text-black transition-colors" />
+          <Maximize2 size={18} className="text-black" />
         </button>
       </div>
 
-      {/* Help hint at bottom left */}
+      {/* ===== HELP HINT (bottom) — hidden on very small screens ===== */}
       <div
-        className={`fixed bottom-8 left-24 z-[100] font-ui-bold neobrutal-box px-5 py-2.5 rounded-none bg-white text-black border-2 border-black transition-opacity duration-500 ${posterOpen ? 'opacity-0' : 'opacity-100'}`}
+        className="hidden sm:block fixed z-[100] font-ui-bold neobrutal-box px-4 py-2 rounded-none bg-white text-black border-2 border-black"
         style={{
+          bottom: 'max(env(safe-area-inset-bottom, 0px), 16px)',
+          left: '80px',
           fontSize: '10px',
           letterSpacing: '0.08em',
           textTransform: 'uppercase',

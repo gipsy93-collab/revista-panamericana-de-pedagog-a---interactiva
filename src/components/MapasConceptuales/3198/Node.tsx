@@ -27,6 +27,14 @@ interface NodeProps {
 const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick }) => {
   const [hovered, setHovered] = useState(false);
   const [entered, setEntered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setEntered(true), delay);
@@ -38,18 +46,19 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
   const scale = entered && isVisible ? (hovered ? 1.05 : 1) : 0;
   const opacity = entered && isVisible ? 1 : 0;
 
-  // Level-based sizing and styling
+  // Level-based sizing — RESPONSIVE: smaller on mobile
   const getStyles = () => {
+    const m = isMobile;
     switch (node.level) {
       case 1:
         return {
-          padding: '20px 40px',
-          gap: '20px',
-          fontSize: '24px',
-          iconSize: 36,
-          borderWidth: '5px',
-          shadowOffset: hovered ? '12px' : '10px',
-          borderRadius: '12px',
+          padding: m ? '12px 20px' : '20px 40px',
+          gap: m ? '12px' : '20px',
+          fontSize: m ? '14px' : '24px',
+          iconSize: m ? 22 : 36,
+          borderWidth: m ? '3px' : '5px',
+          shadowOffset: hovered ? (m ? '6px' : '12px') : (m ? '4px' : '10px'),
+          borderRadius: m ? '8px' : '12px',
           letterSpacing: '0.05em',
           textTransform: 'uppercase' as const,
           bg: node.color,
@@ -57,13 +66,13 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
         };
       case 2:
         return {
-          padding: '10px 20px',
-          gap: '12px',
-          fontSize: '15px',
-          iconSize: 22,
-          borderWidth: '3px',
-          shadowOffset: hovered ? '8px' : '6px',
-          borderRadius: '8px',
+          padding: m ? '6px 12px' : '10px 20px',
+          gap: m ? '8px' : '12px',
+          fontSize: m ? '11px' : '15px',
+          iconSize: m ? 16 : 22,
+          borderWidth: m ? '2px' : '3px',
+          shadowOffset: hovered ? (m ? '4px' : '8px') : (m ? '3px' : '6px'),
+          borderRadius: m ? '6px' : '8px',
           letterSpacing: '0.02em',
           textTransform: 'uppercase' as const,
           bg: node.color,
@@ -71,16 +80,16 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
         };
       default: // Level 3
         return {
-          padding: '6px 12px',
-          gap: '8px',
-          fontSize: '12px',
-          iconSize: 16,
+          padding: m ? '4px 8px' : '6px 12px',
+          gap: m ? '6px' : '8px',
+          fontSize: m ? '10px' : '12px',
+          iconSize: m ? 12 : 16,
           borderWidth: '2px',
-          shadowOffset: hovered ? '4px' : '3px',
+          shadowOffset: hovered ? (m ? '3px' : '4px') : (m ? '2px' : '3px'),
           borderRadius: '6px',
           letterSpacing: '0.01em',
           textTransform: 'none' as const,
-          bg: '#FFFFFF', // White background for details to show sub-hierarchy
+          bg: '#FFFFFF',
           color: '#000000',
         };
     }
@@ -93,7 +102,7 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
       data-node="true"
       data-node-id={node.id}
       aria-label={node.label}
-      className={`group ${node.level === 1 ? 'animate-node-glow' : 'animate-float'} font-ui-bold`}
+      className={`group ${node.level === 1 ? 'animate-node-glow' : ''} font-ui-bold`}
       style={{
         position: 'absolute',
         left: `${node.x}px`,
@@ -116,11 +125,20 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
         animationDelay: `${node.level * 200}ms`,
         color: styles.color,
         whiteSpace: 'nowrap',
+        // Mobile: prevent text selection and context menu on long press
+        WebkitUserSelect: 'none',
+        userSelect: 'none',
+        WebkitTouchCallout: 'none',
+        touchAction: 'manipulation', // Removes 300ms tap delay
       }}
       onClick={(e) => {
         e.stopPropagation();
         e.preventDefault();
         onClick(node);
+      }}
+      onTouchEnd={(e) => {
+        // Prevent ghost clicks and double-firing on mobile
+        e.stopPropagation();
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -128,8 +146,8 @@ const NodeComponent: React.FC<NodeProps> = ({ node, isVisible, delay, onClick })
       <div 
         className="flex-shrink-0 flex items-center justify-center"
         style={{
-          width: styles.iconSize + 8,
-          height: styles.iconSize + 8,
+          width: styles.iconSize + (isMobile ? 4 : 8),
+          height: styles.iconSize + (isMobile ? 4 : 8),
           backgroundColor: node.level === 3 ? node.color : 'rgba(0,0,0,0.05)',
           borderRadius: '4px',
           border: node.level === 3 ? '1px solid black' : 'none'

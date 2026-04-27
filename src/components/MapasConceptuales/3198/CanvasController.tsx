@@ -45,6 +45,13 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
   const isPanning = useRef(false);
   const panStart = useRef({ x: 0, y: 0, camX: 0, camY: 0 });
 
+  // Track touch movement to distinguish taps from drags
+  const touchStartPos = useRef({ x: 0, y: 0 });
+  const touchMoved = useRef(false);
+
+  // Pinch-to-zoom state
+  const lastPinchDist = useRef<number | null>(null);
+
   // Measure actual DOM widths of all node cards via offsetWidth.
   useEffect(() => {
     const measure = () => {
@@ -63,7 +70,8 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
     };
     const t1 = setTimeout(measure, 100);
     const t2 = setTimeout(measure, 800);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    const t3 = setTimeout(measure, 2000); // Extra measurement for slow mobile rendering
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
   useEffect(() => {
@@ -77,7 +85,13 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
     };
     updateSize();
     window.addEventListener('resize', updateSize);
-    return () => window.removeEventListener('resize', updateSize);
+    // Also update on orientation change (mobile)
+    window.addEventListener('orientationchange', () => {
+      setTimeout(updateSize, 200);
+    });
+    return () => {
+      window.removeEventListener('resize', updateSize);
+    };
   }, []);
 
   const stopTour = useCallback(() => {
@@ -110,34 +124,65 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
     endDrag();
   }, [endDrag]);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if (e.touches.length === 1) {
-      const target = e.target as HTMLElement;
-      if (target.closest('button[data-node]')) return;
+  // ==================== TOUCH HANDLERS (Mobile-optimized) ====================
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    const target = e.target as HTMLElement;
+    // Don't interfere with node buttons
+    if (target.closest('button[data-node]')) return;
+
+    if (e.touches.length === 1) {
+      // Single finger: pan
       if (isTouring) stopTour();
       isPanning.current = true;
+      touchMoved.current = false;
+      touchStartPos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
       startDrag(e.touches[0].clientX, e.touches[0].clientY);
+    } else if (e.touches.length === 2) {
+      // Two fingers: begin pinch-to-zoom
+      isPanning.current = false;
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      lastPinchDist.current = Math.sqrt(dx * dx + dy * dy);
     }
   }, [startDrag, isTouring, stopTour]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (isPanning.current && e.touches.length === 1) {
-      e.preventDefault();
+    e.preventDefault(); // Prevent browser pull-to-refresh and bouncing
+
+    if (e.touches.length === 1 && isPanning.current) {
+      // Single finger pan
+      const dx = Math.abs(e.touches[0].clientX - touchStartPos.current.x);
+      const dy = Math.abs(e.touches[0].clientY - touchStartPos.current.y);
+      if (dx > 5 || dy > 5) touchMoved.current = true;
       updateDrag(e.touches[0].clientX, e.touches[0].clientY, camera.scale);
+    } else if (e.touches.length === 2 && lastPinchDist.current !== null) {
+      // Pinch-to-zoom
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const ratio = dist / lastPinchDist.current;
+      
+      // Clamp zoom to reasonable bounds
+      const newScale = Math.max(0.15, Math.min(3, camera.scale * ratio));
+      setTarget({ scale: newScale });
+      lastPinchDist.current = dist;
     }
-  }, [updateDrag, camera.scale]);
+  }, [updateDrag, camera.scale, setTarget]);
 
   const handleTouchEnd = useCallback(() => {
     isPanning.current = false;
+    lastPinchDist.current = null;
     endDrag();
   }, [endDrag]);
+
+  // ==================== WHEEL HANDLER ====================
 
   const handleWheel = useCallback((e: React.WheelEvent) => {
     e.preventDefault();
     if (isTouring) stopTour();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
-    setTarget({ scale: camera.scale * delta });
+    setTarget({ scale: Math.max(0.15, Math.min(3, camera.scale * delta)) });
   }, [camera.scale, setTarget, isTouring, stopTour]);
 
   const handleClosePoster = useCallback(() => {
@@ -186,7 +231,7 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
     if (!containerSize.width || !containerSize.height) return true;
     const screenX = containerSize.width / 2 + (node.x + camera.x) * camera.scale;
     const screenY = containerSize.height / 2 + (node.y + camera.y) * camera.scale;
-    const margin = 200;
+    const margin = 300; // Increased margin for mobile to pre-render off-screen nodes
     return (
       screenX > -margin && screenX < containerSize.width + margin &&
       screenY > -margin && screenY < containerSize.height + margin
@@ -216,7 +261,14 @@ const CanvasController: React.FC<CanvasControllerProps> = ({
     <div
       ref={containerRef}
       className="fixed inset-0"
-      style={{ cursor: 'grab', touchAction: 'none', overflow: 'hidden' }}
+      style={{
+        cursor: 'grab',
+        touchAction: 'none', // Critical: prevents browser gestures from conflicting
+        overflow: 'hidden',
+        WebkitUserSelect: 'none',
+        userSelect: 'none',
+        WebkitTouchCallout: 'none',
+      }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

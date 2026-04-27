@@ -42,17 +42,34 @@ export default function MapaConceptual3198({ onBack }: MapaConceptual3198Props) 
   const categoryNodes = useMemo(() => getCategoryNodes(), []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden selection:bg-orange-500 selection:text-white" style={{ backgroundColor: '#F0F0F0' }}>
+    <div
+      className="relative w-full h-screen overflow-hidden selection:bg-orange-500 selection:text-white"
+      style={{
+        backgroundColor: '#F0F0F0',
+        /* Ensure full viewport on mobile including safe areas */
+        height: '100dvh',
+        WebkitOverflowScrolling: 'touch',
+      }}
+    >
       {/* Background with subtle vignette */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-radial-vignette" />
 
-      {/* Back Button */}
+      {/* Back Button — positioned to avoid safe-area conflicts on mobile */}
       <button
         onClick={onBack}
-        className="fixed top-6 left-8 z-[101] w-12 h-12 flex items-center justify-center bg-white border-3 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all duration-300 rounded-none group"
+        className="fixed z-[101] flex items-center justify-center bg-white border-2 sm:border-3 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:bg-[#FFCC00] active:bg-[#FFCC00] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-300 rounded-none group"
         aria-label="Volver a Mapas Conceptuales"
+        style={{
+          top: 'max(env(safe-area-inset-top, 0px), 12px)',
+          left: 'max(env(safe-area-inset-left, 0px), 12px)',
+          width: '44px',
+          height: '44px',
+          minWidth: '44px',
+          minHeight: '44px',
+          touchAction: 'manipulation',
+        }}
       >
-        <ArrowLeft size={24} className="text-black group-hover:-translate-x-1 transition-transform" />
+        <ArrowLeft size={20} className="text-black group-hover:-translate-x-1 transition-transform" />
       </button>
 
       {loading && <LoadingScreen onComplete={handleLoadComplete} />}

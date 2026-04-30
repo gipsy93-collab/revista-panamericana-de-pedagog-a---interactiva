@@ -229,7 +229,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
       }
 
       const currentArticle = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
-      const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
+      const modelsToTry = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-pro'];
       let lastError = '';
 
       for (const modelName of modelsToTry) {

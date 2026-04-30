@@ -145,15 +145,24 @@ const UP_JOURNALS_INFO = [
 
 export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { 
-      role: 'assistant', 
-      content: '¡Hola! Soy PEPA ✨ Tu asistente interactiva. Puedo ayudarte a navegar por la plataforma, profundizar en el artículo que estás leyendo o recomendarte textos de otras revistas de la Universidad Panamericana. ¿En qué te puedo ayudar hoy? 🚀' 
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = localStorage.getItem('pepa_messages');
+    return saved ? JSON.parse(saved) : [
+      { 
+        role: 'assistant', 
+        content: '¡Hola! Soy PEPA ✨ Tu asistente interactiva. Puedo ayudarte a navegar por la plataforma, profundizar en el artículo que estás leyendo o recomendarte textos de otras revistas de la Universidad Panamericana. ¿En qué te puedo ayudar hoy? 🚀' 
+      }
+    ];
+  });
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [lastGreetedArticle, setLastGreetedArticle] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Guardar mensajes en localStorage
+  useEffect(() => {
+    localStorage.setItem('pepa_messages', JSON.stringify(messages));
+  }, [messages]);
 
   // Función de scroll optimizada
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
@@ -166,18 +175,22 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
     }
   };
 
-  // Efecto para saludar si cambia de artículo
+  // Efecto para saludar si cambia de artículo (evitando duplicados)
   useEffect(() => {
-    if (activeSubPage && isOpen) {
+    if (activeSubPage && activeSubPage !== lastGreetedArticle) {
       const article = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
       if (article) {
-        setMessages(prev => [...prev, {
-          role: 'assistant',
-          content: `¡Veo que estás explorando "${article.title}" de ${article.authors}! 👀 Es una investigación fascinante. ¿Tienes alguna pregunta sobre esto o te gustaría que te resuma algo? 💡`
-        }]);
+        setLastGreetedArticle(activeSubPage);
+        // Solo saludar si el chat está abierto o si no hay muchos mensajes
+        if (isOpen || messages.length < 5) {
+          setMessages(prev => [...prev, {
+            role: 'assistant',
+            content: `¡Veo que estás explorando "${article.title}"! 👀 Es una investigación fascinante. ¿Tienes alguna pregunta sobre este artículo o te gustaría que te resuma sus puntos clave? 💡`
+          }]);
+        }
       }
     }
-  }, [activeSubPage, isOpen]);
+  }, [activeSubPage, isOpen, lastGreetedArticle, messages.length]);
 
   // Función para hacer las URLs clickeables
   const renderText = (text: string) => {
@@ -216,7 +229,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
       }
 
       const currentArticle = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
-      const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-8b', 'gemini-1.0-pro'];
+      const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
       let lastError = '';
 
       for (const modelName of modelsToTry) {
@@ -235,19 +248,26 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   
                   REGLAS DE RESOLUCIÓN:
                   1. Si el tema coincide con algún artículo de la lista, proporciónale el TÍTULO EXACTO, los AUTORES y el ENLACE DOI directamente.
-                  2. Si no hay coincidencia exacta, sugiere el más cercano o guía al usuario a la sección #articulos.
+                  2. Si el usuario está leyendo un artículo específico actualmente (indicado en CONTEXTO ACTUAL), prioriza las respuestas basadas en ese artículo.
                   3. Mantén siempre el formato de TEXTO PLANO. Prohibido usar negritas (**) o cursivas (_). Usa saltos de línea para separar.
                   
-                  BASE DE CONOCIMIENTO (ARTÍCULOS RPP):
-                  ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS').map(a => `- ${a.title} (${a.authors}). Temas: ${a.keywords}. DOI: ${a.doi}`).join('\n')}
+                  CONTEXTO ACTUAL:
+                  ${currentArticle 
+                    ? `ESTÁS LEYENDO CON EL USUARIO EL ARTÍCULO:
+                       Título: ${currentArticle.title}
+                       Autores: ${currentArticle.authors}
+                       Resumen: ${currentArticle.summary}
+                       Palabras Clave: ${currentArticle.keywords}
+                       DOI: ${currentArticle.doi}`
+                    : 'El usuario está navegando la página principal del sitio.'}
+                  
+                  BASE DE CONOCIMIENTO (OTROS ARTÍCULOS RPP):
+                  ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). Temas: ${a.keywords}. DOI: ${a.doi}`).join('\n')}
                   
                   NAV (Secciones con #): #inicio, #articulos, #semillero, #transmedia, #actualidad, #blog, #contacto.
                   
-                  CONTEXTO ACTUAL:
-                  - El usuario está viendo: ${currentArticle ? currentArticle.title : 'Navegando el sitio'}
-                  
-                  HISTORIAL:
-                  ${messages.slice(-3).map(m => `${m.role}: ${m.content}`).join('\n')}
+                  HISTORIAL RECIENTE:
+                  ${messages.slice(-5).map(m => `${m.role === 'user' ? 'Usuario' : 'PEPA'}: ${m.content}`).join('\n')}
                   
                   USUARIO PREGUNTA: ${userMessage}`
                 }]
@@ -277,6 +297,19 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
     }
   };
 
+  const clearChat = () => {
+    if (window.confirm('¿Quieres borrar el historial de conversación?')) {
+      const initialMessage: Message = { 
+        role: 'assistant', 
+        content: '¡Historial borrado! ✨ ¿En qué más puedo ayudarte hoy? 🚀' 
+      };
+      setMessages([initialMessage]);
+      localStorage.removeItem('pepa_messages');
+    }
+  };
+
+  const currentArticle = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
+
   return (
     <div className="fixed bottom-6 right-6 z-[300]">
       <AnimatePresence>
@@ -295,15 +328,27 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                 </div>
                 <div>
                   <h3 className="font-display uppercase text-sm tracking-widest font-bold">PEPA - Asistente RPP</h3>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-[10px] font-mono opacity-80 uppercase">Conectado</span>
-                  </div>
+                  {currentArticle ? (
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                      <span className="text-[10px] font-mono text-blue-300 uppercase truncate max-w-[150px]">Leyendo: {currentArticle.title}</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                      <span className="text-[10px] font-mono opacity-80 uppercase">Modo General</span>
+                    </div>
+                  )}
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform p-1 bg-white/10 rounded-lg">
-                <X size={20} />
-              </button>
+              <div className="flex gap-2">
+                <button type="button" onClick={clearChat} title="Borrar chat" className="hover:bg-white/10 p-1 rounded-lg transition-colors">
+                  <MessageSquare size={16} className="opacity-60" />
+                </button>
+                <button type="button" onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform p-1 bg-white/10 rounded-lg">
+                  <X size={20} />
+                </button>
+              </div>
             </div>
 
             {/* Messages Container */}
@@ -343,7 +388,6 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   </div>
                 </div>
               )}
-              {/* Espaciador final para asegurar que el último mensaje se vea bien */}
               <div className="h-2 shrink-0" />
             </div>
 
@@ -357,7 +401,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   type="text" 
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Pregunta sobre pedagogía..."
+                  placeholder={currentArticle ? `Pregunta sobre este artículo...` : "Pregunta sobre pedagogía..."}
                   className="flex-1 px-4 py-3 border-2 border-zine-black rounded-2xl font-sans text-sm focus:outline-none focus:ring-4 focus:ring-pop-yellow/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                 />
                 <button 

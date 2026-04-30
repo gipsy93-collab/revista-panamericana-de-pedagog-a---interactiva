@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster RPP Interactiva - Congreso de Revistas Científicas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&family=Space+Grotesk:wght@700&family=Lilita+One&family=Playfair+Display:wght@700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #fdf8f1;
+            --zine-red: #b34d4d;
+            --zine-black: #1a1a1a;
+            --pop-yellow: #fccb06;
+            --pop-blue: #0f3896;
+            --pop-teal: #5bc2a8;
+            --pop-pink: #e81e61;
+            --brutal-stroke: 4px solid #1a1a1a;
+            --brutal-shadow: 12px 12px 0px 0px rgba(26,26,26,1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: var(--zine-black);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* Poster Container - Horizontal A3 Proportions (approx) */
+        .poster {
+            width: 1600px;
+            height: 1100px;
+            background: var(--cream);
+            border: 10px solid var(--zine-black);
+            position: relative;
+            padding: 30px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: 20px;
+            box-shadow: 0 0 100px rgba(0,0,0,0.5);
+            transform: scale(0.6);
+            transform-origin: center;
+        }
+
+        @media print {
+            html, body { 
+                margin: 0 !important; 
+                padding: 0 !important; 
+                width: 420mm;
+                height: 297mm;
+                background: white;
+                overflow: hidden;
+            }
+            .poster {
+                transform: scale(1) !important;
+                border: none !important;
+                width: 420mm !important;
+                height: 297mm !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+            }
+            @page {
+                size: A3 landscape;
+                margin: 0;
+            }
+        }
+
+        /* Background Noise */
+        .poster::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            border-bottom: 8px solid var(--zine-black);
+            padding-bottom: 15px;
+            z-index: 1;
+        }
+
+        .title-block h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 60px;
+            text-transform: uppercase;
+            line-height: 1;
+            color: var(--zine-red);
+            -webkit-text-stroke: 1.5px var(--zine-black);
+            margin-bottom: 10px;
+            max-width: 1100px;
+        }
+
+        .title-block p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            background: var(--pop-yellow);
+            display: inline-block;
+            padding: 5px 20px;
+            border: 3px solid var(--zine-black);
+            box-shadow: 6px 6px 0px var(--zine-black);
+            font-weight: bold;
+        }
+
+        .authors-block {
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        .authors-block strong {
+            background: var(--pop-blue);
+            color: white;
+            padding: 2px 10px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* Content Grid */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr 1fr;
+            gap: 30px;
+            z-index: 1;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            border: var(--brutal-stroke);
+            box-shadow: 10px 10px 0px var(--zine-black);
+            padding: 20px;
+            position: relative;
+        }
+
+        .card h2 {
+            font-family: 'Lilita One', cursive;
+            font-size: 32px;
+            color: var(--pop-blue);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: var(--pop-pink);
+            border: 3px solid var(--zine-black);
+            display: inline-block;
+        }
+
+        .card p, .card li {
+            font-size: 19px;
+            line-height: 1.3;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .card li::before {
+            content: "→";
+            margin-right: 12px;
+            font-weight: bold;
+            color: var(--zine-red);
+        }
+
+        /* Visual Center */
+        .visual-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        .main-image {
+            width: 100%;
+            border: 8px solid var(--zine-black);
+            box-shadow: 20px 20px 0px var(--pop-yellow);
+            background: white;
+            padding: 15px;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .ecosystem-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .tag {
+            padding: 10px 25px;
+            border: 4px solid var(--zine-black);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            background: white;
+            box-shadow: 6px 6px 0px var(--zine-black);
+        }
+
+        .tag:nth-child(1) { background: var(--pop-teal); }
+        .tag:nth-child(2) { background: var(--pop-yellow); }
+        .tag:nth-child(3) { background: var(--pop-pink); }
+        .tag:nth-child(4) { background: var(--pop-blue); color: white; }
+
+        /* Highlight box */
+        .highlight {
+            background: var(--pop-yellow);
+            padding: 2px 8px;
+            font-weight: bold;
+            border: 2px solid var(--zine-black);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 8px solid var(--zine-black);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
+            color: var(--zine-red);
+            text-transform: uppercase;
+        }
+
+        .footer-info {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Decorative Elements */
+        .halftone-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: radial-gradient(circle, #000 1.5px, transparent 1.5px);
+            background-size: 15px 15px;
+            opacity: 0.05;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="halftone-bg"></div>
+        
+        <header>
+            <div class="title-block">
+                <h1>Revistas científicas como ecosistemas transmedia del conocimiento</h1>
+                <p>ARQUITECTURA Y APLICACIÓN EN LA REVISTA PANAMERICANA DE PEDAGOGÍA</p>
+            </div>
+            <div class="authors-block">
+                <strong>Gipsy Lozano</strong><br>
+                <span>Universidad de Granada, España</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <!-- COL 1: PROBLEMA & PROPUESTA -->
+            <section>
+                <div class="card" style="border-color: var(--pop-pink);">
+                    <h2>EL PROBLEMA</h2>
+                    <p>Las revistas científicas suelen pensarse como repositorios de conocimiento, pero no siempre como entornos de mediación, formación y re-circulación expandida del conocimiento que dialogue con la sociedad.</p>
+                    <p>Enfrentan desafíos de <span class="highlight">visibilidad académica</span> e interacción local/internacional sin estrategias de comunicación que las conecten con docentes, estudiantes y ciudadanía.</p>
+                </div>
+
+                <div class="card" style="background: var(--pop-blue); color: white;">
+                    <h2 style="color: var(--pop-yellow);">LA PROPUESTA</h2>
+                    <p style="color: white;">Consolidar las revistas como <span style="color: var(--pop-yellow); font-weight: bold;">ecosistemas transmedia</span> cuya arquitectura integra la publicación científica con recursos pedagógicos y estrategias multiplataforma.</p>
+                    <p style="color: white;">Un ecosistema que va más allá del PDF para crear nuevas formas de socialización del conocimiento.</p>
+                </div>
+            </section>
+
+            <!-- COL 2: VISUAL CENTER & RPP -->
+            <section class="visual-center">
+                <div class="main-image">
+                    <img src="C:/Users/gipsy/.gemini/antigravity/brain/9cf358f5-1a8a-4e62-917d-e8ba42add9a5/rpp_transmedia_ecosystem_1777481915825.png" alt="RPP Transmedia Ecosystem">
+                </div>
+                
+                <div class="ecosystem-tags">
+                    <div class="tag">CIENCIA ABIERTA</div>
+                    <div class="tag">PODCAST</div>
+                    <div class="tag">INTERACTIVOS</div>
+                    <div class="tag">BLOG</div>
+                </div>
+
+                <div class="card" style="width: 100%; border-color: var(--pop-teal);">
+                    <h2>ARQUITECTURA RPP</h2>
+                    <p>La RPP es el núcleo de un entorno donde el lector circula entre formatos: redes sociales, blog, podcasts, mapas mentales y recursos de aprendizaje.</p>
+                    <p>Un conjunto de medios y dispositivos que comparten un universo de contenidos con lógicas de lectura y comunidades distintas.</p>
+                </div>
+            </section>
+
+            <!-- COL 3: APLICACIÓN & APORTE -->
+            <section>
+                <div class="card" style="border-color: var(--pop-yellow);">
+                    <h2>APLICACIÓN PRÁCTICA</h2>
+                    <p><strong>Artículos Interactivos:</strong> Storylearning y gamificación en la lectura científica.</p>
+                    <p><strong>Semillero de Autores:</strong> Espacio inclusivo con preservación <span class="highlight">ARK</span> y ciencia abierta.</p>
+                    <p><strong>Semillero de Editores:</strong> Formación en curaduría, moderación técnica y armonización textual.</p>
+                </div>
+
+                <div class="card" style="border-color: var(--zine-red);">
+                    <h2>EL APORTE</h2>
+                    <p>Muestra que una revista puede funcionar como dispositivo de <span class="highlight">mediación pedagógica</span>, multiplicando entradas de acceso y fortaleciendo la fidelización de audiencias.</p>
+                    <ul>
+                        <li>Fomenta comunidades estables de lectores.</li>
+                        <li>Apuesta por la formación de autores/editores.</li>
+                        <li>Integra actualidad institucional vía RSS.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-logo">16º Congreso Internacional sobre Revistas Científicas</div>
+            <div class="footer-info">
+                Universidad de Castilla-La Mancha<br>
+                Cuenca (España) Mayo 2026
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function scalePoster() {
+            const poster = document.querySelector('.poster');
+            const scale = Math.min((window.innerWidth - 80) / 1600, (window.innerHeight - 80) / 1100);
+            poster.style.transform = `scale(${scale})`;
+        }
+        window.addEventListener('resize', scalePoster);
+        scalePoster();
+    </script>
+</body>
+</html>

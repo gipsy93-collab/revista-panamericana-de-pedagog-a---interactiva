@@ -21,6 +21,7 @@ import {
   ActualidadToBlogWave,
   BlogToFooterWave
 } from './components/OrganicWaveDivider';
+import { ChatBot } from './components/ChatBot';
 
 // Secciones lazy
 const ArticulosInteractivos = lazy(() => import('./components/ArticulosInteractivos'));
@@ -65,6 +66,7 @@ const MapaConceptual3557 = lazy(() => import('./components/Multipath/Multipath35
 const MapaConceptual3198 = lazy(() => import('./components/MapasConceptuales/3198/MapaConceptual3198'));
 const Multipath3453 = lazy(() => import('./components/Multipath/Multipath3453'));
 const Multipath3588 = lazy(() => import('./components/Multipath/Multipath3588'));
+const MindMapSwitcher = lazy(() => import('./components/MapasConceptuales/MindMapSwitcher'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -365,7 +367,26 @@ export default function App() {
           </motion.div>
         )}
 
+        {activeSubPage && activeSubPage.startsWith('mm_') && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-[#F0F0F0] overflow-y-auto overscroll-none"
+            data-lenis-prevent="true"
+          >
+            <Suspense fallback={<PageLoader />}>
+              <MindMapSwitcher 
+                mapId={activeSubPage} 
+                onBack={() => setActiveSubPage('mapas_conceptuales')} 
+              />
+            </Suspense>
+          </motion.div>
+        )}
+
         {activeSubPage && 
+          !activeSubPage.startsWith('mm_') &&
+          !activeSubPage.startsWith('mapa_') &&
           !hardcodedArticleIds.includes(activeSubPage) && 
           activeSubPage !== 'semillero_autores' && 
           activeSubPage !== 'semillero_editores' && 
@@ -455,6 +476,8 @@ export default function App() {
         </>
       )}
 
+
+      <ChatBot activeSubPage={activeSubPage} />
     </div>
   );
 }

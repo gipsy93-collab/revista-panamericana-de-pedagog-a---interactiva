@@ -308,14 +308,17 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
             contents: [{ parts: [{ text: systemPrompt }] }]
           };
 
-          // Si quiere imagen, activar generación nativa de Gemini
+          // Si quiere imagen, activar el modelo especializado
+          let currentModel = modelName;
           if (wantsImage) {
+            currentModel = 'gemini-3-pro-image-preview';
             requestBody.generationConfig = {
-              responseModalities: ['TEXT', 'IMAGE']
+              responseModalities: ['TEXT', 'IMAGE'],
+              quality: 'pro'
             };
           }
 
-          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${currentModel}:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestBody)
@@ -325,33 +328,48 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
             const data = await response.json();
             const parts = data.candidates?.[0]?.content?.parts || [];
             
-            // Extraer texto e imagen de la respuesta nativa de Gemini
             let botText = '';
             let imageUrl = undefined;
             
             for (const part of parts) {
-              if (part.text) {
-                botText += part.text;
-              }
+              if (part.text) botText += part.text;
               if (part.inlineData) {
                 imageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
               }
             }
 
-            if (!botText && !imageUrl) {
-              botText = 'No pude procesar eso. Intenta de nuevo.';
-            }
-
             setMessages(prev => [...prev, { 
               role: 'assistant', 
-              content: botText || '🎨 Aquí tienes tu imagen:',
+              content: botText || (imageUrl ? '🎨 He generado esta infografía profesional para ti:' : 'No pude procesar eso.'),
               imageUrl: imageUrl
             }]);
             setIsLoading(false);
             return;
           } else {
             const errorData = await response.json();
-            lastError = errorData.error?.message || `Error ${response.status}`;
+            const errorMsg = errorData.error?.message || `Error ${response.status}`;
+            
+            // Fallback si el modelo Pro falla o está restringido
+            if (wantsImage && (errorMsg.includes('not available') || errorMsg.includes('not supported') || response.status === 404)) {
+              // Reintentar con el modelo de texto normal
+              const textOnlyResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  contents: [{ parts: [{ text: systemPrompt + '\n\nNOTA: El modelo Nano Banana Pro no está disponible. Responde con texto explicando la limitación regional para imágenes, pero describe la infografía.' }] }]
+                })
+              });
+
+              if (textOnlyResponse.ok) {
+                const textData = await textOnlyResponse.json();
+                const textResponse = textData.candidates?.[0]?.content?.parts?.[0]?.text || 'No pude generar la imagen.';
+                setMessages(prev => [...prev, { role: 'assistant', content: textResponse }]);
+                setIsLoading(false);
+                return;
+              }
+            }
+            
+            lastError = errorMsg;
             if (response.status !== 404) break;
           }
         } catch (e: any) { lastError = e.message; }

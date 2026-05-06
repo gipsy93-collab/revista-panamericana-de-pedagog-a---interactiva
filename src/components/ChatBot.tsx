@@ -114,6 +114,8 @@ const RPP_KNOWLEDGE = [
 interface Message {
   role: 'user' | 'assistant';
   content: string;
+  imageUrl?: string;
+  isImageLoading?: boolean;
 }
 
 interface ChatBotProps {
@@ -293,6 +295,9 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   - Mantén siempre el formato de TEXTO PLANO. Prohibido usar negritas (**) o cursivas (_). Usa saltos de línea.
                   - Usa muchos emojis para mantener tu personalidad ✨🚀💡.
                   - Si detectas una pregunta sobre datos, intenta explicar la tendencia que ves en el texto.
+                  
+                  HABILIDAD ESPECIAL: GENERACIÓN DE IMÁGENES
+                  Si el usuario te pide una imagen, un dibujo o una ilustración (o si crees que una imagen ayudaría a explicar un concepto del artículo), DEBES incluir al final de tu respuesta el comando especial: [DIBUJAR: "descripción detallada del prompt en INGLÉS"]. Solo usa este comando si es relevante.
 
                   BASE DE CONOCIMIENTO (OTROS ARTÍCULOS RPP):
                   ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). DOI: ${a.doi}`).join('\n')}
@@ -308,8 +313,25 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
 
           if (response.ok) {
             const data = await response.json();
-            const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No pude procesar eso.';
-            setMessages(prev => [...prev, { role: 'assistant', content: botResponse }]);
+            let botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No pude procesar eso.';
+            
+            // Lógica para extraer prompt de imagen
+            let imageUrl = undefined;
+            const drawMatch = botResponse.match(/\[DIBUJAR:\s*["'](.+?)["']\]/);
+            
+            if (drawMatch) {
+              const prompt = drawMatch[1];
+              // Limpiar el tag del texto para que no se vea feo
+              botResponse = botResponse.replace(/\[DIBUJAR:\s*["'](.+?)["']\]/, '').trim();
+              // Usar Pollinations como motor de renderizado (Rápido y eficiente para demos)
+              imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
+            }
+
+            setMessages(prev => [...prev, { 
+              role: 'assistant', 
+              content: botResponse,
+              imageUrl: imageUrl
+            }]);
             setIsLoading(false);
             return;
           } else {
@@ -406,9 +428,19 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                       ? 'bg-zine-red text-white ml-4' 
                       : 'bg-white text-zine-black mr-4'
                   }`}>
-                    <p className="text-[13px] md:text-sm font-sans leading-relaxed whitespace-pre-wrap break-words">
+                    <div className="text-[13px] md:text-sm font-sans leading-relaxed whitespace-pre-wrap break-words">
                       {renderText(m.content)}
-                    </p>
+                      {m.imageUrl && (
+                        <div className="mt-4 rounded-xl overflow-hidden border-2 border-zine-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-zine-black/5">
+                          <img 
+                            src={m.imageUrl} 
+                            alt="Imagen generada por PEPA" 
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform cursor-pointer"
+                            onClick={() => window.open(m.imageUrl, '_blank')}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}

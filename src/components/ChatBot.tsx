@@ -313,8 +313,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
           if (wantsImage) {
             currentModel = 'gemini-3-pro-image-preview';
             requestBody.generationConfig = {
-              responseModalities: ['TEXT', 'IMAGE'],
-              quality: 'pro'
+              responseModalities: ['TEXT', 'IMAGE']
             };
           }
 

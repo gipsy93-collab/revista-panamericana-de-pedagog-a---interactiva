@@ -163,7 +163,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
   // Cargar contexto del artículo cuando cambie la subpágina
   useEffect(() => {
     const loadContext = async () => {
-      if (activeSubPage && activeSubPage.match(/^\d+$/)) { // Si es un ID numérico (artículo)
+      if (activeSubPage && activeSubPage.match(new RegExp('^\\d+$'))) { // Si es un ID numérico (artículo)
         try {
           const response = await fetch(`/content/articles/${activeSubPage}.md`);
           if (response.ok) {
@@ -219,7 +219,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
 
   // Función para hacer las URLs clickeables
   const renderText = (text: string) => {
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const urlRegex = new RegExp('(https?:\\/\\/[^\\s]+)', 'g');
     return text.split(urlRegex).map((part, i) => {
       if (part.match(urlRegex)) {
         return <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline text-blue-600 font-bold hover:text-pop-blue transition-colors">{part}</a>;

@@ -59,17 +59,33 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      // Registrar Service Worker para PWA
+      // Script para forzar la actualización: Desregistrar Service Workers y limpiar caché
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister().then(function(success) {
+              if (success) console.log('[PWA] Service Worker desregistrado con éxito.');
+            });
+          }
+        });
+      }
+      
+      if (window.caches) {
+        caches.keys().then(function(names) {
+          for (let name of names) {
+            caches.delete(name).then(function() {
+              console.log('[PWA] Caché eliminada:', name);
+            });
+          }
+        });
+      }
+
+      // El código de registro original se mantiene comentado para evitar que se reactive
       /*
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-              console.log('[PWA] SW registered:', registration.scope);
-            })
-            .catch((error) => {
-              console.log('[PWA] SW registration failed:', error);
-            });
+            ...
         });
       }
       */

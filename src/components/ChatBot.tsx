@@ -156,8 +156,33 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
   });
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [articleContext, setArticleContext] = useState<string | null>(null);
   const [lastGreetedArticle, setLastGreetedArticle] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Cargar contexto del artículo cuando cambie la subpágina
+  useEffect(() => {
+    const loadContext = async () => {
+      if (activeSubPage && activeSubPage.match(/^\d+$/)) { // Si es un ID numérico (artículo)
+        try {
+          const response = await fetch(`/content/articles/${activeSubPage}.md`);
+          if (response.ok) {
+            const text = await response.text();
+            // Limitar a ~60K caracteres para no exceder el contexto de Gemini
+            setArticleContext(text.slice(0, 60000));
+          } else {
+            setArticleContext(null);
+          }
+        } catch (error) {
+          console.error("Error cargando contexto de PEPA:", error);
+          setArticleContext(null);
+        }
+      } else {
+        setArticleContext(null);
+      }
+    };
+    loadContext();
+  }, [activeSubPage]);
 
   // Guardar mensajes en localStorage
   useEffect(() => {
@@ -185,7 +210,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
         if (isOpen || messages.length < 5) {
           setMessages(prev => [...prev, {
             role: 'assistant',
-            content: `¡Veo que estás explorando "${article.title}"! 👀 Es una investigación fascinante. ¿Tienes alguna pregunta sobre este artículo o te gustaría que te resuma sus puntos clave? 💡`
+            content: `¡Veo que estás explorando "${article.title}"! 👀 Es una investigación fascinante. He cargado el texto completo para ayudarte con cualquier duda técnica. ¿Qué te gustaría saber? 💡`
           }]);
         }
       }
@@ -230,7 +255,6 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
 
       const currentArticle = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
       const modelsToTry = [
-        'gemini-2.5-flash', 
         'gemini-2.0-flash', 
         'gemini-1.5-flash', 
         'gemini-1.5-flash-8b', 
@@ -247,34 +271,36 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
               contents: [{
                 parts: [{
                   text: `Eres "PEPA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía). 
-                  Tu personalidad es MUY jovial, entusiasta y llena de emojis ✨. Respondes con energía y resolución.
-                  
+                  Tu personalidad es MUY jovial, entusiasta y llena de emojis ✨, pero como experta académica, tus respuestas deben ser PRECISAS y basadas en evidencia.
+
                   TU MISIÓN:
-                  Eres una experta en el catálogo de la RPP. Si el usuario pregunta por un tema (ej. ciberacoso, cine, deserción, tecnología), DEBES buscar en tu BASE DE CONOCIMIENTO y recomendar el artículo específico que más se acerque.
-                  
-                  REGLAS DE RESOLUCIÓN:
-                  1. Si el tema coincide con algún artículo de la lista, proporciónale el TÍTULO EXACTO, los AUTORES y el ENLACE DOI directamente.
-                  2. Si el usuario está leyendo un artículo específico actualmente (indicado en CONTEXTO ACTUAL), prioriza las respuestas basadas en ese artículo.
-                  3. Mantén siempre el formato de TEXTO PLANO. Prohibido usar negritas (**) o cursivas (_). Usa saltos de línea para separar.
-                  
-                  CONTEXTO ACTUAL:
-                  ${currentArticle 
-                    ? `ESTÁS LEYENDO CON EL USUARIO EL ARTÍCULO:
-                       Título: ${currentArticle.title}
-                       Autores: ${currentArticle.authors}
-                       Resumen: ${currentArticle.summary}
-                       Palabras Clave: ${currentArticle.keywords}
-                       DOI: ${currentArticle.doi}`
-                    : 'El usuario está navegando la página principal del sitio.'}
-                  
+                  Ayudar al usuario a navegar por la revista y, sobre todo, explicar los artículos científicos con rigor.
+
+                  INSTRUCCIONES DE CONTEXTO:
+                  ${articleContext 
+                    ? `1. El usuario está LEYENDO UN ARTÍCULO. Tienes acceso al TEXTO COMPLETO a continuación.
+                       2. Usa este texto como tu FUENTE PRIMARIA de información. 
+                       3. Si te preguntan sobre metodología, resultados o autores de este texto, DEBES citar la información exacta.
+                       4. Si la respuesta no está en el texto, indícalo educadamente.
+
+                       --- DOCUMENTO DE REFERENCIA (TEXTO COMPLETO) ---
+                       ${articleContext}
+                       -----------------------------------------------`
+                    : `1. El usuario está en una navegación general.
+                       2. Recomienda artículos basados en tu BASE DE CONOCIMIENTO general.`
+                  }
+
+                  REGLAS DE FORMATO:
+                  - Mantén siempre el formato de TEXTO PLANO. Prohibido usar negritas (**) o cursivas (_). Usa saltos de línea.
+                  - Usa muchos emojis para mantener tu personalidad ✨🚀💡.
+                  - Si detectas una pregunta sobre datos, intenta explicar la tendencia que ves en el texto.
+
                   BASE DE CONOCIMIENTO (OTROS ARTÍCULOS RPP):
-                  ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). Temas: ${a.keywords}. DOI: ${a.doi}`).join('\n')}
-                  
-                  NAV (Secciones con #): #inicio, #articulos, #semillero, #transmedia, #actualidad, #blog, #contacto.
-                  
+                  ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). DOI: ${a.doi}`).join('\n')}
+
                   HISTORIAL RECIENTE:
                   ${messages.slice(-5).map(m => `${m.role === 'user' ? 'Usuario' : 'PEPA'}: ${m.content}`).join('\n')}
-                  
+
                   USUARIO PREGUNTA: ${userMessage}`
                 }]
               }]

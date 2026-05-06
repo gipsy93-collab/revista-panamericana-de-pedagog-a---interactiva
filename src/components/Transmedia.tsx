@@ -225,7 +225,3 @@ export default function Transmedia({ onOpenSubPage }: Props) {
     </section>
   );
 }
-/section>
-  );
-}
-

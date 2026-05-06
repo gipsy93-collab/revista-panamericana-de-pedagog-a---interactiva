@@ -325,10 +325,34 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
             
             if (drawMatch) {
               const prompt = drawMatch[1];
-              // Limpiar el tag del texto para que no se vea feo
+              // Limpiar el tag del texto
               botResponse = botResponse.replace(/\[DIBUJAR:\s*["'](.+?)["']\]/, '').trim();
-              // Usar Pollinations como motor de renderizado (Rápido y eficiente para demos)
-              imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
+              
+              try {
+                // LLAMADA AL CEREBRO REAL DE IMAGEN (NANO BANANA / IMAGEN 3)
+                const imgResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${apiKey}`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    instances: [{ prompt: prompt }],
+                    parameters: { sampleCount: 1 }
+                  })
+                });
+
+                if (imgResponse.ok) {
+                  const imgData = await imgResponse.json();
+                  const base64Image = imgData.predictions?.[0]?.bytesBase64Encoded;
+                  if (base64Image) {
+                    imageUrl = `data:image/png;base64,${base64Image}`;
+                  }
+                } else {
+                  // Fallback si la API de Imagen está saturada o no disponible en la región
+                  imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
+                }
+              } catch (err) {
+                console.error("Error con Imagen 3:", err);
+                imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
+              }
             }
 
             setMessages(prev => [...prev, { 

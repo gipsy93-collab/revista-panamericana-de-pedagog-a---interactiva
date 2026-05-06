@@ -256,23 +256,13 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
       }
 
       const currentArticle = RPP_KNOWLEDGE.find(a => a.id === activeSubPage);
-      const modelsToTry = [
-        'gemini-flash-latest',
-        'gemini-flash-lite-latest',
-        'gemini-pro-latest'
-      ];
-      let lastError = '';
-
-      for (const modelName of modelsToTry) {
-        try {
-          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{
-                parts: [{
-                  text: `Eres "PEPA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía). 
-                  Tu personalidad es MUY jovial, entusiasta y llena de emojis ✨, pero como experta académica, tus respuestas deben ser PRECISAS y basadas en evidencia.
+      
+      // Detectar si el usuario quiere una imagen
+      const imageKeywords = ['imagen', 'dibujo', 'dibuja', 'ilustra', 'ilustración', 'infografía', 'genera una imagen', 'crea una imagen', 'foto', 'visualiza', 'diseña', 'picture', 'draw', 'image'];
+      const wantsImage = imageKeywords.some(kw => userMessage.toLowerCase().includes(kw));
+      
+      const systemPrompt = `Eres "PEPA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía). 
+                  Tu personalidad es MUY jovial, entusiasta y llena de emojis, pero como experta académica, tus respuestas deben ser PRECISAS y basadas en evidencia.
 
                   TU MISIÓN:
                   Ayudar al usuario a navegar por la revista y, sobre todo, explicar los artículos científicos con rigor.
@@ -293,15 +283,9 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
 
                   REGLAS DE FORMATO:
                   - Mantén siempre el formato de TEXTO PLANO. Prohibido usar negritas (**) o cursivas (_). Usa saltos de línea.
-                  - Usa muchos emojis para mantener tu personalidad ✨🚀💡.
+                  - Usa muchos emojis para mantener tu personalidad.
                   - Si detectas una pregunta sobre datos, intenta explicar la tendencia que ves en el texto.
-                  
-                  HABILIDAD ESPECIAL: GENERACIÓN DE IMÁGENES (Nano Banana Ecosystem)
-                  Eres parte de la familia de modelos "Nano Banana". Si el usuario te pide una imagen o infografía:
-                  1. Usa el comando: [DIBUJAR: "descripción detallada en INGLÉS"].
-                  2. Como modelo Nano Banana Pro, ahora PUEDES pedir infografías con texto, pero descríbelo como "high-fidelity typography" y "clear academic layout".
-                  3. ESTILO: "Nano Banana 2 High-Fidelity style", "Professional academic infographic", "Minimalist vector".
-                  4. Usa tu razonamiento espacial de Gemini 3 para describir dónde va cada elemento. ✨🎨🍌
+                  ${wantsImage ? '\n                  INSTRUCCIÓN ESPECIAL: El usuario quiere una imagen. Genera una imagen relevante junto con tu explicación textual. Usa un estilo profesional, académico y de alta calidad.' : ''}
 
                   BASE DE CONOCIMIENTO (OTROS ARTÍCULOS RPP):
                   ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). DOI: ${a.doi}`).join('\n')}
@@ -309,55 +293,58 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   HISTORIAL RECIENTE:
                   ${messages.slice(-5).map(m => `${m.role === 'user' ? 'Usuario' : 'PEPA'}: ${m.content}`).join('\n')}
 
-                  USUARIO PREGUNTA: ${userMessage}`
-                }]
-              }]
-            })
+                  USUARIO PREGUNTA: ${userMessage}`;
+
+      const modelsToTry = [
+        'gemini-2.0-flash-exp',
+        'gemini-flash-latest',
+        'gemini-pro-latest'
+      ];
+      let lastError = '';
+
+      for (const modelName of modelsToTry) {
+        try {
+          const requestBody: any = {
+            contents: [{ parts: [{ text: systemPrompt }] }]
+          };
+
+          // Si quiere imagen, activar generación nativa de Gemini
+          if (wantsImage) {
+            requestBody.generationConfig = {
+              responseModalities: ['TEXT', 'IMAGE']
+            };
+          }
+
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
           });
 
           if (response.ok) {
             const data = await response.json();
-            let botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No pude procesar eso.';
+            const parts = data.candidates?.[0]?.content?.parts || [];
             
-            // Lógica para extraer prompt de imagen
+            // Extraer texto e imagen de la respuesta nativa de Gemini
+            let botText = '';
             let imageUrl = undefined;
-            const drawMatch = botResponse.match(/\[DIBUJAR:\s*["'](.+?)["']\]/);
             
-            if (drawMatch) {
-              const prompt = drawMatch[1];
-              // Limpiar el tag del texto
-              botResponse = botResponse.replace(/\[DIBUJAR:\s*["'](.+?)["']\]/, '').trim();
-              
-              try {
-                // LLAMADA AL CEREBRO REAL DE IMAGEN (NANO BANANA / IMAGEN 3)
-                const imgResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${apiKey}`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    instances: [{ prompt: prompt }],
-                    parameters: { sampleCount: 1 }
-                  })
-                });
-
-                if (imgResponse.ok) {
-                  const imgData = await imgResponse.json();
-                  const base64Image = imgData.predictions?.[0]?.bytesBase64Encoded;
-                  if (base64Image) {
-                    imageUrl = `data:image/png;base64,${base64Image}`;
-                  }
-                } else {
-                  // Fallback si la API de Imagen está saturada o no disponible en la región
-                  imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
-                }
-              } catch (err) {
-                console.error("Error con Imagen 3:", err);
-                imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
+            for (const part of parts) {
+              if (part.text) {
+                botText += part.text;
               }
+              if (part.inlineData) {
+                imageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
+              }
+            }
+
+            if (!botText && !imageUrl) {
+              botText = 'No pude procesar eso. Intenta de nuevo.';
             }
 
             setMessages(prev => [...prev, { 
               role: 'assistant', 
-              content: botResponse,
+              content: botText || '🎨 Aquí tienes tu imagen:',
               imageUrl: imageUrl
             }]);
             setIsLoading(false);

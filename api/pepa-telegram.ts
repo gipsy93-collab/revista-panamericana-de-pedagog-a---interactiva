@@ -2,7 +2,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 // ============================================
-// BASE DE CONOCIMIENTO COMPLETA DE PEPA
+// BASE DE CONOCIMIENTO COMPLETA DE PANA
 // ============================================
 const RPP_KNOWLEDGE = [
   { 
@@ -128,7 +128,7 @@ function buildSystemPrompt(userText: string): string {
     `- ${j.name}: ${j.focus} ${j.relevance}`
   ).join('\n');
 
-  return `Eres "PEPA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía) de la Universidad Panamericana.
+  return `Eres "PANA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía) de la Universidad Panamericana.
 Tu personalidad es MUY jovial, entusiasta y llena de emojis, pero como experta académica, tus respuestas son PRECISAS y basadas en evidencia.
 
 TU MISIÓN:
@@ -159,7 +159,7 @@ ${articlesKB}
 
 PLATAFORMA INTERACTIVA:
 La RPP cuenta con una plataforma transmedia interactiva en: https://revista-panamericana-de-pedagog-a-i.vercel.app
-Ahí los usuarios pueden leer los artículos de forma inmersiva, con visualizaciones de datos interactivas, juegos educativos y esta misma IA (PEPA) integrada en la web.
+Ahí los usuarios pueden leer los artículos de forma inmersiva, con visualizaciones de datos interactivas, juegos educativos y esta misma IA (PANA) integrada en la web.
 
 Usuario pregunta: ${userText}`;
 }
@@ -203,7 +203,7 @@ async function sendTelegramMessage(chatId: number, text: string): Promise<void> 
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
-    return res.status(200).send('PEPA Bot is running! 🤖✨');
+    return res.status(200).send('PANA Bot is running! 🤖✨');
   }
 
   const { message } = req.body;
@@ -216,7 +216,7 @@ export default async function handler(req: any, res: any) {
 
   // Comando /start
   if (userText === '/start') {
-    const welcomeMsg = `¡Hola! Soy PEPA 🤖✨ Tu asistente de investigación de la Revista Panamericana de Pedagogía (RPP) de la Universidad Panamericana.
+    const welcomeMsg = `¡Hola! Soy PANA 🤖✨ Tu asistente de investigación de la Revista Panamericana de Pedagogía (RPP) de la Universidad Panamericana.
 
 Puedo ayudarte con:
 
@@ -241,7 +241,7 @@ Escríbeme lo que necesites. Por ejemplo:
   }
 
   try {
-    // Indicar que PEPA está "escribiendo"
+    // Indicar que PANA está "escribiendo"
     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendChatAction`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -287,7 +287,7 @@ Escríbeme lo que necesites. Por ejemplo:
     return res.status(200).json({ ok: true });
     
   } catch (error: any) {
-    console.error('Error en PEPA Telegram:', error);
+    console.error('Error en PANA Telegram:', error);
     
     // Intentar notificar al usuario del error
     try {

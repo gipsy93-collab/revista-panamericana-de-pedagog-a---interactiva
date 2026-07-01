@@ -148,11 +148,11 @@ const UP_JOURNALS_INFO = [
 export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(() => {
-    const saved = localStorage.getItem('pepa_messages');
+    const saved = localStorage.getItem('pana_messages');
     return saved ? JSON.parse(saved) : [
       { 
         role: 'assistant', 
-        content: '¡Hola! Soy PEPA ✨ Tu asistente interactiva. Puedo ayudarte a navegar por la plataforma, profundizar en el artículo que estás leyendo o recomendarte textos de otras revistas de la Universidad Panamericana. ¿En qué te puedo ayudar hoy? 🚀' 
+        content: '¡Hola! Soy PANA ✨ Tu asistente interactiva. Puedo ayudarte a navegar por la plataforma, profundizar en el artículo que estás leyendo o recomendarte textos de otras revistas de la Universidad Panamericana. ¿En qué te puedo ayudar hoy? 🚀' 
       }
     ];
   });
@@ -176,7 +176,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
             setArticleContext(null);
           }
         } catch (error) {
-          console.error("Error cargando contexto de PEPA:", error);
+          console.error("Error cargando contexto de PANA:", error);
           setArticleContext(null);
         }
       } else {
@@ -188,7 +188,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
 
   // Guardar mensajes en localStorage
   useEffect(() => {
-    localStorage.setItem('pepa_messages', JSON.stringify(messages));
+    localStorage.setItem('pana_messages', JSON.stringify(messages));
   }, [messages]);
 
   // Función de scroll optimizada
@@ -261,7 +261,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
       const imageKeywords = ['imagen', 'dibujo', 'dibuja', 'ilustra', 'ilustración', 'infografía', 'genera una imagen', 'crea una imagen', 'foto', 'visualiza', 'diseña', 'picture', 'draw', 'image'];
       const wantsImage = imageKeywords.some(kw => userMessage.toLowerCase().includes(kw));
       
-      const systemPrompt = `Eres "PEPA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía). 
+      const systemPrompt = `Eres "PANA", la asistente de investigación de la RPP (Revista Panamericana de Pedagogía). 
                   Tu personalidad es MUY jovial, entusiasta y llena de emojis, pero como experta académica, tus respuestas deben ser PRECISAS y basadas en evidencia.
 
                   TU MISIÓN:
@@ -291,7 +291,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   ${RPP_KNOWLEDGE.filter(a => a.id !== 'UP_JOURNALS' && a.id !== activeSubPage).map(a => `- ${a.title} (${a.authors}). DOI: ${a.doi}`).join('\n')}
 
                   HISTORIAL RECIENTE:
-                  ${messages.slice(-5).map(m => `${m.role === 'user' ? 'Usuario' : 'PEPA'}: ${m.content}`).join('\n')}
+                  ${messages.slice(-5).map(m => `${m.role === 'user' ? 'Usuario' : 'PANA'}: ${m.content}`).join('\n')}
 
                   USUARIO PREGUNTA: ${userMessage}`;
 
@@ -389,7 +389,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
         content: '¡Historial borrado! ✨ ¿En qué más puedo ayudarte hoy? 🚀' 
       };
       setMessages([initialMessage]);
-      localStorage.removeItem('pepa_messages');
+      localStorage.removeItem('pana_messages');
     }
   };
 
@@ -412,7 +412,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                   <Bot size={22} className="text-zine-black" />
                 </div>
                 <div>
-                  <h3 className="font-display uppercase text-sm tracking-widest font-bold">PEPA - Asistente RPP</h3>
+                  <h3 className="font-display uppercase text-sm tracking-widest font-bold">PANA - Asistente RPP</h3>
                   {currentArticle ? (
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -466,7 +466,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
                         <div className="mt-4 rounded-xl overflow-hidden border-2 border-zine-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-zine-black/5">
                           <img 
                             src={m.imageUrl} 
-                            alt="Imagen generada por PEPA" 
+                            alt="Imagen generada por PANA" 
                             className="w-full h-auto object-cover hover:scale-105 transition-transform cursor-pointer"
                             onClick={() => window.open(m.imageUrl, '_blank')}
                           />
@@ -527,7 +527,7 @@ export const ChatBot = ({ activeSubPage }: ChatBotProps) => {
         )}
         {/* Tooltip */}
         <div className="absolute right-20 bg-zine-black text-white px-3 py-1 rounded-lg text-xs font-display uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border-2 border-white">
-          Habla con PEPA
+          Habla con PANA
         </div>
       </motion.button>
     </div>

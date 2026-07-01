@@ -1,0 +1,130 @@
+{
+  "article_id": "3476_Pacheco-Gomez",
+  "pana_flow": {
+    "welcome_message": "¡Oye, tú! ¿Crees que la inclusión educativa es cosa de buenas intenciones? Pues, agárrate, porque este estudio te va a volar la cabeza. Dicen que los profes quieren incluir, sí, pero el sistema... ¡ay, el sistema! Los deja más solos que un farol en medio del desierto. ¿Quieres saber por qué tus profes, o tú si eres uno, se sienten así? Sigue leyendo, que aquí no te contamos cuentos de hadas.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La Inclusión: ¿Un Mito Invisible?",
+        "text": "Mira, aquí la cosa es seria. La educación media superior es el momento clave para los chavales, pero la inclusión de estudiantes con necesidades especiales es como un fantasma: ¡no hay cifras claras! 👻 Mientras el mundo dice 'incluir', solo el 17% de los países tiene leyes que lo promuevan de verdad. Y ojo al dato: los niños con discapacidad tienen 2.5 veces más probabilidades de no pisar nunca una escuela. Los profes son el corazón de esto, ¿pero qué pasa con ellos? Este estudio se metió a fondo para descubrirlo.",
+        "options": [
+          {
+            "label": "Y, ¿qué encontraron?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La Paradoja del Profe Solitario",
+        "text": "Aquí está el bombazo: los profes de bachillerato, ¡quieren incluir! Tienen la mejor de las intenciones, diseñan mil cosas para ayudar, se comprometen. Pero el sistema... ¡los deja solos, sin mapa ni brújula! 🧭 Sus iniciativas son puro 'heroísmo individual', no algo que venga de una política clara. ¿Te imaginas? Es como pedirle a un músico que dé un concierto sin escenario ni instrumentos. Así, la inclusión se vuelve insostenible. No basta con querer, si no hay un sistema que te respalde.",
+        "options": [
+          {
+            "label": "¿Qué es lo que falla?",
+            "target_node": "friccion_1_discurso_practica"
+          },
+          {
+            "label": "Dame un Quiz!",
+            "target_node": "quiz_1"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1_discurso_practica",
+        "title": "Discurso vs. Realidad: La Grieta",
+        "text": "Aquí viene la primera fricción, ¡y pica! 🌶️ Las instituciones se llenan la boca hablando de inclusión, pero sus estructuras... ¡ay, sus estructuras gritan exclusión! Currículos más rígidos que una tabla, evaluaciones que buscan la uniformidad, horarios que no se mueven. Los profes escuchan 'incluye', pero trabajan en un sistema diseñado para separar y clasificar. ¿Es posible incluir de verdad en un lugar que premia la competencia y la homogeneidad?",
+        "options": [
+          {
+            "label": "Más fricciones, por favor",
+            "target_node": "friccion_2_voluntad_precariedad"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2_voluntad_precariedad",
+        "title": "La Voluntad que se Agota",
+        "text": "Los profes tienen una voluntad de hierro, créeme. Se desviven por adaptar, buscar estrategias. Pero ¿adivina qué? Esa voluntad se gasta si no hay apoyo. 😩 Sin recursos, sin tiempo, sin acompañamiento, sin que nadie les diga 'bien hecho', estos esfuerzos se caen a pedazos. El estudio lo dice claro: agotamiento y desamparo. ¿Por qué esperamos que sean héroes si no les damos las herramientas para serlo sin quemarse?",
+        "options": [
+          {
+            "label": "Entendido. ¿Y la formación?",
+            "target_node": "friccion_3_formacion_realidad"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3_formacion_realidad",
+        "title": "Formación: ¿En las Nubes o en el Aula?",
+        "text": "Otra fricción gorda: la formación docente. Se les enseña teoría, sí, pero luego van al aula y se encuentran con una realidad que no casa. 🤯 Les faltan herramientas para la diversidad, para el diseño universal, para evaluar de forma inclusiva. Y lo peor, muchos cursos son módulos sueltos, desconectados de lo que realmente pasa en el día a día. ¿De qué sirve formar a un profe para un mundo ideal si luego trabaja en uno con recursos limitados y presiones por resultados estandarizados?",
+        "options": [
+          {
+            "label": "¿Y las creencias?",
+            "target_node": "friccion_4_creencia_practica"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4_creencia_practica",
+        "title": "Lo que Crees vs. Lo que Haces",
+        "text": "Aquí hay tela que cortar. Muchos profes dicen que apoyan la inclusión, pero luego, en la práctica, siguen pensando que los estudiantes con necesidades especiales deberían estar en aulas separadas. 🧐 ¡Contradictorio, ¿verdad?! Las creencias son tercas. No basta con decir 'sí a la inclusión'; si la cultura institucional y el propio sistema refuerzan las viejas ideas, cambiar es casi imposible. Necesitamos más que palabras, necesitamos experiencias que transformen la mente y el corazón.",
+        "options": [
+          {
+            "label": "Entonces, ¿qué hacemos?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "La Verdad Incómoda y el Camino",
+        "text": "La inclusión no es un problema de un profe que no quiere. ¡Es un problema de TODO el sistema! 😲 Las instituciones dicen una cosa y hacen otra. Los profes están dispuestos, pero sin mapas ni recursos, sus esfuerzos son 'heroísmos individuales' que no duran. Para que la inclusión sea un derecho de verdad, necesitamos: 1. Cambios en las estructuras (currículos flexibles, recursos). 2. Formación que atraviese todo, no solo un módulo. 3. Apoyo real, no solo palabras. 4. ¡Revisar esas creencias que nos frenan!",
+        "options": [
+          {
+            "label": "La pregunta final...",
+            "target_node": "pregunta_final"
+          }
+        ]
+      },
+      {
+        "id": "pregunta_final",
+        "title": "¿Para Quién Educamos?",
+        "text": "Y aquí la pregunta que te deja pensando: si la inclusión depende de la buena voluntad del profe Y de las condiciones del sistema... ¿por qué seguimos formando profes como si fueran a trabajar solos, y construyendo instituciones como si los profes no importaran? 🤯 ¡Es hora de cambiar el chip!",
+        "options": [
+          {
+            "label": "Volver a empezar",
+            "target_node": "intro"
+          },
+          {
+            "label": "Hacer un Quiz",
+            "target_node": "quiz_2"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "Según el estudio, ¿cuál es la principal razón por la que las prácticas inclusivas en la educación media superior son frágiles e insostenibles?",
+      "options": [
+        "Falta de interés de los docentes.",
+        "Dependen más de la voluntad individual que del apoyo institucional.",
+        "Los estudiantes con discapacidad no quieren participar.",
+        "Hay demasiados recursos disponibles."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Exacto! No es falta de ganas, es falta de un sistema que respalde a los profes. ¡Bien hecho!",
+      "feedback_incorrect": "¡Casi! No es falta de interés. El problema es que los profes están solos en esto, la inclusión depende de su 'heroísmo individual'. Sigue intentando."
+    },
+    {
+      "question": "¿Cuál de las siguientes NO es una barrera estructural identificada para la inclusión educativa?",
+      "options": [
+        "Rigidez curricular y horarios inflexibles.",
+        "Falta de recursos y plantillas insuficientes.",
+        "La excesiva formación docente en inclusión.",
+        "Presión por evaluaciones estandarizadas."
+      ],
+      "correct_answer_index": 2,
+      "feedback_correct": "¡Correcto! La formación docente es insuficiente, no excesiva. ¡Estás atento!",
+      "feedback_incorrect": "¡No del todo! La excesiva formación no es el problema, ¡es la falta y la mala calidad! Las otras sí son barreras. ¡A repasar!"
+    }
+  ]
+}

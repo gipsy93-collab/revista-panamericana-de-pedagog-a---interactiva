@@ -1,0 +1,161 @@
+{
+  "article_id": "3557_Prince_Galban",
+  "pana_flow": {
+    "welcome_message": "¡Escucha bien, alma mía! ¿Sabes qué es lo más irónico? Que mientras el mundo corre a la velocidad de la luz, algunos se quedan atascados en el fango. Hablo de los juristas, sí, esos que deberían ser la vanguardia del orden, pero que se están quedando atrás, muy atrás.\n\nLa Inteligencia Artificial no es el futuro, es el AHORA. Y mientras unos se forran con ella, otros siguen con la pluma y el papel, ignorando que el tren ya partió. ¿Quieres ver el desastre de cerca y entender por qué tu abogado del futuro podría ser un análogo en un mundo digital? Te prometo que te va a volar la cabeza.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La paradoja del abogado análogo",
+        "text": "Agárrate fuerte. ¿Sabes cuántas facultades de derecho en el mundo EXIGEN competencias tecnológicas? ¡Solo 1 de cada 10! El resto, lo ven como un adorno, como si el siglo XXI fuera un chiste.\n\nLa IA promete mover billones de dólares, y ellos siguen anclados en el siglo pasado. Es como formar jinetes para la era de los coches, ¿entiendes? El mercado laboral grita por juristas digitales, pero las universidades, con sus planes de estudio blindados, resisten el cambio. ¡Una locura!",
+        "options": [
+          {
+            "label": "¿Quién detiene el cambio?",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "¿Teoría o práctica?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "Ver la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "¿Quién detiene el cambio?",
+        "text": "El estudio lo dice claro: los currículos están atrasados. Pero, ¿quién es el 'malo de la película'? El informe no se moja. ¿Son los decanos? ¿Los consejos académicos? ¿O quizá hay intereses ocultos de la profesión que prefieren mantener la barrera alta para los nuevos talentos?\n\nAquí hay gato encerrado y el estudio solo nos muestra el síntoma (currículos viejos) pero no la enfermedad real (¿inercia institucional? ¿miedo al cambio?).",
+        "options": [
+          {
+            "label": "¿Y la política?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "La brecha de género",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "Sigue con las fricciones",
+            "target_node": "friccion_2"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "¿Teórico o práctico?",
+        "text": "Los autores proponen que los abogados aprendan programación y entiendan 'el ecosistema digital'. ¡Programar! Mientras tanto, los profesionales ya usan ChatGPT y otras herramientas sin entender el código detrás.\n\n¿Es que quieren ingenieros disfrazados de juristas? ¿No será más útil enseñarles a usar estas herramientas críticamente, en vez de obligarlos a picar código como si fueran desarrolladores? Aquí hay una línea muy fina que no se está viendo.",
+        "options": [
+          {
+            "label": "¿Y la brecha de género?",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "¿Es una utopía la IA?",
+            "target_node": "friccion_5"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "La política vs. la realidad",
+        "text": "Hablan de los Objetivos de Desarrollo Sostenible de la ONU, de educación de calidad e igualdad. ¡Todo muy bonito y global! Pero mientras las políticas empujan la innovación, las estructuras locales de las facultades de derecho, blindadas por tradición y prestigio, impiden el cambio.\n\n¿Sabías que México, con el mayor número de abogados per cápita en América Latina, va rezagado en innovación legal? Es como si unos hablaran de futuro y otros vivieran en el pasado, sin que nada los conecte.",
+        "options": [
+          {
+            "label": "¿Quién detiene el cambio?",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "¿Es una utopía la IA?",
+            "target_node": "friccion_5"
+          },
+          {
+            "label": "La brecha de género",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "¿Tecnología para la igualdad?",
+        "text": "El estudio alerta que las mujeres son mayoría en derecho, pero tienen menor dominio tecnológico. Luego, suelta la propuesta de integrar más tecnología al currículo. ¿Y ya? ¿Así de fácil? ¿Creemos que solo con meter más pantallas se va a cerrar esa brecha?\n\nSi no hay políticas de género claras y específicas, el problema puede agravarse en lugar de solucionarse. Aquí falta una mirada más profunda, ¡no solo parches!",
+        "options": [
+          {
+            "label": "¿Teoría o práctica?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "¿Es una utopía la IA?",
+            "target_node": "friccion_5"
+          },
+          {
+            "label": "Ver la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_5",
+        "title": "¿Utopía o realidad dura?",
+        "text": "Los autores citan que 'dentro de cinco años no será posible ser abogado exitoso sin usar IA'. ¡Qué bonito suena! Pero la realidad es que hay despachos que 'nacieron digitales' y otros que 'siguen trabajando de forma tradicional'. El mundo no es tan lineal como lo pintan.\n\n¿La tecnología transformará al abogado o coexistirán dos tipos de práctica legal (analógica vs. digital) con brechas crecientes de productividad y calidad? ¡Esa es la pregunta que duele!",
+        "options": [
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          },
+          {
+            "label": "Ver la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La urgencia del cambio",
+        "text": "En resumen, la IA no es un juguete, es una revolución que ya está aquí. Y el mundo del derecho, ese que debería ser el faro de la justicia, está navegando a ciegas. Si las universidades no espabilan, van a formar abogados para un mercado laboral que ya no existe.\n\n¿Están listos para afrontar esta verdad incómoda y ver cómo se quedan atrás? ¡Es hora de despertar!",
+        "options": [
+          {
+            "label": "¡Estoy listo para un quiz!",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "id": "quiz_1",
+      "question": "¿Cuántas facultades de derecho de las analizadas EXIGEN asignaturas tecnológicas en su plan obligatorio?",
+      "options": [
+        "Solo el 10%",
+        "Casi el 50%",
+        "Todas las de tradición anglosajona",
+        "Ninguna"
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Un dato que duele y que muestra el tamaño del problema. Solo un 10% exige tecnología. El resto, como si nada.",
+      "feedback_incorrect": "¡Error, mi cielo! El dato es mucho más bajo y preocupante: solo el 10% de las facultades lo exige de forma obligatoria. ¡Imagínate el desfase!"
+    },
+    {
+      "id": "quiz_2",
+      "question": "Según los juristas entrevistados, ¿cuál es uno de los beneficios concretos de usar herramientas de IA en su trabajo?",
+      "options": [
+        "Aumento de la carga laboral",
+        "Reducción del 80% de la carga laboral",
+        "Mayor dificultad en la contratación de personal",
+        "Mayor resistencia al cambio por parte de los clientes"
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Claro que sí! La IA puede ser una bendición para aligerar la carga. ¡Pero hay que saber usarla para aprovechar ese 80% de reducción!",
+      "feedback_incorrect": "¡No, mi alma! La IA, bien usada, reduce la carga laboral, ¡hasta un 80% según los entrevistados! Es una herramienta para la eficiencia, no una carga."
+    }
+  ]
+}

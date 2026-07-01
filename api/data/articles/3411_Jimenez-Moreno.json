@@ -1,0 +1,129 @@
+{
+  "article_id": "3411_Jimenez-Moreno",
+  "pana_flow": {
+    "welcome_message": "Escucha, alma mía, que te traigo un cuento de números y desengaños. Nos han vendido la moto de que la educación media es obligatoria, pero la realidad es otra: casi un tercio de los jóvenes se esfuman antes de ver el segundo semestre. ¿Cientos de miles de vidas rotas? Sí, así de crudo. Pero la cosa se pone picante cuando los datos te gritan una verdad que nadie quiere oír. ¿Estás listo para desenterrar la sorpresa que esconde la deserción escolar? Sigue mis pasos, que te revelo el truco.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La bomba de tiempo educativa",
+        "text": "En México, la Educación Media Superior es obligatoria desde 2012. Una promesa grande, ¿verdad? Pero aquí viene la bofetada: casi un tercio de los jóvenes en bachillerato tecnológico no llegan ni al segundo semestre. ¡Estamos hablando de cientos de miles de sueños rotos! 💔 Este estudio se metió de lleno en una escuela técnica para ver qué diantres predice que se vayan.",
+        "options": [
+          {
+            "label": "Y, ¿qué descubrieron?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La paradoja que te volará la cabeza",
+        "text": "Agárrate, que esto duele: el 28% de los estudiantes, ¡casi 3 de cada 10!, abandonan entre el primer y el segundo semestre. Pero la joya de la corona es esta: los que NO tienen computadora en casa tienen 2.5 veces MÁS probabilidades de quedarse. Sí, lo oíste bien. ¡Más tecnología, más deserción! 🤯\n\n¿Otros datos? Tu promedio de secundaria vale oro; cada punto extra duplica tus chances de seguir. Pero el tipo de secundaria de donde vienes, ¡da igual! Y sí, los hombres se van más (58% de las bajas), aunque son menos en matrícula. ¿Qué te parece?",
+        "options": [
+          {
+            "label": "¿La compu esconde pobreza?",
+            "target_node": "friccion_socioeconomico_politica"
+          },
+          {
+            "label": "¿Qué pasa con el género y la escuela?",
+            "target_node": "friccion_genero_institucion"
+          },
+          {
+            "label": "El promedio y el primer filtro",
+            "target_node": "friccion_promedio_origen"
+          }
+        ]
+      },
+      {
+        "id": "friccion_socioeconomico_politica",
+        "title": "La computadora: ¿solución o trampa?",
+        "text": "Aquí está el dilema, mi gente. Medimos si tienes una computadora, pero no preguntamos: ¿para qué la usas? ¿Tienes que trabajar para pagarla? ¿Es una herramienta o una distracción? El estudio no mira el ingreso, ni si tus padres fueron a la escuela. Así, la paradoja de la computadora solo nos grita una cosa: ¡quizás estamos midiendo tecnología cuando deberíamos estar midiendo pobreza! 💸\n\nY la política pública, con sus becas y computadoras, asume que 'más recursos = menos deserción'. Pero los números te lo clavan: tener computadora predice que TE VAS. ¿Estamos echando dinero en el barril equivocado?",
+        "options": [
+          {
+            "label": "Más fricciones",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Y ahora qué?",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_genero_institucion",
+        "title": "¿Quién se va y por qué la escuela no se mira?",
+        "text": "Aunque los hombres son solo el 46% de los alumnos, ¡son el 58% de los que tiran la toalla! Una brecha de género que nos golpea en la cara. Pero este estudio, como muchos, no nos dice *por qué*. ¿Será la presión de ser 'el proveedor'? ¿Las expectativas de género? No lo sabemos porque no lo preguntamos. 🤷‍♂️\n\nY aquí viene otra: este estudio solo mira al estudiante. ¿Y la escuela? ¿Su calidad docente, el ambiente, cómo evalúan? Nada de eso se mide. Si casi 3 de cada 10 se van, ¿cuánto es culpa del estudiante y cuánto de un sistema que no se autoexamina?",
+        "options": [
+          {
+            "label": "Más fricciones",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Y ahora qué?",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_promedio_origen",
+        "title": "No es de dónde vienes, es cómo llegas... y el primer filtro",
+        "text": "Escucha bien: el promedio de secundaria es lo que más importa. Cada punto extra, ¡dobla tus probabilidades de permanecer! Pero si vienes de telesecundaria, técnica o general, ¡eso no importa ni un pimiento! Se rompe el prejuicio. No es tu origen, es tu desempeño. ✅\n\nPero hay más: el estudio solo mira entre el primer y segundo semestre. Un 28% se va en apenas seis meses. ¡Es un colador brutal! ¿Estamos diseñando bachilleratos para retener o para seleccionar a los 'fuertes'? La pregunta es incómoda, ¿verdad?",
+        "options": [
+          {
+            "label": "Más fricciones",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Y ahora qué?",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La pregunta incómoda",
+        "text": "Así es, mi alma. Si casi un tercio de los estudiantes se despiden en el primer año, y tener una computadora en casa —ese 'recurso' que supuestamente iguala oportunidades— predice que se irán... ¿no estaremos construyendo nuestras políticas educativas sobre castillos de arena? ¿Estamos invirtiendo en lo que no es, mientras lo que realmente duele sigue oculto? Piénsalo bien. 🤔",
+        "options": [
+          {
+            "label": "¡Ponme a prueba!",
+            "target_node": "quiz_1"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál es la paradoja principal sobre el capital digital en este estudio?",
+      "options": [
+        "Los estudiantes sin computadora tienen más probabilidades de permanecer.",
+        "Los estudiantes con tablet tienen más probabilidades de permanecer.",
+        "El tipo de secundaria predice la posesión de computadora."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Rompiendo esquemas, ¿verdad? La intuición nos engaña.",
+      "feedback_incorrect": "¡Casi! La sorpresa es que la falta de computadora se asocia a la permanencia. Un giro inesperado, ¿eh?"
+    },
+    {
+      "question": "¿Cuál es el predictor más potente de permanencia en el bachillerato tecnológico, según el estudio?",
+      "options": [
+        "Tener Internet en casa.",
+        "El promedio de secundaria.",
+        "El sexo del estudiante."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Claro que sí! Ese promedio no es solo un número, es una brújula.",
+      "feedback_incorrect": "No, no. Aunque importantes, el promedio de secundaria es el que tiene más peso. ¡No te confíes de lo obvio!"
+    },
+    {
+      "question": "¿Qué porcentaje de estudiantes desertó entre el primer y segundo semestre en la escuela estudiada?",
+      "options": [
+        "Menos del 10%",
+        "Alrededor del 28%",
+        "Más del 50%"
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Así es! Un número que nos debería hacer pensar dos veces.",
+      "feedback_incorrect": "¡Error! Es un número mucho más alto y doloroso. ¡Casi tres de cada diez!"
+    }
+  ]
+}

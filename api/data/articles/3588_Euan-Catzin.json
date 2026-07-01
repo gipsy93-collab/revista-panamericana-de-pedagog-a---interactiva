@@ -1,0 +1,148 @@
+{
+  "article_id": "3588_Euan-Catzin",
+  "pana_flow": {
+    "welcome_message": "¡Escucha bien, alma errante! ¿Sabes que 1 de cada 4 estudiantes universitarios en Yucatán ya tiene un pie fuera de la puerta? Sí, así como lo oyes. Y lo más triste es que la mayoría de las universidades ni se enteran hasta que el asiento ya está vacío.\n\nPero no todo está perdido, un estudio piloto en tierras mayas ha dado con una clave. Una herramienta que promete desenmascarar a esos fantasmas antes de que se esfumen. ¿Quieres saber cómo? Y, más importante, ¿qué esconden los brillos de este nuevo hallazgo? Prepárate, que te voy a contar las verdades incómodas.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "El Fantasma en las Aulas 👻",
+        "text": "La deserción universitaria es un dolor de cabeza mundial, ¡hasta un 24% se esfuma! 🌍 Pero en México, la cosa es peor: casi nadie la estudia, casi no hay herramientas para detectarla.\n\nImagínate, ¿cómo vas a parar una estampida si no sabes cuándo empieza? La 'intención de deserción' es esa chispa, esa señal temprana que, si la ves a tiempo, puede cambiarlo todo. Pero, ¿la estamos viendo?",
+        "options": [
+          {
+            "label": "¿Y qué encontraron?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "El Secreto a Voces: 1 de cada 4",
+        "text": "Aquí está la bomba: 1 de cada 4 estudiantes en Yucatán ya fantasea con dejarlo todo antes de graduarse. Y tus universidades, ¿qué hacen? Pues la mayoría solo pregunta '¿todo bien?' con una sola pregunta, esperando que el alma en pena se confiese.\n\nEste estudio trae una escala de 5 etapas, un proceso: desde sentir que 'no encajas' hasta la decisión final de irse. Y lo más crudo: los que se sienten capaces, se quedan. Los que dudan de sí mismos, ¡se van! La autoeficacia es clave. ¿Tu universidad mide eso antes de que sea tarde?",
+        "options": [
+          {
+            "label": "Interesante, pero... ¿hay pegas?",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "¿Cómo funciona esa escala?",
+            "target_node": "friccion_2"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Preguntas 'Gemelas': ¿Pura Teoría?",
+        "text": "El paper celebra su instrumento, ¡que es la octava maravilla! Pero calla algo incómodo: los estudiantes dijeron que algunas preguntas eran idénticas. Sí, como si te preguntaran lo mismo dos veces con otras palabras.\n\nLos investigadores decidieron mantenerlas 'por teoría'. ¿Es válido sacrificar al que responde por la pureza de un modelo? Los estudiantes dijeron 'estas preguntas parecen las mismas' y los investigadores respondieron 'las mantenemos igual'. ¿Te parece justo?",
+        "options": [
+          {
+            "label": "¿Qué más se les escapa?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "Háblame de la muestra...",
+            "target_node": "friccion_3"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "¿Modelo Alemán en Tierra Maya?",
+        "text": "Esta escala nació en Alemania, con su lógica europea de tomar decisiones. Ahora la traemos a Yucatán, a tierras con otras realidades, otras presiones. ¿Es el proceso de decisión para desertar el mismo aquí que allá?\n\nEl modelo asume una secuencia lineal, pasito a pasito. Pero en Latinoamérica, con las presiones de la familia, el dinero... ¿no hay saltos, decisiones impulsivas que el modelo alemán no ve? La escala funciona estadísticamente, sí. ¿Pero culturalmente? Nadie lo cuestionó a fondo.",
+        "options": [
+          {
+            "label": "Entiendo. ¿Y la muestra?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "¿Qué no nos dice?",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "La Muestra Invisible: ¿Dónde están ellos?",
+        "text": "El estudio se hizo con una muestra de 87% mujeres. ¡Casi todas! Lo mencionan como 'limitación' al final, casi en voz baja. Pero aquí está la fricción: la deserción tiene cara de mujer y cara de hombre, y las razones son distintas.\n\nSi las mujeres se van por una cosa (embarazo, cargas en casa) y los hombres por otra (trabajo, dinero), ¿de qué sirve un instrumento 'validado' que casi no mira a los hombres? ¿Por qué tanta mujer en la muestra? El paper no lo explica. ¿Generalizamos así?",
+        "options": [
+          {
+            "label": "¿Y qué pasa con las causas?",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "Si detectan, ¿luego qué?",
+            "target_node": "friccion_5"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "¿Por qué se van? El Gran Silencio",
+        "text": "El estudio mide con precisión la *intención* de desertar. Pero, ¿por qué? Eso, el estudio no lo toca. Dice que es una 'limitación' de otros instrumentos el preguntar por las causas específicas.\n\nPero dime, ¿de qué sirve saber que un estudiante está en 'alto riesgo de deserción' si no sabes si es porque trabaja 8 horas, tiene depresión o no le alcanza para el pasaje? Sin esas causas, ¿qué ayuda le ofreces? Medir la intención sin conocer el 'porqué' es como ver la fiebre sin saber si es gripe o algo peor.",
+        "options": [
+          {
+            "label": "Y si lo saben, ¿qué hacen?",
+            "target_node": "friccion_5"
+          },
+          {
+            "label": "Dame la conclusión...",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_5",
+        "title": "¿Detectar para qué? La Cruda Realidad",
+        "text": "El paper sueña con 'detectar señales de alerta temprana' y 'diseñar estrategias oportunas'. Suena a música celestial. Pero en la realidad de las universidades públicas mexicanas, con sus aulas abarrotadas, sus psicólogos que no dan abasto... ¿qué se hace con ese estudiante que 'tiene alta intención de deserción'?\n\nLa fricción es esta: ¿para qué sirve saber quién va a desertar si no tienes ni los recursos ni la estructura para retenerlo? Detectar sin poder apoyar no es prevención, es, perdona que lo diga, voyeurismo institucional. ¿Verdad que duele?",
+        "options": [
+          {
+            "label": "Entonces, ¿cuál es la lección?",
+            "target_node": "conclusion"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "El Desafío Pendiente 🎓",
+        "text": "Este estudio, aunque piloto y con sus sombras, es un primer paso. Nos da una herramienta para ver lo que antes era invisible: la intención de desertar. Para las universidades, es una llamada de atención: dejen de contar los que se van y empiecen a mirar a los que dudan.\n\nMéxico tiene una deuda de investigación en este tema, y tus instituciones, una deuda con sus estudiantes. Detectar a tiempo es el primer paso, pero el verdadero reto es qué haces después. ¿Estás listo para esta verdad?",
+        "options": [
+          {
+            "label": "Quiero repasar el hallazgo",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuántos estudiantes universitarios en Yucatán, según este estudio, piensan en abandonar antes de graduarse?",
+      "options": [
+        "1 de cada 2",
+        "1 de cada 4",
+        "1 de cada 10"
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Exacto! Un número que duele. Y lo peor es que muchas universidades no tienen cómo saberlo a tiempo.",
+      "feedback_incorrect": "Casi... la realidad es aún más cruda: ¡1 de cada 4! Imagínate esa cifra en tu universidad."
+    },
+    {
+      "question": "¿Qué relación se encontró entre la autoeficacia de un estudiante y su intención de desertar?",
+      "options": [
+        "A mayor autoeficacia, mayor intención de desertar.",
+        "No hay relación significativa.",
+        "A mayor autoeficacia, menor intención de desertar."
+      ],
+      "correct_answer_index": 2,
+      "feedback_correct": "¡Así es! Los que confían en sí mismos, se quedan. Un dato clave para pensar en qué apoyar.",
+      "feedback_incorrect": "Fíjate bien, ¡es al revés! Aquellos que se sienten más capaces, son los que menos piensan en irse. Un punto importante para las intervenciones."
+    }
+  ]
+}

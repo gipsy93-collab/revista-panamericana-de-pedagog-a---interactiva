@@ -1,0 +1,231 @@
+{
+  "article_id": "articulo2_Salas",
+  "pana_flow": {
+    "welcome_message": "¿Cansado de la misma cantaleta en la educación? 🙄 Te dicen que la tecnología es la salvación, pero luego te dejan solo frente a la pantalla. ¿Y lo humano? ¿Dónde queda?\n\nMira, en México, unos profes del Colegio de Bachilleres se hartaron de las clases aburridas y el desinterés. Decidieron darle la vuelta a la tortilla. ¿Funcionó? Te lo cuento, pero no te esperes un cuento de hadas. Aquí hay chispa, contradicción y verdades que duelen. ¿Te atreves a ver qué se esconde detrás de los números?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La Gran Pregunta: ¿Tecno o Humano?",
+        "text": "La pandemia nos dejó una herida abierta: ¿cómo usar la tecnología sin perder el alma de la educación? En el Colegio de Bachilleres de México, los profes de Geografía 1 se toparon con el muro: desmotivación, ausentismo, el rollo de siempre. 😩\n\nPero un profesor valiente dijo: '¡Basta!' Y se lanzó a probar algo nuevo: el aula invertida. ¿Qué crees que pasó? Los datos son... ¡provocadores!",
+        "options": [
+          {
+            "label": "Cuéntame el milagro",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Qué es eso del aula invertida?",
+            "target_node": "que_es_aula_invertida"
+          }
+        ]
+      },
+      {
+        "id": "que_es_aula_invertida",
+        "title": "¿Aula Invertida? 🤔",
+        "text": "Imagina esto: en vez de que el profe suelte el rollo en clase, los estudiantes ven los contenidos y hacen tareas *fuera* del aula (usando Padlet, un muro virtual). 💻\n\n¿Y dentro? ¡Ahí viene lo bueno! El tiempo se usa para el diálogo, para debatir, para la 'comunicación asertiva'. Nada de monólogos, sino pura interacción humana. ¿Suena bien, no? Pero, ¿es tan sencillo como parece?",
+        "options": [
+          {
+            "label": "Entonces, ¿funcionó?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Ver las contradicciones",
+            "target_node": "friccion_intro"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "El Milagro y la Paradoja",
+        "text": "¡Aquí viene el bombazo! 💣 El 96% de los estudiantes de bachillerato sintió que *entendía mejor* Geografía cuando el profe dejó de dar la clase tradicional. ¡Casi todos! Y no solo eso:\n\n✨ 92% reportó más participación.\n✨ 90% más satisfacción.\n\n¿La clave? La tecnología (Padlet) no reemplazó al profe, ¡lo liberó! Lo liberó para hacer lo único que una app no puede: ¡escuchar con intención! Y sí, esto no es cuento, ¡hay algoritmos de Machine Learning que lo validan! 🤯\n\nPero, ¿cuántos profes siguen anclados al pizarrón, creyendo que 'dar clase' es solo hablar?",
+        "options": [
+          {
+            "label": "Suena demasiado bonito...",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Dame la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_intro",
+        "title": "Las Verdades Incómodas",
+        "text": "¡Ajá! Sabía que no te ibas a tragar el cuento completo. 😉 Detrás de cada 'éxito' hay sombras, preguntas sin respuesta. Este estudio, por muy revolucionario que parezca, tiene sus 'fricciones'. Tensiones que te harán pensar dos veces antes de aplicar la receta.\n\n¿Estás listo para las verdades incómodas?",
+        "options": [
+          {
+            "label": "Dime qué no midieron",
+            "target_node": "friccion_1_medicion"
+          },
+          {
+            "label": "El rigor metodológico",
+            "target_node": "friccion_2_metodologia"
+          },
+          {
+            "label": "La muestra, ¿es suficiente?",
+            "target_node": "friccion_3_muestra"
+          },
+          {
+            "label": "La brecha digital",
+            "target_node": "friccion_4_brecha"
+          },
+          {
+            "label": "¿Qué es 'comunicación asertiva'?",
+            "target_node": "friccion_5_asertiva"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1_medicion",
+        "title": "¿Felicidad o Aprendizaje?",
+        "text": "El estudio grita: ¡96% entiende mejor con Padlet! 🎉 Pero, ¿entienden *mejor* Geografía, o solo *sienten* que entienden mejor? El paper mide percepción de comprensión y satisfacción, ¡no aprendizaje real! No hay calificaciones, ni evaluaciones a largo plazo.\n\nPiensa esto: ¿prefieres una clase súper entretenida donde aprendes poco, o una aburrida donde te entra todo? Este estudio no resuelve esa paradoja. ¿Estamos midiendo aprendizaje o solo felicidad estudiantil? 🤷‍♀️",
+        "options": [
+          {
+            "label": "Ver otras fricciones",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Siguiente: ¿El método es sólido?",
+            "target_node": "friccion_2_metodologia"
+          },
+          {
+            "label": "Resumen de las tensiones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2_metodologia",
+        "title": "Motor de Ferrari, Carrocería de Bici",
+        "text": "Aquí viene la parte técnica que te hará torcer la boca. 🧐 Usaron Machine Learning, ¡suena a ciencia ficción! Pero el 'AVE' (un indicador de validez) es de 0.415, ¡por debajo del 0.5 aceptable! La confiabilidad apenas raspa el 0.7.\n\nEs como poner un motor de Ferrari (los algoritmos) en una carrocería de bicicleta (un cuestionario con validez dudosa). ¿Los algoritmos validan los datos, o los datos validan los algoritmos? ¡Ahí te la dejo! 😈",
+        "options": [
+          {
+            "label": "Ver otras fricciones",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Siguiente: ¿Cuántos estudiantes?",
+            "target_node": "friccion_3_muestra"
+          },
+          {
+            "label": "Resumen de las tensiones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3_muestra",
+        "title": "¿50 Estudiantes = ¿Mundo Entero?",
+        "text": "El estudio se hizo con ¡solo 50 estudiantes! De un *solo* plantel, de una *sola* asignatura, un *solo* ciclo escolar. Y la muestra no fue aleatoria, ¡fueron voluntarios! 😱\n\nPero las conclusiones... ¡parecen querer cambiar el mundo! Hablan de que 'educadores de diversas áreas pueden emplear Padlet'. ¡Alto ahí! 🛑 50 estudiantes representan a... 50 estudiantes. ¿Aplicarías esto en una escuela rural sin internet? ¿O con 500 alumnos por clase? ¡La generalización es un espejismo! ✨",
+        "options": [
+          {
+            "label": "Ver otras fricciones",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Siguiente: La brecha digital",
+            "target_node": "friccion_4_brecha"
+          },
+          {
+            "label": "Resumen de las tensiones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4_brecha",
+        "title": "Padlet: ¿Gratis para Todos?",
+        "text": "Padlet es 'gratuito y fácil de usar', dicen. Pero, ¿cuántos estudiantes tenían internet en casa? ¿Celular vs. computadora? ¿Ya sabían usarlo? El paper no dice ni pío de la brecha digital. 🤫\n\nPara un nativo digital de clase media, 'fácil' es una cosa. Para un estudiante sin datos móviles o un smartphone decente, ¡es misión imposible! 💸 ¿Qué pasa con el que no puede 'poner todo lo que quieras' porque no tiene cómo?",
+        "options": [
+          {
+            "label": "Ver otras fricciones",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Siguiente: ¿Qué es 'asertiva'?",
+            "target_node": "friccion_5_asertiva"
+          },
+          {
+            "label": "Resumen de las tensiones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_5_asertiva",
+        "title": "Comunicación Asertiva: ¿Qué Es Eso?",
+        "text": "El 92% reportó más participación gracias a la 'comunicación asertiva'. Suena a autoayuda, ¿verdad? 🧘‍♀️ El paper la define como 'expresar sentimientos, pensamientos y percepciones'. ¿Y ya? No detalla qué hizo el profesor *específicamente*.\n\n¿Fueron círculos de diálogo? ¿Debates estructurados? ¿O solo 'hablar bonito'? 🗣️ Es un 'factor X' sin receta clara. Si otro profe lo copia, ¿tendrá los mismos resultados? ¿O dependemos del carisma del original? ¡Ahí está el truco! ✨",
+        "options": [
+          {
+            "label": "Ver otras fricciones",
+            "target_node": "friccion_intro"
+          },
+          {
+            "label": "Resumen de las tensiones",
+            "target_node": "sintesis_fricciones"
+          },
+          {
+            "label": "Ir a la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "sintesis_fricciones",
+        "title": "Todas las Cartas sobre la Mesa",
+        "text": "Mira cómo se ve el panorama completo de estas tensiones:\n\n1.  **Mide felicidad, no aprendizaje real.** 😔\n2.  **ML sofisticado, pero el instrumento flojo.** 📉\n3.  **Muestra pequeña, conclusiones gigantes.** 🤏\n4.  **Padlet 'gratuito', ¿y la brecha digital?** 💸\n5.  **'Comunicación asertiva', ¿pero cómo?** 🤷‍♂️\n\nEl estudio es honesto con sus limitaciones, ¡eso se aplaude! Pero el entusiasmo de las conclusiones... no siempre va de la mano con la solidez de los datos. Es un experimento prometedor, sí, ¡pero no la receta mágica que te vendieron! 🔮",
+        "options": [
+          {
+            "label": "Ahora sí, la conclusión",
+            "target_node": "conclusion"
+          },
+          {
+            "label": "Volver a las fricciones",
+            "target_node": "friccion_intro"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La Verdad Desnuda",
+        "text": "Al final del día, voltear el aula en el Colegio de Bachilleres no significa abandonarla. Significa usar la tecnología fuera para liberar el tiempo de *diálogo sincrónico* dentro. El 96% de los estudiantes sintió que entendía mejor. ¡Eso es un dato que no se puede ignorar!\n\nLa pregunta no es si funciona, porque los números (con sus peros) dicen que sí. La verdadera pregunta es: ¿quién se atreve a probarlo? ¿Quién tiene el coraje de soltar el control y dejar que el diálogo fluya? 💪\n\n¡Ahí te lo dejo de tarea! 😉",
+        "options": [
+          {
+            "label": "¿Qué tal un quiz?",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "Según el estudio, ¿cuál fue el principal efecto de combinar Padlet fuera del aula con comunicación asertiva dentro?",
+      "options": [
+        "El 96% de los estudiantes sintió que entendía mejor los temas.",
+        "Aumentó la cantidad de tareas entregadas en un 50%.",
+        "Los profesores reportaron mayor satisfacción laboral.",
+        "Disminuyó el ausentismo estudiantil en un 20%."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! El 96% de los estudiantes percibió una mejora en su comprensión. ¡Un dato potente que te hace pensar! 😉",
+      "feedback_incorrect": "¡Uhm, casi! Aunque hubo otros beneficios, el dato más impactante fue que el 96% de los estudiantes percibió una mejora en la comprensión. ¡Ese es el gancho! Vuelve a leer la sección del 'Hallazgo Central' si quieres refrescar la memoria. 👀"
+    },
+    {
+      "question": "Una de las 'fricciones' del estudio señala que no se midió directamente...",
+      "options": [
+        "La satisfacción de los estudiantes con la herramienta Padlet.",
+        "El aprendizaje real o la retención de conocimiento a largo plazo.",
+        "La participación de los estudiantes en clase.",
+        "El uso de Machine Learning en el análisis de datos."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Acertaste! El paper fue honesto en sus limitaciones: midió percepción de comprensión y satisfacción, pero no el aprendizaje real. ¡Ahí está el detalle! 🧐",
+      "feedback_incorrect": "¡No del todo! El estudio sí midió la satisfacción y la participación. La 'fricción' estaba en que no midió el aprendizaje real o la retención a largo plazo. ¡Esa es la diferencia entre sentir que entiendes y realmente saber! 😉"
+    }
+  ]
+}

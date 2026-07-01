@@ -1,0 +1,197 @@
+{
+  "article_id": "a02v17n02",
+  "pana_flow": {
+    "welcome_message": "¿Cansado de ver títulos que no valen ni el papel en el que están impresos? 🙄 ¡Aquí te traigo una historia de la selva peruana que te hará cuestionar todo lo que creías saber sobre la educación! 🌳🎓 Muchos salen de la uni con la cabeza llena de teoría, pero con las manos vacías para la vida real. ¿Sabes de qué hablo? De esas 'habilidades blandas' que nadie enseña, pero que todos exigen. Prepárate, porque lo que descubrieron en la UNAS te va a volar la cabeza. ¿Listo para destapar la verdad detrás de los diplomas?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "El Gran Vacío: Título sin Persona",
+        "text": "Mira, la cosa es así: por más que tu título diga 'Administrador', si no sabes hablar con la gente, trabajar en equipo o, peor aún, si eres un desastre emocional... ¿de qué te sirve? 🤷‍♀️ Hay una brecha enorme entre lo que te enseñan y lo que el mundo laboral de hoy realmente pide. No solo quieren cerebritos, quieren personas. ¿Crees que se puede aprender a ser una persona 'completa'?",
+        "options": [
+          {
+            "label": "Cuéntame más del estudio",
+            "target_node": "estudio_selva"
+          },
+          {
+            "label": "¿Qué significa esto para mí?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "estudio_selva",
+        "title": "El Experimento en la Selva",
+        "text": "En la Universidad Nacional Agraria de la Selva (UNAS), un tal Walter Mucha-Huamán se propuso resolver este misterio. Agarró a 42 estudiantes de Administración y los dividió: la mitad recibió un chute de 'habilidades blandas' y la otra mitad, pues... lo de siempre. ¿El objetivo? Ver si esos 'extras' realmente hacían la diferencia en el aprendizaje. 📊 Y, ¡ojo!, los instrumentos de medición eran casi perfectos. Aquí no hay truco, solo números.",
+        "options": [
+          {
+            "label": "¿Y qué pasó? ¡Dame los resultados!",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Quiero ir a las implicaciones",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "El Dato que Te Hará Pensar",
+        "text": "¡Agárrate! 💥 Los que recibieron el programa de habilidades blandas sacaron casi dos puntos más (1.71 para ser exactos) en sus exámenes que los que no. ¡Dos puntos! En una escala de 20, eso es un mundo. La probabilidad de que esto fuera casualidad es menor al 0.1%. ¿Lo pillas? No es suerte, es que aprender a ser una persona decente, comunicativa y ética, ¡TE HACE MEJOR PROFESIONAL! Punto.",
+        "options": [
+          {
+            "label": "¿Qué implica esto para todos?",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Pero, ¿no hay peros? 🤔",
+            "target_node": "friccion_mercado"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "Esto Te Toca a Ti",
+        "text": "Si eres docente, olvídate de que las habilidades blandas son un 'extra'. ¡Son la clave! 🔑 Para las universidades, es hora de despertar: el mercado ya las exige. Y para ti, estudiante... ¿de qué te sirve un Ferrari si no sabes conducirlo con otros? Tu título es el motor, ¡pero las habilidades blandas son tu GPS y tu copiloto! 🚗💨",
+        "options": [
+          {
+            "label": "¿Hay algo que no me estén contando?",
+            "target_node": "friccion_mercado"
+          },
+          {
+            "label": "Quiero saber la pregunta incómoda",
+            "target_node": "pregunta_final_articulo"
+          }
+        ]
+      },
+      {
+        "id": "friccion_mercado",
+        "title": "Fricción 1: ¿Examen o Vida Real?",
+        "text": "Aquí viene la primera espina: El estudio dice que mejora el 'aprendizaje significativo' en un curso. Pero, un momento... ¿saber responder 19 preguntas te hace un crack mediando conflictos en la oficina? 🧐 El paper habla de empleabilidad, de mercado laboral, pero mide un examen. ¿Realmente lo que se aprende en un aula se traduce directamente en el mundo laboral? Esa es la pregunta del millón.",
+        "options": [
+          {
+            "label": "¿Más fricciones?",
+            "target_node": "friccion_cuasiexperimento"
+          },
+          {
+            "label": "Volver a los resultados",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Ir a la síntesis de fricciones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_cuasiexperimento",
+        "title": "Fricción 2: ¿Causa o Coincidencia?",
+        "text": "El estudio es un 'cuasiexperimento'. ¿Qué significa eso? Que no todo estuvo bajo control. 🤫 Puede que el grupo experimental ya fuera más motivado, o tuviera mejor apoyo en casa. El paper dice que las habilidades blandas 'influyen', pero... ¿cuánto de ese 'impacto' es realmente del programa y cuánto de otras cosas que no se midieron? No todo es tan blanco y negro, ¿verdad?",
+        "options": [
+          {
+            "label": "¿Hay más peros?",
+            "target_node": "friccion_integral_fragmentada"
+          },
+          {
+            "label": "Ir a la síntesis de fricciones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_integral_fragmentada",
+        "title": "Fricción 3: ¿Medir lo Inmedible?",
+        "text": "Hablan de 'formación integral', de Maslow, de personas 'completas'. Pero luego, ¡zas! 🔪 Lo reducen todo a cuatro dimensiones (ética, responsabilidad, comunicación, trabajo en equipo) y lo miden con una rúbrica de 1 a 4. ¿En serio crees que la ética se mide así? ¿O que la responsabilidad se aprende en un semestre? A veces, por querer medirlo todo, se pierde la esencia.",
+        "options": [
+          {
+            "label": "Otra fricción, por favor",
+            "target_node": "friccion_contexto_global"
+          },
+          {
+            "label": "Ir a la síntesis de fricciones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_contexto_global",
+        "title": "Fricción 4: ¿Selva vs. Mundo?",
+        "text": "Este estudio se hizo en Tingo María, en la selva peruana. Un contexto único, con su propia cultura y forma de vida. 🌴 Pero las conclusiones se lanzan al mundo entero, comparando con universidades europeas. ¿Lo que funciona para 42 estudiantes en la selva, funcionará igual en una megauniversidad de la capital? Ojo, que no es lo mismo un río que un océano.",
+        "options": [
+          {
+            "label": "Última fricción, ¡vamos!",
+            "target_node": "friccion_urgencia_diseno"
+          },
+          {
+            "label": "Ir a la síntesis de fricciones",
+            "target_node": "sintesis_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_urgencia_diseno",
+        "title": "Fricción 5: ¿Estudio Obsoleto?",
+        "text": "Los datos se recogieron en 2020. El paper se publicó en 2023. Estamos en 2024 (o 2026, si el borrador es de esa fecha). ¡El mundo cambió radicalmente! 🌍 La pandemia, la virtualidad, la IA... ¿Las 'habilidades blandas para el entorno digital' de 2020 son las mismas de ahora? Me da que este estudio envejeció antes de salir del horno. 🕰️",
+        "options": [
+          {
+            "label": "Ya entendí, ¿y ahora qué?",
+            "target_node": "sintesis_fricciones"
+          },
+          {
+            "label": "Volver a los resultados",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "sintesis_fricciones",
+        "title": "Las Fricciones NO Invalidan, ¡Enriquecen!",
+        "text": "No me malinterpretes, estas tensiones no echan por tierra el estudio. ¡Al contrario! Son la sal de la ciencia. Nos dicen que no hay verdades absolutas, que hay que leer con ojo crítico, contextualizar y, sobre todo, seguir investigando. Esto es solo el principio, no el fin. ¿Estás listo para la pregunta final?",
+        "options": [
+          {
+            "label": "¡Lánzala!",
+            "target_node": "pregunta_final_articulo"
+          },
+          {
+            "label": "Quiero un resumen de implicaciones",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "pregunta_final_articulo",
+        "title": "¿La Pregunta Incómoda Final?",
+        "text": "Si un programa, bien diseñado, puede hacer una diferencia tan grande en la selva peruana... ¿por qué la mayoría de las universidades de Latinoamérica siguen enseñando como si el siglo XX nunca hubiera terminado? 🤯 ¿Por qué seguimos formando robots con título en lugar de seres humanos competentes? ¡Ahí te la dejo picando!",
+        "options": [
+          {
+            "label": "¡Quiero poner a prueba lo aprendido!",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Fin del camino",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Hasta la próxima, alma inquieta.",
+        "text": "Y así, mi querido lector, cerramos este viaje por el estudio de la UNAS. Recuerda: el conocimiento es poder, pero la capacidad de usarlo con sabiduría y humanidad, ¡eso sí que te hace imparable! ✨",
+        "options": []
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál fue la diferencia de puntos promedio a favor del grupo experimental en el estudio de Walter Mucha-Huamán?",
+      "options": [
+        "1.71 puntos",
+        "2.00 puntos",
+        "0.89 puntos",
+        "13.10 puntos"
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Esa pequeña diferencia fue estadísticamente brutal y demostró el poder de las habilidades blandas. ¡Bien hecho!",
+      "feedback_incorrect": "¡Casi! La diferencia fue de 1.71 puntos a favor del grupo experimental. ¡No subestimes el impacto de un par de puntos!"
+    }
+  ]
+}

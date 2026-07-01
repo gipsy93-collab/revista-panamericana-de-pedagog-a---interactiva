@@ -1,0 +1,197 @@
+{
+  "article_id": "3606_Macias-Rosado",
+  "pana_flow": {
+    "welcome_message": "¡Eh, tú! ¿Crees que la inclusión educativa es un cuento de hadas o una realidad? 🤔 Este estudio te va a volar la cabeza. Habla de una universidad que forma a los campeones de la inclusión, pero que, ¡ay, sorpresa!, tropieza con sus propios pies. Prepárate para descubrir una verdad incómoda sobre cómo se 'incluye' en México. ¿Listo para ver la cara oculta de la moneda?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La Ley en Papel vs. la Realidad",
+        "text": "Mira, la ley en México es clara: todos tienen derecho a estudiar, sin importar su discapacidad. Pero, ¿sabes qué? Del dicho al hecho, hay un trecho. Este estudio se metió hasta la cocina de la Licenciatura en Educación Especial de la Universidad de Colima. ¡Sí, justo donde se supone que enseñan a incluir! Querían ver si ellos mismos aplicaban lo que predicaban. ¿Qué crees que encontraron? 🕵️‍♀️",
+        "options": [
+          {
+            "label": "¿Y qué hicieron para investigar?",
+            "target_node": "metodologia"
+          },
+          {
+            "label": "Ve directo al grano: ¿cuál es el chismecito?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "metodologia",
+        "title": "Así se destapó la verdad",
+        "text": "Las investigadoras no se anduvieron con rodeos. Entrevistaron a 4 profes, 2 estudiantes (uno con discapacidad intelectual, otro visual) y un exalumno que desertó (con TEA). Usaron un cuestionario que mide qué tan inclusivos son los profes. ¿El dato curioso? ¡Tardaron el triple de lo esperado! Coordinar a gente con discapacidad no es tan fácil como parece. ⏱️",
+        "options": [
+          {
+            "label": "¿Y qué dijeron los números?",
+            "target_node": "resultados_numericos"
+          },
+          {
+            "label": "¿Qué encontraron de verdad importante?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "resultados_numericos",
+        "title": "Los números no mienten (o sí)",
+        "text": "Los profes se calificaron alto, ¡un 3.44 de 4 en prácticas inclusivas! Se sienten muy bien en 'reflexión y sensibilización' (casi un 4). Pero, ¿dónde fallan? En 'vinculación con familias', ¡apenas un 1.75! 📉 Esto ya nos dice algo: creen en la inclusión, pero no saben cómo tejer redes de apoyo esenciales. ¿Curioso, no?",
+        "options": [
+          {
+            "label": "¿Qué más descubrieron?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Y qué significa todo esto?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La Paradoja: Inclusión Condicionada",
+        "text": "Aquí está la bomba: una universidad que forma a los 'derribadores de barreras' para personas con discapacidad... ¡pero sus propios profes admiten que la inclusión 'solo es posible' si el estudiante tiene la capacidad intelectual 'suficiente'! 🤯 Es una 'inclusión a la carta', donde se adapta el método, pero no el estándar. ¿Es esto inclusión o capacitismo disfrazado de buenas intenciones? Piénsalo bien. 🤔",
+        "options": [
+          {
+            "label": "¡Eso es una fricción! Cuéntame más.",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "¿Qué tan grave es esto?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Fricción 1: El Deseo vs. La Realidad",
+        "text": "Los profes dicen 'creo en la inclusión' (3.87 en sensibilización), pero luego sueltan 'no todo se puede adaptar' y solo incluyen si 'no se compromete la cuestión intelectual'. 🙄 ¿De qué sirve tanta sensibilidad si al final se 'incluye' solo a los que pueden seguir el ritmo académico estándar? El instrumento de evaluación capta la buena actitud, ¡pero no la lógica de exclusión que se esconde detrás! ¿Te suena?",
+        "options": [
+          {
+            "label": "¿Hay más fricciones?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "¿Qué implicaciones tiene esto?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "Fricción 2: La Carga del Héroe Solitario",
+        "text": "Todos los profes hacen ajustes, ¡pero lo hacen solos, 'sobre la marcha', sin apoyo ni protocolos de la universidad! 🤦‍♀️ La inclusión depende de la 'iniciativa personal'. ¿Sabes qué pasa cuando algo depende de la buena voluntad individual? Deja de ser un derecho y se vuelve un privilegio. El estudiante con TEA que desertó es la prueba: intentaron ayudarlo, pero no hubo una estructura que lo mantuviera con título. ¿Es justo?",
+        "options": [
+          {
+            "label": "¿Y qué pasa con los que forman?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "¿Hay otras fricciones?",
+            "target_node": "friccion_4_bonus"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "Fricción 3: El Inclusor que Excluye",
+        "text": "¡Aquí viene lo bueno! Esta licenciatura forma a los que van a 'derribar barreras'... pero sus propios estudiantes con discapacidad enfrentan barreras que sus profes no pueden (o no saben) derribar. 😬 ¿Cómo vas a formar a un arquitecto de la inclusión si tu propia casa se está cayendo a pedazos? Es como pedirle a un médico que cure a otros cuando él mismo está enfermo. Una contradicción brutal, ¿verdad?",
+        "options": [
+          {
+            "label": "¿Y la ley qué dice de todo esto?",
+            "target_node": "friccion_4_bonus"
+          },
+          {
+            "label": "¿Qué se debe hacer entonces?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4_bonus",
+        "title": "Fricción 4: La Ley en el Papel y la Realidad en el Aula",
+        "text": "La ley es clara: educación inclusiva para todos. Pero en la Universidad de Colima, ¡no hay ni un protocolo formal para pedir ajustes! 📜 Los estudiantes entran, sí, pero su permanencia es una lotería: depende del profe que les toque, de su empatía, de si los compañeros ayudan... ¿De qué sirve legislar si las universidades no tienen los mecanismos para cumplir?",
+        "options": [
+          {
+            "label": "¿Y qué pasa con la 'empatía'?",
+            "target_node": "friccion_5_bonus"
+          },
+          {
+            "label": "¿Qué podemos aprender de esto?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_5_bonus",
+        "title": "Fricción 5: La Empatía Peligrosa",
+        "text": "Los profes dicen que no sienten 'rechazo explícito', pero sí 'inquietud' si el estudiante 'afecta el ritmo' o 'complica la evaluación'. 😒 ¡Cuidado! La inclusión 'seleccionada', esa que solo incluye a los que no 'retrasan' al grupo, es más peligrosa que la exclusión abierta. Se disfraza de 'calidad académica' pero es capacitismo puro. ¿Cuántas veces has oído 'me encantaría, pero...' seguido de una excusa 'razonable'?",
+        "options": [
+          {
+            "label": "¡Entendido! ¿Y ahora qué?",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Quiero un resumen de todo.",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "El Despertar: ¿Y ahora qué?",
+        "text": "Este estudio no es solo un chismecito universitario; es una llamada de atención. Las universidades necesitan protocolos claros, capacitación obligatoria para profes, recursos de verdad y conexión con las familias. 🚨 No podemos seguir formando profesionales que, sin querer, reproducen las mismas barreras que deben derribar. La inclusión no es un favor; es un derecho. Y si depende de la 'empatía' individual, ¡seguirá siendo un privilegio!",
+        "options": [
+          {
+            "label": "¿Qué puedo hacer?",
+            "target_node": "conclusion"
+          },
+          {
+            "label": "Ponme a prueba, a ver si entendí.",
+            "target_node": "quiz_1"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La Verdad Desnuda",
+        "text": "Ahí lo tienes, la cruda realidad de la inclusión en la educación superior. No es solo un tema de buena voluntad, es de estructura, de compromiso real y de dejar de lado los 'peros'. ¿Estás listo para ser parte del cambio? Porque la inclusión no espera a nadie, ¡la construimos entre todos!",
+        "options": [
+          {
+            "label": "¡Quiero saber más!",
+            "target_node": "welcome_message"
+          },
+          {
+            "label": "Ponme a prueba, a ver si entendí.",
+            "target_node": "quiz_1"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál es la 'paradoja de la inclusión condicionada' destacada en el estudio?",
+      "options": [
+        "Los docentes de Educación Especial creen en la inclusión pero solo la aplican si el estudiante tiene la capacidad intelectual 'suficiente'.",
+        "La universidad tiene muchos protocolos, pero los docentes no los siguen.",
+        "Los estudiantes con discapacidad desertan porque no quieren estudiar."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Esa es la fricción principal. Creen, pero con 'peros' que terminan excluyendo.",
+      "feedback_incorrect": "¡Casi! La clave está en que la buena intención de los docentes se ve limitada por una condición: la capacidad intelectual. ¡Sigue leyendo para entenderlo mejor!"
+    },
+    {
+      "question": "¿Qué problema surge cuando la inclusión depende de la 'iniciativa personal' de cada docente?",
+      "options": [
+        "Se promueve la creatividad y autonomía del profesorado.",
+        "La inclusión deja de ser un derecho para convertirse en un privilegio.",
+        "Los estudiantes se sienten más cómodos con un trato personalizado."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Así es! Cuando no hay un sistema, la inclusión es una lotería, no un derecho garantizado.",
+      "feedback_incorrect": "Mmm, piénsalo de nuevo. Aunque la iniciativa puede ser buena, la falta de estructura institucional convierte un derecho en algo que solo algunos pueden obtener. ¡No te rindas!"
+    }
+  ]
+}

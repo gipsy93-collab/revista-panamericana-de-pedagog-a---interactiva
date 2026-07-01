@@ -1,0 +1,145 @@
+{
+  "article_id": "3467_Vallejos-Paras",
+  "pana_flow": {
+    "welcome_message": "¡Ey, tú! ¿Crees que sabes lo que pasa en la universidad? La pandemia nos metió en un experimento digital a la fuerza, y ahora, los jóvenes están pagando el pato. Pero no es solo cosa de los 'malos', no. Aquí te voy a soltar una verdad que duele: el ciberacoso es una red, y tú, sí, TÚ, podrías ser un nudo crucial sin siquiera darte cuenta.\n\nEste estudio con universitarios mexicanos te va a volar la cabeza. Prepárate, porque lo que vas a leer te hará cuestionar si tu 'inocente' like o ese chisme que compartiste te está acercando más a ser la próxima víctima. ¿Te atreves a saber la verdad?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "El Experimento Post-Pandemia",
+        "text": "Mira, la pandemia no solo nos encerró, nos transformó. Los universitarios que arrancaron en 2019 vivieron una virtualidad forzada que cambió todo. ¿Sabes? El 79.5% de la gente usaba internet y los jóvenes se pasaban 8.2 horas al día conectados. 📱💻\n\nPero aquí viene el golpe: el ciberacoso se disparó. El 22.1% de hombres y el 31.1% de mujeres de 20-29 años fueron víctimas. Y lo más loco es que casi nadie mira qué pasa en la universidad, donde supuestamente ya somos 'adultos'. 🤔\n\nEste estudio, con 863 universitarios, se metió de lleno en esa laguna, buscando entender los *comportamientos agresivos* usando las TIC.",
+        "options": [
+          {
+            "label": "Y, ¿qué encontraron?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La Paradoja del Espectador Cómplice",
+        "text": "Atención, porque esto te va a doler un poco: ¡el 34.76% de los universitarios lee rumores sobre sus compañeros 'ocasionalmente'! 😱\n\nPero el verdadero bombazo es este: este estudio demuestra que si controlas la *provocación* (ese meme que compartes, el rumor que lees, la burla que aplaudes), ¡reduces AL DOBLE la probabilidad de que TÚ termines siendo víctima de ciberacoso! Un 21% menos, versus solo un 11% si controlas la insinuación.\n\nAsí que, la frase 'si te llevas, te aguantas' no es solo un dicho de abuela, es ¡estadística pura! Cada like a un meme ofensivo, cada rumor compartido, cada risa en el chat… te está acercando a cambiar de rol: de espectador a víctima. El ciberacoso no es solo agresión directa; es una cadena donde TÚ, el espectador, eres tan importante como el agresor. ¿Qué te parece? 🤯",
+        "options": [
+          {
+            "label": "¿Provocación? ¿Cómo así?",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "Impacto en universidades y estudiantes",
+            "target_node": "implicaciones_uni"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "¿De qué nos reímos? El contenido oculto",
+        "text": "El estudio nos suelta datos brutales: el 23% de estudiantes reporta comportamientos agresivos, y los memes ofensivos y rumores son el pan de cada día. Pero, ¿sabes qué es lo más raro? El paper NUNCA profundiza en el *contenido* de esos memes. ¿De quién se burlan? ¿Por qué es 'gracioso' para algunos y una puñalada para otros? 💔\n\nMencionan que no incluyeron el género, y eso no es solo un detalle, es un vacío enorme. ¿Acaso no importa si las víctimas son mujeres, minorías, o de qué clase social? Si el 20.97% recibe memes ofensivos, ¿quiénes son los blancos y por qué? El estudio calla justo donde más necesitamos respuestas para entender la raíz del problema.",
+        "options": [
+          {
+            "label": "¿Y cómo se soluciona esto?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "Quiero saber más de la provocación",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "La brecha entre números y realidad",
+        "text": "Vale, el modelo Logit es una joya matemática: controlar la provocación reduce un 21% la probabilidad de ciberacoso. ¡Genial! Pero ahora dime, ¿cómo 'controlas' la provocación en la universidad real? 🤔\n\nEl paper te dice: 'si te llevas, te aguantas', y que cada like te cambia de rol. Pero esto es individualizar un problema que es de TODO el sistema. ¿Qué hace la universidad con ese 34.76% que solo lee rumores? ¿Les manda un email diciendo 'deja de leer rumores'? ¿Los suspende por dar un like? 🤨\n\nLa verdad es que el hallazgo más potente del estudio es también el más difícil de convertir en políticas sin caer en la vigilancia o la censura. ¡Una paradoja total!",
+        "options": [
+          {
+            "label": "¿Estamos midiendo bien?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "Implicaciones para todos",
+            "target_node": "implicaciones_uni"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "Herramientas viejas para problemas nuevos",
+        "text": "A ver, el estudio es de 2023, analizando la post-COVID. Pero el mundo digital ya dio un salto cuántico. ¿De verdad sigue siendo útil un modelo basado en WhatsApp cuando TikTok domina la atención de los jóvenes? 🙄\n\nLos ítems del cuestionario miden cosas 'clásicas': mensajes ofensivos, fotos sin permiso, rumores en redes. Pero, ¿y la 'cancelación' pública, el doxing, el sexting sin permiso, los deepfakes con IA? ¿Y los algoritmos que te meten en burbujas de contenido agresivo? Todo eso se les escapa. 👻\n\nEl paper habla de 'rumbo a la web 3.0', ¡pero sus preguntas parecen de la web 2.0 de hace diez años! Estamos intentando cazar un fantasma con una red de mariposas. El ciberacoso muta más rápido que nuestras herramientas para medirlo. ¿No te parece un desfase brutal?",
+        "options": [
+          {
+            "label": "Volver al hallazgo central",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Es justo culpar al espectador?",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "¿Cómplice o solo curioso? La ética incómoda",
+        "text": "Este es el punto más picante, ¿eh? El estudio dice que el *espectador cómplice* tiene un efecto estadístico ¡comparable al agresor directo! Pero esto nos lleva a una pregunta ética que el paper no se atreve a tocar: ¿Es justo responsabilizar al espectador con la misma carga que al que inicia la agresión? ⚖️\n\nSi el 34.76% 'lee rumores ocasionalmente', estamos hablando de más de 1 de cada 3 estudiantes. ¿Son todos 'cómplices' por igual? ¿Hay grados? ¿Leer un rumor es lo mismo que compartirlo? ¿Reírse en un chat privado es igual que postear un meme públicamente? 🤔\n\nAquí hay una tensión gorda entre lo útil que es el modelo para predecir y lo justo de sus implicaciones. ¿Tú qué piensas?",
+        "options": [
+          {
+            "label": "Las implicaciones son clave",
+            "target_node": "implicaciones_uni"
+          },
+          {
+            "label": "¿Cuál es la pregunta incómoda final?",
+            "target_node": "pregunta_incomoda"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones_uni",
+        "title": "Para las Universidades: ¡A despertar!",
+        "text": "Escuchen bien, universidades: si sus programas de prevención solo dicen 'no agredas', están incompletos. Este estudio grita que hay que atacar la *provocación*: el que ríe, el que comparte el meme, el que lee el rumor y se queda callado. El espectador cómplice es estadísticamente tan relevante como el agresor. ¡No lo ignoren más! 💥",
+        "options": [
+          {
+            "label": "Y para los estudiantes...",
+            "target_node": "implicaciones_estudiantes"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones_estudiantes",
+        "title": "Para los Estudiantes: ¡Tu rol importa!",
+        "text": "Jóvenes, la frase 'si te llevas, te aguantas' tiene un respaldo cuantitativo brutal. Cada vez que interactúas con contenido agresivo sobre otros —un like, un comentario a favor del agresor, un compartir— es un predictor de que TÚ mismo serás víctima. 🚨\n\nEl ciberacoso no es un juego de 'buenos' contra 'malos'; es una dinámica de sistema donde cada uno de ustedes es un nodo. Tu acción, o tu inacción, tiene un peso real. Piensa dos veces antes de ese 'like'.",
+        "options": [
+          {
+            "label": "La gran pregunta final...",
+            "target_node": "pregunta_incomoda"
+          }
+        ]
+      },
+      {
+        "id": "pregunta_incomoda",
+        "title": "La Pregunta que Nadie Quiere Hacer",
+        "text": "A ver, si controlar la provocación reduce un 21% la probabilidad de ciberacoso, ¿por qué demonios las universidades siguen diseñando políticas como si el problema fuera solo el agresor directo? 😤\n\n¿Estamos ignorando a ese 34.76% de estudiantes que 'solo leen rumores'? ¿De verdad vamos a seguir haciendo como que no pasa nada con los espectadores? Es hora de mirar la verdad a los ojos. ¿Estás listo para el cambio?",
+        "options": [
+          {
+            "label": "Hazme una pregunta del artículo",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Volver al principio",
+            "target_node": "intro"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál es el hallazgo más provocador del estudio sobre ciberacoso universitario?",
+      "options": [
+        "Controlar la provocación (memes, rumores) reduce al doble la probabilidad de ser víctima.",
+        "El ciberacoso afecta más a las mujeres que a los hombres en la universidad.",
+        "Los programas de prevención actuales son muy efectivos para reducir la agresión directa.",
+        "El uso de TikTok ha disminuido significativamente el ciberacoso en universidades."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! El estudio destaca que tu rol como espectador cómplice es crucial y predictivo de tu propia victimización. ¡No es poca cosa!",
+      "feedback_incorrect": "¡Cuidado! No es la respuesta correcta. El estudio subraya el impacto del 'espectador cómplice' y cómo tu participación en la provocación duplica el riesgo de ser víctima. ¡Sigue explorando!"
+    }
+  ]
+}

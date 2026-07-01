@@ -1,0 +1,358 @@
+{
+  "article_id": "3543_Rios-Higuera",
+  "pana_flow": {
+    "welcome_message": "¡Escucha bien, alma mía! Te voy a contar una historia que te va a revolver el estómago. En América Latina, la escritura académica es como ese familiar incómodo: todos saben que está ahí, pero nadie quiere hacerse cargo. ¿Y sabes qué? Lo más fácil es culpar al más débil: el estudiante que 'llega mal preparado'.\n\nPero este estudio no va por ahí, no. Este estudio se atrevió a mirar donde nadie quería: a los profesores. ¿Qué hacen ellos? ¿De verdad enseñan a escribir o solo señalan los errores? Prepárate, porque lo que vas a descubrir te va a dejar con la boca abierta. ¿Te atreves a desenterrar la verdad?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "El ascensor roto de la escritura",
+        "text": "Imagina esto: un ascensor averiado en un edificio. La gente no puede subir. ¿Y a quién culpan? ¡Al pasajero por no saber usar las escaleras! Nadie pregunta por qué el ascensor sigue roto. 🤦‍♀️\n\nAsí es la investigación sobre escritura académica: se culpa a los estudiantes por 'llegar mal preparados de la secundaria'. Pero, ¿y los docentes? ¿Qué hacen ellos para enseñar? Este estudio, hecho en una Escuela Normal Superior de México, le da la vuelta a la tortilla. No busca más errores de estudiantes, sino qué hacen los profes para que aprendan a escribir.",
+        "options": [
+          {
+            "label": "¿Y qué encontraron?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Cómo hicieron el estudio?",
+            "target_node": "metodologia"
+          }
+        ]
+      },
+      {
+        "id": "metodologia",
+        "title": "¿Cómo lo descubrieron?",
+        "text": "Para desentrañar este misterio, los investigadores no se anduvieron con chiquitas. Fue un estudio de caso, cualitativo, descriptivo.\n\nSe sentaron a hablar con 14 docentes que habían dado clase el semestre anterior, para que contaran la verdad, no cuentos de caminos. Hicieron entrevistas con 11 preguntas clave y revisaron las planeaciones de clase, esos documentos que (se supone) guían el trabajo. Luego, analizaron todo para ver qué patrones emergían. ¡Pura ciencia para desvelar la cruda realidad! 🧐",
+        "options": [
+          {
+            "label": "Directo a los resultados",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La cruda verdad: Predicar vs. Practicar",
+        "text": "¡Aquí viene lo bueno, lo que te va a doler! 💔\n\nResulta que 13 de cada 14 profesores en esa escuela normal dicen que la escritura académica es ¡CRUCIAL! Pero, ¿adivina qué? ¡Casi la mitad nunca la trabaja en sus cursos! En Inglés, algunos piden hasta 9 trabajos. En Matemáticas, 5 de 7 docentes no piden ni un ensayo. 'No hay tiempo', 'la asignatura no lo requiere', dicen.\n\nPero la estocada final: solo 2 de 14 docentes acompañan a sus estudiantes en el proceso de escritura. El resto, asigna, recibe y califica. ¡Con criterios que ni siquiera escriben en sus planeaciones! Es como mandar a alguien a la guerra con un 'buena suerte' y esperar que gane.\n\n¿La implicación incómoda? La escritura académica no es una política institucional, ¡es un accidente de biografía! Depende de la experiencia personal del profesor, no de un plan de estudios. ¡Menuda papeleta!",
+        "options": [
+          {
+            "label": "Quiero ver más fricciones",
+            "target_node": "friccion_menu"
+          },
+          {
+            "label": "Y esto, ¿por qué importa?",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "friccion_menu",
+        "title": "Las Fricciones que duelen",
+        "text": "Pero la cosa no termina ahí. Si creías que ya lo habías visto todo, agárrate. ¿Quieres ver dónde chirría la rueda? Aquí te presento las fricciones que este estudio sacó a la luz. ¡Te harán pensar!",
+        "options": [
+          {
+            "label": "1. Hablar como sabio, actuar como burócrata",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "2. ¿Disciplina o biografía?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "3. ¿Retroalimentar o acompañar?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "4. Vacío estructural",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "Volver al hallazgo central",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Fricción 1: Hablar como sabio, actuar como burócrata",
+        "text": "¡Aquí la hipocresía se hace carne! Los docentes hablan bonito: 'la escritura desarrolla el pensamiento crítico', 'habilidades intelectuales'. Usan palabras de expertos, de esos que escriben libros.\n\nPero a la hora de la verdad, en sus planeaciones, ¡ninguno especifica criterios de evaluación! 😱 Asignan la tarea, reciben, califican. ¿Borradores? ¿Revisión intermedia? ¡Ni rastro! Solo 2 de 14 acompañan el proceso.\n\nPregunta incómoda: ¿Por qué un docente que sabe tanto de teoría, en la práctica reduce la escritura a un producto final, sin proceso?",
+        "options": [
+          {
+            "label": "Siguiente fricción",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "Ver menú de fricciones",
+            "target_node": "friccion_menu"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "Fricción 2: La escritura, ¿cosa de 'disciplina' o de 'biografía'?",
+        "text": "En la misma institución, con estudiantes similares, la escritura es reina en Inglés y casi fantasma en Matemáticas. En Inglés, hasta 9 trabajos por semestre. En Matemáticas, 5 de 7 docentes no piden ni un escrito largo. 'No se presta la asignatura', dicen.\n\nPero el estudio te clava un puñal: los docentes de Inglés que más piden escritura, ¡son los que escribieron ensayos en su propia formación! Y una profe de Matemáticas (Iris), que sí pide escritos, ¡venía de una escuela bilingüe privada donde escribía ensayos! 🤯\n\nPregunta incómoda: ¿La escritura académica es 'propia' de ciertas disciplinas, o solo se enseña si el profesor la vivió en carne propia? ¿Estamos perpetuando desigualdades por la biografía de nuestros docentes?",
+        "options": [
+          {
+            "label": "Siguiente fricción",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "Ver menú de fricciones",
+            "target_node": "friccion_menu"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "Fricción 3: ¿Retroalimentar o acompañar? Esa es la cuestión",
+        "text": "Los docentes confunden 'retroalimentar' con 'acompañar'. Sí, dejan comentarios en Google Drive o Moodle, usan rúbricas. Pero eso es retroalimentación, no acompañamiento. 📝\n\nAcompañar es planificar juntos, revisar borradores, explicar estructuras ANTES de pedir el trabajo final. ¡Solo Cecilia y Julia lo hicieron! El resto espera el trabajo 'terminado' para señalar errores. Es como tirar a alguien al agua y luego criticar su estilo mientras se ahoga. 🏊‍♀️\n\nLo que más retroalimentan: ortografía, gramática, puntuación. Lo superficial. Los aspectos complejos (argumentación, coherencia) apenas aparecen. ¡Solo en docentes con formación específica en lenguas!\n\nPregunta incómoda: ¿Usamos la tecnología para simular que acompañamos, sin hacer el verdadero trabajo de enseñar a escribir?",
+        "options": [
+          {
+            "label": "Siguiente fricción",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "Ver menú de fricciones",
+            "target_node": "friccion_menu"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "Fricción 4: La teoría institucional y el vacío estructural",
+        "text": "La teoría dice que enseñar a escribir debe ser 'ocupación institucional', no solo del alumno. ¡Pero este estudio revela un vacío TOTAL de política institucional! 😱\n\nNo hay criterios de evaluación uniformes, no hay lineamientos sobre qué escritos asignar, no hay formación para enseñar escritura. ¡Nada! Los docentes deciden al azar si la enseñan o no. Un docente de Matemáticas (Fabián) admitió que el programa lo sugería, ¡pero no asignó nada!\n\nPregunta incómoda: Si las escuelas normales forman a los futuros maestros que enseñarán a escribir, ¿no debería haber una política CLARA sobre escritura? ¿O seguimos dejando a la buena voluntad individual lo que debería ser responsabilidad estructural?",
+        "options": [
+          {
+            "label": "Y entonces, ¿qué hacemos?",
+            "target_node": "conclusion"
+          },
+          {
+            "label": "Ver menú de fricciones",
+            "target_node": "friccion_menu"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La pelota en nuestro tejado",
+        "text": "¡Aquí está el meollo del asunto, mi gente! Las escuelas normales forman a los maestros del futuro. Si esos futuros maestros no aprenden a escribir bien —porque sus profes no les enseñaron, aunque decían que era importante—, el problema se reproduce en cascada. 🌊\n\nEl estudio no encontró resistencia ideológica, no. Encontró ¡AUSENCIA DE ESTRUCTURA INSTITUCIONAL! Los docentes no enseñan escritura porque no es un requisito explícito, no hay tiempo, nadie les enseñó cómo. Es un problema de diseño curricular, no de mala voluntad.\n\nLa conclusión es incómoda: estudiantes, docentes y autoridades, ¡todos tenemos que asumir la responsabilidad! Dejemos de culpar a los estudiantes por 'llegar mal preparados' y empecemos a preguntarnos qué hacemos NOSOTROS para que salgan mejor preparados. ¡Es hora de actuar!",
+        "options": [
+          {
+            "label": "Pon a prueba tu conocimiento",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "quiz_1",
+        "title": "Cuestionario: La Paradoja Docente",
+        "text": "¡Demuéstrame que has estado atento! ¿Listo para la primera pregunta?",
+        "options": [
+          {
+            "label": "Empezar quiz 1",
+            "target_node": "quiz_node_1"
+          }
+        ]
+      },
+      {
+        "id": "quiz_node_1",
+        "title": "Pregunta 1",
+        "text": "¿Según el estudio, cuál es la principal paradoja sobre la escritura académica en las escuelas normales?",
+        "options": [
+          {
+            "label": "Los docentes creen que es importante pero no la enseñan.",
+            "target_node": "quiz_feedback_1_0"
+          },
+          {
+            "label": "Los estudiantes no quieren aprender a escribir y los docentes lo respetan.",
+            "target_node": "quiz_feedback_1_1"
+          },
+          {
+            "label": "Las asignaturas de matemáticas no requieren escritura.",
+            "target_node": "quiz_feedback_1_2"
+          },
+          {
+            "label": "Los docentes de inglés son los únicos que saben enseñar a escribir.",
+            "target_node": "quiz_feedback_1_3"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_1_0",
+        "title": "¡Correcto!",
+        "text": "¡Exacto! Hay una gran brecha entre la intención y la acción. Un problema que va más allá de la voluntad individual. ¡Bien hecho!",
+        "options": [
+          {
+            "label": "Siguiente pregunta",
+            "target_node": "quiz_node_2"
+          },
+          {
+            "label": "Volver a la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_1_1",
+        "title": "¡Incorrecto!",
+        "text": "No del todo. El estudio no encontró una falta de voluntad de los estudiantes, sino una desconexión entre lo que los docentes dicen y lo que hacen. ¡Inténtalo de nuevo!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_1"
+          },
+          {
+            "label": "Siguiente pregunta",
+            "target_node": "quiz_node_2"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_1_2",
+        "title": "¡Incorrecto!",
+        "text": "Esa es una excusa común, pero el estudio muestra que sí se puede integrar la escritura en Matemáticas si el docente tiene la experiencia. ¡No es la respuesta correcta!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_1"
+          },
+          {
+            "label": "Siguiente pregunta",
+            "target_node": "quiz_node_2"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_1_3",
+        "title": "¡Incorrecto!",
+        "text": "Aunque los de Inglés trabajan más la escritura, el estudio revela que no es exclusivo de ellos, sino que depende de la formación personal del docente. ¡Piénsalo otra vez!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_1"
+          },
+          {
+            "label": "Siguiente pregunta",
+            "target_node": "quiz_node_2"
+          }
+        ]
+      },
+      {
+        "id": "quiz_node_2",
+        "title": "Pregunta 2",
+        "text": "¿Qué factor invisible determina si un docente enseña escritura académica en su curso, según el estudio?",
+        "options": [
+          {
+            "label": "La cantidad de horas de su asignatura.",
+            "target_node": "quiz_feedback_2_0"
+          },
+          {
+            "label": "Su propia experiencia previa escribiendo durante su formación.",
+            "target_node": "quiz_feedback_2_1"
+          },
+          {
+            "label": "Las exigencias explícitas del currículo institucional.",
+            "target_node": "quiz_feedback_2_2"
+          },
+          {
+            "label": "El nivel de preparación de los estudiantes al ingresar.",
+            "target_node": "quiz_feedback_2_3"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_2_0",
+        "title": "¡Incorrecto!",
+        "text": "Aunque el tiempo es un factor, el estudio señala algo más profundo y personal. ¡Intenta de nuevo!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_2"
+          },
+          {
+            "label": "Finalizar quiz",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_2_1",
+        "title": "¡Correcto!",
+        "text": "¡Así es! Es una reproducción biográfica, no un diseño curricular. ¡Un dato que duele y que el estudio destaca como clave!",
+        "options": [
+          {
+            "label": "Finalizar quiz",
+            "target_node": "conclusion"
+          },
+          {
+            "label": "Volver a la conclusión",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_2_2",
+        "title": "¡Incorrecto!",
+        "text": "Esa sería la situación ideal, pero el estudio encontró precisamente la ausencia de esas exigencias explícitas. ¡Prueba otra opción!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_2"
+          },
+          {
+            "label": "Finalizar quiz",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "quiz_feedback_2_3",
+        "title": "¡Incorrecto!",
+        "text": "Esa es la excusa más común para culpar a los estudiantes, pero el estudio se enfoca en la responsabilidad docente. ¡No es la respuesta que buscamos!",
+        "options": [
+          {
+            "label": "Reintentar",
+            "target_node": "quiz_node_2"
+          },
+          {
+            "label": "Finalizar quiz",
+            "target_node": "conclusion"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Según el estudio, cuál es la principal paradoja sobre la escritura académica en las escuelas normales?",
+      "options": [
+        "Los docentes creen que es importante pero no la enseñan.",
+        "Los estudiantes no quieren aprender a escribir y los docentes lo respetan.",
+        "Las asignaturas de matemáticas no requieren escritura.",
+        "Los docentes de inglés son los únicos que saben enseñar a escribir."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Hay una gran brecha entre la intención y la acción. Un problema que va más allá de la voluntad individual.",
+      "feedback_incorrect": "Casi... la clave está en esa desconexión entre lo que se dice y lo que se hace, no tanto en la disciplina en sí."
+    },
+    {
+      "question": "¿Qué factor invisible determina si un docente enseña escritura académica en su curso, según el estudio?",
+      "options": [
+        "La cantidad de horas de su asignatura.",
+        "Su propia experiencia previa escribiendo durante su formación.",
+        "Las exigencias explícitas del currículo institucional.",
+        "El nivel de preparación de los estudiantes al ingresar."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Así es! Es una reproducción biográfica, no un diseño curricular. ¡Un dato que duele!",
+      "feedback_incorrect": "No del todo. Aunque el currículo es importante, el estudio señala un factor más personal y oculto."
+    }
+  ]
+}

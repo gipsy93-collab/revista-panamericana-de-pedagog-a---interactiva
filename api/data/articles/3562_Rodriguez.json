@@ -1,0 +1,204 @@
+{
+  "article_id": "3562_Rodriguez",
+  "pana_flow": {
+    "welcome_message": "¡Eh, tú! ¿Crees que ya lo sabes todo sobre la universidad en México? Pues prepárate, porque te traigo un dato que te va a volar la cabeza y te va a dejar pensando. 🤯\n\nResulta que millones de jóvenes están en la uni, la mitad son mujeres... pero ¿sabes cuántas madres mexicanas tienen un título? ¡Apenas un 17%! Sí, has oído bien. Este estudio se metió hasta la cocina en Ecatepec para desenterrar la verdad incómoda: ¿qué pasa con las que intentan ser madres Y universitarias a la vez? No es una anécdota, es un sistema que las está ahogando. 💔\n\n¿Listo para ver la cruda realidad que el sistema prefiere ignorar? Pícale aquí y desenmascaremos la verdad.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La verdad incómoda",
+        "text": "Imagínate: 4.9 millones de jóvenes en la uni, y más de la mitad son mujeres. Suena bien, ¿no? Pero la estadística oficial esconde un dato que duele: solo el 17% de las madres mexicanas tiene un título universitario. 😬\n\nEste estudio no se anda con rodeos. Fue a Ecatepec, donde la gente se amontona, y se metió en una universidad para preguntar: ¿qué pasa con las que quieren estudiar Y ser madres al mismo tiempo? No son casos aislados, es un fenómeno estructural que el sistema educativo prefiere ignorar. Aquí no hay anécdotas, hay un problema gordo. 🧐",
+        "options": [
+          {
+            "label": "¿Cómo le hicieron para saber?",
+            "target_node": "el_estudio"
+          },
+          {
+            "label": "¿Qué encontraron de golpe?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "el_estudio",
+        "title": "Así se destapó la olla",
+        "text": "Para entender este rollo, no se quedaron en los números. Se metieron a fondo con un estudio cualitativo. Hablaron con 9 jóvenes madres en entrevistas biográficas y les pasaron 12 cuestionarios.\n\n¿Quiénes eran? Chicas de 18 a 34 años, de distintos semestres. Casi todas, las primeras en sus familias en pisar la universidad. Sus papás, con estudios hasta la prepa, ¡si acaso! 📚\n\nUsaron dos teorías potentes: la de Bourdieu, para ver cómo tu origen te marca el destino, y la de Goffman, para entender cómo la universidad las estigmatiza por ser madres. Un combo explosivo para revelar la cruda verdad. 💣",
+        "options": [
+          {
+            "label": "Y, ¿qué descubrieron?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Las broncas que enfrentan",
+            "target_node": "friccion_familia"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "El corazón del asunto: la paradoja",
+        "text": "Aquí viene la verdad más cruda: ¡el 67% de las jóvenes madres universitarias INTERRUMPE sus estudios! 😱 Ya sea temporal o indefinidamente, la \"normalidad\" se rompe para ellas. Es la regla, no la excepción.\n\nPero aquí está la paradoja que te va a dejar helado: la institución las estigmatiza, sí. Las ve como \"irresponsables\". Pero sus hijos... ¡sus hijos son su combustible! 🔥 No estudian *a pesar* de ser madres, estudian *precisamente porque lo son*.\n\nQuieren romper ese ciclo, ser el ejemplo, transformar ese miserable 17% de madres con título. Son supervivientes de un sistema ciego. No son \"irresponsables\", son unas guerreras. 💪",
+        "options": [
+          {
+            "label": "Pero, ¿por qué es tan difícil?",
+            "target_node": "friccion_estigma_resiliencia"
+          },
+          {
+            "label": "Y las soluciones, ¿qué?",
+            "target_node": "friccion_soluciones"
+          },
+          {
+            "label": "Más sobre las implicaciones",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_familia",
+        "title": "La familia: ¿salvación o condena?",
+        "text": "El estudio nos muestra con lujo de detalle cómo el apoyo familiar (o la falta de él) es clave para que estas jóvenes sigan adelante. ¡Claro, si tienes a tu mamá o abuela cuidando a los niños, es más fácil! 👨‍👩‍👧‍👦\n\nPero aquí viene la pregunta incómoda: ¿qué pasa con las que NO tienen esa red de apoyo? El paper menciona a quienes \"no cuentan ni siquiera con dos de estas instituciones\"... pero no profundiza en su infierno particular. ¿Están condenadas al abandono educativo por defecto de origen? 💔\n\n¿Es la familia nuclear la única red de supervivencia? ¿O es que el sistema prefiere no ver a las que se quedan atrás por falta de apoyo institucional real?",
+        "options": [
+          {
+            "label": "¿Y las soluciones, qué?",
+            "target_node": "friccion_soluciones"
+          },
+          {
+            "label": "Otra bronca: el estigma",
+            "target_node": "friccion_estigma_resiliencia"
+          },
+          {
+            "label": "Volver al hallazgo central",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "friccion_soluciones",
+        "title": "¿Concientizar o actuar de verdad?",
+        "text": "El estudio diagnostica la enfermedad con la precisión de un cirujano: reproducción social, estigma institucional, desigualdad estructural. Pero, ¿y la cura? 🤔\n\nCuando se habla de soluciones, el paper se vuelve un poco... tímido. \"Concientizar\", \"sensibilizar\", \"promover redes de apoyo\". ¿Cómo \"concientizas\" la falta de presupuesto para guarderías? ¿Cómo \"sensibilizas\" la ausencia de una política pública real? 🤷‍♀️\n\nHay una grieta enorme entre el diagnóstico radical y las propuestas que suenan a \"buena voluntad\" individual. ¿No será que necesitamos transformaciones estructurales de verdad, con billete y política pública, en vez de solo visibilizar lo obvio?",
+        "options": [
+          {
+            "label": "Y la ley, ¿sirve de algo?",
+            "target_node": "friccion_obligatoriedad"
+          },
+          {
+            "label": "El problema de la resiliencia",
+            "target_node": "friccion_estigma_resiliencia"
+          },
+          {
+            "label": "Más implicaciones",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_obligatoriedad",
+        "title": "¿Educación obligatoria para quién?",
+        "text": "A ver, a ver... en 2019, ¡la educación superior se hizo obligatoria en México! 📜 Suena a un gran avance, ¿no? Un derecho para todos. Pero, ¿es un derecho real o una ficción legal para las madres universitarias?\n\nSi es \"obligatoria\", ¿por qué no hay guarderías, lactarios, horarios flexibles? ¿Por qué no se garantizan las condiciones mínimas para que estas madres puedan ejercer ese derecho sin romperse en el intento? 😡\n\nLa \"obligatoriedad\" es letra muerta para quienes tienen que cargar con las responsabilidades de cuidado. ¿Qué tipo de políticas DEBERÍAN acompañar este \"derecho\" para que no sea solo una bonita frase en el papel?",
+        "options": [
+          {
+            "label": "¿La resiliencia es una virtud?",
+            "target_node": "friccion_estigma_resiliencia"
+          },
+          {
+            "label": "Y entonces, ¿qué hacemos?",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Volver a las fricciones",
+            "target_node": "friccion_familia"
+          }
+        ]
+      },
+      {
+        "id": "friccion_estigma_resiliencia",
+        "title": "¿Heroizar la supervivencia?",
+        "text": "Aquí hay una tensión que te va a hacer ruido: el paper denuncia el estigma brutal que sufren las madres estudiantes, ¡y con razón! Pero al mismo tiempo, celebra su \"resiliencia\" como si fuera una virtud. 🧐\n\nPero, ¿no hay algo problemático en heroizar la resiliencia? En este contexto, ser \"resiliente\" significa sobrevivir a un sistema injusto. Si celebramos esa capacidad sin cuestionar el sistema que la exige, ¿no estamos legitimando la injusticia? 💔\n\nLas jóvenes son resilientes porque DEBEN serlo, no porque sea deseable. ¿Deberíamos aspirar a que NO se necesite tanta resiliencia para ser madre y universitaria? Piénsalo bien. 🤔",
+        "options": [
+          {
+            "label": "¿Y la diversidad de madres?",
+            "target_node": "friccion_diversidad"
+          },
+          {
+            "label": "El resumen de todo esto",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Volver a la paradoja",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "friccion_diversidad",
+        "title": "¿Un solo molde para todas?",
+        "text": "El estudio es claro: las maternidades son DIVERSAS. Dependen del contexto, la clase social, el apoyo familiar. No hay una sola forma de ser madre, ni una sola experiencia universitaria. 🌍\n\nPero, ¿qué hacen las universidades? Operan con un molde único de \"estudiante ideal\": joven, sin hijos, disponible 24/7, sin responsabilidades de cuidado. 🙄\n\nEl paper propone \"lactarios\" y \"baños equipados\" como soluciones. ¿Eso realmente atiende la diversidad o solo le pone un curita a un modelo que sigue excluyendo? ¿Necesitamos adaptar la universidad o repensar qué significa ser \"estudiante\" en un país donde la mayoría de las mujeres serán madres? La pregunta pica. 🌶️",
+        "options": [
+          {
+            "label": "Las implicaciones de todo esto",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Otra fricción...",
+            "target_node": "friccion_familia"
+          },
+          {
+            "label": "Volver al hallazgo central",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "La pregunta que incomoda",
+        "text": "Este rollo no es solo sobre madres universitarias. Es sobre cómo el sistema educativo mexicano sigue echando a patadas a quienes no encajan en el molde del \"estudiante ideal\": joven, sin hijos, con billete y sin preocupaciones. 🤦‍♀️\n\nSi el 67% de las madres universitarias interrumpe sus estudios, la pregunta es clara: ¿quién es el verdadero \"problema\"? ¿Las jóvenes que se embarazan, o un sistema educativo diseñado para egoístas que solo se cuidan a sí mismos? 😠\n\nNo basta con que entren a la uni; hay que garantizar que puedan terminar SIN renunciar a su maternidad. La falta de guarderías, lactarios, horarios flexibles no es un descuido, ¡es una violencia simbólica que las expulsa! Y la \"resiliencia\" es solo supervivencia forzada, no justicia educativa. ¡A transformarlo todo! ✨",
+        "options": [
+          {
+            "label": "¡Quiero un quiz!",
+            "target_node": "quiz_1"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "quiz_1",
+        "title": "Cuestionario de la verdad",
+        "text": "¡A ver si pusiste atención, bandido! Demuéstrame que la verdad te llegó al alma. Responde esta pregunta:",
+        "options": [
+          {
+            "label": "Contestar quiz",
+            "target_node": "quiz_pregunta_1"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Qué porcentaje de madres mexicanas tiene un título universitario, según el estudio?",
+      "options": [
+        "17%",
+        "67%",
+        "4.9%",
+        "50%"
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Solo el 17%. Un dato que grita la desigualdad que este sistema prefiere ignorar. 🤯",
+      "feedback_incorrect": "¡Casi! Pero no. El dato que duele es que solo el 17% de las madres mexicanas tiene un título universitario. ¡Una vergüenza! 💔"
+    },
+    {
+      "question": "¿Cuál es la principal razón por la que el 67% de las jóvenes madres universitarias interrumpe sus estudios?",
+      "options": [
+        "Falta de interés en la carrera.",
+        "El estigma institucional y la falta de apoyo adecuado.",
+        "Cambio de planes personales y deseo de dedicarse solo a la maternidad.",
+        "Problemas académicos y bajo rendimiento."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Así se habla! Es el sistema, con su estigma y su falta de apoyo, el que las empuja fuera. No es culpa de ellas. 😠",
+      "feedback_incorrect": "¡No, no, no! No es que les falte interés. Es el estigma institucional y la ausencia de apoyos reales lo que las obliga a interrumpir. ¡El sistema las falla! 💔"
+    }
+  ]
+}

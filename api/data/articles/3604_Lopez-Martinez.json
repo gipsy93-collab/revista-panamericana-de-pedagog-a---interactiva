@@ -1,0 +1,208 @@
+{
+  "article_id": "3604_Lopez-Martinez",
+  "pana_flow": {
+    "welcome_message": "¡Oye, tú! ¿Crees que la escuela es un rollo y que los libros son para el siglo pasado? Pues te tengo una historia que te va a volar la cabeza. En plena pandemia, cuando todo era caos y pantallas, una profe se atrevió a romper las reglas. ¿El secreto? El cine. Sí, esa cosa que te engancha en Netflix.\n\nPrepárate para descubrir cómo una pantalla puede abrir la puerta a los libros y, de paso, desenmascarar un par de verdades incómodas sobre la educación. ¿Te atreves a ver más allá de la pantalla?",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La Vieja Escuela y la Nueva Realidad",
+        "text": "Imagina esto: los chavales pegados a sus móviles, consumiendo historias a velocidad de luz, y la escuela... ¡todavía con el libro de texto como si fuera la única verdad! 🙄 La pandemia, esa que nos encerró a todos, hizo que esta brecha fuera un abismo. ¿Cómo enseñar literatura cuando la vida pasa en digital?",
+        "options": [
+          {
+            "label": "¿Y qué hicieron?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "Cuéntame el chisme completo",
+            "target_node": "estudio_detalles"
+          }
+        ]
+      },
+      {
+        "id": "estudio_detalles",
+        "title": "El Experimento en Quintana Roo",
+        "text": "Un par de valientes, María-Teresa y Marco-Antonio, se lanzaron a ver qué pasaba en un bachillerato de Chetumal. Con 30 estudiantes y adaptaciones de pelis como *Romeo y Julieta* o *Rebelión en la granja*, montaron un sistema: antes, durante y después de la peli, para analizar a fondo. ¿El objetivo? Que el cine no fuera solo palomitas.",
+        "options": [
+          {
+            "label": "¿Qué salió de ahí?",
+            "target_node": "resultados_clave"
+          },
+          {
+            "label": "¿Cuál fue el descubrimiento clave?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "resultados_clave",
+        "title": "Resultados que Duelen y Transforman",
+        "text": "El dato que te va a picar: ¡solo el 21% usaba material audiovisual antes! 🤯 La escuela, sorda a la realidad de los jóvenes. Pero con el cine, ¡boom! Pasaron de ver pelis a *leer* pelis. Un alumno dijo: \"Aprendí a ver el cine desde otras perspectivas.\" Se fortaleció el interés, la comprensión y hasta la cooperación. El cine no es un adorno, es un lenguaje que enseña a pensar.",
+        "options": [
+          {
+            "label": "¿Cuál es el gran secreto?",
+            "target_node": "hallazgo_central"
+          },
+          {
+            "label": "¿Y esto qué significa?",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "¿Hay algo 'raro' en esto?",
+            "target_node": "menu_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "La Paradoja del Aula Sorda",
+        "text": "La escuela cree que el cine distrae, ¿verdad? ¡Mentira! 🙅‍♀️ En Quintana Roo, una profe usó *Romeo y Julieta* de Luhrmann como un libro, no como una peli para ver. ¿El resultado? Los estudiantes no solo 'entendieron mejor el libro', ¡se volvieron lectores críticos de imágenes! Aprendieron a descifrar el montaje como una metáfora, a leer colores como símbolos. El cine, bien usado, es la puerta de entrada más potente a la literatura. ¡Quien diga lo contrario, que tire la primera piedra!",
+        "options": [
+          {
+            "label": "¡Interesante! ¿Qué más hay?",
+            "target_node": "implicaciones"
+          },
+          {
+            "label": "Pero... ¿no hay gato encerrado?",
+            "target_node": "menu_fricciones"
+          },
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro"
+          }
+        ]
+      },
+      {
+        "id": "menu_fricciones",
+        "title": "Las Incomodidades del Éxito",
+        "text": "Todo suena muy bonito, ¿verdad? Pero como buena gitana, te digo que siempre hay algo más allá de lo que brilla. Aquí están las 'fricciones', las verdades incómodas que este estudio nos dejó picando en la conciencia. ¿Cuál quieres desvelar primero? 😉",
+        "options": [
+          {
+            "label": "¿Y los derechos de autor?",
+            "target_node": "friccion_1"
+          },
+          {
+            "label": "¿Mucha teoría, poca acción?",
+            "target_node": "friccion_2"
+          },
+          {
+            "label": "¿Política ficción?",
+            "target_node": "friccion_3"
+          },
+          {
+            "label": "¿Fuego de paja?",
+            "target_node": "friccion_4"
+          },
+          {
+            "label": "¿Y entonces qué hacemos?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Fricción 1: ¿Piratería Educativa?",
+        "text": "El estudio usa pelis protegidas: *Romeo y Julieta*, *Crónica de una muerte anunciada*... Las eligieron por 'accesibilidad en línea'. ¿Pero esa accesibilidad es legal o ética? 🕵️‍♀️ El paper calla. ¿Podemos promover el cine como herramienta masiva sin resolver el problemón de los derechos de autor? ¡Ahí te la dejo!",
+        "options": [
+          {
+            "label": "Uhm... ¿otra fricción?",
+            "target_node": "menu_fricciones"
+          },
+          {
+            "label": "¿Y qué hacemos con esto?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "Fricción 2: ¿Revolución o Maquillaje?",
+        "text": "El estudio se viste de gala con Freire y la pedagogía crítica: el cine como 'territorio de resistencia'. Pero cuando los alumnos hablan, dicen 'entendí mejor el libro' o 'la película te engancha'. ¿Dónde quedó la revolución? 🤨 ¿Estamos usando teoría crítica para darle glamour a resultados que son, bueno, más bien modestos? ¿O estamos subestimando lo que sí lograron?",
+        "options": [
+          {
+            "label": "Dime otra verdad incómoda",
+            "target_node": "menu_fricciones"
+          },
+          {
+            "label": "¿Y la solución?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "Fricción 3: ¿Sueños o Realidad Política?",
+        "text": "El paper recomienda mil cosas: formación docente en audiovisual, intercambios entre profes... Pero la verdad es que la innovación de este estudio ocurrió ¡a pesar del sistema! La profe se las ingenió sola, sin formación específica, con alumnos con internet inestable. Las recomendaciones suenan a lista de deseos para Santa Claus. 🎅 ¿Escribimos políticas que sabemos que no se van a cumplir, solo para 'completar' el paper? ¡Seamos honestos!",
+        "options": [
+          {
+            "label": "¿Qué más me ocultas?",
+            "target_node": "menu_fricciones"
+          },
+          {
+            "label": "Entonces, ¿qué sí podemos hacer?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "Fricción 4: ¿Entusiasmo de Corto Plazo?",
+        "text": "Hubo un 'entusiasmo inmediato', sí. Pero la experiencia duró solo cuatro meses. ⏳ ¿Se mantuvieron los aprendizajes? ¿Los alumnos siguieron siendo 'lectores críticos de cine' después? Muchas veces, la novedad genera un 'efecto Hawthorne': todo mejora porque te están observando. ¿Medimos innovación real o solo un subidón momentáneo?",
+        "options": [
+          {
+            "label": "Volver a las fricciones",
+            "target_node": "menu_fricciones"
+          },
+          {
+            "label": "¿Hay alguna esperanza?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "El Futuro está en Tus Manos",
+        "text": "Este estudio grita algo a los cuatro vientos: la innovación no necesita dinero a espuertas, ¡necesita profes que piensen! La profe de Chetumal lo hizo sin ser experta en cine. Necesitamos:\n1. Que los profes aprendan a 'leer' cine.\n2. Que los profes compartan sus locuras pedagógicas.\n3. Que la creatividad en el aula se valore como investigación.\nEducar con arte es educar para pensar. ¿Te apuntas a la revolución? ✊",
+        "options": [
+          {
+            "label": "¡Me apunto! Fin del viaje.",
+            "target_node": "despedida"
+          },
+          {
+            "label": "Tengo más preguntas...",
+            "target_node": "menu_fricciones"
+          }
+        ]
+      },
+      {
+        "id": "despedida",
+        "title": "Hasta la Próxima Historia",
+        "text": "Y así, mi querido aventurero del conocimiento, llegamos al final de este viaje. Recuerda, las historias están en todas partes, no solo en los libros. ¡Ahora ve y cuéntale al mundo lo que sabes! 😉",
+        "options": []
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál fue la 'paradoja del aula sorda' que este estudio buscó desafiar?",
+      "options": [
+        "La escuela cree que el cine distrae de la lectura, pero puede ser una puerta efectiva a ella.",
+        "Los estudiantes escuchan música en clase, pero no prestan atención a los profesores.",
+        "Los docentes no tienen recursos audiovisuales, por lo que no pueden usar el cine."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! El cine, bien mediado, no es distracción, ¡es una herramienta poderosa!",
+      "feedback_incorrect": "¡Casi! La clave es que la escuela subestima el potencial del cine como mediador de la lectura. ¡Sigue intentándolo!"
+    },
+    {
+      "question": "Según el estudio, ¿cuál es el factor más importante para la innovación educativa en contextos desiguales?",
+      "options": [
+        "La infraestructura tecnológica abundante.",
+        "La reflexividad y creatividad del docente.",
+        "La formación específica en análisis fílmico."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Así es! La clave no es tener mucho, sino saber pensar y adaptarse. ¡La reflexividad docente es oro puro!",
+      "feedback_incorrect": "¡Casi! Aunque la tecnología y la formación ayudan, el estudio enfatiza que la *actitud* y la *creatividad* del docente son el motor principal. ¡No te rindas!"
+    }
+  ]
+}

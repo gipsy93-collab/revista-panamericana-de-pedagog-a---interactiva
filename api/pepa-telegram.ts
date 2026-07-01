@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
@@ -164,16 +167,20 @@ Ahí los usuarios pueden leer los artículos de forma inmersiva, con visualizaci
 Usuario pregunta: ${userText}`;
 }
 
-// Enviar mensaje a Telegram (soporta mensajes largos)
-async function sendTelegramMessage(chatId: number, text: string): Promise<void> {
-  // Telegram tiene límite de 4096 caracteres por mensaje
+// Enviar mensaje a Telegram (soporta mensajes largos y teclados inline)
+async function sendTelegramMessage(chatId: number, text: string, replyMarkup?: any): Promise<void> {
   const MAX_LENGTH = 4000;
+  const body: any = { chat_id: chatId, text: text, parse_mode: 'HTML' };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
   
   if (text.length <= MAX_LENGTH) {
     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text: text })
+      body: JSON.stringify(body)
     });
   } else {
     // Dividir en partes si es muy largo
@@ -184,18 +191,23 @@ async function sendTelegramMessage(chatId: number, text: string): Promise<void> 
         parts.push(remaining);
         break;
       }
-      // Buscar un buen punto de corte (salto de línea)
       let cutIndex = remaining.lastIndexOf('\n', MAX_LENGTH);
       if (cutIndex === -1 || cutIndex < MAX_LENGTH / 2) cutIndex = MAX_LENGTH;
       parts.push(remaining.substring(0, cutIndex));
       remaining = remaining.substring(cutIndex).trim();
     }
     
-    for (const part of parts) {
+    for (let i = 0; i < parts.length; i++) {
+      // Solo poner el teclado en el último fragmento
+      const partBody: any = { chat_id: chatId, text: parts[i], parse_mode: 'HTML' };
+      if (i === parts.length - 1 && replyMarkup) {
+        partBody.reply_markup = replyMarkup;
+      }
+      
       await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: part })
+        body: JSON.stringify(partBody)
       });
     }
   }
@@ -206,6 +218,67 @@ export default async function handler(req: any, res: any) {
     return res.status(200).send('PANA Bot is running! 🤖✨');
   }
 
+  // --- MANEJO DE CALLBACKS (BOTONES INLINE) ---
+  if (req.body.callback_query) {
+    const callbackQuery = req.body.callback_query;
+    const data = callbackQuery.data; // e.g. nav:3412_Hernandez:start
+    const chatId = callbackQuery.message.chat.id;
+
+    // Acknowledge the callback para quitar el "relojito" en el botón
+    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/answerCallbackQuery`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ callback_query_id: callbackQuery.id })
+    });
+
+    if (data.startsWith('nav:')) {
+      const parts = data.split(':');
+      const articleId = parts[1];
+      const nodeId = parts[2];
+      
+      try {
+        const filePath = path.join(process.cwd(), 'api', 'data', 'articles', `${articleId}.json`);
+        if (fs.existsSync(filePath)) {
+          const fileContent = fs.readFileSync(filePath, 'utf8');
+          const articleData = JSON.parse(fileContent);
+          
+          if (nodeId === 'start') {
+            const welcomeText = articleData.pana_flow?.welcome_message || "¡Hola! Vamos a explorar este artículo.";
+            const firstNode = articleData.pana_flow?.nodes?.[0];
+            
+            let replyMarkup = undefined;
+            if (firstNode) {
+              replyMarkup = {
+                inline_keyboard: [[{ text: 'Comenzar a explorar 🚀', callback_data: `nav:${articleId}:${firstNode.id}` }]]
+              };
+            }
+            await sendTelegramMessage(chatId, welcomeText, replyMarkup);
+          } else {
+            // Find specific node
+            const node = articleData.pana_flow?.nodes?.find((n: any) => n.id === nodeId);
+            if (node) {
+              const text = `<b>${node.title || 'Sección'}</b>\n\n${node.text}`;
+              const inline_keyboard = (node.options || []).map((opt: any) => {
+                 return [{ text: opt.label, callback_data: `nav:${articleId}:${opt.target_node}` }];
+              });
+              
+              await sendTelegramMessage(chatId, text, { inline_keyboard });
+            } else {
+              await sendTelegramMessage(chatId, "No encontré esa sección. Escribe /start para volver al inicio.");
+            }
+          }
+        } else {
+          await sendTelegramMessage(chatId, "Lo siento, este artículo no tiene un modo interactivo disponible todavía. 😢");
+        }
+      } catch (e) {
+         console.error(e);
+         await sendTelegramMessage(chatId, "Hubo un error cargando el artículo. 🔧");
+      }
+    }
+    return res.status(200).json({ ok: true });
+  }
+
+  // --- MANEJO DE MENSAJES DE TEXTO NORMALES ---
   const { message } = req.body;
   if (!message || !message.text) {
     return res.status(200).send('ok');
@@ -216,41 +289,46 @@ export default async function handler(req: any, res: any) {
 
   // Comando /start
   if (userText === '/start') {
-    const welcomeMsg = `¡Hola! Soy PANA 🤖✨ Tu asistente de investigación de la Revista Panamericana de Pedagogía (RPP) de la Universidad Panamericana.
-
-Puedo ayudarte con:
-
-1. Explicarte cualquier artículo del número actual
-2. Generar guiones de podcast sobre los artículos
-3. Crear contenido para redes sociales (Twitter, Instagram, LinkedIn)
-4. Describir infografías profesionales
-5. Generar resúmenes ejecutivos
-6. Fichas bibliográficas en APA 7
-7. Recomendarte artículos según tu interés
-8. Contarte sobre el ecosistema de revistas UP
-
-Escríbeme lo que necesites. Por ejemplo:
-- "Dame un guión de podcast del artículo de ciberacoso"
-- "Genera un hilo de Twitter sobre Legal Tech"
-- "Resúmeme el artículo de deserción universitaria"
-
-¡Estoy lista para ayudarte! 🚀📚`;
+    const welcomeMsg = `¡Hola! Soy PANA 🤖✨ Tu asistente de investigación de la Revista Panamericana de Pedagogía (RPP).
     
-    await sendTelegramMessage(chatId, welcomeMsg);
+Puedo conversar contigo usando mis conocimientos transmedia, o puedes elegir uno de los siguientes artículos para vivir una experiencia de *Storylearning* guiada paso a paso:`;
+    
+    // Leer artículos JSON disponibles
+    let inline_keyboard: any[] = [];
+    try {
+      const articlesDir = path.join(process.cwd(), 'api', 'data', 'articles');
+      if (fs.existsSync(articlesDir)) {
+        const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.json'));
+        // Tomar hasta 8 para no saturar el menú
+        files.slice(0, 8).forEach(file => {
+           const articleId = file.replace('.json', '');
+           // Formatear el nombre un poco para que sea legible
+           const displayName = articleId.substring(0, 30);
+           inline_keyboard.push([{ text: `📖 ${displayName}`, callback_data: `nav:${articleId}:start` }]);
+        });
+      }
+    } catch(e) {
+      console.error("Error leyendo directorio data/articles:", e);
+    }
+
+    if (inline_keyboard.length === 0) {
+      // Fallback si no hay JSONs copiados todavía
+      inline_keyboard.push([{ text: "Aún no hay artículos interactivos", callback_data: "none" }]);
+    }
+
+    await sendTelegramMessage(chatId, welcomeMsg, { inline_keyboard });
     return res.status(200).json({ ok: true });
   }
 
+  // Si es un mensaje de texto normal, PANA usa Gemini (Flujo Original)
   try {
-    // Indicar que PANA está "escribiendo"
     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendChatAction`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ chat_id: chatId, action: 'typing' })
     });
 
-    // Llamar a Gemini
     const systemPrompt = buildSystemPrompt(userText);
-    
     const modelsToTry = ['gemini-2.0-flash-exp', 'gemini-flash-latest', 'gemini-pro-latest'];
     let botText = '';
     let lastError = '';
@@ -282,18 +360,14 @@ Escríbeme lo que necesites. Por ejemplo:
       botText = `Disculpa, estoy teniendo problemas técnicos en este momento. Intenta de nuevo en unos segundos. (Error: ${lastError})`;
     }
 
-    // Enviar respuesta a Telegram
     await sendTelegramMessage(chatId, botText);
     return res.status(200).json({ ok: true });
     
   } catch (error: any) {
     console.error('Error en PANA Telegram:', error);
-    
-    // Intentar notificar al usuario del error
     try {
       await sendTelegramMessage(chatId, 'Ups, tuve un problema técnico. Intenta de nuevo en unos segundos. 🔧');
     } catch (_) {}
-    
     return res.status(200).json({ ok: false });
   }
 }

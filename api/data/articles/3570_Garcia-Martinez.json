@@ -1,0 +1,166 @@
+{
+  "article_id": "3570_Garcia-Martinez",
+  "pana_flow": {
+    "welcome_message": "¡Escucha bien, alma curiosa! 👂 Te voy a contar un secreto a voces que nadie se atreve a gritar: en la educación, algo huele a podrido. Quieren que los niños piensen, sean críticos, pero a los maestros, ¿quién les enseña a enseñar eso? 🤔\n\nEste estudio es como un espejo que nos devuelve una verdad incómoda: hablamos mucho de pensamiento crítico, pero en las aulas de formación docente, la cosa es otra. ¿Te atreves a meterte en el fango y ver la realidad de frente? Prepárate, que esto pica.",
+    "nodes": [
+      {
+        "id": "intro",
+        "title": "La verdad incómoda de la educación",
+        "text": "Mira, en países como Finlandia o Corea del Sur, los maestros salen de la universidad sabiendo de neurociencia y autorregulación. ¿El resultado? ¡Puntajes PISA por las nubes! 📈\n\nPero en otros lugares, la formación sigue anclada en lo mecánico, en el 'haz esto y ya'. Y claro, los niños, desde los 5 años, ya nacen con una desigualdad cognitiva brutal. 💔\n\n¿El problema? Formamos maestros de preescolar sin enseñarles a encender la chispa del pensamiento crítico en sus alumnos. Es como darle a un cirujano un libro de anatomía, pero sin enseñarle a dar una sola puntada.",
+        "options": [
+          {
+            "label": "¿Y esto, quién lo dice?",
+            "target_node": "estudio_que_hicieron"
+          }
+        ]
+      },
+      {
+        "id": "estudio_que_hicieron",
+        "title": "El chismógrafo: ¿Quién investigó?",
+        "text": "Dos valientes, García-Martínez y Reyes-Cabrera de la Universidad Autónoma de Yucatán (México), se metieron de lleno. Hicieron una revisión sistemática, como quien busca una aguja en un pajar, siguiendo protocolos estrictos. 🕵️‍♀️\n\nDe 51 artículos, se quedaron con 15 joyas publicadas entre 2015 y 2025. ¿De dónde eran? Mayormente Europa (46.6%) y Asia (40%). España lideró con 4 investigaciones. Poquito de Sudamérica y Norteamérica. Analizaron perspectivas, estrategias, tipos de pensamiento y, lo más jugoso, ¡qué dificulta todo esto!",
+        "options": [
+          {
+            "label": "Dame los datos que duelen",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "¡El Hallazgo que te va a volar la cabeza!",
+        "text": "Aquí está la puñalada: \"Formamos maestros para que enseñen a pensar, pero les damos solo herramientas técnicas para obedecer currículos.\" 🤯 Es como querer formar filósofos y terminar con operarios de manualidades. ¡Qué paradoja más cruel!\n\nLa mayoría de estudios vienen de países con privilegios académicos. Y cuando los futuros docentes SÍ reciben formación crítica, ¿qué pasa? Se topan con dilemas éticos para los que NO hay manual. Se quedan paralizados. 🤦‍♀️\n\nEl pensamiento crítico, amiguito, no es una app que descargas. Es una práctica transformadora que une lo cognitivo, lo ético y lo político. O lo tienes todo, o no tienes nada. ¡Así de simple y así de complejo!",
+        "options": [
+          {
+            "label": "¿Pero cómo lo intentan enseñar?",
+            "target_node": "estrategias_pedagogicas"
+          }
+        ]
+      },
+      {
+        "id": "estrategias_pedagogicas",
+        "title": "Las 6 'recetas' que usan (o intentan)",
+        "text": "Identificaron seis formas en que intentan promover el pensamiento crítico:\n\n1️⃣ Activas y experienciales: Conectan con la vida, pero ojo, generan tensiones éticas (¿paternalismo docente?).\n2️⃣ Artísticas y creativas: Para que los futuros maestros interroguen su identidad desde lo sensorial.\n3️⃣ Basadas en lenguaje y argumentación: Lectura en voz alta con preguntas que abren el diálogo.\n4️⃣ Críticas y reflexivas: Cuestionan lo tradicional para formar docentes 'transformadores'.\n5️⃣ Investigación formativa: Promueve autonomía y transferencia a contextos reales.\n6️⃣ Tecnologías y STEM: Pensamiento computacional, IA. Pero aquí viene lo bueno: ¡los futuros docentes eran críticos digitales, pero se atascaban al usar la IA en el aula! (Lim, 2023). 🤯",
+        "options": [
+          {
+            "label": "Y, ¿qué tipos de pensamiento promueven?",
+            "target_node": "tipos_pensamiento"
+          }
+        ]
+      },
+      {
+        "id": "tipos_pensamiento",
+        "title": "Los 4 'sabores' del pensamiento crítico",
+        "text": "No todos los pensamientos críticos son iguales. Estos son los que más se promueven:\n\n🧠 Reflexivo: Cuestionar prácticas y roles docentes.\n🧐 Analítico: Resolver problemas reales usando STEM.\n🗣️ Argumentativo: Justificar ideas (¡pero con dificultades en temas 'sensibles' como educación sexual!).\n🎨 Creativo-crítico: Pensamiento divergente a través del arte.\n\n¿Te das cuenta? Parece completo, pero siempre hay un 'pero'...",
+        "options": [
+          {
+            "label": "¿Hay algo que lo frene?",
+            "target_node": "factores_dificultantes"
+          }
+        ]
+      },
+      {
+        "id": "factores_dificultantes",
+        "title": "Los muros que impiden pensar",
+        "text": "Claro, no todo es miel sobre hojuelas. Hay obstáculos enormes:\n\n🧱 Institucionales y curriculares: El sistema no ayuda.\n🧠 Preconcepciones: Los estudiantes universitarios ya vienen con ideas fijas.\n🗣️ Sin espacios: El sistema educativo no permite confrontar ideas diferentes.\n🌉 Brecha: Dominan la técnica, pero no saben cómo aplicarla en el aula.\n\nEs una cadena de problemas que frustra a cualquiera. Pero, ¿qué significa todo esto?",
+        "options": [
+          {
+            "label": "Y esto, ¿qué significa para nosotros?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "El puñal en la espalda: La cruda realidad",
+        "text": "Aquí está la contradicción que duele: las instituciones hablan de competencias críticas, pero la realidad de los sistemas educativos nos empuja a prácticas repetitivas y sin sentido. 😩\n\nEs el \"pensamiento crítico como decoración curricular\": suena divino en el papel, pero en el aula de formación, ¡brilla por su ausencia! Un estudio (Gatti y Torrego-Egido, 2024) mostró que futuras maestras no sabían argumentar sobre educación sexual. ¿Por qué? ¡No les enseñaron a argumentar explícitamente!\n\nSi la formación es \"ética, política y subjetiva\", ¿por qué la evaluamos como si fuera un examen de opciones múltiples? Se necesita URGENCIA: que los programas NO SOLO digan que el pensamiento crítico es importante, sino que creen las condiciones para que se VIVA desde la primera infancia. Deja de ponerlo en el objetivo si luego solo pides llenar cuestionarios, ¡por favor!",
+        "options": [
+          {
+            "label": "Hablemos de las fricciones... ¡que arden!",
+            "target_node": "friccion_1"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Fricción 1: Lo que el paper dice y lo que calla",
+        "text": "El estudio cita a Freire: pensar críticamente es un acto político de liberación. ¡Amén! 🙌 Pero el 86.6% de los estudios vienen de Europa y Asia, lugares con recursos y democracias consolidadas.\n\nLa pregunta que no se hace: ¿Cómo demonios se hace pensamiento crítico-docente donde los maestros viven en precariedad, los niños llegan con hambre y el currículo es un instrumento de control? 🤯\n\nEl paper dice que hay poca investigación en Latinoamérica y África, pero no se pregunta el porqué. Necesitamos estudios que digan CÓMO hacerlo político sin perder el empleo, sin poner en riesgo a los niños, sin reproducir violencias. ¡Ese es el verdadero desafío!",
+        "options": [
+          {
+            "label": "Siguiente paradoja...",
+            "target_node": "friccion_2"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "Fricción 2: Del 'sé hacer' al 'sé enseñar'",
+        "text": "¡Agárrate! El estudio de Lim (2023) reveló algo incómodo: los futuros docentes eran unos 'críticos digitales' de primera, pero a la hora de usar la IA para resolver problemas prácticos en el aula, ¡se les caía la mandíbula al suelo! 😩\n\nTraducido: saben criticar la tecnología, pero no saben USARLA para enseñar. La formación está separando el pensar del hacer. Evalúan si puedes analizar un problema ético, pero no si puedes enseñar a un niño de 4 años a cuestionar un anuncio publicitario. ¡Son habilidades distintas!\n\nPara enseñar pensamiento crítico a niños, el maestro necesita:\n- Teoría de desarrollo infantil\n- Saber 'andamiar' el diálogo\n- Tolerar la incertidumbre\n- Gestionar emociones\n- Crear ambientes de diálogo\n\n¿Adivina qué? Ninguna de estas aparece en los objetivos tradicionales del 'pensamiento crítico docente'.",
+        "options": [
+          {
+            "label": "Y el sistema, ¿qué onda?",
+            "target_node": "friccion_3"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "Fricción 3: Política vs. Realidad",
+        "text": "El paper arranca diciendo que faltan estándares internacionales para el pensamiento crítico. ¡Claro que sí! Pero cuando existen (como PISA), ¿qué miden? Competencias cognitivas individuales, no la capacidad de diálogo comunitario. Premian resultados estandarizados, no procesos transformadores. 🏆\n\nAquí viene el dilema: el pensamiento crítico de Lipman y Freire es IMPOSIBLE de estandarizar. Es contextual, relacional, emergente. Pero los sistemas educativos NECESITAN medirlo, compararlo, evaluarlo. ¡Vaya contradicción!\n\n¿Cómo defendemos una formación docente en pensamiento crítico sin que se convierta en una casilla más del CV, medible con una escala Likert del 1 al 5? Los sistemas están diseñados para producir resultados homogéneos, no sujetos críticos. ¡Es la pescadilla que se muerde la cola! 🐍",
+        "options": [
+          {
+            "label": "¿Y los niños? ¿Nadie les pregunta?",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "Fricción 4: La voz ausente",
+        "text": "De los quince estudios revisados, ¿sabes cuántos consultaron a los niños de preescolar? ¡CERO! 🙅‍♀️\n\nEl pensamiento crítico se estudia como algo que los adultos hacen *a* los niños, no como algo que se *co-construye con* ellos. Es como si los niños fueran recipientes vacíos esperando ser llenados por la sabiduría adulta.\n\nCuando Lipman dice que los niños tienen \"capacidades filosóficas innatas\", ¿no deberíamos preguntarles a ELLOS qué significa pensar críticamente desde su experiencia? ¿No sería esa misma pregunta un acto de pensamiento crítico? ¡Ahí lo dejo! 😉",
+        "options": [
+          {
+            "label": "Uff, ¡qué dilema!",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Entonces, ¿qué hacemos?",
+        "text": "Este estudio no es solo para señalar problemas, es para que te enciendas. 🔥 La formación docente necesita una sacudida. Dejemos de maquillar los currículos y empecemos a construir puentes reales entre la teoría y la práctica, entre lo que se dice y lo que se hace.\n\nEl futuro de la educación y de las mentes críticas de nuestros niños está en juego. ¿Estás listo para cuestionar el sistema y ser parte del cambio? ¡Atrévete!",
+        "options": [
+          {
+            "label": "Ponte a prueba: ¡Quiz!",
+            "target_node": "quiz_1"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "Según el estudio de García-Martínez y Reyes-Cabrera, ¿cuál es la principal paradoja en la formación docente para el pensamiento crítico?",
+      "options": [
+        "Se forman maestros para que enseñen a pensar, pero solo se les dan herramientas técnicas para obedecer currículos.",
+        "Los programas se enfocan demasiado en la neurociencia y la autorregulación, descuidando lo social.",
+        "La mayoría de los estudios provienen de Latinoamérica, sesgando los resultados.",
+        "Los docentes tienen altos niveles de pensamiento crítico, pero los niños carecen de él."
+      ],
+      "correct_answer_index": 0,
+      "feedback_correct": "¡Exacto! Es la contradicción central que el estudio destapa: se predica una cosa y se practica otra. ¡Bien visto!",
+      "feedback_incorrect": "¡Casi! La paradoja central, el 'hallazgo que duele', es que se espera que los docentes enseñen a pensar, pero se les equipa con habilidades meramente técnicas y obedientes. ¡Vuelve a leer el \"Hallazgo Central\"!"
+    },
+    {
+      "question": "¿Cuál de las siguientes habilidades *no* es mencionada como necesaria para que un docente enseñe pensamiento crítico a niños pequeños, según la Fricción 2?",
+      "options": [
+        "Conocer teoría del desarrollo cognitivo infantil.",
+        "Dominar estrategias de andamiaje discursivo.",
+        "Ser un experto programador en IA avanzada.",
+        "Gestionar emociones propias y ajenas."
+      ],
+      "correct_answer_index": 2,
+      "feedback_correct": "¡Correcto! Aunque el uso de tecnología es relevante, ser un \"experto programador en IA avanzada\" no es una habilidad fundamental listada para enseñar pensamiento crítico en preescolar. ¡Has estado atento!",
+      "feedback_incorrect": "¡Uh-oh! Piensa en qué tipo de habilidades son pedagógicas y cuáles son más técnicas y específicas. La Fricción 2 destaca la brecha entre criticar la tecnología y usarla pedagógicamente, no el dominio de programación. ¡Revisa la Fricción 2!"
+    }
+  ]
+}

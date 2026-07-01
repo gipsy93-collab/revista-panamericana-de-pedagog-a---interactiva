@@ -1,0 +1,114 @@
+{
+  "article_id": "17810-277-81970",
+  "pana_flow": {
+    "welcome_message": "Escucha, aquí no te vamos a contar el cuento de siempre. Te voy a soltar una historia de las que pican, de las que te hacen levantar una ceja. ¿Te acuerdas cuando el mundo se paró y las aulas se vaciaron? Más de mil millones de estudiantes en casa, ¡un caos! Pero en México, en la UAEMéx, algo increíble, y a la vez, terriblemente incómodo, pasó con los profes.\n\n¿Listx para que te cuente cómo reinventaron la educación sin siquiera saber lo que hacían? ¡Ponte cómodx, que esto te va a volar la cabeza!",
+    "nodes": [
+      {
+        "id": "intro_contexto",
+        "title": "La Gran Migración Educativa",
+        "text": "Imagina el panorama: mayo de 2020. La UNESCO suelta la bomba: 1.200 millones de estudiantes fuera de las aulas. ¡La peor crisis educativa desde la guerra! Las pantallas se volvieron el único puente. En la UAEMéx, como en todos lados, el pánico. Pero aquí viene la pregunta que nadie quería hacer: ¿estaban los profes listos para esto? 😬 La respuesta, mi amigx, es un NO rotundo. Y sin embargo...",
+        "options": [
+          {
+            "label": "Y sin embargo, ¿qué pasó?",
+            "target_node": "hallazgo_central"
+          }
+        ]
+      },
+      {
+        "id": "hallazgo_central",
+        "title": "¡El Dato que Duele!",
+        "text": "Aquí te va el bombazo, el dato que te va a dejar con la boca abierta: ¡Los profes estaban haciendo Aula Invertida sin tener ni idea de que la estaban haciendo! 🤯 Sí, tal cual. Por pura necesidad, por supervivencia, hicieron que los estudiantes revisaran material antes, que trabajaran en equipo, que usaran mil herramientas... pero nunca, NUNCA, dijeron 'estoy aplicando el modelo de Aula Invertida de fulanito'. La innovación más potente de la pandemia fue pura intuición, pura maña docente. ¿Te lo puedes creer?",
+        "options": [
+          {
+            "label": "Cuéntame más de esa fricción",
+            "target_node": "friccion_1"
+          }
+        ]
+      },
+      {
+        "id": "friccion_1",
+        "title": "Innovación a Ciegas",
+        "text": "Ahí está la primera fricción que te remueve las entrañas: ¡innovación a ciegas! Los profes, unos genios, reinventando la rueda pedagógica sin saber que ya tenía nombre. ✨ Estaban validando, compartiendo, mejorando... pero todo de forma empírica, sin ese marco conceptual que les habría dado alas. La pregunta pica: ¿cuántos profes están haciendo magia sin saber que la hacen? ¿Y cuántos se creen que la hacen siguiendo un manual, pero la están pifiando?",
+        "options": [
+          {
+            "label": "Otra fricción: Brecha digital",
+            "target_node": "friccion_2"
+          }
+        ]
+      },
+      {
+        "id": "friccion_2",
+        "title": "La Brecha y la Maña",
+        "text": "Aquí viene la segunda patada al estómago: la brecha digital es un abismo, pero la resiliencia docente es un puente hecho a mano. 🌉 Estudiantes sin compu, con un celular prestado, conectándose una vez a la semana... ¡Una locura! Pero los profes, lejos de rendirse, se inventaron mil 'workarounds'. ¿Un grupo de Facebook? ¡Hecho! ¿Actividades flexibles? ¡Por supuesto! La pregunta que te carcome: ¿por qué diablos la solución a problemas gigantes del sistema depende de la creatividad individual de cada profe?",
+        "options": [
+          {
+            "label": "Sigue, ¿qué más fricciones?",
+            "target_node": "friccion_3"
+          }
+        ]
+      },
+      {
+        "id": "friccion_3",
+        "title": "¿Protagonista o Supervisado?",
+        "text": "Ahora, hablemos del estudiante 'protagonista'. El Aula Invertida promete darle el poder, ¿verdad? Pero aquí la cosa se pone turbia. 🧐 Los profes diseñaban actividades top, sí, pero también pasaban lista para que participaran. Y la gran incógnita: los estudiantes no encendían cámaras ni micros. ¿Por qué? El estudio no lo cuenta. ¿Es un verdadero cambio de roles o solo una simulación elegante, donde el profe sigue llevando las riendas, pero ahora con más gadgets?",
+        "options": [
+          {
+            "label": "La última fricción...",
+            "target_node": "friccion_4"
+          }
+        ]
+      },
+      {
+        "id": "friccion_4",
+        "title": "El Conocimiento Encerrado",
+        "text": "Y aquí la espina que te queda clavada: ¡la socialización que nunca fue! 💔 Una de las categorías clave del estudio era ver cómo compartían el conocimiento, pero la cruda realidad es que no pasó. Los proyectos se quedaron en el cajón virtual, el conocimiento no salió del aula. Es como si hubieran cocinado un banquete delicioso y nadie más pudiera probarlo. ¿Por qué este 'fracaso' documentado? El estudio lo cuenta, pero no lo explica. ¡Qué rabia!",
+        "options": [
+          {
+            "label": "¿Y esto qué significa?",
+            "target_node": "implicaciones"
+          }
+        ]
+      },
+      {
+        "id": "implicaciones",
+        "title": "Y Esto, ¿Qué Significa?",
+        "text": "Entonces, ¿qué sacamos de todo esto? Pues mira, para empezar, hay una brecha brutal entre la teoría y la práctica docente. Los profes más cracks están reinventando la pedagogía sin el mapa. 🗺️ Para la educación virtual, la pandemia no la 'digitalizó', la 'mutó' a la fuerza, y en esa mutación, descubrieron que el estudiante PUEDE ser protagonista. Y para la política educativa, ¡ojo!, la brecha digital es real y profunda, y los profes están haciendo milagros para tapar agujeros que no les corresponden.",
+        "options": [
+          {
+            "label": "La conclusión final",
+            "target_node": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "La Pregunta Incómoda Final",
+        "text": "Al final del día, esta historia no es solo sobre Aula Invertida. Es un canto a la resiliencia docente. 💪 Es la prueba de cómo tres profes, sin cursos, sin recursos top, sin ni siquiera saber el nombre de lo que hacían, transformaron sus clases en medio del caos. Y la pregunta que te dejo en el aire, esa que te va a dar vueltas en la cabeza: si pudieron hacer TODO esto sin saberlo, ¿qué demonios podrían lograr si realmente los apoyáramos? ¡Piénsalo bien!",
+        "options": [
+          {
+            "label": "Volver al inicio",
+            "target_node": "intro_contexto"
+          },
+          {
+            "label": "Hacer un quiz",
+            "target_node": "quiz_node_placeholder"
+          }
+        ]
+      }
+    ]
+  },
+  "quizzes": [
+    {
+      "question": "¿Cuál fue el hallazgo más sorprendente sobre la aplicación del Aula Invertida por parte de los docentes durante la pandemia?",
+      "options": [
+        "Los docentes la aplicaron perfectamente siguiendo los manuales.",
+        "Los docentes la aplicaron sin saber que estaban usando Aula Invertida.",
+        "La UAEMéx capacitó exhaustivamente a todos los docentes en AI.",
+        "Los estudiantes rechazaron el uso del Aula Invertida."
+      ],
+      "correct_answer_index": 1,
+      "feedback_correct": "¡Exacto! La innovación vino de la necesidad, no de la teoría. ¡Unos genios intuitivos!",
+      "feedback_incorrect": "¡Uh, uh! Justo ahí está la magia y la paradoja: lo hicieron sin saber el nombre. ¡Vuelve a leer para entender la fricción!"
+    }
+  ]
+}

@@ -19,6 +19,7 @@
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
     "@types/dompurify": "^3.0.5",
+    "@vercel/analytics": "^2.0.1",
     "buffer": "^6.0.3",
     "dompurify": "^3.4.0",
     "gray-matter": "^4.0.3",

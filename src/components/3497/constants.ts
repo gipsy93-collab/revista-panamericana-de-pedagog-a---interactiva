@@ -1,4 +1,6 @@
 export const ARTICLE_META = {
+  date: '2026',
+  volume: 'Vol. 41',
   id: "3497",
   title: "Liderazgo docente y formación del carácter",
   subtitle: "Transformación educativa en Paraguay",

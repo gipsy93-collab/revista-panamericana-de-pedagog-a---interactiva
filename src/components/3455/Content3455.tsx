@@ -42,9 +42,6 @@ export default function Content3455() {
     <div className="bg-white">
       {/* 2. INTRODUCCIÓN / PROBLEMÁTICA */}
       <section className="bg-black text-white p-16 md:p-32 border-b-[12px] border-black relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-white/[0.03] leading-none pointer-events-none select-none">
-          P_3455
-        </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <BrutalSticker text="2. INTRODUCCIÓN / PROBLEMÁTICA" color="bg-[#7C3AED]" className="text-white mb-12 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-24 items-start">
@@ -56,7 +53,7 @@ export default function Content3455() {
                  "La violencia escolar es una realidad que enfrentan las instituciones educativas. Si bien existe consenso sobre el rol transformador de la educación, las universidades han privilegiado el enfoque cognitivo, dejando de lado el desarrollo del ser del alumnado."
                </p>
             </div>
-            <div className="space-y-10 bg-zinc-900 p-12 border-4 border-[#7C3AED] shadow-[20px_20px_0_0_#7C3AED]">
+            <div className="space-y-10 bg-zinc-900 p-12 border-4 border-[#7C3AED] shadow-[20px_20px_0_0_#7C3AED] rounded-3xl">
                <p className="text-lg font-sans font-medium text-zinc-300 leading-relaxed">
                  Existen necesidades de formación en aspectos de la dimensión personal como la inteligencia emocional, la resolución de conflictos y el autoconocimiento, resultando en deficiencias de la competencia docente para identificar situaciones de violencia.
                </p>
@@ -75,15 +72,15 @@ export default function Content3455() {
           <BrutalSticker text="3. METODOLOGÍA" color="bg-black" className="text-white mb-16 !rotate-0" />
           
           <div className="grid md:grid-cols-3 gap-8 mb-24">
-             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000]">
+             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000] rounded-3xl">
                 <h4 className="font-display text-xl font-black uppercase mb-4 flex items-center gap-3"><Map size={24} /> 3.1 Enfoque</h4>
                 <p className="text-sm font-sans font-bold uppercase leading-tight">Cualitativo, exploratorio e interpretativo. Análisis de contenido y comparación constante.</p>
              </div>
-             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#7C3AED]">
+             <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#7C3AED] rounded-3xl">
                 <h4 className="font-display text-xl font-black uppercase mb-4 flex items-center gap-3"><ClipboardCheck size={24} /> 3.4 Procedimiento</h4>
                 <p className="text-sm font-sans font-bold uppercase leading-tight">Uso de triangulación para asegurar confiabilidad y validez (Okuda y Gómez, 2005).</p>
              </div>
-             <div className="bg-black text-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000]">
+             <div className="bg-black text-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000] rounded-3xl">
                 <h4 className="font-display text-xl font-black uppercase mb-4 flex items-center gap-3 text-[#A78BFA]"><Scale size={24} /> 3.2 Muestra</h4>
                 <p className="text-sm font-sans font-bold uppercase leading-tight">57 docentes en formación de una universidad pública del Sureste de México.</p>
              </div>
@@ -102,19 +99,19 @@ export default function Content3455() {
             <div className="space-y-12">
                <div>
                   <h3 className="font-display text-4xl font-black uppercase italic mb-6">4.1 Significados</h3>
-                  <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000]">
+                  <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rounded-3xl">
                      <p className="text-xl font-serif italic text-black/80">"Desarrollo personal significa trabajar en ti mismo a partir de las fortalezas, habilidades y valores, pero también atender las debilidades."</p>
                   </div>
                </div>
                <div>
                   <h3 className="font-display text-4xl font-black uppercase italic mb-6">4.2 Características</h3>
                   <div className="grid grid-cols-2 gap-6">
-                     <div className="bg-white border-4 border-black p-6">
-                        <span className="bg-black text-white px-3 py-1 text-[10px] font-black uppercase mb-4 inline-block tracking-tighter">Valores</span>
+                     <div className="bg-white border-4 border-black p-6 rounded-2xl">
+                        <span className="bg-black text-white px-3 py-1 text-[10px] font-black uppercase mb-4 inline-block tracking-normal">Valores</span>
                         <p className="font-sans font-bold uppercase text-xs">Responsabilidad, Compromiso, Respeto.</p>
                      </div>
-                     <div className="bg-white border-4 border-black p-6">
-                        <span className="bg-[#7C3AED] text-white px-3 py-1 text-[10px] font-black uppercase mb-4 inline-block tracking-tighter">Actitudes</span>
+                     <div className="bg-white border-4 border-black p-6 rounded-2xl">
+                        <span className="bg-[#7C3AED] text-white px-3 py-1 text-[10px] font-black uppercase mb-4 inline-block tracking-normal">Actitudes</span>
                         <p className="font-sans font-bold uppercase text-xs">Amabilidad, Perseverancia, Paciencia.</p>
                      </div>
                   </div>
@@ -190,9 +187,6 @@ export default function Content3455() {
                 exit={{ opacity: 0, y: -20 }}
                 className="bg-zinc-950 text-white p-12 md:p-20 border-[12px] border-black shadow-[30px_30px_0_0_#7C3AED] relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 p-8 font-mono text-[100px] font-black text-white/[0.03] pointer-events-none select-none">
-                  {activeDiscussion + 1}
-                </div>
                 <div className="relative z-10">
                    <p className="text-3xl md:text-5xl font-serif italic mb-10 leading-tight">
                      "{discussionBlocks[activeDiscussion].content}"
@@ -219,7 +213,7 @@ export default function Content3455() {
               { t: "MALLA CURRICULAR", c: "Las instituciones formadoras deben incluir asignaturas enfocadas en la formación de la dimensión personal de manera transversal." },
               { t: "CLIMAS PROPICIOS", c: "La educación tiene que ser vista como un proceso integral, con escenarios y climas propicios para la formación integral del estudiantado." }
             ].map((item, i) => (
-              <div key={i} className="bg-zinc-50 border-8 border-black p-10 shadow-[15px_15px_0_0_#000] group hover:bg-white transition-colors">
+              <div key={i} className="bg-zinc-50 border-8 border-black p-10 shadow-[15px_15px_0_0_#000] group hover:bg-white transition-colors rounded-3xl">
                  <h4 className="font-display text-2xl font-black uppercase italic mb-4 border-b-4 border-[#7C3AED] pb-2 inline-block">{item.t}</h4>
                  <p className="font-sans font-bold uppercase text-sm leading-relaxed text-black/70 italic">"{item.c}"</p>
               </div>
@@ -231,11 +225,11 @@ export default function Content3455() {
       {/* SECCIÓN FINAL */}
       <section className="py-32 bg-[#7C3AED] border-t-[12px] border-black overflow-hidden relative">
          <div className="max-w-7xl mx-auto text-center px-6">
-            <h2 className="text-7xl md:text-[12rem] font-display uppercase font-black text-white italic leading-[0.8] tracking-tighter mb-16">
+            <h2 className="text-7xl md:text-[12rem] font-display uppercase font-black text-white italic leading-[0.95] tracking-normal mb-16">
               Educación <br/> Para la <span className="text-black">Paz_</span>
             </h2>
-            <div className="inline-block bg-white text-black p-12 border-8 border-black shadow-[20px_20px_0_0_#000] rotate-2">
-               <p className="text-4xl font-display font-black uppercase italic tracking-tighter">
+            <div className="inline-block bg-white text-black p-12 border-8 border-black shadow-[20px_20px_0_0_#000] rotate-2 rounded-3xl">
+               <p className="text-4xl font-display font-black uppercase italic tracking-normal">
                  "Trabajar el ser para poder trabajar con los demás"
                </p>
                <p className="font-mono text-xs font-black uppercase mt-6 opacity-40">Chan-Chi & Poot-May // RPP 2026</p>

@@ -108,7 +108,7 @@ export function BranchNode({ branch, index, isVisited, onVisit, onOpenPopup }: {
         >
           <div
             className="w-7 h-7 border-2 border-black flex items-center justify-center text-base
-              shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:rotate-6 transition-transform shrink-0"
+              shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:rotate-6 transition-transform shrink-0 rounded-3xl"
             style={{ backgroundColor: branch.color }}
           >
             {branch.icon}

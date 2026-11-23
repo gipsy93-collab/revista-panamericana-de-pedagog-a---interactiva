@@ -551,7 +551,7 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
                         }`}
                       >
                         <ExitIcon size={20} className="text-black" />
-                        <span className="text-xs font-black uppercase tracking-tighter text-black">{exit.label}</span>
+                        <span className="text-xs font-black uppercase tracking-normal text-black">{exit.label}</span>
                         {!accessible && <Lock size={14} className="text-black/30" />}
                       </motion.button>
                     );
@@ -586,14 +586,14 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
                     </span>
                   </div>
                   {isEnding && (
-                    <span className="text-[9px] font-black uppercase tracking-widest bg-[#fccb06] text-black px-3 py-0.5 border-2 border-black">FINAL</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest bg-[#fccb06] text-black px-3 py-0.5 border-2 border-black rounded-xl">FINAL</span>
                   )}
                 </div>
 
                 <div className={`flex flex-col md:flex-row ${isCinematic ? 'items-start' : ''}`}>
                   {/* Título y Subtítulo */}
                   <div className={`px-8 pt-8 pb-4 relative ${isCinematic ? 'md:w-1/3 border-r-0 md:border-r-4 border-black' : ''}`}>
-                    <h2 className={`${isCinematic ? 'text-2xl md:text-3xl' : 'text-3xl md:text-5xl'} font-black leading-[0.9] uppercase tracking-tighter italic text-black`}>
+                    <h2 className={`${isCinematic ? 'text-2xl md:text-3xl' : 'text-3xl md:text-5xl'} font-black leading-[0.9] uppercase tracking-normal italic text-black`}>
                       {currentNode.title}
                     </h2>
                     {currentNode.subtitle && (
@@ -622,7 +622,7 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
 
                     {/* Datos */}
                     {currentNode.dataView === 'table' && currentNode.dataContent && (
-                      <div className="mt-4 p-3 bg-zinc-100 border-2 border-black text-[10px] text-black/70">
+                      <div className="mt-4 p-3 bg-zinc-100 border-2 border-black text-[10px] text-black/70 rounded-xl">
                         <div className="font-black uppercase mb-1 flex items-center gap-1"><Table size={10}/> Data_Entry</div>
                         {currentNode.dataContent}
                       </div>
@@ -661,7 +661,7 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <span className="text-base md:text-lg font-black uppercase tracking-tighter block leading-none mb-1 text-black">
+                            <span className="text-base md:text-lg font-black uppercase tracking-normal block leading-none mb-1 text-black">
                               {exit.label}
                             </span>
                             {!accessible && exit.requiresVisited && (
@@ -758,7 +758,7 @@ export default function MultipathEngine({ graph, onBack, theme = 'dark' }: Multi
               }`}
               style={{ boxShadow: isBrutalist ? `30px 30px 0 0 #000, 0 0 80px ${accent}33` : `0 0 60px ${accent}10` }}>
               <div className="flex items-center justify-between mb-8 border-b-4 border-black pb-4">
-                <h3 className={`text-2xl font-black uppercase italic tracking-tighter ${isBrutalist ? 'text-black' : (isDark ? 'text-white' : 'text-black')}`}>Mapa del Recorrido</h3>
+                <h3 className={`text-2xl font-black uppercase italic tracking-normal ${isBrutalist ? 'text-black' : (isDark ? 'text-white' : 'text-black')}`}>Mapa del Recorrido</h3>
                 <button onClick={() => setShowMap(false)} className={`p-2 rounded-full transition-colors ${isDark ? 'hover:bg-white/10' : 'hover:bg-black/10'}`}>
                   <X className={`w-5 h-5 ${isDark ? 'text-white/50' : 'text-black/50'}`} />
                 </button>

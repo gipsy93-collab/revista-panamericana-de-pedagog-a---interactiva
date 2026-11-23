@@ -18,18 +18,18 @@ export default function Content3454() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <CinematicCard color="bg-white" title="DISEÑO" icon={Microscope} className="border-4 shadow-[8px_8px_0_0_#000]">
+            <CinematicCard color="bg-white" title="DISEÑO" icon={Microscope} className="border-4 shadow-[8px_8px_0_0_#000] rounded-3xl">
               <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.design}</p>
               <p className="text-[10px] mt-4 font-mono opacity-50 uppercase font-black italic">{METHODOLOGY.approach}</p>
             </CinematicCard>
-            <CinematicCard color="bg-white" title="MUESTRA" icon={Users} className="border-4 shadow-[8px_8px_0_0_#000]">
+            <CinematicCard color="bg-white" title="MUESTRA" icon={Users} className="border-4 shadow-[8px_8px_0_0_#000] rounded-3xl">
               <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.sample}</p>
               <p className="text-[10px] mt-4 font-mono opacity-50 uppercase font-black italic">Aleatorio Simple</p>
             </CinematicCard>
-            <CinematicCard color="bg-white" title="INSTRUMENTO" icon={ClipboardList} className="border-4 shadow-[8px_8px_0_0_#000]">
+            <CinematicCard color="bg-white" title="INSTRUMENTO" icon={ClipboardList} className="border-4 shadow-[8px_8px_0_0_#000] rounded-3xl">
               <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.instruments}</p>
             </CinematicCard>
-            <CinematicCard color="bg-white" title="TÉCNICA" icon={Database} className="border-4 shadow-[8px_8px_0_0_#000]">
+            <CinematicCard color="bg-white" title="TÉCNICA" icon={Database} className="border-4 shadow-[8px_8px_0_0_#000] rounded-3xl">
               <p className="text-sm font-bold uppercase leading-tight">{METHODOLOGY.analysis}</p>
             </CinematicCard>
           </div>
@@ -47,7 +47,7 @@ export default function Content3454() {
       <WaveSection topColor="#F3F4F6" bottomColor="#ffffff" variant="steps">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <BrutalSticker text="III. DIMENSIONES" color="bg-white" className="text-black mb-6 !rotate-0 border-4 shadow-[4px_4px_0_0_#059669]" />
+            <BrutalSticker text="III. DIMENSIONES" color="bg-white" className="text-black mb-6 !rotate-0 border-4 shadow-[4px_4px_0_0_#059669] rounded-3xl" />
             <PremiumTitle className="items-center" subtitle="CATEGORÍAS DE ANÁLISIS">
               Estructura de la Cultura de Paz
             </PremiumTitle>
@@ -55,16 +55,16 @@ export default function Content3454() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {DIMENSIONS.map((d) => (
-              <BrutalCard key={d.code} color="bg-white" className="border-4" title={`${d.code}: ${d.name}`}>
+              <BrutalCard key={d.code} color="bg-white" className="border-4 rounded-xl" title={`${d.code}: ${d.name}`}>
                  <div className="flex gap-8 items-start">
-                   <div className="text-7xl bg-zinc-50 p-6 border-4 border-black shadow-[6px_6px_0_0_#059669] rotate-[-2deg]">
+                   <div className="text-7xl bg-zinc-50 p-6 border-4 border-black shadow-[6px_6px_0_0_#059669] rotate-[-2deg] rounded-3xl">
                      {d.emoji}
                    </div>
                    <div className="space-y-6">
                      <p className="text-2xl font-serif italic text-black/70 leading-relaxed font-medium">"{d.desc}"</p>
                      <div className="bg-[#059669]/5 border-l-8 border-[#059669] p-6 shadow-[8px_8px_0_0_#000]">
                         <span className="block font-mono text-[10px] uppercase font-black text-[#059669] mb-2 tracking-widest">Métrica Clave //</span>
-                        <p className="text-lg font-black uppercase text-black italic leading-none tracking-tighter">{d.highlight}</p>
+                        <p className="text-lg font-black uppercase text-black italic leading-none tracking-normal">{d.highlight}</p>
                      </div>
                    </div>
                  </div>
@@ -82,11 +82,11 @@ export default function Content3454() {
                 <BrutalSticker text="IV. INSIGHTS" color="bg-black" className="text-white mb-10 !rotate-0" />
                 <PremiumTitle subtitle="RESULTADOS CUALITATIVOS">Lo que dicen los estudiantes</PremiumTitle>
                 <div className="mt-12 space-y-8">
-                  <BrutalCard color="bg-[#059669]" title="ACCIÓN PROPUESTA" className="text-white border-4 rotate-1 shadow-[10px_10px_0_0_#000]">
+                  <BrutalCard color="bg-[#059669]" title="ACCIÓN PROPUESTA" className="text-white border-4 rotate-1 shadow-[10px_10px_0_0_#000] rounded-3xl">
                     <div className="text-6xl font-display font-black mb-4 leading-none italic">70%</div>
                     <p className="text-xl font-display uppercase font-black">Demanda de cursos, conferencias y pláticas formativas.</p>
                   </BrutalCard>
-                  <BrutalCard color="bg-white" title="VALOR COMÚN" className="border-4 -rotate-1 shadow-[10px_10px_0_0_#059669]">
+                  <BrutalCard color="bg-white" title="VALOR COMÚN" className="border-4 -rotate-1 shadow-[10px_10px_0_0_#059669] rounded-3xl">
                     <div className="text-6xl font-display font-black text-[#059669] mb-4 leading-none italic">20%</div>
                     <p className="text-xl font-display uppercase font-black">Priorización del respeto en espacios educativos.</p>
                   </BrutalCard>
@@ -101,12 +101,12 @@ export default function Content3454() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     className="relative group"
                   >
-                    <BrutalQuote author={t.author} className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] group-hover:shadow-[20px_20px_0_0_#059669] transition-all">
-                       <p className="text-3xl md:text-4xl font-display uppercase font-black italic leading-[1.1] tracking-tighter">
+                    <BrutalQuote author={t.author} className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] group-hover:shadow-[20px_20px_0_0_#059669] transition-all rounded-3xl">
+                       <p className="text-3xl md:text-4xl font-display uppercase font-black italic leading-[1.1] tracking-normal">
                          "{t.quote}"
                        </p>
                     </BrutalQuote>
-                    <div className="absolute -bottom-6 right-10 bg-black text-white px-8 py-3 font-mono text-xs uppercase font-black border-4 border-black rotate-[-2deg]">
+                    <div className="absolute -bottom-6 right-10 bg-black text-white px-8 py-3 font-mono text-xs uppercase font-black border-4 border-black rotate-[-2deg] rounded-xl">
                       {t.role}
                     </div>
                   </motion.div>
@@ -123,7 +123,7 @@ export default function Content3454() {
            <div className="flex flex-col md:flex-row gap-20 items-center">
               <div className="md:w-1/2">
                  <BrutalSticker text="V. CONCLUSIONES" color="bg-white" className="text-black mb-10 !rotate-0" />
-                 <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none mb-12 tracking-tighter">
+                 <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none mb-12 tracking-normal">
                    Universidad como <span className="text-[#059669] italic underline decoration-white decoration-8">Refugio_</span>
                  </h2>
                  <p className="text-2xl font-serif italic text-zinc-400 leading-relaxed border-l-8 border-[#059669] pl-10">

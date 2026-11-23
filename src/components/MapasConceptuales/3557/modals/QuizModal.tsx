@@ -67,20 +67,20 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
                   <Trophy className="w-10 h-10 text-[#FFFF00]" />
                 </div>
                 <div>
-                   <h2 className="text-3xl font-black text-white uppercase tracking-tighter italic" style={{ WebkitTextStroke: '1px black' }}>Reto RPP</h2>
+                   <h2 className="text-3xl font-black text-white uppercase tracking-normal italic">Reto RPP</h2>
                    <p className="text-[10px] font-black text-black/60 uppercase tracking-[.4em]">Checkpoint Digital</p>
                 </div>
               </div>
               <button 
                 onClick={onClose} 
-                className="w-12 h-12 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
+                className="w-12 h-12 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none rounded-3xl"
               >
                 <X className="w-8 h-8 stroke-[4]" />
               </button>
             </div>
 
             {/* Progress Bar Comic Style */}
-            <div className="mt-8 relative h-6 bg-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="mt-8 relative h-6 bg-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] rounded-3xl">
               <motion.div
                 className="absolute top-0 left-0 h-full bg-[#00FFA3] halftone-sm"
                 initial={{ width: 0 }}
@@ -103,7 +103,7 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
                   className="bg-white border-[6px] border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden"
                 >
                   <div className="absolute top-2 right-2 w-16 h-16 bg-black/5 halftone-lg rotate-12" />
-                  <p className="text-2xl md:text-3xl font-black text-black leading-none tracking-tighter uppercase mb-2 italic">
+                  <p className="text-2xl md:text-3xl font-black text-black leading-none tracking-normal uppercase mb-2 italic">
                     {quizQuestions[currentQuestion].question}
                   </p>
                 </motion.div>
@@ -155,7 +155,7 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           onClick={nextQuestion}
-                          className="mt-6 w-full bg-[#FFFF00] border-4 border-black py-3 font-black uppercase text-xs shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] hover:shadow-none transition-all"
+                          className="mt-6 w-full bg-[#FFFF00] border-4 border-black py-3 font-black uppercase text-xs shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] hover:shadow-none transition-all rounded-3xl"
                         >
                           Continuar Misión →
                         </motion.button>
@@ -175,7 +175,7 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
                   <div className="absolute inset-[-40px] bg-[#FFFF00] comic-burst blur-sm opacity-30 animate-pulse" />
                   <div className="relative bg-white border-[8px] border-black p-12 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg]">
                     <Trophy className="w-24 h-24 text-[#FF007A] mx-auto mb-6 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]" />
-                    <h2 className="text-5xl font-black uppercase tracking-tighter leading-none mb-2" style={{ WebkitTextStroke: '2px black' }}>
+                    <h2 className="text-5xl font-black uppercase tracking-normal leading-none mb-2">
                        MISIÓN<br/>COMPLETA
                     </h2>
                     <div className="bg-black text-[#00FFA3] py-2 px-6 font-black text-3xl inline-block rotate-2 mt-4">
@@ -187,13 +187,13 @@ export function QuizModal({ isOpen, onClose }: QuizModalProps) {
                 <div className="flex flex-col md:flex-row gap-6 justify-center">
                   <button
                     onClick={resetQuiz}
-                    className="bg-[#00D4FF] border-8 border-black px-10 py-5 font-black uppercase text-xl shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all"
+                    className="bg-[#00D4FF] border-8 border-black px-10 py-5 font-black uppercase text-xl shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all rounded-3xl"
                   >
                     REINTENTAR
                   </button>
                   <button
                     onClick={onClose}
-                    className="bg-[#FF007A] text-white border-8 border-black px-10 py-5 font-black uppercase text-xl shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all"
+                    className="bg-[#FF007A] text-white border-8 border-black px-10 py-5 font-black uppercase text-xl shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all rounded-3xl"
                   >
                     SALIR
                   </button>

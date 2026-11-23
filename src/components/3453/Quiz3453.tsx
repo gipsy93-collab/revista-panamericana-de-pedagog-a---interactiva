@@ -42,7 +42,7 @@ export default function Quiz3453() {
                 <span className="w-16 h-16 bg-black text-white shrink-0 flex items-center justify-center font-display text-4xl font-black rotate-[-5deg]">
                   {qi + 1}
                 </span>
-                <p className="text-2xl md:text-3xl font-display uppercase font-black leading-none tracking-tighter pt-2">
+                <p className="text-2xl md:text-3xl font-display uppercase font-black leading-none tracking-normal pt-2">
                   {q.question}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function Quiz3453() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="mt-10 p-8 bg-zinc-50 border-4 border-black border-dashed relative overflow-hidden"
+                    className="mt-10 p-8 bg-zinc-50 border-4 border-black border-dashed relative overflow-hidden rounded-3xl"
                   >
                     <div className="absolute top-0 right-0 p-4 opacity-5">
                        <ShieldAlert size={80} />
@@ -102,7 +102,7 @@ export default function Quiz3453() {
             <button
               onClick={() => setSubmitted(true)}
               disabled={answers.some((a) => a === -1)}
-              className="group relative bg-[#E11D48] text-white px-16 py-8 border-4 border-black font-display text-4xl uppercase font-black shadow-[15px_15px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[20px_20px_0_0_#000] transition-all disabled:opacity-40 disabled:translate-y-0 disabled:shadow-[5px_5px_0_0_#000]"
+              className="group relative bg-[#E11D48] text-white px-16 py-8 border-4 border-black font-display text-4xl uppercase font-black shadow-[15px_15px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[20px_20px_0_0_#000] transition-all disabled:opacity-40 disabled:translate-y-0 disabled:shadow-[5px_5px_0_0_#000] rounded-3xl"
             >
               Finalizar Auditoría_
             </button>
@@ -118,7 +118,7 @@ export default function Quiz3453() {
                 <div className="text-[12rem] font-display font-black leading-none mb-4 italic text-black drop-shadow-[10px_10px_0_#E11D48]">
                   {score}/{QUIZ_QUESTIONS.length}
                 </div>
-                <p className="text-3xl font-display uppercase font-black tracking-tighter">
+                <p className="text-3xl font-display uppercase font-black tracking-normal">
                   {score === QUIZ_QUESTIONS.length ? 'Dominio Profesional de Protocolo' : 'Se Requiere Nivelación Normativa'}
                 </p>
                 <div className="mt-10 flex justify-center gap-4">
@@ -130,7 +130,7 @@ export default function Quiz3453() {
               
               <button
                 onClick={reset}
-                className="flex items-center gap-6 bg-black text-white border-4 border-black px-12 py-6 font-display text-xl uppercase font-black shadow-[8px_8px_0_0_#E11D48] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0_0_#E11D48] transition-all"
+                className="flex items-center gap-6 bg-black text-white border-4 border-black px-12 py-6 font-display text-xl uppercase font-black shadow-[8px_8px_0_0_#E11D48] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0_0_#E11D48] transition-all rounded-3xl"
               >
                 <RotateCcw size={32} /> Reintentar Validación
               </button>

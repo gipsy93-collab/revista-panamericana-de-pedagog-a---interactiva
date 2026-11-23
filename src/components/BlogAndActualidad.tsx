@@ -148,7 +148,7 @@ export default function BlogAndActualidad() {
                <span className="font-accent font-black tracking-widest text-white uppercase text-sm">Actualidad // News_Stream</span>
              </motion.div>
 
-             <h2 className="text-7xl md:text-9xl font-display uppercase leading-[0.85] text-white">
+             <h2 className="text-7xl md:text-9xl font-display uppercase leading-[0.95] text-white">
                NOTICIAS<br /><span className="text-zine-red drop-shadow-[4px_4px_0_#fff]">RPP</span>
              </h2>
 
@@ -301,7 +301,7 @@ export default function BlogAndActualidad() {
                     onClick={() => setVisibleCount(prev => prev + 4)}
                     className="group relative px-12 py-5 bg-white text-zine-black border-4 border-black hover:bg-pop-teal hover:text-white transition-all overflow-hidden rounded-2xl"
                   >
-                    <span className="relative z-10 font-display text-2xl uppercase tracking-tighter">Explorar_más_noticias +</span>
+                    <span className="relative z-10 font-display text-2xl uppercase tracking-normal">Explorar_más_noticias +</span>
                     <div className="absolute inset-0 bg-zine-red translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                   </button>
                 </div>

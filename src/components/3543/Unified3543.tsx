@@ -1,3 +1,4 @@
+import { ArticleHeader } from '../Common/ArticleHeader';
 import { useEffect } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { Hero3543 } from './Hero3543';
@@ -23,37 +24,22 @@ export default function Unified3543({ onBack }: Props) {
       animate={{ opacity: 1 }}
       className="flex flex-col w-full bg-[#f0f0f0] pt-20"
     >
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#10b981] transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
-          </button>
-          <a
-            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-          </a>
-          
-          <div className="hidden md:flex items-center gap-4">
-             <div className="bg-[#10b981] text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 38</div>
-             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">REF 3543 // EDUCACIÓN SUPERIOR</span>
-          </div>
-        </div>
-      </header>
+      {/* Header con Ficha Técnica Desaturada y Elementos Redondeados */}
+      <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3543'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 41'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2026'}
+        authors={ARTICLE_META?.authors || 'Ríos-Higuera & Sotomayor-Andrade'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
 
       <Hero3543 />
       
       <OrganicWaveDivider 
         topColor="#f0f0f0" 
-        bottomColor="#ffffff" 
+        bottomColor="#1e1b4b" 
         variant="wavy" 
         height={100} 
       />
@@ -63,7 +49,7 @@ export default function Unified3543({ onBack }: Props) {
       <DataLab3543 />
       
       <OrganicWaveDivider 
-        topColor="#f0f0f0" 
+        topColor="#FEFCE8" 
         bottomColor="#000000" 
         variant="steps" 
         height={100} 
@@ -73,7 +59,7 @@ export default function Unified3543({ onBack }: Props) {
 
       {/* FOOTER ACADÉMICO - APA FORMAT */}
       <footer className="bg-black text-white py-20 px-6 border-t-[12px] border-[#10b981]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 bg-zinc-900/50 p-8 md:p-12 border-4 border-white/10 rounded-3xl">
           <div className="flex flex-col gap-4 max-w-2xl">
             <span className="font-mono text-xs uppercase opacity-40">CITA BIBLIOGRÁFICA (APA 7)</span>
             <p className="text-xl font-serif italic text-white/90 leading-relaxed">
@@ -82,7 +68,7 @@ export default function Unified3543({ onBack }: Props) {
           </div>
           
           <div className="flex flex-col gap-2 items-end">
-            <span className="font-display text-2xl uppercase tracking-tighter">Ciencia Transmedia</span>
+            <span className="font-display text-2xl uppercase tracking-normal">Ciencia Transmedia</span>
             <span className="font-mono text-[10px] uppercase opacity-30">RPP // Interactive System v2.0</span>
           </div>
         </div>

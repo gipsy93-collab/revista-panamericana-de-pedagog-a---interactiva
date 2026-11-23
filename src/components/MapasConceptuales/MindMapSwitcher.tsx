@@ -41,7 +41,7 @@ export default function MindMapSwitcher({ mapId, onBack }: Props) {
   if (!currentMap) {
     return (
       <div className="h-screen w-full flex items-center justify-center bg-zinc-950 text-white font-sans">
-        <div className="text-center p-10 border-4 border-white">
+        <div className="text-center p-10 border-4 border-white rounded-3xl">
           <h2 className="text-2xl font-black mb-4 uppercase">Mapa en construcción</h2>
           <button onClick={onBack} className="px-8 py-3 bg-white text-black font-black uppercase hover:bg-zinc-200 transition-colors">Volver</button>
         </div>

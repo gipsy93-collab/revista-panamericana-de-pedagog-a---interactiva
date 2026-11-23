@@ -31,11 +31,11 @@ export function Popup({ subNode, branchColor, onClose }: PopupProps) {
             <div className="relative border-b-[8px] border-black p-8 flex items-center justify-between" style={{ backgroundColor: branchColor }}>
               <div className="absolute inset-0 halftone opacity-30 pointer-events-none" />
               <div className="relative flex items-center gap-6">
-                <div className="bg-white border-4 border-black p-4 rotate-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <div className="bg-white border-4 border-black p-4 rotate-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                   <span className="text-4xl">{subNode.icon}</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter leading-none" style={{ WebkitTextStroke: '1px black', textShadow: '2px 2px 0px black' }}>
+                  <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-normal leading-none">
                     {subNode.popup.title}
                   </h3>
                   <div className="mt-2 bg-black text-white px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.3em] inline-block">
@@ -45,7 +45,7 @@ export function Popup({ subNode, branchColor, onClose }: PopupProps) {
               </div>
               <button 
                 onClick={onClose} 
-                className="w-14 h-14 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1"
+                className="w-14 h-14 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 rounded-3xl"
               >
                 <X className="w-10 h-10 stroke-[4]" />
               </button>

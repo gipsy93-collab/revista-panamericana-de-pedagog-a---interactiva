@@ -39,10 +39,10 @@ export default function DiscussionSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {/* Ley Normativa */}
         <BrutalCard color="bg-white" className="brutal-paradox-box border-[6px] border-[#f87171]">
-          <div className="text-[#f87171] mb-8 bg-black p-4 inline-block border-4 border-black shadow-[4px_4px_0_#f87171]">
+          <div className="text-[#f87171] mb-8 bg-black p-4 inline-block border-4 border-black shadow-[4px_4px_0_#f87171] rounded-3xl">
             <Scale size={48} />
           </div>
-          <h3 className="text-3xl font-black uppercase mb-6 tracking-tighter">Enfoque Normativo y Sancionatorio</h3>
+          <h3 className="text-3xl font-black uppercase mb-6 tracking-normal">Enfoque Normativo y Sancionatorio</h3>
           <p className="font-bold text-lg leading-tight mb-8">
             <span className="bg-[#f87171] text-white px-2">Leyes 20.000 y 20.084</span>. Enfocadas en el tráfico y la persecución. Fuerzan a las escuelas a operar como oficinas de control burocrático.
           </p>
@@ -50,10 +50,10 @@ export default function DiscussionSection() {
 
         {/* Ley de Derechos */}
         <BrutalCard color="bg-white" className="brutal-paradox-box border-[6px] border-[#34d399]">
-          <div className="text-[#34d399] mb-8 bg-black p-4 inline-block border-4 border-black shadow-[4px_4px_0_#34d399]">
+          <div className="text-[#34d399] mb-8 bg-black p-4 inline-block border-4 border-black shadow-[4px_4px_0_#34d399] rounded-3xl">
             <ShieldAlert size={48} />
           </div>
-          <h3 className="text-3xl font-black uppercase mb-6 tracking-tighter">Enfoque de Derechos</h3>
+          <h3 className="text-3xl font-black uppercase mb-6 tracking-normal">Enfoque de Derechos</h3>
           <p className="font-bold text-lg leading-tight mb-8">
             <span className="bg-[#34d399] text-white px-2">Ley 21.430</span>. Exige medidas restitutivas del bienestar y protección integral. La verdadera vocación de la escuela es ser el sostén del desarrollo.
           </p>
@@ -61,7 +61,7 @@ export default function DiscussionSection() {
         
         {/* Conclusión Paradoja */}
         <div className="md:col-span-2 brutal-paradox-box">
-          <BrutalCard color="bg-[#fbbf24]" className="text-center py-6 border-4">
+          <BrutalCard color="bg-[#fbbf24]" className="text-center py-6 border-4 rounded-xl">
             <p className="font-mono font-black uppercase text-sm">
                 <strong>La Paradoja:</strong> Se activan trámites legales automatizados porque el sistema carece de formación y recursos para actuar de otra manera.
             </p>

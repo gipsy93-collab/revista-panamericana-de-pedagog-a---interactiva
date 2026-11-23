@@ -36,7 +36,7 @@ export const Content3562 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f0f0f0] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f0f0f0] relative rounded-3xl">
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic text-f0f0f0">Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10">
@@ -57,13 +57,13 @@ export const Content3562 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="I. OBJETIVOS" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivo General</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Analizar los retos y experiencias subjetivas de jÃ³venes madres universitarias de la UPN 153 Ecatepec, considerando sus condiciones de vida familiares, conyugales e institucionales.
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivos EspecÃ­ficos</h3>
               <ol className="space-y-3 text-base">
                 <li className="flex gap-3">
@@ -93,7 +93,7 @@ export const Content3562 = () => {
       <WaveSection topColor="#f0f0f0" bottomColor="#ffffff" variant="steps">
         <div className="max-w-4xl mx-auto text-center">
           <BrutalSticker text="II. TIPO DE ESTUDIO" color="bg-black" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#ec4899]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#ec4899] rounded-3xl">
             <p className="text-xl leading-relaxed text-black/80">
               Cualitativo, exploratorio, con <strong>enfoque de curso de vida (life course)</strong>. El enfoque de curso de vida permite analizar trayectorias (educativas, laborales) y transiciones (a la adultez, maternidad, paternidad) como procesos interconectados y no necesariamente lineales.
             </p>
@@ -107,49 +107,49 @@ export const Content3562 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="II+. PARTICIPANTES" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
           
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] mb-8 overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] mb-8 overflow-x-auto rounded-3xl">
             <table className="w-full">
               <thead>
                 <tr className="bg-[#ec4899] text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">CaracterÃ­stica</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Detalle</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">CaracterÃ­stica</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Detalle</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">N (entrevistas)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">9 jÃ³venes</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">N (entrevistas)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">9 jÃ³venes</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">N (cuestionarios)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">12 (mismo grupo, 3 no entrevistadas)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">N (cuestionarios)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">12 (mismo grupo, 3 no entrevistadas)</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Perfil</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Estudiantes de licenciatura en PedagogÃ­a, UPN 153</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Perfil</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Estudiantes de licenciatura en PedagogÃ­a, UPN 153</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Ciclo escolar</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">2024-2025</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Ciclo escolar</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">2024-2025</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Criterio de selecciÃ³n</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Madres con hijos menores de 22 aÃ±os O embarazadas en momento de entrevista</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Criterio de selecciÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Madres con hijos menores de 22 aÃ±os O embarazadas en momento de entrevista</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Rango de edades</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">18-34 aÃ±os</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Rango de edades</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">18-34 aÃ±os</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">PerÃ­odo de recolecciÃ³n</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Enero - mayo de 2025</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">PerÃ­odo de recolecciÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Enero - mayo de 2025</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#ec4899]">
+            <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#ec4899] rounded-3xl">
               <h4 className="font-display text-lg uppercase font-black mb-4 text-[#ec4899]">DistribuciÃ³n por edad</h4>
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between"><span>18-20 aÃ±os:</span><span className="font-black">2</span></li>
@@ -159,7 +159,7 @@ export const Content3562 = () => {
                 <li className="flex justify-between"><span>29-34 aÃ±os:</span><span className="font-black">3</span></li>
               </ul>
             </div>
-            <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000] rounded-3xl">
               <h4 className="font-display text-lg uppercase font-black mb-4 text-[#ec4899]">DistribuciÃ³n por semestre</h4>
               <ul className="space-y-2 text-sm">
                 <li className="flex justify-between"><span>2Â° semestre:</span><span className="font-black">6</span></li>
@@ -168,7 +168,7 @@ export const Content3562 = () => {
                 <li className="flex justify-between"><span>8Â° semestre:</span><span className="font-black">1</span></li>
               </ul>
             </div>
-            <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#ec4899]">
+            <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#ec4899] rounded-3xl">
               <h4 className="font-display text-lg uppercase font-black mb-4 text-[#ec4899]">Contexto familiar</h4>
               <ul className="space-y-2 text-sm text-black/80">
                 <li>â€¢ Casi todas (salvo una) son pioneras en sus familias en estudiar licenciatura</li>
@@ -187,15 +187,15 @@ export const Content3562 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="III. INSTRUMENTOS" color="bg-black" className="text-white mb-8 !rotate-0" />
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">1. Entrevistas narrativas biogrÃ¡ficas</h3>
               <p className="text-base text-black/80">9 entrevistas semiestructuradas con preguntas abiertas sobre trayectoria educativa, embarazo, redes de apoyo, proyectos de vida.</p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">2. Cuestionario Google Forms</h3>
               <p className="text-base">12 cuestionarios para &quot;reforzar narrativas e ideas particulares&quot; (datos demogrÃ¡ficos, informaciÃ³n complementaria).</p>
             </div>
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">3. SeudÃ³nimos</h3>
               <p className="text-base text-black/80">Para proteger identidad de participantes.</p>
             </div>
@@ -208,7 +208,7 @@ export const Content3562 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#f0f0f0" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="III+. PROCEDIMIENTO" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
             <ol className="space-y-4 text-lg">
               <li className="flex gap-4">
                 <span className="w-10 h-10 bg-[#ec4899] flex items-center justify-center font-black text-white flex-shrink-0">1</span>
@@ -240,7 +240,7 @@ export const Content3562 = () => {
       <WaveSection topColor="#f0f0f0" bottomColor="#ffffff" variant="steps">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="IV. ANÃLISIS DE DATOS" color="bg-black" className="text-white mb-8 !rotate-0" />
-          <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+          <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
             <p className="text-base leading-relaxed mb-4">AnÃ¡lisis cualitativo interpretativo de narrativas biogrÃ¡ficas, articulando:</p>
             <ul className="space-y-3 text-base">
               <li className="flex gap-2"><span className="text-[#ec4899] font-black">â–¸</span> CategorÃ­as del curso de vida (Elder, 2000)</li>
@@ -256,12 +256,12 @@ export const Content3562 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#f0f0f0" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="V. HALLAZGO PRINCIPAL" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#000]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#000] rounded-3xl">
             <h3 className="font-display text-2xl uppercase font-black mb-6 text-[#ec4899]">La paradoja de la maternidad universitaria</h3>
             <p className="text-lg leading-relaxed text-black/80 mb-6">
               Contrario al estigma social e institucional que asocia maternidad con abandono escolar, las jÃ³venes madres de la UPN 153 muestran mayor motivaciÃ³n y resiliencia para completar sus estudios. El problema no es la maternidad en sÃ­, sino la <strong>ausencia de polÃ­ticas institucionales de apoyo</strong> (lactarios, guarderÃ­as, flexibilidad horaria) y la disponibilidad desigual de capitales familiares.
             </p>
-            <div className="bg-zinc-900 text-white p-6 border-4 border-black">
+            <div className="bg-zinc-900 text-white p-6 border-4 border-black rounded-2xl">
               <span className="font-mono text-xs uppercase opacity-50 block mb-2">Dato central</span>
               <div className="text-4xl font-display font-black">8 de 12</div>
               <p className="text-base mt-2">jÃ³venes interrumpieron sus estudios durante o despuÃ©s del embarazo, evidenciando la fragilidad de sus trayectorias ante eventos de transiciÃ³n.</p>
@@ -278,24 +278,24 @@ export const Content3562 = () => {
           
           <div className="space-y-12">
             {/* Objetivo 1 */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivo 1: Desigualdades segÃºn condiciÃ³n de origen</h3>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#ec4899] text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Capital disponible</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Experiencia de transiciÃ³n</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Capital disponible</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Experiencia de transiciÃ³n</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-pink-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Alto capital econÃ³mico + red de apoyo familiar</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Mayor facilidad para conciliar estudios y maternidad; pueden delegar cuidado a abuelas/madres</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Alto capital econÃ³mico + red de apoyo familiar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Mayor facilidad para conciliar estudios y maternidad; pueden delegar cuidado a abuelas/madres</td>
                     </tr>
                     <tr className="hover:bg-pink-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Bajo capital econÃ³mico + red de apoyo limitada</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">AcumulaciÃ³n de desventajas; estrategias de supervivencia; mayor riesgo de interrupciÃ³n</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Bajo capital econÃ³mico + red de apoyo limitada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">AcumulaciÃ³n de desventajas; estrategias de supervivencia; mayor riesgo de interrupciÃ³n</td>
                     </tr>
                   </tbody>
                 </table>
@@ -304,7 +304,7 @@ export const Content3562 = () => {
             </div>
 
             {/* Objetivo 2 */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivo 2: Redes de apoyo</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white/10 p-6">
@@ -327,7 +327,7 @@ export const Content3562 = () => {
             </div>
 
             {/* Objetivo 3 */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivo 3: Estrategias de agenciamiento</h3>
               <p className="text-base text-black/80 mb-4">Las jÃ³venes desarrollan mÃºltiples estrategias:</p>
               <ul className="space-y-2 text-base text-black/80 mb-6">
@@ -342,7 +342,7 @@ export const Content3562 = () => {
             </div>
 
             {/* Objetivo 4 */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Objetivo 4: El estigma institucional y social</h3>
               <ul className="space-y-3 text-base">
                 <li className="flex gap-2"><span className="text-[#ec4899] font-black">â–¸</span> Profesores que desaprueban traer bebÃ©s a clase</li>
@@ -365,55 +365,55 @@ export const Content3562 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#f0f0f0" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="VII. TABLA RESUMEN" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] overflow-x-auto rounded-3xl">
             <table className="w-full">
               <thead>
                 <tr className="bg-[#ec4899] text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Variable/Dato</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Valor</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Contexto/Nota</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Variable/Dato</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Valor</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Contexto/Nota</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">InterrupciÃ³n estudios por embarazo</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">8 de 12 (67%)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">InterrupciÃ³n temporal o indefinida</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">InterrupciÃ³n estudios por embarazo</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">8 de 12 (67%)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">InterrupciÃ³n temporal o indefinida</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Madres pioneras en familia</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">11 de 12 (92%)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">Primera generaciÃ³n con acceso a universidad</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Madres pioneras en familia</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">11 de 12 (92%)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">Primera generaciÃ³n con acceso a universidad</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Escolaridad promedio padres</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Primaria a preparatoria</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Limitado capital cultural de origen</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Escolaridad promedio padres</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Primaria a preparatoria</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Limitado capital cultural de origen</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Embarazos durante carrera</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">~50% de casos</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">Deseados y con buen recibimiento familiar</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Embarazos durante carrera</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">~50% de casos</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">Deseados y con buen recibimiento familiar</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Embarazos previos a universidad</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">~50% de casos</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Algunos no deseados, con presiÃ³n familiar</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Embarazos previos a universidad</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">~50% de casos</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Algunos no deseados, con presiÃ³n familiar</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">MatrÃ­cula mujeres CDMX + EdoMex</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">850,247</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">Supera a matrÃ­cula masculina (744,478) segÃºn ANUIES 2023-2024</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">MatrÃ­cula mujeres CDMX + EdoMex</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">850,247</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">Supera a matrÃ­cula masculina (744,478) segÃºn ANUIES 2023-2024</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Madres mexicanas con universidad</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">17%</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">SegÃºn INEGI 2020; 57% solo tienen primaria/secundaria</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Madres mexicanas con universidad</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">17%</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">SegÃºn INEGI 2020; 57% solo tienen primaria/secundaria</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Embarazos adolescentes 2021</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">147,279 (15-19 aÃ±os) + 3,019 (&lt;15 aÃ±os)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">ENAPEA 2018</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Embarazos adolescentes 2021</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">147,279 (15-19 aÃ±os) + 3,019 (&lt;15 aÃ±os)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">ENAPEA 2018</td>
                 </tr>
               </tbody>
             </table>
@@ -427,13 +427,13 @@ export const Content3562 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="VIII. INTERPRETACIÃ“N" color="bg-[#ec4899]" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Punto de inflexiÃ³n</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Los resultados confirman que la transiciÃ³n a la maternidad durante la universidad es un &quot;punto de inflexiÃ³n&quot; que reorganiza completamente la vida de las jÃ³venes. Sin embargo, el impacto de esta transiciÃ³n estÃ¡ mediado radicalmente por la disponibilidad de capitales.
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#ec4899]">Desmontando el mito</h3>
               <p className="text-base leading-relaxed mb-4">El estudio desmonta el mito de que la maternidad causa abandono escolar. Lo que causa abandono es la combinaciÃ³n de:</p>
               <ul className="space-y-2 text-sm">
@@ -452,7 +452,7 @@ export const Content3562 = () => {
       <WaveSection topColor="#000000" bottomColor="#f0f0f0" variant="dramatic">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="IX. CONCLUSIONES" color="bg-[#ec4899]" className="text-white mb-12 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#ec4899]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#ec4899] rounded-3xl">
             <h3 className="font-display text-2xl uppercase font-black mb-8 text-[#ec4899]">Conclusiones especÃ­ficas del autor</h3>
             <ol className="space-y-6 text-lg">
               <li className="flex gap-4">
@@ -551,7 +551,7 @@ export const Content3562 = () => {
       {/* SECCIÃ“N 3: POLÃTICA Y JUSTICIA */}
       <WaveSection topColor="#000000" bottomColor="#f0f0f0" variant="dramatic">
         <div className="max-w-4xl mx-auto flex flex-col gap-12 py-20 text-center">
-          <div className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-[1deg] relative overflow-hidden">
+          <div className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-[1deg] relative overflow-hidden rounded-3xl">
              <div className="absolute top-0 right-0 p-4 font-mono text-[10px] opacity-20 uppercase font-black">UPN_ECATEPEC_REPORT</div>
             <h3 className="text-4xl font-display uppercase mb-6 flex items-center justify-center gap-4 text-[#ec4899]">
               Equidad Material
@@ -580,11 +580,11 @@ export const Content3562 = () => {
           <DataExplorer3562 />
           
           <div className="grid lg:grid-cols-2 gap-8 mt-16 pb-12">
-             <BrutalCard color="bg-[#ec4899]" className="text-white border-4 rotate-1 shadow-[8px_8px_0_0_#000]" title="FRAGILIDAD ESTRUCTURAL">
+             <BrutalCard color="bg-[#ec4899]" className="text-white border-4 rotate-1 shadow-[8px_8px_0_0_#000] rounded-3xl" title="FRAGILIDAD ESTRUCTURAL">
                 <div className="text-6xl font-display font-black text-white mb-4">67%</div>
                 <p className="font-display text-lg uppercase font-black leading-tight">Es la tasa de interrupciÃ³n acadÃ©mica ante la ausencia de polÃ­ticas de cuidado.</p>
              </BrutalCard>
-             <BrutalCard color="bg-white" className="border-4 -rotate-1 shadow-[8px_8px_0_0_#ec4899]" title="JUSTICIA DE CUIDADOS">
+             <BrutalCard color="bg-white" className="border-4 -rotate-1 shadow-[8px_8px_0_0_#ec4899] rounded-3xl" title="JUSTICIA DE CUIDADOS">
                 <div className="text-2xl font-display font-black text-black mb-4 flex items-center gap-2">
                    <Baby className="text-[#ec4899]" /> Reto Institucional
                 </div>

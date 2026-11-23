@@ -74,7 +74,7 @@ export default function GenericInteractiveArticle({ id, onBack }: Props) {
       <div className="fixed top-6 left-6 z-50">
         <button
           onClick={onBack}
-          className="flex items-center gap-3 px-6 py-3 bg-white text-black font-display uppercase border-4 border-black shadow-[6px_6px_0_#000] hover:bg-pop-yellow hover:shadow-[8px_8px_0_#000] transition-all"
+          className="flex items-center gap-3 px-6 py-3 bg-white text-black font-display uppercase border-4 border-black shadow-[6px_6px_0_#000] hover:bg-pop-yellow hover:shadow-[8px_8px_0_#000] transition-all rounded-3xl"
         >
           <ArrowLeft size={20} /> Volver
         </button>
@@ -92,7 +92,7 @@ export default function GenericInteractiveArticle({ id, onBack }: Props) {
 
           <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <div className="flex-1">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase leading-[0.85] mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase leading-[0.95] mb-6">
                 {article.title}
               </h1>
               <h2 className="text-2xl md:text-3xl font-sans font-medium opacity-80 leading-snug">

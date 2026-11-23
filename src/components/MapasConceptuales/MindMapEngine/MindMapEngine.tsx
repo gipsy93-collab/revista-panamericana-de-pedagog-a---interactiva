@@ -80,14 +80,14 @@ const MindMapEngine: React.FC<MindMapEngineProps> = ({ nodes, onBack, title }) =
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           onClick={onBack}
-          className="pointer-events-auto flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black font-black uppercase tracking-widest shadow-[4px_4px_0_0_#000] hover:bg-[#0ea5e9] transition-all active:translate-y-1 active:shadow-none"
+          className="pointer-events-auto flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black font-black uppercase tracking-widest shadow-[4px_4px_0_0_#000] hover:bg-[#0ea5e9] transition-all active:translate-y-1 active:shadow-none rounded-3xl"
           aria-label="Volver a la galería de mapas"
         >
           Volver
         </motion.button>
 
         <div className="hidden md:flex flex-col items-end gap-2">
-          <div className="bg-white border-4 border-black px-4 py-1 font-black text-black text-xs uppercase italic shadow-[4px_4px_0_0_#000]">
+          <div className="bg-white border-4 border-black px-4 py-1 font-black text-black text-xs uppercase italic shadow-[4px_4px_0_0_#000] rounded-3xl">
             RPP Interactive MindMap
           </div>
           <h1 className="text-xl font-black uppercase text-black tracking-tight bg-white/80 px-2">
@@ -101,7 +101,7 @@ const MindMapEngine: React.FC<MindMapEngineProps> = ({ nodes, onBack, title }) =
         {showControls && (
           <motion.div 
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[150] flex items-center gap-6 bg-black text-white px-8 py-4 border-4 border-black shadow-[8px_8px_0_0_#0ea5e9] pointer-events-auto"
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[150] flex items-center gap-6 bg-black text-white px-8 py-4 border-4 border-black shadow-[8px_8px_0_0_#0ea5e9] pointer-events-auto rounded-3xl"
           >
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest">
               <MousePointer2 size={16} className="text-[#0ea5e9]" /> Arrastrar

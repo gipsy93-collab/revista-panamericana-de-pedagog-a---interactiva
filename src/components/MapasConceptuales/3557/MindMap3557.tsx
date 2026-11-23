@@ -150,7 +150,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
       {onBack && (
         <button
           onClick={onBack}
-          className="fixed top-8 left-8 z-[210] bg-white border-4 border-black p-4 flex items-center gap-3 font-black uppercase text-sm shadow-[8px_8px_0_0_#000] hover:shadow-none hover:translate-x-1.5 hover:translate-y-1.5 transition-all"
+          className="fixed top-8 left-8 z-[210] bg-white border-4 border-black p-4 flex items-center gap-3 font-black uppercase text-sm shadow-[8px_8px_0_0_#000] hover:shadow-none hover:translate-x-1.5 hover:translate-y-1.5 transition-all rounded-3xl"
         >
           <ArrowLeft className="w-6 h-6 stroke-[3]" />
           <span>Volver</span>
@@ -161,7 +161,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
         href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed top-8 left-40 z-[210] bg-black border-4 border-black px-4 py-3 flex items-center gap-2 font-black uppercase text-sm text-white shadow-[8px_8px_0_0_#000] hover:shadow-none hover:translate-x-1.5 hover:translate-y-1.5 transition-all"
+        className="fixed top-8 left-40 z-[210] bg-black border-4 border-black px-4 py-3 flex items-center gap-2 font-black uppercase text-sm text-white shadow-[8px_8px_0_0_#000] hover:shadow-none hover:translate-x-1.5 hover:translate-y-1.5 transition-all rounded-3xl"
       >
         <span>Revista Académica</span>
       </a>
@@ -181,7 +181,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
               className="relative bg-white border-[12px] border-black p-16 flex flex-col items-center shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]"
             >
               <Zap className="w-16 h-16 text-black mb-6 animate-pulse" />
-              <h1 className="text-6xl font-black text-black tracking-tighter uppercase text-center italic">
+              <h1 className="text-6xl font-black text-black tracking-normal uppercase text-center italic">
                 Educación Jurídica <br /> Digital
               </h1>
             </motion.div>
@@ -197,7 +197,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
             animate={{ opacity: 1, x: 0 }}
             className="fixed top-24 left-6 z-40 hidden lg:block"
           >
-            <div className="bg-white border-2 border-black p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg]">
+            <div className="bg-white border-2 border-black p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg] rounded-3xl">
               <ShieldCheck className="w-4 h-4" />
               <p className="text-[10px] font-black uppercase tracking-widest mt-1">RPP ©️ 2026</p>
             </div>
@@ -265,7 +265,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             className="fixed bottom-36 right-8 z-[70]"
           >
-            <div className="bg-[#00FFA3] border-8 border-black p-10 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-3">
+            <div className="bg-[#00FFA3] border-8 border-black p-10 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-3 rounded-3xl">
                <p className="text-black font-black text-3xl uppercase italic">Misión Completa</p>
             </div>
           </motion.div>
@@ -275,7 +275,7 @@ export default function App({ onBack }: { onBack?: () => void }) {
       {introComplete && (
         <button
           onClick={() => setSoundEnabled(!soundEnabled)}
-          className="fixed top-24 right-6 z-50 bg-white border-2 border-black p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all group"
+          className="fixed top-24 right-6 z-50 bg-white border-2 border-black p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all group rounded-3xl"
         >
           <div className="flex items-center gap-2">
             {soundEnabled ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}

@@ -1,4 +1,6 @@
 export const ARTICLE_META = {
+  date: '2025',
+  volume: 'Vol. 41',
   id: "3508",
   title: "Las actitudes docentes frente a la inclusión del TEA",
   subtitle: "Estudio comparado entre España y Ecuador",

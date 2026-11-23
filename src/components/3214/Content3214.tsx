@@ -60,7 +60,7 @@ export const Content3214 = () => {
                  <p className="text-lg font-bold leading-snug text-black/80">La educación tradicional rural prioriza el academicismo rígido sobre el desarrollo sostenible real.</p>
               </CinematicCard>
               
-              <div className="bg-emerald-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden">
+              <div className="bg-emerald-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden rounded-3xl">
                  <div className="absolute -bottom-4 -right-4 bg-white/10 w-32 h-32 rounded-full group-hover:scale-150 transition-transform" />
                  <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">HIPÓTESIS CENTRAL</h4>
                  <p className="text-sm font-bold border-l-4 border-white pl-4 italic leading-relaxed">
@@ -68,7 +68,7 @@ export const Content3214 = () => {
                  </p>
               </div>
 
-              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#10b981] -rotate-1">
+              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#10b981] -rotate-1 rounded-3xl">
                  <h4 className="font-display text-xl uppercase font-black mb-2 italic">Desarrollo Sostenible</h4>
                  <p className="text-xs font-sans font-medium text-black/50 leading-relaxed uppercase">
                    Enfoque holístico: Integración de ejes económicos, sociales y ambientales en el proceso de enseñanza.
@@ -101,7 +101,7 @@ export const Content3214 = () => {
                 >
                   <div className="flex items-center gap-6">
                     <span className="text-3xl">{dim.emoji}</span>
-                    <span className="font-display text-xl uppercase font-black tracking-tighter italic leading-none">{dim.name}</span>
+                    <span className="font-display text-xl uppercase font-black tracking-normal italic leading-none">{dim.name}</span>
                   </div>
                 </button>
               ))}
@@ -127,19 +127,19 @@ export const Content3214 = () => {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative">
+                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative rounded-3xl">
                       <h4 className="font-mono text-[9px] uppercase font-black mb-4 tracking-widest text-emerald-400">PUNTOS_CLAVE</h4>
                       <ul className="space-y-4">
                         {DIMENSIONS[activeDimension].highlights?.map((h, i) => (
                           <li key={i} className="flex gap-3 items-start md:items-center">
                             <span className="bg-emerald-600 w-2 h-2 rounded-full shrink-0 md:mt-0 mt-1" />
-                            <span className="font-display text-sm uppercase font-black italic tracking-tighter leading-tight">{h}</span>
+                            <span className="font-display text-sm uppercase font-black italic tracking-normal leading-tight">{h}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="bg-emerald-50 p-8 border-4 border-black flex flex-col justify-center">
+                    <div className="bg-emerald-50 p-8 border-4 border-black flex flex-col justify-center rounded-3xl">
                        <Quote className="text-emerald-600 mb-4" size={32} />
                        <p className="font-serif italic text-lg leading-snug text-black/90">
                           {activeDimension === 0 && "El campo ya no es solo tierra; ahora es dato, cálculo y monitorización desde el celular."}
@@ -174,11 +174,11 @@ export const Content3214 = () => {
                { icon: Cpu, color: 'bg-zinc-900', title: 'Reducción de Brecha', desc: 'Las TIC se integraron como herramientas dinámicas, aumentando un 15% su uso docente.' },
                { icon: Activity, color: 'bg-yellow-400', title: 'Aprobación Parental', desc: 'Involucrar a las familias resultó en un incremento del 10% en la satisfacción del modelo.' }
              ].map((it, i) => (
-               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer">
+               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer rounded-3xl">
                   <div className={`${it.color} text-white p-6 border-4 border-black mb-6 w-fit group-hover:rotate-12 transition-transform`}>
                     <it.icon size={44} />
                   </div>
-                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-tighter">{it.title}</h4>
+                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-normal">{it.title}</h4>
                   <p className="font-sans text-sm font-medium text-black/70 leading-relaxed">{it.desc}</p>
                </div>
              ))}

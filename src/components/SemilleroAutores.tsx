@@ -27,7 +27,7 @@ export default function SemilleroAutores({ onOpenSubPage }: Props) {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-20"
         >
-          <div className="w-14 h-14 bg-black border-4 border-black flex items-center justify-center text-[#fccb06] shadow-[4px_4px_0_0_#fff]">
+          <div className="w-14 h-14 bg-black border-4 border-black flex items-center justify-center text-[#fccb06] shadow-[4px_4px_0_0_#fff] rounded-3xl">
             <Users size={28} />
           </div>
           <span className="font-accent font-black tracking-[0.3em] text-black uppercase text-sm bg-white/20 px-4 py-1">Semillero Científico // RPP 2026</span>
@@ -66,7 +66,7 @@ export default function SemilleroAutores({ onOpenSubPage }: Props) {
                  <Zap size={20} className="fill-current" />
                  <span className="font-mono text-[10px] font-black uppercase tracking-widest">Published Authors</span>
               </div>
-              <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display uppercase leading-[0.9] text-white transition-all group-hover:tracking-tighter italic">
+              <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display uppercase leading-[0.9] text-white transition-all group-hover:tracking-normal italic">
                 SEMILLERO DE<br />
                 <span className="text-black group-hover:text-[#fccb06] drop-shadow-[4px_4px_0_#fff] transition-colors">AUTORES</span>
               </h2>
@@ -105,7 +105,7 @@ export default function SemilleroAutores({ onOpenSubPage }: Props) {
                  <span className="font-mono text-[10px] font-black uppercase tracking-widest">Quality Control</span>
               </div>
 
-              <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display uppercase leading-[0.9] text-white transition-all group-hover:tracking-tighter italic">
+              <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display uppercase leading-[0.9] text-white transition-all group-hover:tracking-normal italic">
                 SEMILLERO DE<br />
                 <span className="text-black group-hover:text-rose-400 drop-shadow-[4px_4px_0_#fff] transition-colors">EDITORES</span>
               </h2>

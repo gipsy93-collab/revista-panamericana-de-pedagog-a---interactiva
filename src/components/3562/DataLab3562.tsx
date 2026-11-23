@@ -18,24 +18,21 @@ export const DataLab3562 = () => {
 
   return (
     <div className="bg-[#FFF7ED] py-32 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-orange-600/[0.03] leading-none pointer-events-none select-none italic">
-        MATERNITY_26
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-24">
           <div>
             <BrutalSticker text="QUALITATIVE_TRANSITION // MEXICO // RPP" color="bg-orange-500" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#000] px-6 py-2 font-black" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.85] text-black tracking-tighter italic">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.95] text-black tracking-normal italic">
               LAB <span className="text-orange-600 underline decoration-8 decoration-teal-500">MATERNIDAD</span><br/>
               <span className="text-4xl md:text-5xl font-mono uppercase bg-black text-white px-4 leading-normal mt-3">Agencia & Crianza</span>
             </h2>
           </div>
           <div className="flex gap-6">
-             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#f97316] rotate-[-2deg]">
+             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#f97316] rotate-[-2deg] rounded-3xl">
                 <Baby size={48} className="text-orange-600" />
              </div>
-             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#0d9488] rotate-[3deg]">
+             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#0d9488] rotate-[3deg] rounded-3xl">
                 <Heart size={48} className="text-white" />
              </div>
           </div>
@@ -57,7 +54,7 @@ export const DataLab3562 = () => {
                               <span className="font-display text-xl uppercase italic font-black text-black">{s.label}</span>
                               <span className="font-mono text-3xl font-black text-orange-600">{s.value}%</span>
                            </div>
-                           <div className="h-6 w-full bg-zinc-100 border-2 border-black overflow-hidden relative">
+                           <div className="h-6 w-full bg-zinc-100 border-2 border-black overflow-hidden relative rounded-xl">
                               <motion.div 
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${s.value}%` }} 
@@ -70,7 +67,7 @@ export const DataLab3562 = () => {
                            </div>
                         </div>
                       ))}
-                      <div className="mt-12 p-8 bg-zinc-50 border-4 border-black rotate-[-1deg] text-zinc-500 italic">
+                      <div className="mt-12 p-8 bg-zinc-50 border-4 border-black rotate-[-1deg] text-zinc-500 italic rounded-3xl">
                          <p className="font-serif text-lg leading-snug">
                             "67% de las mujeres mexicanas son madres, pero solo el 17% logra culminar estudios universitarios."
                          </p>
@@ -79,14 +76,14 @@ export const DataLab3562 = () => {
 
                    <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
                       {profileHighlights.map((p, i) => (
-                        <div key={i} className="bg-zinc-950 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f97316] rotate-1 group hover:rotate-0 transition-transform flex flex-col justify-center items-start">
+                        <div key={i} className="bg-zinc-950 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f97316] rotate-1 group hover:rotate-0 transition-transform flex flex-col justify-center items-start rounded-3xl">
                            <p.icon size={40} className="mb-6 text-orange-500 group-hover:scale-110 transition-transform" />
                            <h5 className="font-display text-6xl font-black italic mb-2">{p.value}</h5>
                            <p className="font-mono text-[9px] uppercase font-black opacity-50 tracking-widest leading-none mb-3">{p.label}</p>
                            <p className="text-xs font-serif italic text-zinc-400 group-hover:text-white transition-colors">{p.desc}</p>
                         </div>
                       ))}
-                      <div className="bg-teal-600 p-10 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[-2deg] flex flex-col justify-center items-center text-white text-center">
+                      <div className="bg-teal-600 p-10 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[-2deg] flex flex-col justify-center items-center text-white text-center rounded-3xl">
                          <Sparkles className="mb-4" />
                          <span className="font-display text-2xl uppercase font-black italic">Muestra N</span>
                          <span className="text-5xl font-display font-black">Qual</span>
@@ -100,11 +97,10 @@ export const DataLab3562 = () => {
           {/* II. TENDENCIA OCDE */}
           <div className="lg:col-span-7">
              <BrutalCard title="OCDE: INDICADOR_NEET_JUVENIL" color="bg-black" className="text-white !border-[6px] shadow-[20px_20px_0_0_#0d9488] h-full flex flex-col justify-center p-12 relative overflow-hidden">
-                <div className="absolute -top-10 -right-10 text-[180px] font-black italic text-zinc-800 pointer-events-none select-none">14</div>
                 <div className="relative z-10">
                    <span className="font-mono text-[10px] uppercase font-black text-teal-400 tracking-[0.5em] mb-4 block leading-none italic">SITUACIÓN_REGIONAL</span>
                    <div className="flex items-baseline gap-4 mb-4">
-                      <h3 className="text-[10rem] md:text-[12rem] font-display font-black text-teal-500 drop-shadow-[8px_8px_0_#000] leading-none tracking-tighter">14.4</h3>
+                      <h3 className="text-[10rem] md:text-[12rem] font-display font-black text-teal-500 drop-shadow-[8px_8px_0_#000] leading-none tracking-normal">14.4</h3>
                       <span className="text-6xl font-display font-black text-white">%</span>
                    </div>
                    <h4 className="text-3xl font-display uppercase font-black text-white italic tracking-wide mb-8">Brecha de Desocupación (25-29 años)</h4>
@@ -117,7 +113,7 @@ export const DataLab3562 = () => {
 
           {/* III. HALLAZGOS DE AGENCIA */}
           <div className="lg:col-span-5 flex flex-col gap-8">
-             <div className="bg-orange-500 border-4 border-black p-12 shadow-[12px_12px_0_0_#000] group hover:scale-[1.02] transition-transform h-full flex flex-col justify-center">
+             <div className="bg-orange-500 border-4 border-black p-12 shadow-[12px_12px_0_0_#000] group hover:scale-[1.02] transition-transform h-full flex flex-col justify-center rounded-3xl">
                 <Home className="mb-6 text-black" size={48} />
                 <h4 className="font-display text-4xl uppercase font-black italic text-black leading-tight mb-4">Crianza & Estocolmo</h4>
                 <p className="font-serif text-xl text-black/80 italic leading-snug">

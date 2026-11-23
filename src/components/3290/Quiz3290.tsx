@@ -53,7 +53,7 @@ export const Quiz3290 = ({ onComplete }: { onComplete: (result: QuizResult) => v
             Puntuación Académica: {score} / {QUIZ_QUESTIONS.length}
           </p>
           
-          <div className="inline-block p-4 border-4 border-white bg-indigo-600 text-white shadow-[6px_6px_0_#fff] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg]">
+          <div className="inline-block p-4 border-4 border-white bg-indigo-600 text-white shadow-[6px_6px_0_#fff] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg] rounded-3xl">
             +{score * 100} XP MULTIMODAL
           </div>
 
@@ -141,7 +141,7 @@ export const Quiz3290 = ({ onComplete }: { onComplete: (result: QuizResult) => v
               exit={{ height: 0, opacity: 0, marginTop: 0 }}
               className="overflow-hidden"
             >
-              <div className="p-8 border-4 border-black bg-indigo-50 shadow-[8px_8px_0_#000]">
+              <div className="p-8 border-4 border-black bg-indigo-50 shadow-[8px_8px_0_#000] rounded-3xl">
                 <h4 className="font-display text-2xl uppercase mb-2 flex items-center gap-3">
                   <Target size={24} /> Justificación Teórica
                 </h4>

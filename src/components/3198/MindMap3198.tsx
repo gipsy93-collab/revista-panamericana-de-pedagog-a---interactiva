@@ -123,7 +123,7 @@ const MindMap3198: React.FC = () => {
                 {activeData?.context}
               </div>
 
-              <div className="mt-8 p-4 bg-pop-yellow border-4 border-black font-accent italic">
+              <div className="mt-8 p-4 bg-pop-yellow border-4 border-black font-accent italic rounded-2xl">
                 {activeNode === 'core' ? '"El aprendizaje no tiene edad, tiene tecnología"' : '"Diseño centrado en el respeto pedagógico"'}
               </div>
             </motion.div>
@@ -136,7 +136,7 @@ const MindMap3198: React.FC = () => {
         <span className="font-mono text-xs font-bold">ESTUDIO: BUENOS AIRES 2025</span>
       </div>
       <div className="absolute bottom-20 left-10 sticker p-2 bg-pop-blue text-white rotate-[-8deg] z-10 hidden md:block">
-        <span className="font-mono text-xs font-bold">DOI: 10.21155/rpp.3198</span>
+        <span className="font-mono text-xs font-bold">DOI: 10.21555/rpp.3198</span>
       </div>
     </section>
   );

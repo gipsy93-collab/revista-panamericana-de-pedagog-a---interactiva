@@ -67,7 +67,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
               viewport={{ once: true }}
               className="flex items-center gap-4 mb-6"
             >
-              <div className="w-10 h-10 bg-black flex items-center justify-center text-[#fccb06] border-2 border-black shadow-[4px_4px_0_#fff]">
+              <div className="w-10 h-10 bg-black flex items-center justify-center text-[#fccb06] border-2 border-black shadow-[4px_4px_0_#fff] rounded-3xl">
                 <Sparkles size={20} />
               </div>
               <span className="font-mono font-black tracking-widest text-black uppercase text-xs">
@@ -77,7 +77,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
             
             <h2 className="text-6xl md:text-8xl font-display uppercase leading-tight text-black mb-6">
               {t.articulos.title_top}<br />
-              <span className="text-white drop-shadow-[6px_6px_0_#000]" style={{ WebkitTextStroke: 'var(--brutal-stroke-width) black' }}>
+              <span className="text-white drop-shadow-[6px_6px_0_#000]">
                 {t.articulos.title_bottom}
               </span>
             </h2>
@@ -85,7 +85,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
 
           <div className="relative group w-full md:w-96">
             <div className="absolute inset-0 bg-black translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform" />
-            <div className="relative bg-white border-4 border-black p-4 flex items-center gap-4">
+            <div className="relative bg-white border-4 border-black p-4 flex items-center gap-4 rounded-2xl">
               <Search className="text-black/30" />
               <input 
                 type="text" 
@@ -173,7 +173,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
               );
             })
           ) : (
-            <div className="w-full text-center p-20 border-4 border-black border-dashed bg-white/10 font-mono uppercase font-black">
+            <div className="w-full text-center p-20 border-4 border-black border-dashed bg-white/10 font-mono uppercase font-black rounded-xl">
                {searchQuery ? 'Sin Resultados...' : 'Cargando Investigaciones...'}
             </div>
           )}
@@ -195,7 +195,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-white border-4 md:border-8 border-black shadow-[12px_12px_0_#000] md:shadow-[24px_24px_0_#000] overflow-hidden flex flex-col"
+              className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-white border-4 md:border-8 border-black shadow-[12px_12px_0_#000] md:shadow-[24px_24px_0_#000] overflow-hidden flex flex-col rounded-3xl"
             >
                <div className="bg-black text-white p-4 flex justify-between items-center">
                   <span className="font-mono text-[10px] font-black uppercase">MÉTRICAS DEL ARTÍCULO // ID {selectedArticle.id}</span>
@@ -206,7 +206,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
 
                <div className="flex flex-col md:flex-row overflow-y-auto custom-scrollbar">
                   <div className={`${selectedArticle.color || 'bg-white'} ${selectedArticle.text || 'text-black'} w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-between`}>
-                     <div className="w-16 h-16 bg-black/10 border-4 border-current flex items-center justify-center mb-12">
+                     <div className="w-16 h-16 bg-black/10 border-4 border-current flex items-center justify-center mb-12 rounded-xl">
                         {(() => {
                            const Icon = ICON_MAP[selectedArticle.icon || ''] || BookMarked;
                            return <Icon size={32} />;
@@ -219,7 +219,7 @@ export default function ArticulosInteractivos({ onOpenArticle }: { onOpenArticle
                      <div className="flex flex-wrap gap-2 mb-8">
                         {selectedArticle.keywords && Array.isArray(selectedArticle.keywords) ? 
                           selectedArticle.keywords.map(k => (
-                            <span key={k} className="bg-[#fccb06] text-black border-2 border-black px-3 py-1 font-mono text-[9px] font-black uppercase">#{k}</span>
+                            <span key={k} className="bg-[#fccb06] text-black border-2 border-black px-3 py-1 font-mono text-[9px] font-black uppercase rounded-xl">#{k}</span>
                           )) : null
                         }
                      </div>

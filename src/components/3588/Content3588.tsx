@@ -29,7 +29,7 @@ export const Content3588 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#eef2ff] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#eef2ff] relative rounded-3xl">
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic text-eef2ff">Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10">
@@ -51,13 +51,13 @@ export const Content3588 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="A. OBJETIVOS" color="bg-indigo-600" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">Objetivo General</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Traducir y analizar algunas propiedades psicomÃ©tricas de la Escala para medir la intenciÃ³n de deserciÃ³n de BÃ¤ulke et al. (2022) en el contexto mexicano a travÃ©s de un estudio piloto.
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-400">Objetivos EspecÃ­ficos</h3>
               <ol className="space-y-3 text-base">
                 <li className="flex gap-3">
@@ -86,23 +86,23 @@ export const Content3588 = () => {
           
           <div className="space-y-12">
             {/* 3.1 Tipo de estudio */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">B.1 Tipo de Estudio</h3>
               <p className="text-base text-black/80 mb-4">Estudio piloto cuantitativo con diseÃ±o:</p>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-indigo-50 p-4 border-2 border-black">
+                <div className="bg-indigo-50 p-4 border-2 border-black rounded-2xl">
                   <span className="font-black text-indigo-600">Instrumental:</span>
                   <span className="text-sm text-black/80"> AnÃ¡lisis de propiedades psicomÃ©tricas de escala</span>
                 </div>
-                <div className="bg-indigo-50 p-4 border-2 border-black">
+                <div className="bg-indigo-50 p-4 border-2 border-black rounded-2xl">
                   <span className="font-black text-indigo-600">No experimental:</span>
                   <span className="text-sm text-black/80"> Sin manipulaciÃ³n de variables</span>
                 </div>
-                <div className="bg-indigo-50 p-4 border-2 border-black">
+                <div className="bg-indigo-50 p-4 border-2 border-black rounded-2xl">
                   <span className="font-black text-indigo-600">Transversal:</span>
                   <span className="text-sm text-black/80"> RecolecciÃ³n en un solo momento</span>
                 </div>
-                <div className="bg-indigo-50 p-4 border-2 border-black">
+                <div className="bg-indigo-50 p-4 border-2 border-black rounded-2xl">
                   <span className="font-black text-indigo-600">Correlacional:</span>
                   <span className="text-sm text-black/80"> BÃºsqueda de asociaciones sin establecer causalidad</span>
                 </div>
@@ -110,40 +110,40 @@ export const Content3588 = () => {
             </div>
 
             {/* 3.2 Participantes */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-400">B.2 Participantes / Muestra</h3>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-indigo-600 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">CaracterÃ­stica</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Detalle</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">CaracterÃ­stica</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Detalle</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">N</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">71 estudiantes universitarios</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">N</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">71 estudiantes universitarios</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Perfil</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Diversas carreras de universidades de YucatÃ¡n, MÃ©xico</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Perfil</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Diversas carreras de universidades de YucatÃ¡n, MÃ©xico</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">GÃ©nero</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">87% mujeres (n=60), 13% hombres (n=9)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">GÃ©nero</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">87% mujeres (n=60), 13% hombres (n=9)</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Edad media</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">21.6 aÃ±os (IC 95% = 20.5 â€“ 22.6; DE = 4.35)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Edad media</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">21.6 aÃ±os (IC 95% = 20.5 â€“ 22.6; DE = 4.35)</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Rango de edad</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">18 a 50 aÃ±os</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Rango de edad</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">18 a 50 aÃ±os</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Instituciones</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">2 privadas, 1 pÃºblica</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Instituciones</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">2 privadas, 1 pÃºblica</td>
                     </tr>
                   </tbody>
                 </table>
@@ -173,18 +173,18 @@ export const Content3588 = () => {
             </div>
 
             {/* 3.3 Instrumentos */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">B.3 Instrumentos / TÃ©cnicas de recolecciÃ³n</h3>
               <div className="space-y-6">
-                <div className="bg-indigo-50 p-6 border-2 border-black">
+                <div className="bg-indigo-50 p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-600 mb-2">Instrumento principal (a validar)</h4>
                   <p className="text-sm text-black/80"><strong>Escala BÃ¤ulke et al. (2022)</strong> â€” subescala de intenciÃ³n de deserciÃ³n. 15 Ã­tems en 5 dimensiones (3 Ã­tems cada una). Escala Likert 1-6. Dimensiones: percepciÃ³n de no encajar, pensamientos sobre desertar, anÃ¡lisis, bÃºsqueda de informaciÃ³n, decisiÃ³n final.</p>
                 </div>
-                <div className="bg-zinc-100 p-6 border-2 border-black">
+                <div className="bg-zinc-100 p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-600 mb-2">Instrumento de validez convergente</h4>
                   <p className="text-sm text-black/80"><strong>Escala Frostad et al. (2015)</strong> en Jacobo-Galicia et al. (2021). 6 Ã­tems, escala Likert 1-7. Previamente validada en MÃ©xico.</p>
                 </div>
-                <div className="bg-indigo-50 p-6 border-2 border-black">
+                <div className="bg-indigo-50 p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-600 mb-2">Instrumentos de constructos relacionados</h4>
                   <p className="text-sm text-black/80"><strong>EACA</strong> (Blanco et al., 2011): 13 Ã­tems, escala 0-10. <strong>CEMA</strong> (Hayamizu y Weiner, 1991; Gaeta et al., 2015): subescala metas orientadas al aprendizaje, 6 Ã­tems, escala 1-5.</p>
                 </div>
@@ -192,7 +192,7 @@ export const Content3588 = () => {
             </div>
 
             {/* 3.4 Procedimiento */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-400">B.4 Procedimiento</h3>
               <div className="space-y-6">
                 <div className="bg-white/10 p-6">
@@ -222,17 +222,17 @@ export const Content3588 = () => {
             </div>
 
             {/* 3.5 AnÃ¡lisis de datos */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">B.5 AnÃ¡lisis de Datos</h3>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-indigo-50 p-6 border-2 border-black">
+                <div className="bg-indigo-50 p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-600 mb-2">Confiabilidad</h4>
                   <ul className="space-y-1 text-sm text-black/80">
                     <li>â€¢ Alfa de Cronbach (dimensiones)</li>
                     <li>â€¢ Omega de McDonald (dimensiones y escala total)</li>
                   </ul>
                 </div>
-                <div className="bg-indigo-50 p-6 border-2 border-black">
+                <div className="bg-indigo-50 p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-600 mb-2">Validez convergente</h4>
                   <ul className="space-y-1 text-sm text-black/80">
                     <li>â€¢ CorrelaciÃ³n de Spearman</li>
@@ -240,7 +240,7 @@ export const Content3588 = () => {
                     <li>â€¢ CorrelaciÃ³n con motivaciÃ³n y autoeficacia</li>
                   </ul>
                 </div>
-                <div className="bg-zinc-900 text-white p-6 border-2 border-black">
+                <div className="bg-zinc-900 text-white p-6 border-2 border-black rounded-2xl">
                   <h4 className="font-black text-indigo-400 mb-2">Software</h4>
                   <p className="text-sm">Jamovi 2.7.6.0</p>
                 </div>
@@ -255,20 +255,20 @@ export const Content3588 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#eef2ff" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="C. HALLAZGO PRINCIPAL" color="bg-indigo-600" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#4f46e5]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#4f46e5] rounded-3xl">
             <p className="text-lg leading-relaxed text-black/80 mb-6">
               La escala BÃ¤ulke traducida al espaÃ±ol muestra <strong>propiedades psicomÃ©tricas adecuadas</strong> para el contexto mexicano: confiabilidad alta en todas las dimensiones (Î± = .829 - .970), correlaciones moderadas a fuertes con instrumento validado previo (r = .406 - .570), y correlaciones inversas significativas con motivaciÃ³n (r = -.326) y autoeficacia (r = -.436), consistentes con la literatura teÃ³rica.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-indigo-600 text-white p-6 border-4 border-black text-center">
+              <div className="bg-indigo-600 text-white p-6 border-4 border-black text-center rounded-2xl">
                 <div className="text-4xl font-black">Î± = .829-.970</div>
                 <p className="text-xs mt-2">Confiabilidad por dimensiÃ³n</p>
               </div>
-              <div className="bg-zinc-900 text-white p-6 border-4 border-black text-center">
+              <div className="bg-zinc-900 text-white p-6 border-4 border-black text-center rounded-2xl">
                 <div className="text-4xl font-black">r = .570</div>
                 <p className="text-xs mt-2">CorrelaciÃ³n mÃ¡xima (validez)</p>
               </div>
-              <div className="bg-indigo-600 text-white p-6 border-4 border-black text-center">
+              <div className="bg-indigo-600 text-white p-6 border-4 border-black text-center rounded-2xl">
                 <div className="text-4xl font-black">Ï‰ = .959</div>
                 <p className="text-xs mt-2">Omega escala total</p>
               </div>
@@ -285,7 +285,7 @@ export const Content3588 = () => {
           
           <div className="space-y-12">
             {/* Objetivo 1 */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">Objetivo 1: TraducciÃ³n y claridad</h3>
               <ul className="space-y-2 text-base text-black/80">
                 <li className="flex gap-2"><span className="text-indigo-600 font-black">â–¸</span> Los participantes reportaron comprensiÃ³n correcta de los reactivos</li>
@@ -296,47 +296,47 @@ export const Content3588 = () => {
             </div>
 
             {/* Objetivo 2 */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-400">Objetivo 2: Confiabilidad</h3>
               <div className="overflow-x-auto mb-4">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-indigo-600 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">DimensiÃ³n</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Î± Cronbach</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Ï‰ McDonald</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">DimensiÃ³n</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Î± Cronbach</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Ï‰ McDonald</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">PercepciÃ³n de no encajar</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.873</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.877</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">PercepciÃ³n de no encajar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.873</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.877</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Pensamientos sobre desertar</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">.764 (.829*)</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">.827 (.850*)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Pensamientos sobre desertar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">.764 (.829*)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">.827 (.850*)</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">AnÃ¡lisis</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.858</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.863</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">AnÃ¡lisis</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.858</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.863</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">BÃºsqueda de informaciÃ³n</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">.858</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">.862</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">BÃºsqueda de informaciÃ³n</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">.858</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">.862</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">DecisiÃ³n final</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.969</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">.970</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">DecisiÃ³n final</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.969</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">.970</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black">Escala total</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white">N/A</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black">.959</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black rounded-2xl">Escala total</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white rounded-2xl">N/A</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black rounded-2xl">.959</td>
                     </tr>
                   </tbody>
                 </table>
@@ -345,48 +345,48 @@ export const Content3588 = () => {
             </div>
 
             {/* Objetivo 3 */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">Objetivo 3: Validez convergente</h3>
               <p className="text-base text-black/80 mb-4">CorrelaciÃ³n con escala previamente validada (Jacobo-Galicia et al., 2021):</p>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-indigo-600 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">DimensiÃ³n BÃ¤ulke</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">r</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Magnitud</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">DimensiÃ³n BÃ¤ulke</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">r</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Magnitud</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">PercepciÃ³n de no encajar</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">.406</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Moderada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">PercepciÃ³n de no encajar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">.406</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Moderada</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Pensamientos sobre desertar</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">.476</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Moderada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Pensamientos sobre desertar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">.476</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Moderada</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">AnÃ¡lisis</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">.544</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Fuerte</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">AnÃ¡lisis</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">.544</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Fuerte</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">BÃºsqueda de informaciÃ³n</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">.540</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Fuerte</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">BÃºsqueda de informaciÃ³n</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">.540</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Fuerte</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">DecisiÃ³n final</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">.473</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Moderada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">DecisiÃ³n final</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">.473</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Moderada</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black">PuntuaciÃ³n total</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black">.570</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black">Fuerte</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black rounded-2xl">PuntuaciÃ³n total</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black rounded-2xl">.570</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-600 text-white font-black rounded-2xl">Fuerte</td>
                     </tr>
                   </tbody>
                 </table>
@@ -398,24 +398,24 @@ export const Content3588 = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-zinc-900 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Variable</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">r</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">p</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">InterpretaciÃ³n</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Variable</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">r</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">p</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">InterpretaciÃ³n</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">MotivaciÃ³n acadÃ©mica</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">-.326</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">&lt; .01</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Inversa moderada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">MotivaciÃ³n acadÃ©mica</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">-.326</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">&lt; .01</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Inversa moderada</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Autoeficacia acadÃ©mica</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">-.436</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">&lt; .001</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Inversa moderada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Autoeficacia acadÃ©mica</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">-.436</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">&lt; .001</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Inversa moderada</td>
                     </tr>
                   </tbody>
                 </table>
@@ -431,70 +431,70 @@ export const Content3588 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#eef2ff" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="E. TABLA RESUMEN" color="bg-indigo-600" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] overflow-x-auto rounded-3xl">
             <table className="w-full">
               <thead>
                 <tr className="bg-indigo-600 text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Variable/Dato</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Valor</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Contexto/Nota</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Variable/Dato</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Valor</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Contexto/Nota</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">TamaÃ±o muestral</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">n = 71</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Estudio piloto</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">TamaÃ±o muestral</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">n = 71</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Estudio piloto</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Mujeres</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">87% (n=60)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Sesgo de gÃ©nero notable</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Mujeres</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">87% (n=60)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Sesgo de gÃ©nero notable</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Edad media</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">21.6 aÃ±os</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">DE = 4.35</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Edad media</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">21.6 aÃ±os</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">DE = 4.35</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Alfa mÃ­nimo dimensiÃ³n</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">.764</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Pensamientos sobre desertar</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Alfa mÃ­nimo dimensiÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">.764</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Pensamientos sobre desertar</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Alfa mÃ¡ximo dimensiÃ³n</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">.969</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">DecisiÃ³n final</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Alfa mÃ¡ximo dimensiÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">.969</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">DecisiÃ³n final</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Omega escala total</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">.959</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Excelente confiabilidad</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Omega escala total</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">.959</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Excelente confiabilidad</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">CorrelaciÃ³n mÃ¡xima (validez)</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">r = .570</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Con escala Jacobo-Galicia</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">CorrelaciÃ³n mÃ¡xima (validez)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">r = .570</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Con escala Jacobo-Galicia</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">CorrelaciÃ³n motivaciÃ³n</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">r = -.326</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">p &lt; .01</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">CorrelaciÃ³n motivaciÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">r = -.326</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">p &lt; .01</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">CorrelaciÃ³n autoeficacia</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">r = -.436</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">p &lt; .001</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">CorrelaciÃ³n autoeficacia</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">r = -.436</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">p &lt; .001</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">NÃºmero de dimensiones</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">5</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Modelo de fases</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">NÃºmero de dimensiones</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">5</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Modelo de fases</td>
                 </tr>
                 <tr className="hover:bg-indigo-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Ãtems totales</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">15</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">3 por dimensiÃ³n</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Ãtems totales</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">15</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">3 por dimensiÃ³n</td>
                 </tr>
               </tbody>
             </table>
@@ -508,13 +508,13 @@ export const Content3588 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="F. INTERPRETACIÃ“N" color="bg-black" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-600">Consistencia con el original</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Los resultados indican que la escala BÃ¤ulke traducida mantiene las propiedades psicomÃ©tricas del estudio original (alfas entre .80-.95 en estudio original vs. .829-.970 en este estudio). La traducciÃ³n fue adecuada, aunque la muestra pequeÃ±a limita la generalizaciÃ³n.
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-indigo-400">Estructura de fases</h3>
               <p className="text-base leading-relaxed">
                 La estructura de cinco fases del proceso de deserciÃ³n se respalda empÃ­ricamente mediante las correlaciones con el instrumento validado previo, especialmente fuertes en las dimensiones de &quot;anÃ¡lisis&quot; y &quot;bÃºsqueda de informaciÃ³n&quot;.
@@ -598,7 +598,7 @@ export const Content3588 = () => {
                  <p className="text-lg font-bold leading-snug text-black/80">CorrelaciÃ³n fuerte (<strong>r = .570</strong>) con instrumentos previos, confirmando la solidez de la mediciÃ³n en YucatÃ¡n.</p>
               </CinematicCard>
               
-              <div className="bg-black text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] rotate-2 relative group overflow-hidden">
+              <div className="bg-black text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] rotate-2 relative group overflow-hidden rounded-3xl">
                  <div className="absolute top-0 right-0 p-4 font-mono text-[8px] opacity-30 uppercase tracking-[0.3em]">UADY_RPP_3588</div>
                  <h4 className="font-display text-xl uppercase font-black mb-6 italic text-indigo-400 underline decoration-white/20">Alerta Temprana</h4>
                  <p className="text-sm font-sans font-medium leading-relaxed italic">
@@ -606,7 +606,7 @@ export const Content3588 = () => {
                  </p>
               </div>
 
-              <div className="bg-white border-8 border-black p-10 shadow-[10px_10px_0_0_#000] -rotate-1 text-black">
+              <div className="bg-white border-8 border-black p-10 shadow-[10px_10px_0_0_#000] -rotate-1 text-black rounded-3xl">
                  <h4 className="font-display text-2xl uppercase font-black mb-4 flex items-center gap-3 italic">
                    <Users className="text-indigo-600" /> Sesgo de GÃ©nero
                  </h4>
@@ -641,7 +641,7 @@ export const Content3588 = () => {
                   <div className="flex items-center gap-8">
                     <span className="text-5xl group-hover:scale-125 transition-transform">{dim.emoji}</span>
                     <div className="flex flex-col">
-                      <span className="font-display text-2xl uppercase font-black tracking-tighter italic leading-none mb-1 text-inherit">{dim.name}</span>
+                      <span className="font-display text-2xl uppercase font-black tracking-normal italic leading-none mb-1 text-inherit">{dim.name}</span>
                       <span className="font-mono text-[9px] uppercase font-black opacity-60 tracking-widest">{dim.code} // DIMENSIÃ“N</span>
                     </div>
                   </div>
@@ -669,13 +669,13 @@ export const Content3588 = () => {
                   </p>
 
                   <div className="grid md:grid-cols-1 gap-6 relative z-10">
-                    <div className="bg-zinc-950 text-white p-10 border-4 border-black rotate-[-1deg] shadow-[10px_10px_0_0_#000]">
+                    <div className="bg-zinc-950 text-white p-10 border-4 border-black rotate-[-1deg] shadow-[10px_10px_0_0_#000] rounded-3xl">
                       <h4 className="font-mono text-[10px] uppercase font-black mb-6 tracking-widest text-indigo-400 border-b border-white/10 pb-2">CRITERIOS_PSICOMÃ‰TRICOS</h4>
                       <ul className="space-y-5">
                         {DIMENSIONS[activeDimension].highlights?.map((h, i) => (
                           <li key={i} className="flex gap-4 items-start">
                              <CheckSquare size={18} className="text-indigo-500 shrink-0 mt-1" />
-                             <span className="font-display text-lg uppercase font-black italic tracking-tighter leading-none">{h}</span>
+                             <span className="font-display text-lg uppercase font-black italic tracking-normal leading-none">{h}</span>
                           </li>
                         ))}
                       </ul>
@@ -703,14 +703,14 @@ export const Content3588 = () => {
                    El estudio confirma una <strong>correlaciÃ³n inversa (r = -.436)</strong>. Los estudiantes que confÃ­an en sus propias habilidades acadÃ©micas presentan pensamientos significativamente menores sobre abandonar la carrera.
                 </p>
                 <div className="space-y-6">
-                  <div className="flex items-center gap-6 p-8 border-4 border-black bg-indigo-50 -rotate-1 shadow-[8px_8px_0_0_#000]">
+                  <div className="flex items-center gap-6 p-8 border-4 border-black bg-indigo-50 -rotate-1 shadow-[8px_8px_0_0_#000] rounded-3xl">
                     <ShieldCheck size={48} className="text-indigo-600 shrink-0" />
                     <div>
                       <span className="block font-display text-3xl font-black uppercase italic">r = -.436</span>
                       <span className="text-xs font-mono uppercase font-black opacity-60">Efecto Protector de la Autoeficacia</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-6 p-8 border-4 border-black bg-zinc-50 rotate-1">
+                  <div className="flex items-center gap-6 p-8 border-4 border-black bg-zinc-50 rotate-1 rounded-3xl">
                     <TrendingDown size={48} className="text-black shrink-0" />
                     <div>
                       <span className="block font-display text-3xl font-black uppercase italic">r = -.326</span>
@@ -723,7 +723,7 @@ export const Content3588 = () => {
              <div className="order-1 md:order-2">
                 <div className="relative group">
                    <div className="absolute inset-0 bg-indigo-600 translate-x-10 translate-y-10" />
-                   <div className="relative bg-black text-white p-14 border-8 border-black">
+                   <div className="relative bg-black text-white p-14 border-8 border-black rounded-xl">
                       <Microscope size={64} className="text-indigo-400 mb-8" />
                       <h4 className="font-display text-4xl font-black uppercase italic mb-8">Omega (ð›š) vs Alfa (Î±)</h4>
                       <p className="font-mono text-sm leading-relaxed text-zinc-400 border-l-4 border-indigo-500 pl-6 mb-10">
@@ -757,7 +757,7 @@ export const Content3588 = () => {
              </p>
              <div className="grid grid-cols-2 md:grid-cols-2 gap-6 text-left">
                 {LIMITATIONS.map((limit, l) => (
-                  <div key={l} className="p-6 bg-zinc-50 border-4 border-black font-mono text-[10px] uppercase font-black leading-tight flex items-start gap-4">
+                  <div key={l} className="p-6 bg-zinc-50 border-4 border-black font-mono text-[10px] uppercase font-black leading-tight flex items-start gap-4 rounded-2xl">
                     <span className="text-indigo-600 font-bold">â€¢</span>
                     <span>{limit}</span>
                   </div>
@@ -771,7 +771,7 @@ export const Content3588 = () => {
       <div className="py-40 bg-zinc-950 text-white border-t-[20px] border-black text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]" />
         <div className="max-w-4xl mx-auto relative z-10 px-6">
-           <h2 className="text-6xl md:text-8xl font-display uppercase font-black italic tracking-tighter leading-none mb-12">
+           <h2 className="text-6xl md:text-8xl font-display uppercase font-black italic tracking-normal leading-none mb-12">
              Prevenir es <span className="text-indigo-600 underline">Medir</span> <br/> con <span className="bg-indigo-600 px-4">Evidencia</span>
            </h2>
            <div className="w-40 h-8 bg-indigo-600 mx-auto mb-16 shadow-[10px_10px_0_0_#000]" />

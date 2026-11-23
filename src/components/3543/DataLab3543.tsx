@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookOpen, AlertTriangle, CheckCircle2, Zap, GraduationCap, School, Layers, Filter, MessageSquareQuote, PieChart, BarChart } from 'lucide-react';
 import { BrutalCard, BrutalSticker } from '../BrutalistLib';
@@ -20,30 +20,79 @@ const DATA_SET = {
 
 type Speciality = keyof typeof DATA_SET.especialidades;
 
+// Animación rápida y punchy para los números
+function RapidCounter({ 
+  value, 
+  duration = 320, 
+  suffix = "", 
+  className = "" 
+}: { 
+  value: number; 
+  duration?: number; 
+  suffix?: string; 
+  className?: string; 
+}) {
+  const [current, setCurrent] = useState(value);
+
+  useEffect(() => {
+    let startTime: number | null = null;
+    const startVal = 0;
+    const endVal = value;
+    let animId: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Easing rápido y enérgico
+      const ease = 1 - Math.pow(1 - progress, 4);
+      setCurrent(Math.round(startVal + (endVal - startVal) * ease));
+      if (progress < 1) {
+        animId = requestAnimationFrame(animate);
+      }
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, [value, duration]);
+
+  return (
+    <motion.span
+      key={`${value}`}
+      initial={{ scale: 0.75, opacity: 0.5, y: 8 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 450, damping: 22 }}
+      className={`inline-block ${className}`}
+    >
+      {current}{suffix}
+    </motion.span>
+  );
+}
+
 export const DataLab3543 = () => {
   const [selectedEsp, setSelectedEsp] = useState<Speciality>('Inglés');
   const stats = DATA_SET.especialidades[selectedEsp];
 
   return (
     <div className="bg-[#FEFCE8] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-amber-600/[0.03] leading-none pointer-events-none select-none italic">
-        3543_LAB
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-16">
           <div>
-            <BrutalSticker text="3.2 & 4.3 LABORATORIO DE PRÁCTICAS" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#4f46e5]" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter italic">
-              CASE <span className="text-indigo-600 underline decoration-8 decoration-black">3543</span>
+            <BrutalSticker 
+              text="3.2 & 4.3 LABORATORIO DE PRÁCTICAS" 
+              color="bg-black" 
+              className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] rounded-xl" 
+            />
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase font-black leading-tight text-black tracking-normal italic flex items-center gap-4 flex-wrap">
+              <span>CASE</span>
+              <span className="text-indigo-600 underline decoration-8 decoration-black inline-block">3543</span>
             </h2>
           </div>
-          <div className="bg-white border-4 border-black p-6 shadow-[10px_10px_0_0_#000] rotate-1">
+          <div className="bg-white border-4 border-black p-6 shadow-[10px_10px_0_0_#000] rounded-3xl rotate-1">
              <div className="flex items-center gap-4">
                 <PieChart size={32} className="text-indigo-600" />
                 <div>
-                   <span className="font-display text-4xl font-black italic">14</span>
-                   <span className="font-mono text-[10px] uppercase font-black opacity-40 ml-2 italic tracking-widest">Docentes</span>
+                   <RapidCounter value={14} className="font-display text-4xl font-black italic" />
+                   <span className="font-mono text-[10px] uppercase font-black opacity-60 ml-2 italic tracking-widest">Docentes</span>
                 </div>
              </div>
           </div>
@@ -51,89 +100,107 @@ export const DataLab3543 = () => {
 
         <div className="grid lg:grid-cols-12 gap-12">
           {/* I. 4.3 TABLA RESUMEN / MÉTRICAS GLOBALES */}
-          <div className="lg:col-span-12 grid md:grid-cols-4 gap-6 mb-12">
+          <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
              {[
-               { l: 'VALORACIÓN EA', v: '93%', c: 'bg-indigo-600', d: 'Consideran importante la escritura' },
-               { l: 'CRITERIOS EVAL.', v: '50%', c: 'bg-black', d: 'Especifican cómo califican' },
-               { l: 'ACOMPAÑAMIENTO', v: '14%', c: 'bg-rose-600', d: 'Apoyo real durante el proceso' },
-               { l: 'LÍDER ÁREA', v: 'Inglés', c: 'bg-emerald-600', d: 'Especialidad con mayor presencia' },
+               { l: 'VALORACIÓN EA', v: 93, suffix: '%', c: 'bg-indigo-600', d: 'Consideran importante la escritura' },
+               { l: 'CRITERIOS EVAL.', v: 50, suffix: '%', c: 'bg-black', d: 'Especifican cómo califican' },
+               { l: 'ACOMPAÑAMIENTO', v: 14, suffix: '%', c: 'bg-rose-600', d: 'Apoyo real durante el proceso' },
+               { l: 'LÍDER ÁREA', text: 'Inglés', c: 'bg-emerald-600', d: 'Especialidad con mayor presencia' },
              ].map((stat, i) => (
-               <div key={i} className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#000] group hover:-translate-y-2 transition-transform">
-                  <div className={`${stat.c} text-white px-2 py-1 text-[9px] font-black uppercase mb-4 inline-block`}>{stat.l}</div>
-                  <div className="text-6xl font-display font-black italic mb-2">{stat.v}</div>
-                  <p className="font-mono text-[9px] uppercase font-black opacity-40 leading-tight">{stat.d}</p>
+               <div key={i} className="bg-white border-4 border-black p-6 md:p-8 shadow-[8px_8px_0_0_#000] rounded-3xl group hover:-translate-y-2 transition-transform">
+                  <div className={`${stat.c} text-white px-2.5 py-1 text-[9px] font-black uppercase mb-4 inline-block rounded-lg`}>{stat.l}</div>
+                  <div className="text-4xl md:text-6xl font-display font-black italic mb-2">
+                    {stat.text ? (
+                      <span>{stat.text}</span>
+                    ) : (
+                      <RapidCounter value={stat.v!} suffix={stat.suffix} />
+                    )}
+                  </div>
+                  <p className="font-mono text-[9px] uppercase font-black opacity-50 leading-tight">{stat.d}</p>
                </div>
              ))}
           </div>
 
           {/* II. EXPLORADOR POR ESPECIALIDAD (3.2 & 4.2) */}
           <div className="lg:col-span-12">
-             <BrutalCard title="4.2 FRECUENCIA DE ASIGNACIÓN (CANTIDAD DE DOCENTES)" color="bg-white" className="!border-8 shadow-[20px_20px_0_0_#4f46e5]">
+             <div className="bg-white border-8 border-black shadow-[20px_20px_0_0_#4f46e5] rounded-3xl overflow-hidden">
+                <div className="bg-zinc-100 border-b-4 border-black px-8 py-4">
+                  <h3 className="text-xl font-display uppercase font-black tracking-normal">4.2 FRECUENCIA DE ASIGNACIÓN (CANTIDAD DE DOCENTES)</h3>
+                </div>
                 <div className="flex flex-col lg:flex-row min-h-[450px]">
-                   <div className="lg:w-1/3 border-r-8 border-black p-10 bg-zinc-50 flex flex-col gap-4">
-                      <span className="font-mono text-[10px] uppercase font-black opacity-30 mb-4 tracking-widest leading-none">Seleccionar Especialidad</span>
+                   <div className="lg:w-1/3 border-b-8 lg:border-b-0 lg:border-r-8 border-black p-8 md:p-10 bg-zinc-50 flex flex-col gap-4">
+                      <span className="font-mono text-[10px] uppercase font-black opacity-40 mb-2 tracking-widest leading-none">Seleccionar Especialidad</span>
                       {(Object.keys(DATA_SET.especialidades) as Speciality[]).map((esp) => (
                         <button
                           key={esp}
                           onClick={() => setSelectedEsp(esp)}
-                          className={`p-6 border-4 border-black font-display text-2xl uppercase italic text-left transition-all shadow-[6px_6px_0_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none ${selectedEsp === esp ? 'bg-indigo-600 text-white' : 'bg-white text-black hover:bg-zinc-100'}`}
+                          className={`p-5 md:p-6 border-4 border-black font-display text-xl md:text-2xl uppercase italic text-left transition-all shadow-[6px_6px_0_0_#000] rounded-2xl active:translate-x-1 active:translate-y-1 active:shadow-none ${selectedEsp === esp ? 'bg-indigo-600 text-white translate-x-1 translate-y-1 shadow-[2px_2px_0_0_#000]' : 'bg-white text-black hover:bg-zinc-100 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_0_#000]'}`}
                         >
                           {esp}
                         </button>
                       ))}
                    </div>
-                   <div className="lg:w-2/3 p-12 bg-white relative">
+                   <div className="lg:w-2/3 p-8 md:p-12 bg-white relative">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={selectedEsp}
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
-                          className="space-y-12"
+                          transition={{ duration: 0.2 }}
+                          className="space-y-10"
                         >
                            <div className="flex justify-between items-end border-b-4 border-zinc-100 pb-6">
-                              <h3 className="text-6xl font-display uppercase font-black italic leading-none">{selectedEsp}</h3>
-                              <span className="font-mono text-xl font-black text-indigo-600 italic">n={stats.n}</span>
+                              <h3 className="text-4xl md:text-6xl font-display uppercase font-black italic leading-none tracking-normal">{selectedEsp}</h3>
+                              <span className="font-mono text-xl font-black text-indigo-600 italic">
+                                n=<RapidCounter value={stats.n} duration={200} />
+                              </span>
                            </div>
 
-                           <div className="grid grid-cols-3 gap-8 text-center uppercase font-display font-black italic">
-                              <div className="space-y-4">
-                                 <span className="text-6xl font-black text-rose-600">{stats.noAsigno}</span>
-                                 <span className="text-[10px] block leading-none opacity-40 italic">Nunca asignó <br/> (Largo)</span>
+                           <div className="grid grid-cols-3 gap-4 md:gap-8 text-center uppercase font-display font-black italic">
+                              <div className="space-y-3 p-4 bg-rose-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-5xl md:text-7xl font-black text-rose-600 leading-none">
+                                    <RapidCounter value={stats.noAsigno} duration={300} />
+                                 </div>
+                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Nunca asignó <br/> (Largo)</span>
                               </div>
-                              <div className="space-y-4 border-x-2 border-black/5">
-                                 <span className="text-6xl font-black">{stats.unaVez}</span>
-                                 <span className="text-[10px] block leading-none opacity-40 italic">Una vez al <br/> semestre</span>
+                              <div className="space-y-3 p-4 bg-zinc-50 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-5xl md:text-7xl font-black text-black leading-none">
+                                    <RapidCounter value={stats.unaVez} duration={300} />
+                                 </div>
+                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Una vez al <br/> semestre</span>
                               </div>
-                              <div className="space-y-4 text-emerald-600">
-                                 <span className="text-6xl font-black">{stats.múltiplesVeces}</span>
-                                 <span className="text-[10px] block leading-none opacity-40 italic">Múltiples <br/> veces</span>
+                              <div className="space-y-3 p-4 bg-emerald-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-5xl md:text-7xl font-black text-emerald-600 leading-none">
+                                    <RapidCounter value={stats.múltiplesVeces} duration={300} />
+                                 </div>
+                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Múltiples <br/> veces</span>
                               </div>
                            </div>
 
-                           <div className="bg-zinc-950 text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rotate-1">
+                           <div className="bg-zinc-950 text-white p-8 md:p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rounded-3xl rotate-1">
                               <div className="flex items-center gap-4 mb-4">
-                                 <MessageSquareQuote size={32} className="text-indigo-400" />
-                                 <span className="font-mono text-[10px] uppercase font-black tracking-widest italic opacity-40">Interpretación 4.2</span>
+                                 <MessageSquareQuote size={28} className="text-indigo-400" />
+                                 <span className="font-mono text-[10px] uppercase font-black tracking-widest italic opacity-50">Interpretación 4.2</span>
                               </div>
-                              <p className="font-serif italic text-2xl leading-snug">"{stats.hallazgo}"</p>
+                              <p className="font-serif italic text-xl md:text-2xl leading-relaxed text-white/95">"{stats.hallazgo}"</p>
                            </div>
                         </motion.div>
                       </AnimatePresence>
                    </div>
                 </div>
-             </BrutalCard>
+             </div>
           </div>
         </div>
 
-        <div className="mt-28 pt-12 border-t-8 border-black flex flex-col md:flex-row items-center justify-between gap-12 font-mono text-[10px] font-black uppercase opacity-60">
-           <div className="flex items-center gap-6 text-black">
-              <School size={24} />
+        <div className="mt-20 pt-10 border-t-8 border-black flex flex-col md:flex-row items-center justify-between gap-8 font-mono text-[10px] font-black uppercase opacity-60">
+           <div className="flex items-center gap-4 text-black">
+              <School size={22} />
               <p>PRÁCTICAS DOCENTES // ESCUELA NORMAL // RIOS-HIGUERA ET AL. 2026</p>
            </div>
            <div className="flex gap-4">
-              <div className="bg-black text-white px-2 py-1 shadow-[4px_4px_0_0_#4f46e5]">N_14_DOCTO</div>
-              <div className="bg-indigo-600 text-white px-2 py-1 shadow-[4px_4px_0_0_#000]">QUALITATIVE_DATA</div>
+              <div className="bg-black text-white px-3 py-1.5 shadow-[4px_4px_0_0_#4f46e5] rounded-xl">N_14_DOCENTES</div>
+              <div className="bg-indigo-600 text-white px-3 py-1.5 shadow-[4px_4px_0_0_#000] rounded-xl">QUALITATIVE_DATA</div>
            </div>
         </div>
       </div>

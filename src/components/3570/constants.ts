@@ -6,7 +6,7 @@ export const ARTICLE_META = {
   abstract: 'Revisión sistemática de literatura (PRISMA 2020) sobre la formación de docentes para fomentar el pensamiento crítico en preescolar. El estudio analiza 15 investigaciones globales (2015-2025) concluyendo que el pensamiento crítico no es solo una técnica cognitiva, sino una práctica ética y política que debe integrarse desde la formación inicial para transformar la realidad social.',
   authors: 'García-Martínez, L. & Reyes-Cabrera, W. R.',
   institution: 'Universidad Autónoma de Yucatán (UADY), México',
-  doi: '10.21155/rpp.3570',
+  doi: '10.21555/rpp.3570',
   volume: 'Vol. 41',
   date: 'Noviembre 2025',
   n: 15,

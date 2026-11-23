@@ -119,7 +119,7 @@ const Navigation: React.FC<NavigationProps> = React.memo(({
                       style={{ minHeight: '44px' }}
                     >
                       <div 
-                        className="w-3 h-3 border-2 border-black flex-shrink-0" 
+                        className="w-3 h-3 border-2 border-black flex-shrink-0 rounded-xl" 
                         style={{ backgroundColor: node.color }} 
                       />
                       <div className="min-w-0">

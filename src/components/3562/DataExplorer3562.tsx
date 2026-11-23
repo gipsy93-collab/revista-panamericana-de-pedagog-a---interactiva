@@ -32,7 +32,7 @@ export default function DataExplorer3562() {
       <div className="grid lg:grid-cols-2 gap-16">
         {/* PANEL DE CONTROL: ACTIVACIÓN DE APOYOS */}
         <div className="space-y-10">
-          <div className="bg-zinc-100 p-6 border-4 border-black">
+          <div className="bg-zinc-100 p-6 border-4 border-black rounded-2xl">
             <h4 className="font-black uppercase mb-6 text-2xl italic flex items-center gap-3 text-pink-600">
               <Baby size={28} /> Factores de Apoyo
             </h4>
@@ -53,7 +53,7 @@ export default function DataExplorer3562() {
             </p>
           </div>
 
-          <div className="bg-black text-white p-6 border-4 border-black shadow-[10px_10px_0_0_#ec4899] rotate-[-1deg]">
+          <div className="bg-black text-white p-6 border-4 border-black shadow-[10px_10px_0_0_#ec4899] rotate-[-1deg] rounded-3xl">
              <div className="flex items-center gap-3 mb-4">
                 <Home className="text-pink-400" />
                 <span className="tracking-widest uppercase font-black not-italic text-xs">ESTADO_SOCIAL:</span>
@@ -64,7 +64,7 @@ export default function DataExplorer3562() {
         </div>
 
         {/* PANEL DE RESULTADOS: PROBABILIDAD DE EXITO */}
-        <div className="bg-zinc-50 border-8 border-black p-10 flex flex-col justify-between">
+        <div className="bg-zinc-50 border-8 border-black p-10 flex flex-col justify-between rounded-3xl">
            <div>
               <div className="flex justify-between items-start mb-12 border-b-8 border-black pb-6">
                  <div className="text-left">
@@ -85,7 +85,7 @@ export default function DataExplorer3562() {
                        <span>Probabilidad de Deserción</span>
                        <span className="text-black">{finalRisk}%</span>
                     </div>
-                    <div className="h-12 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000]">
+                    <div className="h-12 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000] rounded-3xl">
                        <div className={`h-full transition-all duration-700 ${finalRisk > 40 ? 'bg-red-600' : 'bg-emerald-500'}`} style={{ width: `${finalRisk}%` }}></div>
                     </div>
                  </div>

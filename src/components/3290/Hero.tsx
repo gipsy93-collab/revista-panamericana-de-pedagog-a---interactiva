@@ -102,7 +102,7 @@ export default function Hero() {
             Investigación Fenomenológica (N=23)
           </span>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tighter">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-normal">
             <div className="overflow-hidden"><div className="hero-title-line">La Paradoja</div></div>
             <div className="overflow-hidden"><div className="hero-title-line bg-clip-text text-transparent bg-gradient-to-r from-[#00d2ff] via-[#00f2fe] to-[#4facfe]">Multimodal</div></div>
           </h1>

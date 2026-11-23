@@ -52,7 +52,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     >
       {/* Container Neobrutalista */}
       <div 
-        className="flex flex-col items-center justify-center p-12 bg-white border-4 border-black transition-all"
+        className="flex flex-col items-center justify-center p-12 bg-white border-4 border-black transition-all rounded-3xl"
         style={{
           boxShadow: '12px 12px 0px 0px rgba(0, 0, 0, 1)',
           opacity: lettersVisible ? 1 : 0,
@@ -86,7 +86,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
         {/* Progress bar Neobrutalista */}
         <div
-          className="bg-white border-2 border-black relative"
+          className="bg-white border-2 border-black relative rounded-xl"
           style={{
             width: '240px',
             height: '24px',

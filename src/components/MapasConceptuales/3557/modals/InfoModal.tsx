@@ -29,21 +29,21 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
             <div className="relative bg-[#FF007A] border-b-[10px] border-black p-10 overflow-hidden">
               <div className="absolute inset-0 halftone-lg opacity-20 pointer-events-none" />
               <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-                <div className="bg-white border-4 border-black p-6 rotate-[-6deg] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] shrink-0">
+                <div className="bg-white border-4 border-black p-6 rotate-[-6deg] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] shrink-0 rounded-3xl">
                   <FileKey className="w-16 h-16 text-black stroke-[3]" />
                 </div>
                 <div className="text-center md:text-left">
                   <div className="bg-black text-white px-4 py-1 text-xs font-black uppercase tracking-[0.3em] mb-4 inline-block">
                     Ficha Técnica Oficial
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none" style={{ WebkitTextStroke: '1.5px black', textShadow: '4px 4px 0px black' }}>
+                  <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-normal leading-none">
                     {articleInfo.title}
                   </h2>
                 </div>
               </div>
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 w-14 h-14 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
+                className="absolute top-6 right-6 w-14 h-14 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none rounded-3xl"
               >
                 <X className="w-10 h-10 stroke-[4]" />
               </button>
@@ -53,7 +53,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
             <div className="flex-1 overflow-y-auto p-8 md:p-12 space-y-12 bg-[#FDFD96] scrollbar-hide">
               {/* Authors Sticker */}
               <section className="relative">
-                <div className="absolute -top-4 -left-4 bg-[#00FFA3] border-4 border-black px-4 py-2 font-black text-black uppercase text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg] z-10">
+                <div className="absolute -top-4 -left-4 bg-[#00FFA3] border-4 border-black px-4 py-2 font-black text-black uppercase text-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg] z-10 rounded-3xl">
                   AUTORES
                 </div>
                 <div className="bg-white border-[6px] border-black p-8 pt-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
@@ -73,7 +73,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
                   <h4 className="font-black text-black uppercase tracking-[0.2em] text-[10px] mb-4 border-b-2 border-black/20 pb-2">Publicación</h4>
                   <p className="text-xl font-black uppercase leading-none">{articleInfo.journal}</p>
                   <div className="mt-4 flex items-center gap-2">
-                    <span className="bg-white px-2 py-0.5 text-[8px] font-black border-2 border-black">E-ISSN: {articleInfo.eissn}</span>
+                    <span className="bg-white px-2 py-0.5 text-[8px] font-black border-2 border-black rounded-xl">E-ISSN: {articleInfo.eissn}</span>
                   </div>
                 </div>
 
@@ -81,7 +81,7 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
                 <div className="bg-[#FFFF00] border-[6px] border-black p-8 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] -rotate-1 hover:rotate-0 transition-transform flex flex-col justify-between">
                   <div>
                     <h4 className="font-black text-black uppercase tracking-[0.2em] text-[10px] mb-4 border-b-2 border-black/20 pb-2">Identificador Digital</h4>
-                    <p className="text-sm font-black break-all font-mono bg-white p-2 border-2 border-black mb-4">
+                    <p className="text-sm font-black break-all font-mono bg-white p-2 border-2 border-black mb-4 rounded-xl">
                       {articleInfo.doi}
                     </p>
                   </div>

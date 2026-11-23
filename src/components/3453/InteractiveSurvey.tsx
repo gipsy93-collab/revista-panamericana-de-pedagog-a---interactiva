@@ -59,7 +59,7 @@ export default function InteractiveSurvey() {
         {!showResults ? (
           <div>
             <div className="flex justify-between items-end mb-12 border-b-4 border-black pb-8">
-              <span className="font-black text-3xl uppercase tracking-tighter text-[#34d399]">
+              <span className="font-black text-3xl uppercase tracking-normal text-[#34d399]">
                 Pregunta 0{currentQuestion + 1}
               </span>
               <div className="flex gap-2">
@@ -78,7 +78,7 @@ export default function InteractiveSurvey() {
                 <button
                   key={idx}
                   onClick={() => handleAnswer(idx)}
-                  className="w-full text-left p-6 border-4 border-black font-black uppercase text-lg transition-all hover:bg-black hover:text-white hover:translate-x-2 shadow-[4px_4px_0_#000] hover:shadow-none"
+                  className="w-full text-left p-6 border-4 border-black font-black uppercase text-lg transition-all hover:bg-black hover:text-white hover:translate-x-2 shadow-[4px_4px_0_#000] hover:shadow-none rounded-3xl"
                 >
                   <span className="bg-black text-white px-2 mr-4">{String.fromCharCode(65 + idx)}</span> {opt}
                 </button>
@@ -87,7 +87,7 @@ export default function InteractiveSurvey() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <div className="inline-block p-8 border-4 border-black bg-[#F0F0F0] mb-8 shadow-[10px_10px_0_#000]">
+            <div className="inline-block p-8 border-4 border-black bg-[#F0F0F0] mb-8 shadow-[10px_10px_0_#000] rounded-3xl">
               {score === questions.length ? (
                 <CheckCircle2 size={80} className="text-[#34d399] mx-auto mb-6" />
               ) : (
@@ -96,7 +96,7 @@ export default function InteractiveSurvey() {
               <h3 className="text-6xl font-display uppercase mb-4">
                 {score}/{questions.length}
               </h3>
-              <p className="font-bold text-xl uppercase tracking-tighter">
+              <p className="font-bold text-xl uppercase tracking-normal">
                 {score === questions.length ? '¡Excelente Dominio!' : 'Revisión Necesaria'}
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function InteractiveSurvey() {
 
             <button 
               onClick={resetQuiz}
-              className="group flex items-center gap-4 mx-auto px-10 py-5 bg-black text-white font-black uppercase text-xl border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_#34d399] hover:shadow-none"
+              className="group flex items-center gap-4 mx-auto px-10 py-5 bg-black text-white font-black uppercase text-xl border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_#34d399] hover:shadow-none rounded-3xl"
             >
               <RotateCcw className="group-hover:rotate-[-45deg] transition-transform" />
               Intentar de nuevo

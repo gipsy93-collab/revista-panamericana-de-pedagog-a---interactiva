@@ -15,9 +15,6 @@ export default function Content3570() {
     <div className="bg-[#fdfcfb]">
       {/* 3. METODOLOGÍA */}
       <section className="bg-white py-24 px-6 border-b-[12px] border-black relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-black/[0.02] leading-none pointer-events-none select-none italic">
-          MET_3570
-        </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <BrutalSticker text="3. METODOLOGÍA" color="bg-orange-600" className="text-white mb-16 !rotate-0 shadow-[6px_6px_0_0_#000]" />
           <div className="grid lg:grid-cols-2 gap-24 items-start mb-24">
@@ -40,7 +37,7 @@ export default function Content3570() {
                  { t: "Outcome", c: "Teacher Education / Preparation", i: GraduationCap },
                  { t: "Estrategia", c: "PEO (Population-Exposure-Outcome)", i: Target }
                ].map((item, idx) => (
-                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#ea580c] rotate-1 hover:rotate-0 transition-transform flex flex-col items-center text-center">
+                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#ea580c] rotate-1 hover:rotate-0 transition-transform flex flex-col items-center text-center rounded-3xl">
                     <item.i size={32} className="mb-4 text-orange-600" />
                     <h5 className="font-display text-xl font-black uppercase italic leading-none mb-2">{item.t}</h5>
                     <p className="font-mono text-[9px] uppercase font-black opacity-40">{item.c}</p>
@@ -121,7 +118,7 @@ export default function Content3570() {
                  author: "Freire (1970)"
                }
              ].map((card, i) => (
-               <div key={i} className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#ea580c] rotate-1 group hover:-rotate-1 transition-transform">
+               <div key={i} className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#ea580c] rotate-1 group hover:-rotate-1 transition-transform rounded-3xl">
                   <Flame className="text-orange-600 mb-6" size={32} />
                   <h4 className="font-display text-3xl font-black uppercase italic mb-6 leading-none border-b-4 border-black pb-2">{card.title}</h4>
                   <p className="font-serif text-xl italic text-black/80 leading-relaxed mb-10">"{card.text}"</p>
@@ -157,7 +154,7 @@ export default function Content3570() {
                   "El pensamiento crítico en la formación docente no debe entenderse únicamente como una competencia técnica, sino como una práctica transformadora que articula lo cognitivo, lo ético y lo político desde la primera infancia (p. 1)."
                 </p>
              </div>
-             <div className="bg-white text-black p-12 border-8 border-white shadow-[25px_25px_0_0_#ea580c] rotate-1">
+             <div className="bg-white text-black p-12 border-8 border-white shadow-[25px_25px_0_0_#ea580c] rotate-1 rounded-3xl">
                 <p className="text-3xl font-display font-black uppercase italic leading-tight mb-8">
                   "Los resultados evidencian avances significativos en la incorporación del pensamiento crítico en la formación docente inicial en preescolar, pero también muestran la necesidad de revisar los marcos institucionales y curriculares que regulan dicha formación."
                 </p>
@@ -170,7 +167,7 @@ export default function Content3570() {
 
           <div className="mt-48 flex flex-col md:flex-row items-center justify-between gap-12 border-t-4 border-white/20 pt-12">
              <div className="max-w-2xl">
-                <p className="font-display text-xl uppercase font-black italic tracking-tighter leading-none mb-4">
+                <p className="font-display text-xl uppercase font-black italic tracking-normal leading-none mb-4">
                   Se requiere una apuesta por modelos que integren las dimensiones reflexiva, lógica, creativa, ética y política del pensamiento crítico (p. 13).
                 </p>
              </div>

@@ -70,9 +70,6 @@ export const DataLab3604 = () => {
 
   return (
     <div className="py-24 bg-[#0a0a0a] border-y-[12px] border-black px-6 relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-rose-600/[0.05] leading-none pointer-events-none select-none italic">
-         CINE_MED
-      </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-20 gap-8">
@@ -82,7 +79,7 @@ export const DataLab3604 = () => {
               Mediador <br /> <span className="text-rose-600 italic">Pedagógico</span>
             </h2>
           </div>
-          <div className="bg-white text-black p-8 border-4 border-black shadow-[10px_10px_0_0_#be123c] -rotate-1">
+          <div className="bg-white text-black p-8 border-4 border-black shadow-[10px_10px_0_0_#be123c] -rotate-1 rounded-3xl">
              <div className="flex items-center gap-4 mb-2">
                 <Users className="text-rose-600" />
                 <span className="font-mono text-xs uppercase font-black tracking-widest">Población</span>
@@ -140,11 +137,11 @@ export const DataLab3604 = () => {
           ))}
         </div>
 
-        <div className="mt-24 p-8 border-4 border-white/10 bg-white/5 flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-md">
+        <div className="mt-24 p-8 border-4 border-white/10 bg-white/5 flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-md rounded-3xl">
            <p className="font-mono text-[11px] text-white/60 uppercase font-black italic max-w-2xl">
               * El 21% de los alumnos utilizaban material audiovisual de forma sistemática previo a la intervención. La brecha tecnológica (celulares vs PC) fue mitigada mediante WhatsApp y Classroom.
            </p>
-           <div className="flex items-center gap-4 bg-rose-600 text-white px-8 py-4 border-4 border-black font-display text-xl font-black italic shadow-[8px_8px_0_0_#000]">
+           <div className="flex items-center gap-4 bg-rose-600 text-white px-8 py-4 border-4 border-black font-display text-xl font-black italic shadow-[8px_8px_0_0_#000] rounded-3xl">
              <span>OCT 2020 - ENE 2021</span>
            </div>
         </div>

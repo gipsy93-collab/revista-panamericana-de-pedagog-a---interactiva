@@ -42,11 +42,11 @@ export function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
               <div className="absolute inset-0 halftone opacity-20 pointer-events-none" />
               <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
                 <div className="flex items-center gap-6">
-                  <div className="bg-black p-4 border-4 border-black rotate-[-12deg] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.3)]">
+                  <div className="bg-black p-4 border-4 border-black rotate-[-12deg] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.3)] rounded-3xl">
                     <BookOpen className="w-12 h-12 text-[#FFFF00]" />
                   </div>
                   <div>
-                    <h2 className="text-5xl font-black text-black uppercase tracking-tighter leading-none italic">Glosario</h2>
+                    <h2 className="text-5xl font-black text-black uppercase tracking-normal leading-none italic">Glosario</h2>
                     <p className="text-[10px] font-black text-black/60 uppercase tracking-[0.5em] mt-2">Terminología Jurídica Digital</p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ export function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
                 {/* Search Bar Sticker */}
                 <div className="relative w-full md:w-96">
                    <div className="absolute inset-0 bg-black translate-x-1.5 translate-y-1.5" />
-                   <div className="relative bg-white border-4 border-black p-4 flex items-center gap-4">
+                   <div className="relative bg-white border-4 border-black p-4 flex items-center gap-4 rounded-2xl">
                      <Search className="w-6 h-6 text-black/40" />
                      <input
                        type="text"
@@ -69,7 +69,7 @@ export function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
 
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 w-12 h-12 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                className="absolute top-6 right-6 w-12 h-12 bg-white border-4 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
               >
                 <X className="w-8 h-8 stroke-[4]" />
               </button>
@@ -90,7 +90,7 @@ export function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
                ))}
                <button
                  onClick={() => setSelectedLetter(null)}
-                 className="ml-2 w-8 h-8 flex-shrink-0 flex items-center justify-center bg-black text-white border-2 border-black"
+                 className="ml-2 w-8 h-8 flex-shrink-0 flex items-center justify-center bg-black text-white border-2 border-black rounded-xl"
                >
                  <Hash className="w-4 h-4" />
                </button>
@@ -112,7 +112,7 @@ export function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
                         <div className="w-1 h-10 bg-black rotate-45" />
                         <div className="w-1 h-10 bg-black rotate-45" />
                       </div>
-                      <h3 className="text-2xl font-black text-black uppercase tracking-tighter mb-4 border-b-4 border-[#00FFA3] w-fit italic">
+                      <h3 className="text-2xl font-black text-black uppercase tracking-normal mb-4 border-b-4 border-[#00FFA3] w-fit italic">
                          {item.term}
                       </h3>
                       <p className="text-black font-bold text-sm leading-tight">

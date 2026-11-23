@@ -71,7 +71,7 @@ export default function Limitaciones3453() {
               className="limitacion-item bg-[#0f172a] border-white text-white hover:bg-[#1e293b]"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#e81e61] border-2 border-white shrink-0">
+                <div className="p-3 bg-[#e81e61] border-2 border-white shrink-0 rounded-xl">
                   <Icon size={24} className="text-white" />
                 </div>
                 <div>

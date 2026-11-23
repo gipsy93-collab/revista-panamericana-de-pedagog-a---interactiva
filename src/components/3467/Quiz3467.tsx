@@ -52,7 +52,7 @@ const Quiz3467 = () => {
           </div>
           <button 
             onClick={resetQuiz}
-            className="group flex items-center gap-3 mx-auto bg-indigo-600 text-white px-10 py-5 border-4 border-black shadow-[8px_8px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[12px_12px_0_0_#000] transition-all"
+            className="group flex items-center gap-3 mx-auto bg-indigo-600 text-white px-10 py-5 border-4 border-black shadow-[8px_8px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[12px_12px_0_0_#000] transition-all rounded-3xl"
           >
             <RotateCcw className="group-hover:rotate-180 transition-transform duration-500" />
             <span className="font-display uppercase text-xl font-black">Reiniciar Validación</span>
@@ -76,7 +76,7 @@ const Quiz3467 = () => {
          </div>
       </div>
 
-      <BrutalCard color="bg-white" className="mb-12 border-8 shadow-[16px_16px_0_0_#000]">
+      <BrutalCard color="bg-white" className="mb-12 border-8 shadow-[16px_16px_0_0_#000] rounded-3xl">
         <h3 className="text-3xl font-display uppercase mb-12 leading-tight">
           {question.question}
         </h3>
@@ -107,7 +107,7 @@ const Quiz3467 = () => {
               animate={{ opacity: 1, height: 'auto' }}
               className="mt-8 pt-8 border-t-4 border-black"
             >
-              <div className="bg-indigo-50 p-6 border-4 border-black flex gap-4">
+              <div className="bg-indigo-50 p-6 border-4 border-black flex gap-4 rounded-2xl">
                  <div className="bg-indigo-600 w-12 h-12 flex-shrink-0 flex items-center justify-center text-white">
                     <Lightbulb size={24} />
                  </div>

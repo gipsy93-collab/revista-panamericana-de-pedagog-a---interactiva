@@ -27,7 +27,7 @@ export const Content3508 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#ec4899] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#ec4899] relative rounded-3xl">
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic" style={{color: "#ec4899"}}>Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10">
@@ -45,13 +45,13 @@ export const Content3508 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="I. OBJETIVOS" color="bg-violet-600" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-violet-600">Objetivo General</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Determinar si las actitudes del profesorado influyen significativamente en la respuesta educativa ofrecida a niños con dificultades de aprendizaje y participación.
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-pink-400">Objetivos Específicos</h3>
               <ol className="space-y-3 text-base">
                 <li className="flex gap-3">
@@ -73,7 +73,7 @@ export const Content3508 = () => {
       <WaveSection topColor="#FAF5FF" bottomColor="#ffffff" variant="steps">
         <div className="max-w-4xl mx-auto text-center">
           <BrutalSticker text="II. TIPO DE ESTUDIO" color="bg-pink-500" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#8b5cf6]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#8b5cf6] rounded-3xl">
             <p className="text-xl leading-relaxed text-black/80">
               Investigación cualitativa con diseño descriptivo de método mixto que combina enfoques cuantitativos y cualitativos. Es un estudio comparativo internacional (España-Ecuador) de carácter exploratorio.
             </p>
@@ -87,64 +87,64 @@ export const Content3508 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="II+. PARTICIPANTES" color="bg-violet-600" className="text-white mb-8 !rotate-0" />
           
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] mb-8 overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] mb-8 overflow-x-auto rounded-3xl">
             <table className="w-full">
               <thead>
                 <tr className="bg-violet-600 text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Característica</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Detalle</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Característica</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Detalle</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">N total</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">10 docentes</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">N total</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">10 docentes</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black">España</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">7 docentes (Educación Primaria)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black rounded-2xl">España</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">7 docentes (Educación Primaria)</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Ecuador</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">3 docentes (Educación General Básica)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Ecuador</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">3 docentes (Educación General Básica)</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black">Criterio de selección</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">Mínimo 3 años de experiencia; tener al menos un alumno con TEA o sospecha de TEA en el aula</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black rounded-2xl">Criterio de selección</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">Mínimo 3 años de experiencia; tener al menos un alumno con TEA o sospecha de TEA en el aula</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Garantía ética</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Anonimato total garantizado</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Garantía ética</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Anonimato total garantizado</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] overflow-x-auto rounded-3xl">
             <h3 className="font-display text-xl uppercase font-black mb-4 text-pink-600">Perfil Sociodemográfico</h3>
             <table className="w-full">
               <thead>
                 <tr className="bg-pink-500 text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Variable</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Distribución</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Variable</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Distribución</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Edad</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">21-30 (1), 31-40 (5), 41-50 (3), 51-60 (1)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Edad</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">21-30 (1), 31-40 (5), 41-50 (3), 51-60 (1)</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Género</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">Femenino 60% (6), Masculino 40% (4)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Género</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">Femenino 60% (6), Masculino 40% (4)</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Formación</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Diplomatura 60% (6), Máster 30% (3), Doctorado 10% (1)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Formación</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Diplomatura 60% (6), Máster 30% (3), Doctorado 10% (1)</td>
                 </tr>
                 <tr className="hover:bg-pink-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black">Tipo de centro</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50">Público 70% (7), Privado 20% (2), Concertado 10% (1)</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 font-black rounded-2xl">Tipo de centro</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-pink-50 rounded-2xl">Público 70% (7), Privado 20% (2), Concertado 10% (1)</td>
                 </tr>
               </tbody>
             </table>
@@ -160,7 +160,7 @@ export const Content3508 = () => {
           
           <div className="space-y-12">
             {/* Objetivo 1 */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-violet-600">Objetivo 1: Identificar actitudes predominantes</h3>
               <p className="text-base leading-relaxed text-black/80 mb-6">
                 Los docentes muestran actitudes aparentemente positivas hacia la inclusión en el discurso abstracto, pero estas actitudes cambian cuando se enfrentan a las presiones del marco legal y la falta de apoyo.
@@ -171,33 +171,33 @@ export const Content3508 = () => {
             </div>
 
             {/* Objetivo 2 */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-pink-400">Objetivo 2: Analizar impacto en planificación educativa</h3>
               <p className="text-base mb-4">Diferencia España vs Ecuador:</p>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-violet-600 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Aspecto</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Docentes ecuatorianos</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Docentes españoles</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Aspecto</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Docentes ecuatorianos</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Docentes españoles</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-violet-900 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Prioridad</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">80% priorizan cumplimiento del currículo oficial</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Mayor flexibilidad hacia aprendizaje significativo</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Prioridad</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">80% priorizan cumplimiento del currículo oficial</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Mayor flexibilidad hacia aprendizaje significativo</td>
                     </tr>
                     <tr className="hover:bg-violet-900 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Enfoque</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Cumplimiento normativo</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Funcionalidad y sentido de los contenidos</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Enfoque</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Cumplimiento normativo</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Funcionalidad y sentido de los contenidos</td>
                     </tr>
                     <tr className="hover:bg-violet-900 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Adaptación</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Resistencia a modificar contenidos</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Voluntad de adaptar a intereses del estudiante</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Adaptación</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Resistencia a modificar contenidos</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Voluntad de adaptar a intereses del estudiante</td>
                     </tr>
                   </tbody>
                 </table>
@@ -220,40 +220,40 @@ export const Content3508 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#FAF5FF" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="IV. TABLA RESUMEN" color="bg-pink-500" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] overflow-x-auto">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] overflow-x-auto rounded-3xl">
             <table className="w-full">
               <thead>
                 <tr className="bg-violet-600 text-white">
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Variable/Dato</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Valor</th>
-                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Contexto/Nota</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Variable/Dato</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Valor</th>
+                  <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Contexto/Nota</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Docentes ecuatorianos centrados en currículo</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">80%</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Priorizan cumplimiento sobre adaptación</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Docentes ecuatorianos centrados en currículo</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">80%</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Priorizan cumplimiento sobre adaptación</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black">Nivel de formación de la muestra</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">60% diplomatura</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">Solo 10% con doctorado</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black rounded-2xl">Nivel de formación de la muestra</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">60% diplomatura</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">Solo 10% con doctorado</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Tipo de centro predominante</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">70% público</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Representatividad del sector público</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Tipo de centro predominante</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">70% público</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Representatividad del sector público</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black">Factor determinante en metodología</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">Gravedad del autismo</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50">Coincidieron 7 de 10 entrevistados</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 font-black rounded-2xl">Factor determinante en metodología</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">Gravedad del autismo</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-violet-50 rounded-2xl">Coincidieron 7 de 10 entrevistados</td>
                 </tr>
                 <tr className="hover:bg-violet-50 transition-colors">
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Variable clave para actitudes positivas</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Interacción personal directa</td>
-                  <td className="p-4 text-sm border-2 border-black/10 bg-white">Contacto directo con alumnado TEA</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Variable clave para actitudes positivas</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Interacción personal directa</td>
+                  <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Contacto directo con alumnado TEA</td>
                 </tr>
               </tbody>
             </table>
@@ -267,13 +267,13 @@ export const Content3508 = () => {
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="V. INTERPRETACIÓN" color="bg-black" className="text-white mb-8 !rotate-0" />
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#8b5cf6] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-violet-600">La Paradoja Pedagógica</h3>
               <p className="text-base leading-relaxed text-black/80">
                 Los resultados revelan una paradoja pedagógica: mientras la normativa española y ecuatoriana promueven modelos inclusivos, la implementación real depende de variables subjetivas (actitudes, prejuicios, autoeficacia docente) más que de elementos objetivos (formación, recursos).
               </p>
             </div>
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-pink-400">El Factor &quot;Gravedad&quot;</h3>
               <p className="text-base leading-relaxed">
                 La autora identifica que la &quot;gravedad del autismo&quot; es usada por los docentes como factor determinante para decidir el nivel de inclusión, lo que contradice el principio de diversidad inherente al modelo inclusivo.
@@ -288,7 +288,7 @@ export const Content3508 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#09090b" variant="dramatic">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="VI. CONCLUSIONES" color="bg-violet-600" className="text-white mb-12 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#8b5cf6]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#8b5cf6] rounded-3xl">
             <h3 className="font-display text-2xl uppercase font-black mb-8 text-violet-600">Conclusiones Específicas de la Autora</h3>
             <ol className="space-y-6 text-lg">
               <li className="flex gap-4">
@@ -367,7 +367,7 @@ export const Content3508 = () => {
                 </h2>
                 <p className="font-mono text-pink-400 uppercase tracking-[0.5em] font-black -mt-6">Dimensiones Actitudinales</p>
              </div>
-             <div className="bg-violet-600 text-white px-10 py-5 border-4 border-black font-display text-2xl font-black uppercase shadow-[8px_8px_0_0_#ec4899]">
+             <div className="bg-violet-600 text-white px-10 py-5 border-4 border-black font-display text-2xl font-black uppercase shadow-[8px_8px_0_0_#ec4899] rounded-3xl">
                EDICIÓN 2026
              </div>
           </div>
@@ -380,7 +380,7 @@ export const Content3508 = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: idx * 0.2 }}
               >
-                <BrutalCard color="bg-white" className="h-full flex flex-col !p-0 overflow-hidden border-8 border-black shadow-[15px_15px_0_0_#8b5cf6]">
+                <BrutalCard color="bg-white" className="h-full flex flex-col !p-0 overflow-hidden border-8 border-black shadow-[15px_15px_0_0_#8b5cf6] rounded-3xl">
                   <div className="bg-violet-600 p-8 text-white border-b-8 border-black relative overflow-hidden">
                      <div className="absolute bottom-0 right-0 opacity-10">
                         <Handshake size={120} className="-rotate-12 translate-x-8 translate-y-8" />
@@ -389,11 +389,11 @@ export const Content3508 = () => {
                         <span className="bg-black text-white w-10 h-10 flex items-center justify-center font-display text-2xl">0{idx + 1}</span>
                         <Compass className="text-white/40" />
                      </div>
-                     <h3 className="text-4xl font-display uppercase leading-[0.85]">{dim.title}</h3>
+                     <h3 className="text-4xl font-display uppercase leading-[0.95]">{dim.title}</h3>
                   </div>
                   
                   <div className="p-10 flex-1 flex flex-col">
-                    <div className="bg-pink-100 p-4 border-4 border-black mb-8 transform -rotate-1">
+                    <div className="bg-pink-100 p-4 border-4 border-black mb-8 transform -rotate-1 rounded-2xl">
                        <span className="font-mono text-[10px] text-pink-600 font-black block mb-1 uppercase">HIGHLIGHT</span>
                        <span className="text-2xl font-black text-black leading-tight italic">{dim.highlight}</span>
                     </div>
@@ -428,7 +428,7 @@ export const Content3508 = () => {
               <BrutalQuote author="Celia Gallardo-Herrerías (2026)">
                 La inclusión educativa no depende de la buena voluntad legislativa ni de la formación académica del docente, sino de su capacidad para transformar sus propios prejuicios.
               </BrutalQuote>
-              <div className="bg-white border-8 border-black p-10 shadow-[10px_10px_0_0_#9333ea]">
+              <div className="bg-white border-8 border-black p-10 shadow-[10px_10px_0_0_#9333ea] rounded-3xl">
                  <div className="flex items-center gap-4 mb-8">
                     <BarChart3 className="text-pink-600" size={40} />
                     <h4 className="font-display uppercase text-3xl">Brecha Curricular</h4>
@@ -438,7 +438,7 @@ export const Content3508 = () => {
                        <span className="font-black italic">ECUADOR</span>
                        <span className="text-3xl font-black text-red-600">80%</span>
                     </div>
-                    <p className="text-sm font-mono opacity-60 uppercase font-black tracking-tighter">Prioridad cumplimiento del currículo oficial vs. Adaptación individualizada.</p>
+                    <p className="text-sm font-mono opacity-60 uppercase font-black tracking-normal">Prioridad cumplimiento del currículo oficial vs. Adaptación individualizada.</p>
                  </div>
               </div>
             </div>
@@ -454,7 +454,7 @@ export const Content3508 = () => {
                   </div>
                </BrutalCard>
                
-               <div className="bg-white text-black p-10 border-8 border-black shadow-[15px_15px_0_0_#ec4899] rotate-1">
+               <div className="bg-white text-black p-10 border-8 border-black shadow-[15px_15px_0_0_#ec4899] rotate-1 rounded-3xl">
                   <h4 className="font-display text-2xl uppercase mb-4">Recomendación Clave</h4>
                   <p className="font-sans font-bold text-lg text-zinc-600 leading-snug">
                     Fomentar la interacción personal directa con alumnado TEA para transformar prejuicios en redes de apoyo profesional.

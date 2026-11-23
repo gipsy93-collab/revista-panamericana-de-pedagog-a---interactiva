@@ -1,3 +1,4 @@
+import { ArticleHeader } from '../Common/ArticleHeader';
 import { useEffect } from 'react';
 import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
 import Hero3453 from './Hero3453';
@@ -18,38 +19,15 @@ export default function Unified3453({ onBack }: { onBack: () => void }) {
       <FilmGrain />
       
       {/* Premium Header */}
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_20px_rgba(0,0,0,0.15)] h-24">
-        <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <button
-              onClick={onBack}
-              className="group flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black hover:bg-[#E11D48] transition-all shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-            >
-              <ArrowLeft className="w-7 h-7 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-display uppercase text-lg tracking-tighter font-black">Volver</span>
-            </button>
-          <a
-            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-          </a>
-            <div className="hidden lg:flex items-center gap-4 border-l-4 border-black pl-6">
-               <FileText className="text-[#E11D48]" size={24} />
-               <span className="font-mono text-[10px] uppercase font-black tracking-[0.2em] opacity-40">
-                 REF: RPP.V40.E3453 // CONSUMO_DROGAS
-               </span>
-            </div>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-4 bg-zinc-100 border-4 border-black px-4 py-2 rotate-1">
-            <BookOpen size={20} />
-            <span className="font-display uppercase text-xs font-black">Lectura Estimada: 8 min</span>
-          </div>
-        </div>
-      </header>
+      <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3453'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 40'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2025'}
+        authors={ARTICLE_META?.authors || 'Inostroza-Fuentes et al.'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
 
       <main>
         <Hero3453 />
@@ -65,7 +43,7 @@ export default function Unified3453({ onBack }: { onBack: () => void }) {
         
         <div className="max-w-5xl mx-auto relative z-10 text-white">
           <div className="mb-16 flex justify-center">
-            <div className="bg-[#E11D48] border-4 border-black px-10 py-3 font-display text-xl uppercase font-black shadow-[8px_8px_0_0_#fff] -rotate-2">
+            <div className="bg-[#E11D48] border-4 border-black px-10 py-3 font-display text-xl uppercase font-black shadow-[8px_8px_0_0_#fff] -rotate-2 rounded-3xl">
               REFERENCIA APA
             </div>
           </div>
@@ -81,7 +59,7 @@ export default function Unified3453({ onBack }: { onBack: () => void }) {
           <div className="space-y-12">
             <div className="flex flex-col items-center gap-4">
                <p className="font-mono text-xs uppercase font-black tracking-[0.4em] text-zinc-500">PROVENIENCIA ACADÉMICA:</p>
-               <p className="font-display text-2xl uppercase font-black tracking-tighter">{ARTICLE_META.institution}</p>
+               <p className="font-display text-2xl uppercase font-black tracking-normal">{ARTICLE_META.institution}</p>
             </div>
 
             <div className="flex justify-center flex-wrap gap-8">
@@ -89,13 +67,13 @@ export default function Unified3453({ onBack }: { onBack: () => void }) {
                 href={`https://doi.org/${ARTICLE_META.doi}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block bg-white text-black px-12 py-6 border-4 border-black font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#E11D48] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#E11D48] transition-all"
+                className="inline-block bg-white text-black px-12 py-6 border-4 border-black font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#E11D48] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#E11D48] transition-all rounded-3xl"
               >
                 Acceder vía DOI
               </a>
                <a
                 href="#"
-                className="inline-block bg-zinc-800 text-white px-12 py-6 border-4 border-white font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#4a4a4a] hover:-translate-y-1 transition-all"
+                className="inline-block bg-zinc-800 text-white px-12 py-6 border-4 border-white font-display text-xl font-black uppercase tracking-widest shadow-[12px_12px_0_0_#4a4a4a] hover:-translate-y-1 transition-all rounded-3xl"
               >
                 Descargar PDF
               </a>

@@ -303,7 +303,7 @@ const BubbleNode = ({ bubble, pos, containerRef, index, onSelect }: { bubble: Bu
         <div className="absolute inset-0 halftone opacity-20 pointer-events-none rounded-full" />
         <bubble.icon size={Math.round(bubble.size * 0.25)} className="mb-1 drop-shadow-[2px_2px_0_#000]" />
         <span
-          className="font-display text-center leading-[0.8] px-2 drop-shadow-[2px_2px_0_#000]"
+          className="font-display text-center leading-[0.95] px-2 drop-shadow-[2px_2px_0_#000]"
           style={{ fontSize: bubble.size * 0.16 }}
         >
           {bubble.label}
@@ -338,7 +338,7 @@ const Modal = ({ bubble, onClose }: { bubble: BubbleData; onClose: () => void })
           onClick={e => e.stopPropagation()}
         >
           <div className="p-8 border-b-[6px] border-black text-white" style={{ background: bubble.color }}>
-            <h2 className="text-3xl md:text-4xl font-display uppercase leading-[0.8] drop-shadow-[3px_3px_0_#000]">
+            <h2 className="text-3xl md:text-4xl font-display uppercase leading-[0.95] drop-shadow-[3px_3px_0_#000]">
               {m.title}
             </h2>
           </div>
@@ -352,7 +352,7 @@ const Modal = ({ bubble, onClose }: { bubble: BubbleData; onClose: () => void })
             {m.muestra && (
               <div className="grid grid-cols-3 gap-4">
                 {m.muestra.map((g, i) => (
-                  <div key={i} className="border-4 border-black p-4 text-center halftone-md">
+                  <div key={i} className="border-4 border-black p-4 text-center halftone-md rounded-2xl">
                     <p className="text-4xl font-display" style={{ color: bubble.color }}>{g.n}</p>
                     <p className="text-[10px] font-mono font-black uppercase">{g.grupo}</p>
                   </div>
@@ -361,7 +361,7 @@ const Modal = ({ bubble, onClose }: { bubble: BubbleData; onClose: () => void })
             )}
             {m.tabla && (
               <div className="overflow-x-auto">
-                <table className="w-full border-4 border-black">
+                <table className="w-full border-4 border-black rounded-xl">
                   <thead>
                     <tr className="bg-black text-white">
                       {m.tabla.header.map((h, i) => (
@@ -386,7 +386,7 @@ const Modal = ({ bubble, onClose }: { bubble: BubbleData; onClose: () => void })
             {m.lista && (
               <ul className="space-y-4">
                 {m.lista.map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start bg-zinc-50 p-4 border-2 border-black">
+                  <li key={i} className="flex gap-4 items-start bg-zinc-50 p-4 border-2 border-black rounded-2xl">
                     <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-display text-xl shrink-0">
                       {i + 1}
                     </div>
@@ -398,7 +398,7 @@ const Modal = ({ bubble, onClose }: { bubble: BubbleData; onClose: () => void })
             {m.positivas && (
               <ul className="space-y-3">
                 {m.positivas.map((item, i) => (
-                  <li key={i} className="flex gap-3 items-center bg-emerald-50 p-3 border-2 border-emerald-200">
+                  <li key={i} className="flex gap-3 items-center bg-emerald-50 p-3 border-2 border-emerald-200 rounded-xl">
                     <TrendingUp size={18} className="text-emerald-600 shrink-0" />
                     <p className="font-bold text-sm text-emerald-800">{item}</p>
                   </li>
@@ -495,12 +495,12 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
       <header className="absolute top-0 left-0 right-0 z-50 bg-white border-b-8 border-black p-4 md:p-6 flex items-center justify-between shadow-[0_10px_0_rgba(0,0,0,0.05)]">
         <button
           onClick={onBack}
-          className="bg-black text-white px-4 md:px-8 py-3 border-4 border-black font-display text-sm md:text-xl uppercase hover:bg-indigo-600 transition-all shadow-[6px_6px_0_0_#000]"
+          className="bg-black text-white px-4 md:px-8 py-3 border-4 border-black font-display text-sm md:text-xl uppercase hover:bg-indigo-600 transition-all shadow-[6px_6px_0_0_#000] rounded-3xl"
         >
           ← Salir del Lab
         </button>
         <div className="text-center hidden md:block">
-          <h1 className="font-display text-2xl md:text-5xl uppercase tracking-tighter leading-none italic">
+          <h1 className="font-display text-2xl md:text-5xl uppercase tracking-normal leading-none italic">
             Laboratorio de Auditoría Panamericana
           </h1>
           <p className="font-mono text-[10px] uppercase font-black opacity-30 tracking-[0.3em]">
@@ -510,11 +510,11 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
         <div className="flex gap-2">
           <button
             onClick={resetPositions}
-            className="w-10 h-10 md:w-12 md:h-12 bg-zinc-100 border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center hover:bg-zinc-200 transition-colors"
+            className="w-10 h-10 md:w-12 md:h-12 bg-zinc-100 border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center hover:bg-zinc-200 transition-colors rounded-3xl"
           >
             <RotateCcw size={18} />
           </button>
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-indigo-600 border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center rotate-3">
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-indigo-600 border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center rotate-3 rounded-3xl">
             <Award className="text-white" size={20} />
           </div>
         </div>
@@ -526,7 +526,7 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 z-[150] bg-black text-white px-6 py-3 border-4 border-white shadow-[8px_8px_0_0_#4f46e5] font-mono text-xs uppercase font-black"
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-[150] bg-black text-white px-6 py-3 border-4 border-white shadow-[8px_8px_0_0_#4f46e5] font-mono text-xs uppercase font-black rounded-3xl"
           >
             <span className="flex items-center gap-2">
               <Info size={16} />
@@ -590,8 +590,8 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
             whileTap={{ cursor: 'grabbing' }}
             transition={{ type: 'spring', damping: 12, delay: 0.5 }}
           >
-            <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0_0_#4f46e5] max-w-[340px] md:max-w-[420px] w-full relative">
-              <div className="absolute -top-3 -right-3 w-10 h-10 bg-indigo-600 border-2 border-black text-white flex items-center justify-center rotate-12 shadow-[2px_2px_0_0_#000]">
+            <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0_0_#4f46e5] max-w-[340px] md:max-w-[420px] w-full relative rounded-3xl">
+              <div className="absolute -top-3 -right-3 w-10 h-10 bg-indigo-600 border-2 border-black text-white flex items-center justify-center rotate-12 shadow-[2px_2px_0_0_#000] rounded-3xl">
                 <Binary size={18} />
               </div>
               
@@ -609,7 +609,7 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
                     Dueñas Basurto, C. G. & Zambrano Vera, E. M.
                   </p>
                   <div className="flex items-center gap-2">
-                    <span className="bg-amber-400 text-black px-2 py-0.5 border-2 border-black text-[9px] font-mono font-black uppercase">
+                    <span className="bg-amber-400 text-black px-2 py-0.5 border-2 border-black text-[9px] font-mono font-black uppercase rounded-xl">
                       DOI: 10.21555/rpp.3214
                     </span>
                     <span className="text-[9px] font-mono font-black uppercase opacity-30">
@@ -631,7 +631,7 @@ export default function MapaConceptual3214({ onBack }: { onBack: () => void }) {
           </motion.div>
         )}
 
-        <div className="fixed bottom-4 md:bottom-8 right-4 md:right-8 z-[100] bg-white border-4 border-black p-3 md:p-4 shadow-[6px_6px_0_0_#000]">
+        <div className="fixed bottom-4 md:bottom-8 right-4 md:right-8 z-[100] bg-white border-4 border-black p-3 md:p-4 shadow-[6px_6px_0_0_#000] rounded-3xl">
           <p className="font-mono text-[8px] md:text-[10px] font-black uppercase opacity-40 text-right">DOI: 10.21555/rpp.3214<br />Rev. Panamericana de Pedagogía, N° 39 (2025)</p>
         </div>
       </main>

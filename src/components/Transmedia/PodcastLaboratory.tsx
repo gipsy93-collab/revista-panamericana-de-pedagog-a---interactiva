@@ -88,14 +88,14 @@ export default function PodcastLaboratory({ onBack }: Props) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#fccb06] hover:text-black transition-all shadow-[4px_4px_0_0_#000] active:shadow-none translate-y-[-2px] active:translate-y-0"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#fccb06] hover:text-black transition-all shadow-[4px_4px_0_0_#000] active:shadow-none translate-y-[-2px] active:translate-y-0 rounded-3xl"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver al transmedia</span>
           </button>
           
           <div className="hidden md:flex items-center gap-4">
-             <div className="bg-[#fccb06] text-black px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">PODCAST LAB</div>
+             <div className="bg-[#fccb06] text-black px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000] rounded-3xl">PODCAST LAB</div>
              <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-60 text-black">AUDIO_EXPERIENCE // RPP_2026</span>
           </div>
         </div>
@@ -149,10 +149,10 @@ export default function PodcastLaboratory({ onBack }: Props) {
                </div>
 
                <div className="absolute top-12 left-12 flex gap-4">
-                  <div className="bg-[#fccb06] text-black px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-black inline-block">
+                  <div className="bg-[#fccb06] text-black px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-black inline-block rounded-xl">
                     {currentEpisode.category}
                   </div>
-                  <div className="bg-black text-white px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-white/20 inline-block">
+                  <div className="bg-black text-white px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-white/20 inline-block rounded-xl">
                     LIVE_TRANSCRIPTION OFF
                   </div>
                </div>
@@ -173,7 +173,7 @@ export default function PodcastLaboratory({ onBack }: Props) {
             </div>
 
             {/* Custom Audio Player UI */}
-            <div className="bg-white text-black p-8 md:p-12 border-8 border-black shadow-[15px_15px_0_0_#fff] relative overflow-hidden">
+            <div className="bg-white text-black p-8 md:p-12 border-8 border-black shadow-[15px_15px_0_0_#fff] relative overflow-hidden rounded-3xl">
                <div className="absolute top-0 left-0 w-full h-2 bg-black/10">
                  <motion.div 
                     className="h-full bg-[#fccb06]" 
@@ -240,7 +240,7 @@ export default function PodcastLaboratory({ onBack }: Props) {
           <div className="lg:col-span-5 space-y-8">
             <div className="flex items-center justify-between border-b-4 border-white/10 pb-4">
                <h3 className="text-3xl font-display uppercase italic">Episodios (11)</h3>
-               <div className="w-8 h-8 bg-[#fccb06] border-4 border-black text-black flex items-center justify-center">
+               <div className="w-8 h-8 bg-[#fccb06] border-4 border-black text-black flex items-center justify-center rounded-xl">
                   <Zap size={16} fill="currentColor" />
                </div>
             </div>
@@ -284,7 +284,7 @@ export default function PodcastLaboratory({ onBack }: Props) {
 
       {/* Footer Decoration */}
       <footer className="py-20 border-t-8 border-white/10 text-center opacity-30">
-         <div className="font-display text-6xl md:text-9xl uppercase tracking-tighter italic">AUDIO_EXPERIMENT</div>
+         <div className="font-display text-6xl md:text-9xl uppercase tracking-normal italic">AUDIO_EXPERIMENT</div>
       </footer>
 
       <style>{`

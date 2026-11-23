@@ -53,7 +53,7 @@ const Quiz3497 = () => {
           </div>
           <button 
             onClick={resetQuiz}
-            className="group relative z-10 flex items-center gap-4 mx-auto bg-amber-500 text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0_0_#000] transition-all"
+            className="group relative z-10 flex items-center gap-4 mx-auto bg-amber-500 text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0_0_#000] transition-all rounded-3xl"
           >
             <RotateCcw className="group-hover:rotate-180 transition-transform duration-700" size={28} />
             <span className="font-display uppercase text-2xl font-black">Reiniciar Auditoría</span>
@@ -72,14 +72,14 @@ const Quiz3497 = () => {
             <BrutalSticker text="VALIDACIÓN TRANSVERSAL" color="bg-black" className="text-white mb-4" />
             <h2 className="text-6xl font-display uppercase leading-none">Examen de <span className="text-indigo-600 italic">Carácter</span></h2>
          </div>
-         <div className="bg-amber-500 text-black px-10 py-3 border-4 border-black font-display text-4xl font-black italic shadow-[6px_6px_0_0_#000]">
+         <div className="bg-amber-500 text-black px-10 py-3 border-4 border-black font-display text-4xl font-black italic shadow-[6px_6px_0_0_#000] rounded-3xl">
             Q{currentQuestion + 1}
          </div>
       </div>
 
       <BrutalCard color="bg-white" className="mb-12 border-[8px] border-black shadow-[20px_20px_0_0_#f59e0b]">
         <div className="flex items-start gap-6 mb-12">
-           <div className="bg-black p-4 border-2 border-black shrink-0 -rotate-3">
+           <div className="bg-black p-4 border-2 border-black shrink-0 -rotate-3 rounded-2xl">
               <Compass className="text-amber-500" size={32} />
            </div>
            <h3 className="text-4xl font-display uppercase leading-tight pt-2 italic">
@@ -114,8 +114,8 @@ const Quiz3497 = () => {
               animate={{ opacity: 1, height: 'auto' }}
               className="mt-12 pt-10 border-t-8 border-black overflow-hidden"
             >
-              <div className="bg-indigo-900 p-10 border-4 border-black flex gap-8 items-start relative">
-                 <div className="bg-amber-500 w-16 h-16 shrink-0 flex items-center justify-center text-black font-black text-2xl rotate-6 border-4 border-black">
+              <div className="bg-indigo-900 p-10 border-4 border-black flex gap-8 items-start relative rounded-3xl">
+                 <div className="bg-amber-500 w-16 h-16 shrink-0 flex items-center justify-center text-black font-black text-2xl rotate-6 border-4 border-black rounded-xl">
                     PY
                  </div>
                  <div className="relative z-10">

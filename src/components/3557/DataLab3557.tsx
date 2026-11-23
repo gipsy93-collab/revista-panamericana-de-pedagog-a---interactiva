@@ -20,9 +20,6 @@ export const DataLab3557 = () => {
 
   return (
     <div className="bg-[#0F172A] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative selection:bg-cyan-500 selection:text-black">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-cyan-500/[0.04] leading-none pointer-events-none select-none italic">
-        3557_LAB
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
@@ -56,7 +53,7 @@ export const DataLab3557 = () => {
                 className="grid lg:grid-cols-3 gap-8"
               >
                 {facultyData.map((f, i) => (
-                  <div key={i} className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#22d3ee] flex flex-col group hover:-translate-y-4 transition-transform">
+                  <div key={i} className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#22d3ee] flex flex-col group hover:-translate-y-4 transition-transform rounded-3xl">
                      <Binary className="text-indigo-600 mb-8" size={48} />
                      <h4 className="font-display text-2xl font-black uppercase italic mb-2 leading-none">{f.l}</h4>
                      <div className="text-7xl font-display font-black text-black italic mb-6">{f.v}</div>
@@ -74,7 +71,7 @@ export const DataLab3557 = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="grid lg:grid-cols-2 gap-12"
               >
-                <div className="bg-cyan-500 border-8 border-black p-12 shadow-[20px_20px_0_0_#ffffff] rotate-1">
+                <div className="bg-cyan-500 border-8 border-black p-12 shadow-[20px_20px_0_0_#ffffff] rotate-1 rounded-3xl">
                    <TrendingUp className="text-black mb-8" size={60} />
                    <h3 className="font-display text-5xl font-black uppercase italic text-black mb-12">Economía de la IA</h3>
                    <div className="space-y-8">
@@ -86,7 +83,7 @@ export const DataLab3557 = () => {
                       ))}
                    </div>
                 </div>
-                <div className="bg-black text-white p-12 border-8 border-cyan-500 shadow-[20px_20px_0_0_#22d3ee] flex flex-col justify-center">
+                <div className="bg-black text-white p-12 border-8 border-cyan-500 shadow-[20px_20px_0_0_#22d3ee] flex flex-col justify-center rounded-3xl">
                    <Globe2 className="text-cyan-400 mb-8" size={60} />
                    <p className="font-serif text-3xl italic leading-tight text-cyan-100">
                      "La IA transformará radicalmente la economía mundial, aportando 15.7 billones de dólares al PIB para 2030."
@@ -112,7 +109,7 @@ export const DataLab3557 = () => {
                      { q: "Utilizo ChatGPT y eso me ha ayudado a reducir mi carga laboral en un 80%.", a: "P5", t: "Eficiencia" },
                      { q: "Hay gran diferencia entre los despachos que nacieron totalmente digitales y los tradicionales.", a: "P1", t: "Prospectiva" }
                    ].map((quote, idx) => (
-                     <div key={idx} className="min-w-[400px] bg-slate-900 border-4 border-cyan-500 p-8 shadow-[8px_8px_0_0_#fff] hover:translate-x-2 transition-transform cursor-pointer">
+                     <div key={idx} className="min-w-[400px] bg-slate-900 border-4 border-cyan-500 p-8 shadow-[8px_8px_0_0_#fff] hover:translate-x-2 transition-transform cursor-pointer rounded-3xl">
                         <Zap className="text-cyan-400 mb-6" />
                         <p className="font-serif text-xl italic text-white/90 leading-snug mb-8">"{quote.q}"</p>
                         <div className="flex justify-between font-mono text-[9px] uppercase font-black">
@@ -122,7 +119,7 @@ export const DataLab3557 = () => {
                      </div>
                    ))}
                 </div>
-                <div className="lg:col-span-12 bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#22d3ee] mt-8 flex flex-col md:flex-row items-center gap-16">
+                <div className="lg:col-span-12 bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#22d3ee] mt-8 flex flex-col md:flex-row items-center gap-16 rounded-3xl">
                    <div className="flex-1">
                       <h4 className="font-display text-4xl font-black uppercase italic mb-6">3.2 Muestra de Expertos</h4>
                       <p className="font-mono text-[11px] uppercase font-black text-black/40 mb-10 tracking-widest leading-none italic">7 JURISTAS EN MÉXICO // 35-60 AÑOS // 14-35 AÑOS EXP.</p>
@@ -130,13 +127,13 @@ export const DataLab3557 = () => {
                          {[
                            "Corp. & Telecom", "Fiscal & Admin", "Comp. Económica", "Civil & Litigio"
                          ].map((area, i) => (
-                           <div key={i} className="bg-zinc-50 border-2 border-black p-4 font-display text-lg uppercase font-black italic flex items-center gap-3">
+                           <div key={i} className="bg-zinc-50 border-2 border-black p-4 font-display text-lg uppercase font-black italic flex items-center gap-3 rounded-2xl">
                               <Briefcase size={20} className="text-indigo-600" /> {area}
                            </div>
                          ))}
                       </div>
                    </div>
-                   <div className="w-48 h-48 bg-cyan-500 border-4 border-black rotate-3 flex items-center justify-center shadow-[10px_10px_0_0_#000]">
+                   <div className="w-48 h-48 bg-cyan-500 border-4 border-black rotate-3 flex items-center justify-center shadow-[10px_10px_0_0_#000] rounded-3xl">
                       <Users size={80} />
                    </div>
                 </div>

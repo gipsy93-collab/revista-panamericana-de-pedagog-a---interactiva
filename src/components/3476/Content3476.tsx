@@ -62,9 +62,6 @@ export default function Content3476() {
     <div className="bg-white">
       {/* 2.3 OBJETIVOS */}
       <section className="bg-emerald-950 text-white p-16 md:p-32 border-b-[12px] border-black relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-12 font-mono text-[200px] font-black text-emerald-600/[0.03] leading-none pointer-events-none select-none">
-          OBJ_3476
-        </div>
         <div className="max-w-7xl mx-auto relative z-10 text-center lg:text-left">
           <BrutalSticker text="2.3 OBJETIVOS" color="bg-emerald-600" className="text-white mb-10 !rotate-0" />
           <h3 className="font-display text-4xl md:text-6xl uppercase font-black italic mb-8 leading-tight">Objetivo General_</h3>
@@ -103,7 +100,7 @@ export default function Content3476() {
              <div className="space-y-12">
                 <div>
                    <h3 className="font-display text-4xl font-black uppercase italic mb-6">3.1 Tipo de estudio</h3>
-                   <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[-1deg]">
+                   <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[-1deg] rounded-3xl">
                       <p className="text-xl font-sans font-medium text-black leading-relaxed">
                         <strong>Revisión sistemática</strong> siguiendo los lineamientos de la declaración **PRISMA** (Higgins y Green, 2011) y la estrategia **PEO** (Población, Exposición, Resultado). Se analizaron exclusivamente investigaciones empíricas del período 2015-2025.
                       </p>
@@ -111,7 +108,7 @@ export default function Content3476() {
                 </div>
                 <div>
                    <h3 className="font-display text-4xl font-black uppercase italic mb-6">3.5 Análisis de datos</h3>
-                   <div className="bg-emerald-600 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[1deg]">
+                   <div className="bg-emerald-600 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-[1deg] rounded-3xl">
                       <p className="text-lg font-sans font-bold uppercase leading-snug">
                          Análisis de contenido para agrupar investigaciones en cuatro categorías temáticas: Prácticas pedagógicas, Barreras estructurales, Actitudes/creencias y Formación docente.
                       </p>
@@ -120,7 +117,7 @@ export default function Content3476() {
              </div>
              <div className="relative">
                 <div className="absolute inset-0 bg-indigo-600/20 blur-[80px]" />
-                <div className="relative bg-zinc-950 text-white p-12 border-8 border-black shadow-[20px_20px_0_0_#065f46]">
+                <div className="relative bg-zinc-950 text-white p-12 border-8 border-black shadow-[20px_20px_0_0_#065f46] rounded-3xl">
                    <FileSearch size={48} className="text-emerald-400 mb-8" />
                    <h4 className="font-display text-3xl uppercase font-black italic mb-8 border-b-2 border-white/10 pb-4 text-emerald-400">Estrategia PEO_</h4>
                    <ul className="space-y-6 list-none font-display text-xl uppercase font-black">
@@ -208,7 +205,7 @@ export default function Content3476() {
               { t: "TRANSFORMACIÓN PROFUNDA", c: "La inclusión no es un estado alcanzado sino un proceso en construcción que interpela a toda la comunidad." },
               { t: "RESPONSABILIDAD COMPARTIDA", c: "Trasciende las estrategias individuales; requiere respaldo de políticas y condiciones adecuadas." }
             ].map((item, i) => (
-              <div key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] group hover:bg-emerald-50 transition-all">
+              <div key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] group hover:bg-emerald-50 transition-all rounded-3xl">
                  <h4 className="font-display text-2xl font-black uppercase italic mb-4 border-b-2 border-black pb-2">{item.t}</h4>
                  <p className="font-sans font-bold uppercase text-xs leading-relaxed text-black/70">"{item.c}"</p>
               </div>
@@ -220,12 +217,12 @@ export default function Content3476() {
       {/* SECCIÓN FINAL */}
       <section className="py-32 bg-emerald-950 text-white border-t-[12px] border-black overflow-hidden relative text-center">
          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-7xl md:text-[14rem] font-display uppercase font-black italic leading-[0.8] tracking-tighter mb-16 opacity-10">
+            <h2 className="text-7xl md:text-[14rem] font-display uppercase font-black italic leading-[0.95] tracking-normal mb-16 opacity-10">
               INCLUSIÓN<br/>PLENA_
             </h2>
             <div className="relative z-10">
-               <div className="inline-block bg-white text-black p-16 border-8 border-black shadow-[25px_25px_0_0_#4f46e5] rotate-2">
-                  <p className="text-5xl font-display font-black uppercase italic tracking-tighter mb-8">
+               <div className="inline-block bg-white text-black p-16 border-8 border-black shadow-[25px_25px_0_0_#4f46e5] rotate-2 rounded-3xl">
+                  <p className="text-5xl font-display font-black uppercase italic tracking-normal mb-8">
                     "La diversidad es la norma"
                   </p>
                   <p className="font-mono text-sm font-black uppercase opacity-40">UNESCO 2020 // Revisión Sistemática 3476</p>

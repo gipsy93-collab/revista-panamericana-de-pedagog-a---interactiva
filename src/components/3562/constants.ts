@@ -7,7 +7,7 @@ export const ARTICLE_META = {
   abstract: "Estudio cualitativo con enfoque de curso de vida que visibiliza la trayectoria de madres estudiantes en la UPN Ecatepec. Desmonta el estigma de la maternidad como causa de abandono, revelando que la deserción es un subproducto de la falta de políticas institucionales y la fragilidad de capitales. El 67% de las estudiantes interrumpe sus estudios ante la ausencia de lactarios y guarderías universitarias.",
   authors: "Diego Rodríguez-Calderón-de-la-Barca",
   institution: "Universidad Pedagógica Nacional, México",
-  doi: "10.21155/rpp.3562",
+  doi: "10.21555/rpp.3562",
   journal: "Revista Panamericana de Pedagogía",
   year: "2026",
   vol: "N° 41",

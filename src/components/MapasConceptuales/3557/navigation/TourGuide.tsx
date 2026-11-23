@@ -78,7 +78,7 @@ export function TourGuide({ isActive, onStop, onNodeActivate }: TourGuideProps) 
           >
             <div className="bg-black border-[3px] border-black px-4 py-3 shadow-[6px_6px_0px_0px_rgba(255,165,0,1)] border-orange-400 flex items-center justify-between gap-4 scale-90">
               <div className="flex items-center gap-3">
-                <div className="bg-orange-400 p-1.5 border-2 border-black rotate-12">
+                <div className="bg-orange-400 p-1.5 border-2 border-black rotate-12 rounded-xl">
                    <Navigation className="w-4 h-4 text-black stroke-[3] animate-pulse" />
                 </div>
                 <div>
@@ -93,21 +93,21 @@ export function TourGuide({ isActive, onStop, onNodeActivate }: TourGuideProps) 
                 <button
                   onClick={goBack}
                   disabled={currentStep === 0}
-                  className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center hover:bg-orange-400 disabled:opacity-20 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center hover:bg-orange-400 disabled:opacity-20 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
                 >
                   <ChevronLeft className="w-4 h-4 stroke-[4]" />
                 </button>
                 
                 <button
                   onClick={advanceStep}
-                  className="h-8 px-3 bg-[#00FFA3] border-2 border-black flex items-center gap-2 font-black uppercase text-[10px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all"
+                  className="h-8 px-3 bg-[#00FFA3] border-2 border-black flex items-center gap-2 font-black uppercase text-[10px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all rounded-3xl"
                 >
                   Siguiente
                 </button>
 
                 <button
                   onClick={onStop}
-                  className="w-8 h-8 bg-[#FF007A] text-white border-2 border-black flex items-center justify-center hover:bg-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="w-8 h-8 bg-[#FF007A] text-white border-2 border-black flex items-center justify-center hover:bg-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
                 >
                   <X className="w-4 h-4 stroke-[4]" />
                 </button>
@@ -124,14 +124,14 @@ export function TourGuide({ isActive, onStop, onNodeActivate }: TourGuideProps) 
                 exit={{ opacity: 0, scale: 0.8, y: 30 }}
                 className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[100] pointer-events-auto"
               >
-                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-xs text-center -rotate-1 relative">
+                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-xs text-center -rotate-1 relative rounded-3xl">
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                    <div className="bg-[#FFFF00] border-2 border-black p-2 text-2xl rotate-12">{branch.icon}</div>
-                    <div className="bg-[#00D4FF] border-2 border-black p-2 text-2xl -rotate-12">{subNode.icon}</div>
+                    <div className="bg-[#FFFF00] border-2 border-black p-2 text-2xl rotate-12 rounded-xl">{branch.icon}</div>
+                    <div className="bg-[#00D4FF] border-2 border-black p-2 text-2xl -rotate-12 rounded-xl">{subNode.icon}</div>
                   </div>
                   
                   <div className="mt-8">
-                    <p className="text-black font-black text-sm leading-tight uppercase tracking-tighter">
+                    <p className="text-black font-black text-sm leading-tight uppercase tracking-normal">
                        {currentTourStep.message}
                     </p>
                     <div className="mt-3 flex items-center justify-center gap-2">

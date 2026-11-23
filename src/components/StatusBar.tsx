@@ -36,7 +36,7 @@ export const StatusBar = ({ currentSection }: { currentSection: number }) => {
           <span className="hidden sm:inline font-bold">RPP_NODE_ONLINE</span>
         </span>
         <span className="hidden lg:inline text-white/30">|</span>
-        <span className="hidden md:inline font-mono tracking-tighter">
+        <span className="hidden md:inline font-mono tracking-normal">
           {t.nav.inicio === 'Home' ? 'SECTION' : 'SECCIÓN'}: <span className="text-white font-bold">{sectionsList[currentSection] || 'RPP'}</span>
         </span>
       </div>

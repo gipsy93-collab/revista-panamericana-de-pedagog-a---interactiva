@@ -54,7 +54,7 @@ export const DataLab3153 = () => {
               Teoría <br /> <span className="text-blue-600">Fundamentada</span>
             </h2>
           </div>
-          <div className="bg-black text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#2563eb] -rotate-1">
+          <div className="bg-black text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#2563eb] -rotate-1 rounded-3xl">
              <div className="flex items-center gap-4 mb-2">
                 <Database className="text-blue-400" />
                 <span className="font-mono text-xs uppercase font-black tracking-widest">Dataset Info</span>
@@ -82,9 +82,6 @@ export const DataLab3153 = () => {
 
         {/* PARTICIPANTS TABLE */}
         <BrutalCard color="bg-zinc-950" className="text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-8 font-mono text-[150px] font-black text-white/[0.03] select-none pointer-events-none uppercase">
-            3153
-          </div>
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-10 border-b-2 border-white/10 pb-4">
               <Users className="text-blue-400" size={32} />

@@ -249,12 +249,12 @@ export default function MapasConceptuales({ onBack, onOpenMapa }: Props) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#0ea5e9] transition-all shadow-[4px_4px_0_0_#000] active:shadow-none -translate-y-0.5 active:translate-y-0"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#0ea5e9] transition-all shadow-[4px_4px_0_0_#000] active:shadow-none -translate-y-0.5 active:translate-y-0 rounded-3xl"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
           </button>
-          <div className="hidden md:block bg-black text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic">
+          <div className="hidden md:block bg-black text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic rounded-xl">
             TRANSMEDIA / MAPAS
           </div>
         </div>

@@ -56,7 +56,7 @@ export default function WhyRPP() {
               <span className="font-accent font-black tracking-widest text-zine-red uppercase text-sm">Value_Proposition // RPP_Values</span>
             </motion.div>
             
-            <h2 className="text-8xl md:text-[10rem] font-display uppercase leading-[0.85] text-zine-black mb-12">
+            <h2 className="text-8xl md:text-[10rem] font-display uppercase leading-[0.95] text-zine-black mb-12">
               ¿POR QUÉ<br /><span className="text-zine-red">RPP?</span>
             </h2>
           </div>
@@ -65,7 +65,7 @@ export default function WhyRPP() {
              <div className="flex items-center gap-4 justify-end text-sm font-black uppercase tracking-widest text-[#0f3896]">
                 <Award size={24} /> Excellence_Status: Active
              </div>
-             <p className="text-xs font-mono opacity-40 uppercase tracking-widest tracking-tighter">Established_Since // 2024_Series</p>
+             <p className="text-xs font-mono opacity-40 uppercase tracking-widest tracking-normal">Established_Since // 2024_Series</p>
           </div>
         </div>
 
@@ -121,7 +121,7 @@ export default function WhyRPP() {
               <button className="px-12 py-6 bg-zine-red text-white font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4 shadow-[8px_8px_0_rgba(179,77,77,0.4)]">
                 <BookOpen size={24} /> Convocatoria <ArrowUpRight className="text-[10px]" />
               </button>
-              <button className="px-12 py-6 border-4 border-white text-white font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4">
+              <button className="px-12 py-6 border-4 border-white text-white font-display text-2xl uppercase hover:bg-white hover:text-black transition-all flex items-center gap-4 rounded-2xl">
                 <Clock size={24} /> Próximo Número
               </button>
            </div>

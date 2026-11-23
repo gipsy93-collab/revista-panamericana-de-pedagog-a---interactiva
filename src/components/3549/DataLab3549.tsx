@@ -43,24 +43,21 @@ export const DataLab3549 = () => {
 
   return (
     <div className="bg-[#FFF1F2] py-32 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-rose-600/[0.05] leading-none pointer-events-none select-none italic">
-        NEM_GEN_26
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-24">
           <div>
             <BrutalSticker text="PEDAGOGICAL_GENEALOGY // SEP // MEXICO" color="bg-rose-600" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#000] px-6 py-2 font-black" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.85] text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.95] text-black tracking-normal">
               LAB <span className="text-rose-600 italic underline decoration-8 decoration-black">GENEALOGÍA</span><br/>
               <span className="text-4xl md:text-5xl font-mono uppercase bg-black text-white px-4 leading-normal mt-3">ADN de la Nueva Escuela</span>
             </h2>
           </div>
           <div className="flex gap-6">
-             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#e11d48] rotate-[-2deg]">
+             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#e11d48] rotate-[-2deg] rounded-3xl">
                 <Landmark size={48} className="text-rose-600" />
              </div>
-             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#ffffff] rotate-[3deg]">
+             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#ffffff] rotate-[3deg] rounded-3xl">
                 <Fingerprint size={48} className="text-white" />
              </div>
           </div>
@@ -93,11 +90,8 @@ export const DataLab3549 = () => {
                      initial={{ opacity: 0, scale: 0.95 }}
                      animate={{ opacity: 1, scale: 1 }}
                      exit={{ opacity: 0, scale: 0.95 }}
-                     className="grid lg:grid-cols-2 gap-16 p-10 bg-zinc-50 border-4 border-black relative overflow-hidden"
+                     className="grid lg:grid-cols-2 gap-16 p-10 bg-zinc-50 border-4 border-black relative overflow-hidden rounded-3xl"
                    >
-                      <div className="absolute -top-12 -right-12 text-[200px] font-black italic opacity-[0.03] select-none pointer-events-none">
-                        {GENEALOGY_DATA[activeNode].author}
-                      </div>
 
                       <div className="space-y-10 relative z-10">
                          <div>
@@ -106,7 +100,7 @@ export const DataLab3549 = () => {
                                {GENEALOGY_DATA[activeNode].concept}
                             </h3>
                          </div>
-                         <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-1">
+                         <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-1 rounded-3xl">
                             <Quote size={32} className="text-rose-600 mb-6" />
                             <p className="font-serif text-2xl italic leading-relaxed text-black/80">
                                "{GENEALOGY_DATA[activeNode].quote}"
@@ -115,7 +109,7 @@ export const DataLab3549 = () => {
                       </div>
 
                       <div className="flex flex-col justify-center gap-10 relative z-10">
-                         <div className="bg-black text-white p-10 border-4 border-rose-600 shadow-[12px_12px_0_0_#000] rotate-[-1deg] group">
+                         <div className="bg-black text-white p-10 border-4 border-rose-600 shadow-[12px_12px_0_0_#000] rotate-[-1deg] group rounded-3xl">
                             <div className="flex items-center gap-4 mb-6">
                                <Sparkles className="text-rose-400 group-hover:rotate-12 transition-transform" />
                                <h5 className="font-display text-2xl uppercase font-black italic">Presencia en la NEM</h5>
@@ -137,22 +131,22 @@ export const DataLab3549 = () => {
           {/* II. MÉTRICAS DE ESTRUCTURA */}
           <div className="lg:col-span-12">
              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#e11d48] rotate-1 group hover:rotate-0 transition-transform">
+                <div className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#e11d48] rotate-1 group hover:rotate-0 transition-transform rounded-3xl">
                    <h5 className="font-display text-5xl font-black italic leading-none mb-2">23</h5>
                    <p className="font-mono text-[9px] uppercase font-black opacity-40">Años de Consolidación</p>
                    <p className="font-mono text-[10px] font-black uppercase text-rose-600 mt-4 leading-none italic">Horizonte 2019-2042</p>
                 </div>
-                <div className="bg-black border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-2deg] text-white">
+                <div className="bg-black border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-2deg] text-white rounded-3xl">
                    <h5 className="font-display text-5xl font-black italic leading-none mb-2 text-rose-500">3</h5>
                    <p className="font-mono text-[9px] uppercase font-black opacity-60">Fases Primarias</p>
                    <p className="font-mono text-[10px] font-black uppercase text-white mt-4 leading-none italic">Niveles 1º a 6º</p>
                 </div>
-                <div className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#4f46e5] rotate-1">
+                <div className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#4f46e5] rotate-1 rounded-3xl">
                    <h5 className="font-display text-5xl font-black italic leading-none mb-2 text-indigo-700">6</h5>
                    <p className="font-mono text-[9px] uppercase font-black opacity-40">Herramientas TIC</p>
                    <p className="font-mono text-[10px] font-black uppercase text-black mt-4 leading-none italic">Sugerencia Digital</p>
                 </div>
-                <div className="bg-rose-600 border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-1deg] text-white">
+                <div className="bg-rose-600 border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-1deg] text-white rounded-3xl">
                    <h5 className="font-display text-5xl font-black italic leading-none mb-2">41</h5>
                    <p className="font-mono text-[9px] uppercase font-black opacity-60">Journal Vol. 41</p>
                    <p className="font-mono text-[10px] font-black uppercase text-white mt-4 leading-none italic">Ríos-Higuera et al.</p>
@@ -162,7 +156,7 @@ export const DataLab3549 = () => {
 
           {/* III. CONCLUSIÓN DE LABORATORIO */}
           <div className="lg:col-span-12 mt-8">
-             <div className="bg-zinc-950 p-16 border-8 border-black shadow-[20px_20px_0_0_#e11d48] text-white relative overflow-hidden group">
+             <div className="bg-zinc-950 p-16 border-8 border-black shadow-[20px_20px_0_0_#e11d48] text-white relative overflow-hidden group rounded-3xl">
                 <Compass size={400} className="absolute -top-32 -right-32 text-white/[0.02] rotate-12 group-hover:rotate-45 transition-transform duration-1000" />
                 <div className="max-w-4xl relative z-10">
                    <div className="flex items-center gap-6 mb-12">

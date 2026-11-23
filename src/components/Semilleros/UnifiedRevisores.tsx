@@ -100,7 +100,7 @@ const RevisorCard = ({ rev, index }: { rev: typeof revisors[0], index: number })
         {/* Text Container */}
         <div className="space-y-6 flex-grow flex flex-col justify-center">
           <div className="space-y-2">
-            <h3 className="font-display text-3xl md:text-4xl uppercase leading-[1.1] text-white drop-shadow-[4px_4px_0_#000] tracking-tighter">
+            <h3 className="font-display text-3xl md:text-4xl uppercase leading-[1.1] text-white drop-shadow-[4px_4px_0_#000] tracking-normal">
               {rev.name}
             </h3>
             <p className="font-mono text-[9px] uppercase font-black text-white/50 tracking-[0.2em] bg-black/40 px-2 py-1 inline-block">
@@ -109,7 +109,7 @@ const RevisorCard = ({ rev, index }: { rev: typeof revisors[0], index: number })
           </div>
           
           <div className="space-y-4">
-             <div className="inline-block bg-white text-black px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-black rotate-1">
+             <div className="inline-block bg-white text-black px-4 py-1 font-mono text-[10px] uppercase font-black tracking-widest border-2 border-black rotate-1 rounded-xl">
                 CREDENTIAL: {rev.badgeId}
              </div>
              <p className="font-serif italic text-white/95 text-base leading-tight px-4 line-clamp-3 font-medium drop-shadow-sm">
@@ -143,7 +143,7 @@ export default function UnifiedRevisores({ onBack }: Props) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#e81e61] transition-colors shadow-[4px_4px_0_0_#880e4f] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#880e4f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#e81e61] transition-colors shadow-[4px_4px_0_0_#880e4f] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#880e4f] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
@@ -152,13 +152,13 @@ export default function UnifiedRevisores({ onBack }: Props) {
             href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
+            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Académica</span>
           </a>
           
           <div className="hidden md:flex items-center gap-4">
-             <div className="bg-[#e81e61] text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">EDITORES</div>
+             <div className="bg-[#e81e61] text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000] rounded-3xl">EDITORES</div>
              <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">QUALITY // RPP_2026</span>
           </div>
         </div>
@@ -192,9 +192,9 @@ export default function UnifiedRevisores({ onBack }: Props) {
          <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
          
          <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
-            <BrutalSticker text="SISTEMA DE CALIDAD CIENTÍFICA" color="bg-[#fccb06]" className="text-black mb-12 !rotate-0 px-8 py-3 text-3xl border-4 shadow-[12px_12px_0_0_#000]" />
+            <BrutalSticker text="SISTEMA DE CALIDAD CIENTÍFICA" color="bg-[#fccb06]" className="text-black mb-12 !rotate-0 px-8 py-3 text-3xl border-4 shadow-[12px_12px_0_0_#000] rounded-3xl" />
             
-            <h1 className="text-6xl md:text-[14rem] font-display uppercase leading-[0.8] text-white drop-shadow-[25px_25px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: 'calc(var(--brutal-stroke-width) * 2) black' }}>
+            <h1 className="text-6xl md:text-[14rem] font-display uppercase leading-[0.95] text-white drop-shadow-[25px_25px_0_#000] mb-12 italic tracking-normal">
               Semillero <br /> Editores
             </h1>
             
@@ -205,7 +205,7 @@ export default function UnifiedRevisores({ onBack }: Props) {
                <p className="text-lg md:text-xl font-accent font-bold text-slate-300 uppercase tracking-widest leading-snug border-l-4 border-indigo-400 pl-6">
                  El equipo editor realiza curaduría, moderación técnica y armonización textual de manera invisible para las autorías.
                </p>
-               <p className="text-base md:text-lg font-mono text-indigo-200/70 uppercase tracking-tighter">
+               <p className="text-base md:text-lg font-mono text-indigo-200/70 uppercase tracking-normal">
                  Promueve estándares de ciencia abierta y desarrolla competencias profesionales en edición académica dentro del ecosistema RPP Interactivo.
                </p>
             </div>
@@ -217,7 +217,7 @@ export default function UnifiedRevisores({ onBack }: Props) {
       <section className="bg-white py-32 border-y-[20px] border-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
-             <h2 className="text-6xl md:text-9xl font-display uppercase italic tracking-tighter">RED EDITORIAL</h2>
+             <h2 className="text-6xl md:text-9xl font-display uppercase italic tracking-normal">RED EDITORIAL</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
@@ -234,7 +234,7 @@ export default function UnifiedRevisores({ onBack }: Props) {
           <p className="font-serif text-2xl italic text-slate-400 mb-16 leading-relaxed text-center">
             Obtén tu certificación internacional en gestión editorial bajo el estándar Open Badges 3.0.
           </p>
-          <button className="bg-white text-black px-12 py-6 border-8 border-black font-display text-3xl uppercase shadow-[10px_10px_0_0_#4f46e5] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+          <button className="bg-white text-black px-12 py-6 border-8 border-black font-display text-3xl uppercase shadow-[10px_10px_0_0_#4f46e5] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all rounded-3xl">
             POSTULAR AL COMITÉ
           </button>
         </div>

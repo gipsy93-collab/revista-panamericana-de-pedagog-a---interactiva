@@ -7,7 +7,7 @@ export const ARTICLE_META = {
   abstract: "Investigación de metodología mixta que analiza la brecha entre la formación jurídica tradicional y las exigencias tecnológicas de la praxis legal moderna. Revela una resistencia identitaria en las facultades de derecho, donde solo el 10% de las instituciones de élite integran competencias digitales obligatorias, a pesar de que herramientas como la IA ya optimizan hasta un 80% de la carga laboral profesional.",
   authors: "Philippe Prince-Tritto, Sara-Elvira Galbán-Lozano & Mónica-Meza-Mejía",
   institution: "Universidad Panamericana, México",
-  doi: "10.21155/rpp.3557",
+  doi: "10.21555/rpp.3557",
   journal: "Revista Panamericana de Pedagogía",
   year: "2026",
   vol: "N° 41",

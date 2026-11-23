@@ -56,7 +56,7 @@ const MindMap3378: React.FC = () => {
         <h2 className="zine-heading text-4xl md:text-6xl border-b-8 border-white pb-2 text-white">
           Mapa <span className="text-stroke-brutal text-pop-yellow">Multidimensional</span>
         </h2>
-        <p className="font-accent mt-4 text-xl bg-pop-pink text-white px-4 py-1 rotate-1 inline-block border-2 border-white">
+        <p className="font-accent mt-4 text-xl bg-pop-pink text-white px-4 py-1 rotate-1 inline-block border-2 border-white rounded-xl">
           Contexto denso / Rigor transmedia
         </p>
       </div>
@@ -104,7 +104,7 @@ const MindMap3378: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8, x: -50, y: -50 }}
               animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute left-1/2 top-1/2 bg-white text-black border-8 border-black p-10 z-50 w-[90%] md:w-[600px] shadow-[20px_20px_0px_rgba(0,0,0,1)]"
+              className="absolute left-1/2 top-1/2 bg-white text-black border-8 border-black p-10 z-50 w-[90%] md:w-[600px] shadow-[20px_20px_0px_rgba(0,0,0,1)] rounded-3xl"
               style={{ transform: 'translate(-50%, -50%)' }}
             >
               <button 
@@ -133,10 +133,6 @@ const MindMap3378: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-
-      <div className="absolute top-1/2 left-10 -translate-y-1/2 font-mono text-[150px] font-black opacity-5 pointer-events-none select-none">
-        MAP
       </div>
     </section>
   );

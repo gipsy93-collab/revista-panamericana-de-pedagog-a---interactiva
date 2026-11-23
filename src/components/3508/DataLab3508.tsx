@@ -19,9 +19,6 @@ export const DataLab3508 = () => {
 
   return (
     <div className="bg-[#FAF5FF] py-32 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-violet-600/[0.05] leading-none pointer-events-none select-none italic">
-        TEA_ESP_ECU
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-24">
@@ -33,10 +30,10 @@ export const DataLab3508 = () => {
             </h2>
           </div>
           <div className="flex gap-6">
-             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#9333ea] rotate-2">
+             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#9333ea] rotate-2 rounded-3xl">
                 <BrainCircuit size={48} className="text-violet-700" />
              </div>
-             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#ec4899] rotate-[-1deg]">
+             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#ec4899] rotate-[-1deg] rounded-3xl">
                 <Activity size={48} className="text-white" />
              </div>
           </div>
@@ -46,7 +43,7 @@ export const DataLab3508 = () => {
           {/* I. LA CIFRA CRÍTICA - RIGIDEZ ECUADOR */}
            <div className="lg:col-span-5 relative">
             <BrutalCard color="bg-white" className="!border-[8px] border-black shadow-[20px_20px_0_0_#000] h-full flex flex-col justify-center text-center p-12 relative overflow-visible selection:bg-red-600 selection:text-white">
-               <div className="absolute top-[-30px] left-[-50px] bg-red-600 text-white px-10 py-4 font-mono text-xl font-black uppercase rotate-[-8deg] shadow-[8px_8px_0_0_#000] z-50 border-4 border-black">ECUADOR_ALERTA</div>
+               <div className="absolute top-[-30px] left-[-50px] bg-red-600 text-white px-10 py-4 font-mono text-xl font-black uppercase rotate-[-8deg] shadow-[8px_8px_0_0_#000] z-50 border-4 border-black rounded-3xl">ECUADOR_ALERTA</div>
                
                <h3 className="text-2xl font-display uppercase font-black mb-12 border-b-4 border-black pb-4 pt-16">
                  INDICADOR DE <span className="text-red-600 underline decoration-4 underline-offset-4">RIGIDEZ</span> CURRICULAR
@@ -54,9 +51,8 @@ export const DataLab3508 = () => {
 
                <span className="font-mono text-[10px] font-black uppercase opacity-30 mb-8 tracking-[0.4em] italic leading-tight">PREFERENCIA_POR_NORMATIVA</span>
                <div className="flex items-baseline justify-center gap-8 mb-10 group">
-                  <p className="text-9xl md:text-[14rem] font-display font-black text-red-600 group-hover:scale-110 transition-transform leading-none tracking-tighter italic" 
-                     style={{ WebkitTextStroke: 'calc(var(--brutal-stroke-width) * 2.5) black' }}>80</p>
-                  <p className="text-7xl font-display font-black text-black" style={{ WebkitTextStroke: 'var(--brutal-stroke-width) black' }}>%</p>
+                  <p className="text-9xl md:text-[14rem] font-display font-black text-red-600 group-hover:scale-110 transition-transform leading-none tracking-normal italic">80</p>
+                  <p className="text-7xl font-display font-black text-black">%</p>
                </div>
                <p className="text-sm font-mono font-black uppercase border-t-4 border-black pt-10 leading-relaxed italic">
                  De los docentes ecuatorianos priorizan el currículo oficial sobre las adaptaciones para alumnado TEA.
@@ -82,7 +78,7 @@ export const DataLab3508 = () => {
                               </span>
                               <span className="font-mono text-3xl font-black text-pink-400 border-b-4 border-pink-500">{s.value}%</span>
                            </div>
-                           <div className="h-5 w-full bg-black border-2 border-white/10 group-hover:border-pink-500 overflow-hidden relative">
+                           <div className="h-5 w-full bg-black border-2 border-white/10 group-hover:border-pink-500 overflow-hidden relative rounded-xl">
                               <motion.div 
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${s.value}%` }} 
@@ -109,12 +105,12 @@ export const DataLab3508 = () => {
           <div className="lg:col-span-12 mt-12">
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 {profileData.map((d, i) => (
-                  <div key={i} className="bg-white border-4 border-black p-10 shadow-[10px_10px_0_0_#000] rotate-1 group hover:-rotate-1 transition-transform border-t-8 border-t-violet-600">
+                  <div key={i} className="bg-white border-4 border-black p-10 shadow-[10px_10px_0_0_#000] rotate-1 group hover:-rotate-1 transition-transform border-t-8 border-t-violet-600 rounded-3xl">
                      <span className="font-mono text-[10px] font-black uppercase text-zinc-400 mb-2 block tracking-widest">{d.label}</span>
                      <div className="text-6xl font-display font-black text-black group-hover:text-violet-600 transition-colors leading-none italic mb-4">
                        {d.value}{d.suffix}
                      </div>
-                     <div className="h-2 w-full bg-zinc-50 border-2 border-black/5">
+                     <div className="h-2 w-full bg-zinc-50 border-2 border-black/5 rounded-xl">
                        <motion.div 
                          initial={{ width: 0 }}
                          whileInView={{ width: '80%' }}
@@ -128,8 +124,7 @@ export const DataLab3508 = () => {
           </div>
 
           {/* IV. HALLAZGOS Y BARRERAS */}
-          <div className="lg:col-span-12 mt-12 bg-zinc-950 p-16 border-8 border-black shadow-[20px_20px_0_0_#8b5cf6] text-white relative group overflow-hidden">
-             <div className="absolute top-0 right-0 p-8 font-display text-[150px] font-black opacity-[0.03] italic leading-none pointer-events-none select-none">TEA_FIND</div>
+          <div className="lg:col-span-12 mt-12 bg-zinc-950 p-16 border-8 border-black shadow-[20px_20px_0_0_#8b5cf6] text-white relative group overflow-hidden rounded-3xl">
              <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
                 <div className="lg:w-2/5 flex flex-col items-center justify-center text-center">
                    <div className="w-32 h-32 bg-pink-500 border-4 border-black rounded-full flex items-center justify-center text-black mb-8 rotate-12 group-hover:rotate-0 transition-transform">
@@ -141,12 +136,12 @@ export const DataLab3508 = () => {
                    </p>
                 </div>
                 <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-8">
-                   <div className="bg-white/5 border-2 border-violet-500/30 p-10 hover:bg-white/10 transition-colors flex flex-col justify-center">
+                   <div className="bg-white/5 border-2 border-violet-500/30 p-10 hover:bg-white/10 transition-colors flex flex-col justify-center rounded-3xl">
                       <Thermometer className="mb-6 text-violet-400" size={32} />
                       <h6 className="font-display text-2xl uppercase mb-3">Termómetro Actitudinal</h6>
                       <p className="text-sm font-serif italic text-zinc-400 leading-relaxed">Las creencias previas son más predictivas que la formación académica.</p>
                    </div>
-                   <div className="bg-white/5 border-2 border-violet-500/30 p-10 hover:bg-white/10 transition-colors flex flex-col justify-center rotate-1">
+                   <div className="bg-white/5 border-2 border-violet-500/30 p-10 hover:bg-white/10 transition-colors flex flex-col justify-center rotate-1 rounded-3xl">
                       <Globe2 className="mb-6 text-pink-400" size={32} />
                       <h6 className="font-display text-2xl uppercase mb-3">Contexto Regional</h6>
                       <p className="text-sm font-serif italic text-zinc-400 leading-relaxed">Tensión constante entre discurso inclusivo y práctica basada en la "gravedad" del TEA.</p>

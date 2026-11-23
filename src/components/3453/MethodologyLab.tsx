@@ -37,7 +37,7 @@ export default function MethodologyLab() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <BrutalCard color="bg-white" className="brutal-method-card border-[6px]">
-          <div className="bg-[#a855f7] p-4 inline-block border-4 border-black mb-6 shadow-[4px_4px_0_#000]">
+          <div className="bg-[#a855f7] p-4 inline-block border-4 border-black mb-6 shadow-[4px_4px_0_#000] rounded-3xl">
             <Users size={40} className="text-white" />
           </div>
           <h3 className="text-2xl font-black uppercase mb-4">Población</h3>
@@ -50,7 +50,7 @@ export default function MethodologyLab() {
         </BrutalCard>
 
         <BrutalCard color="bg-white" className="brutal-method-card border-[6px]">
-          <div className="bg-[#ff6b9d] p-4 inline-block border-4 border-black mb-6 shadow-[4px_4px_0_#000]">
+          <div className="bg-[#ff6b9d] p-4 inline-block border-4 border-black mb-6 shadow-[4px_4px_0_#000] rounded-3xl">
             <Target size={40} className="text-white" />
           </div>
           <h3 className="text-2xl font-black uppercase mb-4">Zonificación</h3>
@@ -63,7 +63,7 @@ export default function MethodologyLab() {
         </BrutalCard>
 
         <BrutalCard color="bg-black" className="brutal-method-card border-[6px] text-white">
-          <div className="bg-[#06b6d4] p-4 inline-block border-4 border-white mb-6 shadow-[4px_4px_0_#fff]">
+          <div className="bg-[#06b6d4] p-4 inline-block border-4 border-white mb-6 shadow-[4px_4px_0_#fff] rounded-3xl">
             <BookOpen size={40} className="text-white" />
           </div>
           <h3 className="text-2xl font-black uppercase mb-4 text-white">Recolección</h3>

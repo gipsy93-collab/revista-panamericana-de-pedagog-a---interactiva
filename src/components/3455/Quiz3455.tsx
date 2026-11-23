@@ -42,7 +42,7 @@ export default function Quiz3455() {
                 <div className="w-20 h-20 bg-black text-white shrink-0 flex items-center justify-center font-display text-5xl font-black rotate-3">
                    {qi + 1}
                 </div>
-                <p className="text-3xl md:text-4xl font-display uppercase font-black leading-none tracking-tighter pt-4">
+                <p className="text-3xl md:text-4xl font-display uppercase font-black leading-none tracking-normal pt-4">
                   {q.question}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function Quiz3455() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="mt-12 p-12 bg-zinc-50 border-4 border-black border-dashed relative overflow-hidden"
+                    className="mt-12 p-12 bg-zinc-50 border-4 border-black border-dashed relative overflow-hidden rounded-3xl"
                   >
                     <Heart className="absolute -top-6 -right-6 w-32 h-32 opacity-10 text-[#7C3AED] rotate-12" />
                     <span className="block font-mono text-[10px] uppercase font-black mb-6 text-[#7C3AED] tracking-[0.4em] italic font-bold">Feedback Académico //</span>
@@ -113,10 +113,10 @@ export default function Quiz3455() {
               <div className="bg-white border-[16px] border-black p-24 shadow-[50px_50px_0_0_#7C3AED] text-center w-full max-w-5xl relative rotate-1">
                 <Award className="absolute -top-20 -right-20 w-40 h-40 text-black bg-yellow-400 border-[6px] border-black p-6 rounded-full shadow-[12px_12px_0_0_#000] animate-bounce" />
                 <span className="block font-mono text-sm uppercase font-black mb-10 tracking-[0.8em] opacity-40">CALIFICACIÓN DE HUMANIDAD ACADÉMICA</span>
-                <div className="text-[18rem] font-display font-black leading-none mb-8 italic text-black drop-shadow-[20px_20px_0_#7C3AED] tracking-tighter">
+                <div className="text-[18rem] font-display font-black leading-none mb-8 italic text-black drop-shadow-[20px_20px_0_#7C3AED] tracking-normal">
                   {score}/{QUIZ_QUESTIONS.length}
                 </div>
-                <p className="text-5xl font-display uppercase font-black tracking-tighter italic text-[#7C3AED]">
+                <p className="text-5xl font-display uppercase font-black tracking-normal italic text-[#7C3AED]">
                   {score === QUIZ_QUESTIONS.length ? 'Identidad Docente Íntegra' : 'Perfil en Desarrollo Emocional'}
                 </p>
                 <div className="mt-16 flex justify-center gap-8">
@@ -128,7 +128,7 @@ export default function Quiz3455() {
               
               <button
                 onClick={reset}
-                className="flex items-center gap-8 bg-black text-white border-4 border-black px-16 py-8 font-display text-3xl uppercase font-black shadow-[12px_12px_0_0_#7C3AED] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#7C3AED] transition-all active:translate-x-0 cursor-pointer"
+                className="flex items-center gap-8 bg-black text-white border-4 border-black px-16 py-8 font-display text-3xl uppercase font-black shadow-[12px_12px_0_0_#7C3AED] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[18px_18px_0_0_#7C3AED] transition-all active:translate-x-0 cursor-pointer rounded-3xl"
               >
                 <RotateCcw size={40} /> Reiniciar Validación
               </button>

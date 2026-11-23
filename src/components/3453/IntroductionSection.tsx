@@ -78,11 +78,11 @@ export default function IntroductionSection() {
       {/* Problematic Framework - Arbex */}
       <BrutalCard color="bg-white" className="max-w-5xl mx-auto border-[6px]">
         <div className="flex flex-col md:flex-row items-center gap-6 mb-12 pb-8 border-b-4 border-black">
-          <div className="p-4 bg-[#06b6d4] border-4 border-black shadow-[4px_4px_0_#000]">
+          <div className="p-4 bg-[#06b6d4] border-4 border-black shadow-[4px_4px_0_#000] rounded-3xl">
             <BookOpen size={40} className="text-white" />
           </div>
           <div className="text-center md:text-left">
-            <h3 className="text-3xl font-black uppercase tracking-tighter">Factores de Riesgo vs. Protección</h3>
+            <h3 className="text-3xl font-black uppercase tracking-normal">Factores de Riesgo vs. Protección</h3>
             <p className="font-mono font-bold text-[#06b6d4] uppercase">Teoría de Carmen Arbex et al. (2002)</p>
           </div>
         </div>
@@ -91,12 +91,12 @@ export default function IntroductionSection() {
           {/* Risk Factors */}
           <div className="space-y-6">
             <h4 className="flex items-center gap-4 text-2xl font-black uppercase text-[#f87171]">
-              <div className="w-4 h-4 bg-[#f87171] border-2 border-black" />
+              <div className="w-4 h-4 bg-[#f87171] border-2 border-black rounded-xl" />
               Riesgo / Vulnerabilidad
             </h4>
             <div className="flex flex-wrap gap-3">
               {riskFactors.map((factor, i) => (
-                <div key={i} className="px-4 py-2 bg-white border-2 border-black font-pop font-bold text-sm uppercase shadow-[3px_3px_0_#f87171]">
+                <div key={i} className="px-4 py-2 bg-white border-2 border-black font-pop font-bold text-sm uppercase shadow-[3px_3px_0_#f87171] rounded-3xl">
                   {factor}
                 </div>
               ))}
@@ -109,12 +109,12 @@ export default function IntroductionSection() {
           {/* Protective Factors */}
           <div className="space-y-6">
             <h4 className="flex items-center gap-4 text-2xl font-black uppercase text-[#34d399]">
-              <div className="w-4 h-4 bg-[#34d399] border-2 border-black" />
+              <div className="w-4 h-4 bg-[#34d399] border-2 border-black rounded-xl" />
               Sostenes Reales
             </h4>
             <div className="flex flex-wrap gap-3">
               {protectiveFactors.map((factor, i) => (
-                <div key={i} className="px-4 py-2 bg-white border-2 border-black font-pop font-bold text-sm uppercase shadow-[3px_3px_0_#34d399]">
+                <div key={i} className="px-4 py-2 bg-white border-2 border-black font-pop font-bold text-sm uppercase shadow-[3px_3px_0_#34d399] rounded-3xl">
                   {factor}
                 </div>
               ))}

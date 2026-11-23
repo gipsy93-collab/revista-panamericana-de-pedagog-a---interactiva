@@ -51,7 +51,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose, onNext, onPrev }) => {
               {node.content.breadcrumb}
             </span>
           </div>
-          <h2 className="text-4xl font-black uppercase leading-none tracking-tighter">
+          <h2 className="text-4xl font-black uppercase leading-none tracking-normal">
             {node.content.title}
           </h2>
         </div>

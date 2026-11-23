@@ -19,23 +19,20 @@ export const DataLab3606 = () => {
 
   return (
     <div className="bg-[#f0fdf4] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-emerald-200/[0.2] leading-none pointer-events-none select-none">
-        INCLU_LAB
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-20">
           <div>
             <BrutalSticker text="INCLUSIVE_DATA_LAB // UNIVERSITY_PROTOCOL" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#059669] px-6 py-2" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               LAB <span className="text-emerald-700">INCLUSIÓN</span>
             </h2>
           </div>
           <div className="flex gap-4">
-             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg]">
+             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg] rounded-3xl">
                 <ShieldCheck size={40} className="text-emerald-700" />
              </div>
-             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#059669] rotate-[3deg]">
+             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#059669] rotate-[3deg] rounded-3xl">
                 <Heart size={40} className="text-white" />
              </div>
           </div>
@@ -58,7 +55,7 @@ export const DataLab3606 = () => {
                            <span>{g.label}</span>
                            <span className={g.value < 2 ? 'text-rose-600' : 'text-emerald-700'}>{g.value} / 4.0</span>
                          </div>
-                         <div className="h-6 w-full bg-zinc-100 border-2 border-black shadow-[4px_4px_0_0_#000]">
+                         <div className="h-6 w-full bg-zinc-100 border-2 border-black shadow-[4px_4px_0_0_#000] rounded-3xl">
                             <motion.div 
                               initial={{ width: 0 }}
                               whileInView={{ width: `${(g.value / g.max) * 100}%` }}

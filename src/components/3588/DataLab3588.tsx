@@ -20,23 +20,20 @@ export const DataLab3588 = () => {
 
   return (
     <div className="bg-[#eef2ff] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-black/[0.03] leading-none pointer-events-none select-none">
-        PSYCH_METRIC
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-20">
           <div>
             <BrutalSticker text="PSYCHOMETRIC_LAB // SCALE_VALIDATION // YUCATÁN" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] px-6 py-2" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               LAB <span className="text-indigo-600">PSICOMETRÍA</span>
             </h2>
           </div>
           <div className="flex gap-4">
-             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg]">
+             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg] rounded-3xl">
                 <Fingerprint size={40} className="text-indigo-600" />
              </div>
-             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#4f46e5] rotate-[3deg]">
+             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#4f46e5] rotate-[3deg] rounded-3xl">
                 <Gauge size={40} className="text-white" />
              </div>
           </div>
@@ -47,7 +44,7 @@ export const DataLab3588 = () => {
           <div className="lg:col-span-12">
             <BrutalCard title="CONSISTENCIA INTERNA: COEFICIENTES DE FIABILIDAD" color="bg-white" className="!border-[8px] shadow-[20px_20px_0_0_#000]">
               <div className="grid md:grid-cols-12 gap-12 p-8 items-center">
-                 <div className="md:col-span-4 bg-zinc-950 text-white p-12 border-8 border-indigo-600 shadow-[15px_15px_0_0_#000] rotate-2">
+                 <div className="md:col-span-4 bg-zinc-950 text-white p-12 border-8 border-indigo-600 shadow-[15px_15px_0_0_#000] rotate-2 rounded-3xl">
                     <span className="font-mono text-[10px] font-black uppercase opacity-40 mb-4 block">OMEGA DE MCDONALD</span>
                     <div className="text-8xl font-display font-black text-indigo-400 italic leading-none">.978</div>
                     <p className="mt-8 font-mono text-[11px] font-black uppercase border-t border-white/10 pt-4">Confiabilidad Global Casi Perfecta</p>
@@ -64,7 +61,7 @@ export const DataLab3588 = () => {
                        <tbody className="text-sm font-black uppercase">
                           {psychometrics.map((p, i) => (
                             <tr key={i} className="border-b-2 border-black/5 hover:bg-white transition-colors">
-                               <td className="p-4 font-display text-xl italic tracking-tighter">{p.label}</td>
+                               <td className="p-4 font-display text-xl italic tracking-normal">{p.label}</td>
                                <td className="p-4 text-indigo-600">{p.alpha}</td>
                                <td className="p-4">{p.r}</td>
                             </tr>
@@ -82,11 +79,11 @@ export const DataLab3588 = () => {
                 <div className="grid md:grid-cols-2 gap-12 py-8">
                    <div className="space-y-8">
                       {validity.map((v, i) => (
-                        <div key={i} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] relative group cursor-help">
+                        <div key={i} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] relative group cursor-help rounded-3xl">
                            <div className={`absolute top-0 right-0 px-3 py-1 font-mono text-[8px] font-black uppercase shadow-sm ${v.type === 'Inversa' ? 'bg-rose-500 text-white' : 'bg-emerald-500 text-white'}`}>
                               {v.type}
                            </div>
-                           <h5 className="font-display text-lg font-black uppercase tracking-tighter mb-2">{v.label}</h5>
+                           <h5 className="font-display text-lg font-black uppercase tracking-normal mb-2">{v.label}</h5>
                            <div className="flex items-center gap-4">
                               <div className="text-4xl font-display font-black text-indigo-600 italic">r = {v.r}</div>
                               <Search size={20} className="opacity-10 group-hover:opacity-100 transition-opacity" />
@@ -94,7 +91,7 @@ export const DataLab3588 = () => {
                         </div>
                       ))}
                    </div>
-                   <div className="bg-indigo-600 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] rotate-[-2deg] flex flex-col justify-center">
+                   <div className="bg-indigo-600 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] rotate-[-2deg] flex flex-col justify-center rounded-3xl">
                       <Target size={60} className="text-white mb-6" />
                       <h4 className="font-display text-3xl font-black uppercase italic mb-6 leading-none">Validación Convergente</h4>
                       <p className="font-serif italic text-xl leading-relaxed font-bold border-l-8 border-white pl-8 opacity-90">
@@ -107,7 +104,7 @@ export const DataLab3588 = () => {
 
           {/* III. PERFIL DE LA MUESTRA */}
           <div className="lg:col-span-4 space-y-8">
-             <div className="bg-black text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rotate-1">
+             <div className="bg-black text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rotate-1 rounded-3xl">
                 <Users size={48} className="text-indigo-400 mb-6" />
                 <h4 className="font-display text-2xl font-black uppercase mb-2 leading-none italic">Sample N=71</h4>
                 <div className="space-y-4 mt-8">
@@ -115,20 +112,20 @@ export const DataLab3588 = () => {
                       <span>Mujeres</span>
                       <span className="text-indigo-400">87%</span>
                    </div>
-                   <div className="h-4 w-full bg-zinc-800 border-2 border-white/20">
+                   <div className="h-4 w-full bg-zinc-800 border-2 border-white/20 rounded-xl">
                       <div className="h-full bg-indigo-500 w-[87%]" />
                    </div>
                    <div className="flex justify-between items-center font-mono text-xs font-black uppercase pt-4 opacity-40">
                       <span>Hombres</span>
                       <span>13%</span>
                    </div>
-                   <div className="h-4 w-full bg-zinc-800 border-2 border-white/20">
+                   <div className="h-4 w-full bg-zinc-800 border-2 border-white/20 rounded-xl">
                       <div className="h-full bg-zinc-600 w-[13%]" />
                    </div>
                 </div>
              </div>
 
-             <div className="bg-white border-8 border-black p-10 shadow-[12px_12px_0_0_#000] -rotate-1 group cursor-pointer relative overflow-hidden">
+             <div className="bg-white border-8 border-black p-10 shadow-[12px_12px_0_0_#000] -rotate-1 group cursor-pointer relative overflow-hidden rounded-3xl">
                 <div className="absolute inset-0 bg-indigo-50 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 <div className="relative z-10">
                    <ClipboardCheck size={40} className="text-indigo-600 mb-4" />

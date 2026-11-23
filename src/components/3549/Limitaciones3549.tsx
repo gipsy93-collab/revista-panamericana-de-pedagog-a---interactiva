@@ -50,7 +50,7 @@ export default function Limitaciones3549() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block bg-[#e81e61] text-white px-6 py-2 font-pop text-xl uppercase mb-6 border-4 border-black shadow-[4px_4px_0_#000]">
+          <span className="inline-block bg-[#e81e61] text-white px-6 py-2 font-pop text-xl uppercase mb-6 border-4 border-black shadow-[4px_4px_0_#000] rounded-3xl">
             Consideraciones
           </span>
           <h2 className="text-6xl md:text-8xl font-pop uppercase text-black leading-none mb-6">
@@ -71,12 +71,12 @@ export default function Limitaciones3549() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border-4 border-black p-6 shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#000] hover:translate-y-[-4px] transition-all"
+                className="bg-white border-4 border-black p-6 shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#000] hover:translate-y-[-4px] transition-all rounded-3xl"
                 style={{ borderTopColor: item.color, borderTopWidth: '8px' }}
               >
                 <div className="flex items-center justify-between mb-4">
                   <div
-                    className="w-12 h-12 flex items-center justify-center border-2 border-black"
+                    className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-xl"
                     style={{ backgroundColor: item.color }}
                   >
                     <Icon size={24} className="text-white" />

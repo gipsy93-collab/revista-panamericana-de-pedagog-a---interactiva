@@ -93,7 +93,7 @@ export const Hero = ({ onExplore }: { onExplore: () => void }) => {
           initial={{ rotate: -5, opacity: 0, y: 50 }}
           animate={{ rotate: -5, opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8, type: 'spring' }}
-          className="bg-[#fccb06] text-black font-mono font-black text-[10px] px-6 py-2 border-2 border-black shadow-[4px_4px_0_#000] rotate-[-5deg] mb-12 sm:mb-24 md:absolute md:top-10 md:left-10 z-20 hover:scale-110 transition-transform cursor-pointer"
+          className="bg-[#fccb06] text-black font-mono font-black text-[10px] px-6 py-2 border-2 border-black shadow-[4px_4px_0_#000] rotate-[-5deg] mb-12 sm:mb-24 md:absolute md:top-10 md:left-10 z-20 hover:scale-110 transition-transform cursor-pointer rounded-3xl"
         >
           {t.hero.tag.toUpperCase()}
         </motion.div>

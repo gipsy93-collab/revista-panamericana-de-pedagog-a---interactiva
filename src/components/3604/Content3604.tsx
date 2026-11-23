@@ -65,7 +65,7 @@ export default function Content3604() {
           <BrutalSticker text="4. RESULTADOS" color="bg-rose-600" className="text-white mb-16 !rotate-0 shadow-[6px_6px_0_0_#000]" />
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 space-y-12">
-               <div className="bg-zinc-50 border-8 border-black p-12 shadow-[20px_20px_0_0_#be123c] rotate-1">
+               <div className="bg-zinc-50 border-8 border-black p-12 shadow-[20px_20px_0_0_#be123c] rotate-1 rounded-3xl">
                   <h4 className="font-display text-4xl font-black uppercase italic mb-8 border-b-4 border-rose-600 pb-2 inline-block">Dimensiones del Aprendizaje</h4>
                   <div className="space-y-10">
                     <div className="border-l-8 border-rose-600 pl-8">
@@ -90,14 +90,14 @@ export default function Content3604() {
                </div>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-8">
-               <div className="bg-black text-white p-10 border-4 border-rose-600 shadow-[10px_10px_0_0_#ffffff] rotate-[-2deg]">
+               <div className="bg-black text-white p-10 border-4 border-rose-600 shadow-[10px_10px_0_0_#ffffff] rotate-[-2deg] rounded-3xl">
                   <Film className="text-rose-500 mb-6" size={48} />
                   <h4 className="font-display text-2xl font-black uppercase italic mb-4 leading-tight">Alfabetización Audiovisual</h4>
                   <p className="font-mono text-[10px] uppercase font-black opacity-60 leading-tight italic">
                     Incluyó la lectura guiada de "Iniciación al lenguaje del cine" (1976) para introducir conceptos como plano, montaje, ritmo narrativo y encuadre.
                   </p>
                </div>
-               <div className="bg-rose-100 border-8 border-black p-10 shadow-[10px_10px_0_0_#000] rotate-1 flex-1 flex flex-col justify-center text-center">
+               <div className="bg-rose-100 border-8 border-black p-10 shadow-[10px_10px_0_0_#000] rotate-1 flex-1 flex flex-col justify-center text-center rounded-3xl">
                   <Play className="mx-auto mb-6 text-rose-700" size={60} />
                   <p className="text-4xl font-display font-black uppercase italic leading-none text-rose-800">
                     "Los estudiantes ya no miraban las películas: <span className="text-black">las leían."</span>
@@ -115,7 +115,7 @@ export default function Content3604() {
           <BrutalSticker text="5. DISCUSIÓN" color="bg-rose-600" className="text-white mb-20 !rotate-0 shadow-[8px_8px_0_0_#fff]" />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-             <div className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#be123c] group hover:-rotate-2 transition-transform h-full">
+             <div className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#be123c] group hover:-rotate-2 transition-transform h-full rounded-3xl">
                 <BrainCircuit className="text-rose-700 mb-8" size={40} />
                 <h4 className="font-display text-3xl font-black uppercase italic mb-6 border-b-4 border-black pb-2 inline-block">5.1 Aprendizaje Significativo</h4>
                 <p className="font-serif text-xl italic text-black/80 leading-relaxed mb-6 font-medium">
@@ -124,7 +124,7 @@ export default function Content3604() {
                 <div className="font-mono text-[9px] font-black uppercase opacity-40">Ref: Ausubel et al. (2000)</div>
              </div>
 
-             <div className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-1 group hover:rotate-2 transition-transform h-full">
+             <div className="bg-white border-8 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-1 group hover:rotate-2 transition-transform h-full rounded-3xl">
                 <Users className="text-rose-700 mb-8" size={40} />
                 <h4 className="font-display text-3xl font-black uppercase italic mb-6 border-b-4 border-black pb-2 inline-block">5.2 Pedagogía Crítica</h4>
                 <p className="font-serif text-xl italic text-black/80 leading-relaxed mb-6 font-medium">
@@ -133,7 +133,7 @@ export default function Content3604() {
                 <div className="font-mono text-[9px] font-black uppercase opacity-40">Ref: Freire (1970/2005)</div>
              </div>
 
-             <div className="bg-zinc-950 text-white border-8 border-rose-600 p-12 shadow-[15px_15px_0_0_#ffffff] rotate-[-1deg] group hover:rotate-1 transition-transform h-full">
+             <div className="bg-zinc-950 text-white border-8 border-rose-600 p-12 shadow-[15px_15px_0_0_#ffffff] rotate-[-1deg] group hover:rotate-1 transition-transform h-full rounded-3xl">
                 <Eye className="text-rose-500 mb-8" size={40} />
                 <h4 className="font-display text-3xl font-black uppercase italic mb-6 border-b-4 border-rose-700 pb-2 inline-block">5.3 Alfabetización Audiovisual</h4>
                 <p className="font-serif text-xl italic text-rose-50 leading-relaxed mb-6 font-light">
@@ -169,7 +169,7 @@ export default function Content3604() {
               "La investigación-acción resultó metodológicamente pertinente para transformar la práctica docente.",
               "Necesidad institucional de fortalecer la formación docente en alfabetización audiovisual."
             ].map((text, i) => (
-              <div key={i} className="bg-black border-4 border-rose-500 p-10 shadow-[10px_10px_0_0_#be123c] rotate-1 group hover:-translate-y-4 transition-transform flex flex-col text-left">
+              <div key={i} className="bg-black border-4 border-rose-500 p-10 shadow-[10px_10px_0_0_#be123c] rotate-1 group hover:-translate-y-4 transition-transform flex flex-col text-left rounded-3xl">
                 <h4 className="font-display text-2xl font-black uppercase italic mb-6 text-rose-500 border-b border-rose-900 pb-2">Conclusión 0{i+1}</h4>
                 <p className="font-serif text-xl italic text-white/90 leading-tight mb-6">"{text}"</p>
                 <div className="mt-auto flex justify-between items-center font-mono text-[9px] font-black uppercase opacity-30 italic">

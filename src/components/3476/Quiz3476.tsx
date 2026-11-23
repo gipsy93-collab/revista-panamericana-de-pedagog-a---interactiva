@@ -53,7 +53,7 @@ const Quiz3476 = () => {
           </div>
           <button 
             onClick={resetQuiz}
-            className="group flex items-center gap-4 mx-auto bg-white text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#10b981] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[14px_14px_0_0_#10b981] transition-all"
+            className="group flex items-center gap-4 mx-auto bg-white text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#10b981] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[14px_14px_0_0_#10b981] transition-all rounded-3xl"
           >
             <RotateCcw className="group-hover:rotate-180 transition-transform duration-700" size={28} />
             <span className="font-display uppercase text-2xl font-black">Reevaluar Corpus</span>
@@ -72,7 +72,7 @@ const Quiz3476 = () => {
             <BrutalSticker text="DIAGNÓSTICO SISTEMÁTICO" color="bg-emerald-600" className="text-white mb-4" />
             <h2 className="text-6xl font-display uppercase leading-none">Validación de <span className="text-emerald-700">Evidencia</span></h2>
          </div>
-         <div className="bg-black text-white px-6 py-2 border-4 border-black font-mono text-3xl font-black italic">
+         <div className="bg-black text-white px-6 py-2 border-4 border-black font-mono text-3xl font-black italic rounded-2xl">
             {currentQuestion + 1} // {QUIZ_QUESTIONS.length}
          </div>
       </div>
@@ -113,7 +113,7 @@ const Quiz3476 = () => {
               animate={{ opacity: 1, y: 0 }}
               className="mt-12 pt-10 border-t-8 border-emerald-50"
             >
-              <div className="bg-emerald-50 p-8 border-4 border-emerald-500/30 flex gap-6 items-start relative overflow-hidden">
+              <div className="bg-emerald-50 p-8 border-4 border-emerald-500/30 flex gap-6 items-start relative overflow-hidden rounded-3xl">
                  <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 -rotate-12 translate-x-12 -translate-y-8 rounded-full" />
                  <div className="bg-black w-14 h-14 shrink-0 flex items-center justify-center text-emerald-400 transform rotate-3">
                     <span className="font-mono text-xs font-black">LOG</span>

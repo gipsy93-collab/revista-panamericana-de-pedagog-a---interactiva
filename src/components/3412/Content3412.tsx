@@ -87,7 +87,7 @@ export default function Content3412() {
               </div>
               <div>
                 <h3 className="font-display text-4xl uppercase font-black italic mb-6">3.3 Instrumentos</h3>
-                <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000]">
+                <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rounded-3xl">
                   <h4 className="font-display text-xl uppercase font-black mb-4 text-rose-500">Inventario piloto de habilidades blandas</h4>
                   <ul className="grid grid-cols-2 gap-4 text-[10px] font-mono uppercase font-black text-white/60">
                     <li className="p-3 border border-white/10 bg-black/40">32 ítems totales</li>
@@ -99,7 +99,7 @@ export default function Content3412() {
               </div>
             </div>
             
-            <div className="bg-white p-12 border-8 border-black shadow-[25px_25px_0_0_#000] rotate-1">
+            <div className="bg-white p-12 border-8 border-black shadow-[25px_25px_0_0_#000] rotate-1 rounded-3xl">
                <h3 className="font-display text-4xl uppercase font-black mb-8 border-b-4 border-black pb-4 inline-block italic">3.2 Participantes / Muestra</h3>
                <div className="space-y-8">
                   <div className="flex items-center gap-6">
@@ -107,10 +107,10 @@ export default function Content3412() {
                     <p className="text-xl font-mono uppercase font-black leading-none opacity-60 italic text-black">Estudiantes <br/> 13-20 años</p>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase">52% Mujeres / 48% Varones</div>
-                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase">15 Escuelas AMBA</div>
-                     <div className="p-4 bg-rose-50 border-2 border-black font-mono text-[9px] font-black uppercase">32% Vulnerabilidad Académica</div>
-                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase">Muestreo por conveniencia</div>
+                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase rounded-2xl">52% Mujeres / 48% Varones</div>
+                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase rounded-2xl">15 Escuelas AMBA</div>
+                     <div className="p-4 bg-rose-50 border-2 border-black font-mono text-[9px] font-black uppercase rounded-2xl">32% Vulnerabilidad Académica</div>
+                     <div className="p-4 bg-zinc-100 border-2 border-black font-mono text-[9px] font-black uppercase rounded-2xl">Muestreo por conveniencia</div>
                   </div>
                </div>
             </div>
@@ -175,8 +175,8 @@ export default function Content3412() {
         <div className="max-w-6xl mx-auto text-center pb-48 pt-24">
            <div className="inline-block relative mb-24">
               <div className="absolute inset-0 bg-rose-600 translate-x-3 translate-y-3" />
-              <div className="relative bg-black text-white p-20 md:p-32 border-8 border-black">
-                 <h2 className="text-7xl md:text-[10rem] font-display uppercase font-black leading-[0.8] tracking-tighter italic">
+              <div className="relative bg-black text-white p-20 md:p-32 border-8 border-black rounded-xl">
+                 <h2 className="text-7xl md:text-[10rem] font-display uppercase font-black leading-[0.95] tracking-normal italic">
                    Siglo <br/> <span className="text-rose-500">XXI_</span>
                  </h2>
                  <div className="w-40 h-8 bg-rose-600 mx-auto mt-16 mb-16" />

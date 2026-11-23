@@ -158,7 +158,7 @@ export default function MethodologyLab() {
             <div className="space-y-6">
               {faculties.map((f, i) => (
                 <div key={f.name} className="space-y-2">
-                  <div className="flex justify-between text-xs font-bold uppercase tracking-tighter text-white">
+                  <div className="flex justify-between text-xs font-bold uppercase tracking-normal text-white">
                     <span className="text-white/60">{f.name}</span>
                     <span className="text-[#00d2ff]">{f.val}%</span>
                   </div>

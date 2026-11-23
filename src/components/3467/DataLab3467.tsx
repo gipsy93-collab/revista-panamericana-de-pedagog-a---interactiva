@@ -18,24 +18,21 @@ export const DataLab3467 = () => {
 
   return (
     <div className="bg-[#EEF2FF] py-32 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-indigo-600/[0.03] leading-none pointer-events-none select-none">
-        LOGIT_MODEL
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-24">
           <div>
             <BrutalSticker text="PREDICTIVE_ANALYSIS // V.41 // 2026" color="bg-indigo-600" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#000] px-6 py-2 font-black" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.85] text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-[0.95] text-black tracking-normal">
               DATA <span className="text-red-600">LAB</span><br/>
               <span className="text-indigo-900 border-b-8 border-indigo-600">CIBERACOSO</span>
             </h2>
           </div>
           <div className="flex gap-6">
-             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#ef4444] rotate-[-3deg]">
+             <div className="bg-white border-4 border-black p-5 shadow-[8px_8px_0_0_#ef4444] rotate-[-3deg] rounded-3xl">
                 <ShieldAlert size={48} className="text-red-600" />
              </div>
-             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#4f46e5] rotate-[2deg]">
+             <div className="bg-black border-4 border-black p-5 shadow-[8px_8px_0_0_#4f46e5] rotate-[2deg] rounded-3xl">
                 <Activity size={48} className="text-white" />
              </div>
           </div>
@@ -48,7 +45,7 @@ export const DataLab3467 = () => {
                <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 font-mono text-[10px] font-black">CRITICAL_BEHAVIOR</div>
                <span className="font-mono text-[10px] font-black uppercase opacity-40 mb-6 tracking-[0.4em]">FRECUENCIA_UNIVERSITARIA</span>
                <div className="flex items-baseline justify-center gap-2 mb-8">
-                  <p className="text-9xl md:text-[13rem] font-display font-black text-indigo-900 italic tracking-tighter leading-none">23</p>
+                  <p className="text-9xl md:text-[13rem] font-display font-black text-indigo-900 italic tracking-normal leading-none">23</p>
                   <p className="text-6xl font-display font-black text-red-600">%</p>
                </div>
                <p className="text-sm font-mono font-black uppercase border-t-4 border-black pt-8 leading-relaxed">
@@ -65,7 +62,7 @@ export const DataLab3467 = () => {
                      "La probabilidad de ciberacoso disminuye drásticamente al controlar variables específicas de interacción."
                    </p>
                    <div className="grid md:grid-cols-2 gap-10">
-                      <div className="bg-white/5 border-2 border-indigo-500/30 p-8 hover:bg-white/10 transition-colors cursor-help group">
+                      <div className="bg-white/5 border-2 border-indigo-500/30 p-8 hover:bg-white/10 transition-colors cursor-help group rounded-3xl">
                          <div className="flex justify-between items-center mb-6">
                             <TrendingDown size={32} className="text-red-500 group-hover:scale-125 transition-transform" />
                             <span className="font-display text-5xl font-black text-white">-21%</span>
@@ -73,7 +70,7 @@ export const DataLab3467 = () => {
                          <h5 className="font-display text-xl uppercase italic mb-2">Control de Provocación</h5>
                          <p className="text-[11px] font-mono font-black text-indigo-300 uppercase leading-snug">Disminución al doble de la probabilidad de perpetración.</p>
                       </div>
-                      <div className="bg-white/5 border-2 border-indigo-500/30 p-8 hover:bg-white/10 transition-colors cursor-help group">
+                      <div className="bg-white/5 border-2 border-indigo-500/30 p-8 hover:bg-white/10 transition-colors cursor-help group rounded-3xl">
                          <div className="flex justify-between items-center mb-6">
                             <TrendingDown size={32} className="text-indigo-400 group-hover:scale-125 transition-transform" />
                             <span className="font-display text-5xl font-black text-white">-11%</span>
@@ -88,7 +85,7 @@ export const DataLab3467 = () => {
              {/* III. HÁBITOS DIGITALES */}
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {habits.map((h, i) => (
-                  <div key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-1 flex flex-col items-center group hover:-rotate-1 transition-transform">
+                  <div key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-1 flex flex-col items-center group hover:-rotate-1 transition-transform rounded-3xl">
                      <h.icon size={32} className="mb-4 text-indigo-600 group-hover:scale-110 transition-transform" />
                      <div className="text-4xl font-display font-black text-black leading-none mb-2">
                        {h.value}{h.suffix || '%'}
@@ -113,7 +110,7 @@ export const DataLab3467 = () => {
                            <span className="font-display text-xl uppercase font-black">{s.label}</span>
                            <span className="font-mono text-2xl font-black text-red-600 underline">{s.value}%</span>
                         </div>
-                        <div className="h-6 w-full bg-zinc-100 border-2 border-black overflow-hidden shadow-[inner_4px_4px_0_rgba(0,0,0,0.05)]">
+                        <div className="h-6 w-full bg-zinc-100 border-2 border-black overflow-hidden shadow-[inner_4px_4px_0_rgba(0,0,0,0.05)] rounded-3xl">
                            <motion.div 
                              initial={{ width: 0 }}
                              whileInView={{ width: `${s.value}%` }} 

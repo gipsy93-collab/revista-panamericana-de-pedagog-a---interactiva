@@ -53,7 +53,7 @@ export const Quiz3606 = ({ onComplete }: { onComplete: (result: QuizResult) => v
             Puntuación de Equidad: {score} / {QUIZ_QUESTIONS.length}
           </p>
           
-          <div className="inline-block p-4 border-4 border-white bg-emerald-600 text-white shadow-[6px_6px_0_#000] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg]">
+          <div className="inline-block p-4 border-4 border-white bg-emerald-600 text-white shadow-[6px_6px_0_#000] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg] rounded-3xl">
             +{score * 100} XP INCLUSIÓN
           </div>
 
@@ -72,7 +72,7 @@ export const Quiz3606 = ({ onComplete }: { onComplete: (result: QuizResult) => v
                 setScore(0);
                 setIsFinished(false);
               }}
-              className="px-8 py-4 bg-white text-black font-display text-2xl uppercase hover:scale-105 transition-transform shadow-[6px_6px_0_#10b981] flex items-center gap-3 mx-auto border-4 border-black font-black"
+              className="px-8 py-4 bg-white text-black font-display text-2xl uppercase hover:scale-105 transition-transform shadow-[6px_6px_0_#10b981] flex items-center gap-3 mx-auto border-4 border-black font-black rounded-3xl"
             >
               <RefreshCcw /> Reiniciar Evaluación
             </button>
@@ -121,7 +121,7 @@ export const Quiz3606 = ({ onComplete }: { onComplete: (result: QuizResult) => v
                 className={`p-8 border-4 border-black text-left font-display uppercase font-black italic text-xl transition-all shadow-[8px_8px_0_#000] relative overflow-hidden ${bgConfig}`}
               >
                 <div className="flex justify-between items-center gap-4">
-                  <span className="flex-1 tracking-tighter leading-[0.85]">{option}</span>
+                  <span className="flex-1 tracking-normal leading-[0.95]">{option}</span>
                   {showStatus && (
                     <span className="shrink-0 bg-white rounded-full p-1 text-black">
                       {isCorrect ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
@@ -141,7 +141,7 @@ export const Quiz3606 = ({ onComplete }: { onComplete: (result: QuizResult) => v
               exit={{ height: 0, opacity: 0, marginTop: 0 }}
               className="overflow-hidden"
             >
-              <div className="p-10 border-8 border-black bg-emerald-50 shadow-[12px_12px_0_#000] rotate-[-1deg]">
+              <div className="p-10 border-8 border-black bg-emerald-50 shadow-[12px_12px_0_#000] rotate-[-1deg] rounded-3xl">
                 <h4 className="font-display text-3xl uppercase mb-4 flex items-center gap-3 italic text-emerald-600">
                   <ShieldAlert size={32} /> Nota de Inclusión
                 </h4>

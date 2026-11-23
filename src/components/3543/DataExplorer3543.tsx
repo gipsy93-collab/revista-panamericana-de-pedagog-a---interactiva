@@ -24,7 +24,7 @@ export default function DataExplorer3453() {
       <div className="grid lg:grid-cols-2 gap-16">
         {/* PANEL DE CONTROL */}
         <div className="space-y-12">
-          <div className="bg-zinc-100 p-6 border-4 border-black">
+          <div className="bg-zinc-100 p-6 border-4 border-black rounded-2xl">
             <h4 className="font-black uppercase mb-6 text-2xl italic flex items-center gap-3">
               <span className="bg-black text-white w-10 h-10 flex items-center justify-center not-italic rounded-full">1</span> 
               Especialidad Docente
@@ -42,11 +42,11 @@ export default function DataExplorer3453() {
             </div>
           </div>
 
-          <div className="bg-zinc-100 p-6 border-4 border-black">
+          <div className="bg-zinc-100 p-6 border-4 border-black rounded-2xl">
             <h4 className="font-black uppercase mb-4 text-xl italic flex items-center gap-3">
                Hallazgo por Área
             </h4>
-            <div className="bg-white p-4 border-2 border-black flex gap-4 items-start shadow-[6px_6px_0_0_#000]">
+            <div className="bg-white p-4 border-2 border-black flex gap-4 items-start shadow-[6px_6px_0_0_#000] rounded-3xl">
               <AlertTriangle className="text-red-600 mt-1 flex-shrink-0" />
               <p className="font-bold text-sm leading-tight uppercase">"{stats.hallazgo}"</p>
             </div>
@@ -54,7 +54,7 @@ export default function DataExplorer3453() {
         </div>
 
         {/* PANEL DE RESULTADOS */}
-        <div className="bg-zinc-50 border-8 border-black p-10 shadow-[20px_20px_0_0_#4f46e5]">
+        <div className="bg-zinc-50 border-8 border-black p-10 shadow-[20px_20px_0_0_#4f46e5] rounded-3xl">
            <div className="flex justify-between items-start mb-12 border-b-8 border-black pb-6">
               <div className="text-left">
                 <p className="font-mono text-xs uppercase font-black opacity-40 italic">Lab_Escritura // REF.3543</p>
@@ -72,7 +72,7 @@ export default function DataExplorer3453() {
                    <span>Importancia Teórica</span>
                    <span className="text-black">{stats.importancia}%</span>
                 </div>
-                <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000]">
+                <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000] rounded-3xl">
                    <div className="h-full bg-black transition-all duration-700" style={{ width: `${stats.importancia}%` }}></div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function DataExplorer3453() {
                    <span>Práctica Real (Asignación)</span>
                    <span className="text-indigo-600">{stats.practica}%</span>
                 </div>
-                <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000]">
+                <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000] rounded-3xl">
                    <div className="h-full bg-indigo-600 transition-all duration-700" style={{ width: `${stats.practica}%` }}></div>
                 </div>
               </div>
@@ -99,15 +99,15 @@ export default function DataExplorer3453() {
       </div>
 
        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-indigo-600 text-white p-4 border-4 border-black shadow-[6px_6px_0_0_#000] flex flex-col justify-center items-center">
+          <div className="bg-indigo-600 text-white p-4 border-4 border-black shadow-[6px_6px_0_0_#000] flex flex-col justify-center items-center rounded-3xl">
              <span className="text-4xl font-black">93%</span>
              <span className="font-mono text-[9px] uppercase font-bold">Valoración Global</span>
           </div>
-          <div className="bg-white text-black p-4 border-4 border-black shadow-[6px_6px_0_0_#999] flex flex-col justify-center items-center">
+          <div className="bg-white text-black p-4 border-4 border-black shadow-[6px_6px_0_0_#999] flex flex-col justify-center items-center rounded-3xl">
              <span className="text-4xl font-black text-red-600">14%</span>
              <span className="font-mono text-[9px] uppercase font-bold">Respaldo Real</span>
           </div>
-          <div className="bg-black text-white p-4 border-4 border-black shadow-[6px_6px_0_0_#4f46e5] flex flex-col justify-center items-center">
+          <div className="bg-black text-white p-4 border-4 border-black shadow-[6px_6px_0_0_#4f46e5] flex flex-col justify-center items-center rounded-3xl">
              <span className="text-4xl font-black italic">N=14</span>
              <span className="font-mono text-[9px] uppercase font-bold">Cuerpo Docente</span>
           </div>

@@ -1,116 +1,108 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { ARTICLE_META } from './constants';
-import { BrutalSticker, PremiumTitle, CinematicCard, ArticleFicha } from '../BrutalistLib';
-import { Brain, Users, Clock, Database } from 'lucide-react';
+import { BrutalSticker, CinematicCard, FallingWords, Tilt3DCard, RapidCounter } from '../BrutalistLib';
+import { Brain, Users, Database, Sparkles, TrendingUp } from 'lucide-react';
 
 export default function Hero3412() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-32 bg-[#F0F0F0] overflow-hidden border-b-[20px] border-black">
-      {/* Background Texture */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-      
-      {/* Sidebar Quick Stats - Premium Feature */}
-      <div className="hidden lg:flex flex-col gap-6 absolute left-10 top-1/2 -translate-y-1/2 z-30">
-        <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0_0_#4F46E5] flex flex-col items-center">
-          <Users size={32} className="mb-2" />
-          <span className="font-display font-black text-2xl">N={ARTICLE_META.n}</span>
-          <span className="font-mono text-[8px] uppercase font-black">Muestra Total</span>
+    <section className="relative bg-[#F0F0F0] px-6 md:px-12 lg:px-24 pt-10 pb-20 md:pt-14 md:pb-24 overflow-hidden border-b-[16px] border-black">
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="lg:col-span-7 flex flex-col gap-6 text-left">
+          <div className="flex flex-wrap items-center gap-3">
+            <BrutalSticker
+              text={`ESTUDIO EMPÍRICO // ${ARTICLE_META.carouselTitle}`}
+              color="bg-[#4F46E5]"
+              className="text-white !rotate-0 shadow-[4px_4px_0_0_#000] rounded-2xl"
+            />
+            <span className="font-mono text-xs font-bold uppercase bg-white border-2 border-black px-3 py-1 rounded-xl flex items-center gap-2">
+              <Brain size={14} className="text-[#4F46E5]" /> AMBA, Argentina
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="font-mono text-xs md:text-sm uppercase tracking-[0.28em] text-[#4F46E5] font-bold flex items-center gap-2"
+            >
+              <Sparkles size={16} className="text-[#4F46E5]" /> // INVESTIGACIÓN PSICOPEDAGÓGICA
+            </motion.span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display uppercase font-black leading-[0.94] tracking-normal text-black">
+              <FallingWords text={ARTICLE_META.title} accentColor="#4F46E5" highlightEvery={3} />
+            </h1>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-lg md:text-xl font-sans font-medium text-black/80 leading-relaxed max-w-2xl border-l-4 border-[#4F46E5] pl-5"
+          >
+            {ARTICLE_META.abstract}
+          </motion.p>
         </div>
-        <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0_0_#4F46E5] flex flex-col items-center">
-          <Clock size={32} className="mb-2" />
-          <span className="font-display font-black text-lg text-center leading-none">2025</span>
-          <span className="font-mono text-[8px] uppercase font-black">Ciclo Lectivo</span>
-        </div>
-        <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0_0_#4F46E5] flex flex-col items-center">
-          <Database size={32} className="mb-2" />
-          <span className="font-display font-black text-2xl">α=.93</span>
-          <span className="font-mono text-[8px] uppercase font-black">Precision Score</span>
+
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start w-full lg:pt-2">
+          <Tilt3DCard className="w-full max-w-md lg:max-w-[460px]">
+            <div className="bg-white border-4 border-black p-7 md:p-8 shadow-[16px_16px_0_0_#4F46E5] rounded-3xl flex flex-col gap-5">
+              <div className="flex items-center justify-between border-b-2 border-black/10 pb-3">
+                <span className="font-mono text-xs uppercase font-black text-[#4F46E5]">
+                  IMPACTO SOCIOECONÓMICO
+                </span>
+                <span className="font-mono text-[10px] uppercase font-bold bg-[#4F46E5] text-white px-2.5 py-0.5 rounded-lg">
+                  α = .93
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-[#4F46E5] p-5 border-2 border-black rounded-2xl text-white">
+                  <span className="block text-[10px] font-mono uppercase mb-1 opacity-85">Muestra Total</span>
+                  <div className="text-3xl md:text-4xl font-display font-black">
+                    N=<RapidCounter target={Number(ARTICLE_META.n) || 1845} />
+                  </div>
+                  <p className="text-[10px] font-mono uppercase opacity-90 mt-1">15 Instituciones</p>
+                </div>
+                <div className="bg-[#FDE047] text-black p-5 border-2 border-black rounded-2xl">
+                  <span className="block text-[10px] font-mono uppercase mb-1 opacity-75 font-bold">Brecha Máxima</span>
+                  <div className="text-3xl md:text-4xl font-display font-black">
+                    <RapidCounter target={46.6} decimals={1} />
+                  </div>
+                  <p className="text-[10px] font-mono uppercase opacity-80 mt-1 font-bold">Puntos según NSE</p>
+                </div>
+              </div>
+
+              <div className="bg-zinc-900 text-white p-5 rounded-2xl border-2 border-black">
+                <span className="block font-mono text-[10px] uppercase font-black text-indigo-400 mb-1">
+                  Hallazgo Central
+                </span>
+                <p className="font-serif italic text-sm leading-relaxed">
+                  "El Aprendizaje Basado en Proyectos (ABP) obtuvo las puntuaciones más elevadas en todas las dimensiones analizadas."
+                </p>
+              </div>
+            </div>
+          </Tilt3DCard>
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 flex flex-col items-center max-w-7xl mx-auto"
-      >
-        <BrutalSticker 
-          text={`ITEM-ID: ${ARTICLE_META.id} // ${ARTICLE_META.carouselTitle}`} 
-          color="bg-[#4F46E5]" 
-          className="text-white mb-8 !rotate-0 px-6 py-2 text-xl border-4 shadow-[6px_6px_0_0_#000]" 
-        />
-        
-        <div className="relative mb-8">
-          <motion.div 
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.5, type: 'spring' }}
-            className="absolute -top-10 -right-10 w-24 h-24 bg-white border-4 border-black rounded-full flex items-center justify-center text-[#4F46E5] z-20 shadow-[6px_6px_0_0_#000]"
-          >
-            <Brain size={40} />
-          </motion.div>
-          
-          <PremiumTitle subtitle="INVESTIGACIÓN EMPÍRICA / PSICOPEDAGOGÍA" className="items-center text-center">
-            {ARTICLE_META.title}
-          </PremiumTitle>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full mt-12 items-start text-left">
-          {/* Abstract Box */}
-          <div className="lg:col-span-8 bg-white border-8 border-black p-10 shadow-[20px_20px_0_0_#4F46E5] relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-4 font-mono text-[10px] opacity-20 uppercase font-black bg-black text-white">ABSTRACT // DATA_CORE</div>
-            <h3 className="font-display text-2xl mb-6 underline decoration-4 decoration-[#4F46E5]">Resumen del Estudio</h3>
-            <p className="text-2xl font-serif italic leading-relaxed text-black/90">
-              "{ARTICLE_META.abstract}"
-            </p>
-            <div className="mt-8 flex items-center gap-4 border-t-4 border-black pt-6">
-              <div className="font-display uppercase text-lg font-black tracking-tighter">
-                {ARTICLE_META.authors}
-              </div>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-14">
+        <CinematicCard color="bg-white" title="LA MUESTRA" icon={Users} className="shadow-[10px_10px_0_0_#4F46E5]">
+          <div className="text-3xl font-display font-black text-[#4F46E5] mb-2 uppercase">
+            n=<RapidCounter target={Number(ARTICLE_META.n) || 1845} />
           </div>
-
-          {/* Technical Metadata Box */}
-          <div className="lg:col-span-4 flex flex-col gap-8">
-            <ArticleFicha 
-              doi={ARTICLE_META.doi}
-              authors={ARTICLE_META.authors}
-              institution={ARTICLE_META.institution}
-              vol={ARTICLE_META.volume}
-              date={ARTICLE_META.date}
-              className="w-full"
-            />
-            
-            <div className="bg-[#4F46E5] border-4 border-black p-6 text-white shadow-[10px_10px_0_0_#000]">
-              <span className="block font-mono text-[10px] uppercase font-black mb-2">Impacto Central</span>
-              <p className="text-xl font-display uppercase leading-tight italic">
-                "Brechas de hasta 46.63 puntos en habilidades según nivel socioeconómico."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-16">
-          <CinematicCard color="bg-white" className="border-4" title="LA MUESTRA">
-            <div className="space-y-2">
-              <p className="text-lg font-bold uppercase leading-none">n={ARTICLE_META.n} Estudiantes</p>
-              <p className="text-sm opacity-70">15 Instituciones educativas del AMBA (Argentina).</p>
-            </div>
-          </CinematicCard>
-          <CinematicCard color="bg-[#FDE047]" className="border-4 shadow-[10px_10px_0_0_#4F46E5]" title="HALLAZGO HI">
-            <p className="text-lg font-bold uppercase leading-tight">
-              Diferencia altamente significativa (p &lt; .001) en Habilidades Interpersonales.
-            </p>
-          </CinematicCard>
-          <CinematicCard color="bg-black" className="text-white border-4" title="METODOLOGÍA">
-            <p className="text-lg font-serif italic text-indigo-300">
-              El ABP obtuvo las puntuaciones más elevadas en todas las dimensiones analizadas.
-            </p>
-          </CinematicCard>
-        </div>
-      </motion.div>
+          <p className="text-xs font-mono font-black border-t-2 border-black pt-2 uppercase">15 Escuelas del AMBA (Argentina)</p>
+        </CinematicCard>
+        <CinematicCard color="bg-[#FDE047]" title="SIGNIFICANCIA" icon={TrendingUp} className="shadow-[10px_10px_0_0_#000]">
+          <div className="text-3xl font-display font-black text-black mb-2 uppercase">p &lt; .001</div>
+          <p className="text-xs font-mono font-black border-t-2 border-black pt-2 uppercase">En Habilidades Interpersonales</p>
+        </CinematicCard>
+        <CinematicCard color="bg-black" className="text-white shadow-[10px_10px_0_0_#4F46E5]" title="PRECISIÓN" icon={Database}>
+          <div className="text-3xl font-display font-black text-indigo-400 mb-2 uppercase">Alpha = 0.93</div>
+          <p className="text-xs font-mono font-black border-t-2 border-white/20 pt-2 uppercase">Confiabilidad Psicométrica</p>
+        </CinematicCard>
+      </div>
     </section>
   );
 }
-

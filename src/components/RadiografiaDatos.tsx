@@ -70,12 +70,12 @@ export default function RadiografiaDatos() {
               <span className="font-accent font-black tracking-widest text-zine-black uppercase text-sm">Data_Science // Radiografía_Interactiva</span>
             </motion.div>
             
-            <h2 className="text-8xl md:text-[10rem] font-display uppercase leading-[0.85] text-zine-black">
+            <h2 className="text-8xl md:text-[10rem] font-display uppercase leading-[0.95] text-zine-black">
               RADIOGRAFÍA<br /><span className="text-zine-red">DE DATOS</span>
             </h2>
           </div>
 
-          <div className="flex-1 w-full bg-white border-4 border-black p-8 md:p-12 shadow-[12px_12px_0_#000] min-h-[400px]">
+          <div className="flex-1 w-full bg-white border-4 border-black p-8 md:p-12 shadow-[12px_12px_0_#000] min-h-[400px] rounded-3xl">
              <div className="flex items-center justify-between mb-8">
                 <h4 className="font-display text-4xl uppercase text-zine-black">Tendencia de Influencia</h4>
                 <div className="flex gap-2">
@@ -123,7 +123,7 @@ export default function RadiografiaDatos() {
                   className={`relative w-full h-full duration-700 preserve-3d transition-transform ${flipped === card.id ? 'rotate-y-180' : ''}`}
                 >
                    {/* Front Side */}
-                   <div className="absolute inset-0 backface-hidden bg-white border-4 border-black p-12 flex flex-col justify-between shadow-[8px_8px_0_#000] group-hover:shadow-[16px_16px_0_#000] group-hover:-translate-y-2 transition-all">
+                   <div className="absolute inset-0 backface-hidden bg-white border-4 border-black p-12 flex flex-col justify-between shadow-[8px_8px_0_#000] group-hover:shadow-[16px_16px_0_#000] group-hover:-translate-y-2 transition-all rounded-3xl">
                       <div className="flex items-start justify-between">
                          <div className={`p-4 ${card.color} text-white border-2 border-black`}>
                            <Zap size={24} />
@@ -154,7 +154,7 @@ export default function RadiografiaDatos() {
                    </div>
 
                    {/* Back Side */}
-                   <div className="absolute inset-0 backface-hidden rotate-y-180 bg-zine-black border-4 border-black p-12 flex flex-col justify-between shadow-[8px_8px_0_#000]">
+                   <div className="absolute inset-0 backface-hidden rotate-y-180 bg-zine-black border-4 border-black p-12 flex flex-col justify-between shadow-[8px_8px_0_#000] rounded-3xl">
                       <div className="space-y-8">
                          <div className="flex items-center gap-4">
                             <Layers className="text-white opacity-40" />

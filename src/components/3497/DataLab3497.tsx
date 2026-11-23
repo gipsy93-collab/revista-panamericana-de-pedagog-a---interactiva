@@ -32,15 +32,12 @@ export const DataLab3497 = () => {
 
   return (
     <div className="bg-[#FFFBEB] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 left-0 p-12 font-mono text-[180px] font-black text-amber-500/[0.03] leading-none pointer-events-none select-none italic">
-        PY_LAB_3497
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div>
             <BrutalSticker text="RESULTADOS: LIDERAZGO & CARÁCTER" color="bg-indigo-600" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#000]" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               TEORÍA & <span className="text-amber-500 underline decoration-8 decoration-black">DATOS</span>
             </h2>
           </div>
@@ -68,7 +65,7 @@ export const DataLab3497 = () => {
                 className="grid md:grid-cols-3 gap-8"
               >
                 {leadershipTypes.map((type, i) => (
-                  <div key={i} className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#4f46e5] group hover:bg-indigo-50 transition-all flex flex-col h-full">
+                  <div key={i} className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#4f46e5] group hover:bg-indigo-50 transition-all flex flex-col h-full rounded-3xl">
                      <div className={`${type.color} w-16 h-16 border-4 border-black flex items-center justify-center text-white mb-8 group-hover:rotate-12 transition-transform`}>
                         <type.icon size={32} />
                      </div>
@@ -88,7 +85,7 @@ export const DataLab3497 = () => {
                 key="comparison"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-white border-8 border-black shadow-[20px_20px_0_0_#f59e0b] overflow-x-auto"
+                className="bg-white border-8 border-black shadow-[20px_20px_0_0_#f59e0b] overflow-x-auto rounded-3xl"
               >
                 <div className="p-8 border-b-8 border-black bg-indigo-950 text-white flex items-center justify-between">
                    <h3 className="font-display text-3xl uppercase font-black italic">4.3 Educación en Valores vs Formación del Carácter</h3>
@@ -127,7 +124,7 @@ export const DataLab3497 = () => {
               >
                 <div className="space-y-4">
                   {strategies.map((s, i) => (
-                    <div key={i} className="bg-white border-4 border-black p-6 flex items-center gap-6 shadow-[8px_8px_0_0_#000] hover:translate-x-2 transition-transform cursor-pointer group">
+                    <div key={i} className="bg-white border-4 border-black p-6 flex items-center gap-6 shadow-[8px_8px_0_0_#000] hover:translate-x-2 transition-transform cursor-pointer group rounded-3xl">
                        <div className="bg-amber-100 p-3 rounded-full group-hover:bg-amber-500 transition-colors">
                           <Bookmark size={24} className="text-amber-600 group-hover:text-white" />
                        </div>
@@ -138,7 +135,7 @@ export const DataLab3497 = () => {
                     </div>
                   ))}
                 </div>
-                <div className="bg-indigo-950 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#f59e0b] flex flex-col justify-center rotate-1">
+                <div className="bg-indigo-950 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#f59e0b] flex flex-col justify-center rotate-1 rounded-3xl">
                    <h4 className="font-display text-4xl font-black uppercase italic mb-8 border-b-4 border-amber-500 pb-4">4.5 Programas Efectivos</h4>
                    <ul className="space-y-6">
                       {[

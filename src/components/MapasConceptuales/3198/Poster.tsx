@@ -277,7 +277,7 @@ const Poster: React.FC<PosterProps> = ({ node, onClose }) => {
           <button
             onClick={handleClose}
             onTouchEnd={handleClose}
-            className="pointer-events-auto w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-300 bg-[#FFCC00] hover:bg-[#F97316] active:bg-[#F97316] border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+            className="pointer-events-auto w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-300 bg-[#FFCC00] hover:bg-[#F97316] active:bg-[#F97316] border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] rounded-3xl"
             aria-label="Cerrar"
             style={{
               /* Large touch target for mobile — minimum 48x48px */

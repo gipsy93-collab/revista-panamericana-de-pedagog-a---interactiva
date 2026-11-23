@@ -68,7 +68,7 @@ export default function BlogSection() {
               <span className="font-accent font-black tracking-widest text-[#fccb06] uppercase text-sm">Blog Editorial // RPP_Insights</span>
             </motion.div>
             
-            <h2 className="text-6xl md:text-8xl font-display uppercase leading-[0.85] text-white mb-8">
+            <h2 className="text-6xl md:text-8xl font-display uppercase leading-[0.95] text-white mb-8">
               BLOG<br /><span className="text-[#fccb06]">PEDAGÓGICO</span>
             </h2>
             
@@ -120,7 +120,7 @@ export default function BlogSection() {
                     </div>
                     
                     {post.thumbnail ? (
-                      <div className="w-full h-32 mb-8 border-2 border-black overflow-hidden bg-black/20">
+                      <div className="w-full h-32 mb-8 border-2 border-black overflow-hidden bg-black/20 rounded-xl">
                         <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                       </div>
                     ) : (
@@ -146,14 +146,14 @@ export default function BlogSection() {
               </motion.article>
             ))
           ) : (
-            <div className="col-span-full py-20 border-4 border-dashed border-white/20 text-white/40 text-center font-mono">
+            <div className="col-span-full py-20 border-4 border-dashed border-white/20 text-white/40 text-center font-mono rounded-xl">
                No se pudieron cargar las entradas de Substack.
             </div>
           )}
         </div>
 
         {/* Call to action section */}
-        <div className="mt-32 p-12 md:p-24 bg-black text-white flex flex-col lg:flex-row items-center justify-between gap-12 border-4 border-white/10">
+        <div className="mt-32 p-12 md:p-24 bg-black text-white flex flex-col lg:flex-row items-center justify-between gap-12 border-4 border-white/10 rounded-3xl">
            <div className="max-w-2xl text-center lg:text-left">
               <h4 className="text-5xl md:text-6xl font-display uppercase leading-tight mb-8">Suscríbete a<br /><span className="text-[#fccb06]">Substack RPP</span></h4>
               <p className="text-white/40 text-xl font-light leading-relaxed">

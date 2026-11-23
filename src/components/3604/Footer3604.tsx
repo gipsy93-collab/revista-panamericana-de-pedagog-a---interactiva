@@ -7,9 +7,6 @@ export default function Footer3604() {
   return (
     <footer className="py-24 bg-[#1a1a1a] text-[#FDFCFB] border-t border-white/5 relative overflow-hidden">
       {/* Background Graphic */}
-      <div className="absolute left-0 bottom-0 opacity-[0.02] pointer-events-none select-none">
-        <span className="text-[25rem] font-serif font-black leading-none">RPP</span>
-      </div>
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">

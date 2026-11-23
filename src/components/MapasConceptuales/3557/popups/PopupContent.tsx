@@ -39,11 +39,11 @@ function InfoContent({ content, source }: { content: PopupContent[]; source?: st
           }`}
         >
           {item.label && (
-            <div className="absolute -top-4 -left-4 bg-black text-white px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] border-2 border-black rotate-[-5deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="absolute -top-4 -left-4 bg-black text-white px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] border-2 border-black rotate-[-5deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] rounded-3xl">
               {item.label}
             </div>
           )}
-          <p className={`${item.highlight ? 'text-black font-black text-2xl md:text-3xl italic' : 'text-black font-bold text-lg'} leading-none tracking-tighter`}>
+          <p className={`${item.highlight ? 'text-black font-black text-2xl md:text-3xl italic' : 'text-black font-bold text-lg'} leading-none tracking-normal`}>
             {item.value}
           </p>
           {item.highlight && <div className="absolute top-2 right-2 w-8 h-8 bg-black opacity-5 halftone-lg" />}
@@ -81,7 +81,7 @@ function CompareContent({ content }: { content: PopupContent[] }) {
                 : 'bg-[#FF007A] text-white'
             }`}
           >
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2 border-4 border-black font-black text-xl uppercase tracking-tighter shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2 border-4 border-black font-black text-xl uppercase tracking-normal shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] rounded-3xl">
                {content[idx].label}
             </div>
             <div className="mt-6 flex flex-col items-center">
@@ -119,12 +119,12 @@ function TestimonialsContent({ content }: { content: PopupContent[] }) {
         >
           <div className="absolute inset-0 bg-black translate-x-3 translate-y-3" />
           <div className="relative bg-white p-10 border-[6px] border-black flex flex-col gap-6">
-            <div className="absolute -top-6 -left-4 bg-[#00FFA3] border-4 border-black px-4 py-2 font-black text-black uppercase text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-3deg]">
+            <div className="absolute -top-6 -left-4 bg-[#00FFA3] border-4 border-black px-4 py-2 font-black text-black uppercase text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-3deg] rounded-3xl">
                EXP-ID: {item.label}
             </div>
             <div className="relative">
               <Quote className="absolute -top-4 -left-6 w-14 h-14 text-black/5" />
-              <p className="text-black font-black text-2xl md:text-3xl leading-none tracking-tighter italic">
+              <p className="text-black font-black text-2xl md:text-3xl leading-none tracking-normal italic">
                 "{item.value}"
               </p>
             </div>
@@ -153,11 +153,11 @@ function CardsContent({ content }: { content: PopupContent[] }) {
         >
           <div className="absolute inset-0 bg-black translate-x-2 translate-y-2" />
           <div className="relative bg-[#00D4FF] p-8 border-[6px] border-black flex items-start gap-8 hover:-translate-x-1 hover:-translate-y-1 transition-all">
-            <div className="w-20 h-20 bg-white border-4 border-black flex items-center justify-center flex-shrink-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-3">
+            <div className="w-20 h-20 bg-white border-4 border-black flex items-center justify-center flex-shrink-0 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-3 rounded-3xl">
               <Target className="w-10 h-10 text-black stroke-[4]" />
             </div>
             <div className="flex-1">
-              <span className="bg-black text-white px-3 py-1 font-black text-lg tracking-tighter uppercase block mb-3 w-fit">{item.label}</span>
+              <span className="bg-black text-white px-3 py-1 font-black text-lg tracking-normal uppercase block mb-3 w-fit">{item.label}</span>
               <p className="text-black text-xl font-black leading-none tracking-tight mt-2 italic border-l-8 border-black/20 pl-4">
                 {item.value}
               </p>
@@ -183,7 +183,7 @@ function ListContent({ content }: { content: PopupContent[] }) {
            } transition-all`}
         >
           <div className="flex items-center gap-6">
-            <div className="w-12 h-12 border-4 border-black bg-black text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
+            <div className="w-12 h-12 border-4 border-black bg-black text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] rounded-3xl">
               <ChevronRight className="w-8 h-8 stroke-[4]" />
             </div>
             <div className="flex-1">
@@ -192,12 +192,12 @@ function ListContent({ content }: { content: PopupContent[] }) {
                    {item.label}
                 </span>
               )}
-              <p className="text-xl font-black leading-none text-black tracking-tighter uppercase">
+              <p className="text-xl font-black leading-none text-black tracking-normal uppercase">
                 {item.value}
               </p>
             </div>
             {item.highlight && (
-               <div className="w-10 h-10 border-4 border-black bg-[#FFFF00] flex items-center justify-center rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+               <div className="w-10 h-10 border-4 border-black bg-[#FFFF00] flex items-center justify-center rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                   <CheckCircle2 className="w-6 h-6 text-black" />
                </div>
             )}

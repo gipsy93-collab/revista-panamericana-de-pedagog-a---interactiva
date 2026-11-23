@@ -1,3 +1,4 @@
+import { ArticleHeader } from '../Common/ArticleHeader';
 import React, { useEffect } from 'react';
 import { ChevronLeft, Share2, Download, UnfoldVertical } from 'lucide-react';
 import { Hero3508 } from './Hero3508';
@@ -22,33 +23,15 @@ export default function Unified3508({ onBack }: Props) {
       <FilmGrain />
 
       {/* Header Premium */}
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-violet-600 transition-colors shadow-[4px_4px_0_0_#4c1d95] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#4c1d95] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
-          </button>
-          <a
-            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-          </a>
-          
-          <div className="hidden md:flex items-center gap-10">
-             <div className="flex flex-col items-end">
-                <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">COMPARATIVA INTERNACIONAL</span>
-                <span className="font-display text-sm font-black uppercase tracking-tighter">ID_{ARTICLE_META.id}</span>
-             </div>
-             <div className="bg-violet-600 text-white px-6 py-2 border-[4px] border-black font-display text-3xl font-black italic shadow-[4px_4px_0_0_#000]">N° 41</div>
-          </div>
-        </div>
-      </header>
+      <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3508'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 41'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2025'}
+        authors={ARTICLE_META?.authors || 'Gallardo-Herrerías'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
 
       <main className="relative z-0">
         <Hero3508 />
@@ -84,7 +67,7 @@ export default function Unified3508({ onBack }: Props) {
             Recomendación Citación APA
           </div>
           
-          <h4 className="font-display text-7xl md:text-[10rem] uppercase font-black mb-20 italic text-violet-500 leading-none tracking-tighter opacity-80" style={{ WebkitTextStroke: 'var(--brutal-stroke-width) white' }}>
+          <h4 className="font-display text-7xl md:text-[10rem] uppercase font-black mb-20 italic text-violet-500 leading-none tracking-normal opacity-80">
             Revista Panamericana
           </h4>
           

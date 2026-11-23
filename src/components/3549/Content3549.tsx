@@ -35,7 +35,7 @@ export const Content3549 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] relative rounded-3xl">
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic" style={{color: "#4f46e5"}}>Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10">
@@ -58,7 +58,7 @@ export const Content3549 = () => {
       <WaveSection topColor="#ffffff" bottomColor="#f0f0f0" variant="wavy">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="I. METODOLOGÍA" color="bg-[#4f46e5]" className="text-white mb-8 !rotate-0" />
-          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] mb-8">
+          <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] mb-8 rounded-3xl">
             <p className="text-base leading-relaxed text-black/80 mb-6">
               El estudio se fundamenta en una <strong>revisión documental</strong> que aborda dos dimensiones complementarias:
             </p>
@@ -66,24 +66,24 @@ export const Content3549 = () => {
               <table className="w-full">
                 <thead>
                   <tr className="bg-[#4f46e5] text-white">
-                    <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Dimensión</th>
-                    <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Descripción</th>
+                    <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Dimensión</th>
+                    <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Descripción</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="hover:bg-indigo-50 transition-colors">
-                    <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Análisis de políticas</td>
-                    <td className="p-4 text-sm border-2 border-black/10 bg-white">Examen de políticas y lineamientos de la Nueva Escuela Mexicana establecidos en documentos oficiales de la SEP</td>
+                    <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Análisis de políticas</td>
+                    <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Examen de políticas y lineamientos de la Nueva Escuela Mexicana establecidos en documentos oficiales de la SEP</td>
                   </tr>
                   <tr className="hover:bg-indigo-50 transition-colors">
-                    <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Análisis pedagógico</td>
-                    <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Estudio de los aportes de cuatro educadores fundamentales: Rousseau, Pestalozzi, Dewey y Freire</td>
+                    <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Análisis pedagógico</td>
+                    <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Estudio de los aportes de cuatro educadores fundamentales: Rousseau, Pestalozzi, Dewey y Freire</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+          <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
             <p className="text-base leading-relaxed">
               Los autores explicitan que la revisión documental &quot;hace referencia a un estudio metódico y sistemático, ordenado con objetivos bien definidos, que se realiza en datos, documentos y diferentes fuentes de información, que sirve como base para la comprensión del problema y como orientación en la construcción de conocimiento&quot; (p. 3), citando a Guevara-Patiño (2016).
             </p>
@@ -102,7 +102,7 @@ export const Content3549 = () => {
           
           <div className="space-y-12">
             {/* 4.1 Caracterización */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">4.1 Caracterización de la Nueva Escuela Mexicana</h3>
               <p className="text-base leading-relaxed text-black/80 mb-6">
                 La NEM surge con la reforma educativa de 2019 y se formaliza mediante el Plan y Programas de Estudio 2022. Sus elementos fundamentales incluyen:
@@ -111,26 +111,26 @@ export const Content3549 = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#4f46e5] text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Aspecto</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Descripción</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Aspecto</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Descripción</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Origen</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Reforma educativa 2019, formalizada con Plan de Estudios 2022</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Origen</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Reforma educativa 2019, formalizada con Plan de Estudios 2022</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Horizonte temporal</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">23 años de implementación proyectada</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Horizonte temporal</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">23 años de implementación proyectada</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Estructura curricular</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Fases 3, 4 y 5 para educación primaria</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Estructura curricular</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Fases 3, 4 y 5 para educación primaria</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Fundamento legal</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Art. 3° Constitucional, Ley General de Educación, Ley General de los Derechos de Niñas, Niños y Adolescentes</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Fundamento legal</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Art. 3° Constitucional, Ley General de Educación, Ley General de los Derechos de Niñas, Niños y Adolescentes</td>
                     </tr>
                   </tbody>
                 </table>
@@ -140,38 +140,38 @@ export const Content3549 = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-zinc-900 text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Principio</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Definición según el documento</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Principio</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Definición según el documento</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Responsabilidad ciudadana</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Implica la aceptación de derechos y deberes personales y comunes (SEP, 2019, p. 4)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Responsabilidad ciudadana</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Implica la aceptación de derechos y deberes personales y comunes (SEP, 2019, p. 4)</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Aprendizaje significativo</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Aprendizajes con sentido práctico y utilidad en la vida diaria (SEP, 2020)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Aprendizaje significativo</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Aprendizajes con sentido práctico y utilidad en la vida diaria (SEP, 2020)</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Participación en la transformación social</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Educar personas críticas, participativas y activas (SEP, 2019, p. 6)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Participación en la transformación social</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Educar personas críticas, participativas y activas (SEP, 2019, p. 6)</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Enfoque holístico</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Desarrollo de habilidades socioemocionales: empatía, trabajo en equipo, resiliencia</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Enfoque holístico</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Desarrollo de habilidades socioemocionales: empatía, trabajo en equipo, resiliencia</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Aprendizaje basado en competencias</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Capacidad de enfrentar situaciones reales mediante trabajo en equipo y pensamiento crítico</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Aprendizaje basado en competencias</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Capacidad de enfrentar situaciones reales mediante trabajo en equipo y pensamiento crítico</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Inclusión educativa</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Acceso a formación integral independientemente del contexto económico, cultural o discapacidad</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Inclusión educativa</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Acceso a formación integral independientemente del contexto económico, cultural o discapacidad</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Humanismo clásico</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">La persona como eje central del modelo educativo (SEP, 2019, p. 7)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Humanismo clásico</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">La persona como eje central del modelo educativo (SEP, 2019, p. 7)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -179,36 +179,36 @@ export const Content3549 = () => {
             </div>
 
             {/* 4.2 Roles */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">4.2 Roles del docente y del estudiante</h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#4f46e5] text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Rol del Docente</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Rol del Estudiante</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Rol del Docente</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Rol del Estudiante</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Intelectual que promueve el conocimiento en espacios escolares y comunitarios</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Individuo crítico con sensibilidad humana y formación integral</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Intelectual que promueve el conocimiento en espacios escolares y comunitarios</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Individuo crítico con sensibilidad humana y formación integral</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Orientador del aprendizaje</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Actor social que colabora con su comunidad</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Orientador del aprendizaje</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Actor social que colabora con su comunidad</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Mediador que fomenta autonomía</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Constructor activo de conocimiento</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Mediador que fomenta autonomía</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Constructor activo de conocimiento</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Facilitador de retroalimentación constante</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Participante en la construcción de sociedad más justa</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Facilitador de retroalimentación constante</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Participante en la construcción de sociedad más justa</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Promotor de ambiente equitativo, inclusivo y respetuoso</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Tomador de decisiones responsables con visión crítica y solidaria</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Promotor de ambiente equitativo, inclusivo y respetuoso</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Tomador de decisiones responsables con visión crítica y solidaria</td>
                     </tr>
                   </tbody>
                 </table>
@@ -216,7 +216,7 @@ export const Content3549 = () => {
             </div>
 
             {/* 4.3 Influencias */}
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">4.3 Influencias pedagógicas identificadas</h3>
               <p className="text-base leading-relaxed text-black/80 mb-6">
                 El artículo establece correspondencias entre la NEM y cuatro pensadores fundamentales:
@@ -225,31 +225,31 @@ export const Content3549 = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#4f46e5] text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Pensador</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Ideas centrales</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Vínculo con la NEM</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Pensador</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Ideas centrales</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Vínculo con la NEM</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Rousseau</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Educación centrada en el niño; aprendizaje por experiencia directa; valoración del juego</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Estudiante como centro del proceso; autonomía y pensamiento crítico; pausas activas</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Rousseau</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Educación centrada en el niño; aprendizaje por experiencia directa; valoración del juego</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Estudiante como centro del proceso; autonomía y pensamiento crítico; pausas activas</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Pestalozzi</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Educación integral (cabeza, corazón y mano); relación maestro-alumno basada en respeto y amor</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Desarrollo cognitivo, afectivo y social; competencias socioemocionales</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Pestalozzi</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Educación integral (cabeza, corazón y mano); relación maestro-alumno basada en respeto y amor</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Desarrollo cognitivo, afectivo y social; competencias socioemocionales</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black">Dewey</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">&quot;Aprender haciendo&quot;; escuela como vida misma; educación para la democracia</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-white">Aprendizaje basado en proyectos; proyectos comunitarios; trabajo interdisciplinario</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white font-black rounded-2xl">Dewey</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">&quot;Aprender haciendo&quot;; escuela como vida misma; educación para la democracia</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Aprendizaje basado en proyectos; proyectos comunitarios; trabajo interdisciplinario</td>
                     </tr>
                     <tr className="hover:bg-indigo-50 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black">Freire</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Pedagogía crítica; rechazo de la &quot;educación bancaria&quot;; concientización</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Formación de ciudadanos críticos; &quot;Un libro sin recetas&quot;; didácticas decoloniales</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-black rounded-2xl">Freire</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Pedagogía crítica; rechazo de la &quot;educación bancaria&quot;; concientización</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Formación de ciudadanos críticos; &quot;Un libro sin recetas&quot;; didácticas decoloniales</td>
                     </tr>
                   </tbody>
                 </table>
@@ -257,41 +257,41 @@ export const Content3549 = () => {
             </div>
 
             {/* 4.4 Tecnología */}
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">4.4 Integración tecnológica</h3>
               <p className="text-base mb-4">Los autores identifican herramientas TIC que pueden fortalecer la educación primaria:</p>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#4f46e5] text-white">
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Herramienta</th>
-                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black">Aplicación pedagógica</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Herramienta</th>
+                      <th className="p-4 text-left font-display uppercase text-sm border-2 border-black rounded-2xl">Aplicación pedagógica</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Pizarras digitales interactivas</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Trabajo colaborativo, resolución de problemas en grupo, juegos educativos</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Pizarras digitales interactivas</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Trabajo colaborativo, resolución de problemas en grupo, juegos educativos</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Tabletas con aplicaciones educativas</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Personalización del aprendizaje (Khan Academy Kids, Duolingo)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Tabletas con aplicaciones educativas</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Personalización del aprendizaje (Khan Academy Kids, Duolingo)</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Videos educativos animados</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">Explicación de conceptos complejos de forma accesible</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Videos educativos animados</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">Explicación de conceptos complejos de forma accesible</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Gamificación (Kahoot, Quizizz, ClassDojo)</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Experiencia lúdica y motivadora; desarrollo de habilidades socioemocionales</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Gamificación (Kahoot, Quizizz, ClassDojo)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Experiencia lúdica y motivadora; desarrollo de habilidades socioemocionales</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black">Realidad aumentada (Google Expeditions)</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800">&quot;Viajes&quot; virtuales a museos y lugares históricos</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 font-black rounded-2xl">Realidad aumentada (Google Expeditions)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-800 rounded-2xl">&quot;Viajes&quot; virtuales a museos y lugares históricos</td>
                     </tr>
                     <tr className="hover:bg-zinc-800 transition-colors">
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black">Portafolios digitales (Seesaw)</td>
-                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900">Autoevaluación y construcción de identidad escolar</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 font-black rounded-2xl">Portafolios digitales (Seesaw)</td>
+                      <td className="p-4 text-sm border-2 border-black/10 bg-zinc-900 rounded-2xl">Autoevaluación y construcción de identidad escolar</td>
                     </tr>
                   </tbody>
                 </table>
@@ -308,7 +308,7 @@ export const Content3549 = () => {
           <BrutalSticker text="III. DISCUSIÓN" color="bg-black" className="text-white mb-8 !rotate-0" />
           
           <div className="space-y-8">
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">Continuidad histórica de las ideas pedagógicas</h3>
               <p className="text-base leading-relaxed text-black/80">
                 El artículo desarrolla una argumentación consistente sobre la <strong>continuidad histórica de las ideas pedagógicas</strong>. Los autores demuestran que la NEM, aunque presentada como reforma contemporánea, recupera y actualiza principios establecidos por pensadores clásicos.
@@ -316,14 +316,14 @@ export const Content3549 = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
                 <h3 className="font-display text-lg uppercase font-black mb-4 text-[#4f46e5]">Comenio (1997)</h3>
                 <BrutalQuote author="Comenio (1997, pp. 105-106)">
                   Por lo tanto no deben enseñarse y aprender las palabras sin las cosas [...] de este modo las escuelas serán verdaderamente la preparación para la vida
                 </BrutalQuote>
                 <p className="text-sm mt-4">Ilustra cómo el aprendizaje práctico y experiencial tiene raíces centenarias.</p>
               </div>
-              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
                 <h3 className="font-display text-lg uppercase font-black mb-4 text-[#4f46e5]">Rousseau (2024)</h3>
                 <BrutalQuote author="Rousseau (2024, pp. 126-127)">
                   No hay nada más útil y agradable que semejantes juegos si son ordenados con un poco de habilidad
@@ -333,14 +333,14 @@ export const Content3549 = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
                 <h3 className="font-display text-lg uppercase font-black mb-4 text-[#4f46e5]">Pestalozzi (2006)</h3>
                 <BrutalQuote author="Pestalozzi (2006, p. 29)">
                   Debemos tener presente que el fin último de la educación no es la perfección en las tareas de la escuela, sino la preparación para la vida
                 </BrutalQuote>
                 <p className="text-sm mt-4 text-black/80">Concordante con el enfoque de competencias de la NEM.</p>
               </div>
-              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
                 <h3 className="font-display text-lg uppercase font-black mb-4 text-[#4f46e5]">Dewey (1897)</h3>
                 <BrutalQuote author="Dewey (1897, p. 80)">
                   I believe that education is a regulation of the process of coming to share in the social consciousness
@@ -349,7 +349,7 @@ export const Content3549 = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-lg uppercase font-black mb-4 text-[#4f46e5]">Freire (1998)</h3>
               <BrutalQuote author="Freire (1998, p. 73)">
                 En la educación bancaria de la educación, el &quot;saber&quot;, el &quot;conocimiento&quot;, es una donación de aquellos que se juzgan sabios a los que juzgan ignorantes
@@ -357,7 +357,7 @@ export const Content3549 = () => {
               <p className="text-sm mt-4 text-black/80">Contrapuesta a la propuesta dialógica de la NEM.</p>
             </div>
 
-            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <h3 className="font-display text-xl uppercase font-black mb-4 text-[#4f46e5]">Tecnología educativa</h3>
               <p className="text-base leading-relaxed">
                 Los autores introducen una discusión relevante sobre la <strong>tecnología educativa</strong>, argumentando que &quot;el uso que se haga de esta tecnología por parte de docentes y estudiantes, debe realizarse con base en los principios pedagógicas que orientan a los modelos educativos&quot; (p. 16), evitando dejarse llevar por modas pasajeras.
@@ -372,7 +372,7 @@ export const Content3549 = () => {
       <WaveSection topColor="#f0f0f0" bottomColor="#000000" variant="dramatic">
         <div className="max-w-6xl mx-auto">
           <BrutalSticker text="IV. CONCLUSIONES" color="bg-[#4f46e5]" className="text-white mb-12 !rotate-0" />
-          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#4f46e5]">
+          <div className="bg-white p-10 border-8 border-black shadow-[16px_16px_0_0_#4f46e5] rounded-3xl">
             <h3 className="font-display text-2xl uppercase font-black mb-8 text-[#4f46e5]">Conclusiones del artículo</h3>
             <ol className="space-y-6 text-lg">
               <li className="flex gap-4">
@@ -493,7 +493,7 @@ export const Content3549 = () => {
       {/* SECCIÓN 3: FUTURO Y TECNOLOGÍA */}
       <WaveSection topColor="#000000" bottomColor="#f0f0f0" variant="dramatic">
         <div className="max-w-4xl mx-auto flex flex-col gap-12 py-20 text-center">
-          <div className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-[1deg]">
+          <div className="bg-white border-4 border-black p-12 shadow-[15px_15px_0_0_#000] rotate-[1deg] rounded-3xl">
             <h3 className="text-4xl font-display uppercase mb-6 flex items-center justify-center gap-4">
               <Lightbulb className="text-[#4f46e5]" /> Visión 2042
             </h3>
@@ -523,11 +523,11 @@ export const Content3549 = () => {
           <DataExplorer3549 />
           
           <div className="grid lg:grid-cols-2 gap-8 mt-16 pb-12">
-             <BrutalCard color="bg-[#4f46e5]" className="text-white border-4 rotate-1 shadow-[8px_8px_0_0_#000]" title="VISIÓN ESTRATÉGICA">
+             <BrutalCard color="bg-[#4f46e5]" className="text-white border-4 rotate-1 shadow-[8px_8px_0_0_#000] rounded-3xl" title="VISIÓN ESTRATÉGICA">
                 <div className="text-6xl font-display font-black text-white mb-4">2019-2042</div>
                 <p className="font-display text-lg uppercase font-black leading-tight">Casi un cuarto de siglo de implementaciÃ³n para consolidar el cambio sistÃ©mico.</p>
              </BrutalCard>
-             <BrutalCard color="bg-white" className="border-4 -rotate-1 shadow-[8px_8px_0_0_#4f46e5]" title="ALIANZA TIC">
+             <BrutalCard color="bg-white" className="border-4 -rotate-1 shadow-[8px_8px_0_0_#4f46e5] rounded-3xl" title="ALIANZA TIC">
                 <div className="text-2xl font-display font-black text-black mb-4 flex items-center gap-2">
                    <Sparkles className="text-[#4f46e5]" /> Herramientas Digitales
                 </div>

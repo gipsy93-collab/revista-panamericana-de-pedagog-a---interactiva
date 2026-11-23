@@ -47,7 +47,7 @@ export function ControlPanel({
           >
             <div className="absolute inset-0 halftone opacity-0 group-hover:opacity-10 transition-opacity" />
             <btn.icon className="w-5 h-5 mb-0.5 text-black stroke-[3]" />
-            <span className="text-[8px] font-black uppercase text-black leading-none tracking-tighter italic">
+            <span className="text-[8px] font-black uppercase text-black leading-none tracking-normal italic">
               {btn.label}
             </span>
           </motion.button>

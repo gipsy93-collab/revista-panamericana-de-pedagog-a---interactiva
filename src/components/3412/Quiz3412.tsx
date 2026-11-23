@@ -42,7 +42,7 @@ export default function Quiz3412() {
                 <span className="w-12 h-12 bg-black text-white shrink-0 flex items-center justify-center font-display text-2xl font-black">
                   {qi + 1}
                 </span>
-                <p className="text-2xl font-display uppercase font-black leading-tight tracking-tighter">
+                <p className="text-2xl font-display uppercase font-black leading-tight tracking-normal">
                   {q.question}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function Quiz3412() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="mt-8 p-6 bg-zinc-100 border-2 border-black border-dashed"
+                    className="mt-8 p-6 bg-zinc-100 border-2 border-black border-dashed rounded-2xl"
                   >
                     <span className="block font-mono text-[9px] uppercase font-black mb-2 opacity-60 italic">Retroalimentación Teórica:</span>
                     <p className="text-lg font-serif italic text-black/80">{q.explanation}</p>
@@ -97,7 +97,7 @@ export default function Quiz3412() {
             <button
               onClick={() => setSubmitted(true)}
               disabled={answers.some((a) => a === -1)}
-              className="group relative bg-[#4F46E5] text-white px-12 py-6 border-4 border-black font-display text-3xl uppercase font-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#000] transition-all disabled:opacity-50 disabled:translate-0 disabled:shadow-[4px_4px_0_0_#000]"
+              className="group relative bg-[#4F46E5] text-white px-12 py-6 border-4 border-black font-display text-3xl uppercase font-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#000] transition-all disabled:opacity-50 disabled:translate-0 disabled:shadow-[4px_4px_0_0_#000] rounded-3xl"
             >
               Calificar Examen_
             </button>
@@ -107,7 +107,7 @@ export default function Quiz3412() {
               animate={{ scale: 1, opacity: 1 }}
               className="flex flex-col items-center gap-10 w-full"
             >
-              <div className="bg-black text-white border-8 border-black p-12 shadow-[20px_20px_0_0_#4F46E5] text-center w-full max-w-2xl relative rotate-1">
+              <div className="bg-black text-white border-8 border-black p-12 shadow-[20px_20px_0_0_#4F46E5] text-center w-full max-w-2xl relative rotate-1 rounded-3xl">
                 <Award className="absolute -top-10 -left-10 w-24 h-24 text-[#FDE047]" />
                 <span className="block font-mono text-xs uppercase font-black mb-4 opacity-60">Resultado de la Validación:</span>
                 <div className="text-[10rem] font-display font-black leading-none mb-4 italic">
@@ -120,7 +120,7 @@ export default function Quiz3412() {
               
               <button
                 onClick={reset}
-                className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 font-display uppercase font-black shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] transition-all"
+                className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 font-display uppercase font-black shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_0_#000] transition-all rounded-3xl"
               >
                 <RotateCcw size={24} /> Volver a Intentar
               </button>

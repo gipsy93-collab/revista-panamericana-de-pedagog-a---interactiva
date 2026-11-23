@@ -14,9 +14,6 @@ export default function Content3497() {
     <div className="bg-white">
       {/* 3. METODOLOGÍA */}
       <section className="bg-white py-24 px-6 border-b-[12px] border-black relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-black/[0.02] leading-none pointer-events-none select-none italic">
-          MET_3497
-        </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <BrutalSticker text="3. METODOLOGÍA" color="bg-indigo-600" className="text-white mb-16 !rotate-0 shadow-[6px_6px_0_0_#f59e0b]" />
           <div className="grid lg:grid-cols-2 gap-24 items-start">
@@ -39,7 +36,7 @@ export default function Content3497() {
                  { t: "Contexto", c: "Paraguay (MEC)", i: Map },
                  { t: "Perspectiva", c: "Ética-Pedagógica", i: Scale }
                ].map((item, idx) => (
-                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] rotate-1 hover:rotate-0 transition-transform">
+                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] rotate-1 hover:rotate-0 transition-transform rounded-3xl">
                     <item.i size={32} className="mb-4 text-indigo-600" />
                     <h5 className="font-display text-xl font-black uppercase italic leading-none mb-2">{item.t}</h5>
                     <p className="font-mono text-[10px] uppercase font-black opacity-40">{item.c}</p>
@@ -121,7 +118,7 @@ export default function Content3497() {
                     { t: "Práctica Ética", c: "Trascender la gestión administrativa hacia la inspiración formativa." },
                     { t: "Modelo Distribuido", c: "Reconocer múltiples agentes de liderazgo en la comunidad." }
                   ].map((item, i) => (
-                    <li key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-1deg]">
+                    <li key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#000] rotate-[-1deg] rounded-3xl">
                        <h5 className="font-display text-2xl font-black uppercase mb-2 italic text-indigo-700">{item.t}</h5>
                        <p className="font-sans font-bold uppercase text-[10px] opacity-60 leading-tight">"{item.c}"</p>
                     </li>
@@ -137,7 +134,7 @@ export default function Content3497() {
                     { t: "Dimensión Transversal", c: "Atravesar todo el quehacer educativo como finalidad en sí misma." },
                     { t: "Evaluación Holística", c: "Medir no solo el rendimiento académico, sino el desarrollo socioemocional." }
                   ].map((item, i) => (
-                    <li key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#f59e0b] rotate-[1deg]">
+                    <li key={i} className="bg-white border-4 border-black p-8 shadow-[10px_10px_0_0_#f59e0b] rotate-[1deg] rounded-3xl">
                        <h5 className="font-display text-2xl font-black uppercase mb-2 italic text-amber-600">{item.t}</h5>
                        <p className="font-sans font-bold uppercase text-[10px] opacity-60 leading-tight">"{item.c}"</p>
                     </li>
@@ -160,11 +157,11 @@ export default function Content3497() {
       <section className="py-32 bg-indigo-900 border-t-[12px] border-black relative overflow-hidden text-center text-white">
          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <h2 className="text-8xl md:text-[14rem] font-display uppercase font-black italic tracking-tighter leading-[0.8] mb-16 underline decoration-amber-500 decoration-[20px] underline-offset-[20px]">
+            <h2 className="text-8xl md:text-[14rem] font-display uppercase font-black italic tracking-normal leading-[0.95] mb-16 underline decoration-amber-500 decoration-[20px] underline-offset-[20px]">
               Agentes<br/>de Cambio_
             </h2>
-            <div className="bg-white text-black p-12 border-8 border-black shadow-[20px_20px_0_0_#000] inline-block rotate-2">
-               <p className="text-4xl font-display font-black uppercase italic tracking-tighter">
+            <div className="bg-white text-black p-12 border-8 border-black shadow-[20px_20px_0_0_#000] inline-block rotate-2 rounded-3xl">
+               <p className="text-4xl font-display font-black uppercase italic tracking-normal">
                  "Trabajar la totalidad de la persona humana"
                </p>
                <p className="font-mono text-[10px] font-black uppercase mt-6 opacity-40 italic">Servín-Mendieta, Rivas-Benítez & Riveros-Lesmo // MEC PARAGUAY // RPP 2026</p>

@@ -1,3 +1,5 @@
+import { ARTICLE_META } from './constants';
+import { ArticleHeader } from '../Common/ArticleHeader';
 import React, { useRef, useEffect } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { Hero3378 } from './Hero3378';
@@ -21,30 +23,15 @@ export default function Unified3378({ onBack }: Props) {
     <div className="relative min-h-screen bg-white text-zinc-900 font-sans pt-20 overflow-x-hidden selection:bg-pink-600 selection:text-white">
       <FilmGrain />
 
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-2 border-black/10 backdrop-blur-md bg-white/90">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-pink-600 transition-colors shadow-[4px_4px_0_0_#db2777] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#db2777] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
-          </button>
-          <a
-            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-          </a>
-          
-          <div className="hidden md:flex items-center gap-4">
-             <div className="bg-pink-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">N° 40</div>
-             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40 italic">REF 3378 // LEARNING LANDSCAPES</span>
-          </div>
-        </div>
-      </header>
+      <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3378'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 40'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2025'}
+        authors={ARTICLE_META?.authors || 'S. Saborío-Taylor et al.'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
 
       <main className="relative z-0">
         <Hero3378 />
@@ -68,8 +55,8 @@ export default function Unified3378({ onBack }: Props) {
             Saborío-Taylor, S., Álvarez-Chaves, A., & Valdivia-Durán, S. (2025). <span className="text-white not-italic font-bold">Estrategias didácticas para fomentar la participación activa en entornos virtuales mediante paisajes de aprendizaje</span>. <span className="text-pink-500">Revista Panamericana de Pedagogía</span>, 40, e3378.
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-             <div className="bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#db2777]">
-               DOI: 10.21155/rpp.3378
+             <div className="bg-white text-black px-8 py-4 border-4 border-black font-mono text-sm font-black uppercase tracking-widest shadow-[8px_8px_0_0_#db2777] rounded-3xl">
+               DOI: 10.21555/rpp.3378
              </div>
              <p className="font-mono text-[10px] uppercase opacity-40">Costa Rica // RPP N° 40</p>
           </div>

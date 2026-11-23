@@ -58,9 +58,9 @@ export default function EvidenceMap3453() {
            ))}
         </div>
 
-        <div className="flex-1 bg-white text-black p-10 border-8 border-black shadow-[15px_15px_0_0_#ef4444]">
+        <div className="flex-1 bg-white text-black p-10 border-8 border-black shadow-[15px_15px_0_0_#ef4444] rounded-3xl">
            <div className="flex flex-col md:flex-row gap-12 items-center md:items-start text-left">
-              <div className={`text-8xl md:text-[10rem] font-black leading-none tracking-tighter ${current.color}`}>
+              <div className={`text-8xl md:text-[10rem] font-black leading-none tracking-normal ${current.color}`}>
                 {current.stat}
               </div>
               <div className="space-y-6 pt-6">

@@ -53,7 +53,7 @@ export const Quiz3378 = ({ onComplete }: { onComplete: (result: QuizResult) => v
             Puntuación Académica: {score} / {QUIZ_QUESTIONS.length}
           </p>
           
-          <div className="inline-block p-4 border-4 border-white bg-pink-600 text-white shadow-[6px_6px_0_#fff] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg]">
+          <div className="inline-block p-4 border-4 border-white bg-pink-600 text-white shadow-[6px_6px_0_#fff] font-mono text-xl uppercase font-black mb-8 rotate-[-2deg] rounded-3xl">
             +{score * 100} XP PRAXIS
           </div>
 
@@ -121,7 +121,7 @@ export const Quiz3378 = ({ onComplete }: { onComplete: (result: QuizResult) => v
                 className={`p-8 border-4 border-black text-left font-display uppercase font-black italic text-xl transition-all shadow-[8px_8px_0_#000] relative overflow-hidden ${bgConfig}`}
               >
                 <div className="flex justify-between items-center gap-4">
-                  <span className="flex-1 tracking-tighter leading-none">{option}</span>
+                  <span className="flex-1 tracking-normal leading-none">{option}</span>
                   {showStatus && (
                     <span className="shrink-0 bg-white rounded-full p-1 text-black">
                       {isCorrect ? <CheckCircle2 size={32} /> : <XCircle size={32} />}
@@ -141,7 +141,7 @@ export const Quiz3378 = ({ onComplete }: { onComplete: (result: QuizResult) => v
               exit={{ height: 0, opacity: 0, marginTop: 0 }}
               className="overflow-hidden"
             >
-              <div className="p-10 border-8 border-black bg-pink-50 shadow-[12px_12px_0_#db2777] rotate-[-1deg]">
+              <div className="p-10 border-8 border-black bg-pink-50 shadow-[12px_12px_0_#db2777] rotate-[-1deg] rounded-3xl">
                 <h4 className="font-display text-3xl uppercase mb-4 flex items-center gap-3 italic text-pink-600">
                   <Target size={32} /> Retroalimentación
                 </h4>

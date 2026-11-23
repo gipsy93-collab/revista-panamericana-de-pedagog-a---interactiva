@@ -22,7 +22,7 @@ export function CentralNode({ onStartTour }: CentralNodeProps) {
       <motion.div
         animate={{ scale: [1, 1.05, 1], rotate: [0, -3, 3, 0] }}
         transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-        className="absolute inset-[-40px] bg-[#FFFF00] comic-burst opacity-30 pointer-events-none border-2 border-black halftone"
+        className="absolute inset-[-40px] bg-[#FFFF00] comic-burst opacity-30 pointer-events-none border-2 border-black halftone rounded-xl"
       />
       
       {/* Hard shadow layer */}
@@ -43,7 +43,7 @@ export function CentralNode({ onStartTour }: CentralNodeProps) {
             <Cpu className="w-8 h-8 text-black stroke-[3]" />
           </div>
           {/* Sparkle sticker */}
-          <div className="absolute -top-3 -right-3 bg-[#00FFA3] border-2 border-black p-0.5 rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <div className="absolute -top-3 -right-3 bg-[#00FFA3] border-2 border-black p-0.5 rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
              <Sparkles className="w-4 h-4 text-black fill-current" />
           </div>
         </motion.div>
@@ -54,7 +54,7 @@ export function CentralNode({ onStartTour }: CentralNodeProps) {
           </h2>
           
           <div className="bg-[#FFFF00] px-4 py-2 border-[4px] border-black inline-block -rotate-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-4">
-             <span className="font-black text-[10px] md:text-[12px] uppercase tracking-tighter leading-none italic">
+             <span className="font-black text-[10px] md:text-[12px] uppercase tracking-normal leading-none italic">
                Tensions, resistances and opportunities
              </span>
           </div>

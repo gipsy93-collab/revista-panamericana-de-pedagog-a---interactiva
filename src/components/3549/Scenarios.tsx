@@ -45,12 +45,12 @@ export default function Scenarios() {
   return (
     <section className="py-48 px-6 bg-[#e81e61] text-black relative z-30">
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-6xl md:text-8xl font-pop mb-16 text-white drop-shadow-[8px_8px_0_#000]" style={{WebkitTextStroke: 'var(--brutal-stroke-width) black'}}>ESCENARIOS DE FRICCIÓN</h2>
+        <h2 className="text-6xl md:text-8xl font-pop mb-16 text-white drop-shadow-[8px_8px_0_#000]">ESCENARIOS DE FRICCIÓN</h2>
         
         <AnimatePresence mode="wait">
           {!feedback ? (
             <motion.div key={`q-${current}`} initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -100, opacity: 0 }} className="sticker bg-[#fccb06] p-8 md:p-12">
-              <span className="font-pop text-3xl bg-black text-white px-6 py-2 border-4 border-white shadow-[4px_4px_0_#000]">{scenarios[current].title}</span>
+              <span className="font-pop text-3xl bg-black text-white px-6 py-2 border-4 border-white shadow-[4px_4px_0_#000] rounded-3xl">{scenarios[current].title}</span>
               <p className="font-bold text-2xl md:text-4xl mt-12 mb-12 leading-snug bg-white p-6 border-4 border-black rounded-xl">{scenarios[current].text}</p>
               <div className="flex flex-col md:flex-row gap-8 justify-center">
                 {scenarios[current].options.map((opt, i) => (

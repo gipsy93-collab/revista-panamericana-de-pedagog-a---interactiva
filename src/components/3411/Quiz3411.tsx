@@ -38,7 +38,7 @@ export default function Quiz3411() {
                 Midiendo el <span className="text-rose-600 italic">Rigor</span>
               </h2>
            </div>
-           <div className="bg-zinc-900 border-4 border-white/10 p-6 font-mono text-[10px] uppercase font-black italic text-white/40">
+           <div className="bg-zinc-900 border-4 border-white/10 p-6 font-mono text-[10px] uppercase font-black italic text-white/40 rounded-2xl">
               Validación de hallazgos académicos // N-3411
            </div>
         </div>
@@ -49,7 +49,7 @@ export default function Quiz3411() {
               key={qi}
               className="bg-zinc-950 border-[6px] border-zinc-800 p-8 md:p-12 hover:border-rose-600 transition-colors group relative"
             >
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-black border-4 border-zinc-800 flex items-center justify-center font-display text-xl font-black group-hover:border-rose-600 group-hover:text-rose-600 transition-colors">
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-black border-4 border-zinc-800 flex items-center justify-center font-display text-xl font-black group-hover:border-rose-600 group-hover:text-rose-600 transition-colors rounded-2xl">
                  {qi + 1}
               </div>
               
@@ -109,7 +109,7 @@ export default function Quiz3411() {
                <button
                  onClick={() => setSubmitted(true)}
                  disabled={!isFinished}
-                 className="bg-white text-black px-16 py-6 font-display text-3xl uppercase font-black border-4 border-black shadow-[12px_12px_0_0_#e11d48] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all disabled:opacity-20 flex items-center gap-4 group"
+                 className="bg-white text-black px-16 py-6 font-display text-3xl uppercase font-black border-4 border-black shadow-[12px_12px_0_0_#e11d48] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all disabled:opacity-20 flex items-center gap-4 group rounded-3xl"
                >
                  Procesar Audit <Brain className="group-hover:rotate-12 transition-transform" />
                </button>
@@ -126,11 +126,11 @@ export default function Quiz3411() {
               <div className="flex flex-col md:flex-row justify-center gap-6">
                 <button
                   onClick={reset}
-                  className="flex items-center justify-center gap-3 bg-zinc-800 text-white px-10 py-5 font-display text-xl uppercase font-black border-4 border-black hover:bg-black transition-colors"
+                  className="flex items-center justify-center gap-3 bg-zinc-800 text-white px-10 py-5 font-display text-xl uppercase font-black border-4 border-black hover:bg-black transition-colors rounded-xl"
                 >
                   <RotateCcw size={24} /> Nueva Auditoría
                 </button>
-                <div className="px-10 py-5 border-4 border-rose-600 font-mono text-sm font-black uppercase flex items-center justify-center italic text-rose-500">
+                <div className="px-10 py-5 border-4 border-rose-600 font-mono text-sm font-black uppercase flex items-center justify-center italic text-rose-500 rounded-xl">
                   Respuesta Institucional: {score === QUIZ_QUESTIONS.length ? 'ÓPTIMA' : 'REQUIERE REVISIÓN'}
                 </div>
               </div>

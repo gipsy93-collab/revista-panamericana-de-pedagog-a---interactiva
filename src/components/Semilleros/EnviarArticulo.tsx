@@ -256,14 +256,14 @@ export default function EnviarArticulo({ onBack }: Props) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-rose-600 transition-colors shadow-[4px_4px_0_0_#9f1239] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#9f1239] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-rose-600 transition-colors shadow-[4px_4px_0_0_#9f1239] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#9f1239] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
           </button>
 
           <div className="hidden md:flex items-center gap-4">
-            <div className="bg-rose-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">
+            <div className="bg-rose-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000] rounded-3xl">
               ENVIAR ARTÍCULO
             </div>
             <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">
@@ -401,7 +401,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                         className="w-full flex items-center justify-between gap-4 text-left group"
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 bg-black text-white flex items-center justify-center border-4 border-black shrink-0">
+                          <div className="w-10 h-10 bg-black text-white flex items-center justify-center border-4 border-black shrink-0 rounded-xl">
                             <ScrollText className="w-5 h-5" />
                           </div>
                           <div>
@@ -413,7 +413,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                       </button>
                     ) : (
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-pop-teal text-white flex items-center justify-center border-4 border-black shrink-0">
+                        <div className="w-10 h-10 bg-pop-teal text-white flex items-center justify-center border-4 border-black shrink-0 rounded-xl">
                           <Check className="w-5 h-5" />
                         </div>
                         <div className="flex-1">
@@ -445,7 +445,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                     onClick={() => {
                       if (validateRegistro()) goTo('checklist', 1);
                     }}
-                    className="group flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#e11d48] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#e11d48] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all"
+                    className="group flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#e11d48] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#e11d48] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all rounded-3xl"
                   >
                     Continuar
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -480,7 +480,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                     {checked.size}/{TOTAL_CHECKS}
                   </span>
                 </div>
-                <div className="h-6 bg-zinc-100 border-4 border-black">
+                <div className="h-6 bg-zinc-100 border-4 border-black rounded-xl">
                   <motion.div
                     className="h-full bg-rose-600"
                     animate={{ width: `${progress}%` }}
@@ -524,7 +524,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                             <SectionIcon className="w-5 h-5" />
                           </div>
                           <div className="text-left">
-                            <h3 className="font-display text-xl uppercase font-black italic tracking-tighter">
+                            <h3 className="font-display text-xl uppercase font-black italic tracking-normal">
                               {section.title}
                             </h3>
                             <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-400">
@@ -534,7 +534,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                         </div>
                         <div className="flex items-center gap-3">
                           {isComplete && (
-                            <div className="bg-pop-teal text-white px-3 py-1 font-mono text-[10px] uppercase font-black border-2 border-black">
+                            <div className="bg-pop-teal text-white px-3 py-1 font-mono text-[10px] uppercase font-black border-2 border-black rounded-xl">
                               OK
                             </div>
                           )}
@@ -590,7 +590,7 @@ export default function EnviarArticulo({ onBack }: Props) {
               <div className="flex justify-between mt-10">
                 <button
                   onClick={() => goTo('registro', -1)}
-                  className="group flex items-center gap-3 bg-white text-black px-6 py-4 border-4 border-black font-display text-lg uppercase shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                  className="group flex items-center gap-3 bg-white text-black px-6 py-4 border-4 border-black font-display text-lg uppercase shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-3xl"
                 >
                   <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                   Atrás
@@ -694,7 +694,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                       <select
                         value={manuscrito.formato}
                         onChange={(e) => setManuscrito((p) => ({ ...p, formato: e.target.value }))}
-                        className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20 appearance-none"
+                        className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20 appearance-none rounded-xl"
                       >
                         <option value="apa">APA (7ª edición)</option>
                         <option value="mla">MLA (9ª edición)</option>
@@ -753,7 +753,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                       value={manuscrito.datosDisponibles}
                       onChange={(e) => setManuscrito((p) => ({ ...p, datosDisponibles: e.target.value }))}
                       placeholder={'URL de repositorio, descripción de materiales, o "No aplica"'}
-                      className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20"
+                      className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20 rounded-xl"
                     />
                   </div>
 
@@ -766,13 +766,13 @@ export default function EnviarArticulo({ onBack }: Props) {
                       onChange={(e) => setManuscrito((p) => ({ ...p, comentarios: e.target.value }))}
                       placeholder="Notas adicionales, declaraciones de conflicto de intereses, etc."
                       rows={3}
-                      className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20 resize-y"
+                      className="w-full px-4 py-4 border-4 border-black bg-white font-sans text-lg focus:outline-none focus:ring-4 focus:ring-rose-600/20 resize-y rounded-xl"
                     />
                   </div>
                 </BrutalCard>
 
                 {submitResult === 'error' && (
-                  <div className="bg-rose-600 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000]">
+                  <div className="bg-rose-600 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000] rounded-3xl">
                     <div className="flex items-center gap-3">
                       <AlertCircle className="w-6 h-6" />
                       <div>
@@ -788,7 +788,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                 <div className="flex justify-between">
                   <button
                     onClick={() => goTo('checklist', -1)}
-                    className="group flex items-center gap-3 bg-white text-black px-6 py-4 border-4 border-black font-display text-lg uppercase shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all"
+                    className="group flex items-center gap-3 bg-white text-black px-6 py-4 border-4 border-black font-display text-lg uppercase shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-3xl"
                   >
                     <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                     Atrás
@@ -796,7 +796,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="group flex items-center gap-3 bg-rose-600 text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#000] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#000] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group flex items-center gap-3 bg-rose-600 text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#000] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#000] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-3xl"
                   >
                     {isSubmitting ? (
                       <>
@@ -834,12 +834,12 @@ export default function EnviarArticulo({ onBack }: Props) {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: 'spring', damping: 10 }}
-                className="w-24 h-24 bg-pop-teal border-8 border-black mx-auto mb-10 flex items-center justify-center shadow-[8px_8px_0_0_#000]"
+                className="w-24 h-24 bg-pop-teal border-8 border-black mx-auto mb-10 flex items-center justify-center shadow-[8px_8px_0_0_#000] rounded-3xl"
               >
                 <Check className="w-12 h-12 text-white" />
               </motion.div>
 
-              <h2 className="font-display text-5xl md:text-7xl uppercase font-black italic tracking-tighter mb-6">
+              <h2 className="font-display text-5xl md:text-7xl uppercase font-black italic tracking-normal mb-6">
                 ¡Manuscrito enviado!
               </h2>
 
@@ -847,7 +847,7 @@ export default function EnviarArticulo({ onBack }: Props) {
                 Hemos recibido tu trabajo. El equipo editorial realizará la moderación técnica y te contactará en los próximos 15 días hábiles.
               </p>
 
-              <div className="max-w-xl mx-auto bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] mb-12 text-left space-y-4">
+              <div className="max-w-xl mx-auto bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] mb-12 text-left space-y-4 rounded-3xl">
                 <h3 className="font-display text-xl uppercase font-black border-b-4 border-black pb-2">
                   Resumen de tu envío
                 </h3>
@@ -871,7 +871,7 @@ export default function EnviarArticulo({ onBack }: Props) {
 
               <button
                 onClick={onBack}
-                className="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#e11d48] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#e11d48] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all"
+                className="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 border-4 border-black font-display text-xl uppercase shadow-[6px_6px_0_0_#e11d48] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[9px_9px_0_0_#e11d48] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all rounded-3xl"
               >
                 <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
                 Volver al Semillero
@@ -895,20 +895,20 @@ export default function EnviarArticulo({ onBack }: Props) {
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 50 }}
                 transition={{ type: 'spring', damping: 20 }}
-                className="bg-white border-8 border-black w-full max-w-3xl max-h-[90vh] flex flex-col shadow-[16px_16px_0_0_#000]"
+                className="bg-white border-8 border-black w-full max-w-3xl max-h-[90vh] flex flex-col shadow-[16px_16px_0_0_#000] rounded-3xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header del modal */}
                 <div className="flex items-center justify-between p-6 border-b-8 border-black bg-rose-600 text-white shrink-0">
                   <div className="flex items-center gap-4">
                     <ScrollText className="w-8 h-8" />
-                    <h3 className="font-display text-2xl uppercase font-black italic tracking-tighter">
+                    <h3 className="font-display text-2xl uppercase font-black italic tracking-normal">
                       Términos y Condiciones
                     </h3>
                   </div>
                   <button
                     onClick={() => setShowTermsModal(false)}
-                    className="w-10 h-10 bg-black text-white flex items-center justify-center border-4 border-white hover:bg-white hover:text-black transition-colors"
+                    className="w-10 h-10 bg-black text-white flex items-center justify-center border-4 border-white hover:bg-white hover:text-black transition-colors rounded-xl"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -1104,12 +1104,12 @@ function StepHeader({ step, title, subtitle }: { step: number; title: string; su
   return (
     <div className="mb-12">
       <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 bg-rose-600 text-white flex items-center justify-center border-4 border-black font-display text-2xl font-black shadow-[4px_4px_0_0_#000]">
+        <div className="w-12 h-12 bg-rose-600 text-white flex items-center justify-center border-4 border-black font-display text-2xl font-black shadow-[4px_4px_0_0_#000] rounded-3xl">
           {step}
         </div>
         <BrutalSticker text={`PASO ${step} DE 4`} color="bg-black" className="text-white !rotate-0" />
       </div>
-      <h2 className="font-display text-4xl md:text-6xl uppercase font-black italic tracking-tighter mb-4">
+      <h2 className="font-display text-4xl md:text-6xl uppercase font-black italic tracking-normal mb-4">
         {title}
       </h2>
       <p className="font-serif text-xl italic text-zinc-500">{subtitle}</p>

@@ -130,7 +130,7 @@ export const SimuladorParcela3214 = () => {
                   <p className="text-3xl md:text-4xl font-serif italic text-black leading-tight">
                     {currentScene.text}
                   </p>
-                  <div className="bg-emerald-50 border-4 border-black p-8 rotate-1">
+                  <div className="bg-emerald-50 border-4 border-black p-8 rotate-1 rounded-3xl">
                      <h5 className="font-display text-xl font-black uppercase italic mb-4 flex items-center gap-2">
                        <ShieldAlert className="text-emerald-600" /> Reflexión
                      </h5>
@@ -138,7 +138,7 @@ export const SimuladorParcela3214 = () => {
                   </div>
                   <button 
                     onClick={reset}
-                    className="group bg-black text-white px-10 py-6 border-4 border-black font-display text-xl uppercase font-black italic flex items-center justify-center gap-4 hover:bg-emerald-600 transition-colors shadow-[8px_8px_0_0_#064e3b]"
+                    className="group bg-black text-white px-10 py-6 border-4 border-black font-display text-xl uppercase font-black italic flex items-center justify-center gap-4 hover:bg-emerald-600 transition-colors shadow-[8px_8px_0_0_#064e3b] rounded-3xl"
                   >
                     <RotateCcw className="group-hover:rotate-180 transition-transform duration-500" /> Reiniciar Simulación
                   </button>
@@ -146,7 +146,6 @@ export const SimuladorParcela3214 = () => {
               ) : (
                 <div className="space-y-12">
                    <div className="relative">
-                      <div className="absolute -top-12 left-0 font-mono text-[80px] font-black text-black/5 leading-none select-none pointer-events-none uppercase tracking-tighter italic">SCENE_{currentSceneId.toUpperCase()}</div>
                       <p className="text-3xl md:text-5xl font-serif italic text-black leading-tight relative z-10">
                         {currentScene.text}
                       </p>
@@ -156,7 +155,7 @@ export const SimuladorParcela3214 = () => {
                         <button
                           key={i}
                           onClick={() => handleChoice(choice)}
-                          className="group text-left bg-white p-8 border-4 border-black shadow-[6px_6px_0_0_#000] hover:bg-emerald-50 hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#059669] transition-all flex items-center justify-between"
+                          className="group text-left bg-white p-8 border-4 border-black shadow-[6px_6px_0_0_#000] hover:bg-emerald-50 hover:-translate-y-2 hover:shadow-[12px_12px_0_0_#059669] transition-all flex items-center justify-between rounded-3xl"
                         >
                            <span className="font-display text-xl md:text-2xl font-black uppercase italic leading-none">{choice.text}</span>
                            <ArrowRight className="group-hover:translate-x-4 transition-transform text-emerald-600" size={32} />

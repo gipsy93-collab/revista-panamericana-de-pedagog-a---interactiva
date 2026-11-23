@@ -41,9 +41,9 @@ export const Quiz3543 = () => {
   if (isFinished) {
     return (
       <section className="py-20 px-6 bg-black text-white min-h-[60vh] flex items-center justify-center">
-        <BrutalCard color="bg-white" className="max-w-2xl w-full text-center py-16" shadowColor={ARTICLE_META.themeColor}>
+        <BrutalCard color="bg-white" className="max-w-2xl w-full text-center py-16 rounded-3xl" shadowColor={ARTICLE_META.themeColor}>
           <div className="flex flex-col gap-8 items-center">
-            <BrutalSticker text="RESULTADOS" color="bg-[#10b981]" className="text-white" />
+            <BrutalSticker text="RESULTADOS" color="bg-[#10b981]" className="text-white rounded-xl" />
             <h3 className="text-6xl font-display uppercase text-black">
               {score} / {QUIZ_QUESTIONS.length}
             </h3>
@@ -52,7 +52,7 @@ export const Quiz3543 = () => {
             </p>
             <button 
               onClick={restartQuiz}
-              className="flex items-center gap-2 bg-black text-white px-8 py-4 font-display uppercase hover:scale-105 transition-transform"
+              className="flex items-center gap-2 bg-black text-white px-8 py-4 font-display uppercase rounded-2xl hover:scale-105 transition-transform shadow-[4px_4px_0_0_#10b981]"
             >
               <RotateCcw size={20} /> Reintentar
             </button>
@@ -68,14 +68,14 @@ export const Quiz3543 = () => {
     <section className="py-20 px-6 bg-[#f0f0f0]">
       <div className="max-w-4xl mx-auto flex flex-col gap-12">
         <div className="flex flex-col gap-4 text-center items-center">
-          <BrutalSticker text="VALIDACIÓN DE TERRENO" color="bg-black" className="text-white" />
+          <BrutalSticker text="VALIDACIÓN DE TERRENO" color="bg-black" className="text-white rounded-xl" />
           <PremiumTitle subtitle={`PREGUNTA ${currentQuestion + 1} DE ${QUIZ_QUESTIONS.length}`}>
             Evaluación Académica
           </PremiumTitle>
         </div>
 
-        <BrutalCard className="flex flex-col gap-8 p-12">
-          <h4 className="text-3xl font-display uppercase leading-tight italic">
+        <BrutalCard className="flex flex-col gap-8 p-8 md:p-12 rounded-3xl shadow-[16px_16px_0_0_#000]">
+          <h4 className="text-2xl md:text-3xl font-display uppercase leading-tight italic">
             {question.question}
           </h4>
 
@@ -97,11 +97,11 @@ export const Quiz3543 = () => {
                   key={idx}
                   onClick={() => handleOptionSelect(idx)}
                   disabled={showFeedback}
-                  className={`w-full text-left p-6 border-4 font-bold text-lg transition-all flex items-center justify-between ${variantStyle} ${!showFeedback && 'hover:translate-x-2'}`}
+                  className={`w-full text-left p-5 md:p-6 border-4 rounded-2xl font-bold text-base md:text-lg transition-all flex items-center justify-between ${variantStyle} ${!showFeedback && 'hover:translate-x-2'}`}
                 >
-                  {opt}
-                  {showFeedback && isCorrect && <CheckCircle2 className="text-green-600" />}
-                  {showFeedback && isSelected && !isCorrect && <XCircle className="text-red-600" />}
+                  <span>{opt}</span>
+                  {showFeedback && isCorrect && <CheckCircle2 className="text-green-600 flex-shrink-0 ml-3" />}
+                  {showFeedback && isSelected && !isCorrect && <XCircle className="text-red-600 flex-shrink-0 ml-3" />}
                 </button>
               );
             })}
@@ -112,14 +112,14 @@ export const Quiz3543 = () => {
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`p-6 border-l-8 ${selectedOption === question.correctAnswer ? 'bg-green-50 border-green-600' : 'bg-red-50 border-red-600'}`}
+                className={`p-6 border-l-8 rounded-2xl ${selectedOption === question.correctAnswer ? 'bg-green-50 border-green-600' : 'bg-red-50 border-red-600'}`}
               >
-                <p className="font-sans text-lg italic font-medium">
+                <p className="font-sans text-base md:text-lg italic font-medium">
                   {question.feedback}
                 </p>
                 <button 
                   onClick={nextQuestion}
-                  className="mt-6 flex items-center gap-2 bg-black text-white px-6 py-3 font-display uppercase self-end ml-auto"
+                  className="mt-6 flex items-center gap-2 bg-black text-white px-6 py-3 font-display uppercase rounded-xl self-end ml-auto shadow-[4px_4px_0_0_#000]"
                 >
                   Siguiente <ArrowRight size={18} />
                 </button>

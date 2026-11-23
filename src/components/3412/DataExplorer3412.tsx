@@ -32,9 +32,6 @@ export default function DataExplorer3412() {
 
   return (
     <div className="w-full my-12 bg-[#fafafa] border-[10px] border-black p-8 shadow-[24px_24px_0_0_#000] text-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-black/[0.03] leading-none pointer-events-none select-none">
-        SOFT_SKILLS
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -42,7 +39,7 @@ export default function DataExplorer3412() {
           <div className="space-y-12">
             <h2 className="text-5xl font-display font-black uppercase italic leading-none border-b-8 border-black pb-4">Lab <span className="text-red-600">3412</span></h2>
             
-            <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000]">
+            <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rounded-3xl">
               <h4 className="font-display text-2xl font-black uppercase mb-6 italic flex items-center gap-3">
                 <Users size={28} className="text-red-600" /> Género
               </h4>
@@ -59,7 +56,7 @@ export default function DataExplorer3412() {
               </div>
             </div>
 
-            <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000]">
+            <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rounded-3xl">
               <h4 className="font-display text-2xl font-black uppercase mb-6 italic flex items-center gap-3">
                 <Target size={28} className="text-blue-600" /> Nivel Socioeconómico
               </h4>
@@ -87,7 +84,7 @@ export default function DataExplorer3412() {
                          <span className="font-display text-lg uppercase font-black italic">{p.name}</span>
                          <span className="font-mono text-sm font-black text-green-400">HI: {p.HI} pts</span>
                       </div>
-                      <div className="h-6 w-full bg-zinc-800 border-2 border-white/20">
+                      <div className="h-6 w-full bg-zinc-800 border-2 border-white/20 rounded-xl">
                          <motion.div 
                            initial={{ width: 0 }}
                            whileInView={{ width: `${(p.HI / 150) * 100}%` }}
@@ -99,7 +96,7 @@ export default function DataExplorer3412() {
               </div>
             </BrutalCard>
 
-            <div className="bg-yellow-400 p-8 border-4 border-black shadow-[12px_12px_0_0_#000] rotate-1">
+            <div className="bg-yellow-400 p-8 border-4 border-black shadow-[12px_12px_0_0_#000] rotate-1 rounded-3xl">
                <h4 className="font-display text-xl font-black uppercase mb-4 flex items-center gap-3">
                  <Zap size={24} /> Hallazgo Clave
                </h4>

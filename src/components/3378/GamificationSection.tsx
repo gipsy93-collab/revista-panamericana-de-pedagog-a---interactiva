@@ -238,9 +238,9 @@ export default function GamificationSection() {
               whileHover={{ scale: 1.05, y: -10 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveGame('quiz')}
-              className="bg-white border-4 border-black p-8 shadow-[12px_12px_0_#000] text-left hover:shadow-[16px_16px_0_#6C63FF] transition-all"
+              className="bg-white border-4 border-black p-8 shadow-[12px_12px_0_#000] text-left hover:shadow-[16px_16px_0_#6C63FF] transition-all rounded-3xl"
             >
-              <div className="w-20 h-20 bg-[#6C63FF] flex items-center justify-center mb-6 border-4 border-black">
+              <div className="w-20 h-20 bg-[#6C63FF] flex items-center justify-center mb-6 border-4 border-black rounded-xl">
                 <Target size={40} className="text-white" />
               </div>
               <h3 className="text-3xl font-pop uppercase mb-4 text-black">Quiz de Comprensión</h3>
@@ -256,9 +256,9 @@ export default function GamificationSection() {
               whileHover={{ scale: 1.05, y: -10 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveGame('flashcards')}
-              className="bg-[#00D9FF] border-4 border-black p-8 shadow-[12px_12px_0_#000] text-left hover:shadow-[16px_16px_0_#000] transition-all"
+              className="bg-[#00D9FF] border-4 border-black p-8 shadow-[12px_12px_0_#000] text-left hover:shadow-[16px_16px_0_#000] transition-all rounded-3xl"
             >
-              <div className="w-20 h-20 bg-black flex items-center justify-center mb-6 border-4 border-white">
+              <div className="w-20 h-20 bg-black flex items-center justify-center mb-6 border-4 border-white rounded-xl">
                 <Layers size={40} className="text-white" />
               </div>
               <h3 className="text-3xl font-pop uppercase mb-4 text-black">Flashcards</h3>
@@ -274,9 +274,9 @@ export default function GamificationSection() {
               whileHover={{ scale: 1.05, y: -10 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveGame('memory')}
-              className="bg-black text-white border-4 border-white p-8 shadow-[12px_12px_0_#6C63FF] text-left hover:shadow-[16px_16px_0_#00D9FF] transition-all"
+              className="bg-black text-white border-4 border-white p-8 shadow-[12px_12px_0_#6C63FF] text-left hover:shadow-[16px_16px_0_#00D9FF] transition-all rounded-3xl"
             >
-              <div className="w-20 h-20 bg-[#fccb06] flex items-center justify-center mb-6 border-4 border-white">
+              <div className="w-20 h-20 bg-[#fccb06] flex items-center justify-center mb-6 border-4 border-white rounded-xl">
                 <Sparkles size={40} className="text-black" />
               </div>
               <h3 className="text-3xl font-pop uppercase mb-4 text-white">Juego de Memoria</h3>
@@ -320,7 +320,7 @@ export default function GamificationSection() {
                 </div>
               </div>
 
-              <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0_#000] mb-8">
+              <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0_#000] mb-8 rounded-3xl">
                 <h3 className="text-2xl font-bold mb-8 text-black">
                   {quizQuestions[currentQuestion].question}
                 </h3>
@@ -359,7 +359,7 @@ export default function GamificationSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    className="bg-black text-white p-6 border-4 border-white"
+                    className="bg-black text-white p-6 border-4 border-white rounded-2xl"
                   >
                     <div className={`flex items-center gap-3 text-xl font-bold mb-3 ${feedback === 'correct' ? 'text-[#4ECB71]' : 'text-[#e81e61]'}`}>
                       {feedback === 'correct' ? <CheckCircle2 size={28} /> : <XCircle size={28} />}
@@ -374,7 +374,7 @@ export default function GamificationSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center bg-white border-4 border-black p-12 shadow-[20px_20px_0_#000]"
+              className="text-center bg-white border-4 border-black p-12 shadow-[20px_20px_0_#000] rounded-3xl"
             >
               <div className="w-32 h-32 bg-[#fccb06] rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-black">
                 <Award size={64} className="text-black" />
@@ -399,7 +399,7 @@ export default function GamificationSection() {
                 </button>
                 <button
                   onClick={() => setActiveGame('menu')}
-                  className="bg-[#fccb06] text-black px-8 py-4 font-bold border-2 border-black hover:bg-[#00D9FF] transition-colors"
+                  className="bg-[#fccb06] text-black px-8 py-4 font-bold border-2 border-black hover:bg-[#00D9FF] transition-colors rounded-xl"
                 >
                   Menú Principal
                 </button>
@@ -440,7 +440,7 @@ export default function GamificationSection() {
             >
               {/* Front */}
               <div
-                className="absolute inset-0 bg-white border-8 border-black p-10 flex flex-col items-center justify-center shadow-[15px_15px_0_#000]"
+                className="absolute inset-0 bg-white border-8 border-black p-10 flex flex-col items-center justify-center shadow-[15px_15px_0_#000] rounded-3xl"
                 style={{ backfaceVisibility: 'hidden' }}
               >
                 <BookOpen size={48} className="text-[#6C63FF] mb-6" />
@@ -449,7 +449,7 @@ export default function GamificationSection() {
               </div>
               {/* Back */}
               <div
-                className="absolute inset-0 bg-[#6C63FF] text-white border-8 border-black p-10 flex flex-col items-center justify-center shadow-[15px_15px_0_#000]"
+                className="absolute inset-0 bg-[#6C63FF] text-white border-8 border-black p-10 flex flex-col items-center justify-center shadow-[15px_15px_0_#000] rounded-3xl"
                 style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
               >
                 <p className="text-2xl leading-relaxed text-center">{flashcards[fcIndex].back}</p>
@@ -465,7 +465,7 @@ export default function GamificationSection() {
                 setFcIndex((i) => i - 1);
                 setFcFlipped(false);
               }}
-              className="bg-white border-4 border-black p-4 font-bold disabled:opacity-30 hover:bg-[#fccb06] transition-colors"
+              className="bg-white border-4 border-black p-4 font-bold disabled:opacity-30 hover:bg-[#fccb06] transition-colors rounded-2xl"
             >
               <ArrowLeft size={24} />
             </button>
@@ -476,7 +476,7 @@ export default function GamificationSection() {
                 setFcIndex((i) => i + 1);
                 setFcFlipped(false);
               }}
-              className="bg-white border-4 border-black p-4 font-bold disabled:opacity-30 hover:bg-[#fccb06] transition-colors"
+              className="bg-white border-4 border-black p-4 font-bold disabled:opacity-30 hover:bg-[#fccb06] transition-colors rounded-2xl"
             >
               <ArrowRight size={24} />
             </button>
@@ -535,7 +535,7 @@ export default function GamificationSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center mt-12 bg-[#6C63FF] border-4 border-white p-8"
+              className="text-center mt-12 bg-[#6C63FF] border-4 border-white p-8 rounded-3xl"
             >
               <p className="text-3xl font-bold text-white mb-4">
                 🎉 ¡Todos los pares encontrados!

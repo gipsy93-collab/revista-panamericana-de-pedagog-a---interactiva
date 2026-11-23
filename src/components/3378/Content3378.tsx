@@ -30,7 +30,7 @@ export const Content3378 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#fff1f2] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#fff1f2] relative rounded-3xl">
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic text-white">2.2 Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10 text-white/80">
                   <p>El artículo aborda la pregunta: ¿Cómo pueden los paisajes de aprendizaje transformar la participación activa en entornos virtuales de posgrado?</p>
@@ -112,7 +112,7 @@ export const Content3378 = () => {
               </div>
               <div>
                 <h3 className="font-display text-4xl uppercase font-black italic mb-6">3.2 Participantes / Muestra</h3>
-                <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000]">
+                <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[10px_10px_0_0_#000] rounded-3xl">
                   <div className="flex items-center gap-6 mb-4">
                     <span className="text-7xl font-display font-black text-pink-600">09</span>
                     <p className="text-sm font-mono uppercase tracking-widest text-white/60">Estudiantes del módulo de Praxis Pedagógica de la Maestría en Educación con Énfasis en Aprendizaje del Inglés (Univ. Nacional de Costa Rica).</p>
@@ -129,7 +129,7 @@ export const Content3378 = () => {
                 { name: "Cuestionario post-implementación", desc: "Midió cambios en percepción y nivel de participación tras implementación." },
                 { name: "Análisis de contenido", desc: "Estudio de caso instrumental de interacciones en Padlet durante 12 semanas." }
               ].map((inst, i) => (
-                <div key={i} className="flex gap-6 items-center p-6 border-4 border-black bg-white shadow-[8px_8px_0_0_#db2777]">
+                <div key={i} className="flex gap-6 items-center p-6 border-4 border-black bg-white shadow-[8px_8px_0_0_#db2777] rounded-3xl">
                   <Search className="text-pink-600 shrink-0" size={32} />
                   <div>
                     <h4 className="font-display text-lg uppercase font-black leading-none mb-1 text-black">{inst.name}</h4>
@@ -180,7 +180,7 @@ export const Content3378 = () => {
                   <div className="flex items-center gap-8">
                     <span className="text-5xl group-hover:scale-125 transition-transform">{dim.emoji}</span>
                     <div className="flex flex-col">
-                      <span className="font-display text-2xl uppercase font-black tracking-tighter italic leading-none mb-1">{dim.name}</span>
+                      <span className="font-display text-2xl uppercase font-black tracking-normal italic leading-none mb-1">{dim.name}</span>
                       <span className="font-mono text-[9px] uppercase font-black opacity-60 tracking-widest">{dim.code} // ANALYSIS</span>
                     </div>
                   </div>
@@ -208,13 +208,13 @@ export const Content3378 = () => {
                   </p>
 
                   <div className="grid md:grid-cols-1 gap-6 relative z-10">
-                    <div className="bg-zinc-950 text-white p-10 border-4 border-black rotate-[-1deg] shadow-[10px_10px_0_0_#000]">
+                    <div className="bg-zinc-950 text-white p-10 border-4 border-black rotate-[-1deg] shadow-[10px_10px_0_0_#000] rounded-3xl">
                       <h4 className="font-mono text-[10px] uppercase font-black mb-6 tracking-widest text-pink-400 border-b border-white/10 pb-2">EVIDENCIA.QUALITATIVA</h4>
                       <ul className="space-y-5">
                         {DIMENSIONS[activeDimension].highlights?.map((h, i) => (
                           <li key={i} className="flex gap-4 items-start text-white">
                              <CheckSquare size={18} className="text-pink-500 shrink-0 mt-1" />
-                             <span className="font-display text-lg uppercase font-black italic tracking-tighter leading-none">{h}</span>
+                             <span className="font-display text-lg uppercase font-black italic tracking-normal leading-none">{h}</span>
                           </li>
                         ))}
                       </ul>
@@ -269,8 +269,8 @@ export const Content3378 = () => {
         <div className="max-w-6xl mx-auto text-center pb-48">
            <div className="inline-block relative mb-24">
               <div className="absolute inset-0 bg-pink-600 translate-x-3 translate-y-3" />
-              <div className="relative bg-black text-white p-20 md:p-32 border-8 border-black">
-                 <h2 className="text-7xl md:text-[10rem] font-display uppercase font-black leading-[0.8] tracking-tighter italic">
+              <div className="relative bg-black text-white p-20 md:p-32 border-8 border-black rounded-xl">
+                 <h2 className="text-7xl md:text-[10rem] font-display uppercase font-black leading-[0.95] tracking-normal italic">
                    Paisaje <br/> <span className="text-pink-500">Activo</span>
                  </h2>
                  <div className="w-40 h-8 bg-pink-600 mx-auto mt-16 mb-16" />

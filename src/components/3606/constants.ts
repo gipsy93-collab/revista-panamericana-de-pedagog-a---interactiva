@@ -6,7 +6,7 @@ export const ARTICLE_META = {
   abstract: 'Investigación cualitativa que analiza la implementación de ajustes razonables en una Licenciatura en Educación Especial en México. El estudio revela una contradicción crítica: aunque existe una alta sensibilización docente (3.87/4), la inclusión efectiva depende de la voluntad individual y no de protocolos institucionales, evidenciando barreras estructurales que perpetúan desigualdades sistémicas.',
   authors: 'Macías-Rosado, A. G., Ramos-Ramírez, B. N., & Márquez-Cabellos, N. G.',
   institution: 'Universidad de Colima, México',
-  doi: '10.21155/rpp.3606',
+  doi: '10.21555/rpp.3606',
   volume: 'Vol. 41',
   date: 'Diciembre 2025',
   n: 7,

@@ -25,15 +25,12 @@ export const DataLab3570 = () => {
 
   return (
     <div className="bg-[#fffcf9] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 left-0 p-12 font-mono text-[180px] font-black text-orange-600/[0.03] leading-none pointer-events-none select-none italic">
-        3570_RS
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div>
             <BrutalSticker text="3. METODOLOGÍA & 4. RESULTADOS" color="bg-orange-600" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#000]" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               LAB <span className="text-orange-600 underline decoration-8 decoration-black">CRÍTICO_</span>
             </h2>
           </div>
@@ -61,7 +58,7 @@ export const DataLab3570 = () => {
                 className="grid md:grid-cols-4 gap-6"
               >
                 {prismaStats.map((s, i) => (
-                  <div key={i} className="bg-white border-8 border-black p-10 shadow-[12px_12px_0_0_#ea580c] group hover:-translate-y-2 transition-transform">
+                  <div key={i} className="bg-white border-8 border-black p-10 shadow-[12px_12px_0_0_#ea580c] group hover:-translate-y-2 transition-transform rounded-3xl">
                      <span className="font-mono text-[10px] uppercase font-black opacity-40 block mb-6 tracking-widest leading-none italic">PASO_0{i+1}</span>
                      <div className="text-7xl font-display font-black italic mb-4 text-black">{s.value}</div>
                      <h4 className="font-display text-xl font-black uppercase italic mb-4 leading-none">{s.label}</h4>
@@ -103,7 +100,7 @@ export const DataLab3570 = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="grid lg:grid-cols-12 gap-12"
               >
-                <div className="lg:col-span-8 bg-white border-8 border-black p-12 shadow-[20px_20px_0_0_#ea580c]">
+                <div className="lg:col-span-8 bg-white border-8 border-black p-12 shadow-[20px_20px_0_0_#ea580c] rounded-3xl">
                    <h3 className="font-display text-4xl font-black uppercase italic mb-10 border-b-4 border-orange-600 pb-4">3.1 Estrategia PEO_</h3>
                    <div className="grid grid-cols-3 gap-8 text-center uppercase font-display font-black italic">
                       {[
@@ -119,7 +116,7 @@ export const DataLab3570 = () => {
                       ))}
                    </div>
                 </div>
-                <div className="lg:col-span-4 bg-zinc-950 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] flex flex-col justify-center rotate-1">
+                <div className="lg:col-span-4 bg-zinc-950 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] flex flex-col justify-center rotate-1 rounded-3xl">
                    <h4 className="font-display text-3xl font-black uppercase italic mb-8">Bases de Datos</h4>
                    <ul className="space-y-6 list-none">
                       {[

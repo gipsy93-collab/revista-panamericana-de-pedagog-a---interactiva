@@ -73,8 +73,27 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
-  const [activeSubPage, setActiveSubPage] = useState<string | null>(null);
+  const [activeSubPage, setActiveSubPage] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const article = params.get('article');
+      if (article) return article;
+    }
+    return null;
+  });
   const sectionRefs = useRef<(HTMLDivElement | null)[]>(Array(7).fill(null));
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (activeSubPage) {
+        url.searchParams.set('article', activeSubPage);
+      } else {
+        url.searchParams.delete('article');
+      }
+      window.history.replaceState({}, '', url.toString());
+    }
+  }, [activeSubPage]);
 
   useEffect(() => {
     let lenis: any = null;

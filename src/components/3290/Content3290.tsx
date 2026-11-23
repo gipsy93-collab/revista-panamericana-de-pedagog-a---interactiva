@@ -29,7 +29,7 @@ export const Content3290 = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f5f3ff] relative">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#f5f3ff] relative rounded-3xl">
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/60-lines.png')]" />
                 <h3 className="font-display text-xl uppercase font-black mb-6 italic text-f5f3ff">Problema de Investigación</h3>
                 <div className="space-y-4 relative z-10">
@@ -66,12 +66,12 @@ export const Content3290 = () => {
               </div>
             </div>
             <div className="space-y-8">
-              <div className="bg-indigo-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-1">
+              <div className="bg-indigo-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-1 rounded-3xl">
                 <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">CONCEPTO CENTRAL</h4>
                 <p className="text-2xl font-display uppercase font-black italic leading-tight">Blended Learning</p>
                 <p className="text-sm mt-4 leading-relaxed">Combinación estratégica de condiciones virtuales y físicas de aprendizaje que busca optimizar la experiencia educativa.</p>
               </div>
-              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] -rotate-1">
+              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] -rotate-1 rounded-3xl">
                 <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60 text-indigo-400">PILAR TEÓRICO</h4>
                 <p className="text-sm font-bold border-l-4 border-indigo-400 pl-4 italic leading-relaxed">"El aprendizaje híbrido tiene potencial transformador en educación superior, pero requiere infraestructura, formación docente y adaptación de procesos administrativos."</p>
                 <p className="text-xs mt-4 opacity-60 text-right">— Garrison & Kanuka (2004)</p>
@@ -131,7 +131,7 @@ export const Content3290 = () => {
                  <p className="text-lg font-bold leading-snug text-black/80">La tecnología permite la coexistencia, pero no garantiza la integración. El desafío no es técnico, es relacional.</p>
               </CinematicCard>
               
-              <div className="bg-indigo-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden">
+              <div className="bg-indigo-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden rounded-3xl">
                  <div className="absolute -bottom-4 -right-4 bg-white/10 w-32 h-32 rounded-full group-hover:scale-150 transition-transform" />
                  <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">TENSIÓN CENTRAL</h4>
                  <p className="text-sm font-bold border-l-4 border-white pl-4 italic leading-relaxed">
@@ -139,7 +139,7 @@ export const Content3290 = () => {
                  </p>
               </div>
 
-              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#f472b6] -rotate-1 text-black">
+              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#f472b6] -rotate-1 text-black rounded-3xl">
                  <h4 className="font-display text-xl uppercase font-black mb-2 italic">Dilema de Atención</h4>
                  <p className="text-xs font-sans font-medium text-black/50 leading-relaxed uppercase">
                    Es como conducir dos conversaciones al mismo tiempo esperando que ambas tengan la misma profundidad y rigor.
@@ -159,27 +159,27 @@ export const Content3290 = () => {
           </div>
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">3.1 Tipo de Estudio</h3>
-            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <p className="text-base leading-relaxed text-black/80">Investigación <strong>cualitativa de corte fenomenológico</strong>. El objetivo es comprender los desafíos pedagógicos y tecnológicos desde la <em>experiencia vivida</em> de los docentes.</p>
             </div>
           </div>
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">3.2 Participantes / Muestra</h3>
-            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Característica</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Detalle</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Característica</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Detalle</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">N</td><td className="p-4 text-sm border-2 border-black/10 bg-white">23 profesores</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Perfil</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Docentes asignados a cursos de aprendizaje híbrido en una institución de educación superior del suroccidente colombiano</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Distribución por facultad</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Ciencias Básicas: 9 (39%)<br/>Ciencias Humanas: 6 (26%)<br/>Instituto de Idiomas: 3 (13%)<br/>Ingeniería: 3 (13%)<br/>Desarrollo Humano: 2 (9%)</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Formación</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Posgrado nivel maestría</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Rango de edad</td><td className="p-4 text-sm border-2 border-black/10 bg-white">26-45 años</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Criterios de selección</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Docentes responsables de asignaturas en modalidad híbrida</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">N</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">23 profesores</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Perfil</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Docentes asignados a cursos de aprendizaje híbrido en una institución de educación superior del suroccidente colombiano</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Distribución por facultad</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Ciencias Básicas: 9 (39%)<br/>Ciencias Humanas: 6 (26%)<br/>Instituto de Idiomas: 3 (13%)<br/>Ingeniería: 3 (13%)<br/>Desarrollo Humano: 2 (9%)</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Formación</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Posgrado nivel maestría</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Rango de edad</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">26-45 años</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Criterios de selección</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Docentes responsables de asignaturas en modalidad híbrida</td></tr>
                 </tbody>
               </table>
             </div>
@@ -187,7 +187,7 @@ export const Content3290 = () => {
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">3.3 Instrumentos / Técnicas de Recolección</h3>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+              <div className="bg-white p-8 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
                 <h4 className="font-display text-lg uppercase font-black mb-4 italic text-indigo-600">Cuestionario Estructurado</h4>
                 <ul className="space-y-3 text-sm">
                   <li className="flex gap-2"><span className="text-indigo-600 font-bold">→</span> 4 preguntas abiertas sobre desafíos pedagógicos y tecnológicos</li>
@@ -195,7 +195,7 @@ export const Content3290 = () => {
                   <li className="flex gap-2"><span className="text-indigo-600 font-bold">→</span> Naturaleza divergente y orientadora</li>
                 </ul>
               </div>
-              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000]">
+              <div className="bg-zinc-900 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-3xl">
                 <h4 className="font-display text-lg uppercase font-black mb-4 italic text-indigo-400">Grupos Focales</h4>
                 <ul className="space-y-3 text-sm">
                   <li className="flex gap-2"><span className="text-indigo-400 font-bold">→</span> Objetivo: complementar y profundizar información</li>
@@ -207,21 +207,21 @@ export const Content3290 = () => {
           </div>
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">3.5 Análisis de Datos</h3>
-            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Aspecto</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Detalle</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Aspecto</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Detalle</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Técnica</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Análisis de contenido (Krippendorff, 1990)</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Software</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Atlas.ti 23</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Esquema</td><td className="p-4 text-sm border-2 border-black/10 bg-white">4 categorías, 22 códigos</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Categorías</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Desafíos pedagógicos, Desafíos tecnológicos (basadas en Galvis-Panqueva, 2019)</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Proceso</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Categorización por dimensiones → Análisis de discurso detallado → Identificación de patrones → Triangulación entre investigadores</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Validación</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Revisión y confirmación conjunta de categorías y códigos</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Técnica</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Análisis de contenido (Krippendorff, 1990)</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Software</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Atlas.ti 23</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Esquema</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">4 categorías, 22 códigos</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Categorías</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Desafíos pedagógicos, Desafíos tecnológicos (basadas en Galvis-Panqueva, 2019)</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Proceso</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Categorización por dimensiones → Análisis de discurso detallado → Identificación de patrones → Triangulación entre investigadores</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Validación</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Revisión y confirmación conjunta de categorías y códigos</td></tr>
                 </tbody>
               </table>
             </div>
@@ -251,7 +251,7 @@ export const Content3290 = () => {
                 >
                   <div className="flex items-center gap-6">
                     <span className="text-3xl">{dim.emoji}</span>
-                    <span className="font-display text-xl uppercase font-black tracking-tighter italic leading-none">{dim.name}</span>
+                    <span className="font-display text-xl uppercase font-black tracking-normal italic leading-none">{dim.name}</span>
                   </div>
                 </button>
               ))}
@@ -277,19 +277,19 @@ export const Content3290 = () => {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative">
+                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative rounded-3xl">
                       <h4 className="font-mono text-[9px] uppercase font-black mb-4 tracking-widest text-indigo-400">PUNTOS_CRÍTICOS</h4>
                       <ul className="space-y-4">
                         {DIMENSIONS[activeDimension].highlights?.map((h, i) => (
                           <li key={i} className="flex gap-3 items-start md:items-center">
                             <span className="bg-indigo-600 w-2 h-2 rounded-full shrink-0 md:mt-0 mt-1" />
-                            <span className="font-display text-sm uppercase font-black italic tracking-tighter leading-tight">{h}</span>
+                            <span className="font-display text-sm uppercase font-black italic tracking-normal leading-tight">{h}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="bg-indigo-50 p-8 border-4 border-black flex flex-col justify-center">
+                    <div className="bg-indigo-50 p-8 border-4 border-black flex flex-col justify-center rounded-3xl">
                        <Quote className="text-indigo-600 mb-4" size={32} />
                        <p className="font-serif italic text-lg leading-snug text-black/90">
                           {activeDimension === 0 && "Un desafío fue vincular a los estudiantes remotos con los presenciales, especialmente en lo colaborativo."}
@@ -323,20 +323,20 @@ export const Content3290 = () => {
           </div>
           <div className="mb-20">
             <h3 className="font-display text-2xl uppercase font-black mb-8 italic">4.2 Desafíos Pedagógicos</h3>
-            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#e11d48] mb-8">
+            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#e11d48] mb-8 rounded-3xl">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Desafío</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">%</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Descripción</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Desafío</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">%</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Descripción</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Interacción presencial-virtual</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-rose-600 font-black text-lg">47%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Facilitar conexión significativa entre estudiantes en aula física y participantes remotos</td></tr>
-                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 font-bold">Baja participación y motivación</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 text-rose-600 font-black text-lg">26%</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50">Estudiantes desmotivados o con bajo compromiso</td></tr>
-                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Estrategias para ambos grupos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-rose-600 font-black text-lg">21%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Necesidad de diseñar actividades inclusivas para presenciales y virtuales</td></tr>
-                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 font-bold">Retroalimentación integral</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 text-rose-600 font-black">—</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50">Proporcionar feedback constructivo y oportuno a todos</td></tr>
+                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Interacción presencial-virtual</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-rose-600 font-black text-lg rounded-2xl">47%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Facilitar conexión significativa entre estudiantes en aula física y participantes remotos</td></tr>
+                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 font-bold rounded-2xl">Baja participación y motivación</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 text-rose-600 font-black text-lg rounded-2xl">26%</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 rounded-2xl">Estudiantes desmotivados o con bajo compromiso</td></tr>
+                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Estrategias para ambos grupos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-rose-600 font-black text-lg rounded-2xl">21%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Necesidad de diseñar actividades inclusivas para presenciales y virtuales</td></tr>
+                  <tr className="hover:bg-rose-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 font-bold rounded-2xl">Retroalimentación integral</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 text-rose-600 font-black rounded-2xl">—</td><td className="p-4 text-sm border-2 border-black/10 bg-rose-50 rounded-2xl">Proporcionar feedback constructivo y oportuno a todos</td></tr>
                 </tbody>
               </table>
             </div>
@@ -347,48 +347,48 @@ export const Content3290 = () => {
           </div>
           <div className="mb-20">
             <h3 className="font-display text-2xl uppercase font-black mb-8 italic">4.2 Desafíos Tecnológicos</h3>
-            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#059669] mb-8">
+            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#059669] mb-8 rounded-3xl">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Desafío</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">%</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Notas</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Desafío</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">%</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Notas</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Sin problemas tecnológicos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black text-lg">27%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Condiciones técnicas favorables</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold">Dificultades en uso de tecnología</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black text-lg">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50">Familiaridad variable con plataformas</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Problemas con micrófono</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black text-lg">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Barrera para la comunicación</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold">Sincronización</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black">9%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50">Problemas de timing entre entornos</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Diversidad de roles y funciones</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black">6%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Complejidad en permisos de plataformas</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold">Acceso lento a plataformas</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black">6%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50">Problemas de conectividad</td></tr>
-                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Otros</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black">16%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Conectividad estudiantes, pantallas interactivas, Webex</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Sin problemas tecnológicos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black text-lg rounded-2xl">27%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Condiciones técnicas favorables</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold rounded-2xl">Dificultades en uso de tecnología</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black text-lg rounded-2xl">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 rounded-2xl">Familiaridad variable con plataformas</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Problemas con micrófono</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black text-lg rounded-2xl">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Barrera para la comunicación</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold rounded-2xl">Sincronización</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black rounded-2xl">9%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 rounded-2xl">Problemas de timing entre entornos</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Diversidad de roles y funciones</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black rounded-2xl">6%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Complejidad en permisos de plataformas</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 font-bold rounded-2xl">Acceso lento a plataformas</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 text-emerald-600 font-black rounded-2xl">6%</td><td className="p-4 text-sm border-2 border-black/10 bg-emerald-50 rounded-2xl">Problemas de conectividad</td></tr>
+                  <tr className="hover:bg-emerald-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Otros</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-emerald-600 font-black rounded-2xl">16%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Conectividad estudiantes, pantallas interactivas, Webex</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div className="mb-16">
             <h3 className="font-display text-2xl uppercase font-black mb-8 italic">4.3 Resumen de Datos Clave</h3>
-            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5]">
+            <div className="overflow-x-auto border-4 border-black shadow-[8px_8px_0_0_#4f46e5] rounded-3xl">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Variable/Dato</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Valor</th>
-                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black">Contexto/Nota</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Variable/Dato</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Valor</th>
+                    <th className="bg-zinc-900 text-white p-4 text-left font-display uppercase text-xs tracking-wider border-2 border-black rounded-2xl">Contexto/Nota</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Docentes encuestados</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black">n=23</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Distribuidos en 5 unidades académicas</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Desafío pedagógico principal</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black">47%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Interacción presencial-virtual</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Segundo desafío pedagógico</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black">26%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Baja participación y motivación</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Tercer desafío pedagógico</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black">21%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Estrategias para ambos grupos</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Docentes sin problemas técnicos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black">27%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Condiciones favorables reportadas</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Con dificultades tecnológicas</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Uso de plataformas</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Problemas de micrófono</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Barrera comunicacional</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold">Período de recolección</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black">Marzo 2023</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50">Post-pandemia, modelo consolidado</td></tr>
-                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold">Categorías de análisis</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black">4</td><td className="p-4 text-sm border-2 border-black/10 bg-white">Con 22 códigos en Atlas.ti</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Docentes encuestados</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black rounded-2xl">n=23</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Distribuidos en 5 unidades académicas</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Desafío pedagógico principal</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black rounded-2xl">47%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Interacción presencial-virtual</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Segundo desafío pedagógico</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black rounded-2xl">26%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Baja participación y motivación</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Tercer desafío pedagógico</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black rounded-2xl">21%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Estrategias para ambos grupos</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Docentes sin problemas técnicos</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black rounded-2xl">27%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Condiciones favorables reportadas</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Con dificultades tecnológicas</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black rounded-2xl">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Uso de plataformas</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Problemas de micrófono</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black rounded-2xl">18%</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Barrera comunicacional</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 font-bold rounded-2xl">Período de recolección</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 text-indigo-600 font-black rounded-2xl">Marzo 2023</td><td className="p-4 text-sm border-2 border-black/10 bg-indigo-50 rounded-2xl">Post-pandemia, modelo consolidado</td></tr>
+                  <tr className="hover:bg-indigo-100 transition-colors"><td className="p-4 text-sm border-2 border-black/10 bg-white font-bold rounded-2xl">Categorías de análisis</td><td className="p-4 text-sm border-2 border-black/10 bg-white text-indigo-600 font-black rounded-2xl">4</td><td className="p-4 text-sm border-2 border-black/10 bg-white rounded-2xl">Con 22 códigos en Atlas.ti</td></tr>
                 </tbody>
               </table>
             </div>
@@ -418,11 +418,11 @@ export const Content3290 = () => {
                { icon: Mic, color: 'bg-zinc-900', title: 'Audio Crítico', desc: 'El 18% de los desafíos técnicos se concentran en problemas de micrófono y sonido.' },
                { icon: Brain, color: 'bg-fuchsia-500', title: 'Giro Pedagógico', desc: 'La multimodalidad requiere inversiones en formación docente sistemática, no solo técnica.' }
              ].map((it, i) => (
-               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer">
+               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer rounded-3xl">
                   <div className={`${it.color} text-white p-6 border-4 border-black mb-6 w-fit group-hover:rotate-12 transition-transform`}>
                     <it.icon size={44} />
                   </div>
-                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-tighter">{it.title}</h4>
+                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-normal">{it.title}</h4>
                   <p className="font-sans text-sm font-medium text-black/70 leading-relaxed">{it.desc}</p>
                </div>
              ))}
@@ -447,7 +447,7 @@ export const Content3290 = () => {
                     <h4 className="font-display text-lg uppercase font-black mb-2 italic text-indigo-600">La Paradoja de la Interacción</h4>
                     <p className="text-sm leading-relaxed text-black/80">La tecnología promete conectar, pero <strong>47% de los docentes</strong> experimenta dificultades precisamente en ese punto. No se trata de falta de herramientas, sino de complejidad en crear entornos genuinamente integradores.</p>
                   </div>
-                  <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000]">
+                  <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000] rounded-3xl">
                     <h4 className="font-display text-lg uppercase font-black mb-2 italic text-indigo-400">El Dilema de la Atención Dividida</h4>
                     <p className="text-sm leading-relaxed">Intentar <em>"servir a estudiantes presenciales y virtuales simultáneamente"</em> (P16) genera una carga cognitiva extra sobre el docente. Es como conducir dos conversaciones al mismo tiempo, esperando que ambas tengan la misma profundidad.</p>
                   </div>
@@ -459,7 +459,7 @@ export const Content3290 = () => {
               </div>
             </div>
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-indigo-600 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-1">
+              <div className="bg-indigo-600 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#000] rotate-1 rounded-3xl">
                 <h4 className="font-mono text-[10px] uppercase font-black mb-6 tracking-widest opacity-60">COINCIDENCIAS</h4>
                 <ul className="space-y-4 text-sm">
                   <li className="flex gap-3"><span className="text-indigo-200 font-bold">→</span> Bates et al. (2020) y Garrison & Kanuka (2004): desafíos de enseñanza en entornos híbridos</li>
@@ -467,7 +467,7 @@ export const Content3290 = () => {
                   <li className="flex gap-3"><span className="text-indigo-200 font-bold">→</span> Stanley & Montero-Fortunato (2020): infraestructura y formación como factores críticos</li>
                 </ul>
               </div>
-              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] -rotate-1">
+              <div className="bg-zinc-900 text-white p-10 border-4 border-black shadow-[10px_10px_0_0_#4f46e5] -rotate-1 rounded-3xl">
                 <h4 className="font-mono text-[10px] uppercase font-black mb-6 tracking-widest opacity-60 text-rose-400">CONTRASTES</h4>
                 <p className="text-sm leading-relaxed mb-4">Estudios que reportan aumento de motivación y autonomía <span className="text-rose-400">(Adaobi-Ubah et al., 2020; Portela, 2020; Chen et al., 2023)</span></p>
                 <p className="text-sm leading-relaxed">Este estudio muestra lo opuesto: <strong className="text-rose-400">26% reporta baja participación y falta de motivación</strong></p>
@@ -494,13 +494,13 @@ export const Content3290 = () => {
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">6.2 Conclusiones de los Autores</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#4f46e5]">
+              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0_0_#4f46e5] rounded-3xl">
                 <p className="text-sm italic text-black/80 leading-relaxed">"La falta de infraestructura tecnológica adecuada, la brecha digital y la necesidad de formación docente en el uso de tecnologías educativas requieren inversiones para asegurar la implementación exitosa de la educación virtual."</p>
               </div>
-              <div className="bg-indigo-50 p-6 border-4 border-black shadow-[6px_6px_0_0_#4f46e5]">
+              <div className="bg-indigo-50 p-6 border-4 border-black shadow-[6px_6px_0_0_#4f46e5] rounded-3xl">
                 <p className="text-sm italic text-black/80 leading-relaxed">"La importancia de abordar desafíos organizacionales, como la necesidad de adaptar procesos administrativos y de gestión, también se destaca. Esto implica repensar modelos de evaluación, seguimiento y apoyo estudiantil."</p>
               </div>
-              <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000]">
+              <div className="bg-zinc-900 text-white p-6 border-4 border-black shadow-[6px_6px_0_0_#000] rounded-3xl">
                 <p className="text-sm italic leading-relaxed">"Implementar sistemas de soporte técnico continuo y optimizar equipos y software será esencial para mejorar las actividades tecnológicas en futuros entornos educativos y profesionales."</p>
               </div>
             </div>
@@ -508,27 +508,27 @@ export const Content3290 = () => {
           <div className="mb-16">
             <h3 className="font-display text-xl uppercase font-black mb-6 italic">6.3 Recomendaciones</h3>
             <div className="grid md:grid-cols-5 gap-4">
-              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#e11d48] text-center">
+              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#e11d48] text-center rounded-3xl">
                 <div className="text-3xl font-black text-rose-600 mb-2">1</div>
                 <h4 className="font-display text-xs uppercase font-black mb-2">Formación Docente</h4>
                 <p className="text-[10px] text-black/70">Programas innovadores que combinen desarrollo curricular y uso de tecnología</p>
               </div>
-              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#059669] text-center">
+              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#059669] text-center rounded-3xl">
                 <div className="text-3xl font-black text-emerald-600 mb-2">2</div>
                 <h4 className="font-display text-xs uppercase font-black mb-2">Soporte Técnico</h4>
                 <p className="text-[10px] text-black/70">Sistemas de soporte técnico continuo</p>
               </div>
-              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#2563eb] text-center">
+              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#2563eb] text-center rounded-3xl">
                 <div className="text-3xl font-black text-blue-600 mb-2">3</div>
                 <h4 className="font-display text-xs uppercase font-black mb-2">Optimización</h4>
                 <p className="text-[10px] text-black/70">Mejorar equipos y software para reducir barreras</p>
               </div>
-              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#ea580c] text-center">
+              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#ea580c] text-center rounded-3xl">
                 <div className="text-3xl font-black text-orange-600 mb-2">4</div>
                 <h4 className="font-display text-xs uppercase font-black mb-2">Adaptación</h4>
                 <p className="text-[10px] text-black/70">Repensar procesos administrativos y evaluación</p>
               </div>
-              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#7c3aed] text-center">
+              <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_0_#7c3aed] text-center rounded-3xl">
                 <div className="text-3xl font-black text-violet-600 mb-2">5</div>
                 <h4 className="font-display text-xs uppercase font-black mb-2">Intervenciones</h4>
                 <p className="text-[10px] text-black/70">Abordar conectividad y acceso a plataformas</p>
@@ -543,7 +543,7 @@ export const Content3290 = () => {
         <div className="max-w-6xl mx-auto text-center pb-40">
            <div className="inline-block relative mb-20">
               <div className="absolute inset-0 bg-black translate-x-4 translate-y-4" />
-              <div className="relative bg-indigo-600 text-white p-16 md:p-32 border-8 border-black">
+              <div className="relative bg-indigo-600 text-white p-16 md:p-32 border-8 border-black rounded-xl">
                  <h2 className="text-6xl md:text-[8rem] font-display uppercase font-black leading-none drop-shadow-[5px_5px_0_#000] italic">
                    Mundo <br/> Híbrido
                  </h2>

@@ -122,15 +122,15 @@ const AuthorCover = ({ author, index }: { author: typeof authors[0], index: numb
 
         {/* Text Container */}
         <div className="space-y-6">
-          <h3 className="font-display text-4xl uppercase leading-[0.85] text-white drop-shadow-[4px_4px_0_#000] tracking-tighter">
+          <h3 className="font-display text-4xl uppercase leading-[0.95] text-white drop-shadow-[4px_4px_0_#000] tracking-normal">
             {author.name}
           </h3>
           
           <div className="space-y-2">
-             <div className="inline-block bg-black text-white px-3 py-1 font-accent text-[10px] uppercase font-black tracking-widest border-2 border-black rotate-1">
+             <div className="inline-block bg-black text-white px-3 py-1 font-accent text-[10px] uppercase font-black tracking-widest border-2 border-black rotate-1 rounded-xl">
                 {author.institution}
              </div>
-             <p className="font-mono text-[10px] uppercase font-black text-black block tracking-tighter opacity-80">
+             <p className="font-mono text-[10px] uppercase font-black text-black block tracking-normal opacity-80">
                 {author.formation}
              </p>
           </div>
@@ -170,7 +170,7 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-rose-600 transition-colors shadow-[4px_4px_0_0_#9f1239] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#9f1239] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-rose-600 transition-colors shadow-[4px_4px_0_0_#9f1239] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#9f1239] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
             <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
             <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
@@ -179,13 +179,13 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
             href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
+            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Académica</span>
           </a>
           
           <div className="hidden md:flex items-center gap-4">
-             <div className="bg-rose-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000]">AUTORES</div>
+             <div className="bg-rose-600 text-white px-4 py-2 border-4 border-black font-display text-xl font-black italic shadow-[4px_4px_0_0_#000] rounded-3xl">AUTORES</div>
              <span className="font-mono text-[10px] uppercase font-black tracking-widest opacity-40">NETWORK // RPP_2026</span>
           </div>
         </div>
@@ -222,10 +222,10 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <BrutalSticker text="RED DE INVESTIGACIÓN ACTIVA" color="bg-black" className="text-white mb-12 !rotate-1 px-8 py-3 text-3xl border-4 shadow-[12px_12px_0_0_#000]" />
+              <BrutalSticker text="RED DE INVESTIGACIÓN ACTIVA" color="bg-black" className="text-white mb-12 !rotate-1 px-8 py-3 text-3xl border-4 shadow-[12px_12px_0_0_#000] rounded-3xl" />
             </motion.div>
             
-            <h1 className="text-[5rem] md:text-[14rem] font-display uppercase leading-[0.8] text-white drop-shadow-[25px_25px_0_#000] mb-12 italic tracking-tighter" style={{ WebkitTextStroke: 'calc(var(--brutal-stroke-width) * 2) black' }}>
+            <h1 className="text-[5rem] md:text-[14rem] font-display uppercase leading-[0.95] text-white drop-shadow-[25px_25px_0_#000] mb-12 italic tracking-normal">
               Semillero <br /> Autores
             </h1>
             
@@ -236,7 +236,7 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
                <p className="text-lg md:text-xl font-accent font-bold text-slate-300 uppercase tracking-widest leading-snug border-l-4 border-cyan-400 pl-6">
                  Funciona con moderación técnica, sin arbitraje académico ni jerarquías entre autorías.
                </p>
-               <p className="text-base md:text-lg font-mono text-cyan-200/70 uppercase tracking-tighter">
+               <p className="text-base md:text-lg font-mono text-cyan-200/70 uppercase tracking-normal">
                  Cada contribución se preserva con DOI y se integra al ecosistema interactivo de ciencia abierta de RPP.
                </p>
             </div>
@@ -249,8 +249,8 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
       <section className="bg-white py-32 border-y-[20px] border-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
-             <span className="font-mono text-sm uppercase font-black bg-rose-600 text-white px-4 py-1 border-2 border-black mb-6 inline-block">PORTAFOLIO DE TALENTO</span>
-             <h2 className="text-6xl md:text-9xl font-display uppercase italic tracking-tighter">AUTORES PUBLICADOS</h2>
+             <span className="font-mono text-sm uppercase font-black bg-rose-600 text-white px-4 py-1 border-2 border-black mb-6 inline-block rounded-xl">PORTAFOLIO DE TALENTO</span>
+             <h2 className="text-6xl md:text-9xl font-display uppercase italic tracking-normal">AUTORES PUBLICADOS</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
@@ -285,7 +285,7 @@ export default function UnifiedAutores({ onBack, onEnviarArticulo }: Props) {
           
           <button 
             onClick={onEnviarArticulo}
-            className="group relative bg-[#fccb06] text-black px-16 py-8 border-8 border-black font-display text-4xl uppercase shadow-[12px_12px_0_0_#e11d48] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[18px_18px_0_0_#e11d48] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+            className="group relative bg-[#fccb06] text-black px-16 py-8 border-8 border-black font-display text-4xl uppercase shadow-[12px_12px_0_0_#e11d48] hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[18px_18px_0_0_#e11d48] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none rounded-3xl"
           >
             <span className="relative z-10">ENVIAR AHORA</span>
             <div className="absolute inset-0 bg-white translate-x-3 translate-y-3 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform" />

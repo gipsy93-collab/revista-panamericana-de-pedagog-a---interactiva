@@ -20,7 +20,7 @@ export default function DataExplorer3557() {
       <div className="grid lg:grid-cols-2 gap-16">
         {/* PANEL IZQUIERDO: SIMULADOR */}
         <div className="space-y-12">
-          <div className="bg-zinc-100 p-6 border-4 border-black">
+          <div className="bg-zinc-100 p-6 border-4 border-black rounded-2xl">
             <h4 className="font-black uppercase mb-6 text-2xl italic flex items-center gap-3">
               <span className="bg-black text-white w-10 h-10 flex items-center justify-center not-italic rounded-full">1</span> 
               Perfil del Jurista
@@ -38,7 +38,7 @@ export default function DataExplorer3557() {
             </div>
           </div>
 
-          <div className="bg-white p-6 border-4 border-black shadow-[10px_10px_0_0_#000] border-l-[16px] border-l-red-600">
+          <div className="bg-white p-6 border-4 border-black shadow-[10px_10px_0_0_#000] border-l-[16px] border-l-red-600 rounded-3xl">
              <div className="flex items-center gap-3 mb-2 font-black uppercase text-xs">
                 <ShieldAlert className="text-red-600" /> Alerta_Resistencia
              </div>
@@ -47,7 +47,7 @@ export default function DataExplorer3557() {
         </div>
 
         {/* PANEL DERECHO: MÉTRICAS DE EFICIENCIA */}
-        <div className="bg-zinc-50 border-8 border-black p-10 flex flex-col justify-between">
+        <div className="bg-zinc-50 border-8 border-black p-10 flex flex-col justify-between rounded-3xl">
            <div>
               <div className="flex justify-between items-center mb-12 border-b-4 border-black pb-4">
                  <p className="font-mono text-xs uppercase font-black opacity-40">Métrica_Optimización // LAB_3557</p>
@@ -62,7 +62,7 @@ export default function DataExplorer3557() {
                        <span>Tiempo de Procesamiento Cases/Docs</span>
                        <span className={activeMode === 'tech' ? 'text-blue-600' : ''}>{data.time} Units</span>
                     </div>
-                    <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000]">
+                    <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000] rounded-3xl">
                        <div className={`h-full transition-all duration-1000 ${activeMode === 'tech' ? 'bg-blue-600' : 'bg-black'}`} style={{ width: `${data.time}%` }}></div>
                     </div>
                  </div>
@@ -72,7 +72,7 @@ export default function DataExplorer3557() {
                        <span>Costo Operativo / Esfuerzo</span>
                        <span className={activeMode === 'tech' ? 'text-blue-600' : ''}>{data.cost} Units</span>
                     </div>
-                    <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000]">
+                    <div className="h-10 bg-white border-4 border-black p-1 shadow-[4px_4px_0_0_#000] rounded-3xl">
                        <div className={`h-full transition-all duration-1000 ${activeMode === 'tech' ? 'bg-cyan-500' : 'bg-zinc-400'}`} style={{ width: `${data.cost}%` }}></div>
                     </div>
                  </div>
@@ -89,17 +89,17 @@ export default function DataExplorer3557() {
       </div>
 
        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#000]">
+          <div className="bg-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#000] rounded-3xl">
              <Cpu className="text-blue-600 mb-2" size={32} />
              <span className="text-2xl font-black">$15.7 T</span>
              <span className="font-mono text-[8px] uppercase font-black opacity-50">Aporte IA al PIB 2030</span>
           </div>
-          <div className="bg-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#3b82f6]">
+          <div className="bg-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#3b82f6] rounded-3xl">
              <Clock className="text-black mb-2" size={32} />
              <span className="text-2xl font-black">80% REDUX.</span>
              <span className="font-mono text-[8px] uppercase font-black opacity-50">Carga Laboral Reportada</span>
           </div>
-          <div className="bg-black text-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#000]">
+          <div className="bg-black text-white border-4 border-black p-4 flex flex-col items-center shadow-[6px_6px_0_0_#000] rounded-3xl">
              <ShieldAlert className="text-red-600 mb-2" size={32} />
              <span className="text-2xl font-black">90% BRECHA</span>
              <span className="font-mono text-[8px] uppercase font-black opacity-50">Sin Formación Obligatoria</span>

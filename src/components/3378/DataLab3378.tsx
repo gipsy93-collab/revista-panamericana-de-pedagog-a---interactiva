@@ -22,23 +22,20 @@ export const DataLab3378 = () => {
 
   return (
     <div className="bg-[#fff1f2] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-black/[0.03] leading-none pointer-events-none select-none">
-        LAB_PEDAGOGY
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-20">
           <div>
             <BrutalSticker text="STATISTICAL_LAB // COSTA RICA // LEARNING_LANDSCAPES" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#db2777] px-6 py-2" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               LAB <span className="text-pink-600">3378</span>
             </h2>
           </div>
           <div className="flex gap-4">
-             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg]">
+             <div className="bg-white border-4 border-black p-4 shadow-[6px_6px_0_0_#000] rotate-[-2deg] rounded-3xl">
                 <Activity size={40} className="text-pink-600" />
              </div>
-             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#db2777] rotate-[3deg]">
+             <div className="bg-black border-4 border-black p-4 shadow-[6px_6px_0_0_#db2777] rotate-[3deg] rounded-3xl">
                 <BookOpen size={40} className="text-white" />
              </div>
           </div>
@@ -50,7 +47,7 @@ export const DataLab3378 = () => {
             <BrutalCard title="HALLAZGO_PRINCIPAL_PARTICIPACIÓN" color="bg-white" className="!border-[8px] shadow-[20px_20px_0_0_#000] h-full flex flex-col justify-center text-center p-12">
                <span className="font-mono text-[10px] font-black uppercase opacity-40 mb-4 tracking-[0.4em]">INCREMENTO NETO</span>
                <div className="flex items-baseline justify-center gap-2">
-                  <p className="text-9xl md:text-[12rem] font-display font-black text-pink-600 italic tracking-tighter leading-none">+24</p>
+                  <p className="text-9xl md:text-[12rem] font-display font-black text-pink-600 italic tracking-normal leading-none">+24</p>
                   <p className="text-6xl font-display font-black text-black">PP</p>
                </div>
                <p className="text-xs font-mono font-black uppercase mt-12 border-t-4 border-black pt-6">
@@ -69,7 +66,7 @@ export const DataLab3378 = () => {
                            <span className="font-display text-xl uppercase italic font-black leading-none">{item.indicator}</span>
                            <span className="font-mono text-sm font-black text-pink-400">{item.pre}% → {item.post}%</span>
                         </div>
-                        <div className="relative h-6 w-full bg-zinc-800 border-2 border-white/10 overflow-hidden">
+                        <div className="relative h-6 w-full bg-zinc-800 border-2 border-white/10 overflow-hidden rounded-xl">
                            {/* Pre-bar */}
                            <motion.div 
                              initial={{ width: 0 }}
@@ -85,7 +82,7 @@ export const DataLab3378 = () => {
                         </div>
                      </div>
                    ))}
-                   <div className="bg-zinc-900 border-2 border-white/10 p-6 mt-8">
+                   <div className="bg-zinc-900 border-2 border-white/10 p-6 mt-8 rounded-2xl">
                       <p className="text-xs font-mono font-black uppercase text-pink-400 mb-2 mt-4">Nota del Auditor:</p>
                       <p className="font-serif italic text-sm text-zinc-400 leading-relaxed">
                         "La mejora es transversal a todos los indicadores de interacción, validando el impacto del paisaje en la autorregulación y el interés."
@@ -124,7 +121,7 @@ export const DataLab3378 = () => {
           {/* IV. RESULTADOS POR OBJETIVO (4.2) */}
           <div className="lg:col-span-12">
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-black text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#db2777] flex flex-col justify-between">
+                <div className="bg-black text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#db2777] flex flex-col justify-between rounded-3xl">
                    <Target className="text-pink-500 mb-6" size={40} />
                    <h5 className="font-display text-2xl font-black uppercase italic leading-none mb-4">Objetivo 1</h5>
                    <p className="text-sm font-sans font-medium opacity-60 mb-6">Identificar contradicciones y desafíos.</p>
@@ -132,7 +129,7 @@ export const DataLab3378 = () => {
                       <p className="text-xs italic">"100% nunca había usado paisajes, lo que evidencia la novedad metodológica."</p>
                    </div>
                 </div>
-                <div className="bg-white text-black p-10 border-4 border-black shadow-[12px_12px_0_0_#000] flex flex-col justify-between">
+                <div className="bg-white text-black p-10 border-4 border-black shadow-[12px_12px_0_0_#000] flex flex-col justify-between rounded-3xl">
                    <Layout className="text-pink-600 mb-6" size={40} />
                    <h5 className="font-display text-2xl font-black uppercase italic leading-none mb-4">Objetivo 2</h5>
                    <p className="text-sm font-sans font-medium opacity-60 mb-6">Diseñar paisaje participativo y reflexivo.</p>
@@ -140,7 +137,7 @@ export const DataLab3378 = () => {
                       <p className="text-xs italic">"12 micro-paisajes semanales con metáfora de burbujas de diálogo."</p>
                    </div>
                 </div>
-                <div className="bg-pink-600 text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#000] flex flex-col justify-between">
+                <div className="bg-pink-600 text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#000] flex flex-col justify-between rounded-3xl">
                    <Activity className="text-white mb-6" size={40} />
                    <h5 className="font-display text-2xl font-black uppercase italic leading-none mb-4">Objetivo 3</h5>
                    <p className="text-sm font-sans font-medium opacity-80 mb-6">Evaluar impacto del paisaje.</p>

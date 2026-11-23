@@ -35,15 +35,12 @@ export default function TeacherLab3455() {
 
   return (
     <div className="w-full my-12 bg-white border-[10px] border-black p-8 md:p-12 shadow-[25px_25px_0_0_#7C3AED] text-black overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-12 font-mono text-[180px] font-black text-black/[0.02] leading-none pointer-events-none select-none">
-        LAB_PAZ
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div>
             <BrutalSticker text="3.2 & 3.5 LABORATORIO PEDAGÓGICO" color="bg-black" className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#7C3AED]" />
-            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-tighter">
+            <h2 className="text-6xl md:text-8xl font-display uppercase font-black leading-none text-black tracking-normal">
               TEACHER <span className="text-[#7C3AED]">LAB</span>
             </h2>
           </div>
@@ -105,7 +102,7 @@ export default function TeacherLab3455() {
           ) : (
             <div className="lg:col-span-12 grid md:grid-cols-3 gap-8">
                {categories.map((c, i) => (
-                 <div key={i} className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#7C3AED] hover:-translate-y-2 transition-transform h-full flex flex-col">
+                 <div key={i} className="bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#7C3AED] hover:-translate-y-2 transition-transform h-full flex flex-col rounded-3xl">
                     <div className="bg-black text-white w-12 h-12 flex items-center justify-center font-display text-2xl mb-8">
                        {i+1}
                     </div>

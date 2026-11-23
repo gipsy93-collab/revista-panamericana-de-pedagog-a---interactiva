@@ -1,105 +1,110 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { ARTICLE_META } from './constants';
-import { BrutalSticker, PremiumTitle, CinematicCard, ArticleFicha } from '../BrutalistLib';
-import { Heart, Sparkles, Brain, Lock } from 'lucide-react';
+import { BrutalSticker, CinematicCard, FallingWords, Tilt3DCard, RapidCounter } from '../BrutalistLib';
+import { Heart, Sparkles, Brain, Lock, Users } from 'lucide-react';
 
 export default function Hero3455() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-32 bg-[#F8F7FF] overflow-hidden border-b-[20px] border-black">
-      {/* Introspective Pattern */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-      
-      {/* Floating Personal Tokens */}
-      <div className="hidden lg:flex flex-col gap-10 absolute left-12 top-1/2 -translate-y-1/2 z-30">
-        <div className="bg-white border-4 border-black p-5 shadow-[10px_10px_0_0_#7C3AED] flex flex-col items-center rotate-[-3deg]">
-          <Heart size={32} className="text-[#7C3AED]" />
-          <span className="font-display font-black text-2xl">M</span>
-          <span className="font-mono text-[8px] uppercase font-black opacity-40">61.4%</span>
+    <section className="relative bg-[#F8F7FF] px-6 md:px-12 lg:px-24 pt-10 pb-20 md:pt-14 md:pb-24 overflow-hidden border-b-[16px] border-black">
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="lg:col-span-7 flex flex-col gap-6 text-left">
+          <div className="flex flex-wrap items-center gap-3">
+            <BrutalSticker
+              text="ESTUDIO INTERPRETATIVO // FORMACIÓN DOCENTE"
+              color="bg-[#7C3AED]"
+              className="text-white !rotate-0 shadow-[4px_4px_0_0_#000] rounded-2xl"
+            />
+            <span className="font-mono text-xs font-bold uppercase bg-white border-2 border-black px-3 py-1 rounded-xl flex items-center gap-2">
+              <Heart size={14} className="text-[#7C3AED]" /> Yucatán, México
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="font-mono text-xs md:text-sm uppercase tracking-[0.28em] text-[#7C3AED] font-bold flex items-center gap-2"
+            >
+              <Sparkles size={16} className="text-[#7C3AED]" /> // GESTIÓN EMOCIONAL Y CULTURA DE PAZ
+            </motion.span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display uppercase font-black leading-[0.94] tracking-normal text-black">
+              <FallingWords
+                text={ARTICLE_META.title}
+                accentColor="#7C3AED"
+                highlightWords={['personal', 'paz', 'docente']}
+              />
+            </h1>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-lg md:text-xl font-sans font-medium text-black/80 leading-relaxed max-w-2xl border-l-4 border-[#7C3AED] pl-5"
+          >
+            {ARTICLE_META.abstract}
+          </motion.p>
         </div>
-        <div className="bg-white border-4 border-black p-5 shadow-[10px_10px_0_0_#7C3AED] flex flex-col items-center rotate-[2deg]">
-          <Brain size={32} className="text-[#7C3AED]" />
-          <span className="font-display font-black text-2xl">H</span>
-          <span className="font-mono text-[8px] uppercase font-black opacity-40">38.6%</span>
+
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start w-full lg:pt-2">
+          <Tilt3DCard className="w-full max-w-md lg:max-w-[460px]">
+            <div className="bg-zinc-900 text-white border-4 border-black p-7 md:p-8 shadow-[16px_16px_0_0_#7C3AED] rounded-3xl flex flex-col gap-5">
+              <div className="flex items-center justify-between border-b border-white/15 pb-3">
+                <span className="font-mono text-xs uppercase font-black text-violet-400">
+                  DIMENSIÓN PERSONAL
+                </span>
+                <span className="font-mono text-[10px] uppercase font-bold bg-[#7C3AED] px-2.5 py-0.5 rounded-lg">
+                  UADY · N=57
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-[#7C3AED] p-5 border-2 border-black rounded-2xl text-white">
+                  <span className="block text-[10px] font-mono uppercase mb-1 opacity-85">Mujeres</span>
+                  <div className="text-4xl font-display font-black">
+                    <RapidCounter target={61.4} decimals={1} suffix="%" />
+                  </div>
+                  <p className="text-[10px] font-mono uppercase opacity-90 mt-1">Participación</p>
+                </div>
+                <div className="bg-yellow-400 text-black p-5 border-2 border-black rounded-2xl">
+                  <span className="block text-[10px] font-mono uppercase mb-1 opacity-75 font-bold">Hombres</span>
+                  <div className="text-4xl font-display font-black">
+                    <RapidCounter target={38.6} decimals={1} suffix="%" />
+                  </div>
+                  <p className="text-[10px] font-mono uppercase opacity-80 mt-1 font-bold">Participación</p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/15 p-4 rounded-2xl flex items-start gap-3">
+                <Lock size={20} className="text-violet-400 shrink-0 mt-0.5" />
+                <p className="font-serif italic text-sm text-violet-100 leading-relaxed">
+                  "¿Aprender a enseñar o aprender a ser? Dificultad crítica para compartir vivencias personales ante pares."
+                </p>
+              </div>
+            </div>
+          </Tilt3DCard>
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 flex flex-col items-center max-w-7xl mx-auto"
-      >
-        <BrutalSticker 
-          text={`ESTUDIO INTERPRETATIVO // RPP-${ARTICLE_META.id}`} 
-          color="bg-[#7C3AED]" 
-          className="text-white mb-10 !rotate-0 px-8 py-3 text-xl border-4 shadow-[8px_8px_0_0_#000]" 
-        />
-        
-        <div className="relative mb-16">
-          <motion.div 
-            initial={{ rotate: 45, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="absolute -top-14 -right-20 w-32 h-32 bg-yellow-400 border-4 border-black rounded-lg flex items-center justify-center text-black z-20 shadow-[10px_10px_0_0_#000]"
-          >
-            <Sparkles size={50} />
-          </motion.div>
-          
-          <PremiumTitle subtitle="FORMACIÓN DOCENTE / GESTIÓN EMOCIONAL" className="items-center text-center">
-            Dimensión Personal y Paz
-          </PremiumTitle>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 w-full items-start text-left">
-          {/* Main Content Box */}
-          <div className="lg:col-span-8 bg-white border-[12px] border-black p-14 shadow-[30px_30px_0_0_#7C3AED] relative group">
-            <div className="absolute top-0 right-0 p-6 font-mono text-xs opacity-30 uppercase font-black italic">3455 // PERSONAL_CORE</div>
-            <h3 className="font-display text-3xl mb-10 text-[#7C3AED] uppercase font-black italic">La Paradoja de la Formación</h3>
-            <p className="text-3xl font-serif italic leading-relaxed text-black/80">
-              "{ARTICLE_META.abstract}"
-            </p>
-            <div className="mt-12 flex items-center gap-10 border-t-4 border-black pt-10">
-               <div className="w-20 h-2 bg-[#7C3AED]" />
-               <div className="font-display uppercase text-2xl font-black tracking-tighter italic">
-                 ¿Aprender a Enseñar o Aprender a Ser?
-               </div>
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-14">
+        <CinematicCard color="bg-white" title="LA MUESTRA" icon={Users} className="shadow-[10px_10px_0_0_#7C3AED]">
+          <div className="text-3xl font-display font-black text-[#7C3AED] mb-2 uppercase">
+            n=<RapidCounter target={57} /> Futuros Docentes
           </div>
-
-          {/* Metadata & Secondary Stats */}
-          <div className="lg:col-span-4 flex flex-col gap-12">
-            <ArticleFicha 
-              doi={ARTICLE_META.doi}
-              authors={ARTICLE_META.authors}
-              institution={ARTICLE_META.institution}
-              vol={ARTICLE_META.volume}
-              date={ARTICLE_META.date}
-              className="w-full shadow-[15px_15px_0_0_#000] rotate-1"
-            />
-            
-            <div className="bg-black border-4 border-black p-10 text-white shadow-[12px_12px_0_0_#7C3AED] -rotate-1 group hover:rotate-0 transition-transform">
-              <Lock className="text-[#7C3AED] mb-6" size={32} />
-              <span className="block font-mono text-[10px] uppercase font-black mb-4 text-[#7C3AED] tracking-[0.5em]">Brecha Detectada</span>
-              <p className="text-2xl font-display uppercase leading-tight italic font-black">
-                "Dificultad crítica para compartir reflexiones personales ante pares."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Triple Highlight Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-24">
-          <CinematicCard color="bg-white" className="border-4" title="LA MUESTRA">
-            <p className="text-xl font-bold uppercase leading-tight">n={ARTICLE_META.n} Futuros docentes en formación inicial (Yucatán).</p>
-          </CinematicCard>
-          <CinematicCard color="bg-[#7C3AED]" className="text-white border-4 shadow-[15px_15px_0_0_#000] scale-105" title="DESCUBRIMIENTO">
-            <p className="text-xl font-bold uppercase leading-tight italic">Responsabilidad y Respeto son los valores ancla detectados.</p>
-          </CinematicCard>
-          <CinematicCard color="bg-yellow-400" className="border-4 text-black" title="EMOCIÓN">
-            <p className="text-xl font-serif italic font-black leading-tight">El trabajo personal genera estrés cuando no hay protocolos de cuidado.</p>
-          </CinematicCard>
-        </div>
-      </motion.div>
+          <p className="text-xs font-mono font-black border-t-2 border-black pt-2 uppercase">Formación inicial en Yucatán</p>
+        </CinematicCard>
+        <CinematicCard color="bg-[#7C3AED]" className="text-white shadow-[10px_10px_0_0_#000]" title="VALORES ANCLA" icon={Heart}>
+          <div className="text-2xl font-display font-black text-white mb-2 uppercase">Respeto y Compromiso</div>
+          <p className="text-xs font-mono font-black border-t-2 border-white/25 pt-2 uppercase">Pilares de la convivencia pacífica</p>
+        </CinematicCard>
+        <CinematicCard color="bg-yellow-400" title="TENSIÓN EMOCIONAL" icon={Brain} className="shadow-[10px_10px_0_0_#000]">
+          <div className="text-2xl font-display font-black text-black mb-2 uppercase">Cuidado Docente</div>
+          <p className="text-xs font-mono font-black border-t-2 border-black pt-2 uppercase">El trabajo personal requiere acompañamiento</p>
+        </CinematicCard>
+      </div>
     </section>
   );
 }

@@ -53,7 +53,7 @@ const Quiz3508 = () => {
           </div>
           <button 
             onClick={resetQuiz}
-            className="group relative z-10 flex items-center gap-4 mx-auto bg-pink-500 text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[14px_14px_0_0_#000] transition-all"
+            className="group relative z-10 flex items-center gap-4 mx-auto bg-pink-500 text-black px-12 py-6 border-4 border-black shadow-[10px_10px_0_0_#000] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[14px_14px_0_0_#000] transition-all rounded-3xl"
           >
             <RotateCcw className="group-hover:rotate-180 transition-transform duration-1000" size={32} />
             <span className="font-display uppercase text-3xl font-black">Reiniciar Sesión</span>
@@ -72,14 +72,14 @@ const Quiz3508 = () => {
             <BrutalSticker text="VALIDACIÓN CUALITATIVA" color="bg-violet-600" className="text-white mb-6" />
             <h2 className="text-7xl font-display uppercase leading-none italic">Sonda de <span className="text-pink-600">Creencias</span></h2>
          </div>
-         <div className="bg-black text-white px-8 py-4 border-4 border-black font-display text-5xl font-black shadow-[8px_8px_0_0_#8b5cf6]">
+         <div className="bg-black text-white px-8 py-4 border-4 border-black font-display text-5xl font-black shadow-[8px_8px_0_0_#8b5cf6] rounded-3xl">
             {currentQuestion + 1}
          </div>
       </div>
 
       <BrutalCard color="bg-white" className="mb-12 border-[10px] border-black shadow-[25px_25px_0_0_#000]">
         <div className="flex items-start gap-8 mb-16">
-           <div className="bg-violet-100 p-4 border-4 border-black shrink-0 rotate-6">
+           <div className="bg-violet-100 p-4 border-4 border-black shrink-0 rotate-6 rounded-2xl">
               <Activity className="text-violet-700" size={40} />
            </div>
            <h3 className="text-4xl md:text-5xl font-display uppercase leading-[0.9] pt-4">
@@ -113,8 +113,8 @@ const Quiz3508 = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="mt-16 pt-12 border-t-[12px] border-violet-50"
             >
-              <div className="bg-zinc-900 p-12 border-4 border-black flex gap-10 items-start relative overflow-hidden shadow-[inset_0_0_40px_rgba(139,92,246,0.3)]">
-                 <div className="bg-violet-600 w-16 h-16 shrink-0 flex items-center justify-center text-white font-black text-3xl border-4 border-black -rotate-6">
+              <div className="bg-zinc-900 p-12 border-4 border-black flex gap-10 items-start relative overflow-hidden shadow-[inset_0_0_40px_rgba(139,92,246,0.3)] rounded-3xl">
+                 <div className="bg-violet-600 w-16 h-16 shrink-0 flex items-center justify-center text-white font-black text-3xl border-4 border-black -rotate-6 rounded-xl">
                     !
                  </div>
                  <div>

@@ -1,3 +1,4 @@
+import { ArticleHeader } from '../Common/ArticleHeader';
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Hero3412 from './Hero3412';
@@ -16,29 +17,15 @@ export default function Unified3412({ onBack }: { onBack: () => void }) {
     <div className="min-h-screen bg-[#F0F0F0] text-black relative selection:bg-[#4F46E5] selection:text-white overflow-x-hidden pt-20">
       <FilmGrain />
       
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-8 border-black shadow-[0_4px_15px_rgba(0,0,0,0.1)]">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="group flex items-center gap-3 bg-black text-white px-6 py-3 border-4 border-black hover:bg-[#4F46E5] transition-colors shadow-[6px_6px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-display uppercase text-sm tracking-widest font-black">Volver</span>
-          </button>
-          <a
-            href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-blue-600 hover:text-white transition-colors shadow-[4px_4px_0_0_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-          </a>
-          
-          <div className="hidden md:block font-mono text-[10px] uppercase font-black tracking-widest opacity-40">
-            N-3412 // COMPETENCIAS BLANDAS // ARGENTINA AMBA
-          </div>
-        </div>
-      </header>
+      <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3412'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 41'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2025'}
+        authors={ARTICLE_META?.authors || 'Hernández-Silvera et al.'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
 
       <main>
         <Hero3412 />
@@ -66,7 +53,7 @@ export default function Unified3412({ onBack }: { onBack: () => void }) {
               href={`https://doi.org/${ARTICLE_META.doi}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-block bg-white text-black px-10 py-5 border-4 border-black font-display text-lg font-black uppercase tracking-widest shadow-[10px_10px_0_0_#4F46E5] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#4F46E5] transition-all"
+              className="inline-block bg-white text-black px-10 py-5 border-4 border-black font-display text-lg font-black uppercase tracking-widest shadow-[10px_10px_0_0_#4F46E5] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[14px_14px_0_0_#4F46E5] transition-all rounded-3xl"
             >
               Consultar DOI Oficial
             </a>

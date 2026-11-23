@@ -265,9 +265,9 @@ export default function Dashboard3411() {
                       </div>
                     </div>
                     <div className="mt-4 flex items-center gap-6 text-sm font-mono font-black">
-                      <span className="bg-zinc-100 px-3 py-1 border-2 border-black">p = {m.p.toFixed(3)}</span>
+                      <span className="bg-zinc-100 px-3 py-1 border-2 border-black rounded-xl">p = {m.p.toFixed(3)}</span>
                       {m.r2 !== null && (
-                        <span className="bg-[#F4A261] px-3 py-1 border-2 border-black">R² = {m.r2.toFixed(3)}</span>
+                        <span className="bg-[#F4A261] px-3 py-1 border-2 border-black rounded-xl">R² = {m.r2.toFixed(3)}</span>
                       )}
                     </div>
                   </BrutalCard>

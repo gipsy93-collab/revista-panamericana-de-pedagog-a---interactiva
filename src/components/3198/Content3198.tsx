@@ -59,7 +59,7 @@ export const Content3198 = () => {
                  <p className="text-lg font-bold leading-snug">El temor al error y al fraude bancario frena la adopción en sectores críticos, generando dependencia.</p>
               </CinematicCard>
               
-              <div className="bg-rose-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden">
+              <div className="bg-rose-600 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#000] rotate-2 relative group overflow-hidden rounded-3xl">
                  <div className="absolute -bottom-4 -right-4 bg-white/10 w-32 h-32 rounded-full group-hover:scale-150 transition-transform" />
                  <h4 className="font-mono text-[10px] uppercase font-black mb-4 tracking-widest opacity-60">MOTOR_AFECTIVO</h4>
                  <p className="text-sm font-bold border-l-4 border-white pl-4 italic leading-relaxed">
@@ -67,7 +67,7 @@ export const Content3198 = () => {
                  </p>
               </div>
 
-              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#9f1239] -rotate-1">
+              <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0_0_#9f1239] -rotate-1 rounded-3xl">
                  <h4 className="font-display text-xl uppercase font-black mb-2 italic">Educomunicación</h4>
                  <p className="text-sm font-sans font-medium text-black/60">
                    Integramos educación y comunicación para facilitar procesos significativos adaptados a la reserva cognitiva.
@@ -100,7 +100,7 @@ export const Content3198 = () => {
                 >
                   <div className="flex items-center gap-6">
                     <span className="text-3xl">{dim.emoji}</span>
-                    <span className="font-display text-xl uppercase font-black tracking-tighter italic leading-none">{dim.name}</span>
+                    <span className="font-display text-xl uppercase font-black tracking-normal italic leading-none">{dim.name}</span>
                   </div>
                 </button>
               ))}
@@ -126,19 +126,19 @@ export const Content3198 = () => {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative">
+                    <div className="bg-zinc-900 text-white p-8 border-4 border-black rotate-[-1deg] relative rounded-3xl">
                       <h4 className="font-mono text-[9px] uppercase font-black mb-6 tracking-widest text-rose-400">PUNTOS_CLAVE</h4>
                       <ul className="space-y-4">
                         {DIMENSIONS[activeDimension].highlights?.map((h, i) => (
                           <li key={i} className="flex gap-3 items-start md:items-center">
                             <span className="bg-rose-600 w-2 h-2 rounded-full shrink-0 md:mt-0 mt-2" />
-                            <span className="font-display text-sm uppercase font-black italic tracking-tighter leading-tight">{h}</span>
+                            <span className="font-display text-sm uppercase font-black italic tracking-normal leading-tight">{h}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="bg-yellow-100 p-8 border-4 border-black flex flex-col justify-center">
+                    <div className="bg-yellow-100 p-8 border-4 border-black flex flex-col justify-center rounded-3xl">
                        <Quote className="text-rose-600 mb-4" size={32} />
                        <p className="font-serif italic text-lg leading-snug text-black/90">
                           {activeDimension === 0 && "Participar del taller me dio un motivo para salir de casa y volver a sentirme útil."}
@@ -178,11 +178,11 @@ export const Content3198 = () => {
                { icon: HeartPulse, color: 'bg-zinc-900', title: 'Bienestar Afectivo', desc: 'Las TIC contrarrestan el aislamiento social y promueven una vida social activa y satisfactoria.' },
                { icon: ShieldAlert, color: 'bg-blue-600', title: 'Seguridad Digital', desc: 'Deseo de independencia en el manejo tecnológico frente al temor por el robo de información.' }
              ].map((it, i) => (
-               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer">
+               <div key={i} className="group flex flex-col bg-white border-8 border-black p-10 shadow-[15px_15px_0_0_#000] hover:-translate-y-4 transition-transform cursor-pointer rounded-3xl">
                   <div className={`${it.color} text-white p-6 border-4 border-black mb-6 w-fit group-hover:rotate-12 transition-transform`}>
                     <it.icon size={40} />
                   </div>
-                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-tighter">{it.title}</h4>
+                  <h4 className="font-display text-2xl uppercase font-black mb-4 italic tracking-normal">{it.title}</h4>
                   <p className="font-sans text-sm font-medium text-black/70 leading-relaxed">{it.desc}</p>
                </div>
              ))}
@@ -195,7 +195,7 @@ export const Content3198 = () => {
         <div className="max-w-6xl mx-auto text-center pb-40">
            <div className="inline-block relative mb-20">
               <div className="absolute inset-0 bg-black translate-x-4 translate-y-4" />
-              <div className="relative bg-rose-600 text-white p-16 md:p-32 border-8 border-black">
+              <div className="relative bg-rose-600 text-white p-16 md:p-32 border-8 border-black rounded-xl">
                  <h2 className="text-6xl md:text-[8rem] font-display uppercase font-black leading-none drop-shadow-[5px_5px_0_#000] italic">
                    Aprender <br/> es vivir
                  </h2>

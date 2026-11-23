@@ -37,14 +37,14 @@ export function ProgressBar({ visitedNodes, totalNodes }: ProgressBarProps) {
                 animate={{ scale: 1 }}
                 className="flex items-center gap-2"
               >
-                <span className="text-xl font-black italic tracking-tighter text-black">
+                <span className="text-xl font-black italic tracking-normal text-black">
                   {percentage}%
                 </span>
                 {percentage >= 100 && <Sparkles className="w-4 h-4 text-black fill-current" />}
               </motion.div>
             </div>
             
-            <div className="h-6 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center p-1">
+            <div className="h-6 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center p-1 rounded-3xl">
               <motion.div
                 className={`h-full border-2 border-black ${
                   percentage >= 100 ? 'bg-[#00FFA3]' : 'bg-[#00D4FF]'

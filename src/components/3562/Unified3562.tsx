@@ -1,3 +1,4 @@
+import { ArticleHeader } from '../Common/ArticleHeader';
 import { Hero3562 } from './Hero3562';
 import { Content3562 } from './Content3562';
 import { DataLab3562 } from './DataLab3562';
@@ -20,28 +21,15 @@ export default function Unified3562({ onBack }: { onBack?: () => void }) {
       className="flex flex-col w-full bg-[#f0f0f0]"
     >
       {onBack && (
-        <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b-4 border-black">
-          <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <button
-              onClick={onBack}
-              className="group flex items-center gap-3 bg-black text-white px-6 py-2 border-2 border-black hover:bg-[#ec4899] transition-colors shadow-[4px_4px_0_0_#999]"
-            >
-              <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              <span className="font-display uppercase text-xs tracking-widest font-black">Volver</span>
-            </button>
-            <a
-              href="https://revistas.up.edu.mx/RPP/es/issue/view/242"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black hover:bg-[#4f46e5] hover:text-white transition-colors shadow-[4px_4px_0_0_#999]"
-            >
-              <span className="font-display uppercase text-xs tracking-widest font-black">Revista Acad�mica</span>
-            </a>
-            <div className="bg-black text-white px-4 py-2 font-mono text-[10px] uppercase font-black italic">
-              REF_{ARTICLE_META.id} // CARE_UNI_TRANSITION
-            </div>
-          </div>
-        </header>
+        <ArticleHeader
+        onBack={onBack}
+        doi={ARTICLE_META?.doi || '10.21555/rpp.3562'}
+        volume={(ARTICLE_META as any)?.volume || (ARTICLE_META as any)?.vol || 'Vol. 41'}
+        year={(ARTICLE_META as any)?.date || (ARTICLE_META as any)?.year || '2025'}
+        authors={ARTICLE_META?.authors || 'Rodríguez-Calderón-de-la-Barca'}
+        institution={ARTICLE_META?.institution || 'Revista Panamericana de Pedagogía'}
+        themeColor={(ARTICLE_META as any)?.themeColor || '#10b981'}
+      />
       )}
 
       <div className={onBack ? "pt-20" : ""}>
@@ -77,7 +65,7 @@ export default function Unified3562({ onBack }: { onBack?: () => void }) {
           </div>
           
           <div className="flex flex-col gap-2 items-end">
-            <span className="font-display text-2xl uppercase tracking-tighter">Ciencia Transmedia</span>
+            <span className="font-display text-2xl uppercase tracking-normal">Ciencia Transmedia</span>
             <span className="font-mono text-[10px] uppercase opacity-30">RPP // Interactive System v2.0</span>
           </div>
         </div>

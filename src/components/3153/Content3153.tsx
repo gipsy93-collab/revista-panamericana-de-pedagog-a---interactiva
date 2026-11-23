@@ -34,7 +34,7 @@ export default function Content3153() {
                    </div>
 
                    {/* PROBLEMA */}
-                   <div className="bg-pop-cream border-l-[12px] border-blue-600 p-8 border-4 border-black shadow-[25px_25px_0_0_#0f3896] text-black">
+                   <div className="bg-pop-cream border-l-[12px] border-blue-600 p-8 border-4 border-black shadow-[25px_25px_0_0_#0f3896] text-black rounded-3xl">
                      <h4 className="font-display text-2xl uppercase mb-6 flex items-center gap-3 text-black">
                        <AlertTriangle className="text-black" /> Problema
                      </h4>
@@ -51,7 +51,7 @@ export default function Content3153() {
             </div>
 
             <div className="lg:col-span-7 space-y-12">
-               <div className="bg-blue-600 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] rotate-[-1deg] mt-12">
+               <div className="bg-blue-600 text-white p-12 border-8 border-black shadow-[15px_15px_0_0_#000] rotate-[-1deg] mt-12 rounded-3xl">
                   <h4 className="font-display text-2xl uppercase italic mb-6">Pregunta Rectora</h4>
                   <p className="text-4xl md:text-5xl font-serif italic leading-tight font-black">
                     "¿Cuál es la experiencia de discriminación de los estudiantes universitarios por apariencia física?"
@@ -60,14 +60,14 @@ export default function Content3153() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-8 mt-12">
-               <div className="bg-cream border-4 border-black p-8 shadow-[8px_8px_0_0_#2563eb] rotate-1">
+               <div className="bg-cream border-4 border-black p-8 shadow-[8px_8px_0_0_#2563eb] rotate-1 rounded-3xl">
                   <h4 className="font-display text-2xl uppercase italic mb-6 border-b-2 border-black/10 pb-2">Propósito General</h4>
                   <p className="font-sans font-bold uppercase text-[12px] text-black/60 italic leading-relaxed">
                     Comprender de qué manera influyen las experiencias de discriminación por aspecto físico en la experiencia académica y bienestar emocional en los estudiantes universitarios de una universidad privada en México.
                   </p>
                </div>
 
-               <div className="bg-zinc-950 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#2563eb] -rotate-1">
+               <div className="bg-zinc-950 text-white p-8 border-4 border-black shadow-[8px_8px_0_0_#2563eb] -rotate-1 rounded-3xl">
                   <h4 className="font-display text-xl uppercase italic mb-6 text-blue-400">Objetivos Específicos</h4>
                   <ul className="font-mono text-[10px] uppercase font-black space-y-4 opacity-70">
                     <li className="flex gap-3"><ArrowDownCircle size={14} className="text-blue-600" /> Identificar formas de discriminación por apariencia física en el contexto universitario</li>
@@ -107,7 +107,7 @@ export default function Content3153() {
                  { t: "Instrumento", c: "Entrevista Semiestructurada", i: ClipboardCheck },
                  { t: "Propósito", c: "Comprender la Influencia de la Apariencia", i: Target }
                ].map((item, idx) => (
-                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#2563eb] rotate-1 hover:rotate-0 transition-transform flex flex-col items-center text-center">
+                 <div key={idx} className="bg-zinc-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#2563eb] rotate-1 hover:rotate-0 transition-transform flex flex-col items-center text-center rounded-3xl">
                     <item.i size={32} className="mb-4 text-blue-600" />
                     <h5 className="font-display text-xl uppercase italic leading-none mb-2">{item.t}</h5>
                     <p className="font-mono text-[9px] uppercase font-black opacity-40">{item.c}</p>
@@ -125,7 +125,7 @@ export default function Content3153() {
         <div className="max-w-7xl mx-auto text-white">
           <BrutalSticker text="4. RESULTADOS & HALLAZGOS" color="bg-pop-yellow" className="text-black mb-20 !rotate-0 shadow-[6px_6px_0_0_#000]" />
           
-          <div className="bg-white border-8 border-black p-12 md:p-24 shadow-[20px_20px_0_0_#fccb06] rotate-1 mb-24 text-black">
+          <div className="bg-white border-8 border-black p-12 md:p-24 shadow-[20px_20px_0_0_#fccb06] rotate-1 mb-24 text-black rounded-3xl">
              <h4 className="font-display text-3xl uppercase italic mb-8 border-b-4 border-black pb-4 text-black">Hallazgo Principal</h4>
              <p className="text-4xl md:text-6xl font-serif italic text-black leading-tight">
                 "Se encontraron distintas formas de discriminación por apariencia física (color de piel, peso, altura, uso de tatuajes) que se interpretan como <span className="text-pop-blue not-italic font-black">estigma del estatus social</span>."
@@ -197,7 +197,7 @@ export default function Content3153() {
                  author: "Ramos-Solís et al. (2024)"
                }
              ].map((card, i) => (
-               <div key={i} className="bg-cream border-8 border-black p-8 shadow-[15px_15px_0_0_#1a1a1a] h-full flex flex-col rotate-1 group hover:-rotate-1 transition-transform">
+               <div key={i} className="bg-cream border-8 border-black p-8 shadow-[15px_15px_0_0_#1a1a1a] h-full flex flex-col rotate-1 group hover:-rotate-1 transition-transform rounded-3xl">
                   <Flame className="text-blue-600 mb-6" size={32} />
                   <h4 className="font-display text-3xl uppercase italic mb-6 leading-none border-b-4 border-black pb-2">{card.title}</h4>
                   <p className="font-serif text-xl italic text-black/80 leading-relaxed mb-10">"{card.text}"</p>
@@ -234,7 +234,7 @@ export default function Content3153() {
                   "La discriminación por apariencia es una forma de violencia que fractura el bienestar y la permanencia estudiantil (p. 141)."
                 </p>
              </div>
-             <div className="bg-pop-yellow text-black p-12 border-8 border-black shadow-[25px_25px_0_0_#e81e61] rotate-1">
+             <div className="bg-pop-yellow text-black p-12 border-8 border-black shadow-[25px_25px_0_0_#e81e61] rotate-1 rounded-3xl">
                 <p className="text-3xl font-display uppercase italic leading-tight mb-8">
                    "Se requiere mejorar la difusión de servicios institucionales y capacitar a docentes en detección y acompañamiento especializado."
                 </p>

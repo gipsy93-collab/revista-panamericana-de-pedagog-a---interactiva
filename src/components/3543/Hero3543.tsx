@@ -42,7 +42,7 @@ export const Hero3543 = () => {
   const titleWords = ARTICLE_META.title.split(" ");
 
   return (
-    <section className="relative bg-[#f0f0f0] px-6 md:px-12 lg:px-24 pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
+    <section className="relative bg-[#f0f0f0] px-4 sm:px-6 md:px-12 lg:px-24 pt-6 pb-14 sm:pt-8 sm:pb-16 md:pt-12 md:pb-20 overflow-hidden">
       {/* Elemento de fondo con pulso orgánico */}
       <motion.div 
         animate={{ scale: [1, 1.05, 1], opacity: [0.08, 0.14, 0.08] }}
@@ -50,9 +50,9 @@ export const Hero3543 = () => {
         className="absolute top-0 right-0 w-2/3 h-full bg-[#10b981] -skew-x-12 translate-x-20 z-0 pointer-events-none rounded-[100px]" 
       />
       
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
         {/* Columna Izquierda: Textos que caen y cajas interactivas */}
-        <div className="lg:col-span-7 flex flex-col gap-6 md:gap-8">
+        <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 md:gap-8">
           {/* Sticker con aparición elástica */}
           <motion.div
             initial={{ opacity: 0, y: -40, rotate: -6 }}
@@ -79,7 +79,7 @@ export const Hero3543 = () => {
               <Sparkles size={16} className="text-[#10b981]" /> // CULTURA ACADÉMICA
             </motion.span>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase font-black leading-[0.92] text-black flex flex-wrap gap-x-4 gap-y-2">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display uppercase font-black leading-[0.94] text-black flex flex-wrap gap-x-2.5 sm:gap-x-4 gap-y-1.5 sm:gap-y-2 break-words">
               {titleWords.map((word, i) => (
                 <motion.span
                   key={i}
@@ -135,10 +135,10 @@ export const Hero3543 = () => {
                     transition: { duration: 0.15 }
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className={`flex items-center gap-3 px-5 py-3 border-2 border-black ${stat.bg} ${stat.shadow} rounded-2xl cursor-pointer select-none`}
+                  className={`flex items-center gap-2.5 sm:gap-3 px-4 py-2.5 sm:px-5 sm:py-3 border-2 border-black ${stat.bg} ${stat.shadow} rounded-2xl cursor-pointer select-none`}
                 >
-                  <Icon size={20} className="text-[#10b981]" />
-                  <span className="font-mono text-sm font-bold uppercase">{stat.val}</span>
+                  <Icon size={18} className="text-[#10b981] flex-shrink-0" />
+                  <span className="font-mono text-xs sm:text-sm font-bold uppercase">{stat.val}</span>
                 </motion.div>
               );
             })}
@@ -146,7 +146,7 @@ export const Hero3543 = () => {
         </div>
 
         {/* Columna Derecha: Tarjeta con efecto 3D Parallax con el mouse */}
-        <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start w-full lg:pt-1">
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start w-full lg:pt-1 mt-2 lg:mt-0">
           <motion.div
             ref={cardRef}
             onMouseMove={handleMouseMove}
@@ -160,12 +160,12 @@ export const Hero3543 = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.35, type: "spring", stiffness: 300, damping: 25 }}
             whileHover={{ boxShadow: "20px 20px 0px 0px #000" }}
-            className="bg-white border-4 border-black p-5 md:p-6 shadow-[14px_14px_0_0_#000] rounded-3xl flex flex-col gap-4 w-full max-w-md lg:max-w-[460px] relative transition-shadow"
+            className="bg-white border-4 border-black p-4 sm:p-5 md:p-6 shadow-[8px_8px_0_0_#000] sm:shadow-[14px_14px_0_0_#000] rounded-3xl flex flex-col gap-3 sm:gap-4 w-full max-w-md lg:max-w-[460px] relative transition-shadow"
           >
             {/* Sticker Superior con rebote al pasar el mouse */}
             <motion.div 
               whileHover={{ scale: 1.1, rotate: -2 }}
-              className="absolute -top-3.5 -right-3 bg-[#10b981] text-white px-3.5 py-1 font-mono text-xs uppercase font-black border-2 border-black shadow-[3px_3px_0_0_#000] rounded-xl cursor-default"
+              className="absolute -top-3.5 right-3 sm:-right-3 bg-[#10b981] text-white px-3 sm:px-3.5 py-1 font-mono text-[10px] sm:text-xs uppercase font-black border-2 border-black shadow-[3px_3px_0_0_#000] rounded-xl cursor-default z-10"
             >
               VIDEO RESEÑA // TRANSMEDIA
             </motion.div>

@@ -73,43 +73,43 @@ export const DataLab3543 = () => {
   const stats = DATA_SET.especialidades[selectedEsp];
 
   return (
-    <div className="bg-[#FEFCE8] py-24 px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
+    <div className="bg-[#FEFCE8] py-14 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 border-y-[12px] border-black overflow-hidden relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-16">
           <div>
             <BrutalSticker 
               text="3.2 & 4.3 LABORATORIO DE PRÁCTICAS" 
               color="bg-black" 
-              className="text-white mb-6 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] rounded-xl" 
+              className="text-white mb-5 sm:mb-6 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] rounded-xl" 
             />
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase font-black leading-tight text-black tracking-normal italic flex items-center gap-4 flex-wrap">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display uppercase font-black leading-tight text-black tracking-normal italic flex items-center gap-3 sm:gap-4 flex-wrap">
               <span>CASE</span>
-              <span className="text-indigo-600 underline decoration-8 decoration-black inline-block">3543</span>
+              <span className="text-indigo-600 underline decoration-4 sm:decoration-8 decoration-black inline-block">3543</span>
             </h2>
           </div>
-          <div className="bg-white border-4 border-black p-6 shadow-[10px_10px_0_0_#000] rounded-3xl rotate-1">
-             <div className="flex items-center gap-4">
-                <PieChart size={32} className="text-indigo-600" />
+          <div className="bg-white border-4 border-black p-4 sm:p-6 shadow-[8px_8px_0_0_#000] sm:shadow-[10px_10px_0_0_#000] rounded-3xl sm:rotate-1">
+             <div className="flex items-center gap-3 sm:gap-4">
+                <PieChart size={28} className="text-indigo-600" />
                 <div>
-                   <RapidCounter value={14} className="font-display text-4xl font-black italic" />
+                   <RapidCounter value={14} className="font-display text-3xl sm:text-4xl font-black italic" />
                    <span className="font-mono text-[10px] uppercase font-black opacity-60 ml-2 italic tracking-widest">Docentes</span>
                 </div>
              </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-12">
           {/* I. 4.3 TABLA RESUMEN / MÉTRICAS GLOBALES */}
-          <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-8">
              {[
                { l: 'VALORACIÓN EA', v: 93, suffix: '%', c: 'bg-indigo-600', d: 'Consideran importante la escritura' },
                { l: 'CRITERIOS EVAL.', v: 50, suffix: '%', c: 'bg-black', d: 'Especifican cómo califican' },
                { l: 'ACOMPAÑAMIENTO', v: 14, suffix: '%', c: 'bg-rose-600', d: 'Apoyo real durante el proceso' },
                { l: 'LÍDER ÁREA', text: 'Inglés', c: 'bg-emerald-600', d: 'Especialidad con mayor presencia' },
              ].map((stat, i) => (
-               <div key={i} className="bg-white border-4 border-black p-6 md:p-8 shadow-[8px_8px_0_0_#000] rounded-3xl group hover:-translate-y-2 transition-transform">
-                  <div className={`${stat.c} text-white px-2.5 py-1 text-[9px] font-black uppercase mb-4 inline-block rounded-lg`}>{stat.l}</div>
-                  <div className="text-4xl md:text-6xl font-display font-black italic mb-2">
+               <div key={i} className="bg-white border-4 border-black p-5 sm:p-6 md:p-8 shadow-[6px_6px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] rounded-3xl group hover:-translate-y-2 transition-transform">
+                  <div className={`${stat.c} text-white px-2.5 py-1 text-[9px] font-black uppercase mb-3 sm:mb-4 inline-block rounded-lg`}>{stat.l}</div>
+                  <div className="text-3xl sm:text-4xl md:text-6xl font-display font-black italic mb-2">
                     {stat.text ? (
                       <span>{stat.text}</span>
                     ) : (
@@ -123,24 +123,26 @@ export const DataLab3543 = () => {
 
           {/* II. EXPLORADOR POR ESPECIALIDAD (3.2 & 4.2) */}
           <div className="lg:col-span-12">
-             <div className="bg-white border-8 border-black shadow-[20px_20px_0_0_#4f46e5] rounded-3xl overflow-hidden">
-                <div className="bg-zinc-100 border-b-4 border-black px-8 py-4">
-                  <h3 className="text-xl font-display uppercase font-black tracking-normal">4.2 FRECUENCIA DE ASIGNACIÓN (CANTIDAD DE DOCENTES)</h3>
+             <div className="bg-white border-4 sm:border-8 border-black shadow-[10px_10px_0_0_#4f46e5] sm:shadow-[20px_20px_0_0_#4f46e5] rounded-3xl overflow-hidden">
+                <div className="bg-zinc-100 border-b-4 border-black px-4 sm:px-8 py-3 sm:py-4">
+                  <h3 className="text-base sm:text-xl font-display uppercase font-black tracking-normal">4.2 FRECUENCIA DE ASIGNACIÓN (CANTIDAD DE DOCENTES)</h3>
                 </div>
-                <div className="flex flex-col lg:flex-row min-h-[450px]">
-                   <div className="lg:w-1/3 border-b-8 lg:border-b-0 lg:border-r-8 border-black p-8 md:p-10 bg-zinc-50 flex flex-col gap-4">
-                      <span className="font-mono text-[10px] uppercase font-black opacity-40 mb-2 tracking-widest leading-none">Seleccionar Especialidad</span>
-                      {(Object.keys(DATA_SET.especialidades) as Speciality[]).map((esp) => (
-                        <button
-                          key={esp}
-                          onClick={() => setSelectedEsp(esp)}
-                          className={`p-5 md:p-6 border-4 border-black font-display text-xl md:text-2xl uppercase italic text-left transition-all shadow-[6px_6px_0_0_#000] rounded-2xl active:translate-x-1 active:translate-y-1 active:shadow-none ${selectedEsp === esp ? 'bg-indigo-600 text-white translate-x-1 translate-y-1 shadow-[2px_2px_0_0_#000]' : 'bg-white text-black hover:bg-zinc-100 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_0_#000]'}`}
-                        >
-                          {esp}
-                        </button>
-                      ))}
+                <div className="flex flex-col lg:flex-row min-h-[420px]">
+                   <div className="lg:w-1/3 border-b-4 sm:border-b-8 lg:border-b-0 lg:border-r-8 border-black p-4 sm:p-8 md:p-10 bg-zinc-50 flex flex-col gap-3 sm:gap-4">
+                      <span className="font-mono text-[10px] uppercase font-black opacity-40 mb-1 tracking-widest leading-none">Seleccionar Especialidad</span>
+                      <div className="grid grid-cols-2 lg:flex lg:flex-col gap-3 sm:gap-4">
+                        {(Object.keys(DATA_SET.especialidades) as Speciality[]).map((esp) => (
+                          <button
+                            key={esp}
+                            onClick={() => setSelectedEsp(esp)}
+                            className={`p-3.5 sm:p-5 md:p-6 border-4 border-black font-display text-base sm:text-xl md:text-2xl uppercase italic text-left transition-all shadow-[4px_4px_0_0_#000] sm:shadow-[6px_6px_0_0_#000] rounded-2xl active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer ${selectedEsp === esp ? 'bg-indigo-600 text-white translate-x-1 translate-y-1 shadow-[2px_2px_0_0_#000]' : 'bg-white text-black hover:bg-zinc-100 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_0_#000]'}`}
+                          >
+                            {esp}
+                          </button>
+                        ))}
+                      </div>
                    </div>
-                   <div className="lg:w-2/3 p-8 md:p-12 bg-white relative">
+                   <div className="lg:w-2/3 p-5 sm:p-8 md:p-12 bg-white relative">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={selectedEsp}
@@ -148,42 +150,42 @@ export const DataLab3543 = () => {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.2 }}
-                          className="space-y-10"
+                          className="space-y-6 sm:space-y-10"
                         >
-                           <div className="flex justify-between items-end border-b-4 border-zinc-100 pb-6">
-                              <h3 className="text-4xl md:text-6xl font-display uppercase font-black italic leading-none tracking-normal">{selectedEsp}</h3>
-                              <span className="font-mono text-xl font-black text-indigo-600 italic">
+                           <div className="flex justify-between items-end border-b-4 border-zinc-100 pb-4 sm:pb-6">
+                              <h3 className="text-3xl sm:text-4xl md:text-6xl font-display uppercase font-black italic leading-none tracking-normal">{selectedEsp}</h3>
+                              <span className="font-mono text-lg sm:text-xl font-black text-indigo-600 italic">
                                 n=<RapidCounter value={stats.n} duration={200} />
                               </span>
                            </div>
 
-                           <div className="grid grid-cols-3 gap-4 md:gap-8 text-center uppercase font-display font-black italic">
-                              <div className="space-y-3 p-4 bg-rose-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
-                                 <div className="text-5xl md:text-7xl font-black text-rose-600 leading-none">
+                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-8 text-center uppercase font-display font-black italic">
+                              <div className="space-y-2 sm:space-y-3 p-4 bg-rose-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-4xl sm:text-5xl md:text-7xl font-black text-rose-600 leading-none">
                                     <RapidCounter value={stats.noAsigno} duration={300} />
                                  </div>
-                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Nunca asignó <br/> (Largo)</span>
+                                 <span className="text-[11px] md:text-xs block leading-tight opacity-60 italic font-bold">Nunca asignó <br className="hidden sm:inline" /> (Largo)</span>
                               </div>
-                              <div className="space-y-3 p-4 bg-zinc-50 border-2 border-black/15 rounded-2xl shadow-sm">
-                                 <div className="text-5xl md:text-7xl font-black text-black leading-none">
+                              <div className="space-y-2 sm:space-y-3 p-4 bg-zinc-50 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-4xl sm:text-5xl md:text-7xl font-black text-black leading-none">
                                     <RapidCounter value={stats.unaVez} duration={300} />
                                  </div>
-                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Una vez al <br/> semestre</span>
+                                 <span className="text-[11px] md:text-xs block leading-tight opacity-60 italic font-bold">Una vez al <br className="hidden sm:inline" /> semestre</span>
                               </div>
-                              <div className="space-y-3 p-4 bg-emerald-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
-                                 <div className="text-5xl md:text-7xl font-black text-emerald-600 leading-none">
+                              <div className="space-y-2 sm:space-y-3 p-4 bg-emerald-50/70 border-2 border-black/15 rounded-2xl shadow-sm">
+                                 <div className="text-4xl sm:text-5xl md:text-7xl font-black text-emerald-600 leading-none">
                                     <RapidCounter value={stats.múltiplesVeces} duration={300} />
                                  </div>
-                                 <span className="text-[10px] md:text-xs block leading-tight opacity-60 italic font-bold">Múltiples <br/> veces</span>
+                                 <span className="text-[11px] md:text-xs block leading-tight opacity-60 italic font-bold">Múltiples <br className="hidden sm:inline" /> veces</span>
                               </div>
                            </div>
 
-                           <div className="bg-zinc-950 text-white p-8 md:p-10 border-4 border-black shadow-[12px_12px_0_0_#4f46e5] rounded-3xl rotate-1">
-                              <div className="flex items-center gap-4 mb-4">
-                                 <MessageSquareQuote size={28} className="text-indigo-400" />
+                           <div className="bg-zinc-950 text-white p-5 sm:p-8 md:p-10 border-4 border-black shadow-[8px_8px_0_0_#4f46e5] sm:shadow-[12px_12px_0_0_#4f46e5] rounded-3xl sm:rotate-1">
+                              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                                 <MessageSquareQuote size={24} className="text-indigo-400" />
                                  <span className="font-mono text-[10px] uppercase font-black tracking-widest italic opacity-50">Interpretación 4.2</span>
                               </div>
-                              <p className="font-serif italic text-xl md:text-2xl leading-relaxed text-white/95">"{stats.hallazgo}"</p>
+                              <p className="font-serif italic text-lg sm:text-xl md:text-2xl leading-relaxed text-white/95">"{stats.hallazgo}"</p>
                            </div>
                         </motion.div>
                       </AnimatePresence>

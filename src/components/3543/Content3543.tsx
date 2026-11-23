@@ -12,7 +12,7 @@ export default function Content3543() {
   return (
     <div className="bg-white">
       {/* 2.3 OBJETIVOS */}
-      <section className="bg-indigo-950 text-white p-12 md:p-24 lg:p-32 border-b-[12px] border-black relative overflow-hidden">
+      <section className="bg-indigo-950 text-white px-4 py-12 sm:p-12 md:p-20 lg:p-28 border-b-[12px] border-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -21,21 +21,21 @@ export default function Content3543() {
             whileHover={{ scale: 1.05 }}
             className="inline-block"
           >
-            <BrutalSticker text="2.3 OBJETIVOS" color="bg-indigo-600" className="text-white mb-10 !rotate-0 shadow-[6px_6px_0_0_#f59e0b] rounded-xl" />
+            <BrutalSticker text="2.3 OBJETIVOS" color="bg-indigo-600" className="text-white mb-8 sm:mb-10 !rotate-0 shadow-[6px_6px_0_0_#f59e0b] rounded-xl" />
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-start">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, type: "spring" }}
             >
-               <h3 className="font-display text-4xl md:text-5xl uppercase font-black italic mb-6 leading-tight text-indigo-400">Objetivo General_</h3>
+               <h3 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase font-black italic mb-5 sm:mb-6 leading-tight text-indigo-400">Objetivo General_</h3>
                <motion.p 
                  whileHover={{ x: 8 }}
                  transition={{ type: "spring", stiffness: 300 }}
-                 className="text-2xl md:text-4xl font-serif italic border-l-8 border-indigo-600 pl-8 leading-snug text-white/95 cursor-default"
+                 className="text-xl sm:text-2xl md:text-4xl font-serif italic border-l-4 sm:border-l-8 border-indigo-600 pl-4 sm:pl-8 leading-snug text-white/95 cursor-default"
                >
                  "Describir las prácticas docentes dirigidas al desarrollo de la escritura académica."
                </motion.p>
@@ -121,13 +121,13 @@ export default function Content3543() {
       </WaveSection>
 
       {/* 4.1 HALLAZGO PRINCIPAL */}
-      <section className="py-24 bg-white px-6">
+      <section className="py-14 sm:py-20 md:py-24 bg-white px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block mb-10"
+            className="inline-block mb-8 sm:mb-10"
           >
             <BrutalSticker text="4.1 HALLAZGO PRINCIPAL" color="bg-rose-600" className="text-white !rotate-0 shadow-[6px_6px_0_0_#000] rounded-xl" />
           </motion.div>
@@ -138,7 +138,7 @@ export default function Content3543() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.02, rotate: 0.5, transition: { duration: 0.2 } }}
           >
-            <BrutalQuote author="Ríos-Higuera & Sotomayor-Andrade (2026)" className="bg-zinc-50 border-[8px] border-black text-2xl md:text-3xl font-serif italic shadow-[18px_18px_0_0_#f59e0b] leading-relaxed rounded-3xl cursor-default">
+            <BrutalQuote author="Ríos-Higuera & Sotomayor-Andrade (2026)" className="bg-zinc-50 border-4 sm:border-[8px] border-black !p-6 sm:!p-10 !text-lg sm:!text-2xl md:!text-3xl font-serif italic shadow-[10px_10px_0_0_#f59e0b] sm:shadow-[18px_18px_0_0_#f59e0b] leading-relaxed rounded-3xl cursor-default">
                "Aunque 13 de 14 docentes consideran importante la escritura académica, hay quienes la trabajan con poca frecuencia o no la trabajan. No existe acompañamiento durante el proceso ni uniformidad en criterios de evaluación."
             </BrutalQuote>
           </motion.div>
@@ -147,21 +147,21 @@ export default function Content3543() {
 
       {/* 5.1 INTERPRETACIÓN DE LOS HALLAZGOS */}
       <WaveSection topColor="#ffffff" bottomColor="#f8fafc" variant="wavy">
-        <div className="max-w-7xl mx-auto py-20">
-          <BrutalSticker text="5.1 INTERPRETACIÓN" color="bg-black" className="text-white mb-12 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] rounded-xl" />
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto py-10 sm:py-16 md:py-20">
+          <BrutalSticker text="5.1 INTERPRETACIÓN" color="bg-black" className="text-white mb-8 sm:mb-12 !rotate-0 shadow-[6px_6px_0_0_#4f46e5] rounded-xl" />
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
              <motion.div 
                initial={{ opacity: 0, x: -40 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ type: "spring", stiffness: 300 }}
-               className="space-y-8"
+               className="space-y-6 sm:space-y-8"
              >
-                <h3 className="font-display text-4xl md:text-6xl uppercase font-black italic text-black leading-tight tracking-tight">
+                <h3 className="font-display text-3xl sm:text-5xl md:text-6xl uppercase font-black italic text-black leading-tight tracking-tight break-words">
                   La Brecha del <br/> 
-                  <span className="text-indigo-600 underline decoration-8 decoration-indigo-200 uppercase">Acompañamiento_</span>
+                  <span className="text-indigo-600 underline decoration-4 sm:decoration-8 decoration-indigo-200 uppercase">Acompañamiento_</span>
                 </h3>
-                <p className="text-xl md:text-2xl font-serif italic leading-relaxed text-black/80 font-medium border-l-8 border-indigo-600 pl-8">
+                <p className="text-lg sm:text-xl md:text-2xl font-serif italic leading-relaxed text-black/80 font-medium border-l-4 sm:border-l-8 border-indigo-600 pl-4 sm:pl-8">
                   Los docentes muestran conciencia de la complejidad de la escritura como proceso cognitivo e instrumento epistémico, coincidiendo con el marco de Carlino (2008). Sin embargo, esta conciencia no se traduce necesariamente en práctica docente.
                 </p>
              </motion.div>
@@ -170,7 +170,7 @@ export default function Content3543() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                whileHover={{ y: -6, boxShadow: "26px 26px 0px 0px #4f46e5", transition: { duration: 0.15 } }}
-               className="bg-white border-[8px] md:border-[12px] border-black p-8 md:p-12 shadow-[20px_20px_0_0_#4f46e5] rounded-3xl space-y-8 transition-shadow cursor-default"
+               className="bg-white border-4 sm:border-[8px] md:border-[12px] border-black p-5 sm:p-8 md:p-12 shadow-[10px_10px_0_0_#4f46e5] sm:shadow-[20px_20px_0_0_#4f46e5] rounded-3xl space-y-6 sm:space-y-8 transition-shadow cursor-default"
              >
                 <p className="font-sans font-bold uppercase text-black/70 leading-relaxed text-sm tracking-wide">
                    COINCIDENCIA CON CASTELLÓ Y MATEOS (2015): LOS DOCENTES VALORAN LA ESCRITURA PERO REALIZAN POCAS PRÁCTICAS PARA APOYAR A LOS ESTUDIANTES REALMENTE.
@@ -222,15 +222,15 @@ export default function Content3543() {
       </section>
 
       {/* SECCIÓN FINAL */}
-      <section className="py-32 md:py-40 bg-white border-t-[12px] border-black relative overflow-hidden text-center">
-         <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 sm:py-28 md:py-40 bg-white border-t-[12px] border-black relative overflow-hidden text-center">
+         <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <motion.h2 
               initial={{ opacity: 0, y: -40, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               whileHover={{ scale: 1.03 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-display uppercase font-black italic tracking-tight leading-[1.05] mb-12 cursor-default"
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display uppercase font-black italic tracking-tight leading-[1.05] mb-8 sm:mb-12 cursor-default break-words"
             >
               Escritura<br/> 
               <span className="text-indigo-600 italic">Transversal_</span>
@@ -241,9 +241,9 @@ export default function Content3543() {
                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
                  viewport={{ once: true }}
                  whileHover={{ scale: 1.02, rotate: 0, boxShadow: "28px 28px 0px 0px #f59e0b" }}
-                 className="inline-block bg-zinc-950 text-white p-8 md:p-14 border-8 border-black shadow-[20px_20px_0_0_#f59e0b] -rotate-1 max-w-5xl rounded-3xl cursor-default transition-shadow"
+                 className="inline-block bg-zinc-950 text-white p-6 sm:p-8 md:p-14 border-4 sm:border-8 border-black shadow-[10px_10px_0_0_#f59e0b] sm:shadow-[20px_20px_0_0_#f59e0b] sm:-rotate-1 max-w-5xl w-full rounded-3xl cursor-default transition-shadow"
                >
-                  <p className="text-2xl md:text-4xl font-serif italic font-semibold leading-relaxed tracking-normal text-white/95 max-w-4xl mx-auto mb-8">
+                  <p className="text-xl sm:text-2xl md:text-4xl font-serif italic font-semibold leading-relaxed tracking-normal text-white/95 max-w-4xl mx-auto mb-6 sm:mb-8">
                     "La escritura académica es una responsabilidad institucional compartida."
                   </p>
                   <p className="font-mono text-xs font-bold uppercase text-white/60 italic tracking-widest leading-none">

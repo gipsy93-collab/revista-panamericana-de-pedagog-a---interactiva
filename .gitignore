@@ -9,3 +9,4 @@ coverage/
 
 *.bak
 .env.local
+.vercel

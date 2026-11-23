@@ -65,8 +65,8 @@ export const Quiz3543 = () => {
   const question = QUIZ_QUESTIONS[currentQuestion];
 
   return (
-    <section className="py-20 px-6 bg-[#f0f0f0]">
-      <div className="max-w-4xl mx-auto flex flex-col gap-12">
+    <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#f0f0f0]">
+      <div className="max-w-4xl mx-auto flex flex-col gap-8 sm:gap-12">
         <div className="flex flex-col gap-4 text-center items-center">
           <BrutalSticker text="VALIDACIÓN DE TERRENO" color="bg-black" className="text-white rounded-xl" />
           <PremiumTitle subtitle={`PREGUNTA ${currentQuestion + 1} DE ${QUIZ_QUESTIONS.length}`}>
@@ -74,12 +74,12 @@ export const Quiz3543 = () => {
           </PremiumTitle>
         </div>
 
-        <BrutalCard className="flex flex-col gap-8 p-8 md:p-12 rounded-3xl shadow-[16px_16px_0_0_#000]">
-          <h4 className="text-2xl md:text-3xl font-display uppercase leading-tight italic">
+        <BrutalCard className="flex flex-col gap-6 sm:gap-8 !p-5 sm:!p-8 md:!p-12 rounded-3xl shadow-[8px_8px_0_0_#000] sm:shadow-[16px_16px_0_0_#000]">
+          <h4 className="text-xl sm:text-2xl md:text-3xl font-display uppercase leading-tight italic">
             {question.question}
           </h4>
 
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4">
             {question.options.map((opt, idx) => {
               const isSelected = selectedOption === idx;
               const isCorrect = idx === question.correctAnswer;
@@ -97,7 +97,7 @@ export const Quiz3543 = () => {
                   key={idx}
                   onClick={() => handleOptionSelect(idx)}
                   disabled={showFeedback}
-                  className={`w-full text-left p-5 md:p-6 border-4 rounded-2xl font-bold text-base md:text-lg transition-all flex items-center justify-between ${variantStyle} ${!showFeedback && 'hover:translate-x-2'}`}
+                  className={`w-full text-left p-4 sm:p-5 md:p-6 border-4 rounded-2xl font-bold text-sm sm:text-base md:text-lg transition-all flex items-center justify-between ${variantStyle} ${!showFeedback && 'hover:translate-x-2'}`}
                 >
                   <span>{opt}</span>
                   {showFeedback && isCorrect && <CheckCircle2 className="text-green-600 flex-shrink-0 ml-3" />}

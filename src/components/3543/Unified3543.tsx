@@ -22,7 +22,7 @@ export default function Unified3543({ onBack }: Props) {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex flex-col w-full bg-[#f0f0f0] pt-20"
+      className="flex flex-col w-full bg-[#f0f0f0] pt-[68px] sm:pt-20 overflow-x-hidden"
     >
       {/* Header con Ficha Técnica Desaturada y Elementos Redondeados */}
       <ArticleHeader
@@ -58,12 +58,12 @@ export default function Unified3543({ onBack }: Props) {
       <Quiz3543 />
 
       {/* FOOTER ACADÉMICO - APA FORMAT */}
-      <footer className="bg-black text-white py-20 px-6 border-t-[12px] border-[#10b981]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 bg-zinc-900/50 p-8 md:p-12 border-4 border-white/10 rounded-3xl">
-          <div className="flex flex-col gap-4 max-w-2xl">
+      <footer className="bg-black text-white py-14 sm:py-20 px-4 sm:px-6 border-t-[12px] border-[#10b981]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8 sm:gap-12 bg-zinc-900/50 p-6 sm:p-8 md:p-12 border-4 border-white/10 rounded-3xl">
+          <div className="flex flex-col gap-4 max-w-2xl min-w-0 w-full">
             <span className="font-mono text-xs uppercase opacity-40">CITA BIBLIOGRÁFICA (APA 7)</span>
-            <p className="text-xl font-serif italic text-white/90 leading-relaxed">
-              Ríos-Higuera, S., & Sotomayor-Andrade, F.-J. ({ARTICLE_META.year}). {ARTICLE_META.title}. {ARTICLE_META.journal}, ({ARTICLE_META.vol}), <a href={`https://doi.org/${ARTICLE_META.doi}`} target="_blank" rel="noreferrer" className="text-white hover:text-rose-400 hover:underline transition-colors">{ARTICLE_META.doi}</a>
+            <p className="text-base sm:text-xl font-serif italic text-white/90 leading-relaxed break-words">
+              Ríos-Higuera, S., & Sotomayor-Andrade, F.-J. ({ARTICLE_META.year}). {ARTICLE_META.title}. {ARTICLE_META.journal}, ({ARTICLE_META.vol}), <a href={`https://doi.org/${ARTICLE_META.doi}`} target="_blank" rel="noreferrer" className="text-white hover:text-rose-400 hover:underline transition-colors break-all">{ARTICLE_META.doi}</a>
             </p>
           </div>
           

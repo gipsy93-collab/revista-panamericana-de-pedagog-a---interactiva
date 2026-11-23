@@ -184,7 +184,7 @@ export const Hero3543 = () => {
             </div>
 
             {/* Contenedor del Reproductor de Video */}
-            <div className="relative aspect-square w-full bg-black border-4 border-black rounded-2xl overflow-hidden shadow-inner group">
+            <div className="relative aspect-video w-full bg-black border-4 border-black rounded-2xl overflow-hidden shadow-inner group">
               <video
                 ref={videoRef}
                 src="/archivos/videos/escritura_normalistas.mp4"
@@ -193,7 +193,7 @@ export const Hero3543 = () => {
                 preload="metadata"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-contain rounded-xl bg-black"
               />
 
               {/* Indicación visual de reproducir */}
